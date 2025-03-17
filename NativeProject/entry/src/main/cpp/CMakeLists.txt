@@ -26,9 +26,9 @@ file(GLOB GENERATED_CPP_FILES "./generated/*.cpp")
 
 add_library(rnoh_app SHARED
     ${GENERATED_CPP_FILES}
-    "./generated/turbo_module/RNOH/generated/turbo_modules/SampleTurboModulevv"
+#    "./generated/turbo_module/RNOH/generated/turbo_modules/SampleTurboModulevv"
 #    "./generated/turbo_module/RNOH/generated/turbo_modules/MIOTHostTurboModule"
-    "./generated/turbo_module/RNOH/generated/turbo_modules/MIOTHost"
+#    "./generated/turbo_module/RNOH/generated/turbo_modules/MIOTHost"
     "./PackageProvider.cpp"
     "${RNOH_CPP_DIR}/RNOHAppNapiBridge.cpp"
 )

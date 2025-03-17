@@ -9,8 +9,8 @@
 import React, { useRef } from 'react';
 import { StyleSheet, Text, View, Pressable, UIManager, findNodeHandle, Dimensions } from 'react-native';
 // import SampleTurboModule from 'turbo-module/src/specs/v1/SampleTurboModule';
-import SampleTurboModulevv from 'turbo-module/src/specs/v2/SampleTurboModulevv';
-import MIOTHost from 'turbo-module/src/specs/v2/MIOTHost';
+// import SampleTurboModulevv from 'turbo-module/src/specs/v2/SampleTurboModulevv';
+// import MIOTHost from 'turbo-module/src/specs/v2/MIOTHost';
 
 
 // 测试用例
@@ -26,14 +26,16 @@ const Test = () => {
     // SampleTurboModule.loadInfoCallBack('test', (value) => {
     //   console.log("chy loadInfoCallBack1 value:", value)
     // })
-    SampleTurboModulevv.loadInfoCallBack('test', (value) => {
-      console.log("chy loadInfoCallBack2 value:", value)
-    })
-    MIOTHost.loadInfoCallBack('test', (value) => {
-      console.log("chy MIOTHostTurboModule loadInfoCallBack2 value:", value)
-    })
+    // SampleTurboModulevv.loadInfoCallBack('test', (value) => {
+    //   console.log("chy loadInfoCallBack2 value:", value)
+    // })
+    // MIOTHost.loadInfoCallBack('test', (value) => {
+    //   console.log("chy MIOTHostTurboModule loadInfoCallBack2 value:", value)
+    // })
     return (
-    <View style={styles.container}></View>
+    <View style={styles.container}>
+      <Text>232352</Text>
+    </View>
   )
 }
 
