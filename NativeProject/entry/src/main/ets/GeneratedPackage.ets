@@ -18,29 +18,16 @@ import type {
 } from '@rnoh/react-native-openharmony/ts';
 import { RNC, TM } from "@rnoh/react-native-openharmony/generated/ts"
 import { SampleTurboModule } from "./TurboModules/SampleTurboModule"
-import { SampleTurboModulevv } from "./TurboModules/SampleTurboModulevv"
 
 class GeneratedTurboModulesFactory extends TurboModulesFactory {
   private turboModules: string[] = [
-    // TM.SampleTurboModule.NAME,
-    // TM.SampleTurboModulevv.NAME,
-    // TM.MIOTHostTurboModule.NAME,
-    // TM.MIOTHost.NAME,
+    TM.SampleTurboModule.NAME
   ]
 
   createTurboModule(name: string): TurboModule | null {
     if (name == TM.SampleTurboModule.NAME) {
       return new SampleTurboModule(this.ctx)
     }
-    // if (name == TM.SampleTurboModulevv.NAME) {
-    //   return new SampleTurboModulevv(this.ctx)
-    // }
-    // if (name == TM.MIOTHostTurboModule.NAME) {
-    //   return new SampleTurboModulevv(this.ctx)
-    // }
-    // if (name == TM.MIOTHost.NAME) {
-    //   return new SampleTurboModulevv(this.ctx)
-    // }
     return null;
   }
 

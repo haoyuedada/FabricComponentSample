@@ -8,31 +8,19 @@
 
 import React, { useRef } from 'react';
 import { StyleSheet, Text, View, Pressable, UIManager, findNodeHandle, Dimensions } from 'react-native';
-// import SampleTurboModule from 'turbo-module/src/specs/v1/SampleTurboModule';
-// import SampleTurboModulevv from 'turbo-module/src/specs/v2/SampleTurboModulevv';
-// import MIOTHost from 'turbo-module/src/specs/v2/MIOTHost';
+import SampleTurboModule from 'turbo-module/src/specs/v1/SampleTurboModule';
 
 
 // 测试用例
 const Test = () => {
-    // SampleTurboModule.pushStringToHarmony('test', (value) => {
-    //     console.log("chy pushStringToHarmony value:", value)
-    // })
-
-    // SampleTurboModule.pushStringToHarmonyCallBack('test', (value) => {
-    //     console.log("chy pushStringToHarmonyCallBack value:", value)
-    // })
-
-    // SampleTurboModule.loadInfoCallBack('test', (value) => {
-    //   console.log("chy loadInfoCallBack1 value:", value)
-    // })
-    // SampleTurboModulevv.loadInfoCallBack('test', (value) => {
-    //   console.log("chy loadInfoCallBack2 value:", value)
-    // })
-    // MIOTHost.loadInfoCallBack('test', (value) => {
-    //   console.log("chy MIOTHostTurboModule loadInfoCallBack2 value:", value)
-    // })
-    return (
+  SampleTurboModule.pushStringToHarmony('test', (value) => {
+    console.log("chy pushStringToHarmony value:", value)
+  })
+  console.log("chy ================", SampleTurboModule);
+  SampleTurboModule.pushStringToHarmonyCallBack('test', (value) => {
+    console.log("chy pushStringToHarmonyCallBack value:", value)
+  })
+  return (
     <View style={styles.container}>
       <Text>232352</Text>
     </View>
