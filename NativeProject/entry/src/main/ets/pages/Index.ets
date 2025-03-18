@@ -19,14 +19,20 @@ import {
 } from '@rnoh/react-native-openharmony';
 import { createRNPackages } from '../RNPackagesFactory';
 import { SelectBox } from "../RNComponent/SelectBox"
+import { RCTMessageDialog } from "../RNComponent/RCTMessageDialog"
 
-const arkTsComponentNames: Array<string> = [SelectBox.NAME];
+const arkTsComponentNames: Array<string> = [SelectBox.NAME, RCTMessageDialog.NAME];
 
 @Builder
 export function buildCustomRNComponent(ctx: ComponentBuilderContext) {
   Stack() {
     if (ctx.componentName === SelectBox.NAME) {
       SelectBox({
+        ctx: ctx.rnComponentContext,
+        tag: ctx.tag
+      })
+    } else if (ctx.componentName === RCTMessageDialog.NAME) {
+      RCTMessageDialog({
         ctx: ctx.rnComponentContext,
         tag: ctx.tag
       })

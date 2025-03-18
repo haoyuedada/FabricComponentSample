@@ -36,6 +36,8 @@ class GeneratedTurboModulesFactory extends TurboModulesFactory {
   }
 }
 let selectBox:string = RNC.SelectBox.NAME;
+let RCTMessageDialog:string = RNC.RCTMessageDialog.NAME;
+
 export class GeneratedPackage extends RNPackage {
   createTurboModulesFactory(ctx: TurboModuleContext): TurboModulesFactory {
     return new GeneratedTurboModulesFactory(ctx);
@@ -43,6 +45,7 @@ export class GeneratedPackage extends RNPackage {
   createDescriptorWrapperFactoryByDescriptorType(ctx: DescriptorWrapperFactoryByDescriptorTypeCtx): DescriptorWrapperFactoryByDescriptorType {
     return {
       selectBox: (ctx) => new RNC.SelectBox.DescriptorWrapper(ctx.descriptor),
+      RCTMessageDialog: (ctx) => new RNC.RCTMessageDialog.DescriptorWrapper(ctx.descriptor),
     }
   }
 }

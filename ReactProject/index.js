@@ -9,6 +9,7 @@
 
 import { AppRegistry } from 'react-native';
 import { name as appName } from './app.json';
-import Test from './testTurboModule/test';
+// import Test from './testTurboModule/test';
+import RCTMessage from './tests/RCTMessage';
 
-AppRegistry.registerComponent(appName, () => Test);
+AppRegistry.registerComponent(appName, () => RCTMessage);
