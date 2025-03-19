@@ -5,13 +5,13 @@
         "name": "default",
         "type": "HarmonyOS",
         "material": {
-          "certpath": "C:\\Users\\chenhaoyue\\.ohos\\config\\default_NativeProject_vSarXMJJlfZkoC8vvSUP3YdclpwssJWLGEFcnUSzm4c=.cer",
-          "storePassword": "0000001BF975530E9FA4CC9B33C7E4F3BCC83C3FAE7A81A1C929D3452A7DA6CD96B834C44E80D802B52BC2",
+          "certpath": "/Users/chenhaoyue/.ohos/config/default_NativeProject_L2bz4HmdgWH7MFN3mC-bG3kSZhzd8uV6Gnr6iZDcg2k=.cer",
+          "storePassword": "0000001BE865053BB9E541BB1A06B8002AC9C58630AB8C89067B5B681A825A298394D4AA10919C985C9351",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001B0F0329F3C9AD21CFC18F8C57E84A5A12E638EFABDD81F96F6B036450EF15988F8DCB39CDB73707",
-          "profile": "C:\\Users\\chenhaoyue\\.ohos\\config\\default_NativeProject_vSarXMJJlfZkoC8vvSUP3YdclpwssJWLGEFcnUSzm4c=.p7b",
+          "keyPassword": "0000001B2CD0C7C932A4CA8EBBFF215C5E38410DEF0BFC03A01A4DABBA9A744C8D9F2B624042D502A7FC8C",
+          "profile": "/Users/chenhaoyue/.ohos/config/default_NativeProject_L2bz4HmdgWH7MFN3mC-bG3kSZhzd8uV6Gnr6iZDcg2k=.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\chenhaoyue\\.ohos\\config\\default_NativeProject_vSarXMJJlfZkoC8vvSUP3YdclpwssJWLGEFcnUSzm4c=.p12"
+          "storeFile": "/Users/chenhaoyue/.ohos/config/default_NativeProject_L2bz4HmdgWH7MFN3mC-bG3kSZhzd8uV6Gnr6iZDcg2k=.p12"
         }
       }
     ],
@@ -19,7 +19,7 @@
       {
         "name": "default",
         "signingConfig": "default",
-        "compatibleSdkVersion": "5.0.1(13)",
+        "compatibleSdkVersion": "5.0.2(14)",
         "runtimeOS": "HarmonyOS",
       }
     ],
