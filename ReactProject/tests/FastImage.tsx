@@ -14,10 +14,14 @@ export default FastImageDemo = () => {
           style={styles.image}
           source={{
             uri: "https://res8.vmallres.com/pimages/uomcdn/CN/pms/202205/gbom/6941487259298/428_428_D7BFF22D4678EB68440F914B352214C4mp_tds.png",
+            // headers: { Authorization: 'someAuthToken' },
           }}
           resizeMode={FastImage.resizeMode.contain}
           onLoadStart={() => {
             console.log("onLoadStart: success");
+          }}
+          onTouchStart={() => {
+            console.log("chy onTouchStart")
           }}
           onProgress={(e: OnProgressEvent) => {
             console.log(

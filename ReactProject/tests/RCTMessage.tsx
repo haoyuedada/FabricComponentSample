@@ -17,10 +17,15 @@ const Test = () => {
     return (
         <View style={styles.container}>
             <Text>123456</Text>
-            <RCTMessageDialog style={{
-                width: 250,
-                height: 50
-            }}></RCTMessageDialog>
+            <RCTMessageDialog 
+                style={{
+                    width: 250,
+                    height: 50
+                }}
+                onTouchStart={() => {
+                    console.log("chy RCTMessage onTouchStart")
+                }}
+            ></RCTMessageDialog>
         </View>
     )
 }

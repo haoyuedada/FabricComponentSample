@@ -26,6 +26,9 @@ const App = () => {
         onScroll={(event) => {
           console.log(event.nativeEvent.offsetY)
         }}
+        onTouchStart={() => {
+          console.log("chy onTouchStart")
+        }}
       >
         <View style={{ width: '100%', height: 1000, backgroundColor: 'yellow' }}>
           <Pressable onPress={() => {

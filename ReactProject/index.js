@@ -11,6 +11,8 @@ import { AppRegistry } from 'react-native';
 import { name as appName } from './app.json';
 // import Test from './testTurboModule/test';
 // import RCTMessage from './tests/RCTMessage';
-import FastImage from './tests/FastImage';
+// import FastImage from './tests/FastImage';
+// import App from './App'
+import Modal from './tests/Modal'
 
-AppRegistry.registerComponent(appName, () => FastImage);
+AppRegistry.registerComponent(appName, () => Modal);
