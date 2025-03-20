@@ -4,8 +4,9 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-// react-native-openharmony\src\main\cpp\third-party\rn\ReactCommon\react\renderer\componentregistry
+// react-native-openharmony/src/main/cpp/third-party/rn/ReactCommon/react/renderer/componentregistry/componentNameByReactViewName.cpp
 #include "componentNameByReactViewName.h"
+#include <algorithm>
 #include <glog/logging.h>
 
 namespace facebook::react {
@@ -14,14 +15,14 @@ std::string componentNameByReactViewName(std::string viewName) {
   // We need this function only for the transition period;
   // eventually, all names will be unified.
 
+
   // TODO T97384889: unify component names between JS - Android - iOS - C++
   std::string rctPrefix("RCT");
-//  if (std::mismatch(rctPrefix.begin(), rctPrefix.end(), viewName.begin())
-//          .first == rctPrefix.end()) {
-if (std::mismatch(rctPrefix.begin(), rctPrefix.end(), viewName.begin()).first == rctPrefix.end()) {
+  if (std::mismatch(rctPrefix.begin(), rctPrefix.end(), viewName.begin()).first == rctPrefix.end()) {
     // If `viewName` has "RCT" prefix, remove it.
 //    viewName.erase(0, rctPrefix.length());
- // RNC: patch
+    LOG(INFO) << "chy componentNameByReactViewName:" << viewName;
+    // RNC: patch
     if (viewName == "RCTView") {
       viewName = "View";
     } else if (viewName == "RCTRawText") {
@@ -40,10 +41,17 @@ if (std::mismatch(rctPrefix.begin(), rctPrefix.end(), viewName.begin()).first ==
       viewName = "ImageView";
     } else if (viewName == "RCTSinglelineTextInputView") {
       viewName = "SinglelineTextInputView";
+    } else if (viewName == "RCTModalHostView") {
+      viewName = "ModalHostView";
+    } else if (viewName == "RCTRefreshControl") {
+      viewName = "RefreshControl";
+    } else if (viewName == "RCTSwitch") {
+      viewName = "Switch";
     } else {
       DLOG(INFO) << "Skipped removing RCT prefix for component: " << viewName;
     }
   }
+
 
   // Fabric uses slightly new names for Text components because of differences
   // in semantic.
@@ -84,8 +92,6 @@ if (std::mismatch(rctPrefix.begin(), rctPrefix.end(), viewName.begin()).first ==
   }
 
   // iOS-only
-//  if (viewName == "MultilineTextInputView" ||
-//      viewName == "SinglelineTextInputView") {
   if (viewName == "MultilineTextInputView" || viewName == "SinglelineTextInputView") {
     return "TextInput";
   }
