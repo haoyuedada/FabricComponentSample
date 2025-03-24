@@ -13,6 +13,7 @@ import SampleTurboModule from 'turbo-module/src/specs/v1/SampleTurboModule';
 
 // 测试用例
 const Test = () => {
+  SampleTurboModule.testParamsEmpty("12345453");
   SampleTurboModule.pushStringToHarmony('test', (value) => {
     console.log("chy pushStringToHarmony value:", value)
   })
@@ -20,6 +21,7 @@ const Test = () => {
   SampleTurboModule.pushStringToHarmonyCallBack('test', (value) => {
     console.log("chy pushStringToHarmonyCallBack value:", value)
   })
+  
   return (
     <View style={styles.container}>
       <Text>232352</Text>

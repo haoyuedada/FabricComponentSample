@@ -9,6 +9,7 @@ import { TurboModule, TurboModuleRegistry } from "react-native";
 
 // 使用自定义的TurboModules
 export interface Spec extends TurboModule {
+  testParamsEmpty(): void;
   pushStringToHarmony(arg: string, testCallBack: (value: string) => void): void;
   pushStringToHarmonyCallBack(arg: string, testCallBack: (value: string) => void): void;
 }

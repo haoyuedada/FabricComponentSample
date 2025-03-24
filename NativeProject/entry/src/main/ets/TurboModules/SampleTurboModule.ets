@@ -17,11 +17,8 @@ interface GeneratedObjectLiteralInterface_1 {
 }
 
 export class SampleTurboModule extends TurboModule {
-  getConstants() {
-    // let myMap: HashMap<string, number> = new HashMap<string, number>();
-    // myMap.set("key1", 1)
-    let obj: GeneratedObjectLiteralInterface_1 = {"key": 2}
-    return obj;
+  testParamsEmpty() {
+    console.log("chy execute testParamsEmpty")
   }
 
   pushStringToHarmony(arg: string, testCallBack: (value:string) => void): string {
