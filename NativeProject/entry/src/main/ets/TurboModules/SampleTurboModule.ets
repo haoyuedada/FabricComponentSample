@@ -6,7 +6,7 @@
  */
 
 import { TurboModule } from '@rnoh/react-native-openharmony/ts';
-import { HashMap } from '@kit.ArkTS';
+import { TM } from "@rnoh/react-native-openharmony/generated/ts"
 
 export interface TurboModuleEventData {
   param: string
@@ -16,7 +16,26 @@ interface GeneratedObjectLiteralInterface_1 {
   "key": number;
 }
 
+interface doAsyncJobDataType {
+  "id": number;
+  "message": string
+}
+
+
 export class SampleTurboModule extends TurboModule {
+  getConstants(): Promise<TM.SampleTurboModule.Constants>{
+    let obj: TM.SampleTurboModule.Constants = {
+      id: 123,
+      Data: {
+        id: 123,
+        message: "from getConstants"
+      }
+    }
+    return new Promise((resolve, reject) => {
+      resolve(obj);
+    });
+	}
+
   testParamsEmpty() {
     console.log("chy execute testParamsEmpty")
   }
@@ -31,7 +50,16 @@ export class SampleTurboModule extends TurboModule {
     return arg;
   }
 
-  loadInfoCallBack(key: string, callback: (value: string) => void): void {
-    callback('loadInfoCallBack')
+  doAsyncJob(shouldResolve: boolean): Promise<doAsyncJobDataType> {
+    let doAsyncJobData: doAsyncJobDataType =  { id: 123, message: 'hahaha'};
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (shouldResolve) {
+          resolve(doAsyncJobData);
+        } else {
+          reject('rejected on native side');
+        }
+      }, 100);
+    });
   }
 }

@@ -10,17 +10,22 @@ import React, { useRef } from 'react';
 import { StyleSheet, Text, View, Pressable, UIManager, findNodeHandle, Dimensions } from 'react-native';
 import SampleTurboModule from 'turbo-module/src/specs/v1/SampleTurboModule';
 
-
-// 测试用例
-const Test = () => {
+const execuTurboModule = async() => {
   SampleTurboModule.testParamsEmpty("12345453");
   SampleTurboModule.pushStringToHarmony('test', (value) => {
-    console.log("chy pushStringToHarmony value:", value)
+    // console.log("chy pushStringToHarmony value:", value)
+  })
+  await SampleTurboModule.doAsyncJob(true).then((value) => {
+    // console.log("chy doAsyncJob value:", value)
   })
   console.log("chy ================", SampleTurboModule);
   SampleTurboModule.pushStringToHarmonyCallBack('test', (value) => {
-    console.log("chy pushStringToHarmonyCallBack value:", value)
+    // console.log("chy pushStringToHarmonyCallBack value:", value)
   })
+}
+// 测试用例
+const Test = () => {
+  execuTurboModule();
   
   return (
     <View style={styles.container}>
