@@ -12,16 +12,32 @@ import codegenNativeCommands from 'react-native/Libraries/Utilities/codegenNativ
 import type {
   Float,
   DirectEventHandler,
+  Double
 } from 'react-native/Libraries/Types/CodegenTypes';
+import type { UnsafeMixed } from './codegenUtils';
 
 export interface ScrollEvent {
   offsetY: Float;
+}
+
+export interface testObj2Data {
+  id?: string
 }
 
 export interface NativeProps extends ViewProps {
   stopPercent?: Float,
   stopPercentMax?: Float,
   onScroll?: DirectEventHandler<ScrollEvent>;
+  testObj1: UnsafeMixed<Readonly<{}>>,
+  testObj2: UnsafeMixed<Readonly<testObj2Data>>,
+  // transform?: ReadonlyArray<Transform> | null,
+  menuItems?: UnsafeMixed<ReadonlyArray<UnsafeMixed<Readonly<{label: string, key: string}>>>>;
+  contentInset?: UnsafeMixed<Readonly<{
+    top?: Double;
+    left?: Double;
+    bottom?: Double;
+    right?: Double;
+  }>>;
 }
 
 type NativeType = HostComponent<NativeProps>;

@@ -29,6 +29,10 @@ const App = () => {
         onTouchStart={() => {
           console.log("chy onTouchStart")
         }}
+        testObj1={{ id: 'testObj1' }}
+        testObj2={{ id: 'testObj2' }}
+        menuItems={[{ label: 'item1', key: 'key1' }, { label: 'item2', key: 'key2' }]}
+        contentInset={{ top: 10, left: 10, bottom: 10, right: 10 }}
       >
         <View style={{ width: '100%', height: 1000, backgroundColor: 'yellow' }}>
           <Pressable onPress={() => {
