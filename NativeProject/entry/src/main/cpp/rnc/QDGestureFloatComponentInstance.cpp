@@ -36,9 +36,9 @@ void QDGestureFloatComponentInstance::onPropsChanged(SharedConcreteProps const &
   if (props->stopPercentMax) {
     m_stopPercentMax = props->stopPercentMax;
   }
-  LOG(INFO) << "CHY onPropsChanged props->stopPercent->testObj1:" << props->testObj1;
+  LOG(INFO) << "CHY onPropsChanged props->stopPercent->testObj1['id'']:" << props->testObj1["id"];
   LOG(INFO) << "CHY onPropsChanged props->stopPercent->testObj2:" << props->testObj2;  
-  LOG(INFO) << "CHY onPropsChanged props->stopPercent->menuItems:" << props->menuItems;
+  LOG(INFO) << "CHY onPropsChanged props->stopPercent->menuItems[0]:" << props->menuItems[0];
   LOG(INFO) << "CHY onPropsChanged props->stopPercent->contentInset:" << props->contentInset;
 };
 
