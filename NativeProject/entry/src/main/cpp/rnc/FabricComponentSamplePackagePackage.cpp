@@ -11,6 +11,7 @@
 #include "RNOHCorePackage/ComponentBinders/ViewComponentJSIBinder.h"
 #include "RNOHCorePackage/ComponentBinders/ViewComponentNapiBinder.h"
 #include "QDGestureFloatComponentInstance.h"
+#include "QDScrollViewComponentInstance.h"
 
 using namespace facebook;
 
@@ -19,6 +20,8 @@ ComponentInstance::Shared FabricComponentSamplePackagePackage::createComponentIn
       const ComponentInstance::Context& ctx) {
   if (ctx.componentName == "QDGestureFloat") {
     return std::make_shared<QDGestureFloatComponentInstance>(std::move(ctx));
+  } else if ( ctx.componentName == "QDScrollView" ) {
+    return std::make_shared<QDScrollViewComponentInstance>(std::move(ctx));
   }
   return nullptr;
 };

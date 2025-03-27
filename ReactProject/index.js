@@ -12,7 +12,9 @@ import { name as appName } from './app.json';
 import Test from './testTurboModule/test';
 // import RCTMessage from './tests/RCTMessage';
 // import FastImage from './tests/FastImage';
-// import App from './App'
+import App from './App'
 import Modal from './tests/Modal'
+import ScrollView from './tests/ScrollView'
+import QDScrollView from './tests/QDScrollView'
 
-AppRegistry.registerComponent(appName, () => Test);
+AppRegistry.registerComponent(appName, () => QDScrollView);

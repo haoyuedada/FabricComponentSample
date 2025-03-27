@@ -1,0 +1,58 @@
+import QDScrollViewNativeComponent from 'fabric-component-sample-package/src/specs/v2/QDGestureFloatNativeComponent';
+import React, { useRef } from 'react';
+import { StyleSheet, Text, View, Pressable, UIManager, findNodeHandle, Dimensions } from 'react-native';
+
+const ScreenHeight = Dimensions.get('window').height;
+const App = () => {
+    const floatRef = useRef(null)
+    return (
+      <View style={styles.container}>
+        <QDScrollViewNativeComponent
+          ref={floatRef}
+          style={styles.container}
+          stopPercent={0.5}
+          stopPercentMax={0.75}
+          onScroll={(event) => {
+            console.log(event.nativeEvent.offsetY)
+          }}
+          onTouchStart={() => {
+            console.log("chy onTouchStart")
+          }}
+          testObj1={{ id: 'testObj1' }}
+          testObj2={{ id: 'testObj2' }}
+          menuItems={[{ label: 'item1', key: 'key1' }, { label: 'item2', key: 'key2' }]}
+          contentInset={{ top: 10, left: 10, bottom: 10, right: 10 }}
+        >
+          <View style={{ width: '100%', height: 1000, backgroundColor: 'yellow' }}>
+            <Pressable onPress={() => {
+              if (floatRef.current) {
+                // RN向原生发送消息
+                UIManager.dispatchViewManagerCommand(
+                  findNodeHandle(floatRef.current),
+                  'scrollTo',
+                  [ScreenHeight, true, [1,23]]
+                );
+              }
+            }}>
+              <Text style={{ fontSize: 50, color: 'red' }}>点我滚到顶</Text>
+            </Pressable>
+          </View>
+        </QDScrollViewNativeComponent>
+      </View>
+    )
+  }
+  
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+    },
+    title: {
+      backgroundColor: 'green',
+      color: 'white',
+      fontSize: 20,
+      padding: 8,
+      textAlign: 'center'
+    }
+  });
+  
+  export default App;

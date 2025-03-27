@@ -21,15 +21,20 @@ interface doAsyncJobDataType {
   "message": string
 }
 
+interface DataType {
+  id: number,
+  message: string
+}
 
 export class SampleTurboModule extends TurboModule {
   getConstants(): Promise<TM.SampleTurboModule.Constants>{
+    let Data: DataType = {
+      id: 123,
+      message: "from getConstants"
+    }
     let obj: TM.SampleTurboModule.Constants = {
       id: 123,
-      Data: {
-        id: 123,
-        message: "from getConstants"
-      }
+      Data: Data
     }
     return new Promise((resolve, reject) => {
       resolve(obj);
