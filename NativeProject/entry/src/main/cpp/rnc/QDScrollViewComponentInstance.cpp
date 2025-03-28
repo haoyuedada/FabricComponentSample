@@ -8,26 +8,21 @@
 #pragma once
 
 #include "QDScrollViewComponentInstance.h"
+#include <react/renderer/components/scrollview/ScrollViewShadowNode.h>
+#include <react/renderer/components/scrollview/ScrollViewState.h>
+#include <react/renderer/core/ConcreteState.h>
 
 namespace rnoh {
 
 QDScrollViewComponentInstance::QDScrollViewComponentInstance(Context context) : Super(std::move(context)) {
+  m_scrollNode.insertChild(m_scrollContainerNode);
+  m_scrollNode.setAlignment(ARKUI_ALIGNMENT_TOP_START);
   m_scrollNode.setScrollNodeDelegate(this);
-  getLocalRootArkUINode().insertChild(m_scrollNode, 0);
-  m_scrollNode.insertChild(m_scrollContentNode);
-  m_scrollContentNode.insertChild(m_transparentNode, 0);
-  m_scrollContentNode.insertChild(m_contentNode, 1);
-
-  m_scrollNode.setScrollBarDisplayMode(ArkUI_ScrollBarDisplayMode::ARKUI_SCROLL_BAR_DISPLAY_MODE_OFF);
+  m_scrollNode.setNestedScroll(ARKUI_SCROLL_NESTED_MODE_SELF_FIRST);
 }
 
-facebook::react::Point rnoh::QDScrollViewComponentInstance::getCurrentOffset() const {
-  auto offset = m_scrollNode.getScrollOffset();
-  offset.y -= m_height;
-  return offset;
-}
 
-StackNode &QDScrollViewComponentInstance::getLocalRootArkUINode() { return m_scrollContainerNode; }
+ScrollNode &QDScrollViewComponentInstance::getLocalRootArkUINode() { return m_scrollNode; }
 
 void QDScrollViewComponentInstance::onPropsChanged(SharedConcreteProps const &props){
   if (props->stopPercent) {
@@ -45,37 +40,64 @@ void QDScrollViewComponentInstance::onPropsChanged(SharedConcreteProps const &pr
 void QDScrollViewComponentInstance::onChildInserted(ComponentInstance::Shared const &childComponentInstance,
                                                       std::size_t index) {
   CppComponentInstance::onChildInserted(childComponentInstance, index);
-  m_contentNode.insertChild(childComponentInstance->getLocalRootArkUINode(), index);
-  if (!m_isInit) {
-    auto layoutMetrics = getLayoutMetrics();
-    m_width = layoutMetrics.frame.size.width;
-    m_height = layoutMetrics.frame.size.height;
-    m_transparentNode.setSize(facebook::react::Size{m_width, m_height});
-    m_scrollNode.scrollTo(0, m_height * m_stopPercent, false);
-  }
+  m_scrollContainerNode.insertChild(childComponentInstance->getLocalRootArkUINode(), index);
 }
 
 void QDScrollViewComponentInstance::onChildRemoved(ComponentInstance::Shared const &childComponentInstance) {
   CppComponentInstance::onChildRemoved(childComponentInstance);
-  m_contentNode.removeChild(childComponentInstance->getLocalRootArkUINode());
+  m_scrollContainerNode.removeChild(childComponentInstance->getLocalRootArkUINode());
+}
+
+void QDScrollViewComponentInstance::setLayout(
+    facebook::react::LayoutMetrics layoutMetrics) {
+//  getLocalRootArkUINode().setSize(layoutMetrics.frame.size);
+//  m_scrollNode.setSize(layoutMetrics.frame.size);
+//  m_layoutMetrics = layoutMetrics;
+//  if (m_containerSize != layoutMetrics.frame.size) {
+//    m_containerSize = layoutMetrics.frame.size;
+//  }
+//  if (m_layoutMetrics.layoutDirection != layoutMetrics.layoutDirection) {
+//    m_scrollNode.setDirection(
+//        convertLayoutDirection(layoutMetrics.layoutDirection));
+//  }
+//  markBoundingBoxAsDirty();
 }
 
 void QDScrollViewComponentInstance::onScroll() {
-  auto offsetY = m_scrollNode.getScrollOffset().y;
-  facebook::react::QDScrollViewEventEmitter::OnScroll event = {offsetY};
-  m_eventEmitter->onScroll(event);
 }
 
 void QDScrollViewComponentInstance::onScrollStop() {
-  auto y = m_scrollNode.getScrollOffset().y;
-  if (y <= m_height && y > m_height * m_stopPercentMax) {
-    m_scrollNode.scrollTo(0, m_height, true);
-  } else if (y < m_height * m_stopPercent || (y <= m_height && y > m_height * m_stopPercent)) {
-    m_scrollNode.scrollTo(0, m_height * m_stopPercent, true);
+
+}
+
+facebook::react::ScrollViewMetrics
+QDScrollViewComponentInstance::getScrollViewMetrics() {
+  auto scrollViewMetrics = facebook::react::ScrollViewMetrics();
+  scrollViewMetrics.responderIgnoreScroll = true;
+  scrollViewMetrics.zoomScale = 1;
+  scrollViewMetrics.contentSize = m_contentSize;
+  scrollViewMetrics.contentOffset = getScrollOffset();
+  scrollViewMetrics.containerSize = m_containerSize;
+  return scrollViewMetrics;
+}
+
+facebook::react::Float QDScrollViewComponentInstance::adjustOffsetToRTL(
+    facebook::react::Float x) const {
+  auto isRTL = m_layoutMetrics.layoutDirection ==
+      facebook::react::LayoutDirection::RightToLeft;
+  if (isRTL) {
+    x = m_contentSize.width - m_containerSize.width - x;
   }
+  return x;
 }
 
 void QDScrollViewComponentInstance::onScrollToCommand(float offsetY, bool animated) {
   m_scrollNode.scrollTo(0, offsetY, animated);
+}
+
+facebook::react::Point QDScrollViewComponentInstance::getScrollOffset() const {
+  auto scrollOffset = m_scrollNode.getScrollOffset();
+  scrollOffset.x = adjustOffsetToRTL(scrollOffset.x);
+  return scrollOffset;
 }
 } // namespace rnoh

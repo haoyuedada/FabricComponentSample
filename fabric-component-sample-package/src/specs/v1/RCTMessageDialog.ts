@@ -41,6 +41,7 @@ export type setConfirmData = Readonly<{
 }>
 
 export interface NativeProps extends ViewProps {
+    title: string,
     setTitle: DirectEventHandler<setTitleData>,
     setVisible: DirectEventHandler<setVisibleData>,
     setMessage: DirectEventHandler<setMessageDate>,

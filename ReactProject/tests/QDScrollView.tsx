@@ -1,58 +1,39 @@
-import QDScrollViewNativeComponent from 'fabric-component-sample-package/src/specs/v2/QDGestureFloatNativeComponent';
+import QDScrollViewNativeComponent from 'fabric-component-sample-package/src/specs/v2/QDScrollViewNativeComponent';
 import React, { useRef } from 'react';
-import { StyleSheet, Text, View, Pressable, UIManager, findNodeHandle, Dimensions } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, StatusBar, Pressable, UIManager, findNodeHandle, Dimensions } from 'react-native';
 
 const ScreenHeight = Dimensions.get('window').height;
 const App = () => {
-    const floatRef = useRef(null)
-    return (
-      <View style={styles.container}>
-        <QDScrollViewNativeComponent
-          ref={floatRef}
-          style={styles.container}
-          stopPercent={0.5}
-          stopPercentMax={0.75}
-          onScroll={(event) => {
-            console.log(event.nativeEvent.offsetY)
-          }}
-          onTouchStart={() => {
-            console.log("chy onTouchStart")
-          }}
-          testObj1={{ id: 'testObj1' }}
-          testObj2={{ id: 'testObj2' }}
-          menuItems={[{ label: 'item1', key: 'key1' }, { label: 'item2', key: 'key2' }]}
-          contentInset={{ top: 10, left: 10, bottom: 10, right: 10 }}
-        >
-          <View style={{ width: '100%', height: 1000, backgroundColor: 'yellow' }}>
-            <Pressable onPress={() => {
-              if (floatRef.current) {
-                // RN向原生发送消息
-                UIManager.dispatchViewManagerCommand(
-                  findNodeHandle(floatRef.current),
-                  'scrollTo',
-                  [ScreenHeight, true, [1,23]]
-                );
-              }
-            }}>
-              <Text style={{ fontSize: 50, color: 'red' }}>点我滚到顶</Text>
-            </Pressable>
-          </View>
-        </QDScrollViewNativeComponent>
-      </View>
-    )
-  }
-  
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-    },
-    title: {
-      backgroundColor: 'green',
-      color: 'white',
-      fontSize: 20,
-      padding: 8,
-      textAlign: 'center'
-    }
-  });
-  
-  export default App;
+  const floatRef = useRef(null)
+  return (
+    <SafeAreaView style={styles.container}>
+      <QDScrollViewNativeComponent style={styles.scrollView}>
+        <Text style={styles.text}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Text>
+      </QDScrollViewNativeComponent>
+    </SafeAreaView>
+  )
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: StatusBar.currentHeight,
+  },
+  scrollView: {
+    backgroundColor: 'pink',
+    marginHorizontal: 20,
+  },
+  text: {
+    fontSize: 42,
+  },
+});
+
+export default App;

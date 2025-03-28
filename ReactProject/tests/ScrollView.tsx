@@ -9,7 +9,7 @@ import {
 
 const App = () => {
   return (
-    <SafeAreaView style={styles.container}>
+    // <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
         <Text style={styles.text}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -21,18 +21,13 @@ const App = () => {
           culpa qui officia deserunt mollit anim id est laborum.
         </Text>
       </ScrollView>
-    </SafeAreaView>
+    // </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: StatusBar.currentHeight,
-  },
   scrollView: {
     backgroundColor: 'pink',
-    marginHorizontal: 20,
   },
   text: {
     fontSize: 42,

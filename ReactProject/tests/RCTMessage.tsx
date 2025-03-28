@@ -18,6 +18,7 @@ const Test = () => {
         <View style={styles.container}>
             <Text>123456</Text>
             <RCTMessageDialog 
+                title='123456'
                 style={{
                     width: 250,
                     height: 50

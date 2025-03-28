@@ -5,36 +5,34 @@
  * LICENSE-MIT file in the root directory of this source tree.
  */
 
-import { RNOHContext, RNViewBase } from '@rnoh/react-native-openharmony';
+import { RNOHContext, RNViewBase, Descriptor, ViewBaseProps } from '@rnoh/react-native-openharmony';
 import { RNC } from "@rnoh/react-native-openharmony/generated"
+
+interface RCTMessageDialogProps extends ViewBaseProps {
+  title: string
+}
+
+export type RCTMessageDialogDescriptor = Descriptor<"RCTMessageDialog", RCTMessageDialogProps>
 
 @Component
 export struct RCTMessageDialog {
   public static readonly NAME:string = RNC.RCTMessageDialog.NAME
   public ctx!: RNOHContext
   public tag: number = 0
-  @State descriptorWrapper: RNC.RCTMessageDialog.DescriptorWrapper = {} as RNC.RCTMessageDialog.DescriptorWrapper
-  @State mutil: boolean = false
-  private eventEmitter: RNC.RCTMessageDialog.EventEmitter | undefined = undefined
+  @State descriptor: RCTMessageDialogDescriptor = {} as RCTMessageDialogDescriptor
   private cleanUpCallbacks: (() => void)[] = []
 
   aboutToAppear() {
-    this.eventEmitter = new RNC.RCTMessageDialog.EventEmitter(this.ctx.rnInstance, this.tag)
-    this.onDescriptorWrapperChange(this.ctx.descriptorRegistry.findDescriptorWrapperByTag<RNC.RCTMessageDialog.DescriptorWrapper>(this.tag)!)
+    this.descriptor = this.ctx.descriptorRegistry.getDescriptor<RCTMessageDialogDescriptor>(this.tag)
     this.cleanUpCallbacks.push(this.ctx.descriptorRegistry.subscribeToDescriptorChanges(this.tag,
-      (descriptor) => {
-        this.onDescriptorWrapperChange(new RNC.RCTMessageDialog.DescriptorWrapper(descriptor))
+      (newDescriptor) => {
+        this.descriptor = (newDescriptor as RCTMessageDialogDescriptor)
+        console.log('this.descriptor:', JSON.stringify(this.descriptor.props))
       }
     ))
-    // this.cleanUpCallbacks.push(new RNC.SelectBox.CommandReceiver(this.ctx.componentCommandReceiver,
-    //   this.tag).subscribe("emitNativeEvent", (argv) => {
-    //   console.log(`收到 RN 传来的消息 ================ ${JSON.stringify(argv)}`);
-    //   this.mutil = argv[0] || false
-    // }))
-  }
+    this.cleanUpCallbacks.push(this.ctx.componentCommandReceiver.registerCommandCallback(this.tag, (commandName) => {
 
-  private onDescriptorWrapperChange(descriptorWrapper: RNC.RCTMessageDialog.DescriptorWrapper) {
-    this.descriptorWrapper = descriptorWrapper
+    }))
   }
 
   aboutToDisappear() {
@@ -45,7 +43,7 @@ export struct RCTMessageDialog {
     RNViewBase({ ctx: this.ctx, tag: this.tag }) {
       Column() {
         Button("RCTMessageDialog")
-          .onClick(() => {})
+        .onClick(() => {})
       }
       .height("100%")
     }
