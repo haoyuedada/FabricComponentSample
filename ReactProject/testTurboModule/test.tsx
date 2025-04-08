@@ -7,7 +7,7 @@
 
 
 import React, { useRef } from 'react';
-import { StyleSheet, Text, View, Pressable, UIManager, findNodeHandle, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, Pressable, UIManager, findNodeHandle, Dimensions, DeviceEventEmitter } from 'react-native';
 import SampleTurboModule from 'turbo-module/src/specs/v1/SampleTurboModule';
 
 const execuTurboModule = async() => {
@@ -26,7 +26,11 @@ const execuTurboModule = async() => {
 // 测试用例
 const Test = () => {
   execuTurboModule();
-  
+  DeviceEventEmitter.addListener('emitEvent', (event) => {
+    console.log("chy emitEvent event:", event)
+  })
+
+
   return (
     <View style={styles.container}>
       <Text>232352</Text>

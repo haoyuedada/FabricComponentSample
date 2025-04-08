@@ -19,10 +19,10 @@ const Test = () => {
             <Text>123456</Text>
             <RCTMessageDialog 
                 title='123456'
-                style={{
-                    width: 250,
-                    height: 50
-                }}
+                // style={{
+                //     width: 250,
+                //     height: 50
+                // }}
                 onTouchStart={() => {
                     console.log("chy RCTMessage onTouchStart")
                 }}

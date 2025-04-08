@@ -30,7 +30,7 @@ export interface EventInput {
 }
 
 export interface MHCameraOpenGLViewProps extends ViewProps {
-    transform?: UnsafeMixed<ReadonlyArray<Readonly<{}>>> | null,
+    transformm?: UnsafeMixed<ReadonlyArray<Readonly<{}>>> | null,
     did?: string,
     videoCodec?: Int32,
     correctRadius?: Float,

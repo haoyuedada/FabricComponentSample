@@ -45,7 +45,7 @@ export struct RCTMessageDialog {
         Button("RCTMessageDialog")
         .onClick(() => {})
       }
-      .height("100%")
+      // .height(100)
     }
   }
 }

@@ -20,6 +20,7 @@ import {
 import { createRNPackages } from '../RNPackagesFactory';
 import { SelectBox } from "../RNComponent/SelectBox"
 import { RCTMessageDialog } from "../RNComponent/RCTMessageDialog"
+import map from '@hms.core.map.map';
 
 const arkTsComponentNames: Array<string> = [SelectBox.NAME, RCTMessageDialog.NAME];
 
@@ -84,6 +85,9 @@ struct Index {
           wrappedCustomRNComponentBuilder: wrappedCustomRNComponentBuilder,
           onSetUp: (rnInstance) => {
             rnInstance.enableFeatureFlag("ENABLE_RN_INSTANCE_CLEAN_UP")
+            let obj = new Map<string, string>();
+            obj.set('aa', 'aa')
+            rnInstance.emitDeviceEvent("emitEvent", obj)
           },
           jsBundleProvider: new TraceJSBundleProviderDecorator(
             new AnyJSBundleProvider([
