@@ -38,6 +38,7 @@ export struct SelectBox {
 
   aboutToAppear() {
     this.eventEmitter = new RNC.SelectBox.EventEmitter(this.ctx.rnInstance, this.tag)
+    console.log("this.tag:", this.tag)
     this.onDescriptorWrapperChange(this.ctx.descriptorRegistry.findDescriptorWrapperByTag<RNC.SelectBox.DescriptorWrapper>(this.tag)!)
     this.cleanUpCallbacks.push(this.ctx.descriptorRegistry.subscribeToDescriptorChanges(this.tag,
       (descriptor) => {
@@ -90,11 +91,10 @@ export struct SelectBox {
               .filter((item: SelectItems) => item.selected)
               .map((item: SelectItems) => item.id)
             // 发送事件方式[1]
-            // this.ctx.rnInstance.emitComponentEvent(this.tag, "change", { value })
+            // let value = { test: 2}
+            // this.ctx.rnInstance.emitComponentEvent(this.tag, "change", { temutilst: true})
             // 发送事件方式[2]
-            this.eventEmitter!.emit("change", {
-              value,
-            })
+            this.eventEmitter!.emit("change", { value: [1, 2]} )
           })
       }
       .height("100%")
