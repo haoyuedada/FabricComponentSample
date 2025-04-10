@@ -9,10 +9,10 @@
 
 import { AppRegistry } from 'react-native';
 import { name as appName } from './app.json';
-import Test from './testTurboModule/test';
+// import Test from './testTurboModule/test';
 // import RCTMessage from './tests/RCTMessage';
 // import FastImage from './tests/FastImage';
-// import App from './App'
+import App from './App'
 // import Modal from './tests/Modal'
 // import ScrollView from './tests/ScrollView'
 // import QDScrollView from './tests/QDScrollView'
@@ -21,4 +21,4 @@ import Test from './testTurboModule/test';
 // import Image from './tests/Image'
 // import Animatedtwo from './tests/Animatedtwo'
 
-AppRegistry.registerComponent(appName, () => Test);
+AppRegistry.registerComponent(appName, () => App);

@@ -27,7 +27,7 @@ class SelectItems {
 
 @Component
 export struct SelectBox {
-  public static readonly NAME:string = RNC.SelectBox.NAME
+  public static readonly NAME: string = RNC.SelectBox.NAME
   public ctx!: RNOHContext
   public tag: number = 0
   @State descriptorWrapper: RNC.SelectBox.DescriptorWrapper = {} as RNC.SelectBox.DescriptorWrapper
@@ -96,7 +96,7 @@ export struct SelectBox {
             // let value = { test: 2}
             // this.ctx.rnInstance.emitComponentEvent(this.tag, "change", { temutilst: true})
             // 发送事件方式[2]
-            this.eventEmitter!.emit("change", { value: [1, 2]} )
+            this.eventEmitter!.emit("change", { value: [1, 2] })
           })
       }
       .height("100%")

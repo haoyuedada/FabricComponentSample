@@ -18,7 +18,8 @@ const App = () => {
   const floatRef = useRef(null)
   return (
     <View style={styles.container}>
-      <QDGestureFloat
+      <SelectBoxApp />
+      {/* <QDGestureFloat
         ref={floatRef}
         style={styles.container}
         stopPercent={0.5}
@@ -49,7 +50,7 @@ const App = () => {
           </Pressable>
           <SelectBoxApp />
         </View>
-      </QDGestureFloat>
+      </QDGestureFloat> */}
     </View>
   )
 }
@@ -57,6 +58,7 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginTop: 250
   },
   title: {
     backgroundColor: 'green',

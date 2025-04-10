@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "@react-native-oh-tpl/react-native-fast-image": "^8.6.3-0.4.10",
-    "@react-native-oh/react-native-harmony": "^0.72.48-2",
+    "@react-native-oh/react-native-harmony": "npm:@ohmi/react-native-harmony@^0.72.58-rc1.0.2",
+    "@rnoh/react-native-harmony-cli": "npm:@react-native-oh/react-native-harmony-cli@^0.0.27",
     "fabric-component-sample-package": "file:../fabric-component-sample-package/fabric-component-sample-package-1.0.0.tgz",
     "react": "18.2.0",
     "react-native": "0.72.5",
