@@ -45,11 +45,12 @@ export struct SelectBox {
         this.onDescriptorWrapperChange(new RNC.SelectBox.DescriptorWrapper(descriptor))
       }
     ))
-    // this.cleanUpCallbacks.push(new RNC.SelectBox.CommandReceiver(this.ctx.componentCommandReceiver,
-    //   this.tag).subscribe("emitNativeEvent", (argv) => {
-    //   console.log(`收到 RN 传来的消息 ================ ${JSON.stringify(argv)}`);
-    //   this.mutil = argv[0] || false
-    // }))
+    // RN => NATIVE
+    this.cleanUpCallbacks.push(new RNC.SelectBox.CommandReceiver(this.ctx.componentCommandReceiver,
+      this.tag).subscribe("emitNativeEvent", (argv: [boolean]) => {
+      console.log(`收到 RN 传来的消息 ================ ${JSON.stringify(argv)}`);
+      this.mutil = argv[0] || false
+    }))
   }
 
   private onDescriptorWrapperChange(descriptorWrapper: RNC.SelectBox.DescriptorWrapper) {
@@ -90,6 +91,7 @@ export struct SelectBox {
             const value = this.data
               .filter((item: SelectItems) => item.selected)
               .map((item: SelectItems) => item.id)
+            // NATIVE => RN
             // 发送事件方式[1]
             // let value = { test: 2}
             // this.ctx.rnInstance.emitComponentEvent(this.tag, "change", { temutilst: true})
