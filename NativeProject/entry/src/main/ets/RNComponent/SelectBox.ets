@@ -94,9 +94,9 @@ export struct SelectBox {
             // NATIVE => RN
             // 发送事件方式[1]
             // let value = { test: 2}
-            // this.ctx.rnInstance.emitComponentEvent(this.tag, "change", { temutilst: true})
+            this.ctx.rnInstance.emitComponentEvent(this.tag, "changeInSelectBox", { temutilst: true})
             // 发送事件方式[2]
-            this.eventEmitter!.emit("change", { value: [1, 2] })
+            // this.eventEmitter!.emit("changeInSelectBox", { value: [1, 2] })
           })
       }
       .height("100%")

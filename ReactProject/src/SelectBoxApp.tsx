@@ -37,6 +37,11 @@ const App = () => {
   const [mutil, setMutil] = useState(false)
   const boxRef = useRef(null)
 
+  const onChange = (event: any) => {
+    setValue(event.nativeEvent.value)
+    console.log("Native 向 RN 发消息", event.nativeEvent)
+  }
+
   return (
     <View style={styles.container}>
       <Pressable onPress={() => {
@@ -59,10 +64,7 @@ const App = () => {
         }}
         value={value}
         data={DATA}
-        onChange={(event: any) => {
-          setValue(event.nativeEvent.value)
-          console.log(event.nativeEvent)
-        }}
+        onChangeInSelectBox={onChange}
       />
     </View>
   );
