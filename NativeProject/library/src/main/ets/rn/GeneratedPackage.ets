@@ -17,7 +17,7 @@ import type {
   DescriptorWrapperFactoryByDescriptorType
 } from '@rnoh/react-native-openharmony/ts';
 import { RNC, TM } from "@rnoh/react-native-openharmony/generated/ts"
-import { SampleTurboModule } from "./TurboModules/SampleTurboModule"
+import { SampleTurboModule } from "../TurboModules/SampleTurboModule"
 
 class GeneratedTurboModulesFactory extends TurboModulesFactory {
   private turboModules: string[] = [

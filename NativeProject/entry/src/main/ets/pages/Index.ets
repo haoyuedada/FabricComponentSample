@@ -5,105 +5,30 @@
  * LICENSE-MIT file in the root directory of this source tree.
  */
 
-import {
-  AnyJSBundleProvider,
-  ComponentBuilderContext,
-  FileJSBundleProvider,
-  MetroJSBundleProvider,
-  ResourceJSBundleProvider,
-  RNApp,
-  RNOHErrorDialog,
-  RNOHLogger,
-  TraceJSBundleProviderDecorator,
-  RNOHCoreContext
-} from '@rnoh/react-native-openharmony';
-import { createRNPackages } from '../RNPackagesFactory';
-import { SelectBox } from "../RNComponent/SelectBox"
-import { RCTMessageDialog } from "../RNComponent/RCTMessageDialog"
-import map from '@hms.core.map.map';
-
-const arkTsComponentNames: Array<string> = [SelectBox.NAME, RCTMessageDialog.NAME];
-
-@Builder
-export function buildCustomRNComponent(ctx: ComponentBuilderContext) {
-  Stack() {
-    if (ctx.componentName === SelectBox.NAME) {
-      SelectBox({
-        ctx: ctx.rnComponentContext,
-        tag: ctx.tag
-      })
-    } else if (ctx.componentName === RCTMessageDialog.NAME) {
-      RCTMessageDialog({
-        ctx: ctx.rnComponentContext,
-        tag: ctx.tag
-      })
-    }
-  }
-  .position({ x: 0, y: 0 })
-}
-
-const wrappedCustomRNComponentBuilder = wrapBuilder(buildCustomRNComponent)
+import router from '@ohos.router';
 
 @Entry
 @Component
 struct Index {
-  @StorageLink('RNOHCoreContext') private rnohCoreContext: RNOHCoreContext | undefined = undefined
-  @State shouldShow: boolean = false
-  private logger!: RNOHLogger
-
-  aboutToAppear() {
-    this.logger = this.rnohCoreContext!.logger.clone("Index")
-    const stopTracing = this.logger.clone("aboutToAppear").startTracing()
-    this.shouldShow = true
-    stopTracing()
-  }
-
-  onBackPress(): boolean | undefined {
-    // NOTE: this is required since `Ability`'s `onBackPressed` function always
-    // terminates or puts the app in the background, but we want Ark to ignore it completely
-    // when handled by RN
-    this.rnohCoreContext!.dispatchBackPress()
-    return true
-  }
+  @State message: string = '打开RN应用';
 
   build() {
-    Column() {
-      if (this.rnohCoreContext && this.shouldShow) {
-        if (this.rnohCoreContext?.isDebugModeEnabled) {
-          RNOHErrorDialog({ ctx: this.rnohCoreContext })
-        }
-        RNApp({
-          rnInstanceConfig: {
-            createRNPackages,
-            enableNDKTextMeasuring: true,
-            enableBackgroundExecutor: false,
-            enableCAPIArchitecture: true,
-            arkTsComponentNames: arkTsComponentNames,
-          },
-          initialProps: { "foo": "bar" } as Record<string, string>,
-          appKey: "app_name",
-          wrappedCustomRNComponentBuilder: wrappedCustomRNComponentBuilder,
-          onSetUp: (rnInstance) => {
-            rnInstance.enableFeatureFlag("ENABLE_RN_INSTANCE_CLEAN_UP")
-            let obj = new Map<string, string>();
-            obj.set('aa', 'aa')
-            rnInstance.emitDeviceEvent("emitEvent", obj)
-          },
-          jsBundleProvider: new TraceJSBundleProviderDecorator(
-            new AnyJSBundleProvider([
-              new MetroJSBundleProvider(),
-              // NOTE: to load the bundle from file, place it in
-              // `/data/app/el2/100/base/com.rnoh.tester/files/bundle.harmony.js`
-              // on your device. The path mismatch is due to app sandboxing on OpenHarmony
-              new FileJSBundleProvider('/data/storage/el2/base/files/bundle.harmony.js'),
-              new ResourceJSBundleProvider(this.rnohCoreContext.uiAbilityContext.resourceManager, 'hermes_bundle.hbc'),
-              new ResourceJSBundleProvider(this.rnohCoreContext.uiAbilityContext.resourceManager, 'bundle.harmony.js')
-            ]),
-            this.rnohCoreContext.logger),
-        })
+    Row() {
+      Column() {
+        Button(this.message)
+          .fontSize(20)
+          .onClick(() => {
+            router.pushUrl({ url: 'pages/RNPage' }, router.RouterMode.Standard, (err) => {
+              if (err) {
+                console.error(`Invoke pushUrl failed, code is ${err.code}, message is ${err.message}`);
+                return;
+              }
+              console.info('Invoke pushUrl succeeded.');
+            })
+          })
       }
+      .width('100%')
     }
     .height('100%')
-    .width('100%')
   }
 }
