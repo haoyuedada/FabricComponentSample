@@ -4,7 +4,6 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE-MIT file in the root directory of this source tree.
  */
-
 import { UPRNSDK } from '../UPRNSDK';
 import { createRNPackages } from '../rn/RNPackagesFactory';
 import { RNInfo } from '../model/RNInfo';
@@ -13,7 +12,6 @@ import {
   ResourceJSBundleProvider,
   RNSurface,
   ComponentBuilderContext,
-  RNAbility,
   RNOHCoreContext,
   RNComponentContext,
   RNOHContext,
@@ -21,8 +19,13 @@ import {
   TraceJSBundleProviderDecorator,
   AnyJSBundleProvider,
   MetroJSBundleProvider,
-  FileJSBundleProvider
+  FileJSBundleProvider,
+  LogBoxDialog,
+  LogBoxTurboModule,
+  RNOHLogger,
 } from "@rnoh/react-native-openharmony";
+import { SurfaceConfig2 } from '@rnoh/react-native-openharmony/src/main/ets/RNSurface'
+import { RNDevLoadingView } from "@rnoh/react-native-openharmony/src/main/ets/RNOH"
 import { SelectBox } from "../FabricComponent/SelectBox"
 import { RCTMessageDialog } from "../FabricComponent/RCTMessageDialog"
 
@@ -50,10 +53,19 @@ export struct UPReactView {
   @StorageLink('UPRNSDK') rnSdk: UPRNSDK | undefined = undefined;
   private rnInstance!: RNInstance;
   @State isBundleReady: boolean = false;
-  @StorageLink('RNAbility') private rnAbility: RNAbility = {} as RNAbility;
   private rnohCoreContext: RNOHCoreContext | undefined = AppStorage.get('RNOHCoreContext');
+  private logBoxDialogController!: CustomDialogController
+  private ctx!: RNComponentContext
+  public initialProps: Record<string, string> = {}
+  private cleanUpCallbacks: (() => void)[] = []
+  private logger!: RNOHLogger
 
-  async aboutToAppear() {
+  aboutToAppear() {
+    console.log("chy aa aboutToAppear")
+    this.init()
+  }
+
+  async init() {
     if (this.rnSdk) {
       this.rnInstance = await this.rnohCoreContext!.createAndRegisterRNInstance({
         createRNPackages: createRNPackages,
@@ -74,7 +86,57 @@ export struct UPReactView {
       ).then(() => {
         this.isBundleReady = true;
       })
+      this.ctx = new RNComponentContext(
+        RNOHContext.fromCoreContext(this.rnohCoreContext!, this.rnInstance),
+        wrapBuilder(buildCustomComponent),
+        wrapBuilder(buildRNComponentForTag),
+        new Map()
+      );
+      this.logBoxDialogController = new CustomDialogController({
+        cornerRadius: 0,
+        customStyle: true,
+        alignment: DialogAlignment.TopStart,
+        backgroundColor: Color.Transparent,
+        builder: LogBoxDialog({
+          ctx: this.ctx,
+          rnInstance: this.rnInstance,
+          initialProps: this.initialProps,
+          buildCustomComponent: buildCustomComponent,
+        })
+      })
+      this.cleanUpCallbacks.push(this.rnInstance.getTurboModule<LogBoxTurboModule>(LogBoxTurboModule.NAME).eventEmitter.subscribe("SHOW",
+        () => {
+          console.log("chy logBoxDialogController open")
+          this.logBoxDialogController.open()
+        }))
+      this.cleanUpCallbacks.push(this.rnInstance.getTurboModule<LogBoxTurboModule>(LogBoxTurboModule.NAME).eventEmitter.subscribe("HIDE",
+        () => {
+          console.log("chy logBoxDialogController close")
+          this.logBoxDialogController.close()
+        }))
+      this.cleanUpCallbacks.push(this.ctx.devToolsController.eventEmitter.subscribe("RELOAD", async () => {
+        console.log("chy logBoxDialogController reload")
+        await this.cleanUp()
+        this.init()
+      }))
+      this.rnInstance.enableFeatureFlag("ENABLE_RN_INSTANCE_CLEAN_UP")
     }
+  }
+
+  aboutToDisappear(): void {
+    console.log("chy aa aboutToDisappear")
+    this.cleanUp()
+  }
+
+  private async cleanUp() {
+    console.log("chy cleanup1")
+    // const stopTracing = this.logger.clone("cleanUp").startTracing()
+    console.log("chy cleanup2")
+    this.isBundleReady = false
+    console.log("chy cleanup this.rnohCoreContext", this.rnohCoreContext)
+    await this.rnohCoreContext!.destroyAndUnregisterRNInstance(this.rnInstance)
+    this.cleanUpCallbacks.forEach(cleanUp => cleanUp())
+    // stopTracing()
   }
 
   build() {
@@ -82,16 +144,15 @@ export struct UPReactView {
       Column() {
         if (this.isBundleReady) {
           RNSurface({
-            ctx: new RNComponentContext(
-              RNOHContext.fromCoreContext(this.rnohCoreContext!, this.rnInstance),
-              wrapBuilder(buildCustomComponent),
-              wrapBuilder(buildRNComponentForTag),
-              new Map()
-            ),
+            ctx: this.ctx,
             surfaceConfig: {
               appKey: this.rnInfo.businessId,
-            },
+              initialProps: this.initialProps ?? {},
+            } as SurfaceConfig2,
           })
+        }
+        if (this.rnohCoreContext!.isDebugModeEnabled) {
+          RNDevLoadingView({ useSafeAreaInsets: true, ctx: this.rnohCoreContext }).position({ x: 0, y: 0 })
         }
       }
       .width('100%')

@@ -10,11 +10,14 @@ import React, { useRef } from 'react';
 import { StyleSheet, Text, View, Pressable, UIManager, findNodeHandle, Dimensions, DeviceEventEmitter } from 'react-native';
 import SampleTurboModule from 'turbo-module/src/specs/v1/SampleTurboModule';
 
-const execuTurboModule = async() => {
+const execuTurboModule = async () => {
   SampleTurboModule.testParamsEmpty("12345453");
-  SampleTurboModule.pushStringToHarmony('test', (value) => {
-    // console.log("chy pushStringToHarmony value:", value)
-  })
+  // 测试在RNInstance销毁后，turboModule 是否一直还在调用
+  setInterval(() => {
+    SampleTurboModule.pushStringToHarmony('test', (value) => {
+      console.log("chy TubrboModule:pushStringToHarmony Execute value:", value)
+    })
+  }, 1000)
   await SampleTurboModule.doAsyncJob(true).then((value) => {
     // console.log("chy doAsyncJob value:", value)
   })
