@@ -25,6 +25,7 @@ export class UPRNSDKImpl {
     this.context = context;
     this.logger = this.createLogger().clone("RNAbility")
     this.rnInstancesCoordinator = RNInstancesCoordinator.create({
+      fontSizeScale: this.context.config.fontSizeScale,
       logger: this.createLogger(),
       uiAbilityContext: this.context,
       defaultBackPressHandler: () => {
@@ -54,18 +55,38 @@ export class UPRNSDKImpl {
     return false;
   }
 
+  public async onDestroy() {
+    const stopTracing = this.logger.clone("onDestroy").startTracing()
+    // this.unregisterWorkerMessageListener()
+    // for (const surfaceHandle of this.surfaceHandles) {
+    //   if (surfaceHandle.isRunning()) {
+    //     this.logger.warn(
+    //       'Destroying instance with running surface with tag: ' +
+    //       surfaceHandle.getTag(),
+    //     );
+    //     await surfaceHandle.stop();
+    //   }
+    //   surfaceHandle.destroy()
+    // }
+    // if (this.isFeatureFlagEnabled("ENABLE_RN_INSTANCE_CLEAN_UP")) {
+    //   this.napiBridge.onDestroyRNInstance(this.id)
+    // }
+    // this.turboModuleProvider.onDestroy()
+    stopTracing()
+  }
+
   public async onAppSetup(windowStage: window.WindowStage) {
     const logger = this.logger.clone("onWindowSetup");
     const stopTracing = logger.startTracing()
     try {
       // await this.onPrepareRNInstance(AppStorage.get<RNOHCoreContext>('RNOHCoreContext')!)
       const mainWindow = await windowStage.getMainWindow();
-      this.rnInstancesCoordinator?.setMainWindow(mainWindow);
+      // this.rnInstancesCoordinator?.setMainWindow(mainWindow);
       const onWindowSizeChange = (windowSize: window.Size) => {
         this.rnInstancesCoordinator?.onWindowSizeChange(windowSize)
       }
       const onWindowReactChange = (data: window.RectChangeOptions) => {
-        this.rnInstancesCoordinator?.onWindowRectChange(data)
+        // this.rnInstancesCoordinator?.onWindowRectChange(data)
       }
       const onWindowStageChange = (windowStageEvent: window.WindowStageEventType) => {
         this.rnInstancesCoordinator?.onWindowStageChange(windowStageEvent)

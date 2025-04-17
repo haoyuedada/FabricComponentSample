@@ -46,7 +46,9 @@ export class SampleTurboModule extends TurboModule {
   }
 
   pushStringToHarmony(arg: string, testCallBack: (value:string) => void): string {
-    testCallBack('hh')
+    setTimeout(() => {
+      testCallBack('hh')
+    }, 2000)
     return arg;
   }
 

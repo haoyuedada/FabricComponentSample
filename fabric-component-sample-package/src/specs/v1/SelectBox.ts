@@ -33,6 +33,7 @@ interface NativeCommands {
   emitNativeEvent: (
     viewRef: React.ElementRef<NativeType>,
     mutil: boolean,
+    test:
   ) => void;
 }
 

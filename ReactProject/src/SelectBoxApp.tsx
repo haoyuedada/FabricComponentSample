@@ -47,10 +47,11 @@ const App = () => {
       <Pressable onPress={() => {
         if (boxRef.current) {
           // RN向原生发送消息
+          let obj = { id: 12, text: '123'}
           UIManager.dispatchViewManagerCommand(
             findNodeHandle(boxRef.current),
             'emitNativeEvent',
-            [!mutil]
+            [!mutil, '23', [obj]],
           );
           setMutil(!mutil)
         }

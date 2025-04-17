@@ -25,6 +25,11 @@ class SelectItems {
   }
 }
 
+interface charTypr {
+  id: number;
+  text: string;
+}
+
 @Component
 export struct SelectBox {
   public static readonly NAME: string = RNC.SelectBox.NAME
@@ -47,9 +52,9 @@ export struct SelectBox {
     ))
     // RN => NATIVE
     this.cleanUpCallbacks.push(new RNC.SelectBox.CommandReceiver(this.ctx.componentCommandReceiver,
-      this.tag).subscribe("emitNativeEvent", (argv: [boolean]) => {
+      this.tag).subscribe("emitNativeEvent", (argv: []) => {
       console.log(`收到 RN 传来的消息 ================ ${JSON.stringify(argv)}`);
-      this.mutil = argv[0] || false
+      // this.mutil = argv || false
     }))
   }
 
