@@ -10,6 +10,8 @@
 import { AppRegistry } from 'react-native';
 import { name as appName } from './app.json';
 // import Test from './testTurboModule/test';
+// import Utils from './tests/Utils';
+
 // import RCTMessage from './tests/RCTMessage';
 // import FastImage from './tests/FastImage';
 import App from './App'

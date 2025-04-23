@@ -9,6 +9,7 @@
 #include "generated/RNOHGeneratedPackage.h"
 #include "FabricComponentSamplePackagePackage.h"
 #include "FastImagePackage.h"
+#include "GestureHandlerPackage.h"
 using namespace rnoh;
 
 std::vector<std::shared_ptr<Package>> PackageProvider::getPackages(Package::Context ctx) {
@@ -16,5 +17,6 @@ std::vector<std::shared_ptr<Package>> PackageProvider::getPackages(Package::Cont
     std::make_shared<RNOHGeneratedPackage>(ctx),
     std::make_shared<FabricComponentSamplePackagePackage>(ctx),
     std::make_shared<FastImagePackage>(ctx),
+    std::make_shared<GestureHandlerPackage>(ctx)
   };
 }

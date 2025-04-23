@@ -52,7 +52,7 @@ export struct SelectBox {
     ))
     // RN => NATIVE
     this.cleanUpCallbacks.push(new RNC.SelectBox.CommandReceiver(this.ctx.componentCommandReceiver,
-      this.tag).subscribe("emitNativeEvent", (argv: []) => {
+      this.tag).subscribe("emitNativeEvent", (argv: [boolean, string]) => {
       console.log(`收到 RN 传来的消息 ================ ${JSON.stringify(argv)}`);
       // this.mutil = argv || false
     }))
