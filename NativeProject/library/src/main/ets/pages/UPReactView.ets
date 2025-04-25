@@ -61,7 +61,6 @@ export struct UPReactView {
   private logger!: RNOHLogger
 
   onBackPress(): boolean | void {
-    console.log("chy UPReactView onBackPress")
   }
 
   aboutToAppear() {
@@ -124,12 +123,10 @@ export struct UPReactView {
   }
 
   aboutToDisappear(): void {
-    console.log("chy back UPReactView aboutToDisappear")
     this.cleanUp()
   }
 
   onPageHide(){
-    console.log("chy back UPReactView onPageHide")
   }
 
   private async cleanUp() {

@@ -12,11 +12,16 @@ import { RNInfo, UPReactView, UPRNSDK } from 'library';
 export struct RNPage {
   rnInfo: RNInfo = { businessId: 'app_name', bundlePath: 'bundle.harmony.js', isFromMetro: false };
   @StorageLink('UPRNSDK') rnSdk: UPRNSDK | undefined = undefined;
+  @StorageProp('shouldResolve') storageProp: number = 0;
 
   onBackPress(): boolean | void {
-    console.log("chy back RNPage onBackPress")
-    this.rnSdk?.onBackPress();
-    // return true;
+    if ( this.storageProp >= 2 ) {
+      this.rnSdk?.onBackPress();
+      return true;
+    }
+  }
+
+  aboutToDisappear(): void {
   }
 
   build() {

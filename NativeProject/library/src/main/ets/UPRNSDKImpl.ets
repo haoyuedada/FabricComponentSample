@@ -128,7 +128,6 @@ export class UPRNSDKImpl {
 
   onBackPress() {
     const stopTracing = this.logger.clone("onBackPress").startTracing();
-    console.log("chy onBackPress")
     this.rnohCoreContext!.dispatchBackPress()
     stopTracing();
     return true;

@@ -13,7 +13,6 @@ struct Index {
   @State message: string = '打开RN应用';
 
   onBackPress(): boolean | void {
-    console.log("chy back onBackPress")
   }
 
   build() {

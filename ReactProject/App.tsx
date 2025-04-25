@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Button, Text, View } from 'react-native';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import SampleTurboModule from 'turbo-module/src/specs/v1/SampleTurboModule';
 
 
 
@@ -39,6 +40,7 @@ export default function App() {
     const currentLevel = state.routes.length;
     console.log('当前页面层级:', currentLevel);
     console.log('路由已变化:', state);
+    SampleTurboModule.doAsyncJob(currentLevel)
   };
 
     return (

@@ -42,7 +42,6 @@ export class SampleTurboModule extends TurboModule {
 	}
 
   testParamsEmpty() {
-    console.log("chy execute testParamsEmpty")
   }
 
   pushStringToHarmony(arg: string, testCallBack: (value:string) => void): string {
@@ -60,6 +59,7 @@ export class SampleTurboModule extends TurboModule {
 
   doAsyncJob(shouldResolve: boolean): Promise<doAsyncJobDataType> {
     let doAsyncJobData: doAsyncJobDataType =  { id: 123, message: 'hahaha'};
+    AppStorage.SetOrCreate("shouldResolve", shouldResolve);
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (shouldResolve) {
