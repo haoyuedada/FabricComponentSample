@@ -6,7 +6,7 @@ console.log(`目录为目录: ${process.cwd()}`);
 // });
 // execSync("ls -la").toString();
 const output = execSync("npm run dev", { 
-    cwd: './assets',
+    cwd: '../',
     stdio: "inherit" 
 });
 console.log(output);

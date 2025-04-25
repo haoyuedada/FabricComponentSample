@@ -14,7 +14,9 @@ export struct RNPage {
   @StorageLink('UPRNSDK') rnSdk: UPRNSDK | undefined = undefined;
 
   onBackPress(): boolean | void {
+    console.log("chy back RNPage onBackPress")
     this.rnSdk?.onBackPress();
+    // return true;
   }
 
   build() {

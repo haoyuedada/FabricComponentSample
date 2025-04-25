@@ -60,8 +60,11 @@ export struct UPReactView {
   private cleanUpCallbacks: (() => void)[] = []
   private logger!: RNOHLogger
 
+  onBackPress(): boolean | void {
+    console.log("chy UPReactView onBackPress")
+  }
+
   aboutToAppear() {
-    console.log("chy aa aboutToAppear")
     this.init()
   }
 
@@ -106,16 +109,13 @@ export struct UPReactView {
       })
       this.cleanUpCallbacks.push(this.rnInstance.getTurboModule<LogBoxTurboModule>(LogBoxTurboModule.NAME).eventEmitter.subscribe("SHOW",
         () => {
-          console.log("chy logBoxDialogController open")
           this.logBoxDialogController.open()
         }))
       this.cleanUpCallbacks.push(this.rnInstance.getTurboModule<LogBoxTurboModule>(LogBoxTurboModule.NAME).eventEmitter.subscribe("HIDE",
         () => {
-          console.log("chy logBoxDialogController close")
           this.logBoxDialogController.close()
         }))
       this.cleanUpCallbacks.push(this.ctx.devToolsController.eventEmitter.subscribe("RELOAD", async () => {
-        console.log("chy logBoxDialogController reload")
         await this.cleanUp()
         this.init()
       }))
@@ -124,16 +124,17 @@ export struct UPReactView {
   }
 
   aboutToDisappear(): void {
-    console.log("chy aa aboutToDisappear")
+    console.log("chy back UPReactView aboutToDisappear")
     this.cleanUp()
   }
 
+  onPageHide(){
+    console.log("chy back UPReactView onPageHide")
+  }
+
   private async cleanUp() {
-    console.log("chy cleanup1")
     // const stopTracing = this.logger.clone("cleanUp").startTracing()
-    console.log("chy cleanup2")
     this.isBundleReady = false
-    console.log("chy cleanup this.rnohCoreContext", this.rnohCoreContext)
     await this.rnohCoreContext!.destroyAndUnregisterRNInstance(this.rnInstance)
     this.cleanUpCallbacks.forEach(cleanUp => cleanUp())
     // stopTracing()

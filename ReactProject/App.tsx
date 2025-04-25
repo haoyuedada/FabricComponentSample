@@ -1,72 +1,52 @@
-/**
- * Copyright (c) 2024 Huawei Technologies Co., Ltd.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE-MIT file in the root directory of this source tree.
- */
+import * as React from 'react';
+import { Button, Text, View } from 'react-native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 
-import React, { useRef } from 'react';
-import { StyleSheet, Text, View, Pressable, UIManager, findNodeHandle, Dimensions } from 'react-native';
-import QDGestureFloat from 'fabric-component-sample-package/src/specs/v2/QDGestureFloatNativeComponent';
-import SelectBoxApp from './src/SelectBoxApp'
 
-const ScreenHeight = Dimensions.get('window').height;
+const HomeStack = createStackNavigator();
 
-// 测试用例
-const App = () => {
-  const floatRef = useRef(null)
-  return (
-    <View style={styles.container}>
-      <SelectBoxApp />
-      {/* <QDGestureFloat
-        ref={floatRef}
-        style={styles.container}
-        stopPercent={0.5}
-        stopPercentMax={0.75}
-        onScroll={(event) => {
-          console.log(event.nativeEvent.offsetY)
-        }}
-        onTouchStart={() => {
-          console.log("chy onTouchStart")
-        }}
-        testObj1={{ id: 'testObj1' }}
-        testObj2={{ id: 'testObj2' }}
-        menuItems={[{ label: 'item1', key: 'key1' }, { label: 'item2', key: 'key2' }]}
-        contentInset={{ top: 10, left: 10, bottom: 10, right: 10 }}
-      >
-        <View style={{ width: '100%', height: 1000, backgroundColor: 'yellow' }}>
-          <Pressable onPress={() => {
-            if (floatRef.current) {
-              // RN向原生发送消息
-              UIManager.dispatchViewManagerCommand(
-                findNodeHandle(floatRef.current),
-                'scrollTo',
-                [ScreenHeight, true, [1,23]]
-              );
-            }
-          }}>
-            <Text style={{ fontSize: 50, color: 'red' }}>点我滚到顶</Text>
-          </Pressable>
-          <SelectBoxApp />
+function HomeScreen({ navigation }) {
+    return (
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <Text>Home screen</Text>
+            <Button
+                title="Go to Details"
+                onPress={() => navigation.navigate('Details')}
+            />
         </View>
-      </QDGestureFloat> */}
-    </View>
-  )
+    );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: 250
-  },
-  title: {
-    backgroundColor: 'green',
-    color: 'white',
-    fontSize: 20,
-    padding: 8,
-    textAlign: 'center'
-  }
-});
+function DetailsScreen({ navigation }) {
+    return (
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <Text>Details!</Text>
+            <Button
+                title="Go back"
+                onPress={() => navigation.goBack()}
+            />
+        </View>
+    );
+}
 
-export default App;
+
+
+export default function App() {
+  const handleStateChange = (state) => {
+    // 获取当前路由栈中的路由数量，即页面层级
+    const currentLevel = state.routes.length;
+    console.log('当前页面层级:', currentLevel);
+    console.log('路由已变化:', state);
+  };
+
+    return (
+        <NavigationContainer onStateChange={handleStateChange}>
+            <HomeStack.Navigator>
+                <HomeStack.Screen name="Home" component={HomeScreen} />
+                <HomeStack.Screen name="Details" component={DetailsScreen} />
+            </HomeStack.Navigator>
+        </NavigationContainer>
+    );
+}

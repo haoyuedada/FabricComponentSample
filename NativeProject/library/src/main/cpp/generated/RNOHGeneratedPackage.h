@@ -11,9 +11,14 @@
 
 #include "RNOH/Package.h"
 #include "RNOH/ArkTSTurboModule.h"
+#include "generated/RNGestureHandlerModule.h"
 #include "generated/SampleTurboModule.h"
+#include "generated/RNGestureHandlerButtonComponentDescriptor.h"
+#include "generated/RNGestureHandlerRootViewComponentDescriptor.h"
 #include "generated/RCTMessageDialogComponentDescriptor.h"
 #include "generated/SelectBoxComponentDescriptor.h"
+#include "generated/RNGestureHandlerButtonJSIBinder.h"
+#include "generated/RNGestureHandlerRootViewJSIBinder.h"
 #include "generated/RCTMessageDialogJSIBinder.h"
 #include "generated/SelectBoxJSIBinder.h"
 
@@ -22,6 +27,9 @@ namespace rnoh {
 class RNOHGeneratedPackageTurboModuleFactoryDelegate : public TurboModuleFactoryDelegate {
   public:
     SharedTurboModule createTurboModule(Context ctx, const std::string &name) const override {
+        if (name == "RNGestureHandlerModule") {
+            return std::make_shared<RNGestureHandlerModule>(ctx, name);
+        }
         if (name == "SampleTurboModule") {
             return std::make_shared<SampleTurboModule>(ctx, name);
         }
@@ -62,6 +70,8 @@ class RNOHGeneratedPackage : public Package {
 
     std::vector<facebook::react::ComponentDescriptorProvider> createComponentDescriptorProviders() override {
         return {
+            facebook::react::concreteComponentDescriptorProvider<facebook::react::RNGestureHandlerButtonComponentDescriptor>(),
+            facebook::react::concreteComponentDescriptorProvider<facebook::react::RNGestureHandlerRootViewComponentDescriptor>(),
             facebook::react::concreteComponentDescriptorProvider<facebook::react::RCTMessageDialogComponentDescriptor>(),
             facebook::react::concreteComponentDescriptorProvider<facebook::react::SelectBoxComponentDescriptor>(),
         };
@@ -69,6 +79,8 @@ class RNOHGeneratedPackage : public Package {
 
     ComponentJSIBinderByString createComponentJSIBinderByName() override {
         return {
+            {"RNGestureHandlerButton", std::make_shared<RNGestureHandlerButtonJSIBinder>()},
+            {"RNGestureHandlerRootView", std::make_shared<RNGestureHandlerRootViewJSIBinder>()},
             {"RCTMessageDialog", std::make_shared<RCTMessageDialogJSIBinder>()},
             {"SelectBox", std::make_shared<SelectBoxJSIBinder>()},
         };

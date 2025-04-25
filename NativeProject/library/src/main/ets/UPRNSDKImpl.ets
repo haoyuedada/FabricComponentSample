@@ -12,6 +12,9 @@ import { RNInstancesCoordinator } from "@rnoh/react-native-openharmony/src/main/
 import { HttpClient, DefaultHttpClient } from "@rnoh/react-native-openharmony/src/main/ets/HttpClient";
 import common from '@ohos.app.ability.common';
 import window from '@ohos.window';
+import {
+  RNOHCoreContext,
+} from "@rnoh/react-native-openharmony";
 
 export class UPRNSDKImpl {
   private context: common.UIAbilityContext | null = null;
@@ -20,8 +23,9 @@ export class UPRNSDKImpl {
   private logger!: RNOHLogger;
   private unregisterWindowListenerCallback = () => {
   }
+  private rnohCoreContext: RNOHCoreContext | undefined;
 
-  constructor(context: common.UIAbilityContext, want: Want) {
+    constructor(context: common.UIAbilityContext, want: Want) {
     this.context = context;
     this.logger = this.createLogger().clone("RNAbility")
     this.rnInstancesCoordinator = RNInstancesCoordinator.create({
@@ -42,6 +46,7 @@ export class UPRNSDKImpl {
       defaultHttpClient: this.onCreateDefaultHttpClient()
     })
     AppStorage.setOrCreate('RNOHCoreContext', this.rnInstancesCoordinator.getRNOHCoreContext())
+    this.rnohCoreContext = this.rnInstancesCoordinator.getRNOHCoreContext();
   }
 
   protected getRNOHWorkerScriptUrl(): string | undefined {
@@ -123,6 +128,8 @@ export class UPRNSDKImpl {
 
   onBackPress() {
     const stopTracing = this.logger.clone("onBackPress").startTracing();
+    console.log("chy onBackPress")
+    this.rnohCoreContext!.dispatchBackPress()
     stopTracing();
     return true;
   }

@@ -9,7 +9,8 @@
       "arguments": "-DCMAKE_BUILD_TYPE=Release",
       "cppFlags": "",
       "abiFilters": [
-        "arm64-v8a"
+        "arm64-v8a",
+        "x86_64"
       ]
     },
     "arkOptions": {
