@@ -25,13 +25,24 @@ function DetailsScreen({ navigation }) {
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <Text>Details!</Text>
             <Button
+                title="Go to PageThree"
+                onPress={() => navigation.navigate('PageThree')}
+            />
+        </View>
+    );
+}
+
+function PageThree({ navigation }) {
+    return (
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <Text>Details!</Text>
+            <Button
                 title="Go back"
                 onPress={() => navigation.goBack()}
             />
         </View>
     );
 }
-
 
 
 export default function App() {
@@ -48,6 +59,7 @@ export default function App() {
             <HomeStack.Navigator>
                 <HomeStack.Screen name="Home" component={HomeScreen} />
                 <HomeStack.Screen name="Details" component={DetailsScreen} />
+                <HomeStack.Screen name="PageThree" component={PageThree} />
             </HomeStack.Navigator>
         </NavigationContainer>
     );
