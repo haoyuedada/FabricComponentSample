@@ -1,0 +1,6 @@
+{
+  "name": "react-native-harmony-tester",
+  "dependencies": {
+    "@ohmi/react-native-openharmony": "^1.1.0-rc.0.0.9"
+  }
+}
