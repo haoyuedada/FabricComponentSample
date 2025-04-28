@@ -28,8 +28,9 @@ import { SurfaceConfig2 } from '@rnoh/react-native-openharmony/src/main/ets/RNSu
 import { RNDevLoadingView } from "@rnoh/react-native-openharmony/src/main/ets/RNOH"
 import { SelectBox } from "../FabricComponent/SelectBox"
 import { RCTMessageDialog } from "../FabricComponent/RCTMessageDialog"
+import { RNDatePicker } from "@react-native-oh-tpl/react-native-date-picker"
 
-const arkTsComponentNames: Array<string> = [SelectBox.NAME, RCTMessageDialog.NAME];
+const arkTsComponentNames: Array<string> = [SelectBox.NAME, RCTMessageDialog.NAME, RNDatePicker.NAME];
 
 @Builder
 export function buildCustomComponent(ctx: ComponentBuilderContext) {
@@ -40,6 +41,11 @@ export function buildCustomComponent(ctx: ComponentBuilderContext) {
     })
   } else if (ctx.componentName === RCTMessageDialog.NAME) {
     RCTMessageDialog({
+      ctx: ctx.rnComponentContext,
+      tag: ctx.tag
+    })
+  } else if (ctx.componentName === RNDatePicker.NAME) {
+    RNDatePicker({
       ctx: ctx.rnComponentContext,
       tag: ctx.tag
     })

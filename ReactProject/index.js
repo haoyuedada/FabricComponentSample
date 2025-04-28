@@ -14,7 +14,7 @@ import { name as appName } from './app.json';
 
 // import RCTMessage from './tests/RCTMessage';
 // import FastImage from './tests/FastImage';
-import App from './App'
+// import App from './App'
 // import Modal from './tests/Modal'
 // import ScrollView from './tests/ScrollView'
 // import QDScrollView from './tests/QDScrollView'
@@ -22,5 +22,9 @@ import App from './App'
 // import FontSlice from './tests/FontSlice'
 // import Image from './tests/Image'
 // import Animatedtwo from './tests/Animatedtwo'
+// import DatePicker from './src/DatePicker'
+// import App from './src/App1'
+// import Shot from './src/Shot'
+import RefreshControl from './src/RefreshControl'
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent(appName, () => RefreshControl);
