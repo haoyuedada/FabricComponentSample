@@ -10,7 +10,7 @@ import { GeneratedPackage } from './GeneratedPackage'
 import { FastImagePackage } from '@react-native-oh-tpl/react-native-fast-image/ts';
 import { GestureHandlerPackage } from '@react-native-oh-tpl/react-native-gesture-handler/ts';
 import {SafeAreaViewPackage} from '@react-native-oh-tpl/react-native-safe-area-context/ts';
-import {RNDatePickerPackage} from '@react-native-oh-tpl/react-native-date-picker/ts';
+// import {RNDatePickerPackage} from '@react-native-oh-tpl/react-native-date-picker/ts';
 import { ViewShotPackage } from '@react-native-oh-tpl/react-native-view-shot/ts';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
@@ -19,7 +19,7 @@ export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
     new FastImagePackage(ctx),
     new GestureHandlerPackage(ctx),
     new SafeAreaViewPackage(ctx),
-    new RNDatePickerPackage(ctx),
+    // new RNDatePickerPackage(ctx),
     new ViewShotPackage(ctx)
   ];
 }

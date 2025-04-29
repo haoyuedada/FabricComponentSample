@@ -10,5 +10,5 @@
 /.clang-tidy
 **/.test
 /.appanalyzer
-/libs
+/libs/react_native_openharmony**
 log.txt
