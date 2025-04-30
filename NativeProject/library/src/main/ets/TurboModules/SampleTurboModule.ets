@@ -7,6 +7,7 @@
 
 import { TurboModule } from '@rnoh/react-native-openharmony/ts';
 import { TM } from "@rnoh/react-native-openharmony/generated/ts"
+import { AnyThreadTurboModule } from '../../../../Index';
 
 export interface TurboModuleEventData {
   param: string
@@ -26,7 +27,7 @@ interface DataType {
   message: string
 }
 
-export class SampleTurboModule extends TurboModule {
+export class SampleTurboModule extends AnyThreadTurboModule {
   getConstants(): Promise<TM.SampleTurboModule.Constants>{
     let Data: DataType = {
       id: 123,
@@ -58,6 +59,7 @@ export class SampleTurboModule extends TurboModule {
   }
 
   doAsyncJob(shouldResolve: boolean): Promise<doAsyncJobDataType> {
+    console.log("chy doAsyncJob shouldResolve:", shouldResolve)
     let doAsyncJobData: doAsyncJobDataType =  { id: 123, message: 'hahaha'};
     AppStorage.SetOrCreate("shouldResolve", shouldResolve);
     return new Promise((resolve, reject) => {

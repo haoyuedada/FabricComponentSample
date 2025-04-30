@@ -18,13 +18,16 @@ import type {
 } from '@rnoh/react-native-openharmony/ts';
 import { RNC, TM } from "@rnoh/react-native-openharmony/generated/ts"
 import { SampleTurboModule } from "../TurboModules/SampleTurboModule"
+import { AnyThreadTurboModule,
+  AnyThreadTurboModuleContext,
+  AnyThreadTurboModuleFactory, WorkerTurboModuleContext } from '../../../../Index';
 
-class GeneratedTurboModulesFactory extends TurboModulesFactory {
+class GeneratedTurboModulesFactory extends AnyThreadTurboModuleFactory {
   private turboModules: string[] = [
     TM.SampleTurboModule.NAME
   ]
 
-  createTurboModule(name: string): TurboModule | null {
+  createTurboModule(name: string): AnyThreadTurboModule | null {
     if (name == TM.SampleTurboModule.NAME) {
       return new SampleTurboModule(this.ctx)
     }
@@ -39,7 +42,7 @@ let selectBox:string = RNC.SelectBox.NAME;
 let RCTMessageDialog:string = RNC.RCTMessageDialog.NAME;
 
 export class GeneratedPackage extends RNPackage {
-  createTurboModulesFactory(ctx: TurboModuleContext): TurboModulesFactory {
+  createAnyThreadTurboModuleFactory(ctx: AnyThreadTurboModuleContext): AnyThreadTurboModuleFactory {
     return new GeneratedTurboModulesFactory(ctx);
   }
   createDescriptorWrapperFactoryByDescriptorType(ctx: DescriptorWrapperFactoryByDescriptorTypeCtx): DescriptorWrapperFactoryByDescriptorType {
