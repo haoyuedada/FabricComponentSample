@@ -7,8 +7,7 @@
     "lint": "eslint .",
     "start": "react-native start --reset-cache",
     "dev": "react-native bundle-harmony --dev false --bundle-output ../NativeProject/entry/src/main/resources/rawfile/bundle.harmony.js --assets-dest ../NativeProject/entry/src/main/resources/rawfile/assets",
-    "codegen": "react-native codegen-harmony --cpp-output-path ../NativeProject/library/src/main/cpp/generated --rnoh-module-path ../NativeProject/library/oh_modules/@rnoh/react-native-openharmony --no-safety-check",
-    "codegen77": "react-native codegen-harmony --cpp-output-path ../NativeProject77/library/src/main/cpp/generated --rnoh-module-path ../NativeProject77/library/oh_modules/@rnoh/react-native-openharmony --no-safety-check"
+    "codegen": "react-native codegen-harmony --cpp-output-path ../NativeProject/library/src/main/cpp/generated --rnoh-module-path ../NativeProject/library/oh_modules/@rnoh/react-native-openharmony --no-safety-check"
   },
   "dependencies": {
     "@react-native-oh-tpl/react-native-fast-image": "^8.6.3-0.4.10",

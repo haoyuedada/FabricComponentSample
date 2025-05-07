@@ -23,8 +23,8 @@ import { name as appName } from './app.json';
 // import Image from './tests/Image'
 // import Animatedtwo from './tests/Animatedtwo'
 // import DatePicker from './src/DatePicker'
-// import App from './src/App1'
+import App from './App'
 // import Shot from './src/Shot'
-import RefreshControl from './src/RefreshControl'
+// import RefreshControl from './src/RefreshControl'
 
-AppRegistry.registerComponent(appName, () => RefreshControl);
+AppRegistry.registerComponent(appName, () => App);
