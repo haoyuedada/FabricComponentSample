@@ -86,12 +86,12 @@ export class UPRNSDKImpl {
     try {
       // await this.onPrepareRNInstance(AppStorage.get<RNOHCoreContext>('RNOHCoreContext')!)
       const mainWindow = await windowStage.getMainWindow();
-      // this.rnInstancesCoordinator?.setMainWindow(mainWindow);
+      this.rnInstancesCoordinator?.setMainWindow(mainWindow);
       const onWindowSizeChange = (windowSize: window.Size) => {
         this.rnInstancesCoordinator?.onWindowSizeChange(windowSize)
       }
       const onWindowReactChange = (data: window.RectChangeOptions) => {
-        // this.rnInstancesCoordinator?.onWindowRectChange(data)
+        this.rnInstancesCoordinator?.onWindowRectChange(data)
       }
       const onWindowStageChange = (windowStageEvent: window.WindowStageEventType) => {
         this.rnInstancesCoordinator?.onWindowStageChange(windowStageEvent)

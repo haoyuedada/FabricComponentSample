@@ -23,8 +23,10 @@ import { name as appName } from './app.json';
 // import Image from './tests/Image'
 // import Animatedtwo from './tests/Animatedtwo'
 // import DatePicker from './src/DatePicker'
-import App from './App'
+// import App from './App'
 // import Shot from './src/Shot'
 // import RefreshControl from './src/RefreshControl'
+import SVGTest from './tests/SVGTest'
 
-AppRegistry.registerComponent(appName, () => App);
+
+AppRegistry.registerComponent(appName, () => SVGTest);
