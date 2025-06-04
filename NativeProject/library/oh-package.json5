@@ -6,7 +6,8 @@
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
-    "@rnoh/react-native-openharmony": "file:../node_modules/@ohmi/react-native-openharmony/react_native_openharmony.har",
+    "@rnoh/react-native-openharmony": "../react_native_openharmony.har",
+//    "@rnoh/react-native-openharmony": "file:../node_modules/@ohmi/react-native-openharmony/react_native_openharmonymi.har",
     //    "@rnoh/react-native-openharmony": "file:../libs/react_native_openharmony.har",
     //    "@rnoh/react-native-openharmony": "0.72.48",
     "@react-native-oh-tpl/react-native-fast-image": "file:../libs/fast_image.har",

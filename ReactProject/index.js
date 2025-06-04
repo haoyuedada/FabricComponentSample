@@ -14,7 +14,7 @@ import { name as appName } from './app.json';
 
 // import RCTMessage from './tests/RCTMessage';
 // import FastImage from './tests/FastImage';
-// import App from './App'
+import App from './App'
 // import Modal from './tests/Modal'
 // import ScrollView from './tests/ScrollView'
 // import QDScrollView from './tests/QDScrollView'
@@ -26,7 +26,13 @@ import { name as appName } from './app.json';
 // import App from './App'
 // import Shot from './src/Shot'
 // import RefreshControl from './src/RefreshControl'
-import SVGTest from './tests/SVGTest'
+// import SVGTest from './tests/SVGTest'
+// import AlarmVideoUI from './tests/AlarmVideoUI'
+// import VictoryTest from './tests/Victory'
+// import DateTest from './tests/DateTest'
+// require("./tests/requireTest.js")
+// import PromiseTest from './tests/Promise'
 
 
-AppRegistry.registerComponent(appName, () => SVGTest);
+// AppRegistry.registerComponent("miot.plugin.spec", () => AlarmVideoUI);
+AppRegistry.registerComponent("app_name", () => App);
