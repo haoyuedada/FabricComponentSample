@@ -1,0 +1,1 @@
+console.log("requireTest.js 执行了");

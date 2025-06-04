@@ -43,7 +43,8 @@
               "action.system.home"
             ]
           }
-        ]
+        ],
+        "orientation": "auto_rotation"
       },
     ]
   }

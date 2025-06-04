@@ -6,11 +6,32 @@
  */
 
 import router from '@ohos.router';
+import { mediaquery } from '@kit.ArkUI';
+import { display } from '@kit.ArkUI'
+
+function onPortrait(mediaQueryResult: mediaquery.MediaQueryResult) {
+  if (mediaQueryResult.matches) {
+    console.log("chy matches1 height:", px2vp(display.getDefaultDisplaySync().height))
+    console.log("chy matches1 width:", px2vp(display.getDefaultDisplaySync().width))
+  } else {
+    console.log("chy matches2 height:", px2vp(display.getDefaultDisplaySync().height))
+    console.log("chy matches2 width:", px2vp(display.getDefaultDisplaySync().width))    // do something here
+  }
+}
+let listener = mediaquery.matchMediaSync('(orientation: landscape)'); // 监听横屏事件
 
 @Entry
 @Component
 struct Index {
   @State message: string = '打开RN应用';
+
+  aboutToAppear(): void {
+    listener.on('change', onPortrait) // 注册回调
+  }
+
+  aboutToDisappear(): void {
+    listener.off('change', onPortrait) // 取消注册回调
+  }
 
   onBackPress(): boolean | void {
   }

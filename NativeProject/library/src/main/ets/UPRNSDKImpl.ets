@@ -8,118 +8,73 @@
 import type { RNOHLogger } from '@rnoh/react-native-openharmony/src/main/ets/RNOH/RNOHLogger';
 import { StandardRNOHLogger } from '@rnoh/react-native-openharmony/src/main/ets/RNOH/RNOHLogger';
 import Want from '@ohos.app.ability.Want';
-import { RNInstancesCoordinator } from "@rnoh/react-native-openharmony/src/main/ets/RNOH/RNInstancesCoordinator";
-import { HttpClient, DefaultHttpClient } from "@rnoh/react-native-openharmony/src/main/ets/HttpClient";
+import { RNInstancesCoordinator } from "@rnoh/react-native-openharmony/src/main/ets/RNOH/RNInstancesCoordinator"
+import { HttpClient, DefaultHttpClient } from "@rnoh/react-native-openharmony/src/main/ets/HttpClient"
+import { EnvironmentCallback } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 import common from '@ohos.app.ability.common';
 import window from '@ohos.window';
-import {
-  RNOHCoreContext,
-} from "@rnoh/react-native-openharmony";
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
-export class UPRNSDKImpl {
-  private context: common.UIAbilityContext | null = null;
-  protected isDebugModeEnabled_: boolean = true;
-  private rnInstancesCoordinator!: RNInstancesCoordinator;
-  private logger!: RNOHLogger;
-  private unregisterWindowListenerCallback = () => {
+// const TAG = `${PluginLog.PLUGIN_INIT}_MiRNSDKImpl`
+
+export class UPRNSDKImpl{
+  private context:common.UIAbilityContext | null = null;
+  protected isDebugModeEnabled_: boolean = true
+  private _rnInstancesCoordinator!: RNInstancesCoordinator;
+  public get rnInstancesCoordinator(): RNInstancesCoordinator {
+    return this._rnInstancesCoordinator;
   }
-  private rnohCoreContext: RNOHCoreContext | undefined;
+  private logger!: RNOHLogger
 
-    constructor(context: common.UIAbilityContext, want: Want) {
+  constructor(context: common.UIAbilityContext, want: Want) {
+    // MiJiaLog.onlyLogcat(TAG, "new MiRNSDKImpl start");
     this.context = context;
+    let envCallback: EnvironmentCallback = {
+      onConfigurationUpdated(config) {
+        let fontSizeScale = config.fontSizeScale
+        AppStorage.setOrCreate('fontSizeScale', fontSizeScale)
+      },
+      onMemoryLevel(level) {
+        // MiJiaLog.onlyLogcat(TAG, `onMemoryLevel level: ${level}`);
+      }
+    };
+    try {
+      let applicationContext = this.context.getApplicationContext();
+      let callbackId = applicationContext.on('environment', envCallback);
+      // MiJiaLog.onlyLogcat(TAG, `callbackId: ${callbackId}`);
+    } catch (paramError) {
+      // MiJiaLog.onlyLogcat(TAG, `error: ${(paramError as BusinessError).code}, ${(paramError as BusinessError).message}` , hilog.LogLevel.ERROR);
+    }
     this.logger = this.createLogger().clone("RNAbility")
-    this.rnInstancesCoordinator = RNInstancesCoordinator.create({
+    this._rnInstancesCoordinator = RNInstancesCoordinator.create({
       fontSizeScale: this.context.config.fontSizeScale,
       logger: this.createLogger(),
       uiAbilityContext: this.context,
       defaultBackPressHandler: () => {
         this.defaultBackPressHandler()
       },
-      rnohWorkerScriptUrl: this.getRNOHWorkerScriptUrl(),
     }, {
-      disableCleaningRNInstances: this.onShouldDisableCleaningRNInstances(),
-      launchURI: want.uri,
-      onGetPackagerClientConfig: (buildMode) => buildMode === "DEBUG" ? {
+      launchURI: want.uri, onGetPackagerClientConfig: (buildMode) => buildMode === "DEBUG" ? {
         host: "localhost",
         port: 8081
       } : undefined,
       defaultHttpClient: this.onCreateDefaultHttpClient()
     })
-    AppStorage.setOrCreate('RNOHCoreContext', this.rnInstancesCoordinator.getRNOHCoreContext())
-    this.rnohCoreContext = this.rnInstancesCoordinator.getRNOHCoreContext();
+    AppStorage.setOrCreate('RNOHCoreContext', this._rnInstancesCoordinator.getRNOHCoreContext())
+
+    AppStorage.setOrCreate('rnInstancesCoordinator', this._rnInstancesCoordinator)
+    // MiJiaLog.onlyLogcat(TAG, "new MiRNSDKImpl success");
   }
 
-  protected getRNOHWorkerScriptUrl(): string | undefined {
-    return undefined
-  }
-
-  /**
-   * Return `true`, if your app bundle provides multiple RNAbilities, for each RNAbility.
-   */
-  onShouldDisableCleaningRNInstances(): boolean {
-    return false;
-  }
-
-  public async onDestroy() {
-    const stopTracing = this.logger.clone("onDestroy").startTracing()
-    // this.unregisterWorkerMessageListener()
-    // for (const surfaceHandle of this.surfaceHandles) {
-    //   if (surfaceHandle.isRunning()) {
-    //     this.logger.warn(
-    //       'Destroying instance with running surface with tag: ' +
-    //       surfaceHandle.getTag(),
-    //     );
-    //     await surfaceHandle.stop();
-    //   }
-    //   surfaceHandle.destroy()
-    // }
-    // if (this.isFeatureFlagEnabled("ENABLE_RN_INSTANCE_CLEAN_UP")) {
-    //   this.napiBridge.onDestroyRNInstance(this.id)
-    // }
-    // this.turboModuleProvider.onDestroy()
-    stopTracing()
-  }
-
-  public async onAppSetup(windowStage: window.WindowStage) {
-    const logger = this.logger.clone("onWindowSetup");
-    const stopTracing = logger.startTracing()
-    try {
-      // await this.onPrepareRNInstance(AppStorage.get<RNOHCoreContext>('RNOHCoreContext')!)
-      const mainWindow = await windowStage.getMainWindow();
-      this.rnInstancesCoordinator?.setMainWindow(mainWindow);
-      const onWindowSizeChange = (windowSize: window.Size) => {
-        this.rnInstancesCoordinator?.onWindowSizeChange(windowSize)
-      }
-      const onWindowReactChange = (data: window.RectChangeOptions) => {
-        this.rnInstancesCoordinator?.onWindowRectChange(data)
-      }
-      const onWindowStageChange = (windowStageEvent: window.WindowStageEventType) => {
-        this.rnInstancesCoordinator?.onWindowStageChange(windowStageEvent)
-      }
-      mainWindow.on('windowSizeChange', onWindowSizeChange)
-      mainWindow.on('windowRectChange', onWindowReactChange)
-      windowStage.on('windowStageEvent', onWindowStageChange)
-      this.unregisterWindowListenerCallback()
-      this.unregisterWindowListenerCallback = () => {
-        try {
-          mainWindow.off("windowSizeChange", onWindowSizeChange)
-        } catch {
-          this.logger?.error("Error when trying to unsubscribe from window size changes")
-        }
-      }
-      await this.onWindowSetup(mainWindow)
-      // await this.onWindowStageSetup(windowStage)
-      this.rnInstancesCoordinator?.onWindowSizeChange(mainWindow.getWindowProperties().windowRect)
-    } catch (err) {
-      logger.error("Failed to setup window", JSON.stringify(err))
-    } finally {
-      stopTracing()
+  public async onAppSetup(windowStage: window.WindowStage){
+    // MiJiaLog.onlyLogcat(TAG, "onAppSetup");
+    const mainWindow = await windowStage.getMainWindow();
+    this.rnInstancesCoordinator?.setMainWindow(mainWindow)
+    const onWindowSizeChange = (windowSize: window.Size) => {
+      this._rnInstancesCoordinator?.onWindowSizeChange(windowSize)
     }
-  }
-
-  protected async onWindowSetup(window: window.Window) {
-    // NOTE: disabling full screen breaks the SafeAreaView component
-    await window.setWindowLayoutFullScreen(true)
+    mainWindow.on('windowSizeChange', onWindowSizeChange)
   }
 
   protected createLogger(): RNOHLogger {
@@ -127,23 +82,23 @@ export class UPRNSDKImpl {
   }
 
   onBackPress() {
-    const stopTracing = this.logger.clone("onBackPress").startTracing();
-    this.rnohCoreContext!.dispatchBackPress()
-    stopTracing();
+    const stopTracing = this.logger.clone("onBackPress").startTracing()
+    stopTracing()
     return true;
   }
-
   /**
    * Invoked when the React application doesn't handle the device back press.
    */
   protected defaultBackPressHandler() {
-    this.context?.terminateSelf();
+    this.context?.terminateSelf()
   }
 
   /**
    * @returns HttpClient shared by RNInstances
    */
   protected onCreateDefaultHttpClient(): undefined | HttpClient {
-    return new DefaultHttpClient({ logger: this.logger });
+    return new DefaultHttpClient({logger: this.logger});
   }
+
+
 }

@@ -5,15 +5,15 @@
  * LICENSE-MIT file in the root directory of this source tree.
  */
 
-import type common from '@ohos.app.ability.common';
-import { RNOHContext, RNInstance, RNInstanceOptions } from '@rnoh/react-native-openharmony/ts';
+import type common from '@ohos.app.ability.common'
+import { RNOHContext, RNInstance, RNInstanceOptions } from '@rnoh/react-native-openharmony/ts'
 
 export interface UPRNSDK {
   abilityContext: common.UIAbilityContext;
 
-  createAndRegisterRNInstance(options: RNInstanceOptions): Promise<RNInstance>;
+  createAndRegisterRNInstance(options: RNInstanceOptions): Promise<RNInstance>
 
-  createRNOHContext({ rnInstance }: { rnInstance: RNInstance }): RNOHContext;
+  createRNOHContext({rnInstance}: { rnInstance: RNInstance }): RNOHContext;
 
   onBackPress(): boolean;
 }
