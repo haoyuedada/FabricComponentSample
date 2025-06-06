@@ -79,6 +79,10 @@ export default class AlarmVideoUI extends React.Component {
                 backgroundColor: 'red',
             }}>
                 <Text>1234567</Text>
+                <View>
+                                    <Text>1234567</Text>
+
+                </View>
             </View>
         );
     }

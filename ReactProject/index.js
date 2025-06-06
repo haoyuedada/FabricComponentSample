@@ -8,7 +8,7 @@
  */
 
 import { AppRegistry } from 'react-native';
-import { name as appName } from './app.json';
+// import { name as appName } from './app.json';
 // import Test from './testTurboModule/test';
 // import Utils from './tests/Utils';
 
@@ -20,19 +20,21 @@ import App from './App'
 // import QDScrollView from './tests/QDScrollView'
 // import RCT from './tests/RCT'
 // import FontSlice from './tests/FontSlice'
-// import Image from './tests/Image'
+import Image from './tests/Image'
 // import Animatedtwo from './tests/Animatedtwo'
 // import DatePicker from './src/DatePicker'
 // import App from './App'
 // import Shot from './src/Shot'
 // import RefreshControl from './src/RefreshControl'
 // import SVGTest from './tests/SVGTest'
-// import AlarmVideoUI from './tests/AlarmVideoUI'
+import AlarmVideoUI from './tests/AlarmVideoUI'
 // import VictoryTest from './tests/Victory'
 // import DateTest from './tests/DateTest'
 // require("./tests/requireTest.js")
 // import PromiseTest from './tests/Promise'
+// import MeasureTest from './src/Measure'
+// import MeasureTest from './src/Measure1'
 
 
 // AppRegistry.registerComponent("miot.plugin.spec", () => AlarmVideoUI);
-AppRegistry.registerComponent("app_name", () => App);
+AppRegistry.registerComponent("app_name", () => AlarmVideoUI);

@@ -6,12 +6,12 @@
         "type": "HarmonyOS",
         "material": {
           "certpath": "/Users/chenhaoyue/.ohos/config/default_NativeProject_L2bz4HmdgWH7MFN3mC-bG3kSZhzd8uV6Gnr6iZDcg2k=.cer",
-          "storePassword": "0000001BE865053BB9E541BB1A06B8002AC9C58630AB8C89067B5B681A825A298394D4AA10919C985C9351",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001B2CD0C7C932A4CA8EBBFF215C5E38410DEF0BFC03A01A4DABBA9A744C8D9F2B624042D502A7FC8C",
+          "keyPassword": "0000001BE7EEA423426D0659571DA5FA3A3EE4D7309294294CBEB59E9CE9BD3A9466CB63D4EA8E14F9FF00",
           "profile": "/Users/chenhaoyue/.ohos/config/default_NativeProject_L2bz4HmdgWH7MFN3mC-bG3kSZhzd8uV6Gnr6iZDcg2k=.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "/Users/chenhaoyue/.ohos/config/default_NativeProject_L2bz4HmdgWH7MFN3mC-bG3kSZhzd8uV6Gnr6iZDcg2k=.p12"
+          "storeFile": "/Users/chenhaoyue/.ohos/config/default_NativeProject_L2bz4HmdgWH7MFN3mC-bG3kSZhzd8uV6Gnr6iZDcg2k=.p12",
+          "storePassword": "0000001BF6312A5B39CD317AB917B05174956F1D02ED2DC24749A8EE390FDCEF9F67D8C07E97DFFB19C70A"
         }
       }
     ],
