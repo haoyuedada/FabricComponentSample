@@ -43,7 +43,7 @@ export default class AlarmVideoUI extends React.Component {
     }
     render() {
         return (
-            <View style={[{ flexDirection: 'column', marginTop: 200}]}>
+            <View style={[{ flexDirection: 'column', marginTop: 200 }]}>
                 {this.renderContent()}
             </View>
         );
@@ -70,7 +70,7 @@ export default class AlarmVideoUI extends React.Component {
     _renderDownloadHint() {
         console.log("chy crash _renderDownloadHint1")
         // 下载提示
-        
+
         console.log("chy crash _renderDownloadHint return")
         return (
             //   <View>
@@ -80,7 +80,7 @@ export default class AlarmVideoUI extends React.Component {
             }}>
                 <Text>1234567</Text>
                 <View>
-                                    <Text>1234567</Text>
+                    <Text>1234567</Text>
 
                 </View>
             </View>
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
         flex: 1,
         // backgroundColor: BaseStyles.mainBg.backgroundColor
     },
-    
+
     fullScreenContainer: {
         width: '100%',
         height: '100%',

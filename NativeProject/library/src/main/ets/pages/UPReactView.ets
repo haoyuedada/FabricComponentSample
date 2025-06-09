@@ -29,8 +29,9 @@ import { RNDevLoadingView } from "@rnoh/react-native-openharmony/src/main/ets/RN
 import { SelectBox } from "../FabricComponent/SelectBox"
 import { RCTMessageDialog } from "../FabricComponent/RCTMessageDialog"
 // import { RNDatePicker } from "@react-native-oh-tpl/react-native-date-picker"
+import { LottieAnimationView, LOTTIE_TYPE } from "@react-native-oh-tpl/lottie-react-native"
 
-const arkTsComponentNames: Array<string> = [SelectBox.NAME, RCTMessageDialog.NAME];
+const arkTsComponentNames: Array<string> = [SelectBox.NAME, RCTMessageDialog.NAME, LOTTIE_TYPE];
 
 @Builder
 export function buildCustomComponent(ctx: ComponentBuilderContext) {
@@ -43,6 +44,11 @@ export function buildCustomComponent(ctx: ComponentBuilderContext) {
     RCTMessageDialog({
       ctx: ctx.rnComponentContext,
       tag: ctx.tag
+    })
+  } else if (ctx.componentName === LOTTIE_TYPE) {
+    LottieAnimationView({
+       ctx: ctx.rnComponentContext,
+       tag: ctx.tag
     })
   }
 }

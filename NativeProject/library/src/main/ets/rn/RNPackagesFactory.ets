@@ -13,6 +13,8 @@ import {SafeAreaViewPackage} from '@react-native-oh-tpl/react-native-safe-area-c
 // import {RNDatePickerPackage} from '@react-native-oh-tpl/react-native-date-picker/ts';
 import { ViewShotPackage } from '@react-native-oh-tpl/react-native-view-shot/ts';
 import { SvgPackage } from '@react-native-oh-tpl/react-native-svg/ts';
+import {LottieAnimationViewPackage} from '@react-native-oh-tpl/lottie-react-native/ts';
+import { ViewPagerPackage } from '@react-native-oh-tpl/react-native-pager-view/ts';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
@@ -22,6 +24,8 @@ export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
     new SafeAreaViewPackage(ctx),
     // new RNDatePickerPackage(ctx),
     new ViewShotPackage(ctx),
-    new SvgPackage(ctx)
+    new SvgPackage(ctx),
+    new LottieAnimationViewPackage(ctx),
+    new ViewPagerPackage(ctx)
   ];
 }

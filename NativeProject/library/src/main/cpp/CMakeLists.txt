@@ -26,6 +26,8 @@ add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-gesture-handle
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-safe-area-context/src/main/cpp" ./safe-area)
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-view-shot/src/main/cpp" ./view-shot)
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-svg/src/main/cpp" ./svg)
+add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/lottie-react-native/src/main/cpp" ./lottie)
+add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-pager-view/src/main/cpp" ./pager_view)
 # RNOH_END: manual_package_linking_1
 
 file(GLOB GENERATED_CPP_FILES "./generated/*.cpp")
@@ -45,4 +47,6 @@ target_link_libraries(rnoh_app PUBLIC rnoh_gesture_handler)
 target_link_libraries(rnoh_app PUBLIC rnoh_safe_area)
 target_link_libraries(rnoh_app PUBLIC rnoh_view_shot)
 target_link_libraries(rnoh_app PUBLIC rnoh_svg)
+target_link_libraries(rnoh_app PUBLIC rnoh_lottie)
+target_link_libraries(rnoh_app PUBLIC rnoh_pager_view )
 # RNOH_END: manual_package_linking_2

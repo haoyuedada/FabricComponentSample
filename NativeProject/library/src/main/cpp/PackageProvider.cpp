@@ -13,6 +13,8 @@
 #include "SafeAreaViewPackage.h"
 #include "ViewShotPackage.h"
 #include "SVGPackage.h"
+#include "LottieAnimationViewPackage.h"
+#include "ViewPagerPackage.h"
 using namespace rnoh;
 
 std::vector<std::shared_ptr<Package>> PackageProvider::getPackages(Package::Context ctx) {
@@ -23,6 +25,8 @@ std::vector<std::shared_ptr<Package>> PackageProvider::getPackages(Package::Cont
     std::make_shared<GestureHandlerPackage>(ctx),
     std::make_shared<SafeAreaViewPackage>(ctx),
     std::make_shared<ViewShotPackage>(ctx),
-    std::make_shared<SVGPackage>(ctx)
+    std::make_shared<SVGPackage>(ctx),
+    std::make_shared<LottieAnimationViewPackage>(ctx),
+    std::make_shared<ViewPagerPackage>(ctx)
   };
 }
