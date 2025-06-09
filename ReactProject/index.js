@@ -14,7 +14,7 @@ import { AppRegistry } from 'react-native';
 
 // import RCTMessage from './tests/RCTMessage';
 // import FastImage from './tests/FastImage';
-// import App from './App'
+import App from './App'
 // import Modal from './tests/Modal'
 // import ScrollView from './tests/ScrollView'
 // import QDScrollView from './tests/QDScrollView'
@@ -35,8 +35,8 @@ import { AppRegistry } from 'react-native';
 // import MeasureTest from './src/Measure'
 // import MeasureTest from './src/Measure1'
 // import LottieTest from './tests/LottieTabIcon'
-import PageViewTest from './tests/PageView'
+// import PageViewTest from './tests/PageView'
 
 
 // AppRegistry.registerComponent("miot.plugin.spec", () => AlarmVideoUI);
-AppRegistry.registerComponent("app_name", () => PageViewTest);
+AppRegistry.registerComponent("app_name", () => App);
