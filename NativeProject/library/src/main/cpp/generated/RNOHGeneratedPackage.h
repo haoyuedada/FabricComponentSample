@@ -12,6 +12,7 @@
 #include "RNOH/Package.h"
 #include "RNOH/ArkTSTurboModule.h"
 #include "generated/RNGestureHandlerModule.h"
+#include "generated/ReactNativeOrientation.h"
 #include "generated/SampleTurboModule.h"
 #include "generated/RNGestureHandlerButtonComponentDescriptor.h"
 #include "generated/RNGestureHandlerRootViewComponentDescriptor.h"
@@ -29,6 +30,9 @@ class RNOHGeneratedPackageTurboModuleFactoryDelegate : public TurboModuleFactory
     SharedTurboModule createTurboModule(Context ctx, const std::string &name) const override {
         if (name == "RNGestureHandlerModule") {
             return std::make_shared<RNGestureHandlerModule>(ctx, name);
+        }
+        if (name == "ReactNativeOrientation") {
+            return std::make_shared<ReactNativeOrientation>(ctx, name);
         }
         if (name == "SampleTurboModule") {
             return std::make_shared<SampleTurboModule>(ctx, name);

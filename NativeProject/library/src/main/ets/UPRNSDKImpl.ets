@@ -19,7 +19,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 // const TAG = `${PluginLog.PLUGIN_INIT}_MiRNSDKImpl`
 
 export class UPRNSDKImpl{
-  private context:common.UIAbilityContext | null = null;
+  public context:common.UIAbilityContext | null = null;
   protected isDebugModeEnabled_: boolean = true
   private _rnInstancesCoordinator!: RNInstancesCoordinator;
   public get rnInstancesCoordinator(): RNInstancesCoordinator {

@@ -15,6 +15,7 @@ import { ViewShotPackage } from '@react-native-oh-tpl/react-native-view-shot/ts'
 import { SvgPackage } from '@react-native-oh-tpl/react-native-svg/ts';
 import {LottieAnimationViewPackage} from '@react-native-oh-tpl/lottie-react-native/ts';
 import { ViewPagerPackage } from '@react-native-oh-tpl/react-native-pager-view/ts';
+// import { RNOrientationPackage } from '@react-native-oh-tpl/react-native-orientation/ts';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
@@ -26,6 +27,7 @@ export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
     new ViewShotPackage(ctx),
     new SvgPackage(ctx),
     new LottieAnimationViewPackage(ctx),
-    new ViewPagerPackage(ctx)
+    new ViewPagerPackage(ctx),
+    // new RNOrientationPackage(ctx)
   ];
 }

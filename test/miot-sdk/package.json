@@ -1,0 +1,9 @@
+{
+  "name": "miot",
+  "version": "1.10.3",
+  "api_level": 10103,
+  "min_native_api_level": {
+    "android": 10103,
+    "ios": 10103
+  }
+}

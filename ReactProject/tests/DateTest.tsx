@@ -9,8 +9,11 @@ import {
 } from "react-native";
 
 const App = () => {
-    console.log("chy date", Date.parse("2023/05/27"))
-    console.log("chy date", Date.parse(new Date()))
+    console.log("chy date 2023/05/27", Date.parse("2023/05/27"))
+    // console.log("chy date", Date.parse(new Date()))
+
+    console.log("chy date 2023-05-27", Date.parse("2023-05-27"))
+    // console.log("chy date", Date.parse(new Date()))
 
     return (
         <View></View>

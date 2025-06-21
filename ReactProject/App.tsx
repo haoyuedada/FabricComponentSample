@@ -4,13 +4,14 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import SampleTurboModule from 'turbo-module/src/specs/v1/SampleTurboModule';
 import SVGTest from './tests/SVGTest';
+import ModalTestClass from './tests/ModalTestClass'
 
 
 const HomeStack = createStackNavigator();
 
 function HomeScreen({ navigation }) {
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <View pointerEvents='auto' style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <Text>Home screen</Text>
             <Button
                 title='settimeout'
@@ -27,6 +28,7 @@ function HomeScreen({ navigation }) {
                 title="Go to SVGTest"
                 onPress={() => navigation.navigate('SVGTest')}
             />
+            <ModalTestClass />
         </View>
     );
 }
@@ -40,6 +42,7 @@ function DetailsScreen({ navigation }) {
                 onPress={() => navigation.navigate('PageThree')}
             />
         </View>
+        // <ModalTest />
     );
 }
 

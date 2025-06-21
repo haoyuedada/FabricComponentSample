@@ -30,6 +30,7 @@ import { SelectBox } from "../FabricComponent/SelectBox"
 import { RCTMessageDialog } from "../FabricComponent/RCTMessageDialog"
 // import { RNDatePicker } from "@react-native-oh-tpl/react-native-date-picker"
 import { LottieAnimationView, LOTTIE_TYPE } from "@react-native-oh-tpl/lottie-react-native"
+import fs from '@ohos.file.fs';
 
 const arkTsComponentNames: Array<string> = [SelectBox.NAME, RCTMessageDialog.NAME, LOTTIE_TYPE];
 
@@ -66,12 +67,54 @@ export struct UPReactView {
   public initialProps: Record<string, string> = {}
   private cleanUpCallbacks: (() => void)[] = []
   private logger!: RNOHLogger
+  public bundlePath:string = "bundle.harmony.js";
+  @State hasBundle: Boolean = false;
 
   onBackPress(): boolean | void {
   }
 
   aboutToAppear() {
     this.init()
+    this.checkBundleUpdated();
+  }
+
+  checkBundleUpdated(): void {
+    if (this.rnSdk) {
+      const sandboxDir: string = this.rnSdk.context.filesDir;
+      const bundlePath = sandboxDir + '/' + this.bundlePath;
+      console.log("chy checkBundleUpdated sandboxDir:", sandboxDir)
+      console.log("chy checkBundleUpdated bundlePath:", bundlePath)
+
+      try {
+        // console.log("chy checkBundleUpdated bundlePath:", bundlePath)
+        const stat = fs.statSync(bundlePath);
+        console.log("chy checkBundleUpdated stat.size:", stat.size)
+        if (stat.size == 0) {
+          this.downloadBundle();
+        } else {
+          this.hasBundle = true;
+        }
+      } catch (e) {
+        this.downloadBundle();
+      }
+    }
+  }
+
+  async downloadBundle() {
+    if (this.rnSdk) {
+      // 将bundlejs下载并保存到沙箱。
+      let uint8Array =
+        await this.rnSdk.context.resourceManager.getRawFileContent('rawfile/bundle.harmony.js');
+      let rawBuffer = uint8Array.buffer;
+      let num = rawBuffer.byteLength;
+      // 获取沙箱路径
+      const sandboxDir = this.rnSdk.context.filesDir;
+      const bundlePath = sandboxDir + '/' + this.bundlePath;
+      let stream = fs.createStreamSync(bundlePath, 'w');
+      stream.writeSync(rawBuffer);
+      stream.closeSync();
+      this.hasBundle = true;
+    }
   }
 
   async init() {
@@ -87,9 +130,9 @@ export struct UPReactView {
         new TraceJSBundleProviderDecorator(
           new AnyJSBundleProvider([
             new MetroJSBundleProvider(),
-            new FileJSBundleProvider('/data/storage/el2/base/files/bundle.harmony.js'),
-            new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'hermes_bundle.hbc'),
-            new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'bundle.harmony.js')
+            new FileJSBundleProvider('/data/storage/el2/base/haps/entry/files/bundle.harmony.js'),
+            // new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'hermes_bundle.hbc'),
+            // new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'bundle.harmony.js')
           ]),
           this.rnohCoreContext!.logger)
       ).then(() => {

@@ -15,6 +15,8 @@ set(CMAKE_ASM_FLAGS "-Wno-error=unused-command-line-argument -Qunused-arguments"
 set(CMAKE_CXX_FLAGS "-fstack-protector-strong -Wl,-z,relro,-z,now,-z,noexecstack -fPIE -pie")
 set(WITH_HITRACE_SYSTRACE 1) # for other CMakeLists.txt files to use
 set(OH_MODULES "${CMAKE_CURRENT_SOURCE_DIR}/../../../oh_modules")
+set(USE_HERMES 0)
+
 add_compile_definitions(WITH_HITRACE_SYSTRACE)
 
 add_subdirectory("${RNOH_CPP_DIR}" ./rn)
