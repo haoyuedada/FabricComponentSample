@@ -21,6 +21,7 @@ const App = () => {
           <Pressable onPress={() => {
             console.log("chy Pressable ")
             if (floatRef.current) {
+              console.log("chy dispatchViewManagerCommand ")
               // RN向原生发送消息
               UIManager.dispatchViewManagerCommand(
                 findNodeHandle(floatRef.current),

@@ -72,6 +72,7 @@ void QDGestureFloatComponentInstance::onScrollStop() {
 }
 
 void QDGestureFloatComponentInstance::onScrollToCommand(float offsetY, bool animated) {
+  LOG(INFO) << "chy QDGestureFloatComponentInstance onScrollToCommand";
   m_scrollNode.scrollTo(0, offsetY, animated);
 }
 } // namespace rnoh

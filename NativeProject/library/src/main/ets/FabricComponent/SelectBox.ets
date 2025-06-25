@@ -53,7 +53,7 @@ export struct SelectBox {
     // RN => NATIVE
     this.cleanUpCallbacks.push(new RNC.SelectBox.CommandReceiver(this.ctx.componentCommandReceiver,
       this.tag).subscribe("emitNativeEvent", (argv: [boolean]) => {
-      // console.log(`收到 RN 传来的消息 ================ ${JSON.stringify(argv)}`);
+      console.log(`收到 RN 传来的消息 ================ ${JSON.stringify(argv)}`);
       // this.mutil = argv || false
     }))
   }
@@ -93,6 +93,7 @@ export struct SelectBox {
         }, (item: SelectItems) => item.key.toString())
         Button("确定")
           .onClick(() => {
+            console.log("chy 点击确定")
             const value = this.data
               .filter((item: SelectItems) => item.selected)
               .map((item: SelectItems) => item.id)

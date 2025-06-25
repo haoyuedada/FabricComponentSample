@@ -48,6 +48,7 @@ const App = () => {
         if (boxRef.current) {
           // RN向原生发送消息
           let obj = { id: 12, text: '123'}
+          console.log("chy commands", UIManager);
           UIManager.dispatchViewManagerCommand(
             findNodeHandle(boxRef.current),
             'emitNativeEvent',
@@ -66,6 +67,10 @@ const App = () => {
         value={value}
         data={DATA}
         onChangeInSelectBox={onChange}
+        // onChange={(event: any) => {
+        //   setValue(event.nativeEvent.value)
+        //   console.log(event.nativeEvent)
+        // }}
       />
     </View>
   );
