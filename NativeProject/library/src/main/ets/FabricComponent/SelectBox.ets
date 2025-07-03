@@ -91,9 +91,9 @@ export struct SelectBox {
             }
           })
         }, (item: SelectItems) => item.key.toString())
-        Button("确定")
+        Button("确定changeInSelectBox")
           .onClick(() => {
-            console.log("chy 点击确定")
+            console.log("chy 点击确定changeInSelectBox")
             const value = this.data
               .filter((item: SelectItems) => item.selected)
               .map((item: SelectItems) => item.id)
@@ -101,6 +101,19 @@ export struct SelectBox {
             // 发送事件方式[1]
             // let value = { test: 2}
             this.ctx.rnInstance.emitComponentEvent(this.tag, "changeInSelectBox", { temutilst: true})
+            // 发送事件方式[2]
+            // this.eventEmitter!.emit("changeInSelectBox", { value: [1, 2] })
+          })
+        Button("确定Dismiss")
+          .onClick(() => {
+            console.log("chy 点击确定Dissmiss")
+            const value = this.data
+              .filter((item: SelectItems) => item.selected)
+              .map((item: SelectItems) => item.id)
+            // NATIVE => RN
+            // 发送事件方式[1]
+            // let value = { test: 2}
+            this.ctx.rnInstance.emitComponentEvent(this.tag, "dismiss", { temutilst: true})
             // 发送事件方式[2]
             // this.eventEmitter!.emit("changeInSelectBox", { value: [1, 2] })
           })

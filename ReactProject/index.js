@@ -14,13 +14,13 @@ import { AppRegistry } from 'react-native';
 
 // import RCTMessage from './tests/RCTMessage';
 // import FastImage from './tests/FastImage';
-// import App from './App'
+import App from './App'
 // import Modal from './tests/Modal'
 // import ScrollView from './tests/ScrollView'
 // import QDScrollView from './tests/QDScrollView'
 // import RCT from './tests/RCT'
 // import FontSlice from './tests/FontSlice'
-import Image from './tests/Image'
+// import Image from './tests/Image'
 // import Animatedtwo from './tests/Animatedtwo'
 // import DatePicker from './src/DatePicker'
 // import App from './App'
@@ -29,7 +29,7 @@ import Image from './tests/Image'
 // import SVGTest from './tests/SVGTest'
 // import AlarmVideoUI from './tests/AlarmVideoUI'
 // import VictoryTest from './tests/Victory'
-import DateTest from './tests/DateTest'
+// import DateTest from './tests/DateTest'
 // require("./tests/requireTest.js")
 // import PromiseTest from './tests/Promise'
 // import MeasureTest from './src/Measure'
@@ -40,7 +40,12 @@ import DateTest from './tests/DateTest'
 // import ModalTestClass from './tests/ModalTestClass'
 // import TextInputTest from './tests/TextInputTest'
 // import TextInputTest2 from './tests/TextInputTest2'
-
+// import Demisions from './tests/Demisions'
+import SelectBoxApp from './src/SelectBoxApp'
+// import Statetest from './src/Statetest'
+// import ViewTest from './src/ViewTest'
+// import CMRecipeDetail from './src/CMRecipeDetail'
+// import SectionList from './src/SectionList'
 
 // AppRegistry.registerComponent("miot.plugin.spec", () => AlarmVideoUI);
-AppRegistry.registerComponent("app_name", () => DateTest);
+AppRegistry.registerComponent("app_name", () => SelectBoxApp);

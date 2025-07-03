@@ -1,11 +1,3 @@
-/**
- * Copyright (c) 2024 Huawei Technologies Co., Ltd.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE-MIT file in the root directory of this source tree.
- */
-
-
 import React, { useRef } from 'react';
 import { StyleSheet, Text, View, Pressable, UIManager, findNodeHandle, Dimensions, DeviceEventEmitter } from 'react-native';
 import SampleTurboModule from 'turbo-module/src/specs/v1/SampleTurboModule';

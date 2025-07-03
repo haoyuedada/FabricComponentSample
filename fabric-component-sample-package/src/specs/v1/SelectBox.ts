@@ -24,6 +24,7 @@ export interface Res {
 export interface NativeProps extends ViewProps, Res {
   data: SelectItems[];
   onChangeInSelectBox: DirectEventHandler<Res>;
+  onDismiss: DirectEventHandler<Res>;
   // 添加其它 props
 }
 

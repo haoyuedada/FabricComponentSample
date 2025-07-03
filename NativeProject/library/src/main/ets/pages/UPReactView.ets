@@ -124,7 +124,8 @@ export struct UPReactView {
         enableNDKTextMeasuring: true,
         enableBackgroundExecutor: false,
         enableCAPIArchitecture: true,
-        arkTsComponentNames: arkTsComponentNames
+        arkTsComponentNames: arkTsComponentNames,
+        disableConcurrentRoot: true
       });
       await this.rnInstance.runJSBundle(
         new TraceJSBundleProviderDecorator(
