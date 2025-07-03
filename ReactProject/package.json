@@ -30,7 +30,8 @@
     "react-native-performance": "^5.1.2",
     "react-native-screens": "^3.29.0",
     "turbo-module": "file:../turbo-module/turbo-module-1.0.0.tgz",
-    "victory-native": "33.0.0"
+    "victory-native": "33.0.0",
+    "@ohmi/react-native-harmony-cli": "./react-native-harmony-cli/ohmi-react-native-harmony-cli-0.0.29-rc.1.0.1.tgz"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

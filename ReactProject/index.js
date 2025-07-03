@@ -42,10 +42,12 @@ import App from './App'
 // import TextInputTest2 from './tests/TextInputTest2'
 // import Demisions from './tests/Demisions'
 import SelectBoxApp from './src/SelectBoxApp'
-// import Statetest from './src/Statetest'
+import Statetest from './src/Statetest'
 // import ViewTest from './src/ViewTest'
 // import CMRecipeDetail from './src/CMRecipeDetail'
-// import SectionList from './src/SectionList'
+import SectionList from './src/SectionList'
+import UseTransitionTest from './src/useTransitionTest'
+import ImageTest from './tests/ImageTest'
 
 // AppRegistry.registerComponent("miot.plugin.spec", () => AlarmVideoUI);
 AppRegistry.registerComponent("app_name", () => SelectBoxApp);

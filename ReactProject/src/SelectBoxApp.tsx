@@ -48,10 +48,11 @@ const App = () => {
         if (boxRef.current) {
           // RN向原生发送消息
           let obj = { id: 12, text: '123'}
-          // console.log("chy commands", UIManager.);
+          console.log("chy UIManager.getViewManagerConfig", UIManager.getViewManagerConfig('SelectBox').Commands);
+          console.log("chy UIManager", UIManager);
           UIManager.dispatchViewManagerCommand(
             findNodeHandle(boxRef.current),
-            'hahahaha',
+            UIManager.SelectBox.Commands.emitNativeEvent,
             [!mutil, '23', [obj]],
           );
           setMutil(!mutil)

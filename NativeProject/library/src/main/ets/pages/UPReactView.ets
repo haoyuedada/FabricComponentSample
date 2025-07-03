@@ -23,7 +23,9 @@ import {
   LogBoxDialog,
   LogBoxTurboModule,
   RNOHLogger,
+  JSBundleProvider
 } from "@rnoh/react-native-openharmony";
+// import { JSBundleProvider } from '@rnoh/react-native-openharmony/src/main/ets/RNOH'
 import { SurfaceConfig2 } from '@rnoh/react-native-openharmony/src/main/ets/RNSurface'
 import { RNDevLoadingView } from "@rnoh/react-native-openharmony/src/main/ets/RNOH"
 import { SelectBox } from "../FabricComponent/SelectBox"
@@ -69,11 +71,21 @@ export struct UPReactView {
   private logger!: RNOHLogger
   public bundlePath:string = "bundle.harmony.js";
   @State hasBundle: Boolean = false;
+  public jsBundleProvider: JSBundleProvider | undefined = undefined
 
   onBackPress(): boolean | void {
   }
 
   aboutToAppear() {
+    this.jsBundleProvider = new TraceJSBundleProviderDecorator(
+      new AnyJSBundleProvider([
+        new MetroJSBundleProvider(),
+        new FileJSBundleProvider('/data/storage/el2/base/haps/entry/files/bundle.harmony.js'),
+        new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'hermes_bundle.hbc'),
+        new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'bundle.harmony.js')
+      ]),
+      this.rnohCoreContext!.logger
+    );
     this.init()
     this.checkBundleUpdated();
   }
@@ -88,12 +100,23 @@ export struct UPReactView {
       try {
         // console.log("chy checkBundleUpdated bundlePath:", bundlePath)
         const stat = fs.statSync(bundlePath);
-        console.log("chy checkBundleUpdated stat.size:", stat.size)
-        if (stat.size == 0) {
-          this.downloadBundle();
-        } else {
-          this.hasBundle = true;
-        }
+        let context = getContext(this);
+        let fileName: string = 'bundle.harmony.js';
+        // 获取文件内容
+        context.resourceManager.getRawFileContent(fileName, (_err, value) => {
+          // 这里读取到文件内容可以进行下一步操作
+          // let myBuffer: ArrayBufferLike = value.length;
+          console.log("chy checkBundleUpdated 检查rawfiel有bundle value.length:", value.length)
+          console.log("chy checkBundleUpdated 检查沙箱中有bundle stat.size:", stat.size)
+          let rawfileSize = value.length;
+          let boxSize = stat.size;
+          if (boxSize == rawfileSize) {
+            console.log("chy checkBundleUpdated 推送新的 bundle 到沙箱")
+            this.downloadBundle();
+          } else {
+            this.hasBundle = true;
+          }
+        });
       } catch (e) {
         this.downloadBundle();
       }
@@ -102,17 +125,28 @@ export struct UPReactView {
 
   async downloadBundle() {
     if (this.rnSdk) {
+      // 将资源推送到沙箱
+      let getContext1 = getContext(this).resourceDir
+      let srcPath = getContext(this).resourceDir + '/apps/' // /apps/
+      let destPath = getContext(this).filesDir + '/tests/' // /data/storage/el2/base/haps/entry/files/apps/
+      console.log("chy assets getContext1:", getContext1)
+      console.log("chy assets srcPath:", srcPath)
+      console.log("chy assets destPath:", destPath)
+      // 判断文件夹是否存在
+      if (!fs.accessSync(destPath)) {
+        fs.mkdirSync(destPath)
+      }
+      fs.copyDirSync(srcPath, destPath, 0);
       // 将bundlejs下载并保存到沙箱。
-      let uint8Array =
-        await this.rnSdk.context.resourceManager.getRawFileContent('rawfile/bundle.harmony.js');
+      let uint8Array = await this.rnSdk.context.resourceManager.getRawFileContent('rawfile/bundle.harmony.js');
       let rawBuffer = uint8Array.buffer;
       let num = rawBuffer.byteLength;
       // 获取沙箱路径
       const sandboxDir = this.rnSdk.context.filesDir;
       const bundlePath = sandboxDir + '/' + this.bundlePath;
       let stream = fs.createStreamSync(bundlePath, 'w');
-      stream.writeSync(rawBuffer);
-      stream.closeSync();
+      stream.write(rawBuffer);
+      stream.close();
       this.hasBundle = true;
     }
   }
@@ -127,18 +161,14 @@ export struct UPReactView {
         arkTsComponentNames: arkTsComponentNames,
         disableConcurrentRoot: true
       });
-      await this.rnInstance.runJSBundle(
-        new TraceJSBundleProviderDecorator(
-          new AnyJSBundleProvider([
-            new MetroJSBundleProvider(),
-            new FileJSBundleProvider('/data/storage/el2/base/haps/entry/files/bundle.harmony.js'),
-            // new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'hermes_bundle.hbc'),
-            // new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'bundle.harmony.js')
-          ]),
-          this.rnohCoreContext!.logger)
-      ).then(() => {
+      await this.rnInstance.runJSBundle(this.jsBundleProvider)
+      const jsBundleExecutionStatus = this.rnInstance.getBundleExecutionStatus('/data/storage/el2/base/haps/entry/files/bundle.harmony.js')
+      console.log("chy runjsbundle after jsBundleExecutionStatus:", jsBundleExecutionStatus)
+      if (jsBundleExecutionStatus == "DONE") {
         this.isBundleReady = true;
-      })
+      } else {
+        return;
+      }
       this.ctx = new RNComponentContext(
         RNOHContext.fromCoreContext(this.rnohCoreContext!, this.rnInstance),
         wrapBuilder(buildCustomComponent),
