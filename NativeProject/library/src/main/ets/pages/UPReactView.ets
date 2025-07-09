@@ -25,12 +25,10 @@ import {
   RNOHLogger,
   JSBundleProvider
 } from "@rnoh/react-native-openharmony";
-// import { JSBundleProvider } from '@rnoh/react-native-openharmony/src/main/ets/RNOH'
 import { SurfaceConfig2 } from '@rnoh/react-native-openharmony/src/main/ets/RNSurface'
 import { RNDevLoadingView } from "@rnoh/react-native-openharmony/src/main/ets/RNOH"
 import { SelectBox } from "../FabricComponent/SelectBox"
 import { RCTMessageDialog } from "../FabricComponent/RCTMessageDialog"
-// import { RNDatePicker } from "@react-native-oh-tpl/react-native-date-picker"
 import { LottieAnimationView, LOTTIE_TYPE } from "@react-native-oh-tpl/lottie-react-native"
 import fs from '@ohos.file.fs';
 
@@ -68,7 +66,6 @@ export struct UPReactView {
   private ctx!: RNComponentContext
   public initialProps: Record<string, string> = {}
   private cleanUpCallbacks: (() => void)[] = []
-  private logger!: RNOHLogger
   public bundlePath:string = "bundle.harmony.js";
   @State hasBundle: Boolean = false;
   public jsBundleProvider: JSBundleProvider | undefined = undefined
@@ -162,7 +159,7 @@ export struct UPReactView {
         disableConcurrentRoot: true
       });
       await this.rnInstance.runJSBundle(this.jsBundleProvider)
-      const jsBundleExecutionStatus = this.rnInstance.getBundleExecutionStatus('/data/storage/el2/base/haps/entry/files/bundle.harmony.js')
+      const jsBundleExecutionStatus = this.rnInstance.getBundleExecutionStatus(this.jsBundleProvider?.getURL())
       console.log("chy runjsbundle after jsBundleExecutionStatus:", jsBundleExecutionStatus)
       if (jsBundleExecutionStatus == "DONE") {
         this.isBundleReady = true;

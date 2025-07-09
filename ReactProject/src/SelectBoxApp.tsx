@@ -33,6 +33,7 @@ const DATA = [
 ];
 
 const App = () => {
+  console.log("chy App render");
   const [value, setValue] = useState([])
   const [mutil, setMutil] = useState(false)
   const boxRef = useRef(null)

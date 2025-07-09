@@ -48,6 +48,9 @@ import Statetest from './src/Statetest'
 import SectionList from './src/SectionList'
 import UseTransitionTest from './src/useTransitionTest'
 import ImageTest from './tests/ImageTest'
+import OnTextInput from './src/onTextInput'
+import ViewMore from './tests/ViewMore'
+import StorageUI from './tests/mixiding/StorageUI'
 
 // AppRegistry.registerComponent("miot.plugin.spec", () => AlarmVideoUI);
-AppRegistry.registerComponent("app_name", () => SelectBoxApp);
+AppRegistry.registerComponent("app_name", () => StorageUI);
