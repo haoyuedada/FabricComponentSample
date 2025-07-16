@@ -51,6 +51,7 @@ const App = () => {
           let obj = { id: 12, text: '123'}
           console.log("chy UIManager.getViewManagerConfig", UIManager.getViewManagerConfig('SelectBox').Commands);
           console.log("chy UIManager", UIManager);
+          console.log("chy findNodeHandle:", findNodeHandle(boxRef.current));
           UIManager.dispatchViewManagerCommand(
             findNodeHandle(boxRef.current),
             UIManager.SelectBox.Commands.emitNativeEvent,
@@ -82,6 +83,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     height: 250,
     justifyContent: 'center',
+    marginTop: 100
   },
   title: {
     backgroundColor: 'green',

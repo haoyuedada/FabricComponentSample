@@ -15,6 +15,7 @@ export default class EntryAbility extends UIAbility {
 
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+    console.log("chy onCreate:", JSON.stringify(this.context))
     this.rnSDK = new UPRNSDKImpl(this.context, want);
     AppStorage.setOrCreate('UPRNSDK', this.rnSDK);
   }

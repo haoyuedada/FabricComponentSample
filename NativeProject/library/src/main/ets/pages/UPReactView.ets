@@ -31,6 +31,7 @@ import { SelectBox } from "../FabricComponent/SelectBox"
 import { RCTMessageDialog } from "../FabricComponent/RCTMessageDialog"
 import { LottieAnimationView, LOTTIE_TYPE } from "@react-native-oh-tpl/lottie-react-native"
 import fs from '@ohos.file.fs';
+import { RNCVideo, RNC_VIDEO_TYPE } from "@react-native-oh-tpl/react-native-video"
 
 const arkTsComponentNames: Array<string> = [SelectBox.NAME, RCTMessageDialog.NAME, LOTTIE_TYPE];
 
@@ -50,6 +51,11 @@ export function buildCustomComponent(ctx: ComponentBuilderContext) {
     LottieAnimationView({
        ctx: ctx.rnComponentContext,
        tag: ctx.tag
+    })
+  } else if (ctx.componentName === RNC_VIDEO_TYPE) {
+    RNCVideo({
+      ctx: ctx.rnComponentContext,
+      tag: ctx.tag
     })
   }
 }
@@ -74,6 +80,7 @@ export struct UPReactView {
   }
 
   aboutToAppear() {
+    console.log("chy aboutToAppear:", JSON.stringify(this.rnohCoreContext!.uiAbilityContext))
     this.jsBundleProvider = new TraceJSBundleProviderDecorator(
       new AnyJSBundleProvider([
         new MetroJSBundleProvider(),
@@ -85,6 +92,7 @@ export struct UPReactView {
     );
     this.init()
     this.checkBundleUpdated();
+    // console.log("chy getUIContext:", JSON.stringify(this.rnInstance.getUIContext()))
   }
 
   checkBundleUpdated(): void {
@@ -159,6 +167,7 @@ export struct UPReactView {
         disableConcurrentRoot: true
       });
       await this.rnInstance.runJSBundle(this.jsBundleProvider)
+      console.log("chy updateViewRootTag runJSBundle finish")
       const jsBundleExecutionStatus = this.rnInstance.getBundleExecutionStatus(this.jsBundleProvider?.getURL())
       console.log("chy runjsbundle after jsBundleExecutionStatus:", jsBundleExecutionStatus)
       if (jsBundleExecutionStatus == "DONE") {
@@ -197,6 +206,7 @@ export struct UPReactView {
         this.init()
       }))
       this.rnInstance.enableFeatureFlag("ENABLE_RN_INSTANCE_CLEAN_UP")
+      console.log("chy uicontext getUIContext:", JSON.stringify(this.getUIContext()))
     }
   }
 
@@ -225,6 +235,9 @@ export struct UPReactView {
               appKey: this.rnInfo.businessId,
               initialProps: this.initialProps ?? {},
             } as SurfaceConfig2,
+            updateViewRootTag(rnInstance:RNInstance, rootViewTag: number){
+
+            }
           })
         }
         if (this.rnohCoreContext!.isDebugModeEnabled) {

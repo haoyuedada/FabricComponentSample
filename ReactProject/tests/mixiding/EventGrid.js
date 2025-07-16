@@ -71,11 +71,13 @@ export default class EventGrid extends EventList {
 
   mRItem = ({ section, index }) => {
     // console.log(this.tag, "mRItem", index);
+    let arr1 = new Array(100).fill(2);
+
     return (
       <View style={{ height: CardHeight, flexDirection: "row", paddingHorizontal: 20 }}>
         {
-          [1,2,3,4,5,6,7]
-            .map((itm, idx) => {
+          
+            arr1.map((itm, idx) => {
             return (
                 <View style={{width: 20,height: 20, backgroundColor: 'red'}}></View>
               )

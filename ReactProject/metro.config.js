@@ -8,17 +8,16 @@
 const { mergeConfig, getDefaultConfig } = require('@react-native/metro-config');
 const { createHarmonyMetroConfig } = require('@ohmi/react-native-harmony/metro.config');
 
-console.log("chy metro.config.js")
+const defaultConfig = getDefaultConfig(__dirname);
+const { assetExts, sourceExts } = defaultConfig.resolver;
+
+console.log("chy assetExts:", assetExts);
 /**
  * @type {import("metro-config").ConfigT}
  */
 const config = {
   transformer: {
     getTransformOptions: async () => {
-      // 添加调试输出
-      console.log('[Metro] 正在获取转换选项...');
-      console.warn('[Metro] 启用内联引入 (inlineRequires)');
-      
       return {
         transform: {
           experimentalImportSupport: false,
@@ -26,6 +25,11 @@ const config = {
         },
       };
     },
+    babelTransformerPath: require.resolve("react-native-svg-transformer/react-native"),
+  },
+  resolver: {
+    assetExts: assetExts.filter(ext => ext !== 'svg'),
+    sourceExts: [...sourceExts, 'svg'],  // 添加 svg 支持
   },
 };
 
