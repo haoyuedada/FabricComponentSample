@@ -8,6 +8,7 @@
 import router from '@ohos.router';
 import { mediaquery } from '@kit.ArkUI';
 import { display } from '@kit.ArkUI'
+import Fetch from '@system.fetch';
 
 function onPortrait(mediaQueryResult: mediaquery.MediaQueryResult) {
   if (mediaQueryResult.matches) {
@@ -26,6 +27,17 @@ struct Index {
   @State message: string = '打开RN应用';
 
   aboutToAppear(): void {
+    // not working
+    Fetch.fetch({
+      url: "asset://tests/assets/icon_alarm.svg",
+      success: (res) => {
+        console.log("chy res", res)
+      },
+      fail: (data: string, code: number) => {
+        console.info("chy res fetch fail:", data);
+        console.info("chy res fetch code:", code);
+      }
+    })
     listener.on('change', onPortrait) // 注册回调
   }
 

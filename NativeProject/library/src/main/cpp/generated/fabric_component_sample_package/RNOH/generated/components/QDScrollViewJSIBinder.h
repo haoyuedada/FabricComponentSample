@@ -24,12 +24,6 @@ class QDScrollViewJSIBinder : public ViewComponentJSIBinder {
         return object;
     }
 
-    facebook::jsi::Object createCommands(facebook::jsi::Runtime &rt) override {
-        auto commands = ViewComponentJSIBinder::createCommands(rt);
-        commands.setProperty(rt, "scrollTo", "scrollTo");
-        return commands;
-    }
-
     facebook::jsi::Object createBubblingEventTypes(facebook::jsi::Runtime &rt) override {
         facebook::jsi::Object events(rt);
         return events;

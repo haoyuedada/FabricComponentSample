@@ -32,6 +32,7 @@ import { RCTMessageDialog } from "../FabricComponent/RCTMessageDialog"
 import { LottieAnimationView, LOTTIE_TYPE } from "@react-native-oh-tpl/lottie-react-native"
 import fs from '@ohos.file.fs';
 import { RNCVideo, RNC_VIDEO_TYPE } from "@react-native-oh-tpl/react-native-video"
+import Fetch from '@system.fetch';
 
 const arkTsComponentNames: Array<string> = [SelectBox.NAME, RCTMessageDialog.NAME, LOTTIE_TYPE];
 
@@ -84,14 +85,14 @@ export struct UPReactView {
     this.jsBundleProvider = new TraceJSBundleProviderDecorator(
       new AnyJSBundleProvider([
         new MetroJSBundleProvider(),
-        new FileJSBundleProvider('/data/storage/el2/base/haps/entry/files/bundle.harmony.js'),
-        new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'hermes_bundle.hbc'),
+        // new FileJSBundleProvider('/data/storage/el2/base/haps/entry/files/bundle.harmony.js'),
+        // new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'hermes_bundle.hbc'),
         new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'bundle.harmony.js')
       ]),
       this.rnohCoreContext!.logger
     );
     this.init()
-    this.checkBundleUpdated();
+    // this.checkBundleUpdated();
     // console.log("chy getUIContext:", JSON.stringify(this.rnInstance.getUIContext()))
   }
 
@@ -141,16 +142,19 @@ export struct UPReactView {
       if (!fs.accessSync(destPath)) {
         fs.mkdirSync(destPath)
       }
-      fs.copyDirSync(srcPath, destPath, 0);
+      console.log("chy assets1")
+      // fs.copyDirSync(srcPath, destPath, 0);
       // 将bundlejs下载并保存到沙箱。
       let uint8Array = await this.rnSdk.context.resourceManager.getRawFileContent('rawfile/bundle.harmony.js');
       let rawBuffer = uint8Array.buffer;
       let num = rawBuffer.byteLength;
+      console.log("chy assets2")
       // 获取沙箱路径
       const sandboxDir = this.rnSdk.context.filesDir;
       const bundlePath = sandboxDir + '/' + this.bundlePath;
       let stream = fs.createStreamSync(bundlePath, 'w');
       stream.write(rawBuffer);
+      console.log("chy assets 写入成功")
       stream.close();
       this.hasBundle = true;
     }

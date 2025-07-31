@@ -5,6 +5,9 @@ const ext =
 
 const ReadSDKFiles = (pathname, result = '') => {
     const directory = fs.readdirSync(pathname);
+    directory.sort((a, b) =>
+        a.localeCompare(b, undefined, { sensitivity: 'base' })
+    );
     for (let item of directory) {
         let name = path.join(pathname, item);
         const stat = fs.statSync(name);

@@ -3,8 +3,9 @@ import { Button, Text, View } from 'react-native';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import SampleTurboModule from 'turbo-module/src/specs/v1/SampleTurboModule';
-import SVGTest from './tests/SVGTest';
+// import SVGTest from './tests/SVGTest';
 import ModalTestClass from './tests/ModalTestClass'
+import ScaleableTimelineView from './tests/ScaleableTimelineView-2'
 
 
 const HomeStack = createStackNavigator();
@@ -24,9 +25,13 @@ function HomeScreen({ navigation }) {
                 title="Go to Details"
                 onPress={() => navigation.navigate('Details')}
             />
-            <Button
+            {/* <Button
                 title="Go to SVGTest"
                 onPress={() => navigation.navigate('SVGTest')}
+            /> */}
+            <Button
+                title="Go to ScaleableTimelineView"
+                onPress={() => navigation.navigate('ScaleableTimelineView')}
             />
             <ModalTestClass />
         </View>
@@ -89,7 +94,9 @@ export default function App() {
                 <HomeStack.Screen name="Home" component={HomeScreen} />
                 <HomeStack.Screen name="Details" component={DetailsScreen} />
                 <HomeStack.Screen name="PageThree" component={PageThree} />
-                <HomeStack.Screen name="SVGTest" component={SVGTest} />
+                {/* <HomeStack.Screen name="SVGTe
+                st" component={SVGTest} /> */}
+                <HomeStack.Screen name="ScaleableTimelineView" component={ScaleableTimelineView} />
             </HomeStack.Navigator>
         </NavigationContainer>
     );

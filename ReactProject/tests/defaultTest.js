@@ -2,22 +2,22 @@
 import React, { useEffect } from 'react';
 import { Text, View } from 'react-native';
 import { LanguageTest } from "./config/LangsTest";
-
+import { uk } from './lang/index.js';
 function requireLangTest() {
   import("./config/dle4jz/LangsTest.js").then((module) => {
-    console.log("imported module:", module);
+    console.log("chy default imported module:", module);
   }).catch((error) => {
-    console.error("Error importing module:", error);
+    console.error("chy default Error importing module:", error);
   });
 }
-async function loadCfg(){
-  let langFnTest = LanguageTest["madv.cateye.dle4jz"];
-  let langTest = await langFnTest()
-  console.log("chy langTest:", langTest)
-}
+// async function loadCfg(){
+//   let langFnTest = LanguageTest["madv.cateye.dle4jz"];
+//   let langTest = await langFnTest()
+//   console.log("chy langTest:", langTest)
+// }
 
 export default function App() {
-  loadCfg();
+  // loadCfg();
   requireLangTest();
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
