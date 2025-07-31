@@ -33,6 +33,9 @@ const LocalImageSizeDemo = () => {
     Image.getSize(
       Image.resolveAssetSource(localImage).uri,
       (width, height) => {
+        console.log("chy path:", Image.resolveAssetSource(localImage).uri)
+        console.log("chy width:", width)
+        console.log("chy height:", height)
         setImageInfo({
           width,
           height,

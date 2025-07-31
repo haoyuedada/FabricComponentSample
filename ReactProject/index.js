@@ -52,7 +52,7 @@ import { AppRegistry } from 'react-native';
 // import StorageUI from './tests/mixiding/StorageUI'
 // import SectionList from './tests/SectionList'
 // import StorageUI from './tests/0710/StorageUI'
-import DefaultTest from './tests/defaultTest'
+// import DefaultTest from './tests/defaultTest'
 // import EvalTest from './tests/EvalTest'
 // import RefTest from './tests/RefTest'
 // import VideoTest from './tests/VideoTest'
@@ -76,5 +76,9 @@ import DefaultTest from './tests/defaultTest'
 // import FlistTest from './tests/projects_com.chuangmi.camera_src_ui_FlatList'
 // import ScaleableTimelineView from './tests/ScaleableTimelineView-2'
 // import TurboModuleTest from './testTurboModule/TurboModuleTest'
+// import Root from './tests/Root/index.js'
+// import Text1 from './tests/Text1.tsx'
+// import App from './tests/Hierarchy1/Hierarchy2/index.js';
+import FetchTest from './tests/FetchTest.tsx';
 
-AppRegistry.registerComponent("app_name", () => DefaultTest);
+AppRegistry.registerComponent("app_name", () => FetchTest);

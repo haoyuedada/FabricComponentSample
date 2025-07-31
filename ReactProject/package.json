@@ -33,7 +33,8 @@
     "react-native-screens": "^3.29.0",
     "react-native-svg-uri": "^1.2.3",
     "turbo-module": "file:../turbo-module/turbo-module-1.0.0.tgz",
-    "victory-native": "33.0.0"
+    "victory-native": "33.0.0",
+    "react-navigation": "2.16.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
