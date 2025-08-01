@@ -85,9 +85,9 @@ export struct UPReactView {
     this.jsBundleProvider = new TraceJSBundleProviderDecorator(
       new AnyJSBundleProvider([
         new MetroJSBundleProvider(),
-        // new FileJSBundleProvider('/data/storage/el2/base/haps/entry/files/bundle.harmony.js'),
+        new FileJSBundleProvider('/data/storage/el2/base/haps/entry/files/bundle.harmony.js'),
         // new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'hermes_bundle.hbc'),
-        new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'bundle.harmony.js')
+        // new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'bundle.harmony.js')
       ]),
       this.rnohCoreContext!.logger
     );

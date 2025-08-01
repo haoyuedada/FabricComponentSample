@@ -7,7 +7,7 @@ import {
   ActivityIndicator,
   findNodeHandle
 } from 'react-native';
-import Video from '@/react-native-video';
+import Video from '@react-native-oh-tpl/react-native-video';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
@@ -67,7 +67,7 @@ export default class VideoPlayerExample extends React.Component {
         )}
         <Video
           ref={this.videoRef}
-          source={{ uri: 'https://www.w3schools.com/html/mov_bbb.mp4' }}
+          source={ require('./assets/mp4/245_1752306538.mp4') } // Replace with your video source
           style={styles.video}
           resizeMode="contain"
           paused={paused}

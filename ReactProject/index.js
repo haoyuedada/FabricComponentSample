@@ -79,6 +79,7 @@ import { AppRegistry } from 'react-native';
 // import Root from './tests/Root/index.js'
 // import Text1 from './tests/Text1.tsx'
 // import App from './tests/Hierarchy1/Hierarchy2/index.js';
-import FetchTest from './tests/FetchTest.tsx';
+// import FetchTest from './tests/FetchTest.tsx';
+import VideoTest2 from './tests/VideoTest2'
 
-AppRegistry.registerComponent("app_name", () => FetchTest);
+AppRegistry.registerComponent("app_name", () => VideoTest2);
