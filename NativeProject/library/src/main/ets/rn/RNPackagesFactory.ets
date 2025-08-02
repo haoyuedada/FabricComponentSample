@@ -17,6 +17,7 @@ import {LottieAnimationViewPackage} from '@react-native-oh-tpl/lottie-react-nati
 import { ViewPagerPackage } from '@react-native-oh-tpl/react-native-pager-view/ts';
 // import { RNOrientationPackage } from '@react-native-oh-tpl/react-native-orientation/ts';
 import { RNCVideoPackage } from '@react-native-oh-tpl/react-native-video/ts';
+import { WebViewPackage } from '@react-native-oh-tpl/react-native-webview/ts';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
@@ -30,6 +31,7 @@ export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
     new LottieAnimationViewPackage(ctx),
     new ViewPagerPackage(ctx),
     // new RNOrientationPackage(ctx)
-    new RNCVideoPackage(ctx)
+    new RNCVideoPackage(ctx),
+    new WebViewPackage(ctx)
   ];
 }

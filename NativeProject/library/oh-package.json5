@@ -20,7 +20,8 @@
     "@react-native-oh-tpl/react-native-svg": "file:../libs/svg.har",
     "@react-native-oh-tpl/lottie-react-native": "file:../libs/lottie.har",
     "@react-native-oh-tpl/react-native-pager-view": "file:../libs/pager_view.har",
-    "@react-native-oh-tpl/react-native-video": "file:../libs/rn_video.har"
+    "@react-native-oh-tpl/react-native-video": "file:../libs/rn_video.har",
+    "@react-native-oh-tpl/react-native-webview": "file:../libs/rn_webview.har"
     //    "@react-native-oh-tpl/react-native-orientation": "file:../libs/rn_orientation.har"
   }
 }

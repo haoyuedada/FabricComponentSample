@@ -8,8 +8,10 @@ const execuTurboModule = async () => {
   let obj2 = { ref: obj1 };
   obj1.ref = obj2;
   console.log("chy obj222222")
-  SampleTurboModule.doAsyncJob({ key: 23});
-  // SampleTurboModule.doAsyncJob(obj1);
+  // SampleTurboModule.doAsyncJob({ key: 23});
+  console.log("chy doAsyncJob start")
+  SampleTurboModule.doAsyncJob(obj1);
+  console.log("chy doAsyncJob end")
 }
 // 测试用例
 const Test = () => {

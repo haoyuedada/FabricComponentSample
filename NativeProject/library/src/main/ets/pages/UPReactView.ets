@@ -33,8 +33,9 @@ import { LottieAnimationView, LOTTIE_TYPE } from "@react-native-oh-tpl/lottie-re
 import fs from '@ohos.file.fs';
 import { RNCVideo, RNC_VIDEO_TYPE } from "@react-native-oh-tpl/react-native-video"
 import Fetch from '@system.fetch';
+import { WebView, WEB_VIEW } from "@react-native-oh-tpl/react-native-webview"
 
-const arkTsComponentNames: Array<string> = [SelectBox.NAME, RCTMessageDialog.NAME, LOTTIE_TYPE];
+const arkTsComponentNames: Array<string> = [SelectBox.NAME, RCTMessageDialog.NAME, LOTTIE_TYPE, WEB_VIEW];
 
 @Builder
 export function buildCustomComponent(ctx: ComponentBuilderContext) {
@@ -58,6 +59,11 @@ export function buildCustomComponent(ctx: ComponentBuilderContext) {
       ctx: ctx.rnComponentContext,
       tag: ctx.tag
     })
+  } else if (ctx.componentName === WEB_VIEW) {
+     WebView({
+       ctx: ctx.rnComponentContext,
+       tag: ctx.tag
+     })
   }
 }
 
