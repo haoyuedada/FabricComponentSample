@@ -12,6 +12,10 @@ import {
 const App = () => {
     console.log("chy Dimensions:", Dimensions.get("window"));
 
+    Dimensions.addEventListener("change", ({ window, screen }) => {
+        console.log("Dimensions changed:", window, screen);
+    })
+
     return (
         <View></View>
     );

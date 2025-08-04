@@ -82,5 +82,6 @@ import TurboModuleTest from './testTurboModule/TurboModuleTest'
 // import FetchTest from './tests/FetchTest.tsx';
 // import VideoTest2 from './tests/VideoTest2'
 // import WebviewTest from './tests/WebviewTest'
+import App from './tests/styleDemo'
 
-AppRegistry.registerComponent("app_name", () => TurboModuleTest);
+AppRegistry.registerComponent("app_name", () => App);
