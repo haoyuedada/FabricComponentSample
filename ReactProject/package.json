@@ -11,7 +11,7 @@
     "codegen": "react-native codegen-harmony --cpp-output-path ../NativeProject/library/src/main/cpp/generated --rnoh-module-path ../NativeProject/library/oh_modules/@rnoh/react-native-openharmony --no-safety-check"
   },
   "dependencies": {
-    "@ohmi/react-native-harmony": "^0.72.58-rc1.0.33",
+    "react-native-harmony": "npm:@ohmi/react-native-harmony@0.72.58-rc1.0.33",
     "@react-native-oh-tpl/lottie-react-native": "^6.4.1-0.1.17-rc.3",
     "@react-native-oh-tpl/react-native-fast-image": "^8.6.3-0.4.10",
     "@react-native-oh-tpl/react-native-gesture-handler": "^2.14.17-rc.0",
