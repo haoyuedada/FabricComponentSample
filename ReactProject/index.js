@@ -75,13 +75,13 @@ import { AppRegistry } from 'react-native';
 // import AlignItems from './tests/AlignItems'
 // import FlistTest from './tests/projects_com.chuangmi.camera_src_ui_FlatList'
 // import ScaleableTimelineView from './tests/ScaleableTimelineView-2'
-import TurboModuleTest from './testTurboModule/TurboModuleTest'
+// import TurboModuleTest from './testTurboModule/TurboModuleTest'
 // import Root from './tests/Root/index.js'
 // import Text1 from './tests/Text1.tsx'
 // import App from './tests/Hierarchy1/Hierarchy2/index.js';
 // import FetchTest from './tests/FetchTest.tsx';
-// import VideoTest2 from './tests/VideoTest2'
+import VideoTest2 from './tests/VideoTest2'
 // import WebviewTest from './tests/WebviewTest'
-import App from './tests/styleDemo'
+// import App from './tests/styleDemo'
 
-AppRegistry.registerComponent("app_name", () => App);
+AppRegistry.registerComponent("app_name", () => VideoTest2);

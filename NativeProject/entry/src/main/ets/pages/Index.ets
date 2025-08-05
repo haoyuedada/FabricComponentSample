@@ -9,6 +9,8 @@ import router from '@ohos.router';
 import { mediaquery } from '@kit.ArkUI';
 import { display } from '@kit.ArkUI'
 import Fetch from '@system.fetch';
+import { fileIo } from '@kit.CoreFileKit';
+import { common } from '@kit.AbilityKit';
 
 function onPortrait(mediaQueryResult: mediaquery.MediaQueryResult) {
   if (mediaQueryResult.matches) {
@@ -25,19 +27,9 @@ let listener = mediaquery.matchMediaSync('(orientation: landscape)'); // 监听�
 @Component
 struct Index {
   @State message: string = '打开RN应用';
+  private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
 
   aboutToAppear(): void {
-    // not working
-    Fetch.fetch({
-      url: "asset://tests/assets/icon_alarm.svg",
-      success: (res) => {
-        console.log("chy res", res)
-      },
-      fail: (data: string, code: number) => {
-        console.info("chy res fetch fail:", data);
-        console.info("chy res fetch code:", code);
-      }
-    })
     listener.on('change', onPortrait) // 注册回调
   }
 
@@ -61,6 +53,30 @@ struct Index {
               }
               console.info('Invoke pushUrl succeeded.');
             })
+          })
+
+        Button("在沙箱中创建文件夹")
+          .fontSize(20)
+          .margin({top: 10})
+          .onClick(() => {
+            // 创建文件夹路径
+            let path = "/data/storage/el2/base/haps/entry/files/tests/assets/mp4";
+            fileIo.mkdir(path);
+          })
+
+        Button("将rawfile中的单个文件推送到沙箱")
+          .fontSize(20)
+          .margin({top: 10})
+          .onClick(() => {
+            // 源路径
+            let fileOriginPath = "assets/tests/assets/mp4/245_1752306538.jpg";
+            // 沙箱目标路径
+            let fileTargetPath = this.context.filesDir + '/tests/assets/mp4/245_1752306538.jpg'; // 获取沙箱路径
+            let fileContent: Uint8Array = this.context.resourceManager.getRawFileContentSync(fileOriginPath);
+            let file = fileIo.openSync(fileTargetPath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+            fileIo.writeSync(file.fd, fileContent.buffer);
+            fileIo.closeSync(file);
+            console.log("chy targetPath:", fileTargetPath)
           })
       }
       .width('100%')
