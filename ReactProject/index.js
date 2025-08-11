@@ -80,8 +80,10 @@ import { AppRegistry } from 'react-native';
 // import Text1 from './tests/Text1.tsx'
 // import App from './tests/Hierarchy1/Hierarchy2/index.js';
 // import FetchTest from './tests/FetchTest.tsx';
-import VideoTest2 from './tests/VideoTest2'
+// import VideoTest2 from './tests/imageMP4'
 // import WebviewTest from './tests/WebviewTest'
 // import App from './tests/styleDemo'
+// import App from './tests/samplePage'
+import App from './tests/SafeAreaTest'
 
-AppRegistry.registerComponent("app_name", () => VideoTest2);
+AppRegistry.registerComponent("app_name", () => App);

@@ -5,7 +5,9 @@ import {
   Dimensions,
   Button,
   ActivityIndicator,
-  findNodeHandle
+  findNodeHandle,
+  Image,
+  TouchableOpacity
 } from 'react-native';
 import Video from '@react-native-oh-tpl/react-native-video';
 
@@ -14,69 +16,44 @@ const { width: SCREEN_WIDTH } = Dimensions.get('window');
 export default class VideoPlayerExample extends React.Component {
   constructor(props) {
     super(props);
-    this.videoRef = React.createRef();
-    this.state = {
-      paused: true,
-      loading: true,
-      duration: 0,
-      currentTime: 0,
-    };
-  }
-
-  onLoad = (info) => {
-    this.setState({ duration: info.duration, loading: false });
-  };
-
-  onProgress = (info) => {
-    this.setState({ currentTime: info.currentTime });
-  };
-
-  onEnd = () => {
-    this.setState({ paused: true });
-    if (this.videoRef.current) {
-      this.videoRef.current.seek(0);
-    }
-  };
-
-  togglePlayPause = () => {
-    this.setState((prev) => ({ paused: !prev.paused }));
-  };
-
-  seekTo10 = () => {
-    if (this.videoRef.current) {
-      this.videoRef.current.seek(10);
-    }
-  };
-
-  getTag = () => {
-    console.log("chy findNodeHandle", this.videoRef.current);
-    console.log("chy findNodeHandle", findNodeHandle(this.videoRef.current));
   }
 
   render() {
-    const { paused, loading, duration, currentTime } = this.state;
 
     return (
       <View style={styles.container}>
-        {loading && (
+        {/* {loading && (
           <ActivityIndicator
             style={StyleSheet.absoluteFill}
             size="large"
             color="#000"
           />
-        )}
-        <Video
+        )} */}
+        {/* <Video
           ref={this.videoRef}
-          source={ require('./assets/mp4/245_1752306538.mp4') } // Replace with your video source
+          source={{ uri: "file://data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}} // Replace with your video source
           style={styles.video}
           resizeMode="contain"
           paused={paused}
           onLoad={this.onLoad}
           onProgress={this.onProgress}
           onEnd={this.onEnd}
-        />
+        /> */}
+        {/* file:///data/storage/el2/base/haps/entry/files/tests/assets/expo.png */}
+        <TouchableOpacity style={{borderWidth: 2, borderColor: 'red'}} id='2323' onPress={() => {
+          console.log("Image clicked");
+        }}>
+          <View style={{borderWidth: 2, borderColor: 'blue'}}>
+            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
+          </View>
+        </TouchableOpacity>
+        {/* <Image style={{height: 200, width: 200}} source={require("./assets/expo.png")}></Image>
+        <Image style={{height: 200, width: 200}} source={require("./assets/fig-without-poppy.jpeg")}></Image>
+        <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
+        <Image style={{height: 200, width: 200}} source={require("./assets/expo.png")}></Image>
+        <Image style={{height: 200, width: 200}} source={require("./assets/expo.png")}></Image> */}
 
-        <View style={styles.controls}>
+        {/* <View style={styles.controls}>
           <Button
             title={paused ? '播放' : '暂停'}
             onPress={this.togglePlayPause}
@@ -99,7 +76,7 @@ export default class VideoPlayerExample extends React.Component {
               { width: (currentTime / duration) * SCREEN_WIDTH },
             ]}
           />
-        </View>
+        </View> */}
       </View>
     );
   }

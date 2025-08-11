@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
 const DisplayAnImage = () => {
   return (
     <View>
-      <Image source={require('../assets/fig-without-poppy.jpeg')} resizeMode={Image.resizeMode.cover}/>
+      <Image source={require('../assets/fig-without-poppy.jpeg')}/>
       <Image source={require('../assets/images/ffig-without-poppy.jpeg')} />
       <Image source={require('../assets/images/nnoise.png')} />
     </View>

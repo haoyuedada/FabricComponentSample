@@ -60,18 +60,18 @@ struct Index {
           .margin({top: 10})
           .onClick(() => {
             // 创建文件夹路径
-            let path = "/data/storage/el2/base/haps/entry/files/tests/assets/mp4";
+            let path = this.context.filesDir + "/tests/assets/mp4";
             fileIo.mkdir(path);
           })
 
-        Button("将rawfile中的单个文件推送到沙箱")
+        Button("将rawfile中的单个文件写入到沙箱")
           .fontSize(20)
           .margin({top: 10})
           .onClick(() => {
             // 源路径
-            let fileOriginPath = "assets/tests/assets/mp4/245_1752306538.jpg";
+            let fileOriginPath = "assets/tests/assets/mp4/303_1754468294.mp4";
             // 沙箱目标路径
-            let fileTargetPath = this.context.filesDir + '/tests/assets/mp4/245_1752306538.jpg'; // 获取沙箱路径
+            let fileTargetPath = this.context.filesDir + '/tests/assets/mp4/303_1754468294.mp4'; // 获取沙箱路径
             let fileContent: Uint8Array = this.context.resourceManager.getRawFileContentSync(fileOriginPath);
             let file = fileIo.openSync(fileTargetPath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
             fileIo.writeSync(file.fd, fileContent.buffer);
@@ -82,5 +82,7 @@ struct Index {
       .width('100%')
     }
     .height('100%')
+    .backgroundColor('red')
+    .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM])
   }
 }

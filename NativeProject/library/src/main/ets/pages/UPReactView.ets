@@ -34,6 +34,8 @@ import fs from '@ohos.file.fs';
 import { RNCVideo, RNC_VIDEO_TYPE } from "@react-native-oh-tpl/react-native-video"
 import Fetch from '@system.fetch';
 import { WebView, WEB_VIEW } from "@react-native-oh-tpl/react-native-webview"
+import { window } from '@kit.ArkUI';
+import { common } from '@kit.AbilityKit';
 
 const arkTsComponentNames: Array<string> = [SelectBox.NAME, RCTMessageDialog.NAME, LOTTIE_TYPE, WEB_VIEW];
 
@@ -82,18 +84,19 @@ export struct UPReactView {
   public bundlePath:string = "bundle.harmony.js";
   @State hasBundle: Boolean = false;
   public jsBundleProvider: JSBundleProvider | undefined = undefined
+  private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
 
   onBackPress(): boolean | void {
   }
 
-  aboutToAppear() {
+  async aboutToAppear(): Promise<void>  {
     console.log("chy aboutToAppear:", JSON.stringify(this.rnohCoreContext!.uiAbilityContext))
     this.jsBundleProvider = new TraceJSBundleProviderDecorator(
       new AnyJSBundleProvider([
         new MetroJSBundleProvider(),
-        new FileJSBundleProvider('/data/storage/el2/base/haps/entry/files/bundle.harmony.js'),
+        // new FileJSBundleProvider('/data/storage/el2/base/haps/entry/files/bundle.harmony.js'),
         // new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'hermes_bundle.hbc'),
-        // new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'bundle.harmony.js')
+        new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'bundle.harmony.js')
       ]),
       this.rnohCoreContext!.logger
     );
