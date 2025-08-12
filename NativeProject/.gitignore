@@ -12,3 +12,4 @@
 /.appanalyzer
 /libs/react_native_openharmony**
 log.txt
+package-lock.json
