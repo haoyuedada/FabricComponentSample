@@ -6,6 +6,8 @@
     "listen": "hdc rport tcp:8081 tcp:8081",
     "lint": "eslint .",
     "start": "react-native start --reset-cache",
+    "sdk:split": "react-native bundle-harmony --dev=false sdk --entry-file=index.sdk.js --bundle-output ../NativeProject/entry/src/main/resources/rawfile/sdk.harmony.js --config metro.config.split.js",
+    "bundle:split": "react-native bundle-harmony --dev=false --entry-file=index.js --bundle-output ../NativeProject/entry/src/main/resources/rawfile/bundle.harmony.js --config metro.config.split.js",
     "bundle:dev": "react-native bundle-harmony --bundle-output ../NativeProject/entry/src/main/resources/rawfile/bundle.harmony.js --assets-dest ../NativeProject/entry/src/main/resources/rawfile/assets",
     "bundle:prod": "react-native bundle-harmony --dev=false --minify=true --bundle-output ../NativeProject/entry/src/main/resources/rawfile/bundle.harmony.js --assets-dest ../NativeProject/entry/src/main/resources/rawfile/assets",
     "codegen": "react-native codegen-harmony --cpp-output-path ../NativeProject/library/src/main/cpp/generated --rnoh-module-path ../NativeProject/library/oh_modules/@rnoh/react-native-openharmony --no-safety-check"
