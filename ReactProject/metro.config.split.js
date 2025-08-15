@@ -47,7 +47,7 @@ if (argv.sdk) {
     result += `import 'react'; \n`;
     result += `import 'react-native'; \n`;
     result += `import RNCVideo from "react-native-video"; \n`;
-    result += `import Orientation from "react-native-orientation"; \n`;
+    // result += `import Orientation from "react-native-orientation"; \n`;
     result += `import PagerView from "react-native-pager-view"; \n`;
     fs.writeFileSync('./index.sdk.js', result);
 }
