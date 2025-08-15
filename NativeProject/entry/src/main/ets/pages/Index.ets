@@ -11,6 +11,7 @@ import { display } from '@kit.ArkUI'
 import Fetch from '@system.fetch';
 import { fileIo } from '@kit.CoreFileKit';
 import { common } from '@kit.AbilityKit';
+import { AlertDialog } from '@kit.ArkUI';
 
 function onPortrait(mediaQueryResult: mediaquery.MediaQueryResult) {
   if (mediaQueryResult.matches) {
@@ -28,6 +29,7 @@ let listener = mediaquery.matchMediaSync('(orientation: landscape)'); // 监听�
 struct Index {
   @State message: string = '打开RN应用';
   private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  private path:string = this.context.filesDir;
 
   aboutToAppear(): void {
     listener.on('change', onPortrait) // 注册回调
@@ -39,6 +41,26 @@ struct Index {
 
   onBackPress(): boolean | void {
   }
+
+  dialogControllerConfirm: CustomDialogController = new CustomDialogController({
+    builder: AlertDialog({
+      // primaryTitle: '弹框一级标题',
+      // secondaryTitle: '弹框二级标题',
+      content: '在沙箱中创建文件夹成功',
+      primaryButton: {
+        value: '取消',
+        action: () => {
+        },
+      },
+      secondaryButton: {
+        value: '确认',
+        role: ButtonRole.ERROR,
+        action: () => {
+          console.info('Callback when the second button is clicked')
+        }
+      },
+    }),
+  })
 
   build() {
     Row() {
@@ -55,16 +77,24 @@ struct Index {
             })
           })
 
-        Button("在沙箱中创建文件夹")
+        Button("1. 在沙箱中创建文件夹")
           .fontSize(20)
           .margin({top: 10})
           .onClick(() => {
-            // 创建文件夹路径
-            let path = this.context.filesDir + "/tests/assets/mp4";
-            fileIo.mkdir(path);
+            try {
+              // 创建文件夹路径
+              this.path += "/tests/assets/mp4";
+              fileIo.mkdir(this.path);
+              this.dialogControllerConfirm.open()
+            } catch (e) {
+              console.log("chy mk err:", JSON.stringify(e))
+            }
+
           })
 
-        Button("将rawfile中的单个文件写入到沙箱")
+        Text(this.path).fontSize(9).fontColor("#000000")
+
+        Button("2. 将rawfile中的单个文件写入到沙箱")
           .fontSize(20)
           .margin({top: 10})
           .onClick(() => {
@@ -82,7 +112,7 @@ struct Index {
       .width('100%')
     }
     .height('100%')
-    .backgroundColor('red')
-    .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM])
+    // .backgroundColor('red')
+    // .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM])
   }
 }
