@@ -46,7 +46,7 @@ if (argv.sdk) {
     let result = "";
     result += `import 'react'; \n`;
     result += `import 'react-native'; \n`;
-    result += `import RNCVideo from "react-native-video"; \n`;
+    // result += `import RNCVideo from "react-native-video"; \n`;
     fs.writeFileSync('./index.sdk.js', result);
 }
 modules.maximum = modules.maximum || 0;
