@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Text,
   View,
   StyleSheet,
   Dimensions,
@@ -7,6 +8,7 @@ import {
   TouchableOpacity,
   ScrollView
 } from 'react-native';
+import RNCVideo from "react-native-video"; 
 
 export default class VideoPlayerExample extends React.Component {
   constructor(props) {
@@ -21,110 +23,37 @@ export default class VideoPlayerExample extends React.Component {
           console.log("Image clicked");
         }}>
           <View style={{borderWidth: 2, borderColor: 'blue'}}>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={require('../assets/fig-without-poppy.jpeg')}/>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={require('../assets/images/nnoise.png')} />
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/245_1752306538.mp4"}}></Image>
-            <Image style={{height: 200, width: 200}} source={{uri: "file:///data/storage/el2/base/haps/entry/files/tests/assets/mp4/303_1754468294.mp4"}}></Image>
+            <Text>23423432</Text>
           </View>
         </TouchableOpacity>
+        <RNCVideo
+          // style={styles.vid
+          source={{ uri: require("./assets/mp4/245_1752306538.mp4"), isNetwork: true }}
+          poster={
+            "https://res.vmallres.com/pimages/uomcdn/CN/pms/202304/sbom/4002010007801/group/800_800_9B1356F1330EADDCB20D35D2AE1F46E0.jpg"
+          }
+          onLoad={(e) => {
+          }}
+          onLoadStart={(e) => {
+
+          }}
+          onProgress={(e) => {
+
+          }}
+          onError={(e) => {
+          }}
+          onEnd={() => {
+          }}
+          onBuffer={(e) => {
+          }}
+          onPlaybackStalled={() => {
+          }}
+          onPlaybackResume={() => {
+          }}
+          onReadyForDisplay={() => {
+            console.log(`onReadyForDisplay :setShowPoster(false)`);
+          }}
+        />
       </ScrollView>
     );
   }

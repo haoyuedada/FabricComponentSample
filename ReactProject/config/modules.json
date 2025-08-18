@@ -1,5 +1,5 @@
 {
-    "maximum": 585,
+    "maximum": 571,
     "index.sdk.js": 1,
     "node_modules/react/index.js": 2,
     "node_modules/react/cjs/react.production.min.js": 3,
@@ -571,18 +571,5 @@
     "node_modules/react-native-harmony/Libraries/partner/deprecated-react-native-prop-types/DeprecatedPointPropType.js": 569,
     "node_modules/react-native-harmony/Libraries/partner/deprecated-react-native-prop-types/DeprecatedTextInputPropTypes.js": 570,
     "node_modules/react-native-harmony/Libraries/partner/deprecated-react-native-prop-types/DeprecatedTextPropTypes.js": 571,
-    "node_modules/react-native-harmony/Libraries/partner/deprecated-react-native-prop-types/DeprecatedTextStylePropTypes.js": 572,
-    "node_modules/@react-native-oh-tpl/react-native-video/src/index.ts": 573,
-    "node_modules/@react-native-oh-tpl/react-native-video/src/Video.tsx": 574,
-    "node_modules/@react-native-oh-tpl/react-native-video/src/fabric/VideoNativeComponent.ts": 575,
-    "node_modules/@react-native-oh-tpl/react-native-video/src/utils.ts": 576,
-    "node_modules/@react-native-oh-tpl/react-native-video/src/lib/FilterType.ts": 577,
-    "node_modules/@react-native-oh-tpl/react-native-video/src/lib/VideoResizeMode.ts": 578,
-    "node_modules/@react-native-oh-tpl/react-native-video/src/lib/TextTrackType.ts": 579,
-    "node_modules/@react-native-oh-tpl/react-native-video/src/lib/DRMType.ts": 580,
-    "node_modules/@react-native-oh-tpl/react-native-orientation/index.js": 581,
-    "node_modules/@react-native-oh-tpl/react-native-pager-view/src/index.tsx": 582,
-    "node_modules/@react-native-oh-tpl/react-native-pager-view/src/PagerView.tsx": 583,
-    "node_modules/@react-native-oh-tpl/react-native-pager-view/src/PagerViewNativeComponent.ts": 584,
-    "node_modules/@react-native-oh-tpl/react-native-pager-view/src/utils.tsx": 585
+    "node_modules/react-native-harmony/Libraries/partner/deprecated-react-native-prop-types/DeprecatedTextStylePropTypes.js": 572
 }

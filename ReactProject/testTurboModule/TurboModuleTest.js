@@ -3,15 +3,10 @@ import { StyleSheet, Button, View, Pressable, UIManager, findNodeHandle, Dimensi
 import SampleTurboModule from 'turbo-module/src/specs/v1/SampleTurboModule';
 
 const execuTurboModule = async () => {
-  console.log("chy obj111111")
   let obj1 = {};
   let obj2 = { ref: obj1 };
   obj1.ref = obj2;
-  console.log("chy obj222222")
-  // SampleTurboModule.doAsyncJob({ key: 23});
-  console.log("chy doAsyncJob start")
   SampleTurboModule.doAsyncJob(obj1);
-  console.log("chy doAsyncJob end")
 }
 // 测试用例
 const Test = () => {

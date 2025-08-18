@@ -7,9 +7,9 @@
 
 
 import React, { useRef } from 'react';
-import { StyleSheet, Text, View, Pressable, UIManager, findNodeHandle, Dimensions } from 'react-native';
-import RCTMessageDialog from "fabric-component-sample-package/src/specs/v1/RCTMessageDialog";
-
+import { StyleSheet, Text, View, requireNativeComponent } from 'react-native';
+// import RCTMessageDialog from "fabric-component-sample-package/src/specs/v1/RCTMessageDialog";
+const RCTMessageDialog = requireNativeComponent('RCTMessageDialog')
 
 // 测试用例
 const Test = () => {

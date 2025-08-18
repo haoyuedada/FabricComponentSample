@@ -80,10 +80,11 @@ import TurboModuleTest from './testTurboModule/TurboModuleTest'
 // import Text1 from './tests/Text1.tsx'
 // import App from './tests/Hierarchy1/Hierarchy2/index.js';
 // import FetchTest from './tests/FetchTest.tsx';
-import VideoTest2 from './tests/imageMP4'
+// import VideoTest2 from './tests/imageMP4'
 // import WebviewTest from './tests/WebviewTest'
 // import App from './tests/styleDemo'
 // import App from './tests/samplePage'
 // import App from './tests/SafeAreaTest'
+// import SafeArea from './tests/SafeArea'
 
-AppRegistry.registerComponent("app_name", () => VideoTest2);
+AppRegistry.registerComponent("app_name", () => TurboModuleTest);

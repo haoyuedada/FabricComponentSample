@@ -36,6 +36,7 @@ import Fetch from '@system.fetch';
 import { WebView, WEB_VIEW } from "@react-native-oh-tpl/react-native-webview"
 import { window } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 const arkTsComponentNames: Array<string> = [SelectBox.NAME, RCTMessageDialog.NAME, LOTTIE_TYPE, WEB_VIEW];
 
@@ -85,12 +86,12 @@ export struct UPReactView {
   @State hasBundle: Boolean = false;
   public jsBundleProvider: JSBundleProvider | undefined = undefined
   private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  @State pageName: string = "UPReactView.ets";
 
   onBackPress(): boolean | void {
   }
 
   async aboutToAppear(): Promise<void>  {
-    console.log("chy aboutToAppear:", JSON.stringify(this.rnohCoreContext!.uiAbilityContext))
     this.jsBundleProvider = new TraceJSBundleProviderDecorator(
       new AnyJSBundleProvider([
         new MetroJSBundleProvider(),
@@ -102,18 +103,33 @@ export struct UPReactView {
     );
     this.init()
     // this.checkBundleUpdated();
-    // console.log("chy getUIContext:", JSON.stringify(this.rnInstance.getUIContext()))
+    // 获取内容规避区域
+    let type1 = window.AvoidAreaType.TYPE_SYSTEM;
+    let type2 = window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR;
+    window.getLastWindow(this.getUIContext().getHostContext()).then((data) => {
+      // Get the system default area, usually including the status bar and navigation bar
+      let avoidArea1 = data.getWindowAvoidArea(type1);
+      // Top status bar height
+      let statusBarHeight = avoidArea1.topRect.height;
+      // Bottom navigation bar height
+      let bottomNavHeight = avoidArea1.bottomRect.height;
+      // Get the navigation bar area
+      let avoidArea2 = data.getWindowAvoidArea(type2);
+      // Get the height of the navigation bar area
+      let indicatorHeight = avoidArea2.bottomRect.height;
+      console.info(`chy statusBarHeight is ${statusBarHeight}`);
+      console.info(`chy bottomNavHeight is ${bottomNavHeight}`);
+      console.info(`chy indicatorHeight is ${indicatorHeight}`);
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to obtain the window. Cause: ${JSON.stringify(err)}`);
+    });
   }
 
   checkBundleUpdated(): void {
     if (this.rnSdk) {
       const sandboxDir: string = this.rnSdk.context.filesDir;
       const bundlePath = sandboxDir + '/' + this.bundlePath;
-      console.log("chy checkBundleUpdated sandboxDir:", sandboxDir)
-      console.log("chy checkBundleUpdated bundlePath:", bundlePath)
-
       try {
-        // console.log("chy checkBundleUpdated bundlePath:", bundlePath)
         const stat = fs.statSync(bundlePath);
         let context = getContext(this);
         let fileName: string = 'bundle.harmony.js';
@@ -121,12 +137,9 @@ export struct UPReactView {
         context.resourceManager.getRawFileContent(fileName, (_err, value) => {
           // 这里读取到文件内容可以进行下一步操作
           // let myBuffer: ArrayBufferLike = value.length;
-          console.log("chy checkBundleUpdated 检查rawfiel有bundle value.length:", value.length)
-          console.log("chy checkBundleUpdated 检查沙箱中有bundle stat.size:", stat.size)
           let rawfileSize = value.length;
           let boxSize = stat.size;
           if (boxSize == rawfileSize) {
-            console.log("chy checkBundleUpdated 推送新的 bundle 到沙箱")
             this.downloadBundle();
           } else {
             this.hasBundle = true;
@@ -144,26 +157,20 @@ export struct UPReactView {
       let getContext1 = getContext(this).resourceDir
       let srcPath = getContext(this).resourceDir + '/apps/' // /apps/
       let destPath = getContext(this).filesDir + '/tests/' // /data/storage/el2/base/haps/entry/files/apps/
-      console.log("chy assets getContext1:", getContext1)
-      console.log("chy assets srcPath:", srcPath)
-      console.log("chy assets destPath:", destPath)
       // 判断文件夹是否存在
       if (!fs.accessSync(destPath)) {
         fs.mkdirSync(destPath)
       }
-      console.log("chy assets1")
       // fs.copyDirSync(srcPath, destPath, 0);
       // 将bundlejs下载并保存到沙箱。
       let uint8Array = await this.rnSdk.context.resourceManager.getRawFileContent('rawfile/bundle.harmony.js');
       let rawBuffer = uint8Array.buffer;
       let num = rawBuffer.byteLength;
-      console.log("chy assets2")
       // 获取沙箱路径
       const sandboxDir = this.rnSdk.context.filesDir;
       const bundlePath = sandboxDir + '/' + this.bundlePath;
       let stream = fs.createStreamSync(bundlePath, 'w');
       stream.write(rawBuffer);
-      console.log("chy assets 写入成功")
       stream.close();
       this.hasBundle = true;
     }
@@ -180,9 +187,7 @@ export struct UPReactView {
         disableConcurrentRoot: true
       });
       await this.rnInstance.runJSBundle(this.jsBundleProvider)
-      console.log("chy updateViewRootTag runJSBundle finish")
       const jsBundleExecutionStatus = this.rnInstance.getBundleExecutionStatus(this.jsBundleProvider?.getURL())
-      console.log("chy runjsbundle after jsBundleExecutionStatus:", jsBundleExecutionStatus)
       if (jsBundleExecutionStatus == "DONE") {
         this.isBundleReady = true;
       } else {
@@ -219,7 +224,6 @@ export struct UPReactView {
         this.init()
       }))
       this.rnInstance.enableFeatureFlag("ENABLE_RN_INSTANCE_CLEAN_UP")
-      console.log("chy uicontext getUIContext:", JSON.stringify(this.getUIContext()))
     }
   }
 
@@ -231,11 +235,9 @@ export struct UPReactView {
   }
 
   private async cleanUp() {
-    // const stopTracing = this.logger.clone("cleanUp").startTracing()
     this.isBundleReady = false
     await this.rnohCoreContext!.destroyAndUnregisterRNInstance(this.rnInstance)
     this.cleanUpCallbacks.forEach(cleanUp => cleanUp())
-    // stopTracing()
   }
 
   build() {
@@ -249,7 +251,7 @@ export struct UPReactView {
               initialProps: this.initialProps ?? {},
             } as SurfaceConfig2,
             updateViewRootTag(rnInstance:RNInstance, rootViewTag: number){
-
+              console.log(`chy updateViewRootTag with params:`);
             }
           })
         }
@@ -260,5 +262,7 @@ export struct UPReactView {
       .width('100%')
     }
     .height('100%')
+    .borderWidth(2)
+    .borderColor("red")
   }
 }

@@ -8,7 +8,6 @@
 import router from '@ohos.router';
 import { mediaquery } from '@kit.ArkUI';
 import { display } from '@kit.ArkUI'
-import Fetch from '@system.fetch';
 import { fileIo } from '@kit.CoreFileKit';
 import { common } from '@kit.AbilityKit';
 import { AlertDialog } from '@kit.ArkUI';
