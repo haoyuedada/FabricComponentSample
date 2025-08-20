@@ -49,6 +49,7 @@ if (argv.sdk) {
     // result += `import RNCVideo from "react-native-video"; \n`;
     // result += `import Orientation from "react-native-orientation"; \n`;
     // result += `import PagerView from "react-native-pager-view"; \n`;
+    result += `import * as Progress from "react-native-progress"; \n`;
     fs.writeFileSync('./index.sdk.js', result);
 }
 modules.maximum = modules.maximum || 0;
