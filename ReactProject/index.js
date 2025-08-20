@@ -29,7 +29,7 @@ import { AppRegistry } from 'react-native';
 // import SVGTest from './tests/SVG/SVGTest'
 // import AlarmVideoUI from './tests/AlarmVideoUI'
 // import VictoryTest from './tests/Victory'
-// import DateTest from './tests/DateTest'
+import App from './tests/DateTest'
 // require("./tests/requireTest.js")
 // import PromiseTest from './tests/Promise'
 // import MeasureTest from './src/Measure'
@@ -75,7 +75,7 @@ import { AppRegistry } from 'react-native';
 // import AlignItems from './tests/AlignItems'
 // import FlistTest from './tests/projects_com.chuangmi.camera_src_ui_FlatList'
 // import ScaleableTimelineView from './tests/ScaleableTimelineView-2'
-import TurboModuleTest from './testTurboModule/TurboModuleTest'
+// import TurboModuleTest from './testTurboModule/TurboModuleTest'
 // import Root from './tests/Root/index.js'
 // import Text1 from './tests/Text1.tsx'
 // import App from './tests/Hierarchy1/Hierarchy2/index.js';
@@ -87,4 +87,4 @@ import TurboModuleTest from './testTurboModule/TurboModuleTest'
 // import App from './tests/SafeAreaTest'
 // import SafeArea from './tests/SafeArea'
 
-AppRegistry.registerComponent("app_name", () => TurboModuleTest);
+AppRegistry.registerComponent("app_name", () => App);

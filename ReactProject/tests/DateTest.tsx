@@ -1,61 +1,26 @@
-import React, { useState } from "react";
-import {
-    Alert,
-    Modal,
-    StyleSheet,
-    Text,
-    TouchableHighlight,
-    View
-} from "react-native";
+import React, { useState } from 'react';
+import { View, Button, Text, StyleSheet, Image } from 'react-native';
 
 const App = () => {
-    console.log("chy date 2023/05/27", Date.parse("2023/05/27"))
-    // console.log("chy date", Date.parse(new Date()))
-
-    console.log("chy date 2023-05-27", Date.parse("2023-05-27"))
-    // console.log("chy date", Date.parse(new Date()))
-
+    console.log("chy new Date('2020-05-20'):", new Date('2020-05-20')); //ok 2020-05-20T00:00:00.000Z
+    console.log("chy new Date('2020/05/20'):", new Date('2020/05/20')); //ok 2020-05-19T16:00:00.000Z
+    console.log("chy Date.parse('2020-05-20'):", Date.parse('2020-05-20')); //ok 1589932800000
+    console.log("chy Date.parse('2020/05/20'):", Date.parse('2020/05/20')); //ok 1589904000000
+    console.log("chy new Date().toLocaleDateString():", new Date().toLocaleDateString()); //no 08/19/25
     return (
-        <View></View>
+        <View style={styles.container}>
+            <Text>测试new Date()</Text>
+        </View>
     );
 };
 
 const styles = StyleSheet.create({
-    centeredView: {
+    container: {
         flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: 22
-    },
-    modalView: {
-        margin: 20,
-        backgroundColor: "white",
-        borderRadius: 20,
-        padding: 35,
-        alignItems: "center",
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5
-    },
-    openButton: {
-        backgroundColor: "#F194FF",
-        borderRadius: 20,
-        padding: 10,
-        elevation: 2
-    },
-    textStyle: {
-        color: "white",
-        fontWeight: "bold",
-        textAlign: "center"
-    },
-    modalText: {
-        marginBottom: 15,
-        textAlign: "center"
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 16,
+        backgroundColor: '#F5FCFF',
     }
 });
 
