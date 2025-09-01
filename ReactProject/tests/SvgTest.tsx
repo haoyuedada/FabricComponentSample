@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import Svg, { Text as SvgText, Defs, ClipPath, Rect } from 'react-native-svg';
 /**
  * SvgTextComponent
@@ -16,6 +16,7 @@ export default function SvgTextComponent() {
 
     return (
         <View style={{ width: '100%', height: '100%', borderWidth: 1, borderColor: 'black' }}>
+            <Text>234234</Text>
             <Svg width="100%" height="100%">
                 <Defs>
                     <ClipPath id="clip">

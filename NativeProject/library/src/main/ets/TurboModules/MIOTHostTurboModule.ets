@@ -5,13 +5,13 @@
  * LICENSE-MIT file in the root directory of this source tree.
  */
 
-import { TurboModule } from '@rnoh/react-native-openharmony/ts';
+import { TurboModule, AnyThreadTurboModule } from '@rnoh/react-native-openharmony/ts';
 
 export interface TurboModuleEventData {
   param: string
 }
 
-export class MIOTHostTurboModule extends TurboModule {
+export class MIOTHostTurboModule extends AnyThreadTurboModule {
   pushStringToHarmony(arg: string, testCallBack: (value:string) => void): string {
     testCallBack('hh')
     return arg;

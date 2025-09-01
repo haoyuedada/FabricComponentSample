@@ -21,7 +21,7 @@ import { AppRegistry } from 'react-native';
 // import RCT from './tests/RCT'
 // import FontSlice from './tests/FontSlice'
 // import Image from './tests/Image'
-// import Animatedtwo from './tests/Animatedtwo'
+import App from './tests/Animatedtwo'
 // import DatePicker from './src/DatePicker'
 // import App from './App'
 // import Shot from './src/Shot'
@@ -49,7 +49,7 @@ import { AppRegistry } from 'react-native';
 // import ImageTest from './tests/ImageTest'
 // import OnTextInput from './src/onTextInput'
 // import ViewMore from './tests/ViewMore'
-// import StorageUI from './tests/mixiding/StorageUI'
+// import App from './tests/mixiding/StorageUI'
 // import SectionList from './tests/SectionList'
 // import StorageUI from './tests/0710/StorageUI'
 // import DefaultTest from './tests/defaultTest'
@@ -61,7 +61,7 @@ import { AppRegistry } from 'react-native';
 // import SVGTest1 from './tests/SVG/SVGTest1'
 // import SvgUriTest from './tests/SVG/SvgUriTest'
 // import DeviceEventEmitter from './tests/DeviceEventEmitter'
-import App from './tests/SvgTest'
+// import App from './tests/SvgTest'
 // import SvgTest1 from './tests/SVG1/index'
 // import UIManager from './tests/UIManager/UIManager'
 // import PetEdit from './tests/PetEdit'
@@ -75,7 +75,7 @@ import App from './tests/SvgTest'
 // import AlignItems from './tests/AlignItems'
 // import FlistTest from './tests/projects_com.chuangmi.camera_src_ui_FlatList'
 // import ScaleableTimelineView from './tests/ScaleableTimelineView-2'
-// import TurboModuleTest from './testTurboModule/TurboModuleTest'
+// import App from './testTurboModule/TurboModuleTest'
 // import Root from './tests/Root/index.js'
 // import Text1 from './tests/Text1.tsx'
 // import App from './tests/Hierarchy1/Hierarchy2/index.js';
@@ -86,5 +86,8 @@ import App from './tests/SvgTest'
 // import App from './tests/samplePage'
 // import App from './tests/SafeAreaTest'
 // import SafeArea from './tests/SafeArea'
+// import App from './tests/ImageBackground/ImageBackground1.tsx';
+// import App from './tests/exportTest/App.tsx';
+
 
 AppRegistry.registerComponent("app_name", () => App);

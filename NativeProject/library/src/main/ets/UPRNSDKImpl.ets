@@ -10,14 +10,9 @@ import { StandardRNOHLogger } from '@rnoh/react-native-openharmony/src/main/ets/
 import Want from '@ohos.app.ability.Want';
 import { RNInstancesCoordinator } from "@rnoh/react-native-openharmony/src/main/ets/RNOH/RNInstancesCoordinator"
 import { HttpClient, DefaultHttpClient } from "@rnoh/react-native-openharmony/src/main/ets/HttpClient"
-import { EnvironmentCallback } from '@kit.AbilityKit';
-import { BusinessError } from '@kit.BasicServicesKit';
 import common from '@ohos.app.ability.common';
 import window from '@ohos.window';
-import { hilog } from '@kit.PerformanceAnalysisKit';
 import { RNOHCoreContext } from "@rnoh/react-native-openharmony/src/main/ets/RNOH/RNOHContext"
-
-// const TAG = `${PluginLog.PLUGIN_INIT}_MiRNSDKImpl`
 
 export class UPRNSDKImpl{
   public context:common.UIAbilityContext | null = null;
@@ -29,24 +24,7 @@ export class UPRNSDKImpl{
   private logger!: RNOHLogger
 
   constructor(context: common.UIAbilityContext, want: Want) {
-    // this.logger = this.createLogger().clone("RNAbility")
     this.context = context;
-    // let envCallback: EnvironmentCallback = {
-    //   onConfigurationUpdated(config) {
-    //     let fontSizeScale = config.fontSizeScale
-    //     AppStorage.setOrCreate('fontSizeScale', fontSizeScale)
-    //   },
-    //   onMemoryLevel(level) {
-    //     // MiJiaLog.onlyLogcat(TAG, `onMemoryLevel level: ${level}`);
-    //   }
-    // };
-    // try {
-    //   let applicationContext = this.context.getApplicationContext();
-    //   let callbackId = applicationContext.on('environment', envCallback);
-    //   // MiJiaLog.onlyLogcat(TAG, `callbackId: ${callbackId}`);
-    // } catch (paramError) {
-    //   // MiJiaLog.onlyLogcat(TAG, `error: ${(paramError as BusinessError).code}, ${(paramError as BusinessError).message}` , hilog.LogLevel.ERROR);
-    // }
     this.logger = this.createLogger().clone("RNAbility")
     this._rnInstancesCoordinator = RNInstancesCoordinator.create({
       fontSizeScale: this.context.config.fontSizeScale,
@@ -55,6 +33,7 @@ export class UPRNSDKImpl{
       defaultBackPressHandler: () => {
         this.defaultBackPressHandler()
       },
+      // rnohWorkerScriptUrl: this.getRNOHWorkerScriptUrl(),
     }, {
       launchURI: want.uri, onGetPackagerClientConfig: (buildMode) => buildMode === "DEBUG" ? {
         host: "localhost",
@@ -68,6 +47,9 @@ export class UPRNSDKImpl{
     // MiJiaLog.onlyLogcat(TAG, "new MiRNSDKImpl success");
   }
 
+  getRNOHWorkerScriptUrl() {
+    return "@library/ets/workers/RNOHWorker.ets"
+  }
   /**
    * Override this method if you want to create an RNInstance, and load bundle here, rather than in an ArkUI component.
    * RNAbility waits for the completion of this method before loading the content. This approach reduces a flash that

@@ -1,9 +1,9 @@
 {
   "apiType": "stageMode",
   "buildOption": {
-    "nativeLib": {
-      "excludeFromHar": false
-    },
+//    "nativeLib": {
+//      "excludeFromHar": false
+//    },
     "externalNativeOptions": {
       "path": "./src/main/cpp/CMakeLists.txt",
       "arguments": "-DCMAKE_BUILD_TYPE=Release",
@@ -15,6 +15,11 @@
     },
     "arkOptions": {
       // "apPath": "./modules.ap"  /* Profile used for profile-guided optimization (PGO), a compiler optimization technique to improve app runtime performance. */
+    },
+    "sourceOption": {
+      "workers": [
+        './src/main/ets/workers/RNOHWorker.ets'
+      ]
     }
   },
   "buildOptionSet": [
@@ -28,9 +33,6 @@
               "./obfuscation-rules.txt"
             ]
           },
-          "consumerFiles": [
-            "./consumer-rules.txt"
-          ]
         }
       },
     },

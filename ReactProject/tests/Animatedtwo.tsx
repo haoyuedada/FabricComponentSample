@@ -19,7 +19,7 @@ class DisplayAnImage extends AnimatedParent {
   constructor(props) {
     super(props);
     this.state = {
-      progress: new Animated.Value(0), // 初始化动画值
+      progress: new Animated.Value(false), // 初始化动画值
     };
   }
 
@@ -31,7 +31,7 @@ class DisplayAnImage extends AnimatedParent {
       useNativeDriver: true, // 使用原生驱动
     }).start();
 
-    this.progress.setValue(0); // 设置动画初始值
+    // this.progress.setValue(0); // 设置动画初始值
     console.log("chy progress", this.progress);
   }
 

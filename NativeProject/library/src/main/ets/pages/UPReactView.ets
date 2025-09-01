@@ -84,7 +84,8 @@ export struct UPReactView {
   private cleanUpCallbacks: (() => void)[] = []
   public bundlePath:string = "bundle.harmony.js";
   @State hasBundle: Boolean = false;
-  public jsBundleProvider: JSBundleProvider | undefined = undefined
+  public jsBundleProvider1: JSBundleProvider | undefined = undefined
+  public jsBundleProvider2: JSBundleProvider | undefined = undefined
   private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
   @State pageName: string = "UPReactView.ets";
 
@@ -92,9 +93,18 @@ export struct UPReactView {
   }
 
   async aboutToAppear(): Promise<void>  {
-    this.jsBundleProvider = new TraceJSBundleProviderDecorator(
+    this.jsBundleProvider1 = new TraceJSBundleProviderDecorator(
       new AnyJSBundleProvider([
         new MetroJSBundleProvider(),
+        // new FileJSBundleProvider('/data/storage/el2/base/haps/entry/files/bundle.harmony.js'),
+        // new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'hermes_bundle.hbc'),
+        new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'sdk.harmony.js')
+      ]),
+      this.rnohCoreContext!.logger
+    );
+    this.jsBundleProvider2 = new TraceJSBundleProviderDecorator(
+      new AnyJSBundleProvider([
+        // new MetroJSBundleProvider(),
         // new FileJSBundleProvider('/data/storage/el2/base/haps/entry/files/bundle.harmony.js'),
         // new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'hermes_bundle.hbc'),
         new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'bundle.harmony.js')
@@ -186,8 +196,9 @@ export struct UPReactView {
         arkTsComponentNames: arkTsComponentNames,
         disableConcurrentRoot: true
       });
-      await this.rnInstance.runJSBundle(this.jsBundleProvider)
-      const jsBundleExecutionStatus = this.rnInstance.getBundleExecutionStatus(this.jsBundleProvider?.getURL())
+      await this.rnInstance.runJSBundle(this.jsBundleProvider1)
+      // await this.rnInstance.runJSBundle(this.jsBundleProvider2)
+      const jsBundleExecutionStatus = this.rnInstance.getBundleExecutionStatus(this.jsBundleProvider1?.getURL())
       if (jsBundleExecutionStatus == "DONE") {
         this.isBundleReady = true;
       } else {
