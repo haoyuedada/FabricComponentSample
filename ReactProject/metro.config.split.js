@@ -7,7 +7,7 @@ const path = require('path');
 const fs = require('fs');
 const yargs = require('yargs/yargs');
 const { hideBin } = require('yargs/helpers');
-const modules = require('./bin/config/modules.json') || {};
+const modules = require('./config/modules.json') || {};
 
 const argv = yargs(hideBin(process.argv)).parse();
 argv.sdk = argv._.includes('sdk');
@@ -41,8 +41,7 @@ const ReadSDKFiles = (pathname, result = '') => {
 };
 
 if (argv.sdk) {
-  let result = ReadSDKFiles('./miot-sdk/');
-  result += `import 'miot'; \n`;
+  let result = "";
   result += `import 'react'; \n`;
   result += `import 'react-native'; \n`;
   fs.writeFileSync('./index.sdk.js', result);
@@ -57,7 +56,7 @@ const ToRelative = relative =>
  */
 const config = {
   transformer: {
-    babelTransformerPath: require.resolve("./bin/config/transformer"),
+    // babelTransformerPath: require.resolve("./config/transformer"),
     getTransformOptions: async () => ({
       transform: {
         experimentalImportSupport: false,
@@ -173,7 +172,7 @@ process.once('beforeExit', () => {
     } else {
       modulesResult = { maximum: pathMap.size, ...sortedObj }
     }
-    fs.writeFileSync('./bin/config/modules.json', JSON.stringify(modulesResult), {
+    fs.writeFileSync('./config/modules.json', JSON.stringify(modulesResult), {
       flag: 'w+',
     });
     // const start =
