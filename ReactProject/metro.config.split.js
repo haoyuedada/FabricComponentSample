@@ -129,6 +129,9 @@ const config = {
           pathMap.delete(oldPath)
           delete modules[oldPath]
           pathMap.set(relative, oldIndex);
+          console.log("chy split relative:", relative);
+          console.log("chy split oldPath:", oldPath);
+          console.log("chy split oldIndex:", oldIndex);
           return oldIndex
         } else {
           index += argv.sdk ? 1 : -1;
