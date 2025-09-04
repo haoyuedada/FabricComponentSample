@@ -10,12 +10,12 @@ const execuTurboModule = async () => {
       console.log("chy TubrboModule:pushStringToHarmony Execute value:", value)
     })
   }, 1000)
-  await SampleTurboModule.doAsyncJob(true).then((value) => {
-    // console.log("chy doAsyncJob value:", value)
+  SampleTurboModule.doAsyncJob(true).then((value) => {
+    console.log("chy doAsyncJob value:", value)
   })
   console.log("chy ================", SampleTurboModule);
   SampleTurboModule.pushStringToHarmonyCallBack('test', (value) => {
-    // console.log("chy pushStringToHarmonyCallBack value:", value)
+    console.log("chy pushStringToHarmonyCallBack value:", value)
   })
 }
 // 测试用例

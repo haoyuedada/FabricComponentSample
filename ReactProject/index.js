@@ -9,7 +9,7 @@
 
 import { AppRegistry } from 'react-native';
 // import { name as appName } from './app.json';
-// import Test from './testTurboModule/test';
+// import App from './testTurboModule/test';
 // import Utils from './tests/Utils';
 
 // import RCTMessage from './tests/RCTMessage';
@@ -21,7 +21,7 @@ import { AppRegistry } from 'react-native';
 // import RCT from './tests/RCT'
 // import FontSlice from './tests/FontSlice'
 // import Image from './tests/Image'
-import App from './tests/Animatedtwo'
+// import App from './tests/Animatedtwo'
 // import DatePicker from './src/DatePicker'
 // import App from './App'
 // import Shot from './src/Shot'
@@ -88,6 +88,7 @@ import App from './tests/Animatedtwo'
 // import SafeArea from './tests/SafeArea'
 // import App from './tests/ImageBackground/ImageBackground1.tsx';
 // import App from './tests/exportTest/App.tsx';
+import App from './testTurboModule/RunJsBundleTurboModule.tsx';
 
 
 AppRegistry.registerComponent("app_name", () => App);

@@ -11,7 +11,7 @@ export interface TurboModuleEventData {
   param: string
 }
 
-export class SampleTurboModulevv extends AnyThreadTurboModule {
+export class SampleTurboModulevv extends TurboModule {
   pushStringToHarmony(arg: string, testCallBack: (value:string) => void): string {
     testCallBack('hh')
     return arg;

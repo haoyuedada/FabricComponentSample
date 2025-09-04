@@ -6,14 +6,11 @@
  */
 
 import {
-  RNOHPackage
-} from '@rnoh/react-native-openharmony';
-import {
   RNPackage,
   TurboModule,
   TurboModuleContext,
   TurboModulesFactory,
-  UITurboModuleContext,
+  UITurboModuleContext
 } from '@rnoh/react-native-openharmony/ts';
 import type {
   DescriptorWrapperFactoryByDescriptorTypeCtx,
@@ -21,38 +18,37 @@ import type {
 } from '@rnoh/react-native-openharmony/ts';
 import { RNC, TM } from "@rnoh/react-native-openharmony/generated/ts"
 import { SampleTurboModule } from "../TurboModules/SampleTurboModule"
+import { RunJsBundleTurboModule } from "../TurboModules/RunJsBundleTurboModule"
+
 import { AnyThreadTurboModule,
   AnyThreadTurboModuleContext,
   AnyThreadTurboModuleFactory, WorkerTurboModuleContext } from '../../../../Index';
 
-  // class GeneratedTurboModulesFactory extends AnyThreadTurboModuleFactory {
-  //   private turboModules: string[] = [
-  //     TM.SampleTurboModule.NAME
-  //   ]
-  //
-  //   createTurboModule(name: string): AnyThreadTurboModule | null {
-  //     if (name == TM.SampleTurboModule.NAME) {
-  //       return new SampleTurboModule(this.ctx)
-  //     }
-  //     return null;
-  //   }
-  //
-  //   hasTurboModule(name: string): boolean {
-  //     return this.turboModules.includes(name)
-  //   }
-  // }
-// let selectBox:string = RNC.SelectBox.NAME;
-// let RCTMessageDialog:string = RNC.RCTMessageDialog.NAME;
+class GeneratedTurboModulesFactory extends AnyThreadTurboModuleFactory {
+  private turboModules: string[] = [
+    TM.SampleTurboModule.NAME,
+    TM.RunJsBundleTurboModule.NAME
+  ]
 
-export class GeneratedPackage extends RNOHPackage {
-  override getAnyThreadTurboModuleFactoryByNameMap(): Map<string, (ctx: AnyThreadTurboModuleContext) => AnyThreadTurboModule | null> {
-    return new Map<string, ((ctx: AnyThreadTurboModuleContext) => AnyThreadTurboModule)>()
-      .set(TM.SampleTurboModule.NAME, (ctx) => new SampleTurboModule(ctx))
+  createTurboModule(name: string): AnyThreadTurboModule | null {
+    if (name == TM.SampleTurboModule.NAME) {
+      return new SampleTurboModule(this.ctx)
+    } else if (name === TM.RunJsBundleTurboModule.NAME) {
+      return new RunJsBundleTurboModule(this.ctx)
+    }
+    return null;
   }
 
-  override async createEagerAnyThreadTurboModuleByNameMap(ctx: AnyThreadTurboModuleContext): Promise<Map<string, AnyThreadTurboModule>> {
-    return new Map()
-      .set(TM.SampleTurboModule.NAME, new SampleTurboModule(ctx))
+  hasTurboModule(name: string): boolean {
+    return this.turboModules.includes(name)
+  }
+}
+let selectBox:string = RNC.SelectBox.NAME;
+let RCTMessageDialog:string = RNC.RCTMessageDialog.NAME;
+
+export class GeneratedPackage extends RNPackage {
+  createAnyThreadTurboModuleFactory(ctx: AnyThreadTurboModuleContext): AnyThreadTurboModuleFactory {
+    return new GeneratedTurboModulesFactory(ctx);
   }
   createDescriptorWrapperFactoryByDescriptorType(ctx: DescriptorWrapperFactoryByDescriptorTypeCtx): DescriptorWrapperFactoryByDescriptorType {
     return {

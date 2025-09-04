@@ -11,7 +11,7 @@ export interface TurboModuleEventData {
   param: string
 }
 
-export class MIOTHostTurboModule extends AnyThreadTurboModule {
+export class MIOTHostTurboModule extends TurboModule {
   pushStringToHarmony(arg: string, testCallBack: (value:string) => void): string {
     testCallBack('hh')
     return arg;

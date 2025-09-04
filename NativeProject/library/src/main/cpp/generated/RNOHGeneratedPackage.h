@@ -13,6 +13,7 @@
 #include "RNOH/ArkTSTurboModule.h"
 #include "generated/RNGestureHandlerModule.h"
 #include "generated/ReactNativeOrientation.h"
+#include "generated/RunJsBundleTurboModule.h"
 #include "generated/SampleTurboModule.h"
 #include "generated/RNGestureHandlerButtonComponentDescriptor.h"
 #include "generated/RNGestureHandlerRootViewComponentDescriptor.h"
@@ -33,6 +34,9 @@ class RNOHGeneratedPackageTurboModuleFactoryDelegate : public TurboModuleFactory
         }
         if (name == "ReactNativeOrientation") {
             return std::make_shared<ReactNativeOrientation>(ctx, name);
+        }
+        if (name == "RunJsBundleTurboModule") {
+            return std::make_shared<RunJsBundleTurboModule>(ctx, name);
         }
         if (name == "SampleTurboModule") {
             return std::make_shared<SampleTurboModule>(ctx, name);
@@ -56,7 +60,8 @@ class GeneratedEventEmitRequestHandler : public EventEmitRequestHandler {
             "setCancelable",
             "setCancel",
             "setCfirm",
-            "change",
+            "changeInSelectBox",
+            "dismiss",
         };
         if (std::find(supportedEventNames.begin(), supportedEventNames.end(), ctx.eventName) != supportedEventNames.end()) {
             eventEmitter->dispatchEvent(ctx.eventName, ArkJS(ctx.env).getDynamic(ctx.payload));

@@ -47,9 +47,9 @@ export class UPRNSDKImpl{
     // MiJiaLog.onlyLogcat(TAG, "new MiRNSDKImpl success");
   }
 
-  getRNOHWorkerScriptUrl() {
-    return "@library/ets/workers/RNOHWorker.ets"
-  }
+  // getRNOHWorkerScriptUrl() {
+  //   return "@library/ets/workers/RNOHWorker.ets"
+  // }
   /**
    * Override this method if you want to create an RNInstance, and load bundle here, rather than in an ArkUI component.
    * RNAbility waits for the completion of this method before loading the content. This approach reduces a flash that
