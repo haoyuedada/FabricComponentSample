@@ -37,38 +37,8 @@ import { WebView, WEB_VIEW } from "@react-native-oh-tpl/react-native-webview"
 import { window } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
-
-const arkTsComponentNames: Array<string> = [SelectBox.NAME, RCTMessageDialog.NAME, LOTTIE_TYPE, WEB_VIEW];
-
-@Builder
-export function buildCustomComponent(ctx: ComponentBuilderContext) {
-  if (ctx.componentName === SelectBox.NAME) {
-    SelectBox({
-      ctx: ctx.rnComponentContext,
-      tag: ctx.tag
-    })
-  } else if (ctx.componentName === RCTMessageDialog.NAME) {
-    RCTMessageDialog({
-      ctx: ctx.rnComponentContext,
-      tag: ctx.tag
-    })
-  } else if (ctx.componentName === LOTTIE_TYPE) {
-    LottieAnimationView({
-      ctx: ctx.rnComponentContext,
-      tag: ctx.tag
-    })
-  } else if (ctx.componentName === RNC_VIDEO_TYPE) {
-    RNCVideo({
-      ctx: ctx.rnComponentContext,
-      tag: ctx.tag
-    })
-  } else if (ctx.componentName === WEB_VIEW) {
-    WebView({
-      ctx: ctx.rnComponentContext,
-      tag: ctx.tag
-    })
-  }
-}
+import RNInstanceManage from './RNInstaceManage'; // 根据实际路径调整
+import { buildCustomComponent, arkTsComponentNames } from './buildCustomComponent'
 
 @Entry
 @Component
@@ -84,23 +54,19 @@ export struct UPReactView {
   private cleanUpCallbacks: (() => void)[] = []
   public bundlePath:string = "bundle.harmony.js";
   @State hasBundle: Boolean = false;
-  public jsBundleProvider: JSBundleProvider | undefined = undefined
+  public jsBundleProvider1: JSBundleProvider | undefined = undefined
+  public jsBundleProvider2: JSBundleProvider | undefined = undefined
   private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
   @State pageName: string = "UPReactView.ets";
+  public isMetroAvailable: boolean = false;
+  public RNInstanceManage!: RNInstanceManage;
 
   onBackPress(): boolean | void {
   }
 
   async aboutToAppear(): Promise<void>  {
-    this.jsBundleProvider = new TraceJSBundleProviderDecorator(
-      new AnyJSBundleProvider([
-        new MetroJSBundleProvider(),
-        // new FileJSBundleProvider('/data/storage/el2/base/haps/entry/files/bundle.harmony.js'),
-        // new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'hermes_bundle.hbc'),
-        new ResourceJSBundleProvider(this.rnohCoreContext!.uiAbilityContext.resourceManager, 'bundle.harmonyall.js')
-      ]),
-      this.rnohCoreContext!.logger
-    );
+    // 初始化RNInstance管理实例
+    this.RNInstanceManage = new RNInstanceManage();
     this.init()
     // this.checkBundleUpdated();
     // 获取内容规避区域
@@ -178,52 +144,38 @@ export struct UPReactView {
 
   async init() {
     if (this.rnSdk) {
-      this.rnInstance = await this.rnohCoreContext!.createAndRegisterRNInstance({
-        createRNPackages: createRNPackages,
-        enableNDKTextMeasuring: true,
-        enableBackgroundExecutor: false,
-        enableCAPIArchitecture: true,
-        arkTsComponentNames: arkTsComponentNames,
-        disableConcurrentRoot: true
-      });
-      await this.rnInstance.runJSBundle(this.jsBundleProvider)
-      const jsBundleExecutionStatus = this.rnInstance.getBundleExecutionStatus(this.jsBundleProvider?.getURL())
-      if (jsBundleExecutionStatus == "DONE") {
-        this.isBundleReady = true;
-      } else {
-        return;
+      // metro
+      this.isMetroAvailable = await this.RNInstanceManage.loadMetroBundle();
+      // 本地 bundle
+      if (!this.isMetroAvailable) {
+        await this.RNInstanceManage.loadBasicBundle();
+        await this.RNInstanceManage.loadBussinessBundle();
       }
-      this.ctx = new RNComponentContext(
-        RNOHContext.fromCoreContext(this.rnohCoreContext!, this.rnInstance),
-        wrapBuilder(buildCustomComponent),
-        wrapBuilder(buildRNComponentForTag),
-        new Map()
-      );
       this.logBoxDialogController = new CustomDialogController({
         cornerRadius: 0,
         customStyle: true,
         alignment: DialogAlignment.TopStart,
         backgroundColor: Color.Transparent,
         builder: LogBoxDialog({
-          ctx: this.ctx,
-          rnInstance: this.rnInstance,
+          ctx: this.RNInstanceManage.metroCtx,
+          rnInstance: this.RNInstanceManage.metroInstance,
           initialProps: this.initialProps,
           buildCustomComponent: buildCustomComponent,
         })
       })
-      this.cleanUpCallbacks.push(this.rnInstance.getTurboModule<LogBoxTurboModule>(LogBoxTurboModule.NAME).eventEmitter.subscribe("SHOW",
+      this.cleanUpCallbacks.push(this.RNInstanceManage.metroInstance.getTurboModule<LogBoxTurboModule>(LogBoxTurboModule.NAME).eventEmitter.subscribe("SHOW",
         () => {
           this.logBoxDialogController.open()
         }))
-      this.cleanUpCallbacks.push(this.rnInstance.getTurboModule<LogBoxTurboModule>(LogBoxTurboModule.NAME).eventEmitter.subscribe("HIDE",
+      this.cleanUpCallbacks.push(this.RNInstanceManage.metroInstance.getTurboModule<LogBoxTurboModule>(LogBoxTurboModule.NAME).eventEmitter.subscribe("HIDE",
         () => {
           this.logBoxDialogController.close()
         }))
-      this.cleanUpCallbacks.push(this.ctx.devToolsController.eventEmitter.subscribe("RELOAD", async () => {
+      this.cleanUpCallbacks.push(this.RNInstanceManage.metroCtx.devToolsController.eventEmitter.subscribe("RELOAD", async () => {
         await this.cleanUp()
         this.init()
       }))
-      this.rnInstance.enableFeatureFlag("ENABLE_RN_INSTANCE_CLEAN_UP")
+      this.isBundleReady = true;
     }
   }
 
@@ -245,7 +197,7 @@ export struct UPReactView {
       Column() {
         if (this.isBundleReady) {
           RNSurface({
-            ctx: this.ctx,
+            ctx: this.isMetroAvailable ? this.RNInstanceManage.metroCtx : this.RNInstanceManage.bundleCtx,
             surfaceConfig: {
               appKey: this.rnInfo.businessId,
               initialProps: this.initialProps ?? {},

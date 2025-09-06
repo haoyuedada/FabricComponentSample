@@ -5,7 +5,7 @@ import SampleTurboModule from 'turbo-module/src/specs/v1/SampleTurboModule';
 
 const RunJsBundle = () => {
   console.log("RunJsBundleTurboModule:");
-  RunJsBundleTurboModule?.runJsBundle("RNExecutorBase.jx");
+  // RunJsBundleTurboModule?.runJsBundle("RNExecutorBase.jx");
   RunJsBundleTurboModule?.runJsBundle("workerMapParser.jx");
     // RunJsBundleTurboModule?.runJsBundle("workerRSA.jx");
 }
