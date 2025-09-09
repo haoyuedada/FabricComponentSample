@@ -9,6 +9,7 @@ import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import { UPRNSDKImpl } from 'library';
+import { FileUtil, LogUtil, ResUtil } from '@pura/harmony-utils';
 
 export default class EntryAbility extends UIAbility {
   rnSDK: UPRNSDKImpl | undefined = undefined;

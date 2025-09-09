@@ -88,7 +88,9 @@ import { AppRegistry } from 'react-native';
 // import SafeArea from './tests/SafeArea'
 // import App from './tests/ImageBackground/ImageBackground1.tsx';
 // import App from './tests/exportTest/App.tsx';
-import App from './testTurboModule/RunJsBundleTurboModule.tsx';
-
+// import App from './testTurboModule/RunJsBundleTurboModule.tsx';
+// import App from './tests/ViewShotDemo.tsx';
+import App from './tests/mijia/timeLine/App.tsx';
+// import App from './tests/requireTest/index.js';
 
 AppRegistry.registerComponent("app_name", () => App);

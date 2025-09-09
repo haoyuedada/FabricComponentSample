@@ -39,6 +39,7 @@ import { common } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import RNInstanceManage from './RNInstaceManage'; // 根据实际路径调整
 import { buildCustomComponent, arkTsComponentNames } from './buildCustomComponent'
+import { FileUtil, LogUtil, ResUtil } from '@pura/harmony-utils';
 
 @Entry
 @Component
@@ -60,6 +61,7 @@ export struct UPReactView {
   @State pageName: string = "UPReactView.ets";
   public isMetroAvailable: boolean = false;
   public RNInstanceManage!: RNInstanceManage;
+  private Tag: string = "UPReactView";
 
   onBackPress(): boolean | void {
   }
@@ -143,12 +145,17 @@ export struct UPReactView {
   }
 
   async init() {
+    LogUtil.debug("-init start");
+
     if (this.rnSdk) {
       // metro
       this.isMetroAvailable = await this.RNInstanceManage.loadMetroBundle();
+      LogUtil.debug(this.Tag, "-init loadMetroBundle status:" + this.isMetroAvailable);
       // 本地 bundle
       if (!this.isMetroAvailable) {
+        LogUtil.debug(this.Tag, "-init loadBasicBundle");
         await this.RNInstanceManage.loadBasicBundle();
+        LogUtil.debug(this.Tag, "-init loadBasicBundle");
         await this.RNInstanceManage.loadBussinessBundle();
       }
       this.logBoxDialogController = new CustomDialogController({
@@ -172,6 +179,7 @@ export struct UPReactView {
           this.logBoxDialogController.close()
         }))
       this.cleanUpCallbacks.push(this.RNInstanceManage.metroCtx.devToolsController.eventEmitter.subscribe("RELOAD", async () => {
+        LogUtil.debug(this.Tag, "-init subscribe('reload')");
         await this.cleanUp()
         this.init()
       }))

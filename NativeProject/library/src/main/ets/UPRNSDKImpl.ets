@@ -13,6 +13,7 @@ import { HttpClient, DefaultHttpClient } from "@rnoh/react-native-openharmony/sr
 import common from '@ohos.app.ability.common';
 import window from '@ohos.window';
 import { RNOHCoreContext } from "@rnoh/react-native-openharmony/src/main/ets/RNOH/RNOHContext"
+import { FileUtil, LogUtil, ResUtil } from '@pura/harmony-utils';
 
 export class UPRNSDKImpl{
   public context:common.UIAbilityContext | null = null;
@@ -45,6 +46,13 @@ export class UPRNSDKImpl{
 
     AppStorage.setOrCreate('rnInstancesCoordinator', this._rnInstancesCoordinator)
     // MiJiaLog.onlyLogcat(TAG, "new MiRNSDKImpl success");
+    // 日志
+    LogUtil.init(0x1010, 'Pura', true, true);  //该方法建议在Ability里调用
+    LogUtil.setShowLog(true);  //该方法建议在Ability里调用
+    LogUtil.setDomain(0x0010);  //该方法建议在Ability里调用
+    LogUtil.setTag("大裤衩"); //该方法建议在Ability里调用
+    LogUtil.setHilog(true);  //该方法建议在Ability里调用
+
   }
 
   // getRNOHWorkerScriptUrl() {
