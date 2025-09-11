@@ -54,8 +54,8 @@ export class RunJsBundleTurboModule extends AnyThreadTurboModule {
         resolve(result)
         return ""
       })
-      // console.log("chy v8 execute resolve")
-      // resolve("2342342342")
+      console.log("chy v8 execute resolve")
+      resolve("2342342342")
     });
   }
 }
