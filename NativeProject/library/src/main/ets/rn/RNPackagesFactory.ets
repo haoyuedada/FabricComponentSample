@@ -9,15 +9,14 @@ import { RNPackageContext, RNPackage } from '@rnoh/react-native-openharmony/ts';
 import { GeneratedPackage } from './GeneratedPackage'
 import { FastImagePackage } from '@react-native-oh-tpl/react-native-fast-image/ts';
 import { GestureHandlerPackage } from '@react-native-oh-tpl/react-native-gesture-handler/ts';
-import {SafeAreaViewPackage} from '@react-native-oh-tpl/react-native-safe-area-context/ts';
-// import {RNDatePickerPackage} from '@react-native-oh-tpl/react-native-date-picker/ts';
+import { SafeAreaViewPackage } from '@react-native-oh-tpl/react-native-safe-area-context/ts';
 import { ViewShotPackage } from '@react-native-oh-tpl/react-native-view-shot/ts';
 import { SvgPackage } from '@react-native-oh-tpl/react-native-svg/ts';
-import {LottieAnimationViewPackage} from '@react-native-oh-tpl/lottie-react-native/ts';
+import { LottieAnimationViewPackage } from '@react-native-oh-tpl/lottie-react-native/ts';
 import { ViewPagerPackage } from '@react-native-oh-tpl/react-native-pager-view/ts';
-// import { RNOrientationPackage } from '@react-native-oh-tpl/react-native-orientation/ts';
 import { RNCVideoPackage } from '@react-native-oh-tpl/react-native-video/ts';
-import { WebViewPackage } from '@react-native-oh-tpl/react-native-webview/ts';
+import { WebViewPackage } from '@ohmi/react-native-webview/ts';
+import { RNOrientationPackage } from '@ohmi/react-native-orientation/ts';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
@@ -25,13 +24,12 @@ export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
     new FastImagePackage(ctx),
     new GestureHandlerPackage(ctx),
     new SafeAreaViewPackage(ctx),
-    // new RNDatePickerPackage(ctx),
     new ViewShotPackage(ctx),
     new SvgPackage(ctx),
     new LottieAnimationViewPackage(ctx),
     new ViewPagerPackage(ctx),
-    // new RNOrientationPackage(ctx)
     new RNCVideoPackage(ctx),
-    new WebViewPackage(ctx)
+    new WebViewPackage(ctx),
+    new RNOrientationPackage(ctx)
   ];
 }

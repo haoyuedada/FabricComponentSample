@@ -29,7 +29,7 @@ interface charTypr {
   id: number;
   text: string;
 }
-
+interface dataType {id: number, text: string}
 @Component
 export struct SelectBox {
   public static readonly NAME: string = RNC.SelectBox.NAME
@@ -61,13 +61,12 @@ export struct SelectBox {
   private onDescriptorWrapperChange(descriptorWrapper: RNC.SelectBox.DescriptorWrapper) {
     this.descriptorWrapper = descriptorWrapper
     this.data = []
-    // const data = this.descriptorWrapper.props.data;
-    // const value = this.descriptorWrapper.props.value;
-    // for (const item of data) {
-    //   this.data.push(
-    //     new SelectItems(item.id, item.text, value.includes(item.id))
-    //   )
-    // }
+    const data: dataType[] = this.descriptorWrapper.props.data;
+    const value = this.descriptorWrapper.props.value;
+    const source = this.descriptorWrapper.props.source;
+    console.log("chy SelectBox data:", JSON.stringify(data))
+    console.log("chy SelectBox value:", value)
+    console.log("chy SelectBox source:", JSON.stringify(source))
   }
 
   aboutToDisappear() {

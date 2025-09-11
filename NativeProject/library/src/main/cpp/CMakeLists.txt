@@ -16,12 +16,11 @@ set(CMAKE_ASM_FLAGS "-Wno-error=unused-command-line-argument -Qunused-arguments"
 set(WITH_HITRACE_SYSTRACE 1) # for other CMakeLists.txt files to use
 set(OH_MODULES "${CMAKE_CURRENT_SOURCE_DIR}/../../../oh_modules")
 set(USE_HERMES 0)
-
-add_compile_definitions(USE_HERMES=${USE_HERMES})
 add_compile_definitions(WITH_HITRACE_SYSTRACE)
 
 add_subdirectory("${RNOH_CPP_DIR}" ./rn)
 
+add_compile_definitions(USE_HERMES=${USE_HERMES})
 # RNOH_BEGIN: manual_package_linking_1
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/rnc" ./fabric_component)
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-fast-image/src/main/cpp" ./fast-image)
@@ -32,7 +31,7 @@ add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-svg/src/main/c
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/lottie-react-native/src/main/cpp" ./lottie)
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-pager-view/src/main/cpp" ./pager_view)
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-video/src/main/cpp" ./video)
-add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-webview/src/main/cpp" ./rn_webview)
+add_subdirectory("${OH_MODULES}/@ohmi/react-native-webview/src/main/cpp" ./rn_webview)
 # RNOH_END: manual_package_linking_1
 
 file(GLOB GENERATED_CPP_FILES "./generated/*.cpp")

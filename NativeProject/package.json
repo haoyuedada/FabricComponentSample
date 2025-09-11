@@ -1,6 +1,7 @@
 {
   "name": "react-native-harmony-tester",
   "dependencies": {
-    "@ohmi/react-native-openharmony": "1.1.0-rc.0.0.35"
+    "@ohmi/react-native-openharmony": "1.1.0-rc.0.0.43",
+    "@ohmi/react-native-orientation": "^3.1.3-0.0.11"
   }
 }

@@ -16,7 +16,7 @@ export default class Page2 extends React.Component {
     this.setState({ dateArray: hoursArray });
   }
   componentDidMount() {
-    this.initData();
+    // this.initData();
   }
   renderHourItem({ item }) {
     return (
@@ -28,6 +28,7 @@ export default class Page2 extends React.Component {
       <View
         style={{ flex: 1, justifyContent: 'center', alignContent: 'center' }}
       >
+        <Text>This is FlatList</Text>
         <FlatList
           data={this.state.dateArray}
           renderItem={(item, index) => {

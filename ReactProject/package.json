@@ -24,13 +24,12 @@
     "@react-native-oh-tpl/react-native-video": "^5.2.2",
     "@react-native-oh-tpl/react-native-view-shot": "^3.8.0-0.3.2",
     "@react-native-oh-tpl/stack": "^6.4.0-0.0.4",
-    "@ohmi/react-native-progress": "5.0.1-rc.0.1.0",
     "@react-navigation/native": "^6.1.17",
     "fabric-component-sample-package": "file:../fabric-component-sample-package/fabric-component-sample-package-1.0.0.tgz",
     "react": "18.2.0",
     "react-native": "0.72.5",
     "react-native-flipper-performance-plugin": "^0.4.0",
-    "react-native-harmony": "npm:@ohmi/react-native-harmony@0.72.58-rc1.0.44",
+    "react-native-harmony": "npm:@ohmi/react-native-harmony@0.72.58-rc1.0.49",
     "turbo-module": "file:../turbo-module/turbo-module-1.0.0.tgz"
   },
   "devDependencies": {

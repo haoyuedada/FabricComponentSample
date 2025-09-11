@@ -7,9 +7,9 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@pura/harmony-utils": "^1.2.6",
-    "@rnoh/react-native-openharmony": "file:../libs/react_native_openharmony-master.har",
+//    "@rnoh/react-native-openharmony": "file:../libs/react_native_openharmony-master.har",
 //    "@rnoh/react-native-openharmony": "../libs/react-native-openharmony0709.har",
-//    "@rnoh/react-native-openharmony": "../node_modules/@ohmi/react-native-openharmony/@ohmi/react-native-openharmony.har",
+    "@rnoh/react-native-openharmony": "../node_modules/@ohmi/react-native-openharmony/react_native_openharmony.har",
     //    "@rnoh/react-native-openharmony": "file:../node_modules/@ohmi/react-native-openharmony/react_native_openharmonymi.har",
     //    "@rnoh/react-native-openharmony": "file:../libs/react_native_openharmony.har",
     //    "@rnoh/react-native-openharmony": "0.72.48",
@@ -22,7 +22,7 @@
     "@react-native-oh-tpl/lottie-react-native": "file:../libs/lottie.har",
     "@react-native-oh-tpl/react-native-pager-view": "file:../libs/pager_view.har",
     "@react-native-oh-tpl/react-native-video": "file:../libs/rn_video.har",
-    "@react-native-oh-tpl/react-native-webview": "file:../libs/rn_webview.har",
-    //    "@react-native-oh-tpl/react-native-orientation": "file:../libs/rn_orientation.har"
+    "@ohmi/react-native-webview": "file:../libs/rn_webview.har",
+    "@ohmi/react-native-orientation": "file:../node_modules/@ohmi/react-native-orientation/harmony/rn_orientation.har"
   }
 }

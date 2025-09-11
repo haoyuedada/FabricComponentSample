@@ -17,12 +17,17 @@ export interface SelectItems {
   text: string;
 }
 
+interface sourceItem {
+  uri: string;
+}
+
 export interface Res {
   value: Int32[];
 }
 
 export interface NativeProps extends ViewProps, Res {
   data: SelectItems[];
+  source: sourceItem;
   onChangeInSelectBox: DirectEventHandler<Res>;
   onDismiss: DirectEventHandler<Res>;
   // 添加其它 props

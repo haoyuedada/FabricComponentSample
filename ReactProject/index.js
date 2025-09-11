@@ -90,7 +90,13 @@ import { AppRegistry } from 'react-native';
 // import App from './tests/exportTest/App.tsx';
 // import App from './testTurboModule/RunJsBundleTurboModule.tsx';
 // import App from './tests/ViewShotDemo.tsx';
-import App from './tests/mijia/timeLine/App.tsx';
+// import App from './tests/mijia/timeLine/App.tsx';
 // import App from './tests/requireTest/index.js';
+// import App from './tests/FlatListDemo1.js';
+// import App from './tests/RefTest.tsx';
+// import App from './tests/orientation.tsx';
+// import App from './tests/mijia/oriatation/App.tsx';
+// import App from './tests/UIManager/UIManager1.tsx';
+import App from './FabricComponent/SelectBox.tsx';
 
 AppRegistry.registerComponent("app_name", () => App);

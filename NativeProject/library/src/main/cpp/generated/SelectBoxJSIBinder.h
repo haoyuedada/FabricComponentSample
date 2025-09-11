@@ -17,6 +17,7 @@ class SelectBoxJSIBinder : public ViewComponentJSIBinder {
         auto object = ViewComponentJSIBinder::createNativeProps(rt);
         object.setProperty(rt, "value", true);
         object.setProperty(rt, "data", true);
+        object.setProperty(rt, "source", "Object");
         return object;
     }
 

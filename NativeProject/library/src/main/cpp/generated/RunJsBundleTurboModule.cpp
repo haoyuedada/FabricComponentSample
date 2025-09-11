@@ -15,7 +15,6 @@ using namespace facebook;
 RunJsBundleTurboModule::RunJsBundleTurboModule(const ArkTSTurboModule::Context ctx, const std::string name) : ArkTSTurboModule(ctx, name) {
     methodMap_ = {
         ARK_METHOD_METADATA(runJsBundle, 1),
-        ARK_ASYNC_METHOD_METADATA(execute, 3),
     };
 }
 

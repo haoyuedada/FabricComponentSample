@@ -33,7 +33,7 @@ import { LottieAnimationView, LOTTIE_TYPE } from "@react-native-oh-tpl/lottie-re
 import fs from '@ohos.file.fs';
 import { RNCVideo, RNC_VIDEO_TYPE } from "@react-native-oh-tpl/react-native-video"
 import Fetch from '@system.fetch';
-import { WebView, WEB_VIEW } from "@react-native-oh-tpl/react-native-webview"
+import { WebView, WEB_VIEW } from "@ohmi/react-native-webview"
 import { window } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
