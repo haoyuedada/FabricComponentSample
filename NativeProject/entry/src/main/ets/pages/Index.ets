@@ -26,7 +26,8 @@ let listener = mediaquery.matchMediaSync('(orientation: landscape)'); // 监听�
 @Entry
 @Component
 struct Index {
-  @State message: string = '打开RN应用';
+  @State message: string = '自定义RNInstance打开RN应用';
+  @State message1: string = '通过RNApp打开RN应用';
   private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
   private path:string = this.context.filesDir;
 
@@ -66,8 +67,22 @@ struct Index {
       Column() {
         Button(this.message)
           .fontSize(20)
+          .margin({top: 10})
           .onClick(() => {
             router.pushUrl({ url: 'pages/RNPage' }, router.RouterMode.Standard, (err) => {
+              if (err) {
+                console.error(`Invoke pushUrl failed, code is ${err.code}, message is ${err.message}`);
+                return;
+              }
+              console.info('Invoke pushUrl succeeded.');
+            })
+          })
+
+        Button(this.message1)
+          .fontSize(20)
+          .margin({top: 10})
+          .onClick(() => {
+            router.pushUrl({ url: 'pages/RNPageRNApp' }, router.RouterMode.Standard, (err) => {
               if (err) {
                 console.error(`Invoke pushUrl failed, code is ${err.code}, message is ${err.message}`);
                 return;

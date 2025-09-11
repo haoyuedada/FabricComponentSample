@@ -97,6 +97,7 @@ import { AppRegistry } from 'react-native';
 // import App from './tests/orientation.tsx';
 // import App from './tests/mijia/oriatation/App.tsx';
 // import App from './tests/UIManager/UIManager1.tsx';
-import App from './FabricComponent/SelectBox.tsx';
+// import App from './FabricComponent/SelectBox.tsx';
+import App from './src/ImageBackground.tsx';
 
 AppRegistry.registerComponent("app_name", () => App);

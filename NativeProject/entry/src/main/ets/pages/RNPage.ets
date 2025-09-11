@@ -21,7 +21,12 @@ export struct RNPage {
     }
   }
 
+  aboutToAppear(): void {
+    console.log("chy RNPage aboutToAppear")
+  }
+
   aboutToDisappear(): void {
+    console.log("chy RNPage aboutToDisappear")
   }
 
   build() {
