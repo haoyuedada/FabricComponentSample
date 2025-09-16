@@ -126,13 +126,16 @@ const config = {
         if (argv.sdk && relative.startsWith("node_modules/react-native-harmony")) {
           let oldPath = relative.replace("react-native-harmony", "react-native")
           let oldIndex = pathMap.get(oldPath)
-          pathMap.delete(oldPath)
-          delete modules[oldPath]
-          pathMap.set(relative, oldIndex);
-          console.log("chy split relative:", relative);
-          console.log("chy split oldPath:", oldPath);
-          console.log("chy split oldIndex:", oldIndex);
-          return oldIndex
+          if (oldIndex !== undefined) { 
+            pathMap.delete(oldPath)
+            delete modules[oldPath]
+            pathMap.set(relative, oldIndex);
+            return oldIndex
+          } else {
+            index += argv.sdk ? 1 : -1;
+            pathMap.set(relative, index);
+            return index;
+          }
         } else {
           index += argv.sdk ? 1 : -1;
           pathMap.set(relative, index);
@@ -171,9 +174,9 @@ process.once('beforeExit', () => {
 
     if (pathMap.has("maximum")) {
       delete sortedObj.maximum;
-      modulesResult = { maximum: pathMap.size - 1, ...sortedObj }
+      modulesResult = { ...sortedObj, maximum: sortedObj.size }
     } else {
-      modulesResult = { maximum: pathMap.size, ...sortedObj }
+      modulesResult = { ...sortedObj, maximum: Object.keys(sortedObj).length - 1 }
     }
     fs.writeFileSync('./config/modules.json', JSON.stringify(modulesResult), {
       flag: 'w+',

@@ -42,13 +42,6 @@ export default class RNInstaceManage {
 
   public async loadBasicBundle(): Promise<void> {
     this.BundleInstance = await this.getOrCreateRNInstance(this.rnohCoreContext!)
-    const provide = new AnyJSBundleProvider([
-      new ResourceJSBundleProvider(getContext().resourceManager, 'sdk.harmony.js')
-    ]);
-    await this.BundleInstance.runJSBundle(provide)
-  }
-
-  public async loadBussinessBundle(): Promise<boolean> {
     this.bundleCtx = new RNComponentContext(
       RNOHContext.fromCoreContext(this.rnohCoreContext!, this.BundleInstance),
       wrapBuilder(buildCustomComponent),
@@ -56,7 +49,14 @@ export default class RNInstaceManage {
       new Map(),
     )
     const provide = new AnyJSBundleProvider([
-      new ResourceJSBundleProvider(getContext().resourceManager, 'bundle.harmony.js')
+      new ResourceJSBundleProvider(getContext().resourceManager, 'split/sdk.harmony.js')
+    ]);
+    await this.BundleInstance.runJSBundle(provide)
+  }
+
+  public async loadBussinessBundle(): Promise<boolean> {
+    const provide = new AnyJSBundleProvider([
+      new ResourceJSBundleProvider(getContext().resourceManager, 'split/bundle.harmony.js')
     ]);
     await this.BundleInstance.runJSBundle(provide)
     return true;

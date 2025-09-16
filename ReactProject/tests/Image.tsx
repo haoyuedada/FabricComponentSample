@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
 });
 
 const DisplayAnImage = () => {
+  
   return (
     <View>
       <Image source={require('../assets/fig-without-poppy.jpeg')}/>

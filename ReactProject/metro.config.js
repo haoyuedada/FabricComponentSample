@@ -13,6 +13,7 @@ const {createHarmonyMetroConfig} = require('react-native-harmony/metro.config');
  */
 const config = {
   transformer: {
+    // babelTransformerPath: require.resolve("./config/transformer"),
     getTransformOptions: async () => ({
       transform: {
         experimentalImportSupport: false,

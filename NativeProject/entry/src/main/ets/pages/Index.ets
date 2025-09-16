@@ -112,15 +112,38 @@ struct Index {
           .fontSize(20)
           .margin({top: 10})
           .onClick(() => {
-            // 源路径
-            let fileOriginPath = "assets/tests/assets/mp4/303_1754468294.mp4";
-            // 沙箱目标路径
-            let fileTargetPath = this.context.filesDir + '/tests/assets/mp4/303_1754468294.mp4'; // 获取沙箱路径
-            let fileContent: Uint8Array = this.context.resourceManager.getRawFileContentSync(fileOriginPath);
-            let file = fileIo.openSync(fileTargetPath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
-            fileIo.writeSync(file.fd, fileContent.buffer);
-            fileIo.closeSync(file);
-            console.log("chy targetPath:", fileTargetPath)
+            try {
+              // 源路径
+              let fileOriginPath = "bundle.harmonyall.js";
+              // 沙箱目标路径
+              let fileTargetPath = this.context.filesDir + '/bundle.harmonyall.js'; // 获取沙箱路径
+              let fileContent: Uint8Array = this.context.resourceManager.getRawFileContentSync(fileOriginPath);
+              let file = fileIo.openSync(fileTargetPath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+              fileIo.writeSync(file.fd, fileContent.buffer);
+              fileIo.closeSync(file);
+              console.log("chy targetPath:", fileTargetPath)
+              // /data/storage/el2/base/haps/entry/files/bundle.harmonyall.js
+            } catch (e) {
+              console.log("chy 2.error:", JSON.stringify(e))
+            }
+          })
+
+        Button("3. 将rawfile中的文件夹压缩并写入到沙箱解压")
+          .fontSize(20)
+          .margin({top: 10})
+          .onClick(async() => {
+            // let assetSsrcPath = getContext(this).resourceDir + '/assets'
+            // let destPath = getContext(this).filesDir + '/apps/'
+            // console.log("chy srcPath:", assetSsrcPath);
+            // console.log("chy destPath:", destPath);
+            // console.log("chy srcPath1:", destPath);
+            // let fileContent: Uint8Array = this.context.resourceManager.getRawFileContentSync(assetSsrcPath);
+            //
+            // // 判断文件夹是否存在
+            // if (!fileIo.accessSync(destPath)) {
+            //   fileIo.mkdirSync(destPath)
+            // }
+            // fileIo.copyDirSync(srcPath, destPath, 0);
           })
       }
       .width('100%')

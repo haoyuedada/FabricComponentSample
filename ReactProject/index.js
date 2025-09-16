@@ -20,7 +20,7 @@ import { AppRegistry } from 'react-native';
 // import QDScrollView from './tests/QDScrollView'
 // import RCT from './tests/RCT'
 // import FontSlice from './tests/FontSlice'
-// import Image from './tests/Image'
+// import App from './tests/Image'
 // import App from './tests/Animatedtwo'
 // import DatePicker from './src/DatePicker'
 // import App from './App'
@@ -46,7 +46,7 @@ import { AppRegistry } from 'react-native';
 // import CMRecipeDetail from './src/CMRecipeDetail'
 // import SectionList from './src/SectionList'
 // import UseTransitionTest from './src/useTransitionTest'
-// import ImageTest from './tests/ImageTest'
+// import App from './tests/ImageTest'
 // import OnTextInput from './src/onTextInput'
 // import ViewMore from './tests/ViewMore'
 // import App from './tests/mixiding/StorageUI'
@@ -99,5 +99,7 @@ import { AppRegistry } from 'react-native';
 // import App from './tests/UIManager/UIManager1.tsx';
 // import App from './FabricComponent/SelectBox.tsx';
 import App from './src/ImageBackground.tsx';
+// import App from "./src/CMChartWave.js";
+// import App from "./tests/Image2mp4";
 
 AppRegistry.registerComponent("app_name", () => App);

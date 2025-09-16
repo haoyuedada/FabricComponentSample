@@ -155,7 +155,7 @@ export struct UPReactView {
       if (!this.isMetroAvailable) {
         LogUtil.debug(this.Tag, "-init loadBasicBundle");
         await this.RNInstanceManage.loadBasicBundle();
-        LogUtil.debug(this.Tag, "-init loadBasicBundle");
+        LogUtil.debug(this.Tag, "-init loadBussinessBundle");
         await this.RNInstanceManage.loadBussinessBundle();
       }
       this.logBoxDialogController = new CustomDialogController({
