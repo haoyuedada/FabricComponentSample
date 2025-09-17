@@ -21,7 +21,7 @@ export default function ImageBackgroundBase64Fix() {
         style={styles.bg}
         imageStyle={styles.imageStyle}
         resizeMode="cover"
-        layerScaleFilter= 'Nearest'
+        src={undefined}
       >
         <View style={styles.overlay}>
           <Text style={styles.text}>这是 ImageBackground（base64）</Text>
@@ -30,7 +30,7 @@ export default function ImageBackgroundBase64Fix() {
 
       {/* 作为对比：用 Image 渲染同一个 base64（便于判断是 ImageBackground 的问题还是 base64 本身） */}
       <Text style={styles.sub}>下面是 Image（同一 base64）作为对比：</Text>
-      <Image source={{ uri: dataUri }} style={styles.thumb} />
+      <Image source={{ uri: dataUri }} style={styles.thumb} src='sdfsdfsds'/>
     </SafeAreaView>
   );
 }
