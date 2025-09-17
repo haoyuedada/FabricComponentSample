@@ -1,0 +1,2247 @@
+function Optimize2(mapInfo, picW, picH,chargePos){
+    var oldMapInfo = [];
+    for (var i = 0; i < mapInfo.length; i++) {
+        oldMapInfo[i] = mapInfo[i];
+    }
+    clearLaminatedWall(mapInfo, picW, picH);
+    clearBorder(mapInfo);
+    fillMapData(mapInfo, picW, picH, 2, 3, 3);//填充障碍物
+    denoise(mapInfo, picW, picH);
+    denoise2(mapInfo, picW, picH);
+    updateBorderValue(mapInfo, picW, picH, 5);
+    fillCrossLine(mapInfo, picW, picH, 5)
+    linkAdjacentAreas(oldMapInfo,mapInfo, picW, picH, 5);
+    var ret = findOutLine(mapInfo, picW, picH, 5,true);
+    if(!ret){
+        return null;
+    }
+    updateBorderValue(mapInfo, picW, picH, 6);
+
+    var index = Math.floor(chargePos.y)*picW+Math.floor(chargePos.x);
+    var cChargePos = undefined;
+    if(chargePos.angle!=32767&&mapInfo[index]!=0){
+        cChargePos = calculateChargePos(mapInfo,picW,picH,6,chargePos);
+    }
+
+    findOutLine(mapInfo, picW, picH, 6);
+    fillMapData2(mapInfo, picW, picH);
+    clearSmallObstacle(mapInfo, picW, picH, 3);
+    var Multiple = 2;
+    if(picW<=70&&picH<=70){
+        Multiple = 2;
+    }else if(picW>=220||picH>=220){
+        Multiple = 1;
+    }
+
+    var nW = picW *Multiple;
+    var nH = picH*Multiple;
+    var oW = picW;
+    var mapInfo2 = [];
+
+    for(var j=0;j<picH;j++){
+        for(var i=0;i<picW;i++){
+           for(var nj = Multiple*j;nj<Multiple*j+Multiple;nj++){
+               for(var ni = Multiple*i;ni<Multiple*i+Multiple;ni++){
+                mapInfo2[nj*nW+ni] = mapInfo[j*oW+i];
+               }
+           }
+        }
+    }
+    mapInfo = mapInfo2;
+    picW = nW;
+    picH = nH;
+    updateBorderValue(mapInfo, picW, picH, 7);
+    var points = "";
+ 
+    for(var i=0;i<mapInfo.length;i++){
+        var _i = i%picW;
+        var _j = Math.floor(i/picW);
+        var value = mapInfo[_j*picW+_i];
+        if(value == 0){
+            points = points+"0";
+        }else if(value == 2||value == 7){
+            points = points+"2";
+        }else if(value == 3){
+            points = points+"3";
+        }else{
+            points = points+"1";
+        }
+        if(i!=mapInfo.length-1){
+            points = points+",";
+        }
+    }
+
+
+    return {
+        picH:picH,
+        picW:picW,
+        Multiple:Multiple,
+        points:points,
+        chargePos:cChargePos
+    }
+}
+
+function Optimize4(mapInfo, picW, picH,chargePos){
+    var oldMapInfo = [];
+    for (var i = 0; i < mapInfo.length; i++) {
+        oldMapInfo[i] = mapInfo[i];
+    }
+    var Multiple = 2;
+    if(picW<=70&&picH<=70){
+        Multiple = 5;
+    }else if(picW>=220||picH>=220){
+        Multiple = 1;
+    }
+
+    var nW = picW *Multiple;
+    var nH = picH*Multiple;
+    var oW = picW;
+    var mapInfo2 = [];
+
+    for(var j=0;j<picH;j++){
+        for(var i=0;i<picW;i++){
+           for(var nj = Multiple*j;nj<Multiple*j+Multiple;nj++){
+               for(var ni = Multiple*i;ni<Multiple*i+Multiple;ni++){
+                mapInfo2[nj*nW+ni] = mapInfo[j*oW+i];
+               }
+           }
+        }
+    }
+    mapInfo = mapInfo2;
+    picW = nW;
+    picH = nH;
+    //updateBorderValue(mapInfo, picW, picH, 7);
+    var points = "";
+ 
+    for(var i=0;i<mapInfo.length;i++){
+        var _i = i%picW;
+        var _j = Math.floor(i/picW);
+        var value = mapInfo[_j*picW+_i];
+        if(value == 0){
+            points = points+"0";
+        }else if(value == 2||value == 7){
+            points = points+"2";
+        }else if(value == 3){
+            points = points+"3";
+        }else{
+            points = points+"1";
+        }
+        if(i!=mapInfo.length-1){
+            points = points+",";
+        }
+    }
+
+
+    return {
+        picH:picH,
+        picW:picW,
+        Multiple:Multiple,
+        points:points
+    }
+}
+
+function Optimize3(mapInfo, picW, picH,chargePos,saveCleanMap,info,gridWidth){
+    var oldMapInfo = [];
+    for (var i = 0; i < mapInfo.length; i++) {
+        oldMapInfo[i] = mapInfo[i];
+    }
+    clearLaminatedWall(mapInfo, picW, picH);
+    clearBorder(mapInfo);
+    fillMapData(mapInfo, picW, picH, 2, 3, 3);//填充障碍物
+    denoise(mapInfo, picW, picH);
+    denoise2(mapInfo, picW, picH);
+    updateBorderValue(mapInfo, picW, picH, 5);
+    fillCrossLine(mapInfo, picW, picH, 5)
+    linkAdjacentAreas(oldMapInfo,mapInfo, picW, picH, 5);
+    var ret = findOutLine(mapInfo, picW, picH, 5,true);
+    if(!ret){
+        return null;
+    }
+    updateBorderValue(mapInfo, picW, picH, 6);
+    var cChargePos = undefined;
+    if(chargePos!=undefined&&chargePos.angle!=32767){
+        var index = Math.floor(chargePos.y)*picW+Math.floor(chargePos.x);
+        if(mapInfo[index]!=0){
+            cChargePos = calculateChargePos(mapInfo,picW,picH,6,chargePos);
+        }
+    }
+    
+    findOutLine(mapInfo, picW, picH, 6);
+   
+    
+    
+    fillMapData2(mapInfo, picW, picH);
+    clearSmallObstacle(mapInfo, picW, picH, 3);
+    updateBorderValue(mapInfo, picW, picH, 7);
+    
+ 
+    for(var i=0;i<mapInfo.length;i++){
+        var value = mapInfo[i];
+        
+        if(value == 0){
+            // mapInfo[i] = 0;
+        }else if(value == 2||value == 7){
+            mapInfo[i] = 2;
+        }else if(value == 3){
+            mapInfo[i] = 1;
+        }else{
+            mapInfo[i] = 1;
+        }
+    }
+    if(saveCleanMap){
+        var _x = info.minX;
+        var _y = info.minY;
+    
+        if(_x > saveCleanMap.x){
+            _x = saveCleanMap.x;
+        }
+        if(_y > saveCleanMap.y){
+            _y = saveCleanMap.y;
+        }
+        var pngWidth = picW;
+        var pngHeight = picH;
+        var maxX1 = info.minX + gridWidth*pngWidth;
+        var maxY1 = info.minY + gridWidth*pngHeight;
+        var maxX2 = saveCleanMap.x + gridWidth * saveCleanMap.width;
+        var maxY2 = saveCleanMap.y + gridWidth * saveCleanMap.height;
+
+        var maxX = maxX1>maxX2?maxX1:maxX2;
+        var maxY = maxY1>maxY2?maxY1:maxY2;
+            
+        var nw = (maxX-_x)/gridWidth;
+        var nh = (maxY-_y)/gridWidth;
+        var _mapInfo = [];
+        for(var j=0;j<nh;j++){
+            for(var i=0;i<nw;i++){
+                _mapInfo[j*nw+i] = 0;
+                var si = (saveCleanMap.x - _x)/gridWidth;
+                var sj = (saveCleanMap.y - _y)/gridWidth;
+                var ni = (info.minX-_x)/gridWidth;
+                var nj = (info.minY-_y)/gridWidth;
+                var saveValue = undefined;
+                if(j>=sj&&i>=si&&j<sj+saveCleanMap.height&&i<si+saveCleanMap.width){
+                    saveValue = saveCleanMap.mapInfo[(j-sj)*saveCleanMap.width+(i-si)];
+                }
+                var cleanValue = undefined;
+                if(j>=nj&&i>=ni&&j<nj+pngHeight&&i<ni+pngWidth){
+                    cleanValue = mapInfo[(j-nj)*pngWidth+(i-ni)];
+                }
+                if(saveValue==undefined||saveValue==0){
+                    if(cleanValue == 1){
+                        _mapInfo[j*nw+i] = 1;
+                    }
+                }else{
+                    if(saveValue == 2){
+                        _mapInfo[j*nw+i] = 2;
+                    }else if(saveValue == 1){
+                        if(cleanValue == 1){
+                            _mapInfo[j*nw+i] = 1;
+                        }else{
+                            _mapInfo[j*nw+i] = 3;
+                        }
+                    }
+                }
+            }
+        }
+          picW = nw;
+          picH = nh;
+          mapInfo = _mapInfo;
+          cChargePos = undefined;
+          info.minX = _x;
+          info.minY = _y;
+        }
+    var points =  mapInfo.join(",")
+    return {
+        picH:picH,
+        picW:picW,
+        Multiple:1,
+        points:points,
+        info:info,
+        chargePos:cChargePos
+    }
+}
+
+function Optimize4(mapInfo, picW, picH,chargePos,saveCleanMap,info,gridWidth){
+    picW = saveCleanMap.width;
+    picH = saveCleanMap.height;
+    var points = saveCleanMap.mapInfo.join(",");
+    info.minX = saveCleanMap.x;
+    info.minY = saveCleanMap.y;
+    var cChargePos = {
+        x:(saveCleanMap.chargePos.x-saveCleanMap.x)/gridWidth,
+        y:(saveCleanMap.chargePos.y-saveCleanMap.y)/gridWidth,
+        angle:saveCleanMap.chargePos.angle
+    };
+    return {
+        picH:picH,
+        picW:picW,
+        Multiple:1,
+        points:points,
+        info:info,
+        chargePos:cChargePos
+    }
+}
+
+function Optimize0(mapInfo, picW, picH,chargePos,saveCleanMap,info,gridWidth){
+    
+    var points = mapInfo.join(",");
+    return {
+        picH:picH,
+        picW:picW,
+        Multiple:1,
+        points:points
+    }
+}
+
+function calculateChargePos(mapInfo, picW, picH,strokeValue,chargerPos) {
+    var vLines = [];
+    var hLines = [];
+    for (var i = 0; i < picW; i++) {
+        var startY = -1;
+        for (var j = 0; j < picH; j++) {
+            var index = j * picW + i;
+            var lastY = j - 1;
+            if (mapInfo[index] == strokeValue && j != picH - 1) {
+                var isCross = false;
+                if ((i!=0&&mapInfo[index - 1] == strokeValue) || (i!=picW-1&&mapInfo[index + 1] == strokeValue)) {
+                    isCross = true;
+                }
+                if (startY < 0 && isCross) {
+                    startY = j;
+                    continue;
+                }
+                if (!isCross) {
+                    continue;
+                }
+                lastY = j;
+            }
+            if (startY >= 0) {
+                if (j == picH - 1 && mapInfo[index] == strokeValue) {
+                    lastY = j;
+                }
+                if (lastY == startY) {
+                    startY = -1;
+                    continue;
+                }
+                var isCross = false;
+                var lastIndex = lastY * picW + i;
+                if (mapInfo[lastIndex - 1] == strokeValue || mapInfo[lastIndex + 1] == strokeValue) {
+                    isCross = true;
+                }
+                if (isCross) {
+                    var p0 = {
+                        x:i,
+                        y:startY
+                    }
+                    var p1 = {
+                        x:i,
+                        y:lastY
+                    }
+                    vLines.push({
+                        p0:p0,
+                        p1:p1
+                    })
+                    startY = lastY;
+                    continue;
+                }
+
+
+
+            }
+            startY = -1;
+        }
+    }
+    for (var j = 0; j < picH; j++) {
+        var startX = -1;
+        for (var i = 0; i < picW; i++) {
+            var index = j * picW + i;
+            var lastX = i - 1;
+            if (mapInfo[index] == strokeValue && i != picW - 1) {
+
+                var isCross = false;
+                if (mapInfo[index - picW] == strokeValue || mapInfo[index + picW] == strokeValue) {
+                    isCross = true;
+                }
+                if (startX < 0 && isCross) {
+                    startX = i;
+                    continue;
+                }
+                if (!isCross) {
+                    continue;
+                }
+                lastX = i;
+            }
+            if (startX >= 0) {
+                if (mapInfo[index] == strokeValue && i == picW - 1) {
+                    lastX = i;
+                }
+
+                if (lastX == startX) {
+                    startX = -1;
+                    continue;
+                }
+                var isCross = false;
+                var lastIndex = j * picW + lastX;
+                if (mapInfo[lastIndex - picW] == strokeValue || mapInfo[lastIndex + picW] == strokeValue) {
+                    isCross = true;
+                }
+                if (isCross) {
+                    var p0 = {
+                        x:startX,
+                        y:j
+                    }
+                    var p1 = {
+                        x:lastX,
+                        y:j
+                    }
+                    hLines.push({
+                        p0:p0,
+                        p1:p1
+                    })
+                   
+                    startX = lastX;
+                    continue;
+                }
+
+            }
+            startX = -1;
+        }
+    }
+
+    var cX = Math.floor(chargerPos.x);
+    var cY = Math.floor(chargerPos.y);
+    if(Math.abs(chargerPos.angle-180)<=30){
+        chargerPos.angle = 180;
+        var lastX = undefined;
+        for(var i=0;i<vLines.length;i++){
+            var line = vLines[i];
+            var lx = line.p0.x;
+            var minY = line.p0.y<line.p1.y?line.p0.y:line.p1.y;
+            var maxY = line.p0.y>line.p1.y?line.p0.y:line.p1.y;
+            if(lx>=cX&&cY>=minY&&cY<=maxY){
+                if(lastX == undefined||lx<lastX){
+                    lastX = lx;
+                }
+            }
+        }
+        if(lastX!=undefined){
+            if(lastX - cX<=11){
+                chargerPos.angle = 180;
+                chargerPos.x = lastX + 0.5;
+            }
+        }
+    }else if(Math.abs(chargerPos.angle-360)<=30||Math.abs(chargerPos.angle)<=30){
+        chargerPos.angle = 360;
+        var lastX = undefined;
+        for(var i=0;i<vLines.length;i++){
+            var line = vLines[i];
+            var lx = line.p0.x;
+            var minY = line.p0.y<line.p1.y?line.p0.y:line.p1.y;
+            var maxY = line.p0.y>line.p1.y?line.p0.y:line.p1.y;
+            if(lx<=cX&&cY>=minY&&cY<=maxY){
+                if(lastX == undefined||lx>lastX){
+                    lastX = lx;
+                }
+            }
+        }
+        if(lastX!=undefined){
+            if(cX-lastX<=11){
+                chargerPos.angle = 360;
+                chargerPos.x = lastX+0.5;
+            }
+        }
+    }else if(Math.abs(Math.abs(chargerPos.angle-270)<=30)){
+        var lastY = undefined;
+        for(var i=0;i<hLines.length;i++){
+            var line = hLines[i];
+            var ly = line.p0.y;
+            var minX = line.p0.x<line.p1.x?line.p0.x:line.p1.x;
+            var maxX = line.p0.x>line.p1.x?line.p0.x:line.p1.x;
+            if(ly>=cY&&cX>=minX&&cX<=maxX){
+                if(lastY == undefined||ly<lastY){
+                    lastY = ly;
+                }
+            }
+        }
+        if(lastY!=undefined){
+            if(lastY-cY<=11){
+                chargerPos.angle = 270;
+                chargerPos.y = lastY + 0.5;
+            }
+        }
+    }else if(Math.abs(Math.abs(chargerPos.angle-90)<=30)){
+        var lastY = undefined;
+        for(var i=0;i<hLines.length;i++){
+            var line = hLines[i];
+            var ly = line.p0.y;
+            var minX = line.p0.x<line.p1.x?line.p0.x:line.p1.x;
+            var maxX = line.p0.x>line.p1.x?line.p0.x:line.p1.x;
+            if(ly<=cY&&cX>=minX&&cX<=maxX){
+                if(lastY == undefined||ly>lastY){
+                    lastY = ly;
+                }
+            }
+        }
+        if(lastY!=undefined){
+            if(cY - lastY<=11){
+                chargerPos.angle = 90;
+                chargerPos.y = lastY + 0.5;
+            }
+        }
+    }
+    return chargerPos;
+}
+
+function OptimizeNew(mapInfo, picW, picH,chargePos,hasSaveMap){
+    var oldMapInfo = [];
+    var pointNum = 0;
+    for (var i = 0; i < mapInfo.length; i++) {
+        if(mapInfo[i] == 255){
+            mapInfo[i] = 2;
+        }
+        oldMapInfo[i] = mapInfo[i];
+        if(mapInfo[i]!=0){
+            pointNum++;
+        }
+        
+    }
+    clearLaminatedWall(mapInfo, picW, picH);
+    clearBorder(mapInfo);
+    fillMapData(mapInfo, picW, picH, 2, 3, 3);//填充障碍物
+    denoise(mapInfo, picW, picH);
+    denoise2(mapInfo, picW, picH);
+    updateBorderValue(mapInfo, picW, picH, 5);
+    fillCrossLine(mapInfo, picW, picH, 5)
+    linkAdjacentAreas(oldMapInfo,mapInfo, picW, picH, 5);
+    var ret = findOutLine(mapInfo, picW, picH, 5,true);
+    if(!ret){
+        return {
+            mapInfo:oldMapInfo
+        };
+    }
+    fillMapData2(mapInfo, picW, picH);
+    updateBorderValue(mapInfo, picW, picH, 6);
+    var index = Math.floor(chargePos.y)*picW+Math.floor(chargePos.x);
+    var cChargePos = undefined;
+    if(chargePos.angle!=32767&&mapInfo[index]!=0){
+        cChargePos = calculateChargePos(mapInfo,picW,picH,6,chargePos);
+    }
+    findOutLine(mapInfo, picW, picH, 6);
+   
+    
+    
+    fillMapData2(mapInfo, picW, picH);
+
+    updateBorderValue(mapInfo, picW, picH, 7);
+    findObstacleBorder(mapInfo, picW, picH, 3);
+    var currentPointNum = 0;
+
+    for(var i=0;i<mapInfo.length;i++){
+        var value = mapInfo[i];
+        
+        if(value == 0){
+            // mapInfo[i] = 0;
+        }else if(value == 2||value == 7){
+            mapInfo[i] = 2;
+        }else if(value == 3){
+            mapInfo[i] = 0;
+        }else{
+            mapInfo[i] = 1;
+        }
+        if(value!=0){
+            currentPointNum ++;
+        }
+    }
+    if(currentPointNum*100/pointNum<50&&pointNum>2000){
+        return {
+            mapInfo:oldMapInfo
+        }
+    }
+    var obstacleMap = undefined;
+    if(hasSaveMap){
+        optimizeObstacle(oldMapInfo,picW, picH);
+        optimizeObstacle(oldMapInfo,picW, picH);
+        obstacleMap = oldMapInfo;
+    }
+    
+
+    return {
+        mapInfo:mapInfo,
+        chargePos:cChargePos,
+        obstacleMap:obstacleMap
+    }
+}
+
+function optimizeObstacle(mapInfo,picW, picH){
+    for (var j = 0; j < picH; j++) {
+      for (var i = 0; i < picW; i++) {
+        var index = j * picW + i;
+        var cValue = mapInfo[index];
+        if(cValue == 2){
+            var left = (i == 0?0:mapInfo[index-1]);
+            var right = (i == picW-1?0:mapInfo[index+1]);
+            var top = (j == picH-1?0:mapInfo[index+picW]);
+            var bottom = (j==0?0:mapInfo[index - picW]);
+            if((left == 0&&right==2)||(left==2&&right==0)||(top==0&&bottom==2)||(top==2&&bottom==0)){
+                mapInfo[index] = 0;
+            }
+        }
+      }
+    }
+}
+
+function findObstacleBorder(mapInfo, picW, picH, obstacleValue){
+  for (var j = 0; j < picH; j++) {
+    for (var i = 0; i < picW; i++) {
+      var index = j * picW + i;
+      if (mapInfo[index] == obstacleValue) {
+        if (j == 0 || j == picH - 1 || i == 0 || i == picW - 1) {
+          mapInfo[index] = 2;
+          continue;
+        }
+        var hasFind = false;
+        for (var _i = i - 1; _i <= i + 1; _i++) {
+          for (var _j = j - 1; _j <= j + 1; _j++) {
+            var nIndex = _j * picW + _i;
+            if (mapInfo[nIndex] != obstacleValue && mapInfo[nIndex] != 2) {
+              hasFind = true;
+              break;
+            }
+          }
+          if (hasFind) {
+            break;
+          }
+        }
+        if (hasFind) {
+          mapInfo[index] = 2;
+        }
+      }
+    }
+  }
+
+}
+
+function Optimize(mapInfo, picW, picH,chargePos){
+    console.log("chy v8 mapInfo:", mapInfo)
+    console.log("chy v8 picW:", picW)
+    console.log("chy v8 picH:", picH)
+    console.log("chy v8 chargePos:", chargePos)
+    var oldMapInfo = [];
+    var pointNum = 0;
+    for (var i = 0; i < mapInfo.length; i++) {
+        if(mapInfo[i] == 255){
+            mapInfo[i] = 2;
+        }
+        oldMapInfo[i] = mapInfo[i];
+        if(mapInfo[i]!=0){
+            pointNum++;
+        }
+        
+    }
+    clearLaminatedWall(mapInfo, picW, picH);
+    clearBorder(mapInfo);
+    fillMapData(mapInfo, picW, picH, 2, 3, 3);//填充障碍物
+    denoise(mapInfo, picW, picH);
+    denoise2(mapInfo, picW, picH);
+    updateBorderValue(mapInfo, picW, picH, 5);
+    fillCrossLine(mapInfo, picW, picH, 5)
+    linkAdjacentAreas(oldMapInfo,mapInfo, picW, picH, 5);
+    var ret = findOutLine(mapInfo, picW, picH, 5,true);
+    if(!ret){
+        return {
+            mapInfo:oldMapInfo
+        };
+    }
+    fillMapData2(mapInfo, picW, picH);
+    updateBorderValue(mapInfo, picW, picH, 6);
+    var cChargePos = undefined;
+    if(chargePos&&chargePos.angle!=32767){
+        var index = Math.floor(chargePos.y)*picW+Math.floor(chargePos.x);
+        if(mapInfo[index]!=0){
+            cChargePos = calculateChargePos(mapInfo,picW,picH,6,chargePos);
+        }
+    }
+    findOutLine(mapInfo, picW, picH, 6);
+   
+    
+    
+    fillMapData2(mapInfo, picW, picH);
+    clearSmallObstacle(mapInfo, picW, picH, 3);
+    updateBorderValue(mapInfo, picW, picH, 7);
+    
+    var currentPointNum = 0;
+
+    for(var i=0;i<mapInfo.length;i++){
+        var value = mapInfo[i];
+        
+        if(value == 0){
+            // mapInfo[i] = 0;
+        }else if(value == 2||value == 7){
+            mapInfo[i] = 2;
+        }else if(value == 3){
+            mapInfo[i] = 3;
+        }else{
+            mapInfo[i] = 1;
+        }
+        if(value!=0){
+            currentPointNum ++;
+        }
+    }
+
+    if(currentPointNum*100/pointNum<50&&pointNum>2000||currentPointNum*100/pointNum<20){
+        return {
+            mapInfo:oldMapInfo
+        }
+    }
+
+    return {
+        mapInfo:mapInfo,
+        chargePos:cChargePos
+    }
+}
+
+function linkAdjacentAreas(oldMapInfo,mapInfo, picW, picH,strokeValue){
+  var horizontalLines = [];
+  var verticalLines = [];
+  var DIR_LEFT = 1;
+  var DIR_RIGHT = 2;
+  var DIR_TOP = 3;
+  var DIR_BOTTOM = 4;
+  for (var i = 0; i < picW; i++) {
+      var startY = -1;
+      for (var j = 0; j < picH; j++) {
+          var index = j * picW + i;
+          var lastY = j - 1;
+          if (mapInfo[index] == strokeValue && j != picH - 1) {
+              var isCross = false;
+              if ((i != 0 && mapInfo[index - 1] == strokeValue) || (i != picW - 1 && mapInfo[index + 1] == strokeValue)) {
+                  isCross = true;
+              }
+              if (startY < 0 && isCross) {
+                  startY = j;
+                  continue;
+              }
+              if (!isCross) {
+                  continue;
+              }
+              lastY = j;
+          }
+          if (startY >= 0) {
+              if (j == picH - 1 && mapInfo[index] == strokeValue) {
+                  lastY = j;
+              }
+              if (lastY == startY) {
+                  startY = -1;
+                  continue;
+              }
+              var isCross = false;
+              var dir = DIR_LEFT;
+              var lastIndex = lastY * picW + i;
+              if (mapInfo[lastIndex - 1] == strokeValue || mapInfo[lastIndex + 1] == strokeValue) {
+                  isCross = true;
+              }
+              if (i==0) {
+                  dir = DIR_LEFT;
+              }else if(i == picW-1){
+                  dir = DIR_RIGHT;
+              }else if(mapInfo[lastIndex - 1] == strokeValue){
+                  if(mapInfo[lastIndex + 1] !=0){
+                      dir = DIR_LEFT;
+                  }else{
+                      dir = DIR_RIGHT;
+                  }
+              }else if(mapInfo[lastIndex + 1] == strokeValue){
+                  if(mapInfo[lastIndex - 1] !=0){
+                      dir = DIR_RIGHT;
+                  }else{
+                      dir = DIR_LEFT;
+                  }
+              }
+              if (isCross) {
+                  var line = {
+                      x: i,
+                      y: [startY, lastY],
+                      ishorizontal: false,
+                      dir:dir,
+                      length: lastY - startY
+                  }
+
+                  verticalLines.push(line);
+                  startY = lastY;
+                  continue;
+              }
+
+
+
+          }
+          startY = -1;
+      }
+  }
+  for (var j = 0; j < picH; j++) {
+      var startX = -1;
+      for (var i = 0; i < picW; i++) {
+          var index = j * picW + i;
+          var lastX = i - 1;
+          if (mapInfo[index] == strokeValue && i != picW - 1) {
+
+              var isCross = false;
+              if (mapInfo[index - picW] == strokeValue || mapInfo[index + picW] == strokeValue) {
+                  isCross = true;
+              }
+              if (startX < 0 && isCross) {
+                  startX = i;
+                  continue;
+              }
+              if (!isCross) {
+                  continue;
+              }
+              lastX = i;
+          }
+          if (startX >= 0) {
+              if (mapInfo[index] == strokeValue && i == picW - 1) {
+                  lastX = i;
+              }
+
+              if (lastX == startX) {
+                  startX = -1;
+                  continue;
+              }
+              var isCross = false;
+              var dir = DIR_TOP;
+              var lastIndex = j * picW + lastX;
+              if (mapInfo[lastIndex - picW] == strokeValue || mapInfo[lastIndex + picW] == strokeValue) {
+                  isCross = true;
+              }
+
+              if (j==0) {
+                  dir = DIR_BOTTOM;
+              }else if(j == picH-1){
+                  dir = DIR_TOP;
+              }else if(mapInfo[lastIndex - picW] == strokeValue){
+                  if(mapInfo[lastIndex + picW] !=0){
+                      dir = DIR_BOTTOM;
+                  }else{
+                      dir = DIR_TOP;
+                  }
+              }else if(mapInfo[lastIndex + picW] == strokeValue){
+                  if(mapInfo[lastIndex - picW] !=0){
+                      dir = DIR_TOP;
+                  }else{
+                      dir = DIR_BOTTOM;
+                  }
+              }
+
+              if (isCross) {
+                  var line = {
+                      x: [startX, lastX],
+                      y: j,
+                      ishorizontal: true,
+                      dir:dir,
+                      length: lastX - startX
+                  }
+                  horizontalLines.push(line);
+                  startX = lastX;
+                  continue;
+              }
+
+          }
+          startX = -1;
+      }
+  }
+
+  var paths = findBounds(horizontalLines,verticalLines);
+  var needFill = paths.length>1;
+
+  function checkIntersect(arr1,arr2){
+      if(arr1[0]>=arr2[1]||arr2[0]>=arr1[1]){
+          return null;
+      }
+      var tmp = [];
+      tmp = tmp.concat(arr1).concat(arr2);
+      tmp.sort(function(a,b){
+          return a-b
+      });
+      return [tmp[1],tmp[2]]
+  }
+
+  function findOldPoints(xs,ys){
+      if(xs[0]>xs[1]){
+          var tmp = xs[0];
+          xs[0] = xs[1];
+          xs[1] = tmp; 
+      }
+      if(ys[0]>ys[1]){
+          var tmp = ys[0];
+          ys[0] = ys[1];
+          ys[1] = tmp; 
+      }
+      var num = 0;
+      for(var i=xs[0];i<=xs[1];i++){
+          for(var j=ys[0];j<=ys[1];j++){
+             var value = oldMapInfo[j*picW+i];
+             if(value!=0){
+                 num++;
+             }
+          }
+      }
+      var weight = num/((xs[1]-xs[0]+1)*(ys[1]-ys[0]+1));
+      if(weight>0.5){
+          for(var i=xs[0];i<=xs[1];i++){
+              for(var j=ys[0];j<=ys[1];j++){
+                  mapInfo[j*picW+i] = 1;
+
+              }
+          }
+      }
+      return weight;
+  }
+
+  while(paths.length>1){
+
+      var lines = paths.shift().alines;
+
+      for(var l=0;l<lines.length;l++){
+          var line = lines[l];
+          for(var i=0;i<paths.length;i++){
+              var nLines = paths[i].alines;
+              for(var j=0;j<nLines.length;j++){
+                  var nLine = nLines[j];
+                  if(line.ishorizontal === false&&nLine.ishorizontal === false){
+                      if(line.dir != nLine.dir){
+                          if((line.x>nLine.x&&line.dir == DIR_LEFT)||(line.x<nLine.x&&line.dir == DIR_RIGHT)){
+                              if(Math.abs(line.x-nLine.x)<=10){
+                                  var _ys = checkIntersect(line.y,nLine.y);
+                                  if(_ys!=null){
+                                      var xs = [line.x+1,nLine.x-1]
+                                      if(line.x>nLine.x){
+                                          xs = [nLine.x+1,line.x-1];
+                                      }
+                                      var weight = findOldPoints(xs,_ys);
+                                  }
+                                  
+                              }
+                              
+                          }
+                      }
+                  }else if(line.ishorizontal === true&&nLine.ishorizontal === true){
+                      if(line.dir != nLine.dir){
+                          if((line.y>nLine.y&&line.dir == DIR_BOTTOM)||(line.y<nLine.y&&line.dir == DIR_TOP)){
+                              if(Math.abs(line.y-nLine.y)<=10){
+                                  var _xs = checkIntersect(line.x,nLine.x);
+                                  if(_xs!=null){
+                                      var ys = [line.y+1,nLine.y-1]
+                                      if(line.y>nLine.y){
+                                          ys = [nLine.y+1,line.y-1];
+                                      }
+                                      var weight = findOldPoints(_xs,ys);
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+    
+  }
+  if(needFill){
+      for (var j = 0; j < picH; j++) {
+          for (var i = 0; i < picW; i++) {
+              var index = j * picW + i;
+              if (mapInfo[index] == strokeValue) {
+                  mapInfo[index] = 1;
+              }
+          }
+      }
+      fillMapData2(mapInfo, picW, picH);
+      updateBorderValue(mapInfo, picW, picH, strokeValue);
+      fillCrossLine(mapInfo, picW, picH, strokeValue)
+  }
+}
+
+function fillCrossLine(mapInfo, picW, picH,strokeValue){
+    for (var i = 0; i < picW; i++) {
+        var startY = -1;
+        for (var j = 0; j < picH; j++) {
+            var index = j * picW + i;
+            var lastY = j - 1;
+            if (mapInfo[index] == strokeValue && j != picH - 1) {
+                
+                if (startY < 0) {
+                    startY = j;
+                }
+                continue;
+            }
+            if (startY >= 0) {
+                if (j == picH - 1 && mapInfo[index] == strokeValue) {
+                    lastY = j;
+                }
+                if (lastY == startY) {
+                    startY = -1;
+                    continue;
+                }
+                var crossNum = 0;
+                for(var _j=startY;_j<=lastY;_j++){
+                   var _i = i-1;
+                   if(_i>=0){
+                       var cIndex = _j*picW+_i;
+                       if(mapInfo[cIndex] == strokeValue){
+                           crossNum++;
+                       }
+                   }
+                   _i = i+1;
+                   if(_i<picW){
+                    var cIndex = _j*picW+_i;
+                    if(mapInfo[cIndex] == strokeValue){
+                        crossNum++;
+                    }
+                   }
+                   if(crossNum>2){
+                       break;
+                   }
+                }
+                if(crossNum>2){
+                    for(var _j=startY;_j<=lastY;_j++){
+                        var _i = i-1;
+                        if(_i>=0){
+                            var cIndex = _j*picW+_i;
+                            if(mapInfo[cIndex] == 0){
+                                mapInfo[cIndex] = 1;
+                            }
+                        }
+                        _i = i+1;
+                        if(_i<picW){
+                          var cIndex = _j*picW+_i;
+                          if(mapInfo[cIndex] == 0){
+                            mapInfo[cIndex] = 1;
+                          }
+                        }
+                     }
+                }
+
+            }
+            startY = -1;
+        }
+    }
+    for (var j = 0; j < picH; j++) {
+        var startX = -1;
+        for (var i = 0; i < picW; i++) {
+            var index = j * picW + i;
+            var lastX = i - 1;
+            if (mapInfo[index] == strokeValue && i != picW - 1) {
+                if (startX < 0 ) {
+                    startX = i;
+                    
+                }
+                continue;
+            }
+            if (startX >= 0) {
+                if (mapInfo[index] == strokeValue && i == picW - 1) {
+                    lastX = i;
+                }
+
+                if (lastX == startX) {
+                    startX = -1;
+                    continue;
+                }
+                var crossNum = 0;
+                for(var _i=startX;_i<=lastX;_i++){
+                   var _j = j-1;
+                   if(_j>=0){
+                       var cIndex = _j*picW+_i;
+                       if(mapInfo[cIndex] == strokeValue){
+                           crossNum++;
+                       }
+                   }
+                   _j = j+1;
+                   if(_j<picW){
+                    var cIndex = _j*picW+_i;
+                    if(mapInfo[cIndex] == strokeValue){
+                        crossNum++;
+                    }
+                   }
+                   if(crossNum>2){
+                       break;
+                   }
+                }
+                
+                if(crossNum>2){
+                    for(var _i=startX;_i<=lastX;_i++){
+                        var _j = j-1;
+                        if(_j>=0){
+                            var cIndex = _j*picW+_i;
+                            if(mapInfo[cIndex] == 0){
+                                mapInfo[cIndex] = 1;
+                            }
+                        }
+                        _j = j+1;
+                        if(_j<picW){
+                         var cIndex = _j*picW+_i;
+                         if(mapInfo[cIndex] == 0){
+                            mapInfo[cIndex] = 1;
+                         }
+                        }
+                     }
+                }
+
+            }
+            startX = -1;
+        }
+    }
+
+    for (var j = 0; j < picH; j++) {
+        for (var i = 0; i < picW; i++) {
+            var index = j * picW + i;
+            if (mapInfo[index] == strokeValue) {
+                mapInfo[index] = 1;
+            }
+        }
+    }
+    updateBorderValue(mapInfo, picW, picH, strokeValue);
+}
+
+function clearLaminatedWall(mapInfo, picW, picH){
+    for (var j = 1; j < picH - 1; j++) {
+        for (var i = 1; i < picW - 1; i++) {
+            var index = j * picW + i;
+            if (mapInfo[index] == 1) {
+                var num = 0;
+                if(mapInfo[index - 1] !=1 ){
+                    num++;
+                }
+                if(mapInfo[index + 1] !=1 ){
+                    num++;
+                }
+                if(mapInfo[index + picW] != 1){
+                    num++;
+                }
+                if(mapInfo[index - picW] != 1){
+                    num++;
+                }
+                if(num>2){
+                    mapInfo[index] = 0;
+                }
+
+            }
+        }
+    }
+    for (var j = 1; j < picH-1; j++) {
+        for (var i = 1; i < picW-1; i++) {
+            var index = j * picW + i;
+            if(mapInfo[index] == 2){
+                if(mapInfo[index-1] == 1&&mapInfo[index+1]==1){
+                    mapInfo[index] = 1;
+                }else if(mapInfo[index+picW] == 1&&mapInfo[index-picW]==1){
+                    mapInfo[index] = 1;
+                }
+
+            }
+        }
+    }
+}
+
+function clearSmallObstacle(mapInfo, picW, picH, obstacleValue) {
+    for (var i = 0; i < picW; i++) {
+        var startY = -1;
+        for (var j = 0; j < picH; j++) {
+
+            var index = j * picW + i;
+            if (mapInfo[index] == obstacleValue) {
+                if (startY < 0) {
+                    startY = j;
+                }
+                continue;
+            }
+            if (startY != -1 && j - startY <= 3) {
+                for (var k = startY; k < j; k++) {
+                    mapInfo[k * picW + i] = 1;
+                }
+            }
+            startY = -1;
+        }
+    }
+    for (var j = 0; j < picH; j++) {
+        var startX = -1;
+        for (var i = 0; i < picW; i++) {
+
+            var index = j * picW + i;
+            if (mapInfo[index] == obstacleValue) {
+                if (startX < 0) {
+                    startX = i;
+                }
+                continue;
+            }
+            if (startX != -1 && i - startX <= 3) {
+                for (var k = startX; k < i; k++) {
+                    mapInfo[j * picW + k] = 1;
+                }
+            }
+            startX = -1;
+        }
+    }
+}
+
+function findOutLine(mapInfo, picW, picH, strokeValue,isFrist) {
+    var horizontalLines = [];
+    var verticalLines = [];
+    for (var i = 0; i < picW; i++) {
+        var startY = -1;
+        for (var j = 0; j < picH; j++) {
+            var index = j * picW + i;
+            var lastY = j - 1;
+            if (mapInfo[index] == strokeValue && j != picH - 1) {
+                var isCross = false;
+                if ((i!=0&&mapInfo[index - 1] == strokeValue) || (i!=picW-1&&mapInfo[index + 1] == strokeValue)) {
+                    isCross = true;
+                }
+                if (startY < 0 && isCross) {
+                    startY = j;
+                    continue;
+                }
+                if (!isCross) {
+                    continue;
+                }
+                lastY = j;
+            }
+            if (startY >= 0) {
+                if (j == picH - 1 && mapInfo[index] == strokeValue) {
+                    lastY = j;
+                }
+                if (lastY == startY) {
+                    startY = -1;
+                    continue;
+                }
+                var isCross = false;
+                var lastIndex = lastY * picW + i;
+                if (mapInfo[lastIndex - 1] == strokeValue || mapInfo[lastIndex + 1] == strokeValue) {
+                    isCross = true;
+                }
+                if (isCross) {
+                    var line = {
+                        x: i,
+                        y: [startY, lastY],
+                        ishorizontal: false,
+                        length: lastY - startY
+                    }
+                    verticalLines.push(line);
+                    startY = lastY;
+                    continue;
+                }
+
+
+
+            }
+            startY = -1;
+        }
+    }
+    for (var j = 0; j < picH; j++) {
+        var startX = -1;
+        for (var i = 0; i < picW; i++) {
+            var index = j * picW + i;
+            var lastX = i - 1;
+            if (mapInfo[index] == strokeValue && i != picW - 1) {
+
+                var isCross = false;
+                if (mapInfo[index - picW] == strokeValue || mapInfo[index + picW] == strokeValue) {
+                    isCross = true;
+                }
+                if (startX < 0 && isCross) {
+                    startX = i;
+                    continue;
+                }
+                if (!isCross) {
+                    continue;
+                }
+                lastX = i;
+            }
+            if (startX >= 0) {
+                if (mapInfo[index] == strokeValue && i == picW - 1) {
+                    lastX = i;
+                }
+
+                if (lastX == startX) {
+                    startX = -1;
+                    continue;
+                }
+                var isCross = false;
+                var lastIndex = j * picW + lastX;
+                if (mapInfo[lastIndex - picW] == strokeValue || mapInfo[lastIndex + picW] == strokeValue) {
+                    isCross = true;
+                }
+                if (isCross) {
+                    var line = {
+                        x: [startX, lastX],
+                        y: j,
+                        ishorizontal: true,
+                        length: lastX - startX
+                    }
+                    horizontalLines.push(line);
+                    startX = lastX;
+                    continue;
+                }
+
+            }
+            startX = -1;
+        }
+    }
+   
+    if(horizontalLines.length==0){
+
+        return false;
+    }
+
+    var paths = findBounds(horizontalLines,verticalLines);
+
+var covertlines;
+var allLines;
+var totalLen = 0;
+var tmp = [];
+for(var i=0;i<paths.length;i++){
+    var item = paths[i];
+    if(item.length>totalLen){
+        if(covertlines){
+            if(totalLen<80){
+                tmp.push(covertlines);
+            }
+            
+        }
+        totalLen = item.length;
+        covertlines = item.cLines;
+        allLines = item.alines;
+       
+    }else{
+        if(item.length<80){
+            tmp.push(item.cLines);
+        }
+    }
+}
+if(isFrist == true && tmp.length>0){
+    var clearPos = [];
+   for(var i=0;i<tmp.length;i++){
+      clearPos.push(tmp[i][0].p0);
+   }
+   while(clearPos.length>0){
+    var pos = clearPos.pop();
+    var i = pos.x;
+    var j = pos.y;
+    mapInfo[j*picW+i] = 0;
+    for(var _i=i-1;_i<=i+1;_i++){
+        for(var _j=j-1;_j<=j+1;_j++){
+            if(_i==i||_j==j){
+                var index = _j*picW+_i;
+                if(mapInfo[index]!=undefined&&mapInfo[index]!=0){
+                    clearPos.push({
+                        x:_i,
+                        y:_j
+                    })
+                }
+            }
+        }
+    }
+}
+
+  }
+    const bottom = 5;
+    const right = 6;
+    const top = 7;
+    const left = 8;
+    const dirnone = 0;
+
+
+    var angel = {
+        lines: [],
+        horizontalDir: dirnone,
+        verticalDir: dirnone
+    };
+    function fillAngle(angel) {
+        var l1 = angel.lines[0];
+        var l2 = angel.lines[angel.lines.length - 1];
+        if (angel.lines.length == 2||angel.lines.length>22) {
+            var nextAngle = {
+                lines: [],
+                horizontalDir: dirnone,
+                verticalDir: dirnone
+            }
+            nextAngle.lines.push(l2);
+            if (l2.ishorizontal) {
+                nextAngle.horizontalDir = l2.findEnd ? right : left;
+            } else {
+                nextAngle.verticalDir = l2.findEnd ? top : bottom;
+            }
+            return nextAngle;
+        }
+        var minx, miny, maxx, maxy;
+        if (l1.ishorizontal) {
+            if (angel.horizontalDir == right) {
+                minx = l1.x[1];
+            } else {
+                maxx = l1.x[0];
+            }
+            if (angel.verticalDir == top) {
+                miny = l1.y;
+            } else {
+                maxy = l1.y;
+            }
+            if (l2.ishorizontal) {
+                if (angel.horizontalDir == right) {
+                    maxx = l2.x[0];
+                } else {
+                    minx = l2.x[1];
+                }
+
+                if (angel.verticalDir == top) {
+                    maxy = l2.y;
+                } else {
+                    miny = l2.y;
+                }
+
+            } else {
+                if (angel.horizontalDir == right) {
+                    maxx = l2.x;
+                } else {
+                    minx = l2.x;
+                }
+                if (angel.verticalDir == top) {
+                    maxy = l2.y[0];
+                } else {
+                    miny = l2.y[1];
+                }
+            }
+        } else {
+            if (angel.verticalDir == top) {
+                miny = l1.y[1];
+            } else {
+                maxy = l1.y[0];
+            }
+            if (angel.horizontalDir == right) {
+                minx = l1.x;
+            } else {
+                maxx = l1.x;
+            }
+            if (l2.ishorizontal) {
+                if (angel.horizontalDir == right) {
+                    maxx = l2.x[0];
+                } else {
+                    minx = l2.x[1];
+                }
+                if (angel.verticalDir == top) {
+                    maxy = l2.y;
+                } else {
+                    miny = l2.y;
+                }
+            } else {
+                if (angel.horizontalDir == right) {
+                    maxx = l2.x;
+                } else {
+                    minx = l2.x;
+                }
+                if (angel.verticalDir == top) {
+                    maxy = l2.y[0];
+                } else {
+                    miny = l2.y[1];
+                }
+            }
+        }
+
+        if (minx == undefined || miny == undefined || maxx == undefined || maxy == undefined) {
+
+            var nextAngle = {
+                lines: [],
+                horizontalDir: dirnone,
+                verticalDir: dirnone
+            }
+            nextAngle.lines.push(l2);
+            if (l2.ishorizontal) {
+                nextAngle.horizontalDir = l2.findEnd ? right : left;
+            } else {
+                nextAngle.verticalDir = l2.findEnd ? top : bottom;
+            }
+            return nextAngle;
+        }
+
+        if (l1.ishorizontal && l2.ishorizontal && (maxy - miny <= 3)) {
+            if (angel.horizontalDir == right) {
+                minx = l1.x[0];
+                maxx = l2.x[1];
+            } else {
+                minx = l2.x[0];
+                maxx = l1.x[1];
+            }
+        } else if (!l1.ishorizontal && !l2.ishorizontal && (maxx - minx <= 3)) {
+            if (angel.verticalDir == top) {
+                miny = l1.y[0];
+                maxy = l2.y[1];
+            } else {
+                miny = l2.y[0];
+                maxy = l1.y[1];
+            }
+        }
+
+        var num = 0;
+
+        for (var i = minx; i <= maxx; i++) {
+            for (var j = miny; j <= maxy; j++) {
+                var index = j * picW + i;
+                if (mapInfo[index] == 0) {
+                    num++
+                    // mapInfo[index] = strokeValue;
+                }
+            }
+        }
+
+        if(num<20||num<(maxx-minx+1)*(maxy-miny+1)*2/3){
+            for (var i = minx; i <= maxx; i++) {
+                for (var j = miny; j <= maxy; j++) {
+                    var index = j * picW + i;
+                    if (mapInfo[index] == 0) {
+                        mapInfo[index] = strokeValue;
+                    }
+                }
+            }
+        }
+
+
+        var nextAngle = {
+            lines: [],
+            horizontalDir: dirnone,
+            verticalDir: dirnone
+        }
+        nextAngle.lines.push(l2);
+        if (l2.ishorizontal) {
+            nextAngle.horizontalDir = l2.findEnd ? right : left;
+        } else {
+            nextAngle.verticalDir = l2.findEnd ? top : bottom;
+        }
+        return nextAngle;
+
+    }
+
+    for (var i = 0; i <= allLines.length; i++) {
+        var line = allLines[i];
+        if (i == allLines.length) {
+            line = allLines[0];
+        }
+
+        if (i == 0) {
+            angel.lines.push(line);
+            angel.type = bottom;
+            angel.horizontalDir = right;
+        } else {
+            if (line.ishorizontal) {
+                var horizontalDir = line.findEnd ? right : left;
+                if (angel.horizontalDir != dirnone && angel.horizontalDir != horizontalDir) {
+                    angel = fillAngle(angel);
+                }
+
+                if (angel.horizontalDir == dirnone) {
+                    angel.horizontalDir = horizontalDir;
+                }
+                angel.lines.push(line)
+            } else {
+                var verticalDir = line.findEnd ? top : bottom;
+                if (angel.verticalDir != dirnone && angel.verticalDir != verticalDir) {
+                    angel = fillAngle(angel);
+                }
+                if (angel.verticalDir == dirnone) {
+                    angel.verticalDir = verticalDir;
+                }
+                angel.lines.push(line)
+            }
+
+            if (line.length >= 7||i == allLines.length) {
+                angel = fillAngle(angel);
+            }
+        }
+    }
+    return true;
+
+}
+
+function updateBorderValue(mapInfo, picW, picH, strokeValue) {
+    for (var j = 0; j < picH; j++) {
+        for (var i = 0; i < picW; i++) {
+            var index = j * picW + i;
+            if (mapInfo[index] != 0) {
+                if(j==0||j==picH-1||i==0||i==picW-1){
+                    mapInfo[index] = strokeValue;
+                }
+                var hasFind = false;
+                for (var _i = i - 1; _i <= i + 1; _i++) {
+                    for (var _j = j - 1; _j <= j + 1; _j++) {
+                        var nIndex = _j * picW + _i;
+                        if (mapInfo[nIndex] == 0) {
+                            hasFind = true;
+                            break;
+                        }
+                    }
+                    if (hasFind) {
+                        break;
+                    }
+                }
+                if (hasFind) {
+                    mapInfo[index] = strokeValue;
+                }
+            }
+        }
+    }
+}
+
+function createBorder(mapInfo, picW, picH) {
+    for (var i = 0; i < picW; i++) {
+        for (var j = 0; j < picH; j++) {
+            var index = j * picW + i;
+            if ((i == 0 || i == picW - 1 || j == 0 || j == picH - 1) && mapInfo[index] != 0) {
+                mapInfo[index] = 5;
+                continue;
+            }
+            if (mapInfo[index] != 0 && mapInfo[index] != 5) {
+                for (var ii = i - 1; ii < i + 2; ii++) {
+                    for (var jj = j - 1; jj < j + 2; jj++) {
+                        if (ii == i && jj == j) {
+                            continue;
+                        }
+                        var nIndex = jj * picW + ii;
+                        if (mapInfo[nIndex] == 0) {
+                            mapInfo[nIndex] = 5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+function clearBorder(mapInfo) {
+    for (var i = 0; i < mapInfo.length; i++) {
+        if (mapInfo[i] == 2) {
+            mapInfo[i] = 0;
+        }
+    }
+}
+
+function denoise2(mapInfo, picW, picH) {
+    var len = 2;
+    for (var i = 0; i < picW; i++) {
+        var startY = -1;
+        for (var j = 0; j < picH; j++) {
+
+            var index = j * picW + i;
+            if (mapInfo[index] != 0) {
+                if (startY < 0) {
+                    startY = j;
+                }
+                continue;
+            }
+            if (startY != -1 && j - startY <= len) {
+                for (var k = startY; k < j; k++) {
+                    mapInfo[k * picW + i] = 0;
+                }
+            }
+            startY = -1;
+        }
+    }
+    for (var j = 0; j < picH; j++) {
+        var startX = -1;
+        for (var i = 0; i < picW; i++) {
+
+            var index = j * picW + i;
+            if (mapInfo[index] != 0) {
+                if (startX < 0) {
+                    startX = i;
+                }
+                continue;
+            }
+            if (startX != -1 && i - startX <= len) {
+
+
+                for (var k = startX; k < i; k++) {
+                    mapInfo[j * picW + k] = 0;
+                }
+
+
+            }
+            startX = -1;
+        }
+    }
+
+}
+
+function denoise(mapInfo, picW, picH) {
+    var tmpMapInfo = [];
+    for (var i = 0; i < mapInfo.length; i++) {
+        tmpMapInfo[i] = mapInfo[i];
+    }
+    var len = 20;
+        for (var i = 0; i < picW; i++) {
+            var startY = -1;
+            for (var j = 0; j < picH; j++) {
+
+                var index = j * picW + i;
+                if (mapInfo[index] != 0) {
+                    if (startY < 0) {
+                        startY = j;
+                    }
+                    continue;
+                }
+                if (startY != -1 && j - startY <= len) {
+                    var isBorder = false;
+                    if(i == 0||i==picW-1||(j - startY)<=2){
+                        isBorder = true;
+                    }
+                    if(!isBorder){
+                        var _i = i-1;
+                        isBorder = true;
+                        for (var k = startY; k < j; k++) {
+                            if(tmpMapInfo[k * picW + _i] == 1){
+                                isBorder = false;
+                                break;
+                            }
+                        }
+                    }
+                    if(!isBorder){
+                        var _i = i+1;
+                        isBorder = true;
+                        for (var k = startY; k < j; k++) {
+                            if(tmpMapInfo[k * picW + _i] == 1){
+                                isBorder = false;
+                                break;
+                            }
+                        }
+                    }
+                    
+                    if(isBorder){
+                        for (var k = startY; k < j; k++) {
+                            mapInfo[k * picW + i] = 0;
+                        }
+                    }
+                    
+                }
+                startY = -1;
+            }
+        }
+        for (var j = 0; j < picH; j++) {
+            var startX = -1;
+            for (var i = 0; i < picW; i++) {
+
+                var index = j * picW + i;
+                if (mapInfo[index] != 0) {
+                    if (startX < 0) {
+                        startX = i;
+                    }
+                    continue;
+                }
+                if (startX != -1 && i - startX <= len) {
+
+                    var isBorder = false;
+                    if(j == 0||j==picH-1||(i - startX)<=2){
+                        isBorder = true;
+                    }
+                    if(!isBorder){
+                        var _j = j-1;
+                        isBorder = true;
+                        for (var k = startX; k < i; k++) {
+                            if(tmpMapInfo[_j * picW + k] == 1){
+                                isBorder = false;
+                                break;
+                            };
+                        }
+                    }
+                    if(!isBorder){
+                        var _j = j+1;
+                        isBorder = true;
+                        for (var k = startX; k < i; k++) {
+                            if(tmpMapInfo[_j * picW + k] == 1){
+                                isBorder = false;
+                                break;
+                            };
+                        }
+                    }
+                    if(isBorder){
+                        for (var k = startX; k < i; k++) {
+                            mapInfo[j * picW + k] = 0;
+                        }
+                    }
+                   
+                }
+                startX = -1;
+            }
+        }
+
+}
+
+function fillMapData2(mapInfo, picW, picH) {
+  function findFristEmptyPoint(){
+        for(var i=0;i<picW;i++){
+            if (mapInfo[i] == 0) {
+                return {
+                    x: i,
+                    y: 0
+                }
+            }
+            if(mapInfo[(picH-1) * picW + i] == 0){
+                return {
+                    x: i,
+                    y: picH-1
+                }
+            }
+        }
+        for(var j=0;j<picH;j++){
+            if (mapInfo[j * picW ] == 0) {
+                return {
+                    x: 0,
+                    y: j
+                }
+            }
+            if(mapInfo[j * picW +(picW-1)] == 0){
+                return {
+                    x: picW-1,
+                    y: j
+                }
+            }
+        }
+    }
+    const fillData = 255;
+    function findZeroPoint(p) {
+        var finds = [];
+        var i = p.x;
+        var j = p.y;
+        for (var _j = j - 1; _j <= j + 1; _j++) {
+            for (var _i = i - 1; _i <= i + 1; _i++) {
+                if (_j == j || _i == i) {
+                    if (mapInfo[_j * picW + _i] == 0) {
+                        mapInfo[_j * picW + _i] = 255;
+                        finds.push({ x: _i, y: _j })
+                    }
+                }
+            }
+        }
+        return finds;
+    }
+    while(true){
+        var fristPoint = findFristEmptyPoint();
+        if(!fristPoint){
+            break;
+        }
+        mapInfo[fristPoint.x + fristPoint.y * picW] = fillData;
+    
+        var needFindPoints = [];
+        needFindPoints.push(fristPoint);
+    
+        
+    
+        while (needFindPoints.length > 0) {
+            var p = needFindPoints.shift();
+            var ps = findZeroPoint(p);
+            needFindPoints = needFindPoints.concat(ps);
+        }
+
+        
+    }
+
+    for (var j = 0; j < picH; j++) {
+        for (var i = 0; i < picW; i++) {
+            var index = j * picW + i;
+            if (mapInfo[index] == 0) {
+                mapInfo[index] = 3;
+            }
+        }
+    }
+
+    for (var j = 0; j < picH; j++) {
+        for (var i = 0; i < picW; i++) {
+            var index = j * picW + i;
+            if (mapInfo[index] == fillData) {
+                mapInfo[index] = 0;
+            }
+        }
+    }
+
+}
+
+function fillMapData(mapInfo, picW, picH, times, len, fillValue) {
+  function findFristEmptyPoint(){
+        for(var i=0;i<picW;i++){
+            if (mapInfo[i] == 0) {
+                return {
+                    x: i,
+                    y: 0
+                }
+            }
+            if(mapInfo[(picH-1) * picW + i] == 0){
+                return {
+                    x: i,
+                    y: picH-1
+                }
+            }
+        }
+        for(var j=0;j<picH;j++){
+            if (mapInfo[j * picW ] == 0) {
+                return {
+                    x: 0,
+                    y: j
+                }
+            }
+            if(mapInfo[j * picW +(picW-1)] == 0){
+                return {
+                    x: picW-1,
+                    y: j
+                }
+            }
+        }
+    }
+    const fillData = 255;
+    function findZeroPoint(p) {
+        var finds = [];
+        var i = p.x;
+        var j = p.y;
+        for (var _j = j - 1; _j <= j + 1; _j++) {
+            for (var _i = i - 1; _i <= i + 1; _i++) {
+                if (_j == j || _i == i) {
+                    if (mapInfo[_j * picW + _i] == 0) {
+                        mapInfo[_j * picW + _i] = 255;
+                        finds.push({ x: _i, y: _j })
+                    }
+                }
+            }
+        }
+        return finds;
+    }
+    while(true){
+        var fristPoint = findFristEmptyPoint();
+        if(!fristPoint){
+            break;
+        }
+        mapInfo[fristPoint.x + fristPoint.y * picW] = fillData;
+    
+        var needFindPoints = [];
+        needFindPoints.push(fristPoint);
+    
+        
+    
+        while (needFindPoints.length > 0) {
+            var p = needFindPoints.shift();
+            var ps = findZeroPoint(p);
+            needFindPoints = needFindPoints.concat(ps);
+        }
+
+        
+    }
+
+    for (var j = 0; j < picH; j++) {
+        for (var i = 0; i < picW; i++) {
+            var index = j * picW + i;
+            if (mapInfo[index] == 0) {
+                mapInfo[index] = 3;
+            }
+        }
+    }
+
+    for (var j = 0; j < picH; j++) {
+        for (var i = 0; i < picW; i++) {
+            var index = j * picW + i;
+            if (mapInfo[index] == fillData) {
+                mapInfo[index] = 0;
+            }
+        }
+    }
+
+
+
+    if (!len || len > 6 || len < 1) {
+        len = 4
+    }
+    if (!times || times > 3) {
+        times = 1
+    }
+    for (var t = 0; t < times; t++) {
+        for (var i = 0; i < picW; i++) {
+            var startY = -1;
+            var isEmpty = false;
+            for (var j = 0; j < picH; j++) {
+
+                var index = j * picW + i;
+                if (mapInfo[index] != 0) {
+                    if (isEmpty == true && startY >= 0) {
+
+                        if (j - startY - 1 <= len) {
+                            for (var _j = startY + 1; _j < j; _j++) {
+                                var num = 0;
+                                if (i > 0 && _j > 0) {
+                                    for (var __i = i - 1; __i <= i + 1; __i++) {
+                                        for (var __j = _j - 1; __j <= _j + 1; __j++) {
+                                            if (__i != i && __j != _j) {
+                                                if(__i==i||__j==_j){
+                                                    if (mapInfo[__j * picW + __i] != 0 && mapInfo[__j * picW + __i] != undefined) {
+                                                        num++;
+                                                    }
+                                                }
+                                               
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    num = 5;
+                                }
+
+
+                                if (num >= 3) {
+                                    mapInfo[_j * picW + i] = fillValue;
+                                }
+
+                            }
+                        }
+                        isEmpty = false;
+                    }
+                    startY = j;
+                } else {
+                    if (startY >= 0) {
+                        isEmpty = true;
+                    }
+                }
+            }
+        }
+        for (var j = 0; j < picH; j++) {
+            var startX = -1;
+            var isEmpty = false;
+            for (var i = 0; i < picW; i++) {
+
+                var index = j * picW + i;
+                if (mapInfo[index] != 0) {
+                    if (isEmpty == true && startX >= 0) {
+                        if (i - startX - 1 <= len) {
+                            for (var _i = startX + 1; _i < i; _i++) {
+
+                                var num = 0;
+                                if (_i > 0 && j > 0) {
+                                    for (var __i = _i - 1; __i <= _i + 1; __i++) {
+                                        for (var __j = j - 1; __j <= j + 1; __j++) {
+                                            if (__i != _i && __j != j) {
+                                                if(__i==_i||__j==j){
+                                                    if (mapInfo[__j * picW + __i] != 0 && mapInfo[__j * picW + __i] != undefined) {
+                                                        num++;
+                                                    }
+                                                }
+                                               
+                                            }
+                                        }
+                                    }
+                                }else{
+                                    num = 5;
+                                }
+                                if (num >= 3) {
+                                    mapInfo[j * picW + _i] = fillValue;
+                                }
+
+                            }
+                        }
+
+                        isEmpty = false;
+                    }
+                    startX = i;
+                } else {
+                    if (startX >= 0) {
+                        isEmpty = true;
+                    }
+                }
+            }
+        }
+    }
+}
+
+function findBounds(horizontalLines,verticalLines){
+    function findStartLine(lines) {
+        for (var i = 0; i < lines.length; i++) {
+            var line = lines[i];
+            if (line != undefined) {
+                delete lines[i];
+                return line;
+            }
+        }
+        return undefined;
+    }
+  
+    function addLine(line,covertlines,allLines) {
+        var aLine = {
+            p0: {},
+            p1: {}
+        }
+        if (line.ishorizontal) {
+            aLine.p0.y = line.y;
+            aLine.p1.y = line.y;
+            if (line.findEnd) {
+                aLine.p0.x = line.x[0];
+                aLine.p1.x = line.x[1];
+            } else {
+                aLine.p0.x = line.x[1];
+                aLine.p1.x = line.x[0];
+            }
+            aLine.length = Math.abs(line.x[1] - line.x[0]);
+        } else {
+            aLine.p0.x = line.x;
+            aLine.p1.x = line.x;
+            aLine.length = Math.abs(line.y[1] - line.y[0]);
+            if (line.findEnd) {
+                aLine.p0.y = line.y[0];
+                aLine.p1.y = line.y[1];
+            } else {
+                aLine.p0.y = line.y[1];
+                aLine.p1.y = line.y[0];
+            }
+        }
+        covertlines.push(aLine);
+        allLines.push(line);
+    }
+  
+    var paths = [];
+  
+    while(true){
+        var startLine = findStartLine(horizontalLines);
+        if(startLine == undefined){
+            break;
+        }
+        startLine.findEnd = true;
+        var covertlines = [];
+        var allLines = [];
+        addLine(startLine,covertlines,allLines);
+        while (true) {
+  
+            var lastLine = allLines[allLines.length - 1];
+            if (lastLine.ishorizontal) {
+                var hasFind = false;
+                for (var i = 0; i < verticalLines.length; i++) {
+                    var vLine = verticalLines[i];
+                    if (vLine == undefined) {
+                        continue;
+                    }
+                    var x = lastLine.x[0];
+                    if (lastLine.findEnd) {
+                        x = lastLine.x[1];
+                    }
+                    if (x == vLine.x) {
+                        if (lastLine.y == vLine.y[0]) {
+                            vLine.findEnd = true;
+                            // allLines.push(vLine);
+                            addLine(vLine,covertlines,allLines);
+                            delete verticalLines[i];
+                            hasFind = true;
+                            break;
+                        } else if (lastLine.y == vLine.y[1]) {
+                            vLine.findEnd = false;
+                            // allLines.push(vLine);
+                            addLine(vLine,covertlines,allLines);
+                            delete verticalLines[i];
+                            hasFind = true;
+                            break;
+                        } else if (lastLine.y > vLine.y[0] && lastLine.y < vLine.y[1]) {
+                            if (lastLine.findEnd) {
+                                if (mapInfo[(lastLine.y + 1) * picW + x - 1] == 0) {
+                                    vLine.y[1] = lastLine.y;
+                                    vLine.findEnd = false;
+                                } else {
+                                    vLine.y[0] = lastLine.y;
+                                    vLine.findEnd = true;
+                                }
+                            } else {
+                                if (mapInfo[(lastLine.y + 1) * picW + x + 1] == 0) {
+                                    vLine.y[1] = lastLine.y;
+                                    vLine.findEnd = false;
+                                } else {
+                                    vLine.y[0] = lastLine.y;
+                                    vLine.findEnd = true;
+                                }
+                            }
+                            // allLines.push(vLine);
+                            addLine(vLine,covertlines,allLines);
+                            delete verticalLines[i];
+                            hasFind = true;
+                            break;
+                        }
+                    }
+    
+                }
+                if (!hasFind) {
+                    break;
+                }
+    
+            } else {
+                var hasFind = false;
+                var _y = lastLine.y[0];
+                if (lastLine.findEnd) {
+                    _y = lastLine.y[1];
+                }
+                if (_y == startLine.y && lastLine.x == startLine.x[0]) {
+                    break;
+                }
+                for (var i = 0; i < horizontalLines.length; i++) {
+                    var hLine = horizontalLines[i];
+    
+                    if (!hLine) {
+                        continue;
+                    }
+                    var y = lastLine.y[0];
+                    if (lastLine.findEnd) {
+                        y = lastLine.y[1];
+                    }
+                    if (y == hLine.y) {
+                        if (lastLine.x == hLine.x[0]) {
+                            hLine.findEnd = true;
+                            // allLines.push(hLine);
+                            addLine(hLine,covertlines,allLines);
+                            delete horizontalLines[i];
+                            hasFind = true;
+                            break;
+                        } else if (lastLine.x == hLine.x[1]) {
+                            hLine.findEnd = false;
+                            // allLines.push(hLine);
+                            addLine(hLine,covertlines,allLines);
+                            delete horizontalLines[i];
+                            hasFind = true;
+                            break;
+                        } else if (lastLine.x > hLine.x[0] && lastLine.x < hLine.x[1]) {
+                            if (lastLine.findEnd) {
+                                if (mapInfo[(y - 1) * picW + lastLine.x - 1] == 0) {
+                                    hLine.x[0] = lastLine.x;
+                                    hLine.findEnd = true;
+                                } else {
+                                    hLine.x[1] = lastLine.x;
+                                    hLine.findEnd = false;
+                                }
+                            } else {
+                                if (mapInfo[(y + 1) * picW + lastLine.x - 1] == 0) {
+                                    hLine.x[0] = lastLine.x;
+                                    hLine.findEnd = true;
+                                } else {
+                                    hLine.x[1] = lastLine.x;
+                                    hLine.findEnd = false;
+                                }
+                            }
+                            addLine(hLine,covertlines,allLines);
+                            delete horizontalLines[i];
+                            hasFind = true;
+                            break;
+                        }
+                    }
+    
+                }
+                if (!hasFind) {
+                    break;
+                }
+    
+            }
+    
+        }
+       
+        var totalLength = 0;
+        for(var i=0;i<covertlines.length;i++){
+            var item = covertlines[i];
+            totalLength = totalLength+item.length;
+        }
+        paths.push({
+            cLines:covertlines,
+            alines:allLines,
+            length:totalLength
+        })
+  
+    }
+    return paths;
+}

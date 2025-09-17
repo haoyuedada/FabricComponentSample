@@ -1,0 +1,203 @@
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = ImageBackgroundBase64Fix;
+  var _react = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "react"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/src/ImageBackground.tsx"; // ImageBackgroundBase64Fix.js
+  // 我生成的 200x200 红色 PNG 的 data URI（已经包含 "data:image/png;base64," 前缀）
+  var BASE64_DATA_URI = 'data:image/png;base64,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';
+  var BASE64_DATA_URI2 = 'data:image/png;base64,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';
+  // 注意：上面字符串被截断显示在这里（消息长度限制），实际复制请使用完整字符串。
+  // 我在你的 demo 中会放完整的 base64（见说明）。
+
+  function ImageBackgroundBase64Fix() {
+    var dataUri = BASE64_DATA_URI2; // 把这里换成你自己的 data URI（必须完整，不要有换行）
+
+    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[3], "react/jsx-runtime").jsxs)(_reactNative.SafeAreaView, {
+      style: styles.safe,
+      children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[3], "react/jsx-runtime").jsx)(_reactNative.Text, {
+        style: styles.header,
+        children: "ImageBackground base64 \u6F14\u793A"
+      }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[3], "react/jsx-runtime").jsx)(_reactNative.ImageBackground, {
+        source: {
+          uri: dataUri
+        },
+        style: styles.bg,
+        imageStyle: styles.imageStyle,
+        resizeMode: "cover",
+        layerScaleFilter: "Nearest",
+        children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[3], "react/jsx-runtime").jsx)(_reactNative.View, {
+          style: styles.overlay,
+          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[3], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.text,
+            children: "\u8FD9\u662F ImageBackground\uFF08base64\uFF09"
+          })
+        })
+      }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[3], "react/jsx-runtime").jsx)(_reactNative.Text, {
+        style: styles.sub,
+        children: "\u4E0B\u9762\u662F Image\uFF08\u540C\u4E00 base64\uFF09\u4F5C\u4E3A\u5BF9\u6BD4\uFF1A"
+      }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[3], "react/jsx-runtime").jsx)(_reactNative.Image, {
+        source: {
+          uri: dataUri
+        },
+        style: styles.thumb
+      })]
+    });
+  }
+  var styles = _reactNative.StyleSheet.create({
+    safe: {
+      flex: 1,
+      alignItems: 'center',
+      padding: 16,
+      backgroundColor: '#fff'
+    },
+    header: {
+      fontSize: 18,
+      marginBottom: 12
+    },
+    bg: {
+      width: 300,
+      height: 200,
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: 10,
+      overflow: 'hidden',
+      backgroundColor: '#ddd' // 如果图片加载失败，可以看到灰色背景
+    },
+    imageStyle: {
+      borderRadius: 10
+    },
+    overlay: {
+      backgroundColor: 'rgba(0,0,0,0.35)',
+      padding: 8,
+      borderRadius: 6
+    },
+    text: {
+      color: '#fff'
+    },
+    sub: {
+      marginTop: 18,
+      marginBottom: 8
+    },
+    thumb: {
+      width: 100,
+      height: 100,
+      borderRadius: 8,
+      backgroundColor: '#eee'
+    }
+  });
+},-2,[7,2,5,94],"src/ImageBackground.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
+  var _ImageBackground = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./src/ImageBackground.tsx"));
+  /**
+   * Copyright (c) 2024 Huawei Technologies Co., Ltd.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE-MIT file in the root directory of this source tree.
+   *
+   * @format
+   */
+
+  // import { name as appName } from './app.json';
+  // import App from './testTurboModule/test';
+  // import Utils from './tests/Utils';
+
+  // import RCTMessage from './tests/RCTMessage';
+  // import FastImage from './tests/FastImage';
+  // import App from './App'
+  // import Modal from './tests/Modal'
+  // import ScrollView from './tests/ScrollView'
+  // import QDScrollView from './tests/QDScrollView'
+  // import RCT from './tests/RCT'
+  // import FontSlice from './tests/FontSlice'
+  // import App from './tests/Image'
+  // import App from './tests/Animatedtwo'
+  // import DatePicker from './src/DatePicker'
+  // import App from './App'
+  // import Shot from './src/Shot'
+  // import RefreshControl from './src/RefreshControl'
+  // import SVGTest from './tests/SVG/SVGTest'
+  // import AlarmVideoUI from './tests/AlarmVideoUI'
+  // import VictoryTest from './tests/Victory'
+  // import App from './tests/DateTest'
+  // require("./tests/requireTest.js")
+  // import PromiseTest from './tests/Promise'
+  // import MeasureTest from './src/Measure'
+  // import MeasureTest from './src/Measure1'
+  // import LottieTest from './tests/LottieTabIcon'
+  // import PageViewTest from './tests/PageView'
+  // import ModalTest from './tests/ModalTest'
+  // import ModalTestClass from './tests/ModalTestClass'
+  // import TextInputTest from './tests/TextInputTest'
+  // import TextInputTest2 from './tests/TextInputTest2'
+  // import Demisions from './tests/Demisions'
+  // import SelectBoxApp from './src/SelectBoxApp'
+  // import Statetest from './src/Statetest'
+  // import CMRecipeDetail from './src/CMRecipeDetail'
+  // import SectionList from './src/SectionList'
+  // import UseTransitionTest from './src/useTransitionTest'
+  // import App from './tests/ImageTest'
+  // import OnTextInput from './src/onTextInput'
+  // import ViewMore from './tests/ViewMore'
+  // import App from './tests/mixiding/StorageUI'
+  // import SectionList from './tests/SectionList'
+  // import StorageUI from './tests/0710/StorageUI'
+  // import DefaultTest from './tests/defaultTest'
+  // import EvalTest from './tests/EvalTest'
+  // import RefTest from './tests/RefTest'
+  // import VideoTest from './tests/VideoTest'
+  // import DisplayTest from './src/DisplayTest'
+  // import MainPage from './tests/MainPage'
+  // import SVGTest1 from './tests/SVG/SVGTest1'
+  // import SvgUriTest from './tests/SVG/SvgUriTest'
+  // import DeviceEventEmitter from './tests/DeviceEventEmitter'
+  // import App from './tests/SvgTest'
+  // import SvgTest1 from './tests/SVG1/index'
+  // import UIManager from './tests/UIManager/UIManager'
+  // import PetEdit from './tests/PetEdit'
+  // import FlatList from './tests/FlatList'
+  // import Toggle from './src/ViewStyle/Toggle.tsx'
+  // import ViewTest from './src/ViewStyle/ViewTest'
+  // import SliderTest from './src/ViewStyle/SliderTest'
+  // import ViewTest1 from './src/ViewStyle/ViewTest1'
+  // import TextTest from './tests/TextTest.tsx'
+  // AppRegistry.registerComponent("miot.plugin.spec", () => AlarmVideoUI);
+  // import AlignItems from './tests/AlignItems'
+  // import FlistTest from './tests/projects_com.chuangmi.camera_src_ui_FlatList'
+  // import ScaleableTimelineView from './tests/ScaleableTimelineView-2'
+  // import App from './testTurboModule/TurboModuleTest'
+  // import Root from './tests/Root/index.js'
+  // import Text1 from './tests/Text1.tsx'
+  // import App from './tests/Hierarchy1/Hierarchy2/index.js';
+  // import FetchTest from './tests/FetchTest.tsx';
+  // import VideoTest2 from './tests/imageMP4'
+  // import WebviewTest from './tests/WebviewTest'
+  // import App from './tests/styleDemo'
+  // import App from './tests/samplePage'
+  // import App from './tests/SafeAreaTest'
+  // import SafeArea from './tests/SafeArea'
+  // import App from './tests/ImageBackground/ImageBackground1.tsx';
+  // import App from './tests/exportTest/App.tsx';
+  // import App from './testTurboModule/RunJsBundleTurboModule.tsx';
+  // import App from './tests/ViewShotDemo.tsx';
+  // import App from './tests/mijia/timeLine/App.tsx';
+  // import App from './tests/requireTest/index.js';
+  // import App from './tests/FlatListDemo1.js';
+  // import App from './tests/RefTest.tsx';
+  // import App from './tests/orientation.tsx';
+  // import App from './tests/mijia/oriatation/App.tsx';
+  // import App from './tests/UIManager/UIManager1.tsx';
+  // import App from './FabricComponent/SelectBox.tsx';
+
+  // import App from "./src/CMChartWave.js";
+  // import App from "./tests/Image2mp4";
+
+  _reactNative.AppRegistry.registerComponent("app_name", function () {
+    return _ImageBackground.default;
+  });
+},-1,[5,7,-2],"index.js");
+__r(54);
+__r(-1);
