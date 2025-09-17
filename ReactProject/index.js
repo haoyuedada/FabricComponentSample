@@ -101,5 +101,7 @@ import { AppRegistry } from 'react-native';
 import App from './src/ImageBackground.tsx';
 // import App from "./src/CMChartWave.js";
 // import App from "./tests/Image2mp4";
+import App from './testTurboModule/RunJsBundleTurboModuleOptimize.tsx';
+
 
 AppRegistry.registerComponent("app_name", () => App);
