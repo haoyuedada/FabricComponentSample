@@ -9,7 +9,7 @@ const BASE64_DATA_URI2= 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARkAAACVC
 // 我在你的 demo 中会放完整的 base64（见说明）。
 
 export default function ImageBackgroundBase64Fix() {
-  const dataUri = BASE64_DATA_URI2; // 把这里换成你自己的 data URI（必须完整，不要有换行）
+  const dataUri = BASE64_DATA_URI; // 把这里换成你自己的 data URI（必须完整，不要有换行）
 
   return (
     <SafeAreaView style={styles.safe}>
@@ -21,7 +21,7 @@ export default function ImageBackgroundBase64Fix() {
         style={styles.bg}
         imageStyle={styles.imageStyle}
         resizeMode="cover"
-        src={undefined}
+        src="23432"
       >
         <View style={styles.overlay}>
           <Text style={styles.text}>这是 ImageBackground（base64）</Text>

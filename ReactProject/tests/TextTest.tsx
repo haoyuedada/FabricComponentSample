@@ -11,7 +11,7 @@ import {
 const App = () => {
   return (
     <View style={{ height:10, marginTop: 100 }}>
-        <Text style={{ height: 16 }}>1234567890</Text>
+        <Text style={{ height: 16 }} backgroundColor='red'>1234567890</Text>
     </View>
   );
 };

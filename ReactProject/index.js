@@ -70,7 +70,7 @@ import { AppRegistry } from 'react-native';
 // import ViewTest from './src/ViewStyle/ViewTest'
 // import SliderTest from './src/ViewStyle/SliderTest'
 // import ViewTest1 from './src/ViewStyle/ViewTest1'
-// import TextTest from './tests/TextTest.tsx'
+// import App from './tests/TextTest.tsx'
 // AppRegistry.registerComponent("miot.plugin.spec", () => AlarmVideoUI);
 // import AlignItems from './tests/AlignItems'
 // import FlistTest from './tests/projects_com.chuangmi.camera_src_ui_FlatList'
@@ -88,7 +88,7 @@ import { AppRegistry } from 'react-native';
 // import SafeArea from './tests/SafeArea'
 // import App from './tests/ImageBackground/ImageBackground1.tsx';
 // import App from './tests/exportTest/App.tsx';
-import App from './testTurboModule/RunJsBundleTurboModuleParse.tsx';
+// import App from './testTurboModule/RunJsBundleTurboModuleParse.tsx';
 // import App from './tests/ViewShotDemo.tsx';
 // import App from './tests/mijia/timeLine/App.tsx';
 // import App from './tests/requireTest/index.js';
@@ -102,6 +102,12 @@ import App from './testTurboModule/RunJsBundleTurboModuleParse.tsx';
 // import App from "./src/CMChartWave.js";
 // import App from "./tests/Image2mp4";
 // import App from './testTurboModule/RunJsBundleTurboModuleOptimize.tsx';
+// import App from "./tests/mijia/setTitle";
+// import App from "./tests/AnimatedDemo.tsx";
+// import App from "./tests/yuhui/setState.tsx";
+// import App from "./tests/mijia/noClick/App.tsx";
+// import App from "./tests/mijia/noClickTrue/App.tsx";
+// import App from "./tests/FindIndex.tsx";
+import "./tests/mijia/router/index.js";
 
-
-AppRegistry.registerComponent("app_name", () => App);
+// AppRegistry.registerComponent("app_name", () => App);

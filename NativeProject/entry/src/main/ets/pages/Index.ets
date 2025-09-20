@@ -11,6 +11,8 @@ import { display } from '@kit.ArkUI'
 import { fileIo } from '@kit.CoreFileKit';
 import { common } from '@kit.AbilityKit';
 import { AlertDialog } from '@kit.ArkUI';
+import { BusinessError, zlib } from '@kit.BasicServicesKit';
+import { resourceManager } from '@kit.LocalizationKit';
 
 function onPortrait(mediaQueryResult: mediaquery.MediaQueryResult) {
   if (mediaQueryResult.matches) {
@@ -132,18 +134,26 @@ struct Index {
           .fontSize(20)
           .margin({top: 10})
           .onClick(async() => {
-            // let assetSsrcPath = getContext(this).resourceDir + '/assets'
-            // let destPath = getContext(this).filesDir + '/apps/'
-            // console.log("chy srcPath:", assetSsrcPath);
-            // console.log("chy destPath:", destPath);
-            // console.log("chy srcPath1:", destPath);
-            // let fileContent: Uint8Array = this.context.resourceManager.getRawFileContentSync(assetSsrcPath);
-            //
-            // // 判断文件夹是否存在
-            // if (!fileIo.accessSync(destPath)) {
-            //   fileIo.mkdirSync(destPath)
-            // }
-            // fileIo.copyDirSync(srcPath, destPath, 0);
+            // 对 rawfile 下的文件进行压缩
+            try {
+              // "test.txt"仅作示例，请替换为实际使用的资源
+              this.context.resourceManager.getRawFd("all", (error: BusinessError, value: resourceManager.RawFileDescriptor) => {
+                if (error != null) {
+                  console.error(`chy callback getRawFd failed error code: ${error.code}, message: ${error.message}.`);
+                } else {
+                  let fd = value.fd;
+                  let offset = value.offset;
+                  let length = value.length;
+                  console.log("chy fd:", fd);
+                  console.log("chy offset:", offset);
+                  console.log("chy length:", length);
+                }
+              });
+            } catch (error) {
+              let code = (error as BusinessError).code;
+              let message = (error as BusinessError).message;
+              console.error(`chy callback getRawFd failed, error code: ${code}, message: ${message}.`);
+            }
           })
       }
       .width('100%')
