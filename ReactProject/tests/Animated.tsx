@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 class DisplayAnImage extends Component {
   constructor(props) {
     super(props);
-    this.progress = new Animated.Value(1); // 创建动画值
+    this.progress = new Animated.Value(2); // 创建动画值
   }
 
   render() {

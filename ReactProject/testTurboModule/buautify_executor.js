@@ -1,0 +1,1829 @@
+
+
+function Point(x, y) {
+    return {
+        x: x,
+        y: y
+    }
+}
+
+export function transform(tMapStruct) {
+    let map = tMapStruct.map;
+    let tRect = { x: 0, y: 0, width: 0, height: 0 };
+    let x_min = tMapStruct.resolution * Math.round(tMapStruct.x_min / tMapStruct.resolution);
+    let x_max = tMapStruct.resolution * Math.round(tMapStruct.x_max / tMapStruct.resolution);
+    let y_min = tMapStruct.resolution * Math.round(tMapStruct.y_min / tMapStruct.resolution);
+    let y_max = tMapStruct.resolution * Math.round(tMapStruct.y_max / tMapStruct.resolution);
+    let resolution = tMapStruct.resolution;
+    let size_x = parseInt(Math.round((tMapStruct.x_max - tMapStruct.x_min) / tMapStruct.resolution));
+    let size_y = parseInt(Math.round((tMapStruct.y_max - tMapStruct.y_min) / tMapStruct.resolution));
+
+    let black_boundary = [];
+    let non_boundary_noise = [];
+    let all_region = [];
+
+    tRect = findRoiMap(tRect, map, size_x, size_y);
+
+    //map = expandBlackRect(4, 4, map[0], tRect, map, size_x, size_y);
+    //map = expandWhiteRect(4, 4, map[0], tRect, map, size_x, size_y);
+    //map = refineBoundary(0, 10, tRect, map, size_x);
+
+    //let result = eliminateNonBoundaryNoise(non_boundary_noise, tRect, 127, -128, 0, map, size_x);
+    //non_boundary_noise = result.tempnonBoundaryNoise;
+    //map = result.map;
+
+    //map = expandSingleConvexBoundary(50, -128, 4, 4, tRect, map, size_x, size_y);
+    ////all_region = findWhiteConnectComponent(all_region, 150, tRect, size_x, map);
+    //let result1 = removeIndependentRegion(all_region, black_boundary, 3, tRect, map, size_x);
+    //black_boundary = result1.temp_black_boundary;
+    //map = result1.map;
+
+    //let result2 = fillNonBoundaryNoise2(non_boundary_noise, tRect, map, size_x);
+    //non_boundary_noise = result2.non_boundary_noise;
+    //map = result2.map;
+    //map = refineBoundary(0, 10, tRect, map, size_x);
+
+    //map = fillBlackComponent(map, black_boundary, -128, size_x);
+
+    fillInternalObstacles(map, tRect, size_x);
+
+    map = roomColorByChain(tMapStruct.info, map, size_x, size_y);
+
+    return map;
+}
+
+function findRoiMap(rect, map, size_x, size_y) {
+    let top_bound = size_x;
+    let bottom_bound = 0;
+    let left_bound = size_y;
+    let right_bound = 0;
+
+    for (let idx = 0; idx < size_x; idx++) {
+      for (let idy = 0; idy < size_y; idy++) {
+        if (map[idy * size_x + idx] != 0) {
+          if (left_bound > idy - 10) {
+            if (idx - 10 >= 0) {
+              left_bound = idy - 10;
+            } else {
+              left_bound = 0;
+            }
+          } else {
+            break;
+          }
+        }
+      }
+    }
+
+    for (let idx = 0; idx < size_x; idx++) {
+      for (let idy = size_y - 1; idy > 0; idy--) {
+        if (map[idy * size_x + idx] != 0) {
+          if (right_bound < idy + 10) {
+            if (idy + 10 < size_y) {
+              right_bound = idy + 10;
+            } else {
+              right_bound = size_y - 1;
+            }
+          } else {
+            break;
+          }
+        }
+      }
+    }
+
+    for (let idy = 0; idy < size_y; idy++) {
+      for (let idx = 0; idx < size_x; idx++) {
+        if (map[idy * size_x + idx] != 0) {
+          if (top_bound > idx - 10) {
+            if (idx - 10 >= 0) {
+              top_bound = idx - 10;
+            } else {
+              top_bound = 0;
+            }
+          } else {
+            break;
+          }
+        }
+      }
+    }
+
+    for (let idy = 0; idy < size_y; idy++) {
+      for (let idx = size_x - 1; idx > 0; idx--) {
+        if (map[idy * size_x + idx] != 0) {
+          if (bottom_bound < idx + 10) {
+            if (idx + 10 < size_x) {
+              bottom_bound = idx + 10;
+            } else {
+              bottom_bound = size_x - 1;
+            }
+          } else {
+            break;
+          }
+        }
+      }
+    }
+
+    let width = right_bound - left_bound + 1;
+    let height = bottom_bound - top_bound + 1;
+
+    if (width > 0 && height > 0 && width < size_y && height < size_x) {
+      rect.x = top_bound;
+      rect.y = left_bound;
+      rect.width = width;
+      rect.height = height;
+      return rect;
+    } else {
+      rect.x = 0;
+      rect.y = 0;
+      rect.width = size_y;
+      rect.height = size_x;
+    }
+    return rect;
+  }
+
+  function expandBlackRect(kernel_size_x, kernel_size_y, threshold, rect, map, size_x, size_y) {
+    let il, ir, jl, jr;
+    if (kernel_size_x % 2 == 1) {
+      ir = (kernel_size_x - 1) >> 1;
+      il = -ir;
+    } else {
+      ir = kernel_size_x >> 1;
+      il = 1 - ir;
+    }
+    if (kernel_size_y % 2 == 1) {
+      jr = (kernel_size_y - 1) >> 1;
+      jl = -jr;
+    } else {
+      jr = kernel_size_y >> 1;
+      jl = 1 - jr;
+    }
+
+    let dst = [];
+    for (let i = 0; i < size_y; i++) {
+      for (let j = 0; j < size_x; j++) {
+        dst.push(127);
+      }
+    }
+
+    for (let i = rect.y; i < rect.y + rect.width; i++) {
+      for (let j = rect.x; j < rect.x + rect.height; j++) {
+        if (map[i * size_x + j] < threshold) {
+          for (let di = il; di <= ir; di++) {
+            for (let dj = jl; dj <= jr; dj++) {
+              if (i + di < 0 || i + di >= rect.y + rect.width || j + dj < 0 || j + dj >= rect.x + rect.height) {
+                continue;
+              }
+              if (dst[(i + di) * size_x + j + dj] > map[i * size_x + j]) {
+                dst[(i + di) * size_x + j + dj] = map[i * size_x + j];
+              }
+            }
+          }
+        }
+      }
+    }
+
+    for (let i = 0; i < size_y; i++) {
+      for (let j = 0; j < size_x; j++) {
+        if (dst[i * size_x + j] == 127) {
+          dst[i * size_x + j] = map[i * size_x + j];
+        }
+      }
+    }
+    map = dst;
+    return map;
+  }
+
+  function expandWhiteRect(kernel_size_x, kernel_size_y, threshold, rect, map, size_x, size_y) {
+    let il, ir, jl, jr;
+    if (kernel_size_x % 2 == 1) {
+      ir = (kernel_size_x - 1) >> 1;
+      il = -ir;
+    } else {
+      ir = kernel_size_x >> 1;
+      il = 1 - ir;
+    }
+    if (kernel_size_y % 2 == 1) {
+      jr = (kernel_size_y - 1) >> 1;
+      jl = -jr
+    } else {
+      jr = kernel_size_y >> 1;
+      jl = 1 - jr;
+    }
+
+    let dst = [];
+    for (let i = 0; i < size_y; i++) {
+      for (let j = 0; j < size_x; j++) {
+        dst.push(-128);
+      }
+    }
+
+    for (let i = rect.y; i < rect.y + rect.width; i++) {
+      for (let j = rect.x; j < rect.x + rect.height; j++) {
+        if (map[i * size_x + j] > threshold) {
+          for (let di = il; di <= ir; di++) {
+            for (let dj = jl; dj <= jr; dj++) {
+              if (i + di < 0 || i + di >= rect.y + rect.width || j + dj < 0 || j + dj >= rect.x + rect.height) {
+                continue;
+              }
+              if (dst[(i + di) * size_x + j + dj] < map[i * size_x + j] && map[(i + di) * size_x + j + dj] < threshold) {
+                dst[(i + di) * size_x + j + dj] = map[i * size_x + j];
+              }
+            }
+          }
+        }
+      }
+    }
+
+    for (let i = 0; i < size_y; i++) {
+      for (let j = 0; j < size_x; j++) {
+        if (dst[i * size_x + j] == -128) {
+          dst[i * size_x + j] = map[i * size_x + j];
+        }
+      }
+    }
+
+    map = dst;
+    return map;
+  }
+
+  function refineBoundary(threshold_black, threshold_white, rect, map, size_x) {
+    let Qx = [];
+    let Qy = [];
+    let hasWhiteNeighbor;
+    for (let i = rect.y; i < rect.y + rect.width; i++) {
+      for (let j = rect.x; j < rect.x + rect.height; j++) {
+        if (map[i * size_x + j] < threshold_black) {
+          hasWhiteNeighbor = false;
+          for (let di = -1; di <= 1; di++) {
+            for (let dj = -1; dj <= 1; dj++) {
+              if (i + di < 0 || i + di >= rect.y + rect.width || j + dj < 0 || j + dj >= rect.x + rect.height) {
+                continue;
+              }
+              if (map[(i + di) * size_x + j + dj] > threshold_white) {
+                hasWhiteNeighbor = true;
+              }
+            }
+          }
+          if (!hasWhiteNeighbor) {
+            Qx.push(i);
+            Qy.push(j);
+          }
+        }
+      }
+    }
+    for (let i = 0; i < Qx.length; i++) {
+      map[Qx[i] * size_x + Qy[i]] = 0;
+    }
+    return map;
+  }
+
+  function eliminateNonBoundaryNoise(nonBoundaryNoise, rect, noise_color, border_color, outer_border_color, map, size_x) {
+    let tempnonBoundaryNoise = nonBoundaryNoise;
+    for (let i = rect.y; i < rect.y + rect.width; i++) {
+      for (let j = rect.x; j < rect.x + rect.height; j++) {
+        if (map[i * size_x + j] == border_color) {
+          if (i - 1 < 0 || i + 1 >= rect.y + rect.width || j - 1 < 0 || j + 1 >= rect.x + rect.height) {
+            continue;
+          }
+          if (map[(i - 1) * size_x + j] != outer_border_color &&
+            map[(i + 1) * size_x + j] != outer_border_color &&
+            map[i * size_x + j - 1] != outer_border_color &&
+            map[i * size_x + j + 1] != outer_border_color &&
+            map[(i - 1) * size_x + j - 1] != outer_border_color &&
+            map[(i - 1) * size_x + j + 1] != outer_border_color &&
+            map[(i + 1) * size_x + j - 1] != outer_border_color &&
+            map[(i + 1) * size_x + j + 1] != outer_border_color) {
+            map[i * size_x + j] = noise_color;
+            tempnonBoundaryNoise.push(Point(i, j));
+          }
+        }
+      }
+    }
+
+    return {
+      map: map,
+      tempnonBoundaryNoise: tempnonBoundaryNoise
+    };
+  }
+
+  function expandSingleConvexBoundary(external_corner_value, fill_value, valid_length, times, rect, map, size_x, size_y) {
+    let contour = [];
+
+    let contour_map = [];
+    for (let i = 0; i < map.length; i++) {
+      contour_map.push(map[i]);
+    }
+
+    const result = extractExternalContoursNewStrategy(contour_map, contour, rect, size_x);
+
+    
+    for (let i = 0; i < times; i++) {
+      let inner_corners = [];
+      let extract_corners = [];
+      // let contour = [];
+      let fill_edges = [];
+      let inner_corner_value = external_corner_value + 5;
+      let four_neighbourhood = [[-1, 0], [1, 0], [0, -1], [0, 1]];
+
+      let delete_point = [];
+
+      contour_map = result.temp_map;
+      contour = result.contour;
+
+
+      let corner_map = [];
+      for (let i = 0; i < map.length; i++) {
+        corner_map.push(map[i]);
+      }
+
+      let result1 = extractCorners(corner_map, extract_corners, inner_corners, contour, external_corner_value, inner_corner_value, rect, map, size_x, size_y);
+
+      let result2_delete_point = [];
+      result1.extract_corners.forEach((it) => {
+        let is_valid_length = false;
+        let p_oint = it;
+
+        for (let k = 0; k < 4; k++) {
+          let temp_idy = p_oint.x + four_neighbourhood[k][0];
+          let temp_idx = p_oint.y + four_neighbourhood[k][1];
+
+          if (temp_idy < rect.y || temp_idy >= rect.y + rect.width || temp_idx < rect.x || temp_idx >= rect.x + rect.height) {
+            continue;
+          }
+
+          if (result1.corner_map[temp_idy * size_x + temp_idx] == inner_corner_value) {
+            let near_inner_p_oint = Point(temp_idy, temp_idx);
+            is_valid_length = statisticalLineLength(result1.corner_map, near_inner_p_oint, external_corner_value, inner_corner_value, fill_value, valid_length, rect, size_x, map);
+            break;
+          }
+          if (k == 3) {
+            is_valid_length = true;
+          }
+        }
+
+        let result2 = fourNeighbourhoodSearchForExtractCorners(result1.corner_map, p_oint, fill_edges, delete_point, external_corner_value, inner_corner_value, fill_value, valid_length, is_valid_length, rect, map, size_x);
+        fill_edges = result2.fill_edges;
+        result2_delete_point = result2.delete_point;
+        map = result2.map;
+      });
+
+      let array = updateContour(contour, result2_delete_point);
+      let result3 =  fillEdges(map, result1.extract_corners, array, fill_edges, fill_value, size_x);
+      map = result3.map;
+
+      contour = result3.contour;
+      delete_point = [];
+      extract_corners = [];
+      fill_edges = [];
+    }
+    contour = [];
+    return map;
+  }
+
+  function extractExternalContoursNewStrategy(temp_map, contour, rect, size_x) {
+    let gray_region = [];
+    const result = findGrayConnectComponent(temp_map, gray_region, rect, size_x);
+    gray_region = result.gray_region;
+    temp_map = result.temp_map;
+    const result1 = findExternalContoursNewStrategy(temp_map, gray_region, contour, rect, size_x);
+    return {
+      temp_map: result1.temp_map,
+      contour: result1.contour
+    }
+  }
+
+  function findGrayConnectComponent(temp_map, gray_region, rect, size_x) {
+    let four_neighbourhood = [[-1, 0], [0, 1], [1, 0], [0, -1]];
+    let findOnePoint = false;
+    for (let idy = rect.y; idy < rect.y + rect.width; idy++) {
+      for (let idx = rect.x; idx < rect.x + rect.height; idx++) {
+        if (temp_map[idy * size_x + idx] == 0) {
+          findOnePoint = true;
+          let p_oint_for_search = [];
+
+          gray_region.push(Point(idy, idx));
+          p_oint_for_search.push(Point(idy, idx));
+          temp_map[idy * size_x + idx] = 30;
+
+          while (p_oint_for_search.length > 0) {
+            let seed = p_oint_for_search[0];
+            // 删除第一个元素
+            p_oint_for_search.shift();
+
+            for (let k = 0; k < 4; k++) {
+              let temp_idy = seed.x + four_neighbourhood[k][0];
+              let temp_idx = seed.y + four_neighbourhood[k][1];
+
+              if (temp_idy < rect.y || temp_idy >= rect.y + rect.width || temp_idx < rect.x || temp_idx >= rect.x + rect.height) {
+                continue;
+              }
+
+              if (temp_map[temp_idy * size_x + temp_idx] == 0) {
+                temp_map[temp_idy * size_x + temp_idx] = 30;
+
+                p_oint_for_search.push(Point(temp_idy, temp_idx));
+                gray_region.push(Point(temp_idy, temp_idx));
+              }
+            }
+          }
+        }
+        if (findOnePoint) {
+          break;
+        }
+      }
+      if (findOnePoint) {
+        findOnePoint = false;
+        break;
+      }
+    }
+
+    return {
+      gray_region: gray_region,
+      temp_map: temp_map
+    };
+  }
+
+  function findExternalContoursNewStrategy(temp_map, gray_region, contour, rect, size_x) {
+    let eight_neighbourhood = [[-1, 0], [1, 0], [0, -1], [0, 1], [-1, 1], [1, 1], [1, -1], [-1, -1]];
+
+    for (let i = 0; i < gray_region.length; i++) {
+      for (let k = 0; k < 8; k++) {
+        let temp_idy = gray_region[i].x + eight_neighbourhood[k][0];
+        let temp_idx = gray_region[i].y + eight_neighbourhood[k][1];
+
+        if (temp_idy < rect.y || temp_idy >= rect.y + rect.width || temp_idx < rect.x || temp_idx >= rect.x + rect.height) {
+          continue;
+        }
+
+        if (temp_map[temp_idy * size_x + temp_idx] == -128) {
+          temp_map[temp_idy * size_x + temp_idx] = 40;
+          contour.push(Point(temp_idy, temp_idx));
+        }
+      }
+    }
+
+    return {
+      temp_map: temp_map,
+      contour: contour
+    }
+  }
+
+  function extractCorners(corner_map, extract_corner, inner_corner, contour, external_corner_value, inner_corner_value, rect, map, size_x, size_y) {
+    let four_neighbourhood = [[-1, 0], [0, 1], [1, 0], [0, -1]];
+
+    let temp_map = [];
+    for (let i = 0; i < map.length; i++) {
+      temp_map.push(map[i]);
+    }
+
+    for (let i = 0; i < contour.length; i++) {
+      let black_count = 0;
+      let white_count = 0;
+      let gray_count = 0;
+
+      for (let k = 0; k < 4; k++) {
+        let temp_idy = contour[i].x + four_neighbourhood[k][0];
+        let temp_idx = contour[i].y + four_neighbourhood[k][1];
+
+        if (temp_idy < rect.y || temp_idy >= rect.y + rect.width || temp_idx < rect.x || temp_idx >= rect.x + rect.height) {
+          continue;
+        }
+
+        if (temp_map[temp_idy * size_x + temp_idx] == -128) {
+          black_count++;
+        } else if (temp_map[temp_idy * size_x + temp_idx] == 0) {
+          gray_count++
+        } else if(temp_map[temp_idy * size_x + temp_idx] == 127) {
+            white_count++;
+        }
+
+        if (gray_count == 2 && black_count == 2) {
+          extract_corner.push(Point(contour[i].x, contour[i].y));
+          corner_map[contour[i].x * size_x + contour[i].y] = external_corner_value;
+        } else if((white_count == 2) && (black_count == 2))
+        {
+            //inner_corner.push(Point(contour[i].x, contour[i].y));
+            corner_map[contour[i].x * size_x + contour[i].y] = inner_corner_value;
+        }
+      }
+    }
+
+    //removeNeighborCorners2(temp_map, inner_corner, size_x, size_y);
+    return {
+      corner_map: corner_map,
+      extract_corners: extract_corner
+    }
+  }
+
+  function removeNeighborCorners2(temp_map, corner, size_x, size_y) {
+    for (let i = 0; i < corner.length; i++) {
+      temp_map[corner[i].x * size_x + corner[i].y] = 20;
+    }
+
+    let tempCorner = [];
+    corner.forEach((it) => {
+      let p_oint = it;
+      let remove = false;
+      let eight_neighbourhood = [[-1, 0], [1, 0], [0, -1], [0, 1], [-1, 1], [1, 1], [1, -1], [-1, -1]];
+
+      for (let k = 0; k < 8; k++) {
+        let temp_x = p_oint.x + eight_neighbourhood[k][0];
+        let temp_y = p_oint.y + eight_neighbourhood[k][1];
+
+        if (temp_x < 0 || temp_x >= size_x || temp_y < 0 || temp_y >= size_y) {
+          continue;
+        }
+
+        if (temp_map[temp_x * size_x + temp_y] == 20) {
+          remove = true;
+          break;
+        }
+      }
+
+      if (!remove) {
+        tempCorner.push(it)
+      }
+    });
+
+    return {
+      temp_map: temp_map,
+      corner: tempCorner
+    }
+  }
+
+  function statisticalLineLength(temp_map, p_oint, external_corner_value, inner_corner_value, fill_value, valid_length, rect, size_x, map) {
+    if (upSearchStatisticalLineLength(temp_map, p_oint, external_corner_value, inner_corner_value, fill_value, valid_length, rect, size_x, map)) {
+      return true
+    } else if (downSearchStatisticalLineLength(temp_map, p_oint, external_corner_value, inner_corner_value, fill_value, valid_length, rect, size_x, map)) {
+      return true;
+    }
+    else if (leftSearchStatisticalLineLength(temp_map, p_oint, external_corner_value, inner_corner_value, fill_value, valid_length, rect, size_x, map)) {
+      return true;
+    }
+    else if (rightSearchStatisticalLineLength(temp_map, p_oint, external_corner_value, inner_corner_value, fill_value, valid_length, rect, size_x, map)) {
+      return true;
+    }
+
+    return false;
+  }
+
+  function upSearchStatisticalLineLength(temp_map, p_oint, external_corner_value, inner_corner_value, fill_value, valid_length, rect, size_x, map) {
+    if ((p_oint.x + 1 < rect.y + rect.width) && (map[(p_oint.x + 1) * size_x + p_oint.y]) == 127) {
+      let idy = p_oint.x + 1;
+      let idx = p_oint.y;
+
+      let line = [];
+      line.push(Point(idy, idx));
+
+      for (let j = idy; j < rect.y + rect.width; j++) {
+        if (temp_map[j * size_x + idx] == 127) {
+          let black_count = 0;
+          let left_and_right_neighbourhood = [[0, -1], [0, 1]];
+          for (let k = 0; k < 2; k++) {
+            let tmp_idy = j + left_and_right_neighbourhood[k][0];
+            let tmp_idx = idx + left_and_right_neighbourhood[k][1];
+
+            if (tmp_idx < rect.x || tmp_idx >= rect.x + rect.height || tmp_idy < rect.y || tmp_idy >= rect.y + rect.width) {
+              continue;
+            }
+
+            if (temp_map[tmp_idy * size_x + tmp_idx] == -128 ||
+              temp_map[tmp_idy * size_x + tmp_idx] == inner_corner_value ||
+              temp_map[tmp_idy * size_x + tmp_idx] == external_corner_value) {
+              black_count++;
+            }
+          }
+          if (black_count == 1) {
+            line.push(Point(j, idx));
+          } else {
+            break;
+          }
+        } else {
+          break;
+        }
+      }
+
+      if (line.length > valid_length) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    return false;
+  }
+
+  function downSearchStatisticalLineLength(temp_map, p_oint, external_corner_value, inner_corner_value, fill_value, valid_length, rect, size_x, map) {
+    if ((p_oint.x - 1 > rect.y) && (map[(p_oint.x - 1) * size_x + p_oint.y] == 127)) {
+      let idy = p_oint.x - 1;
+      let idx = p_oint.y;
+
+      let line = [];
+      line.push(Point(idy, idx));
+
+      for (let j = idy; j > rect.y; j--) {
+        if (temp_map[j * size_x + idx] == 127) {
+          let black_count = 0;
+          let left_and_right_neighbourhood = [[0, -1], [0, 1]];
+
+          for (let k = 0; k < 2; k++) {
+            let tmp_idy = j + left_and_right_neighbourhood[k][0];
+            let tmp_idx = idx + left_and_right_neighbourhood[k][1];
+
+            if (tmp_idy < rect.y || tmp_idy >= rect.y + rect.width || tmp_idx < rect.x || tmp_idx >= rect.x + rect.height) {
+              continue;
+            }
+
+            if (temp_map[tmp_idy * size_x + tmp_idx] == -128 ||
+              temp_map[tmp_idy * size_x + tmp_idx] == inner_corner_value ||
+              temp_map[tmp_idy * size_x + tmp_idx] == external_corner_value) {
+              black_count++;
+            }
+          }
+
+          if (black_count == 1) {
+            line.push(Point(j, idx));
+          } else {
+            break;
+          }
+        } else {
+          break;
+        }
+      }
+
+      if (line.length > valid_length) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    return false;
+  }
+
+  function leftSearchStatisticalLineLength(temp_map, p_oint, external_corner_value, inner_corner_value, fill_value, valid_length, rect, size_x, map) {
+    if ((p_oint.y + 1 < rect.x + rect.height) && (map[p_oint.x * size_x + p_oint.y + 1] == 127)) {
+      let idy = p_oint.x;
+      let idx = p_oint.y + 1;
+
+      let line = [];
+      line.push(Point(idy, idx));
+
+      for (let j = idx; j < rect.x + rect.height; j++) {
+        if (temp_map[idy * size_x + j] == 127) {
+          let black_count = 0;
+          let up_and_down_neighbourhood = [[-1, 0], [1, 0]];
+
+          for (let k = 0; k < 2; k++) {
+            let tmp_idy = idy + up_and_down_neighbourhood[k][0];
+            let tmp_idx = j + up_and_down_neighbourhood[k][1];
+
+            if (tmp_idy < rect.y || tmp_idy >= rect.y + rect.width || tmp_idx < rect.x || tmp_idx >= rect.x + rect.height) {
+              continue;
+            }
+
+            if (temp_map[tmp_idy * size_x + tmp_idx] == -128 ||
+              temp_map[tmp_idy * size_x + tmp_idx] == inner_corner_value ||
+              temp_map[tmp_idy * size_x + tmp_idx] == external_corner_value) {
+              black_count++;
+            }
+          }
+          if (black_count == 1) {
+            line.push(Point(idy, j));
+          } else {
+            break;
+          }
+        } else {
+          break;
+        }
+      }
+
+      if (line.length > valid_length) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    return false;
+  }
+
+  function rightSearchStatisticalLineLength(temp_map, p_oint, external_corner_value, inner_corner_value, fill_value, valid_length, rect, size_x, map) {
+    if ((p_oint.y - 1 > rect.x) && (map[p_oint.x * size_x + p_oint.y - 1] == 127)) {
+      let idy = p_oint.x;
+      let idx = p_oint.y - 1;
+
+      let line = [];
+      line.push(Point(idy, idx));
+
+      for (let j = idx; j > rect.x; j--) {
+        if (temp_map[idy * size_x + j] == 127) {
+          let black_count = 0;
+          let up_and_down_neighbourhood = [[-1, 0], [1, 0]];
+
+          for (let k = 0; k < 2; k++) {
+            let tmp_idy = idy + up_and_down_neighbourhood[k][0];
+            let tmp_idx = j + up_and_down_neighbourhood[k][1];
+
+            if (tmp_idx < rect.x || tmp_idx >= rect.x + rect.height || tmp_idy < rect.y || tmp_idy >= rect.y + rect.width) {
+              continue;
+            }
+
+            if (temp_map[tmp_idy * size_x + tmp_idx] == -128 ||
+              temp_map[tmp_idy * size_x + tmp_idx] == inner_corner_value ||
+              temp_map[tmp_idy * size_x + tmp_idx] == external_corner_value) {
+              black_count++;
+            }
+          }
+          if (black_count == 1) {
+            line.push(Point(idy, j));
+          } else {
+            break;
+          }
+        } else {
+          break;
+        }
+      }
+
+      if (line.length > valid_length) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    return false;
+  }
+
+  function fourNeighbourhoodSearchForExtractCorners(temp_map, p_oint, fill_edges, delete_point, external_corner_value, inner_corner_value, fill_value, valid_length, is_valid_length, rect, map, size_x) {
+    const result1 = upSearchForExtractCorners(temp_map, p_oint, fill_edges, delete_point, external_corner_value, inner_corner_value, fill_value, valid_length, is_valid_length, rect, map, size_x);
+    const result2 = downSearchForExtractCorners(temp_map, p_oint, result1.fill_edges, result1.delete_point, external_corner_value, inner_corner_value, fill_value, valid_length, is_valid_length, rect, result1.map, size_x);
+    const result3 = leftSearchForExtractCorners(temp_map, p_oint, result2.fill_edges, result2.delete_point, external_corner_value, inner_corner_value, fill_value, valid_length, is_valid_length, rect, result2.map, size_x);
+    const result4 = rightSearchForExtractCorners(temp_map, p_oint, result3.fill_edges, result3.delete_point, external_corner_value, inner_corner_value, fill_value, valid_length, is_valid_length, rect, result3.map, size_x);
+    return result4;
+  }
+
+  function upSearchForExtractCorners(temp_map, p_oint, fill_edges, delete_point, external_corner_value, inner_corner_value, fill_value, valid_length, is_valid_length, rect, map, size_x) {
+    if ((p_oint.x + 1 < rect.y + rect.width) && map[(p_oint.x + 1) * size_x + p_oint.y] == 0) {
+      let idy = p_oint.x + 1;
+      let idx = p_oint.y;
+
+      let line = [];
+      line.push(Point(idy, idx));
+
+      for (let j = idy; j < rect.y + rect.width; j++) {
+        if (temp_map[j * size_x + idx] == 0) {
+          let black_count = 0;
+          let left_and_right_neighbourhood = [[0, -1], [0, 1]];
+          for (let k = 0; k < 2; k++) {
+            let tmp_idy = j + left_and_right_neighbourhood[k][0];
+            let tmp_idx = idx + left_and_right_neighbourhood[k][1];
+
+            if (tmp_idx < rect.x || tmp_idx >= rect.x + rect.height || tmp_idy < rect.y || tmp_idy >= rect.y + rect.width) {
+              continue;
+            }
+            if (temp_map[tmp_idy * size_x + tmp_idx] == -128 ||
+              temp_map[tmp_idy * size_x + tmp_idx] == external_corner_value ||
+              temp_map[tmp_idy * size_x + tmp_idx] == inner_corner_value) {
+              black_count++;
+            }
+          }
+          if (black_count == 1) {
+            line.push(Point(j, idx));
+          } else {
+            break;
+          }
+        } else {
+          break;
+        }
+      }
+
+      if (is_valid_length && line.length > 1) {
+        line.push(p_oint);
+        fill_edges.push(line);
+
+        for (let i = 0; i < line.length; i++) {
+          let left_and_right_neighbourhood = [[0, -1], [0, 1]];
+          for (let k = 0; k < 2; k++) {
+            let tmp_idy = line[i].x + left_and_right_neighbourhood[k][0];
+            let tmp_idx = line[i].y + left_and_right_neighbourhood[k][1];
+
+            if (tmp_idx < rect.x || tmp_idx >= rect.x + rect.height || tmp_idy < rect.y || tmp_idy >= rect.y + rect.width) {
+              continue;
+            }
+            if (temp_map[tmp_idy * size_x + tmp_idx] == -128 || temp_map[tmp_idy * size_x + tmp_idx] == inner_corner_value) {
+              map[tmp_idy * size_x + tmp_idx] = 127;
+              delete_point.push(Point(tmp_idy, tmp_idx));
+            }
+          }
+        }
+      } else if (line.length > valid_length) {
+        line.push(p_oint);
+        fill_edges.push(line);
+
+        for (let i = 0; i < line.length; i++) {
+          let left_and_right_neighbourhood = [[0, -1], [0, 1]];
+          for (let k = 0; k < 2; k++) {
+            let tmp_idy = line[i].x + left_and_right_neighbourhood[k][0];
+            let tmp_idx = line[i].y + left_and_right_neighbourhood[k][1];
+
+            if (tmp_idx < rect.x || tmp_idx >= rect.x + rect.height || tmp_idy < rect.y || tmp_idy >= rect.y + rect.width) {
+              continue;
+            }
+            if (temp_map[tmp_idy * size_x + tmp_idx] == -128 || temp_map[tmp_idy * size_x + tmp_idx] == inner_corner_value) {
+              map[tmp_idy * size_x + tmp_idx] = 127;
+              delete_point.push(Point(tmp_idy, tmp_idx));
+            }
+          }
+        }
+      } else {
+        line = [];
+      }
+    }
+    return {
+      delete_point: delete_point,
+      fill_edges: fill_edges,
+      map: map
+    };
+  }
+
+  function downSearchForExtractCorners(temp_map, p_oint, fill_edges, delete_point, external_corner_value, inner_corner_value, fill_value, valid_length, is_valid_length, rect, map, size_x) {
+    if ((p_oint.x - 1 > rect.y) && (map[(p_oint.x - 1) * size_x + p_oint.y] == 0)) {
+      let idy = p_oint.x - 1;
+      let idx = p_oint.y;
+
+      let line = [];
+      line.push(Point(idy, idx));
+
+      for (let j = idy; j > rect.y; j--) {
+        if (temp_map[j * size_x + idx] == 0) {
+          let black_count = 0;
+          let left_and_right_neighbourhood = [[0, -1], [0, 1]];
+
+          for (let k = 0; k < 2; k++) {
+            let tmp_idy = j + left_and_right_neighbourhood[k][0];
+            let tmp_idx = idx + left_and_right_neighbourhood[k][1];
+
+            if (tmp_idy < rect.y || tmp_idy >= rect.y + rect.width || tmp_idx < rect.x || tmp_idx >= rect.x + rect.height) {
+              continue;
+            }
+
+            if (temp_map[tmp_idy * size_x + tmp_idx] == -128 ||
+              temp_map[tmp_idy * size_x + tmp_idx] == external_corner_value ||
+              temp_map[tmp_idy * size_x + tmp_idx] == inner_corner_value) {
+              black_count++;
+            }
+          }
+
+          if (black_count == 1) {
+            line.push(Point(j, idx));
+          } else {
+            break;
+          }
+        } else {
+          break;
+        }
+      }
+
+      if (is_valid_length && line.length > 1) {
+        line.push(p_oint);
+        fill_edges.push(line);
+
+        for (let i = 0; i < line.length; i++) {
+          let left_and_right_neighbourhood = [[0, -1], [0, 1]];
+          for (k = 0; k < 2; k++) {
+            let tmp_idy = line[i].x + left_and_right_neighbourhood[k][0];
+            let tmp_idx = line[i].y + left_and_right_neighbourhood[k][1];
+
+            if (tmp_idy < rect.y || tmp_idy >= rect.y + rect.width || tmp_idx < rect.x || tmp_idx >= rect.x + rect.height) {
+              continue;
+            }
+            if (temp_map[tmp_idy * size_x + tmp_idx] == -128 || temp_map[tmp_idy * size_x + tmp_idx] == inner_corner_value) {
+              map[tmp_idy * size_x + tmp_idx] = 127;
+              delete_point.push(Point(tmp_idy, tmp_idx));
+            }
+          }
+        }
+      } else if (line.length > valid_length) {
+        line.push(p_oint);
+        fill_edges.push(line);
+
+        for (let i = 0; i < line.length; i++) {
+          let left_and_right_neighbourhood = [[0, -1], [0, 1]];
+          for (k = 0; k < 2; k++) {
+            let tmp_idy = line[i].x + left_and_right_neighbourhood[k][0];
+            let tmp_idx = line[i].y + left_and_right_neighbourhood[k][1];
+
+            if (tmp_idy < rect.y || tmp_idy >= rect.y + rect.width || tmp_idx < rect.x || tmp_idx >= rect.x + rect.height) {
+              continue;
+            }
+            if (temp_map[tmp_idy * size_x + tmp_idx] == -128 || temp_map[tmp_idy * size_x + tmp_idx] == inner_corner_value) {
+              map[tmp_idy * size_x + tmp_idx] = 127;
+              delete_point.push(Point(tmp_idy, tmp_idx));
+            }
+          }
+        }
+      } else {
+        line = [];
+      }
+    }
+    return {
+      delete_point: delete_point,
+      fill_edges: fill_edges,
+      map: map
+    };
+  }
+
+  function leftSearchForExtractCorners(temp_map, p_oint, fill_edges, delete_point, external_corner_value, inner_corner_value, fill_value, valid_length, is_valid_length, rect, map, size_x) {
+    if ((p_oint.y + 1 < rect.x + rect.height) && (map[p_oint.x * size_x + p_oint.y + 1] == 0)) {
+      let idy = p_oint.x;
+      let idx = p_oint.y + 1;
+
+      let line = [];
+      line.push(Point(idy, idx));
+
+      for (let j = idx; j < rect.x + rect.height; j++) {
+        if (temp_map[idy * size_x + j] == 0) {
+          let black_count = 0;
+          let up_and_down_neighbourhood = [[-1, 0], [1, 0]];
+
+          for (let k = 0; k < 2; k++) {
+            let tmp_idy = idy + up_and_down_neighbourhood[k][0];
+            let tmp_idx = j + up_and_down_neighbourhood[k][1];
+
+            if (tmp_idy < rect.y || tmp_idy >= rect.y + rect.width || tmp_idx < rect.x || tmp_idx >= rect.x + rect.height) {
+              continue;
+            }
+            if (temp_map[tmp_idy * size_x + tmp_idx] == -128 ||
+              temp_map[tmp_idy * size_x + tmp_idx] == external_corner_value ||
+              temp_map[tmp_idy * size_x + tmp_idx] == inner_corner_value) {
+              black_count++;
+            }
+          }
+          if (black_count == 1) {
+            line.push(Point(idy, j));
+          } else {
+            break;
+          }
+        } else {
+          break;
+        }
+      }
+
+      if (is_valid_length && line.length > 1) {
+        line.push(p_oint);
+        fill_edges.push(line);
+
+        for (let i = 0; i < line.length; i++) {
+          let up_and_down_neighbourhood = [[-1, 0], [1, 0]];
+
+          for (let k = 0; k < 2; k++) {
+            let tmp_idy = line[i].x + up_and_down_neighbourhood[k][0];
+            let tmp_idx = line[i].y + up_and_down_neighbourhood[k][1];
+
+            if (tmp_idy < rect.y || tmp_idy >= rect.y + rect.width || tmp_idx < rect.x || tmp_idx >= rect.x + rect.height) {
+              continue;
+            }
+            if (temp_map[tmp_idy * size_x + tmp_idx] == -128 || temp_map[tmp_idy * size_x + tmp_idx] == inner_corner_value) {
+              map[tmp_idy * size_x + tmp_idx] = 127;
+              delete_point.push(Point(tmp_idy, tmp_idx));
+            }
+          }
+        }
+      } else if (line.length > valid_length) {
+        line.push(p_oint);
+        fill_edges.push(line);
+
+        for (let i = 0; i < line.length; i++) {
+          let up_and_down_neighbourhood = [[-1, 0], [1, 0]];
+
+          for (let k = 0; k < 2; k++) {
+            let tmp_idy = line[i].x + up_and_down_neighbourhood[k][0];
+            let tmp_idx = line[i].y + up_and_down_neighbourhood[k][1];
+
+            if (tmp_idy < rect.y || tmp_idy >= rect.y + rect.width || tmp_idx < rect.x || tmp_idx >= rect.x + rect.height) {
+              continue;
+            }
+            if (temp_map[tmp_idy * size_x + tmp_idx] == -128 || temp_map[tmp_idy * size_x + tmp_idx] == inner_corner_value) {
+              map[tmp_idy * size_x + tmp_idx] = 127;
+              delete_point.push(Point(tmp_idy, tmp_idx));
+            }
+          }
+        }
+      } else {
+        line = [];
+      }
+    }
+    return {
+      delete_point: delete_point,
+      fill_edges: fill_edges,
+      map: map
+    };
+  }
+
+  function rightSearchForExtractCorners(temp_map, p_oint, fill_edges, delete_point, external_corner_value, inner_corner_value, fill_value, valid_length, is_valid_length, rect, map, size_x) {
+    if ((p_oint.y - 1 > rect.x) && (map[p_oint.x * size_x + p_oint.y - 1] == 0)) {
+      let idy = p_oint.x;
+      let idx = p_oint.y - 1;
+
+      let line = [];
+      line.push(Point(idy, idx));
+
+      for (let j = idx; j > rect.x; j--) {
+        if (temp_map[idy * size_x + j] == 0) {
+          let black_count = 0;
+          let up_and_down_neighbourhood = [[-1, 0], [1, 0]];
+
+          for (let k = 0; k < 2; k++) {
+            let tmp_idy = idy + up_and_down_neighbourhood[k][0];
+            let tmp_idx = j + up_and_down_neighbourhood[k][1];
+
+            if (tmp_idx < rect.x || tmp_idx >= rect.x + rect.height || tmp_idy < rect.y || tmp_idy >= rect.y + rect.width) {
+              continue;
+            }
+            if (temp_map[tmp_idy * size_x + tmp_idx] == -128 ||
+              temp_map[tmp_idy * size_x + tmp_idx] == external_corner_value ||
+              temp_map[tmp_idy * size_x + tmp_idx] == inner_corner_value) {
+              black_count++;
+            }
+          }
+          if (black_count == 1) {
+            line.push(Point(idy, j));
+          } else {
+            break;
+          }
+        } else {
+          break;
+        }
+      }
+
+      if (is_valid_length && line.length > 1) {
+        line.push(p_oint);
+        fill_edges.push(line);
+
+        for (let i = 0; i < line.length; i++) {
+          let up_and_down_neighbourhood = [[-1, 0], [1, 0]];
+
+          for (let k = 0; k < 2; k++) {
+            let tmp_idy = line[i].x + up_and_down_neighbourhood[k][0];
+            let tmp_idx = line[i].y + up_and_down_neighbourhood[k][1];
+
+            if (tmp_idx < rect.x || tmp_idx >= rect.x + rect.height || tmp_idy < rect.y || tmp_idy >= rect.y + rect.width) {
+              continue;
+            }
+            if (temp_map[tmp_idy * size_x + tmp_idx] == -128 || temp_map[tmp_idy * size_x + tmp_idx] == inner_corner_value) {
+              map[tmp_idy * size_x + tmp_idx] = 127;
+              delete_point.push(Point(tmp_idy, tmp_idx));
+            }
+          }
+        }
+      } else if (line.length > valid_length) {
+        line.push(p_oint);
+        fill_edges.push(line);
+
+        for (let i = 0; i < line.length; i++) {
+          let up_and_down_neighbourhood = [[-1, 0], [1, 0]];
+
+          for (let k = 0; k < 2; k++) {
+            let tmp_idy = line[i].x + up_and_down_neighbourhood[k][0];
+            let tmp_idx = line[i].y + up_and_down_neighbourhood[k][1];
+
+            if (tmp_idx < rect.x || tmp_idx >= rect.x + rect.height || tmp_idy < rect.y || tmp_idy >= rect.y + rect.width) {
+              continue;
+            }
+            if (temp_map[tmp_idy * size_x + tmp_idx] == -128 || temp_map[tmp_idy * size_x + tmp_idx] == inner_corner_value) {
+              map[tmp_idy * size_x + tmp_idx] = 127;
+              delete_point.push(Point(tmp_idy, tmp_idx));
+            }
+          }
+        }
+      } else {
+        line = [];
+      }
+    }
+    return {
+      delete_point: delete_point,
+      fill_edges: fill_edges,
+      map: map
+    };
+  }
+
+  function updateContour(contour, delete_points) {
+    let delete_point_size = delete_points.length;
+
+    
+    for (let i = 0; i < delete_point_size; i++) {
+      let delete_point = delete_points[i];
+
+      contour.forEach((it) => {
+        if (it.x == delete_point.x && it.y == delete_point.y) {
+          contour.slice(it);
+        }
+      });
+    }
+
+    return contour;
+  }
+
+  function fillEdges(map, corners, contour, fill_edges, value, size_x) {
+    for (let i = 0; i < fill_edges.length; i++) {
+      let edge = fill_edges[i];
+
+      for (let j = 0; j < edge.length; j++) {
+        map[edge[j].x * size_x + edge[j].y] = value;
+        contour.push(edge[j]);
+      }
+    }
+    return {
+      contour: contour,
+      map: map
+    };
+  }
+
+  function findWhiteConnectComponent(all_region, valid_area, rect, size_x, map) {
+
+    let temp_map = [];
+    for (let i = 0; i < map.length; i++) {
+      temp_map.push(map[i]);
+    }
+
+    let four_neighbourhood = [[-1, 0], [0, 1], [1, 0], [0, -1]];
+
+    for (let idy = rect.y + 1; idy < rect.y + rect.width - 1; idy++) {
+      for (let idx = rect.x + 1; idx < rect.x + rect.height - 1; idx++) {
+        if (temp_map[idy * size_x + idx] == 127) {
+          let tmp_white_region = [];
+          let tmp_black_region = [];
+          let p_oint_for_search = [];
+
+          let tempObject = {
+            first: [],
+            second: []
+          }
+
+          tmp_white_region.push(Point(idy, idx));
+          p_oint_for_search.push(Point(idy, idx));
+          temp_map[idy * size_x + idx] = 30;
+
+          let result = {
+            temp_map: temp_map,
+            black_region: tmp_black_region
+          };
+          while (p_oint_for_search.length > 0) {
+            let seed = p_oint_for_search[0];
+            // 删除第一个元素
+            p_oint_for_search.shift();
+
+            let tempResult = findBlackTPoint(result.temp_map, seed, result.black_region, size_x);
+            result.temp_map = tempResult.temp_map;
+            result.black_region = tempResult.black_region;
+            for (const temp of result.black_region) {
+              tempObject.first.push(temp);
+            }
+
+            for (let k = 0; k < 4; k++) {
+              let temp_idy = seed.x + four_neighbourhood[k][0];
+              let temp_idx = seed.y + four_neighbourhood[k][1];
+
+              if (temp_idy < rect.y || temp_idy >= rect.y + rect.width || temp_idx < rect.x || temp_idx >= rect.x + rect.height) {
+                continue;
+              }
+              if (result.temp_map[temp_idy * size_x + temp_idx] == 127) {
+                result.temp_map[temp_idy * size_x + temp_idx] = 30;
+
+                p_oint_for_search.push(Point(temp_idy, temp_idx));
+                tmp_white_region.push(Point(temp_idy, temp_idx));
+                for (const temp of tmp_white_region) {
+                  tempObject.second.push(temp);
+                }
+              }
+            }
+          }
+          all_region.push(tempObject);
+        }
+      }
+    }
+
+    let tempAll_region = [];
+    for (let i = 0; i < all_region.length; i++) {
+      let temp = all_region[i];
+      if (temp.length > 0) {
+        if (temp[1].length < valid_area || temp[0].length == 0 || temp[1].length == 0) {
+
+        } else {
+          tempAll_region.push(temp);
+        }
+      }
+    }
+    all_region = tempAll_region;
+
+    if (all_region.length > 0) {
+      all_region.sort((a, b) => a.first.length > b.first.length);
+    }
+
+    return all_region;
+  }
+
+  function findBlackTPoint(temp_map, seed, black_region, size_x) {
+    let eight_neighbourhood = [[-1, 0], [1, 0], [0, -1], [0, 1], [-1, 1], [1, 1], [1, -1], [-1, -1]];
+    for (let k = 0; k < 8; k++) {
+      let temp_idy = seed.x + eight_neighbourhood[k][0];
+      let temp_idx = seed.y + eight_neighbourhood[k][1];
+
+      if (temp_idy < tRect.y || temp_idy >= tRect.y + tRect.width || temp_idx < tRect.x || temp_idx >= tRect.x + tRect.height) {
+        continue;
+      }
+      if (temp_map[temp_idy * size_x + temp_idx] == -128) {
+        temp_map[temp_idy * size_x + temp_idx] = 10;
+        black_region.push(Point(temp_idy, temp_idx));
+      }
+    }
+
+    return {
+      temp_map: temp_map,
+      black_region: black_region
+    }
+  }
+
+  function removeIndependentRegion(all_region, black_boundary, valid_length, rect, map, size_x) {
+    let temp_black_boundary = black_boundary;
+    if (all_region.length > 0) {
+
+      let temp_map = [];
+      for (let i = 0; i < map.length; i++) {
+        temp_map.push(map[i]);
+      }
+
+      let tmp_all_region = [];
+      temp_map = fillBlackComponent(temp_map, all_region[0].first, 30, size_x);
+
+      tmp_all_region.push(all_region[0]);
+
+      let result = {
+        temp_map: temp_map,
+        black_boundary: black_boundary,
+      };
+      for (let i = 1; i < all_region.length; i++) {
+        let is_home = false;
+        let black_boundary_size = all_region[i].first.length;
+        for (let j = 0; j < black_boundary_size; j++) {
+          let search_success = false;
+          let seed = all_region[i].first[j];
+
+          let tempResult = fourNeighbourhoodSearchArea(result.temp_map, seed, result.black_boundary, 30, valid_length, rect, size_x);
+          search_success = tempResult.boolStatus;
+          temp_black_boundary = tempResult.black_boundary;
+          result.temp_map = tempResult.temp_map;
+          result.black_boundary = tempResult.black_boundary;
+          if (search_success) {
+            is_home = true;
+          }
+        }
+        if (is_home) {
+          tmp_all_region.push(all_region[i]);
+        }
+      }
+
+      result.temp_map = fillConnectComponent(result.temp_map, tmp_all_region, 30, size_x);
+      for (let idy = rect.y + 1; idy < rect.y + rect.width - 1; idy++) {
+        for (let idx = rect.x + 1; idx < rect.x + rect.height - 1; idx++) {
+          if (result.temp_map[idy * size_x + idx] != 0 && result.temp_map[idy * size_x + idx] != 30) {
+            map[idy * size_x + idx] = 0;
+          }
+        }
+      }
+    }
+
+    return {
+      temp_black_boundary: temp_black_boundary,
+      map: map
+    };
+  }
+
+  function fillBlackComponent(temp_map, black_region, value, size_x) {
+    for (let i = 0; i < black_region.length; i++) {
+      temp_map[black_region[i].x * size_x + black_region[i].y] = value;
+    }
+    return temp_map;
+  }
+
+  function fourNeighbourhoodSearchArea(temp_map, p_oint, black_boundary, boundary_value, valid_length, rect, size_x) {
+    let up_result = {};
+    let down_result = {};
+    let left_result = {};
+    let right_result = {};
+
+    up_result = upSearchArea(temp_map, p_oint, boundary_value, valid_length, rect, size_x);
+    down_result = downSearchArea(temp_map, p_oint, boundary_value, valid_length, rect, size_x);
+    left_result = leftSearchArea(temp_map, p_oint, boundary_value, valid_length, rect, size_x);
+    right_result = rightSearchArea(temp_map, p_oint, boundary_value, valid_length, rect, size_x);
+
+    if (up_result.boolStatus || down_result.boolStatus || left_result.boolStatus || right_result.boolStatus) {
+      if (up_result.line.length > 0) {
+        for (let i = 0; i < up_result.line.length; i++) {
+          black_boundary.push(up_result.line[i]);
+        }
+      }
+      if (down_result.line.length > 0) {
+        for (let i = 0; i < down_result.line.length; i++) {
+          black_boundary.push(down_result.line[i]);
+        }
+      }
+      if (left_result.line.length > 0) {
+        for (let i = 0; i < left_result.line.length; i++) {
+          black_boundary.push(left_result.line[i]);
+        }
+      }
+      if (right_result.line.length > 0) {
+        for (let i = 0; i < right_result.line.length; i++) {
+          black_boundary.push(right_result.line[i]);
+        }
+      }
+      return {
+        temp_map: temp_map,
+        black_boundary: black_boundary,
+        boolStatus: true
+      }
+    } else {
+      return {
+        temp_map: temp_map,
+        black_boundary: black_boundary,
+        boolStatus: false
+      }
+    }
+  }
+
+  function upSearchArea(temp_map, p_oint, boundary_value, valid_length, rect, size_x) {
+    if ((p_oint.y + 1 < rect.x + rect.height) && (temp_map[p_oint.x * size_x + p_oint.y + 1] == 0)) {
+      let idy = p_oint.x;
+      let idx = p_oint.y + 1;
+
+      let line = [];
+      line.push(Point(idy, idx));
+      let has_black_boundary = false;
+
+      for (let j = idx; j < idx + valid_length; j++) {
+        if (j >= rect.x + rect.height) {
+          continue;
+        }
+        if (temp_map[idy * size_x + j] == boundary_value) {
+          has_black_boundary = true;
+          break;
+        } else if (temp_map[idy * size_x + j] == 127 || temp_map[idy * size_x + j] == -128) {
+          line = [];
+          break;
+        } else if (temp_map[idy * size_x + j] == 0) {
+          line.push(Point(idy, j));
+        }
+      }
+
+      if (has_black_boundary) {
+        return {
+          boolStatus: true,
+          line: line
+        }
+      } else {
+        line = [];
+        return {
+          boolStatus: false,
+          line: line
+        }
+      }
+    }
+    return {
+      boolStatus: false,
+      line: []
+    }
+  }
+
+  function downSearchArea(temp_map, p_oint, boundary_value, valid_length, rect, size_x) {
+    if ((p_oint.y - 1 > rect.x) && (temp_map[p_oint.x * size_x + p_oint.y - 1] == 0)) {
+      let idy = p_oint.x;
+      let idx = p_oint.y - 1;
+
+      let line = [];
+      line.push(Point(idy, idx));
+      let has_black_boundary = false;
+
+      for (let j = idx; j > idx - valid_length; j--) {
+        if (j <= rect.x) {
+          continue;
+        }
+        if (temp_map[idy * size_x + j] == boundary_value) {
+          has_black_boundary = true;
+          break;
+        } else if (temp_map[idy * size_x + j] == 127 || temp_map[idy * size_x + j] == -128) {
+          line = [];
+          break;
+        } else if (temp_map[idy * size_x + j] == 0) {
+          line.push(Point(idy, j));
+        }
+      }
+
+      if (has_black_boundary) {
+        return {
+          boolStatus: true,
+          line: line
+        }
+      } else {
+        line = [];
+        return {
+          boolStatus: false,
+          line: line
+        }
+      }
+    }
+    return {
+      boolStatus: false,
+      line: []
+    }
+  }
+
+  function leftSearchArea(temp_map, p_oint, boundary_value, valid_length, rect, size_x) {
+    if ((p_oint.x + 1 < rect.y + rect.width) && (temp_map[(p_oint.x + 1) * size_x + p_oint.y] == 0)) {
+      let idy = p_oint.x + 1;
+      let idx = p_oint.y;
+
+      let line = [];
+      line.push(Point(idy, idx));
+      let has_black_boundary = false;
+
+      for (let j = idy; j < idy + valid_length; j++) {
+        if (j >= rect.y + rect.width) {
+          continue;
+        }
+        if (temp_map[j * size_x + idx] == boundary_value) {
+          has_black_boundary = true;
+          break;
+        } else if (temp_map[j * size_x + idx] == 127 || temp_map[j * size_x + idx] == -128) {
+          line = [];
+          break;
+        } else if (temp_map[j * size_x + idx] == 0) {
+          line.push(Point(j, idx));
+        }
+      }
+
+      if (has_black_boundary) {
+        return {
+          boolStatus: true,
+          line: line
+        }
+      } else {
+        line = [];
+        return {
+          boolStatus: false,
+          line: line
+        }
+      }
+    }
+    return {
+      boolStatus: false,
+      line: []
+    }
+  }
+
+  function rightSearchArea(temp_map, p_oint, boundary_value, valid_length, rect, size_x) {
+    if ((p_oint.x - 1 > rect.y) && (temp_map[(p_oint.x - 1) * size_x + p_oint.y] == 0)) {
+      let idy = p_oint.x - 1;
+      let idx = p_oint.y;
+
+      let line = [];
+      line.push(Point(idy, idx));
+      let has_black_boundary = false;
+
+      for (let j = idy; j > idy - valid_length; j--) {
+        if (j <= rect.y) {
+          continue;
+        }
+        if (temp_map[j * size_x + idx] == boundary_value) {
+          has_black_boundary = true;
+          break;
+        } else if (temp_map[j * size_x + idx] == 127 || temp_map[j * size_x + idx] == -128) {
+          line = [];
+          break;
+        } else if (temp_map[j * size_x + idx] == 0) {
+          line.push(p_oint);
+        }
+      }
+
+      if (has_black_boundary) {
+        return {
+          boolStatus: true,
+          line: line
+        }
+      } else {
+        line = [];
+        return {
+          boolStatus: false,
+          line: line
+        }
+      }
+    }
+    return {
+      boolStatus: false,
+      line: []
+    }
+  }
+
+  function fillConnectComponent(temp_map, all_region, value, size_x) {
+    for (let i = 0; i < all_region.length; i++) {
+      for (let j = 0; j < all_region[i].first.length; j++) {
+        temp_map[all_region[i].first[j].x * size_x + all_region[i].first[j].y] = value;
+      }
+      for (let j2 = 0; j2 < all_region[i].second.length; j2++) {
+        temp_map[all_region[i].second[j2].x * size_x + all_region[i].second[j2].y] = value;
+      }
+    }
+    return temp_map;
+  }
+
+  function fillNonBoundaryNoise2(nonBoundaryNoise, rect, map, size_x) {
+
+    let temp_map = [];
+    for (let i = 0; i < map.length; i++) {
+      temp_map.push(map[i]);
+    }
+
+    for (let i = 0; i < nonBoundaryNoise.length; i++) {
+      temp_map[nonBoundaryNoise[i].x * size_x + nonBoundaryNoise[i].y] = 28;
+    }
+
+    let four_neighbourhood = [[5, 0, 4, 0, 3, 0, 2, 0, 1, 0], [0, 5, 0, 4, 0, 3, 0, 2, 0, 1], [-5, 0, -4, 0, -3, 0, -2, 0, -1, 0], [0, -5, 0, -4, 0, -3, 0, -2, 0, -1]];
+    let noise_size = nonBoundaryNoise.length;
+    for (let i = 0; i < noise_size; i++) {
+      for (let k = 0; k < 4; k++) {
+        let tmp_idx5 = nonBoundaryNoise[i].y + four_neighbourhood[k][0];
+        let tmp_idy5 = nonBoundaryNoise[i].x + four_neighbourhood[k][1];
+
+        let tmp_idx4 = nonBoundaryNoise[i].y + four_neighbourhood[k][2];
+        let tmp_idy4 = nonBoundaryNoise[i].x + four_neighbourhood[k][3];
+
+        let tmp_idx3 = nonBoundaryNoise[i].y + four_neighbourhood[k][4];
+        let tmp_idy3 = nonBoundaryNoise[i].x + four_neighbourhood[k][5];
+
+        let tmp_idx2 = nonBoundaryNoise[i].y + four_neighbourhood[k][6];
+        let tmp_idy2 = nonBoundaryNoise[i].x + four_neighbourhood[k][7];
+
+        let tmp_idx1 = nonBoundaryNoise[i].y + four_neighbourhood[k][8];
+        let tmp_idy1 = nonBoundaryNoise[i].x + four_neighbourhood[k][9];
+
+        if (tmp_idy5 < rect.y || tmp_idy5 >= rect.y + rect.width || tmp_idx5 < rect.x || tmp_idx5 >= rect.x + rect.height ||
+          tmp_idy4 < rect.y || tmp_idy4 >= rect.y + rect.width || tmp_idx4 < rect.x || tmp_idx4 >= rect.x + rect.height ||
+          tmp_idy3 < rect.y || tmp_idy3 >= rect.y + rect.width || tmp_idx3 < rect.x || tmp_idx3 >= rect.x + rect.height ||
+          tmp_idy2 < rect.y || tmp_idy2 >= rect.y + rect.width || tmp_idx2 < rect.x || tmp_idx2 >= rect.x + rect.height ||
+          tmp_idy1 < rect.y || tmp_idy1 >= rect.y + rect.width || tmp_idx1 < rect.x || tmp_idx1 >= rect.x + rect.height) {
+          continue;
+        }
+
+        if (temp_map[tmp_idy5 * size_x + tmp_idx5] == -128 &&
+          temp_map[tmp_idy4 * size_x + tmp_idx4] == 127 &&
+          temp_map[tmp_idy3 * size_x + tmp_idx3] == 127 &&
+          temp_map[tmp_idy2 * size_x + tmp_idx2] == 127 &&
+          temp_map[tmp_idy1 * size_x + tmp_idx1] == 127) {
+          nonBoundaryNoise.push(Point(tmp_idy4, tmp_idx4));
+          nonBoundaryNoise.push(Point(tmp_idy3, tmp_idx3));
+          nonBoundaryNoise.push(Point(tmp_idy2, tmp_idx2));
+          nonBoundaryNoise.push(Point(tmp_idy1, tmp_idx1));
+          break;
+        } else if (temp_map[tmp_idy4 * size_x + tmp_idx4] == -128 &&
+          temp_map[tmp_idy3 * size_x + tmp_idx3] == 127 &&
+          temp_map[tmp_idy2 * size_x + tmp_idx2] == 127 &&
+          temp_map[tmp_idy1 * size_x + tmp_idx1] == 127) {
+          nonBoundaryNoise.push(Point(tmp_idy3, tmp_idx3));
+          nonBoundaryNoise.push(Point(tmp_idy2, tmp_idx2));
+          nonBoundaryNoise.push(Point(tmp_idy1, tmp_idx1));
+          break;
+        } else if (temp_map[tmp_idy3 * size_x + tmp_idx3] == -128 &&
+          temp_map[tmp_idy2 * size_x + tmp_idx2] == 127 &&
+          temp_map[tmp_idy1 * size_x + tmp_idx1] == 127) {
+          nonBoundaryNoise.push(Point(tmp_idy2, tmp_idx2));
+          nonBoundaryNoise.push(Point(tmp_idy1, tmp_idx1));
+          break;
+        } else if (temp_map[tmp_idy2 * size_x + tmp_idx2] == -128 && temp_map[tmp_idy1 * size_x + tmp_idx1] == 127) {
+          nonBoundaryNoise.push(Point(tmp_idy1, tmp_idx1));
+          break;
+        }
+      }
+    }
+
+    for (let i = 0; i < nonBoundaryNoise.length; i++) {
+      map[nonBoundaryNoise[i].x * size_x + nonBoundaryNoise[i].y] = -128;
+    }
+
+    return {
+      nonBoundaryNoise: nonBoundaryNoise,
+      map: map
+    };
+  }
+
+  function roomColorByChain(area_info, map, size_x, size_y) {
+    for (let row = 0; row < size_y; row++) {
+      for (let col = 0; col < size_x; col++) {
+        let current_map_value = map[row * size_x + col];
+        if (current_map_value == -128) {
+          map[row * size_x + col] = -1;
+        } else if (current_map_value == 127) {
+          map[row * size_x + col] = 1;
+        }
+      }
+    }
+
+    for (let i = 0; i < area_info.length; i++) {
+      let one_info = area_info[i];
+      floodFillSingleChain(one_info.chain_infor, one_info.tid, map, size_x, size_y);
+    }
+
+    return map;
+  }
+
+  function floodFillSingleChain(chain_point, value, map, size_x, size_y) {
+    let contour_chain_point = [];
+    let dst = [];
+    let row, col;
+    let init_seed = Point(1, 1);
+    contour_chain_point = getContourInforChainPoint(contour_chain_point, chain_point);
+
+    for (let i = 0; i < size_y; i++) {
+      for (let j = 0; j < size_x; j++) {
+        dst.push(value);
+      }
+    }
+    for (let i = 0; i < contour_chain_point.length; i++) {
+      row = contour_chain_point[i].y;
+      col = contour_chain_point[i].x;
+      dst[row * size_x + col] = 0;
+    }
+
+    dst = scanLineFloodFill(dst, init_seed, value, 0, size_x, size_y);
+
+    for (let i = 0; i < contour_chain_point.length; i++) {
+      row = contour_chain_point[i].y;
+      col = contour_chain_point[i].x;
+      dst[row * size_x + col] = value;
+    }
+
+    for (let row = 0; row < size_y; row++) {
+      for (let col = 0; col < size_x; col++) {
+        let current_map_value = map[row * size_x + col];
+        if (dst[row * size_x + col] == value && current_map_value != -1 && current_map_value != 0 && current_map_value != -9) {
+          map[row * size_x + col] = dst[row * size_x + col];
+        }
+      }
+    }
+
+    if (contour_chain_point.length > 3) {
+      for (let i = 1; i < contour_chain_point.length - 1; i++) {
+        row = contour_chain_point[i].y;
+        col = contour_chain_point[i].x;
+        for (let di = -2; di <= 2; di++) {
+          for (let dj = -2; dj <= 2; dj++) {
+            if (row + di < 0 || row + di >= size_y || col + dj < 0 || col + dj >= size_x) {
+              continue;
+            } else {
+              if (map[(row + di) * size_x + col + dj] == 1) {
+                map[(row + di) * size_x + col + dj] = value;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  function getContourInforChainPoint(contour_chain_point, chain_point) {
+    for (let i = 0; i < chain_point.length; i++) {
+      let point = Point(0, 0);
+      point.x = chain_point[i].chain_point.x;
+      point.y = chain_point[i].chain_point.y;
+      contour_chain_point.push(point);
+    }
+    return contour_chain_point
+  }
+
+  function scanLineFloodFill(dst, initial_seed, raw_value, new_value, size_x, size_y) {
+    let scan_line_seed = [];
+    scan_line_seed.push(initial_seed);
+
+    let tempDst;
+    while (scan_line_seed.length > 0) {
+      let seed = scan_line_seed[0];
+      scan_line_seed.shift(); // 删除第一个元素
+      let result1 = floodFillLine(dst, seed, -1, raw_value, new_value, size_x);
+      let x_left = result1.boundary;
+      let result2 = floodFillLine(result1.dst, seed, 1, raw_value, new_value, size_x);
+      let x_right = result2.boundary;
+      tempDst = result2.dst;
+
+      scan_line_seed = searchLineForNewSeed(result2.dst, x_left, x_right, seed.y - 1, raw_value, scan_line_seed, size_x, size_y);
+      scan_line_seed = searchLineForNewSeed(result2.dst, x_left, x_right, seed.y + 1, raw_value, scan_line_seed, size_x, size_y);
+    }
+
+    return tempDst;
+  }
+
+  function floodFillLine(dst, initial_seed, direction, raw_value, new_value, size_x) {
+    let row = initial_seed.y;
+    let col = initial_seed.x;
+    let boundary = col;
+
+    if (direction > 0) {
+      col += direction;
+    }
+
+    while (col >= 0 && col < size_x) {
+      if (dst[row * size_x + col] == raw_value) {
+        boundary = col;
+        dst[row * size_x + col] = new_value;
+        col += direction;
+      } else {
+        break;
+      }
+    }
+
+    return {
+      dst: dst,
+      boundary: boundary
+    }
+  }
+
+  function searchLineForNewSeed(dst, x_left, x_right, line_row, raw_value, scan_line_seed, size_x, size_y) {
+    if (line_row < 0 || line_row > size_y - 1) {
+      return scan_line_seed;
+    }
+
+    let x_right_copy = x_right;
+
+    let is_find_seed = false;
+    while (x_right_copy >= x_left) {
+      if (dst[line_row * size_x + x_right_copy] == raw_value) {
+        if (!is_find_seed) {
+          let seed = Point(x_right_copy, line_row);
+          scan_line_seed.push(seed);
+          is_find_seed = true;
+        }
+      } else {
+        is_find_seed = false;
+      }
+
+      x_right_copy--;
+    }
+    return scan_line_seed;
+  }
+
+  function fillInternalObstacles(map, tRect, size_x){
+    let contour = [];
+    let internal_obstacles = [];
+    let contour_map = [...map];
+    console.log("tRect:", tRect);
+    let result1 = extractExternalContoursNewStrategy(contour_map, contour, tRect, size_x);
+    contour_map = result1.temp_map;
+    contour = result1.contour;
+
+    let result2 = findContourConnectComponent(contour_map, contour, tRect, size_x);
+    contour_map = result2.temp_map;
+    contour = result2.contour;
+
+    contour_map = fillBlackComponent(contour_map, contour, 30, size_x);
+
+    internal_obstacles = findInternalObstacles(contour_map, internal_obstacles, tRect, size_x);
+
+    map = fillBlackComponent(map, internal_obstacles, -9, size_x);
+  }
+
+  function findContourConnectComponent(temp_map, contour, rect, size_x){
+    let eight_neighbourhood = [[-1, 0], [1, 0], [0, -1], [0, 1], [-1, 1], [1, 1], [1, -1], [-1, -1]];
+    let temp_contour = [...contour];
+    while(temp_contour.length != 0)
+    {
+        let seed = temp_contour[0];
+        temp_contour.shift();
+        for(let k = 0; k < 8; k++)
+        {
+          let temp_idy = seed.x + eight_neighbourhood[k][0];
+          let temp_idx = seed.y + eight_neighbourhood[k][1];
+
+            if(temp_idy < rect.y || temp_idy >= rect.y + rect.width || temp_idx < rect.x || temp_idx >= rect.x + rect.height)
+                continue;
+
+            if(temp_map[temp_idy * size_x + temp_idx] == -128)
+            {
+                temp_map[temp_idy * size_x + temp_idx] = 30;
+                
+                temp_contour.push(new Point(temp_idy, temp_idx));
+                contour.push(new Point(temp_idy, temp_idx)); 
+            }
+        }
+    }
+    // console.log(`FFFFF===>count:${count}`);
+    return {
+      temp_map: temp_map,
+      contour: contour
+    }
+  }
+
+  function findInternalObstacles(temp_map,point_deque, rect, size_x){
+    for(let idy = rect.y; idy < rect.y + rect.width; idy++)
+    {
+        for(let idx = rect.x; idx < rect.x + rect.height; idx++)
+        {
+            if(temp_map[idy * size_x + idx] == -128)
+              point_deque.push(new Point(idy, idx));
+        }
+    }
+    return point_deque;
+  }

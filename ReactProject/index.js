@@ -8,7 +8,7 @@
  */
 
 import { AppRegistry } from 'react-native';
-// import { name as appName } from './app.json';
+import { name as appName } from './app.json';
 // import App from './testTurboModule/test';
 // import Utils from './tests/Utils';
 
@@ -108,6 +108,10 @@ import { AppRegistry } from 'react-native';
 // import App from "./tests/mijia/noClick/App.tsx";
 // import App from "./tests/mijia/noClickTrue/App.tsx";
 // import App from "./tests/FindIndex.tsx";
-import "./tests/mijia/router/index.js";
+// import "./tests/mijia/router/index.js";
+// import App from "./tests/mijia/zIndex.tsx";
+// import App from "./tests/mijia/zIndex.tsx";
+import App from './testTurboModule/RunJsBundleTurboModuleBuautifyExecutor.tsx';
 
-// AppRegistry.registerComponent("app_name", () => App);
+AppRegistry.registerComponent("app_name", () => App);
+// import { transform } from "./testTurboModule/buautify_executor.js"

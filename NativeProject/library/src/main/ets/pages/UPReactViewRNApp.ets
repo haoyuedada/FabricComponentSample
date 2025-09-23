@@ -87,12 +87,12 @@ export struct UPReactViewRNApp {
                * `/data/app/el2/100/base/com.rnoh.tester/files/bundle.harmony.js`
                * on your device. The path mismatch is due to app sandboxing on OpenHarmony
                */
-              new FileJSBundleProvider('/data/storage/el2/base/files/bundle.harmony.js'),
+              // new FileJSBundleProvider('/data/storage/el2/base/files/bundle.harmony.js'),
               /**
                * NOTE: The HBC format is recommended in a production environment. HBC is optimized pre-compiled bytecode.
                */
-              new ResourceJSBundleProvider(this.rnohCoreContext.uiAbilityContext.resourceManager, 'hermes_bundle.hbc'),
-              new ResourceJSBundleProvider(this.rnohCoreContext.uiAbilityContext.resourceManager, 'bundle.harmonyall.js')
+              // new ResourceJSBundleProvider(this.rnohCoreContext.uiAbilityContext.resourceManager, 'hermes_bundle.hbc'),
+              // new ResourceJSBundleProvider(this.rnohCoreContext.uiAbilityContext.resourceManager, 'bundle.harmonyall.js')
             ]),
             this.rnohCoreContext.logger),
         })
