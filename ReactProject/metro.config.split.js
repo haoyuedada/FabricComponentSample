@@ -171,13 +171,8 @@ process.once('beforeExit', () => {
       Object.entries(modules).sort(([, v1], [, v2]) => v1 - v2)
     );
 
-
-    if (pathMap.has("maximum")) {
-      delete sortedObj.maximum;
-      modulesResult = { ...sortedObj, maximum: sortedObj.size }
-    } else {
-      modulesResult = { ...sortedObj, maximum: Object.keys(sortedObj).length - 1 }
-    }
+    delete sortedObj.maximum;
+    modulesResult = { maximum: Object.keys(sortedObj).length, ...sortedObj }
     fs.writeFileSync('./config/modules.json', JSON.stringify(modulesResult), {
       flag: 'w+',
     });
