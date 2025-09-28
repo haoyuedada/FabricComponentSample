@@ -6,7 +6,7 @@
  *
  * @format
  */
-
+// initialProps = {};
 import { AppRegistry } from 'react-native';
 import { name as appName } from './app.json';
 // import App from './testTurboModule/test';
@@ -109,9 +109,11 @@ import { name as appName } from './app.json';
 // import App from "./tests/mijia/noClickTrue/App.tsx";
 // import App from "./tests/FindIndex.tsx";
 // import "./tests/mijia/router/index.js";
-// import App from "./tests/mijia/zIndex.tsx";
-// import App from "./tests/mijia/zIndex.tsx";
-import App from './testTurboModule/RunJsBundleTurboModuleBuautifyExecutor.tsx';
+// import App from './testTurboModule/RunJsBundleTurboModuleBuautifyExecutor.tsx';
+// import App from './testTurboModule/RunJsBundleTurboModuleAssemblyWithMapBorderMiParam.tsx';
+// import App from './tests/TextBackground.tsx';
+// import App from './tests/PointEvent/PointEvent';
+import App from './tests/PointEvent/PointEvent1.tsx';
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"

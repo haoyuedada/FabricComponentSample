@@ -48,6 +48,9 @@ export class RunJsBundleTurboModule extends AnyThreadTurboModule {
     // 测试执行workerRSA.jx文件中的 generateRSAKeys 方法
     // methodName = "generateRSAKeys";
     // data = "[]";
+    if (methodName === "assemblyWithMapBorderMiParam") {
+      this.ctx.rnInstance.setGlobalVariable("initialProps", JSON.stringify({}))
+    }
     return new Promise((resolve, reject) => {
       this.ctx.rnInstance.execute(methodName, data, (result: string) => {
         Testcallback(result)

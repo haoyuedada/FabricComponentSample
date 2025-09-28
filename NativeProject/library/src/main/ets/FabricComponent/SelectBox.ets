@@ -62,10 +62,10 @@ export struct SelectBox {
     this.descriptorWrapper = descriptorWrapper
     this.data = []
     const data: dataType[] = this.descriptorWrapper.props.data;
-    const value = this.descriptorWrapper.props.value;
+    // const value = this.descriptorWrapper.props.value;
     // const source = this.descriptorWrapper.props.source;
     console.log("chy SelectBox data:", JSON.stringify(data))
-    console.log("chy SelectBox value:", value)
+    // console.log("chy SelectBox value:", value)
     // console.log("chy SelectBox source:", JSON.stringify(source))
   }
 
