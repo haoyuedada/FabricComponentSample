@@ -92,7 +92,7 @@ export struct UPReactViewRNApp {
                * NOTE: The HBC format is recommended in a production environment. HBC is optimized pre-compiled bytecode.
                */
               // new ResourceJSBundleProvider(this.rnohCoreContext.uiAbilityContext.resourceManager, 'hermes_bundle.hbc'),
-              // new ResourceJSBundleProvider(this.rnohCoreContext.uiAbilityContext.resourceManager, 'bundle.harmonyall.js')
+              new ResourceJSBundleProvider(this.rnohCoreContext.uiAbilityContext.resourceManager, 'all/bundle.harmonyall.js')
             ]),
             this.rnohCoreContext.logger),
         })

@@ -88,7 +88,24 @@ export class UPRNSDKImpl{
         this.rnInstancesCoordinator?.onWindowRectChange(data)
       }
       const onWindowStageChange = (windowStageEvent: window.WindowStageEventType) => {
+        let stageEventType: window.WindowStageEventType = windowStageEvent;
         this.rnInstancesCoordinator?.onWindowStageChange(windowStageEvent)
+        switch (stageEventType) {
+          // 切到前台
+          case window.WindowStageEventType.SHOWN:
+            console.info(`chy Application has entered foreground`);
+            this.rnInstancesCoordinator?.onForeground();
+            // ...
+            break;
+          // 切到后台
+          case window.WindowStageEventType.HIDDEN:
+            console.info(`chy Application has entered background`);
+            this.rnInstancesCoordinator?.onBackground();
+            // ...
+            break;
+          default:
+            break;
+        }
       }
       mainWindow.on('windowSizeChange', onWindowSizeChange)
       mainWindow.on('windowRectChange', onWindowReactChange)
