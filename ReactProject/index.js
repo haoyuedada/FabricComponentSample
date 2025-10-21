@@ -113,7 +113,13 @@ import { name as appName } from './app.json';
 // import App from './testTurboModule/RunJsBundleTurboModuleAssemblyWithMapBorderMiParam.tsx';
 // import App from './tests/TextBackground.tsx';
 // import App from './tests/PointEvent/PointEvent';
-import App from './tests/PointEvent/PointEvent1.tsx';
+// import App from './tests/PointEvent/PointEvent1.tsx';
+// import App from './tests/mijia/zIndex.tsx';
+// import App from './tests/mijia/SdCardVideoListAndPlayerPage2980.js';
+// import App from './tests/Appstate.tsx';
+// import App from './tests/canOpenUrl.jsx';
+// import App from './tests/mijia/switchTest.js';
+import App from './tests/mijia/demo.js';
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"

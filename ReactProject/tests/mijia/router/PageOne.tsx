@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 function App({ navigation }) {
   const [visible, setVisible] = useState(false)
+  const [Num, setNum] = useState(0)
   const message = "hahaha"
 
   return (
@@ -13,19 +14,23 @@ function App({ navigation }) {
       }} />
       <Modal
         transparent={true}
-        visible={visible}>
+        visible={visible}
+        pointerEvents='auto'>
         <View
+          pointerEvents='auto'
           style={{
             flex: 1,
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <View style={{
-            width: 100,
-            height: 100,
-            borderWidth: 1,
-            borderColor: 'red'
-          }}>
+          <View
+            style={{
+              width: 100,
+              height: 100,
+              borderWidth: 1,
+              borderColor: 'red'
+            }}
+            pointerEvents='auto'>
             <Button title='modal中的button' onPress={() => {
               console.log("chy modal->button onPress")
             }}></Button>

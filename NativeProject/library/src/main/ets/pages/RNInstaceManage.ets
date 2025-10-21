@@ -69,7 +69,7 @@ export default class RNInstaceManage {
       enableBackgroundExecutor: false,
       enableCAPIArchitecture: true,
       arkTsComponentNames: arkTsComponentNames,
-      disableConcurrentRoot: true,
+      // disableConcurrentRoot: true,
       backPressHandler: () => {}
     })
   }

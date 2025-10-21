@@ -8,6 +8,7 @@ import {
   Modal,
   Text,
   TouchableOpacity,
+  Dimensions
 } from 'react-native';
 import RCTMessageDialog from "fabric-component-sample-package/src/specs/v1/RCTMessageDialog";
 
@@ -21,6 +22,9 @@ export default class Page11 extends React.Component {
   }
   componentDidMount() {
     this.startYellowBoyAnim();
+    Dimensions.addEventListener('change', () => {
+      console.log("chy Dimensions change")
+    });
   }
 
   startYellowBoyAnim() {
