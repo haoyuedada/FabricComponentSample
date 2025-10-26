@@ -119,7 +119,9 @@ import { name as appName } from './app.json';
 // import App from './tests/Appstate.tsx';
 // import App from './tests/canOpenUrl.jsx';
 // import App from './tests/mijia/switchTest.js';
-import App from './tests/mijia/demo.js';
+// import App from './tests/mijia/demo.js';
+// import App from './tests/Gifted/GiftedChatExample4.tsx';
+import App from './tests/TextFont.tsx';
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"
