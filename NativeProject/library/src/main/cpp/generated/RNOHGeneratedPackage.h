@@ -18,10 +18,12 @@
 #include "generated/RNGestureHandlerButtonComponentDescriptor.h"
 #include "generated/RNGestureHandlerRootViewComponentDescriptor.h"
 #include "generated/RCTMessageDialogComponentDescriptor.h"
+#include "generated/RCTSelectBoxComponentDescriptor.h"
 #include "generated/SelectBoxComponentDescriptor.h"
 #include "generated/RNGestureHandlerButtonJSIBinder.h"
 #include "generated/RNGestureHandlerRootViewJSIBinder.h"
 #include "generated/RCTMessageDialogJSIBinder.h"
+#include "generated/RCTSelectBoxJSIBinder.h"
 #include "generated/SelectBoxJSIBinder.h"
 
 namespace rnoh {
@@ -60,6 +62,7 @@ class GeneratedEventEmitRequestHandler : public EventEmitRequestHandler {
             "setCancelable",
             "setCancel",
             "setCfirm",
+            "change",
             "changeInSelectBox",
             "dismiss",
         };
@@ -82,6 +85,7 @@ class RNOHGeneratedPackage : public Package {
             facebook::react::concreteComponentDescriptorProvider<facebook::react::RNGestureHandlerButtonComponentDescriptor>(),
             facebook::react::concreteComponentDescriptorProvider<facebook::react::RNGestureHandlerRootViewComponentDescriptor>(),
             facebook::react::concreteComponentDescriptorProvider<facebook::react::RCTMessageDialogComponentDescriptor>(),
+            facebook::react::concreteComponentDescriptorProvider<facebook::react::RCTSelectBoxComponentDescriptor>(),
             facebook::react::concreteComponentDescriptorProvider<facebook::react::SelectBoxComponentDescriptor>(),
         };
     }
@@ -91,6 +95,7 @@ class RNOHGeneratedPackage : public Package {
             {"RNGestureHandlerButton", std::make_shared<RNGestureHandlerButtonJSIBinder>()},
             {"RNGestureHandlerRootView", std::make_shared<RNGestureHandlerRootViewJSIBinder>()},
             {"RCTMessageDialog", std::make_shared<RCTMessageDialogJSIBinder>()},
+            {"RCTSelectBox", std::make_shared<RCTSelectBoxJSIBinder>()},
             {"SelectBox", std::make_shared<SelectBoxJSIBinder>()},
         };
     };

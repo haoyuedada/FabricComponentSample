@@ -11,13 +11,12 @@
 #include "RNOHCorePackage/ComponentBinders/ViewComponentJSIBinder.h"
 
 namespace rnoh {
-class SelectBoxJSIBinder : public ViewComponentJSIBinder {
+class RCTSelectBoxJSIBinder : public ViewComponentJSIBinder {
   protected:
     facebook::jsi::Object createNativeProps(facebook::jsi::Runtime &rt) override {
         auto object = ViewComponentJSIBinder::createNativeProps(rt);
         object.setProperty(rt, "value", true);
         object.setProperty(rt, "data", true);
-        object.setProperty(rt, "source", "Object");
         return object;
     }
 
@@ -28,8 +27,7 @@ class SelectBoxJSIBinder : public ViewComponentJSIBinder {
 
     facebook::jsi::Object createDirectEventTypes(facebook::jsi::Runtime &rt) override {
         facebook::jsi::Object events(rt);
-        events.setProperty(rt, "topChangeInSelectBox", createDirectEvent(rt, "onChangeInSelectBox"));
-        events.setProperty(rt, "topDismiss", createDirectEvent(rt, "onDismiss"));
+        events.setProperty(rt, "topChange", createDirectEvent(rt, "onChange"));
         return events;
     }
 };

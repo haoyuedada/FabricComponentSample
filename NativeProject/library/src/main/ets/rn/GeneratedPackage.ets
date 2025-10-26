@@ -53,6 +53,7 @@ export class GeneratedPackage extends RNPackage {
   createDescriptorWrapperFactoryByDescriptorType(ctx: DescriptorWrapperFactoryByDescriptorTypeCtx): DescriptorWrapperFactoryByDescriptorType {
     return {
       selectBox: (ctx) => new RNC.SelectBox.DescriptorWrapper(ctx.descriptor),
+      RCTSelectBox: (ctx) => new RNC.RCTSelectBox.DescriptorWrapper(ctx.descriptor),
       RCTMessageDialog: (ctx) => new RNC.RCTMessageDialog.DescriptorWrapper(ctx.descriptor),
     }
   }
