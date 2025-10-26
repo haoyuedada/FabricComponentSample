@@ -1,4 +1,4 @@
 function wrappedUUID(uuid) {
     return uuid
 }
-export { wrappedUUID }
+export default { wrappedUUID }

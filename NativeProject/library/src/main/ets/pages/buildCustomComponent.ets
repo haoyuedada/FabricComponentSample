@@ -3,6 +3,7 @@ import {
 } from "@rnoh/react-native-openharmony";
 // FabricComponent
 import { SelectBox } from "../FabricComponent/SelectBox"
+import { RCTSelectBox } from "../FabricComponent/RCTSelectBox"
 import { RCTMessageDialog } from "../FabricComponent/RCTMessageDialog"
 import { LottieAnimationView, LOTTIE_TYPE } from "@react-native-oh-tpl/lottie-react-native"
 import { WebView, WEB_VIEW } from "@ohmi/react-native-webview"
@@ -12,6 +13,11 @@ import { RNCVideo, RNC_VIDEO_TYPE } from "@react-native-oh-tpl/react-native-vide
 export function buildCustomComponent(ctx: ComponentBuilderContext) {
   if (ctx.componentName === SelectBox.NAME) {
     SelectBox({
+      ctx: ctx.rnComponentContext,
+      tag: ctx.tag
+    })
+  } else if (ctx.componentName === RCTSelectBox.NAME) {
+    RCTSelectBox({
       ctx: ctx.rnComponentContext,
       tag: ctx.tag
     })
@@ -38,4 +44,4 @@ export function buildCustomComponent(ctx: ComponentBuilderContext) {
   }
 }
 
-export const arkTsComponentNames: Array<string> = [SelectBox.NAME, RCTMessageDialog.NAME, LOTTIE_TYPE, WEB_VIEW];
+export const arkTsComponentNames: Array<string> = [SelectBox.NAME, RCTSelectBox.NAME, RCTMessageDialog.NAME, LOTTIE_TYPE, WEB_VIEW];
