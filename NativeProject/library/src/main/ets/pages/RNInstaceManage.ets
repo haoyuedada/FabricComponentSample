@@ -22,6 +22,8 @@ export default class RNInstaceManage {
 
   public async loadMetroBundle(): Promise<boolean> {
     this.metroInstance = await this.getOrCreateRNInstance(this.rnohCoreContext!)
+    // 初始化加载字体，对比运行时加载字体文件
+    // this.metroInstance.registerFont('StintUltraCondensed-Regular', $rawfile("fonts/StintUltraCondensed-Regular.ttf"))
     this.metroCtx = new RNComponentContext(
       RNOHContext.fromCoreContext(this.rnohCoreContext!, this.metroInstance),
       wrapBuilder(buildCustomComponent),
@@ -37,6 +39,14 @@ export default class RNInstaceManage {
     } else {
       this.isMetroAlive = false
       return false
+    }
+  }
+
+  public registerFont(): void {
+    if (this.metroInstance) {
+      this.metroInstance.registerFont('StintUltraCondensed-Regular', $rawfile("fonts/StintUltraCondensed-Regular.ttf"))
+    } else {
+      this.BundleInstance.registerFont('StintUltraCondensed-Regular', $rawfile("fonts/StintUltraCondensed-Regular.ttf"))
     }
   }
 

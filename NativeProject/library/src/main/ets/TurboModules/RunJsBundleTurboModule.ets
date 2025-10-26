@@ -49,7 +49,7 @@ export class RunJsBundleTurboModule extends AnyThreadTurboModule {
     // methodName = "generateRSAKeys";
     // data = "[]";
     if (methodName === "assemblyWithMapBorderMiParam") {
-      this.ctx.rnInstance.setGlobalVariable("initialProps", JSON.stringify({}))
+      // this.ctx.rnInstance.setGlobalVariable("initialProps", JSON.stringify({}))
     }
     return new Promise((resolve, reject) => {
       this.ctx.rnInstance.execute(methodName, data, (result: string) => {
