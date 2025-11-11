@@ -23,7 +23,7 @@ const [timesPressed, setTimesPressed] = useState(0);
         style={[styles.scrollView, { height: 200 }]}
         onScroll={(event) => {
           const { contentOffset, velocity } = event.nativeEvent;
-          const now = Date.now();
+          const now = Date.now()
           const dt = now - lastScrollTime.current;
 
           if (dt > 0) {
