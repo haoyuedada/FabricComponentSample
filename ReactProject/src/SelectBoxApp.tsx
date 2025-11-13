@@ -62,18 +62,24 @@ const App = () => {
       }}>
         <Text style={styles.title}>{`现在是${mutil ? '多选' : '单选'}`}</Text>
       </Pressable>
-      <SelectBox
-        ref={boxRef}
-        style={{
-          flex: 1
-        }}
-        value={value}
-        data={DATA}
-        onChangeInSelectBox={onChange}
-        onDismiss={() => {
-          console.log("chy onDismiss")
-        }}
-      />
+      <View style={{display: 'none'}}>
+        <SelectBox
+          ref={boxRef}
+          style={{
+            flex: 1
+          }}
+          value={value}
+          data={DATA}
+          onChangeInSelectBox={onChange}
+          onDismiss={() => {
+            console.log("chy onDismiss")
+          }}
+          onLoad={() => {
+            console.log("chy onLoad")
+          }}
+        />
+      </View>
+      
     </View>
   );
 };

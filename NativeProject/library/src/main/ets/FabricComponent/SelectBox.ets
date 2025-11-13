@@ -73,6 +73,11 @@ export struct SelectBox {
     this.cleanUpCallbacks.forEach(cb => cb())
   }
 
+  onDidBuild() {
+    console.log("chy SelectBox onDidBuild")
+    this.ctx.rnInstance.emitComponentEvent(this.tag, "load", { temutilst: true})
+  }
+
   build() {
     RNViewBase({ ctx: this.ctx, tag: this.tag }) {
       Column() {

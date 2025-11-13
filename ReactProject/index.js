@@ -41,7 +41,7 @@ import { name as appName } from './app.json';
 // import TextInputTest from './tests/TextInputTest'
 // import TextInputTest2 from './tests/TextInputTest2'
 // import Demisions from './tests/Demisions'
-// import SelectBoxApp from './src/SelectBoxApp'
+import SelectBoxApp from './src/SelectBoxApp'
 // import Statetest from './src/Statetest'
 // import CMRecipeDetail from './src/CMRecipeDetail'
 // import SectionList from './src/SectionList'
@@ -124,7 +124,9 @@ import { name as appName } from './app.json';
 // import App from './tests/TextFont.tsx';
 // import App from './tests/mijia/kuncheng/Demo.tsx';
 // import App from './FabricComponent/RCTSelectBox.tsx';
-import App from './tests/Display.tsx';
+// import App from './tests/Display.tsx';
+// import App from './IR/251014164852025/OpacityDemo.tsx';
+// import "./svgDemo.js";
 
-AppRegistry.registerComponent("app_name", () => App);
+AppRegistry.registerComponent("app_name", () => SelectBoxApp);
 // import { transform } from "./testTurboModule/buautify_executor.js"

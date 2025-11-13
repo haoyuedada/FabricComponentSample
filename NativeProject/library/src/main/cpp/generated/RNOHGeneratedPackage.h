@@ -65,6 +65,7 @@ class GeneratedEventEmitRequestHandler : public EventEmitRequestHandler {
             "change",
             "changeInSelectBox",
             "dismiss",
+            "load",
         };
         if (std::find(supportedEventNames.begin(), supportedEventNames.end(), ctx.eventName) != supportedEventNames.end()) {
             eventEmitter->dispatchEvent(ctx.eventName, ArkJS(ctx.env).getDynamic(ctx.payload));

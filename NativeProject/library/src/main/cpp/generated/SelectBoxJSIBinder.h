@@ -30,6 +30,7 @@ class SelectBoxJSIBinder : public ViewComponentJSIBinder {
         facebook::jsi::Object events(rt);
         events.setProperty(rt, "topChangeInSelectBox", createDirectEvent(rt, "onChangeInSelectBox"));
         events.setProperty(rt, "topDismiss", createDirectEvent(rt, "onDismiss"));
+        events.setProperty(rt, "topLoad", createDirectEvent(rt, "onLoad"));
         return events;
     }
 };
