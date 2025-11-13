@@ -9,7 +9,7 @@
 import React, { useRef } from 'react';
 import { StyleSheet, Text, View, Pressable, UIManager, findNodeHandle, Dimensions } from 'react-native';
 import QDGestureFloat from 'fabric-component-sample-package/src/specs/v2/QDGestureFloatNativeComponent';
-import SelectBoxApp from './src/SelectBoxApp'
+import SelectBoxApp from './SelectBoxApp'
 
 const ScreenHeight = Dimensions.get('window').height;
 

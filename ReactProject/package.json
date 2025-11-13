@@ -34,8 +34,8 @@
     "fabric-component-sample-package": "file:../fabric-component-sample-package/fabric-component-sample-package-1.0.0.tgz",
     "react": "18.2.0",
     "react-native": "0.72.5",
+    "react-native-harmony": "npm:@ohmi/react-native-harmony@0.72.58-rc1.0.62",
     "react-native-flipper-performance-plugin": "^0.4.0",
-    "react-native-harmony": "npm:@ohmi/react-native-harmony@0.72.58-rc1.0.48",
     "react-native-svg": "^15.0.0",
     "turbo-module": "file:../turbo-module/turbo-module-1.0.0.tgz"
   },

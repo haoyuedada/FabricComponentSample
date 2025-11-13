@@ -30,6 +30,7 @@ export interface NativeProps extends ViewProps, Res {
   source: sourceItem;
   onChangeInSelectBox: DirectEventHandler<Res>;
   onDismiss: DirectEventHandler<Res>;
+  onLoad: DirectEventHandler<Res>;
   // 添加其它 props
 }
 
