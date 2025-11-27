@@ -1,0 +1,81 @@
+const SectionTransAni = () => {
+  const [sections, setSections] = useState([
+    {
+      title: 'Section 1',
+      data: ['Item 1', 'Item 2', 'Item 3'],
+    },
+    {
+      title: 'Section 2',
+      data: ['Item 4', 'Item 5', 'Item 6'],
+    },
+    {
+      title: 'Section 3',
+      data: ['Item 7', 'Item 8', 'Item 9'],
+    },
+    {
+      title: 'Section 4',
+      data: ['Item 10', 'Item 11', 'Item 12'],
+    },
+    {
+      title: 'Section 5',
+      data: ['Item 13', 'Item 14', 'Item 15'],
+    },
+  ]);
+  const transValue = useRef(new Animated.Value(0)).current;
+  const transAnimated = Animated.timing(transValue, {
+    toValue: 200,
+    useNativeDriver: false,
+  });
+  const renderItem = ({ item }) => {
+    return (
+      <View style={styles.item}>
+        <Text>{item}</Text>
+      </View>
+    );
+  };
+  const renderSectionHeader = ({ section }) => {
+    return (
+      <View style={styles.sectionHeader}>
+        <Text>{section.title}</Text>
+      </View>
+    );
+  };
+
+  return (
+    <View>
+      <View style={styles.container}>
+        <Text style={styles.titleStyle}>Animated.SectionList</Text>
+        <View style={{ height: 150 }}>
+          <Animated.SectionList
+            sections={sections}
+            renderItem={renderItem}
+            renderSectionHeader={renderSectionHeader}
+            keyExtractor={(item, index) => index.toString()}
+            style={[{ transform: [{ translateX: transValue }] },
+            ]}
+          />
+        </View>
+        <View style={styles.viewButton}>
+          <RNTesterButton
+            onPress={() => {
+              transAnimated.start();
+            }}>
+            start
+          </RNTesterButton>
+          <RNTesterButton
+            onPress={() => {
+              transAnimated.stop();
+            }}>
+            stop
+          </RNTesterButton>
+          <RNTesterButton
+            onPress={() => {
+              transAnimated.reset();
+            }}>
+            reset
+          </RNTesterButton>
+        </View>
+      </View>
+    </View>
+  );
+}
