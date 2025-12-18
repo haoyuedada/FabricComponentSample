@@ -1,0 +1,1 @@
+PickerIOS组件，itemStyle属性值为textShadowOffset、lineHeight、textAlign、textDecorationLine、textShadowColor、textShadowRadius、textAlignVertical、fontVariant、letterSpacing、textDecorationColor、textDecorationStyle、textTransform、writingDirection无效
