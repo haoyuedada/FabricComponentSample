@@ -62,7 +62,9 @@ const App = () => {
       }}>
         <Text style={styles.title}>{`现在是${mutil ? '多选' : '单选'}`}</Text>
       </Pressable>
-      <View style={{display: 'none'}}>
+      <View 
+        style={{display: 'none'}}
+        >
         <SelectBox
           ref={boxRef}
           style={{

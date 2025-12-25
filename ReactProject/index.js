@@ -125,7 +125,7 @@ import SelectBoxApp from './src/SelectBoxApp'
 // import App from './tests/mijia/kuncheng/Demo.tsx';
 // import App from './FabricComponent/RCTSelectBox.tsx';
 // import App from './tests/Display.tsx';
-// import App from './IR/251014164852025/OpacityDemo.tsx';
+import App from './IR/251014164852025/OpacityDemo.tsx';
 // import "./svgDemo.js";
 
 AppRegistry.registerComponent("app_name", () => SelectBoxApp);

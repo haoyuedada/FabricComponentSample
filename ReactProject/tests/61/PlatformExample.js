@@ -98,6 +98,63 @@ const PlatformSelect = () => {
   );
 };
 
+const PlatformFontScale = () => {
+  return (
+    <ScrollView contentContainerStyle={styles.container}>
+      <Text style={{ padding: 5 }}>属性值：getFontScale</Text>
+      <Text style={{ padding: 5 }}>预期结果：返回系统的字体大小比例。1.0为默认大小。</Text>
+      <Text style={{ padding: 5 }}>实际结果：</Text>
+      {/* 这里需要异步获取，实际使用时需用 useState + useEffect */}
+      <Text style={styles.value}>获取方法：Platform.constants.fontScale 或 使用 PixelRatio.getFontScale()</Text>
+      <Text style={styles.value}>当前字体缩放比例 (来自constants): {Platform.constants?.fontScale || 'N/A'}</Text>
+    </ScrollView>
+  );
+};
+
+const PlatformDeviceInfo = () => {
+  const info = {
+    '操作系统': Platform.OS,
+    '系统版本': Platform.Version,
+    '是否iPad': Platform.isPad?.toString() || 'false',
+    '是否TV': Platform.isTV?.toString() || 'false',
+    '设备型号': Platform.constants?.Model || 'Unknown',
+    '接口类型': Platform.constants?.interfaceIdiom || 'N/A', // 如 ‘phone’, ‘pad’
+  };
+  return (
+    <ScrollView contentContainerStyle={styles.container}>
+      <Text style={{ padding: 5 }}>测试项：关键设备信息概览</Text>
+      <Text style={{ padding: 5 }}>预期结果：集中显示当前设备的核心平台信息。</Text>
+      <Text style={{ padding: 5 }}>实际结果：</Text>
+      {
+        Object.entries(info).map(([key, value]) => (
+          <Text key={key} style={styles.value}>{key}: {value}</Text>
+        ))
+      }
+    </ScrollView>
+  );
+};
+
+const PlatformAPICheck = () => {
+  // 这是一个模拟函数，实际检查逻辑会更复杂
+  const checkAPI = (apiName) => {
+    const rnVersion = Platform.constants?.reactNativeVersion;
+    // 示例逻辑：假设某个API在 RN 0.65 及以上才稳定
+    if (rnVersion && rnVersion.minor >= 65) {
+      return `✅ ${apiName} 在当前版本 (${rnVersion.major}.${rnVersion.minor}) 可用`;
+    }
+    return `⚠️  ${apiName} 在当前版本可能需要兼容性处理`;
+  };
+
+  return (
+    <ScrollView contentContainerStyle={styles.container}>
+      <Text style={{ padding: 5 }}>测试项：特定API可用性检查（示例）</Text>
+      <Text style={{ padding: 5 }}>预期结果：根据 React Native 版本判断 LayoutAnimation API 的可用性。</Text>
+      <Text style={{ padding: 5 }}>实际结果：</Text>
+      <Text style={styles.value}>{checkAPI('LayoutAnimation')}</Text>
+    </ScrollView>
+  );
+};
+
 const styles = StyleSheet.create({
   value: {
     fontWeight: '600',
@@ -152,6 +209,24 @@ exports.examples = [
     title: '7.select',
     render(): React.Node {
       return <PlatformSelect />
+    },
+  },
+  {
+    title: '8.FontScale',
+    render(): React.Node {
+      return <PlatformFontScale />
+    },
+  },
+  {
+    title: '9.Device Info Overview',
+    render(): React.Node {
+      return <PlatformDeviceInfo />
+    },
+  },
+  {
+    title: '10.API Availability Check',
+    render(): React.Node {
+      return <PlatformAPICheck />
     },
   },
 

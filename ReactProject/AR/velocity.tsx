@@ -2,7 +2,7 @@ import React, { useState, useRef, useMemo } from 'react';
 import { ScrollView, View, Animated, StyleSheet, Platform, Text } from 'react-native';
 
 const HomePage: React.FC = () => {
-const [timesPressed, setTimesPressed] = useState(0);
+  const [timesPressed, setTimesPressed] = useState(0);
   const [velocityNative, setVelocityNative] = useState('');
   const [velocityApprox, setVelocityApprox] = useState('');
   const lastContentOffset = useRef({ x: 0, y: 0 });
@@ -15,7 +15,7 @@ const [timesPressed, setTimesPressed] = useState(0);
   }
 
   return (
-        <View>
+    <View>
       <Text>属性值：onScroll</Text>
       <Text>预期结果：滚动后log文本中回调名称前面的次数增加，例如：1x onScroll变为2x onScroll</Text>
       <Text>实际结果：</Text>
@@ -43,7 +43,7 @@ const [timesPressed, setTimesPressed] = useState(0);
         {ITEMS.map(createItemRow)}
       </ScrollView>
       <Text style={{ marginTop: 10 }}>log: {textLog}</Text>
-      
+
       <Text>预期结果：{velocityApprox}</Text>
       <Text>实际结果：{velocityNative}</Text>
     </View>

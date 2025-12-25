@@ -190,24 +190,24 @@ class RefreshControlExample extends React.Component {
     );
   }
 
-  // _onRefresh = () => {
-  //   this.setState({ isRefreshing: true });
-  //   setTimeout(() => {
-  //     // prepend 10 items
-  //     const rowData = Array.from(new Array(1))
-  //       .map((val, i) => ({
-  //         text: 'refreshed---Loaded row- ==' + (+this.state.loaded + i),
-  //         clicks: 0,
-  //       }))
-  //       .concat(this.state.rowData);
+  _onRefresh = () => {
+    this.setState({ isRefreshing: true });
+    setTimeout(() => {
+      // prepend 10 items
+      const rowData = Array.from(new Array(1))
+        .map((val, i) => ({
+          text: 'refreshed---Loaded row- ==' + (+this.state.loaded + i),
+          clicks: 0,
+        }))
+        .concat(this.state.rowData);
 
-  //     this.setState({
-  //       loaded: this.state.loaded + 10,
-  //       isRefreshing: false,
-  //       rowData: rowData,
-  //     });
-  //   }, 2000);
-  // };
+      this.setState({
+        loaded: this.state.loaded + 10,
+        isRefreshing: false,
+        rowData: rowData,
+      });
+    }, 2000);
+  };
   _onRefresh = () => {
     this.setState({ isRefreshing: true });
     setTimeout(() => {
