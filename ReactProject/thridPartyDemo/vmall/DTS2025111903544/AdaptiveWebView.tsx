@@ -22,6 +22,7 @@ const AdaptiveWebView = (props: any, ref: any) => {
   };
  
   useEffect(() => {
+    console.log("chy onSizeChange useEffect size:", size);
     onSizeChange && onSizeChange(size);
   }, [size, onSizeChange]);
  

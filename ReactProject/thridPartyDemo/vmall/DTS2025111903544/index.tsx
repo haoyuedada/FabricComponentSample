@@ -277,6 +277,7 @@ const DetailsShow = (props: any) => {
           ]}
           content={html}
           onSizeChange={(size: any) => {
+            console.log("chy onSizeChange size:", size);
             if (size?.height && size?.width) {
               // 单独适配mate XS2默认大小下的问题
               if (Math.abs(345 - size.width) < 1) {

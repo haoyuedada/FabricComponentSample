@@ -127,7 +127,9 @@ import SelectBoxApp from './src/SelectBoxApp'
 // import App from './tests/Display.tsx';
 // import App from './IR/251014164852025/OpacityDemo.tsx';
 // import "./svgDemo.js";
-import App from './thridPartyDemo/webView.tsx';
+// import App from './thridPartyDemo/webView.tsx';
+// import App from './thridPartyDemo/AdaptiveWebView.tsx';
+import App from './thridPartyDemo/vmall/DTS2025111903544/index.tsx'
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"
