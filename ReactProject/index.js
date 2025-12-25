@@ -128,5 +128,5 @@ import SelectBoxApp from './src/SelectBoxApp'
 import App from './IR/251014164852025/OpacityDemo.tsx';
 // import "./svgDemo.js";
 
-AppRegistry.registerComponent("app_name", () => SelectBoxApp);
+AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"

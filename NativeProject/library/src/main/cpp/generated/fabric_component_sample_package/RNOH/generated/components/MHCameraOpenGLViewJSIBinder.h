@@ -54,6 +54,18 @@ class MHCameraOpenGLViewJSIBinder : public ViewComponentJSIBinder {
         return object;
     }
 
+    facebook::jsi::Object createCommands(facebook::jsi::Runtime &rt) override {
+        auto commands = ViewComponentJSIBinder::createCommands(rt);
+        commands.setProperty(rt, "startRender", "startRender");
+        commands.setProperty(rt, "stopRender", "stopRender");
+        commands.setProperty(rt, "startAudioPlay", "startAudioPlay");
+        commands.setProperty(rt, "stopAudioPlay", "stopAudioPlay");
+        commands.setProperty(rt, "startAudioRecord", "startAudioRecord");
+        commands.setProperty(rt, "stopAudioRecord", "stopAudioRecord");
+        commands.setProperty(rt, "hidesSurfaceView", "hidesSurfaceView");
+        return commands;
+    }
+
     facebook::jsi::Object createBubblingEventTypes(facebook::jsi::Runtime &rt) override {
         facebook::jsi::Object events(rt);
         return events;

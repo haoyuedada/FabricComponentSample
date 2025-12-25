@@ -34,7 +34,7 @@ export class RunJsBundleTurboModule extends AnyThreadTurboModule {
       ]),
       this.rnohCoreContext!.logger
     );
-    this.ctx.rnInstance.loadJsbundle(this.jsBundleProvider);
+    // this.ctx.rnInstance.loadJsbundle(this.jsBundleProvider);
   }
 
   execute(methodName: string, data: string, Testcallback: (result: string) => void): Promise<string>{
@@ -52,13 +52,13 @@ export class RunJsBundleTurboModule extends AnyThreadTurboModule {
       // this.ctx.rnInstance.setGlobalVariable("initialProps", JSON.stringify({}))
     }
     return new Promise((resolve, reject) => {
-      this.ctx.rnInstance.execute(methodName, data, (result: string) => {
-        Testcallback(result)
-        resolve(result)
-        return ""
-      })
-      console.log("chy v8 execute resolve")
-      resolve("手动 resolve")
+      // this.ctx.rnInstance.execute(methodName, data, (result: string) => {
+      //   Testcallback(result)
+      //   resolve(result)
+      //   return ""
+      // })
+      // console.log("chy v8 execute resolve")
+      // resolve("手动 resolve")
     });
   }
 }

@@ -6,23 +6,16 @@
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
+    "@rnoh/react-native-openharmony": "0.72.101",
     "@pura/harmony-utils": "^1.2.6",
-//    "@rnoh/react-native-openharmony": "file:../libs/react_native_openharmony0926.har",
-//    "@rnoh/react-native-openharmony": "../libs/react-native-openharmony0709.har",
-    "@rnoh/react-native-openharmony": "../node_modules/@ohmi/react-native-openharmony/react_native_openharmony.har",
-    //    "@rnoh/react-native-openharmony": "file:../node_modules/@ohmi/react-native-openharmony/react_native_openharmonymi.har",
-    //    "@rnoh/react-native-openharmony": "file:../libs/react_native_openharmony.har",
-    //    "@rnoh/react-native-openharmony": "0.72.48",
     "@react-native-oh-tpl/react-native-fast-image": "file:../libs/fast_image.har",
     "@react-native-oh-tpl/react-native-gesture-handler": "file:../libs/gesture_handler.har",
     "@react-native-oh-tpl/react-native-safe-area-context": "file:../libs/safe_area.har",
-    //    "@react-native-oh-tpl/react-native-date-picker": "file:../libs/date_picker.har",
     "@react-native-oh-tpl/react-native-view-shot": "file:../libs/view_shot.har",
     "@react-native-oh-tpl/react-native-svg": "file:../libs/svg.har",
     "@react-native-oh-tpl/lottie-react-native": "file:../libs/lottie.har",
     "@react-native-oh-tpl/react-native-pager-view": "file:../libs/pager_view.har",
     "@react-native-oh-tpl/react-native-video": "file:../libs/rn_video.har",
     "@ohmi/react-native-webview": "file:../libs/rn_webview.har",
-    "@ohmi/react-native-orientation": "file:../node_modules/@ohmi/react-native-orientation/harmony/rn_orientation.har"
   }
 }
