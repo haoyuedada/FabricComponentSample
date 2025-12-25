@@ -9,31 +9,16 @@ import { createRNPackages } from '../rn/RNPackagesFactory';
 import { RNInfo } from '../model/RNInfo';
 import {
   RNInstance,
-  ResourceJSBundleProvider,
   RNSurface,
-  ComponentBuilderContext,
   RNOHCoreContext,
   RNComponentContext,
-  RNOHContext,
-  buildRNComponentForTag,
-  TraceJSBundleProviderDecorator,
-  AnyJSBundleProvider,
-  MetroJSBundleProvider,
-  FileJSBundleProvider,
   LogBoxDialog,
   LogBoxTurboModule,
-  RNOHLogger,
   JSBundleProvider
 } from "@rnoh/react-native-openharmony";
 import { SurfaceConfig2 } from '@rnoh/react-native-openharmony/src/main/ets/RNSurface'
 import { RNDevLoadingView } from "@rnoh/react-native-openharmony/src/main/ets/RNOH"
-import { SelectBox } from "../FabricComponent/SelectBox"
-import { RCTMessageDialog } from "../FabricComponent/RCTMessageDialog"
-import { LottieAnimationView, LOTTIE_TYPE } from "@react-native-oh-tpl/lottie-react-native"
 import fs from '@ohos.file.fs';
-import { RNCVideo, RNC_VIDEO_TYPE } from "@react-native-oh-tpl/react-native-video"
-import Fetch from '@system.fetch';
-import { WebView, WEB_VIEW } from "@ohmi/react-native-webview"
 import { window } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';

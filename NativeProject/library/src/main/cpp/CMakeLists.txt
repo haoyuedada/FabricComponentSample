@@ -31,7 +31,7 @@ add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-svg/src/main/c
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/lottie-react-native/src/main/cpp" ./lottie)
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-pager-view/src/main/cpp" ./pager_view)
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-video/src/main/cpp" ./video)
-add_subdirectory("${OH_MODULES}/@ohmi/react-native-webview/src/main/cpp" ./rn_webview)
+add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-webview/src/main/cpp" ./webview)
 # RNOH_END: manual_package_linking_1
 
 file(GLOB GENERATED_CPP_FILES "./generated/*.cpp")
@@ -54,6 +54,6 @@ target_link_libraries(rnoh_app PUBLIC rnoh_svg)
 target_link_libraries(rnoh_app PUBLIC rnoh_lottie)
 target_link_libraries(rnoh_app PUBLIC rnoh_pager_view)
 target_link_libraries(rnoh_app PUBLIC rnoh_video)
-target_link_libraries(rnoh_app PUBLIC rnoh_webView)
+target_link_libraries(rnoh_app PUBLIC rnoh_webview)
 
 # RNOH_END: manual_package_linking_2

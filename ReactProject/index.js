@@ -8,7 +8,7 @@
  */
 // initialProps = {};
 import { AppRegistry } from 'react-native';
-import { name as appName } from './app.json';
+// import { name as appName } from './app.json';
 // import App from './testTurboModule/test';
 // import Utils from './tests/Utils';
 
@@ -125,8 +125,9 @@ import SelectBoxApp from './src/SelectBoxApp'
 // import App from './tests/mijia/kuncheng/Demo.tsx';
 // import App from './FabricComponent/RCTSelectBox.tsx';
 // import App from './tests/Display.tsx';
-import App from './IR/251014164852025/OpacityDemo.tsx';
+// import App from './IR/251014164852025/OpacityDemo.tsx';
 // import "./svgDemo.js";
+import App from './thridPartyDemo/webView.tsx';
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"

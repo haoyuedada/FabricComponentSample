@@ -15,7 +15,7 @@ import { SvgPackage } from '@react-native-oh-tpl/react-native-svg/ts';
 import { LottieAnimationViewPackage } from '@react-native-oh-tpl/lottie-react-native/ts';
 import { ViewPagerPackage } from '@react-native-oh-tpl/react-native-pager-view/ts';
 import { RNCVideoPackage } from '@react-native-oh-tpl/react-native-video/ts';
-import { WebViewPackage } from '@ohmi/react-native-webview/ts';
+import { WebViewPackage } from '@react-native-ohos/react-native-webview/ts';
 // import { RNOrientationPackage } from '@ohmi/react-native-orientation/ts';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {

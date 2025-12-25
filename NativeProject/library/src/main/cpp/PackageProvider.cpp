@@ -16,7 +16,7 @@
 #include "LottieAnimationViewPackage.h"
 #include "ViewPagerPackage.h"
 #include "RNCVideoPackage.h"
-#include "RNCWebViewPackage.h"
+#include "WebViewPackage.h"
 using namespace rnoh;
 
 std::vector<std::shared_ptr<Package>> PackageProvider::getPackages(Package::Context ctx) {
@@ -31,6 +31,6 @@ std::vector<std::shared_ptr<Package>> PackageProvider::getPackages(Package::Cont
     std::make_shared<LottieAnimationViewPackage>(ctx),
     std::make_shared<ViewPagerPackage>(ctx),
     std::make_shared<RNCVideoPackage>(ctx),
-    std::make_shared<RNCWebViewPackage>(ctx)
+    std::make_shared<WebViewPackage>(ctx)
   };
 }

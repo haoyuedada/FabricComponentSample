@@ -6,7 +6,7 @@ import { SelectBox } from "../FabricComponent/SelectBox"
 import { RCTSelectBox } from "../FabricComponent/RCTSelectBox"
 import { RCTMessageDialog } from "../FabricComponent/RCTMessageDialog"
 import { LottieAnimationView, LOTTIE_TYPE } from "@react-native-oh-tpl/lottie-react-native"
-import { WebView, WEB_VIEW } from "@ohmi/react-native-webview"
+import { WebView, WEB_VIEW } from "@react-native-ohos/react-native-webview"
 import { RNCVideo, RNC_VIDEO_TYPE } from "@react-native-oh-tpl/react-native-video"
 
 @Builder
