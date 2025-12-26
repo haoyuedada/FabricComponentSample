@@ -104,9 +104,15 @@ export struct SelectBox {
             // NATIVE => RN
             // 发送事件方式[1]
             // let value = { test: 2}
-            this.ctx.rnInstance.emitComponentEvent(this.tag, "changeInSelectBox", { temutilst: true})
+            // this.ctx.rnInstance.emitComponentEvent(this.tag, "changeInSelectBox", { temutilst: true})
             // 发送事件方式[2]
             // this.eventEmitter!.emit("changeInSelectBox", { value: [1, 2] })
+            // 测试循环发送消息是否会导致内存异常上涨
+            let count = 0;
+            while(count < 4) {
+              this.eventEmitter!.emit("changeInSelectBox", { value: [1, 2] })
+              count++;
+            }
           })
         Button("确定Dismiss")
           .onClick(() => {
