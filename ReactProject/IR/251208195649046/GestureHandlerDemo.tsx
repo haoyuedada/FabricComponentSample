@@ -161,6 +161,7 @@ export default function NestedScrollView() {
 
     const tapGesture = Gesture.Pan()
         .onBegin(event => {
+            console.log("chy tapGesture onBegin")
             'worklet';
             rightListScrollState.value = E_ListScrollState.Padding
             startY.value = event.y;
@@ -396,6 +397,7 @@ export default function NestedScrollView() {
                                 bounces={false}
                                 showsVerticalScrollIndicator={false}
                             >
+                                {/* 上半部分 */}
                                 <View style={{ borderWidth: 1 }}>
                                     {
                                         Array(20)
@@ -405,6 +407,7 @@ export default function NestedScrollView() {
                                             ))
                                     }
                                 </View>
+                                {/* 下半部分 */}
                                 <Animated.View
                                     style={{
                                         height: windowHeight - 88,
@@ -414,7 +417,7 @@ export default function NestedScrollView() {
                                         stickyTop.value = e.nativeEvent.layout.y;
                                         console.log('stickyTop initialized:', e.nativeEvent.layout.y);
                                     }}>
-
+                                    {/* 下半部分左侧 */}
                                     <GestureDetector gesture={Gesture.Simultaneous(leftScrollGesture)}>
                                         <Animated.ScrollView
                                             style={{
@@ -452,6 +455,7 @@ export default function NestedScrollView() {
                                         </Animated.ScrollView>
                                     </GestureDetector>
                                     <View style={{ height: '100%', width: 1, backgroundColor: 'black' }}></View>
+                                    {/* 下半部分右侧 */}
                                     <View style={{ flex: 1, overflow: 'hidden' }}>
                                         <Animated.View
                                             style={[
