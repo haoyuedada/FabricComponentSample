@@ -433,6 +433,7 @@ export default function NestedScrollView() {
                                                     .fill(1)
                                                     .map((_, index) => (
                                                         <TapGestureHandler
+                                                            key={index}
                                                             onHandlerStateChange={({ nativeEvent }) => {
                                                                 if (nativeEvent.state === State.END) {
                                                                     setActiveIndex(index)
