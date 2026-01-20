@@ -56,6 +56,8 @@ const App = () => {
         ref={boxRef}
         style={{
           flex: 1,
+          height: 200,
+          width: 200
         }}
         value={value}
         data={DATA}

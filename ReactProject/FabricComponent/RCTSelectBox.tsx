@@ -52,11 +52,11 @@ const App = () => {
         }}
         value={value}
         data={DATA}
-        onChangeInSelectBox={onChange}
-        onDismiss={() => {
-          console.log("chy onDismiss")
-        }}
-        source={{uri: 'https://gw.alicdn.com/tfs/TB1mYh8X7L0gK0jSZFAXXcA9pXa-64-64.png'}}
+        // onChangeInSelectBox={onChange}
+        // onDismiss={() => {
+        //   console.log("chy onDismiss")
+        // }}
+        // source={{uri: 'https://gw.alicdn.com/tfs/TB1mYh8X7L0gK0jSZFAXXcA9pXa-64-64.png'}}
       />
     </View>
   );

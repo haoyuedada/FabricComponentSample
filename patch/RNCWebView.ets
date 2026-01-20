@@ -113,6 +113,10 @@ export struct RNCWebView {
   private shouldInterceptLoad: boolean = true
   private callLoadTimer: number = -1
   static readonly SHOULD_OVERRIDE_URL_LOADING_TIMEOUT: number = 250
+  // 防抖定时器
+  private debounceTimer: number = -1
+  // 防抖时间间隔，单位毫秒
+  static readonly DEBOUNCE_TIME: number = 100
 
   aboutToAppear() {
     try {
@@ -141,7 +145,6 @@ export struct RNCWebView {
     } catch (error) {
       Logger.error(TAG, `[RNOH]Errorcode: ${error.code}, Message: ${error.message}`);
     }
-
   }
 
   hasIncognito(): boolean {
@@ -633,9 +636,22 @@ export struct RNCWebView {
         }
       })
     }
-    // this.html = this.source.html
-    this.webviewWidth = this.descriptorWrapper.layoutMetrics.frame.size.width
-    this.webviewHeight = this.descriptorWrapper.layoutMetrics.frame.size.height
+    // 防抖处理webview尺寸设置
+    const newWidth = this.descriptorWrapper.layoutMetrics.frame.size.width
+    const newHeight = this.descriptorWrapper.layoutMetrics.frame.size.height
+    
+    // 清除之前的定时器
+    if (this.debounceTimer !== -1) {
+      clearTimeout(this.debounceTimer)
+      this.debounceTimer = -1
+    }
+    
+    // 设置新的定时器，延迟执行尺寸更新
+    this.debounceTimer = setTimeout(() => {
+      console.log("chy this.debounceTimer 设置高度：", newHeight)
+      this.webviewWidth = newWidth
+      this.webviewHeight = newHeight
+    }, RNCWebView.DEBOUNCE_TIME)
     this.scrollEnabled = this.descriptorWrapper.rawProps.scrollEnabled;
     // 当禁止滚动时，使用父组件滚动
     this.nestedScroll = this.scrollEnabled ? NestedScrollMode.SELF_FIRST : NestedScrollMode.PARENT_FIRST;

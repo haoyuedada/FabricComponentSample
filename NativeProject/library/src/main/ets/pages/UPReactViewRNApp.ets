@@ -67,7 +67,7 @@ export struct UPReactViewRNApp {
           },
           initialProps: { "foo": "bar" } as Record<string, string>,
           appKey: "app_name",
-          wrappedCustomRNComponentBuilder: wrappedCustomRNComponentBuilder,
+          // wrappedCustomRNComponentBuilder: wrappedCustomRNComponentBuilder,
           onSetUp: (rnInstance) => {
             rnInstance.enableFeatureFlag("ENABLE_RN_INSTANCE_CLEAN_UP")
             // NOTE: you can provide fonts dynamically at runtime by calling `RNInstance.registerFont`

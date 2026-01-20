@@ -15,6 +15,7 @@
     "codegen": "react-native codegen-harmony --cpp-output-path ../NativeProject/library/src/main/cpp/generated --rnoh-module-path ../NativeProject/library/oh_modules/@rnoh/react-native-openharmony --no-safety-check"
   },
   "dependencies": {
+    "@nozbe/watermelondb": "^0.28.0",
     "@ohmi/react-native-safe-area-view": "0.11.0-0.7",
     "@ohmi/react-navigation": "2.16.0-rc.1.0.4",
     "@react-native-oh-tpl/lottie-react-native": "^6.4.1-0.1.17-rc.3",
