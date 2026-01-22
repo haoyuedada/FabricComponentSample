@@ -1316,7 +1316,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   var _reactNative = _$$_REQUIRE(_dependencyMap[1], "react-native");
   var _SelectBoxApp = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "./src/SelectBoxApp"));
-  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "./thridPartyDemo/vmall/DTS2025111903544/index.tsx"));
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "./thridPartyDemo/vmall/DTS2025111903544/webviewDemo/webviewDemo/index.tsx"));
   /**
    * Copyright (c) 2024 Huawei Technologies Co., Ltd.
    *
@@ -1442,12 +1442,16 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // import App from './tests/Gifted/GiftedChatExample4.tsx';
   // import App from './tests/TextFont.tsx';
   // import App from './tests/mijia/kuncheng/Demo.tsx';
-  // import App from './FabricComponent/RCTSelectBox.tsx';
+  // import App from './FabricComponent/RCTSelectBox1.tsx';
   // import App from './tests/Display.tsx';
   // import App from './IR/251014164852025/OpacityDemo.tsx';
   // import "./svgDemo.js";
   // import App from './thridPartyDemo/webView.tsx';
   // import App from './thridPartyDemo/AdaptiveWebView.tsx';
+  // import App from './thridPartyDemo/vmall/DTS2025111903544/index.tsx'
+
+  // import App from './watermelondb/App'
+  // import App from './animated/ScaleAnimationDemo.tsx'
 
   _reactNative.AppRegistry.registerComponent("app_name", function () {
     return _index.default;
@@ -128539,7 +128543,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _reactNative = _$$_REQUIRE(_dependencyMap[4], "react-native");
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[5], "react/jsx-runtime");
   var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/thridPartyDemo/vmall/DTS2025111903544/index.tsx";
+    _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/thridPartyDemo/vmall/DTS2025111903544/webviewDemo/webviewDemo/index.tsx";
   /**
    * 商品详情
    * @param props
@@ -128820,7 +128824,6 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           }],
           content: html,
           onSizeChange: function onSizeChange(size) {
-            console.log("chy onSizeChange size:", size);
             if (size != null && size.height && size != null && size.width) {
               // 单独适配mate XS2默认大小下的问题
               if (Math.abs(345 - size.width) < 1) {
@@ -128847,7 +128850,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     });
   };
   var _default = exports.default = DetailsShow;
-},538,[1,24,41,539,2,88],"thridPartyDemo/vmall/DTS2025111903544/index.tsx");
+},538,[1,24,41,539,2,88],"thridPartyDemo/vmall/DTS2025111903544/webviewDemo/webviewDemo/index.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   Object.defineProperty(exports, "__esModule", {
@@ -128860,7 +128863,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _reactNativeWebview = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "react-native-webview"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[5], "react/jsx-runtime");
   var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/thridPartyDemo/vmall/DTS2025111903544/AdaptiveWebView.tsx";
+    _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/thridPartyDemo/vmall/DTS2025111903544/webviewDemo/webviewDemo/AdaptiveWebView.tsx";
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   var AdaptiveWebView = function AdaptiveWebView(props, ref) {
     var _style$height, _style$width;
@@ -128892,7 +128895,6 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       onMessage && onMessage(event);
     };
     (0, _react.useEffect)(function () {
-      console.log("chy onSizeChange useEffect size:", size);
       onSizeChange && onSizeChange(size);
     }, [size, onSizeChange]);
     var script = `
@@ -128963,7 +128965,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }));
   };
   var _default = exports.default = (0, _react.memo)((0, _react.forwardRef)(AdaptiveWebView));
-},539,[1,24,41,2,540,88],"thridPartyDemo/vmall/DTS2025111903544/AdaptiveWebView.tsx");
+},539,[1,24,41,2,540,88],"thridPartyDemo/vmall/DTS2025111903544/webviewDemo/webviewDemo/AdaptiveWebView.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   Object.defineProperty(exports, "__esModule", {

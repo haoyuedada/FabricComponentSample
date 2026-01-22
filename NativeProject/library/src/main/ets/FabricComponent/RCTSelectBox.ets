@@ -42,6 +42,7 @@ export struct RCTSelectBox {
   private cleanUpCallbacks: (() => void)[] = []
 
   aboutToAppear() {
+    console.log("chy RCTSelectBox aboutToAppear start")
     this.eventEmitter = new RNC.RCTSelectBox.EventEmitter(this.ctx.rnInstance, this.tag)
     console.log("this.tag:", this.tag)
     this.onDescriptorWrapperChange(this.ctx.descriptorRegistry.findDescriptorWrapperByTag<RNC.RCTSelectBox.DescriptorWrapper>(this.tag)!)
