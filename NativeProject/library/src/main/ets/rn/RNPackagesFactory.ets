@@ -8,7 +8,7 @@
 import { RNPackageContext, RNPackage } from '@rnoh/react-native-openharmony/ts';
 import { GeneratedPackage } from './GeneratedPackage'
 import { FastImagePackage } from '@react-native-oh-tpl/react-native-fast-image/ts';
-import { GestureHandlerPackage } from '@react-native-oh-tpl/react-native-gesture-handler/ts';
+import { GestureHandlerPackage } from '@react-native-ohos/react-native-gesture-handler/ts';
 import { SafeAreaViewPackage } from '@react-native-oh-tpl/react-native-safe-area-context/ts';
 import { ViewShotPackage } from '@react-native-oh-tpl/react-native-view-shot/ts';
 import { SvgPackage } from '@react-native-oh-tpl/react-native-svg/ts';
@@ -17,7 +17,7 @@ import { ViewPagerPackage } from '@react-native-oh-tpl/react-native-pager-view/t
 import { RNCVideoPackage } from '@react-native-oh-tpl/react-native-video/ts';
 import { WebViewPackage } from '@react-native-ohos/react-native-webview/ts';
 // import { RNOrientationPackage } from '@ohmi/react-native-orientation/ts';
-import { ReanimatedPackage} from '@react-native-oh-tpl/react-native-reanimated/ts';
+import { ReanimatedPackage} from '@react-native-ohos/react-native-reanimated/ts';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
