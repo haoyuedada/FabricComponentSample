@@ -9,7 +9,7 @@
     "@rnoh/react-native-openharmony": "0.72.101",
     "@pura/harmony-utils": "^1.2.6",
     "@react-native-oh-tpl/react-native-fast-image": "file:../libs/fast_image.har",
-    "@react-native-oh-tpl/react-native-gesture-handler": "file:../libs/gesture_handler.har",
+    "@react-native-ohos/react-native-gesture-handler": "file:../libs/gesture_handler.har",
     "@react-native-oh-tpl/react-native-safe-area-context": "file:../libs/safe_area.har",
     "@react-native-oh-tpl/react-native-view-shot": "file:../libs/view_shot.har",
     "@react-native-oh-tpl/react-native-svg": "file:../libs/svg.har",
@@ -17,6 +17,6 @@
     "@react-native-oh-tpl/react-native-pager-view": "file:../libs/pager_view.har",
     "@react-native-oh-tpl/react-native-video": "file:../libs/rn_video.har",
     "@react-native-ohos/react-native-webview": "file:../libs/rn_webview.har",
-    "@react-native-oh-tpl/react-native-reanimated": "file:../libs/reanimated.har"
+    "@react-native-ohos/react-native-reanimated": "file:../libs/reanimated.har"
   }
 }
