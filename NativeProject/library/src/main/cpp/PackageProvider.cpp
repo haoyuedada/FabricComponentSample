@@ -18,6 +18,7 @@
 #include "RNCVideoPackage.h"
 #include "WebViewPackage.h"
 #include "ReanimatedPackage.h"
+#include "SkiaPackage.h"
 
 using namespace rnoh;
 
@@ -34,6 +35,7 @@ std::vector<std::shared_ptr<Package>> PackageProvider::getPackages(Package::Cont
     std::make_shared<ViewPagerPackage>(ctx),
     std::make_shared<RNCVideoPackage>(ctx),
     std::make_shared<WebViewPackage>(ctx),
-    std::make_shared<ReanimatedPackage>(ctx)
+    std::make_shared<ReanimatedPackage>(ctx),
+    std::make_shared<SkiaPackage>(ctx),
   };
 }

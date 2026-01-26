@@ -11,8 +11,8 @@
 
 #include "RNOH/Package.h"
 #include "RNOH/ArkTSTurboModule.h"
-#include "generated/RunJsBundleTurboModule.h"
-#include "generated/SampleTurboModule.h"
+//#include "generated/RunJsBundleTurboModule.h"
+//#include "generated/SampleTurboModule.h"
 #include "generated/RCTMessageDialogComponentDescriptor.h"
 #include "generated/RCTSelectBoxComponentDescriptor.h"
 #include "generated/SelectBoxComponentDescriptor.h"
@@ -25,12 +25,12 @@ namespace rnoh {
 class RNOHGeneratedPackageTurboModuleFactoryDelegate : public TurboModuleFactoryDelegate {
   public:
     SharedTurboModule createTurboModule(Context ctx, const std::string &name) const override {
-        if (name == "RunJsBundleTurboModule") {
-            return std::make_shared<RunJsBundleTurboModule>(ctx, name);
-        }
-        if (name == "SampleTurboModule") {
-            return std::make_shared<SampleTurboModule>(ctx, name);
-        }
+//        if (name == "RunJsBundleTurboModule") {
+//            return std::make_shared<RunJsBundleTurboModule>(ctx, name);
+//        }
+//        if (name == "SampleTurboModule") {
+//            return std::make_shared<SampleTurboModule>(ctx, name);
+//        }
         return nullptr;
     };
 };

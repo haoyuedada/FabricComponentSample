@@ -18,6 +18,7 @@ import { RNCVideoPackage } from '@react-native-oh-tpl/react-native-video/ts';
 import { WebViewPackage } from '@react-native-ohos/react-native-webview/ts';
 // import { RNOrientationPackage } from '@ohmi/react-native-orientation/ts';
 import { ReanimatedPackage} from '@react-native-ohos/react-native-reanimated/ts';
+import {RNSkiaPackage} from '@react-native-ohos/react-native-skia/ts';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
@@ -32,6 +33,7 @@ export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
     new RNCVideoPackage(ctx),
     new WebViewPackage(ctx),
     // new RNOrientationPackage(ctx)
-    new ReanimatedPackage(ctx)
+    new ReanimatedPackage(ctx),
+    new RNSkiaPackage(ctx)
   ];
 }

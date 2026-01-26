@@ -33,6 +33,7 @@ add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-pager-view/src
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-video/src/main/cpp" ./video)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-webview/src/main/cpp" ./webview)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-reanimated/src/main/cpp" ./reanimated)
+add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-skia/src/main/cpp" ./skia)
 # RNOH_END: manual_package_linking_1
 
 file(GLOB GENERATED_CPP_FILES "./generated/*.cpp")
@@ -57,5 +58,5 @@ target_link_libraries(rnoh_app PUBLIC rnoh_pager_view)
 target_link_libraries(rnoh_app PUBLIC rnoh_video)
 target_link_libraries(rnoh_app PUBLIC rnoh_webview)
 target_link_libraries(rnoh_app PUBLIC rnoh_reanimated)
-
+target_link_libraries(rnoh_app PUBLIC rnoh_skia)
 # RNOH_END: manual_package_linking_2

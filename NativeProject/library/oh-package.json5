@@ -17,6 +17,7 @@
     "@react-native-oh-tpl/react-native-pager-view": "file:../libs/pager_view.har",
     "@react-native-oh-tpl/react-native-video": "file:../libs/rn_video.har",
     "@react-native-ohos/react-native-webview": "file:../libs/rn_webview.har",
-    "@react-native-ohos/react-native-reanimated": "file:../libs/reanimated.har"
+    "@react-native-ohos/react-native-reanimated": "file:../libs/reanimated.har",
+    "@react-native-ohos/react-native-skia": "file:../libs/skia.har"
   }
 }

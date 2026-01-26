@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView, Image, StyleSheet, Modal } from 'react-native';
-import ZoomableView from './ZoomableView ';
+import ZoomableView from './ZoomableView';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const App = () => {
@@ -22,7 +22,7 @@ const App = () => {
           initialScale={1}
         >
           <Image
-            source={require('../../assets/react-native-logo.png')} 
+            source={require('../../assets/fig-without-poppy.jpeg')} 
             style={styles.image}
           />
         </ZoomableView>

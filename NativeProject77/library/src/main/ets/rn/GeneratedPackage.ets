@@ -17,8 +17,8 @@ import type {
   DescriptorWrapperFactoryByDescriptorType
 } from '@rnoh/react-native-openharmony/ts';
 import { RNC, TM } from "@rnoh/react-native-openharmony/generated/ts"
-import { SampleTurboModule } from "../TurboModules/SampleTurboModule"
-import { RunJsBundleTurboModule } from "../TurboModules/RunJsBundleTurboModule"
+// import { SampleTurboModule } from "../TurboModules/SampleTurboModule"
+// import { RunJsBundleTurboModule } from "../TurboModules/RunJsBundleTurboModule"
 
 import { AnyThreadTurboModule,
   AnyThreadTurboModuleContext,
@@ -26,16 +26,16 @@ import { AnyThreadTurboModule,
 
 class GeneratedTurboModulesFactory extends AnyThreadTurboModuleFactory {
   private turboModules: string[] = [
-    TM.SampleTurboModule.NAME,
-    TM.RunJsBundleTurboModule.NAME
+    // TM.SampleTurboModule.NAME,
+    // TM.RunJsBundleTurboModule.NAME
   ]
 
   createTurboModule(name: string): AnyThreadTurboModule | null {
-    if (name == TM.SampleTurboModule.NAME) {
-      return new SampleTurboModule(this.ctx)
-    } else if (name === TM.RunJsBundleTurboModule.NAME) {
-      return new RunJsBundleTurboModule(this.ctx)
-    }
+    // if (name == TM.SampleTurboModule.NAME) {
+    //   return new SampleTurboModule(this.ctx)
+    // } else if (name === TM.RunJsBundleTurboModule.NAME) {
+    //   return new RunJsBundleTurboModule(this.ctx)
+    // }
     return null;
   }
 

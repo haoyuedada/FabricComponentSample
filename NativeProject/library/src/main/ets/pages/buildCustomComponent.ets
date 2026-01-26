@@ -8,6 +8,7 @@ import { RCTMessageDialog } from "../FabricComponent/RCTMessageDialog"
 import { LottieAnimationView, LOTTIE_TYPE } from "@react-native-oh-tpl/lottie-react-native"
 import { WebView, WEB_VIEW } from "@react-native-ohos/react-native-webview"
 import { RNCVideo, RNC_VIDEO_TYPE } from "@react-native-oh-tpl/react-native-video"
+import { RNCSkiaDomView, SKIA_DOM_VIEW_TYPE } from '@react-native-ohos/react-native-skia';
 
 @Builder
 export function buildCustomComponent(ctx: ComponentBuilderContext) {
@@ -41,7 +42,12 @@ export function buildCustomComponent(ctx: ComponentBuilderContext) {
       ctx: ctx.rnComponentContext,
       tag: ctx.tag
     })
-  }
+  } else if (ctx.componentName === SKIA_DOM_VIEW_TYPE) {
+    RNCSkiaDomView({
+      ctx: ctx.rnComponentContext,
+      tag: ctx.tag
+    })
+   }
 }
 
-export const arkTsComponentNames: Array<string> = [SelectBox.NAME, RCTSelectBox.NAME, RCTMessageDialog.NAME, LOTTIE_TYPE, WEB_VIEW];
+export const arkTsComponentNames: Array<string> = [SelectBox.NAME, RCTSelectBox.NAME, RCTMessageDialog.NAME, LOTTIE_TYPE, WEB_VIEW, SKIA_DOM_VIEW_TYPE];
