@@ -6,13 +6,13 @@
     "listen": "hdc rport tcp:8081 tcp:8081",
     "lint": "eslint .",
     "start": "hdc rport tcp:8081 tcp:8081 && react-native start --reset-cache",
-    "sdk:split": "react-native bundle-harmony --dev=true sdk --entry-file=index.sdk.js --bundle-output ../NativeProject/entry/src/main/resources/rawfile/split/sdk.harmony.js --assets-dest ../NativeProject/entry/src/main/resources/rawfile/split/assets --config metro.config.split.js",
-    "bundle:split": "react-native bundle-harmony --dev=true --entry-file=index.js --bundle-output ../NativeProject/entry/src/main/resources/rawfile/split/bundle.harmony.js --assets-dest ../NativeProject/entry/src/main/resources/rawfile/split/assets --config metro.config.split.js --config metro.config.split.js",
+    "sdk:split": "react-native bundle-harmony --dev=true sdk --entry-file=index.sdk.js --bundle-output ./harmony/entry/src/main/resources/rawfile/split/sdk.harmony.js --assets-dest ./harmony/entry/src/main/resources/rawfile/split/assets --config metro.config.split.js",
+    "bundle:split": "react-native bundle-harmony --dev=true --entry-file=index.js --bundle-output ./harmony/entry/src/main/resources/rawfile/split/bundle.harmony.js --assets-dest ./harmony/entry/src/main/resources/rawfile/split/assets --config metro.config.split.js --config metro.config.split.js",
     "bundle:all": "npm run sdk:split && npm run bundle:split && npm run bundle:archiver",
     "bundle:archiver": "node ./archiver.js",
-    "bundle:dev": "react-native bundle-harmony --bundle-output ../NativeProject/entry/src/main/resources/rawfile/all/bundle.harmonyall.js --assets-dest ../NativeProject/entry/src/main/resources/rawfile/all/assets",
-    "bundle:prod": "react-native bundle-harmony --dev=false --minify=true --bundle-output ../NativeProject/entry/src/main/resources/rawfile/all/bundle.harmonyall.js --assets-dest ../NativeProject/entry/src/main/resources/rawfile/all/assets",
-    "codegen": "react-native codegen-harmony --cpp-output-path ../NativeProject/library/src/main/cpp/generated --rnoh-module-path ../NativeProject/library/oh_modules/@rnoh/react-native-openharmony --no-safety-check"
+    "bundle:dev": "react-native bundle-harmony --bundle-output ./harmony/entry/src/main/resources/rawfile/all/bundle.harmonyall.js --assets-dest ./harmony/entry/src/main/resources/rawfile/all/assets",
+    "bundle:prod": "react-native bundle-harmony --dev=false --minify=true --bundle-output ./harmony/entry/src/main/resources/rawfile/all/bundle.harmonyall.js --assets-dest ./harmony/entry/src/main/resources/rawfile/all/assets",
+    "codegen": "react-native codegen-harmony --cpp-output-path ./harmony/library/src/main/cpp/generated --rnoh-module-path ./harmony/library/oh_modules/@rnoh/react-native-openharmony --no-safety-check"
   },
   "dependencies": {
     "@nozbe/watermelondb": "^0.28.0",
