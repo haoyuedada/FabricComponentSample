@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "cleanAndReInstall": "rm -rf node_modules package-lock.json && npm install --f --verbose",
     "listen": "hdc rport tcp:8081 tcp:8081",
     "lint": "eslint .",
     "start": "hdc rport tcp:8081 tcp:8081 && react-native start --reset-cache",
