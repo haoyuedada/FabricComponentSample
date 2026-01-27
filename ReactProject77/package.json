@@ -1,5 +1,5 @@
 {
-  "name": "ReactProject",
+  "name": "ReactProject77",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -16,15 +16,15 @@
     "codegen": "react-native codegen-harmony --cpp-output-path ./harmony/library/src/main/cpp/generated --rnoh-module-path ./harmony/library/oh_modules/@rnoh/react-native-openharmony --no-safety-check"
   },
   "dependencies": {
-    "@react-native-oh/react-native-harmony": "0.77.33",
-    "@react-native-ohos/react-native-gesture-handler": "^2.23.2-rc.4",
+    "@react-native-oh/react-native-harmony": "0.77.40",
+    "@react-native-ohos/react-native-gesture-handler": "^2.23.2-rc.5",
     "@react-native-ohos/react-native-reanimated": "^3.18.1-rc.6",
     "@react-native-ohos/react-native-safe-area-context": "^5.1.1-rc.3",
     "archiver": "^7.0.1",
     "fabric-component-sample-package": "file:../fabric-component-sample-package/fabric-component-sample-package-1.0.0.tgz",
     "react": "18.2.0",
     "react-native": "0.77.1",
-    "react-native-reanimated": "^3.18.0",
+    "react-native-reanimated": "3.18.0",
     "turbo-module": "file:../turbo-module/turbo-module-1.0.0.tgz"
   },
   "devDependencies": {

@@ -133,9 +133,9 @@ import SelectBoxApp from './src/SelectBoxApp'
 // import App from './thridPartyDemo/vmall/DTS2025111903544/webviewDemo/webviewDemo/index.tsx'
 // import App from './watermelondb/App'
 // import App from './animated/ScaleAnimationDemo.tsx'
-// import App from './IR/251208195649046/GestureHandlerDemo.tsx'
+import App from './IR/251208195649046/GestureHandlerDemo.tsx'
 // import App from './thridPartyDemo/skia.tsx'
-import App from './DTS/DTS2026011907680/GestureHandlerDemo'
+// import App from './DTS/DTS2026011907680/GestureHandlerDemo'
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"
