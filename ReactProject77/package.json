@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@react-native-oh/react-native-harmony": "0.77.40",
-    "@react-native-ohos/react-native-gesture-handler": "^2.23.2-rc.5",
+    "@react-native-ohos/react-native-gesture-handler": "2.23.2-rc.5",
     "@react-native-ohos/react-native-reanimated": "^3.18.1-rc.6",
     "@react-native-ohos/react-native-safe-area-context": "^5.1.1-rc.3",
     "archiver": "^7.0.1",

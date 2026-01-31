@@ -36,12 +36,16 @@ export default function NestedScrollView() {
     const startY = useSharedValue(0)
     const leftStartY = useSharedValue(0)
     const outStartY = useSharedValue(0)
+    const topStartY = useSharedValue(0)
     const rightListScrollState = useSharedValue<E_ListScrollState>(E_ListScrollState.Padding)
     const leftListScrollState = useSharedValue<E_ListScrollState>(E_ListScrollState.Padding)
+    const topLastDirection = useSharedValue<'' | 'up' | 'down'>('')
     const freshElAnimatedY = useSharedValue(0)
     const panPosition = useSharedValue<E_PanPosition>(E_PanPosition.None)
 
-    const printLog = (...args) => {};
+    const printLog = (...args) => {
+        // console.log(...args);
+    };
 
 
     const getLeftListState = (direction): E_ListScrollState => {
@@ -84,7 +88,6 @@ export default function NestedScrollView() {
                 rightListScrollState.value = E_ListScrollState.Active
             }
         } else {
-            // console.log("chy handler getRightListState => rightScrollY.value:", rightScrollY.value)
             if (rightScrollY.value > 0) {
                 rightListScrollState.value = E_ListScrollState.Active
             } else {
@@ -100,12 +103,10 @@ export default function NestedScrollView() {
         .onBegin(event => {
             'worklet';
             outStartY.value = event.y;
-            console.log("chy handler outVirturePan onBegin=====")
             runOnJS(printLog)('outVirturePan onBegin', event.y)
         })
         .onTouchesMove((_, manager) => {
             'worklet';
-            console.log("chy handler outVirturePan onTouchesMove")
             panPosition.value = _.changedTouches[0].absoluteX >= LeftListWidth ? E_PanPosition.Right : E_PanPosition.Left;
             if (_.changedTouches[0].y === outStartY.value) {
                 return
@@ -135,30 +136,23 @@ export default function NestedScrollView() {
             if (direction === 'down' && outerScrollY.value <= stickyTop.value) {
                 runOnJS(printLog)('outVirturePan activeI.value ---', direction, panPosition.value, activeI.value, rightScrollY.value)
 
-                
                 if (rightScrollY.value <= 0 && outerScrollY.value < stickyTop.value) {
-                    // console.log("chy handler outVirturePan manager.fail")
-                    // console.log("chy handler set rightScrollY.value:", rightScrollY.value);
-                    // console.log("chy handler set outerScrollY:", outerScrollY.value);
-                    // console.log("chy handler set stickyTop:", stickyTop.value);
                     manager.fail()
                 } else if (panPosition.value === E_PanPosition.Right && activeI.value !== 0) {
-                    // console.log("chy handler outVirturePan manager.activate")
-                    // console.log("chy handler panPosition.value:", panPosition.value)
-                    // console.log("chy handler E_PanPosition.Right:", E_PanPosition.Right)
-                    // console.log("chy handler activeI.value:", activeI.value)
                     manager.activate();
                     return
                 }
                 else if (panPosition.value === E_PanPosition.Right && rightScrollY.value > 0) {
+                    // manager.activate()
                 } else if (panPosition.value === E_PanPosition.Left && leftScrollY.value > 0) {
+                    // manager.activate()
                 }
             } else if (direction === 'up' && outerScrollY.value >= stickyTop.value) {
                 runOnJS(printLog)('outVirturePan -- 2--2--', direction, outerScrollY.value, stickyTop.value)
+                // manager.activate();
                 return
             }
             runOnJS(printLog)('outVirturePan -- 3--3--');
-            // console.log("chy handler outVirturePan manager.fail")
             manager.fail();
 
         })
@@ -168,15 +162,13 @@ export default function NestedScrollView() {
     const tapGesture = Gesture.Pan()
         .onBegin(event => {
             'worklet';
-            console.log("chy handler tapGesture onBegin=====")
             rightListScrollState.value = E_ListScrollState.Padding
             startY.value = event.y;
             runOnJS(printLog)('tapGesture onBegin', event.y)
         })
         .onTouchesMove((_, manager) => {
             'worklet';
-            console.log("chy handler tapGesture onTouchesMove start=========")
-            // console.log("chy handler onTouchesMove panPosition.value:", panPosition.value)
+
             runOnJS(printLog)('tapGesture onTouchesMoveIn')
             panPosition.value = _.changedTouches[0].absoluteX >= LeftListWidth ? E_PanPosition.Right : E_PanPosition.Left;
             if (_.changedTouches[0].y === startY.value) {
@@ -187,16 +179,20 @@ export default function NestedScrollView() {
             startY.value = _.changedTouches[0].y;
 
             if (panPosition.value === E_PanPosition.Left) {
+                // manager.end()
+                return
             }
+            // const direction = topLastDirection.value;
+            // runOnJS(printLog)('outerScrollY.value < stickyTop.value', direction, outerScrollY.value < stickyTop.value || rightScrollY.value > 0, _.changedTouches[0].y);
 
             const state = getRightListState(direction)
             runOnJS(printLog)('tapGesture getRightListState ----- 1111', state)
-            // console.log("chy tapGesture => onTouchesMove state:", state)
+            console.log("chy tapGesture => onTouchesMove state:", state)
             if (state === E_ListScrollState.Active) {
-                console.log("chy handler tapGesture manager.fail")
+                console.log("chy tapGesture => onTouchesMove fail:")
                 manager.fail()
             } else {
-                console.log("chy handler tapGesture manager.activate")
+                console.log("chy tapGesture => onTouchesMove activate:")
                 manager.activate();
             }
         })
@@ -205,7 +201,7 @@ export default function NestedScrollView() {
         })
         .onChange(event => {
             if (panPosition.value === E_PanPosition.Right && rightScrollY.value === 0 && outerScrollY.value >= stickyTop.value && activeI.value !== 0) {
-                console.log('chy handler tapGesture event.translationY', event.translationY)
+                // console.log('topPanGesture event.translationY', event.translationY)
                 freshElAnimatedY.value = Math.min(LOADING_HEIGHT, freshElAnimatedY.value + event.changeY);
             }
         })
@@ -223,9 +219,6 @@ export default function NestedScrollView() {
     // .activeOffsetY([0, 3])
 
     const outScrollGesture = Gesture.Native()
-        .onBegin(() => {
-            // console.log("chy handler outScrollGesture onBegin====")
-        })
         .onTouchesMove((event) => {
             // console.log('outScrollGesture', event)
         })
@@ -233,15 +226,11 @@ export default function NestedScrollView() {
 
 
     const scrollGesture = Gesture.Native()
-        .onBegin(() => {
-            // console.log("chy handler scrollGesture onBegin====")
-        })
         .requireExternalGestureToFail(tapGesture)
 
     const tapGestureForLeft = Gesture.Pan()
         .onBegin(event => {
             'worklet';
-            console.log("chy handler tapGestureForLeft onBegin=====")
             leftStartY.value = event.y;
             leftListScrollState.value = E_ListScrollState.Padding
             runOnJS(printLog)('tapGestureForLeft onBegin', event.y)
@@ -265,33 +254,104 @@ export default function NestedScrollView() {
             const state = getLeftListState(direction);
             runOnJS(printLog)('tapGestureForLeft getAndControlLeftList ----- 1111', state)
             if (state === E_ListScrollState.Active) {
-                // console.log("chy handler tapGestureForLeft  manager.fail")
                 manager.fail()
             } else {
-                // console.log("chy handler tapGestureForLeft  manager.end")
                 manager.end();
             }
 
         })
         .manualActivation(true)
         .minDistance(99999)
+        .simultaneousWithExternalGesture(outVirturePan, outScrollGesture)
 
     const leftScrollGesture = Gesture.Native()
-        .onBegin(() => {
-            // console.log("chy handler leftScrollGesture onBegin====")
-        })
         .requireExternalGestureToFail(tapGestureForLeft)
 
 
     const scrollHandler = useAnimatedScrollHandler({
         onScroll: e => {
             'worklet';
-            // console.log("chy handler set outerScrollY:", e.contentOffset.y)
             outerScrollY.value = e.contentOffset.y;
         },
     });
 
     const refRightlist = useAnimatedRef();
+
+
+    const topPanGesture = Gesture.Pan()
+        .onBegin(event => {
+            topLastDirection.value = '';
+            runOnJS(printLog)('topPanGesture onBegin', event.y)
+            topStartY.value = event.y;
+
+            // panPosition.value = event.absoluteX >= leftListWidth ? E_PanPosition.Right : E_PanPosition.Left;
+        })
+        .onTouchesMove((_, manager) => {
+            'worklet';
+            // if (rightListScrollState.value === E_ListScrollState.Active) {
+            //     runOnJS(printLog)('topPanGesture - 等待RighList ...  处理  ... ')
+            //     manager.end()
+            //     return;
+            // }
+
+            // if (_.changedTouches[0].y - topStartY.value === 0) {
+            //     return
+            // }
+
+            const diff = _.changedTouches[0].y - topStartY.value;
+            const direction = diff < 0 ? 'up' : 'down'
+            // console.log('topPanGesture ===> onTouchesMove == direction', direction, _.changedTouches[0].y, topStartY.value)
+            topLastDirection.value = direction;
+            topStartY.value = _.changedTouches[0].y
+            // console.log('topPanGesture manager.activate')
+            // manager.activate();
+
+            // console.log('topPanGesture ===> direction', direction)
+
+            // console.log('topPanGesture rightScrollY.value  =>> ', rightScrollY.value, diff)
+            // if (rightScrollY.value === 0) {
+            //     rightScrollY1.value = rightScrollY1.value - diff;
+
+            //     scrollTo(refRightlist, 0, rightScrollY1.value, false);
+            // }
+
+        })
+        .onChange(event => {
+            'worklet';
+            // if (panPosition.value === E_PanPosition.Right && rightScrollY.value === 0 && outerScrollY.value >= stickyTop.value && activeI.value !== 0) {
+            //     console.log('topPanGesture event.translationY', event.translationY)
+            //     freshElAnimatedY.value = Math.min(LOADING_HEIGHT, freshElAnimatedY.value + event.changeY);
+            // }
+            // console.log('topPanGesture rightScrollY.value  =>> ', rightScrollY1.value - event.changeY, event.changeY)
+            // if (rightScrollY.value === 0) {
+            //     rightScrollY1.value =  rightScrollY1.value - event.changeY;
+
+            //     // scrollTo(refRightlist, 0, 50, false);
+            // }
+        })
+        .onFinalize(() => {
+            // freshElAnimatedY.value = withSpring(
+            //     0,
+            //     {
+            //         stiffness: 300,
+            //         overshootClamping: true
+            //     }
+            // )
+            // panPosition.value = E_PanPosition.None;
+            // topLastDirection.value = '';
+        })
+        .requireExternalGestureToFail(tapGesture)
+        .simultaneousWithExternalGesture(outVirturePan, tapGesture, tapGestureForLeft, outScrollGesture)
+
+
+    // useDerivedValue(() => {
+    //     scrollTo(refRightlist, 0, rightScrollY.value, true);
+    // });
+
+    // outScrollGesture.simultaneousWithExternalGesture(topPanGesture)
+
+
+    // tapGesture.simultaneousWithExternalGesture(outVirturePan, outScrollGesture, topPanGesture)
     tapGesture.simultaneousWithExternalGesture(outVirturePan, outScrollGesture)
 
 
@@ -311,6 +371,7 @@ export default function NestedScrollView() {
 
     const animatedStyles = useAnimatedStyle(() => {
         'worklet';
+        // canAnimateFreshEl.value ? 
         return {
             transform: [{
                 translateY: freshElAnimatedY.value
@@ -320,6 +381,7 @@ export default function NestedScrollView() {
 
     return (
         <GestureHandlerRootView>
+            {/* <GestureDetector gesture={topPanGesture}> */}
             <Animated.View style={[{ height: windowHeight, paddingTop: 88 }]}>
                 <GestureDetector
                     gesture={Gesture.Simultaneous(outVirturePan, tapGesture, tapGestureForLeft)}
@@ -352,8 +414,8 @@ export default function NestedScrollView() {
                                         flexDirection: 'row'
                                     }}
                                     onLayout={(e) => {
-                                        // console.log("chy handler set stickyTop:", e.nativeEvent.layout.y)
                                         stickyTop.value = e.nativeEvent.layout.y;
+                                        // console.log('stickyTop initialized:', e.nativeEvent.layout.y);
                                     }}>
 
                                     <GestureDetector gesture={Gesture.Simultaneous(leftScrollGesture)}>
@@ -445,6 +507,8 @@ export default function NestedScrollView() {
 
                 </GestureDetector>
             </Animated.View>
+
+            {/* </GestureDetector> */}
         </GestureHandlerRootView >
     )
 }
