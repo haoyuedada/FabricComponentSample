@@ -16,7 +16,7 @@ import { AppRegistry } from 'react-native';
 // import FastImage from './tests/FastImage';
 // import App from './App'
 // import Modal from './tests/Modal'
-// import ScrollView from './tests/ScrollView'
+import ScrollView from './tests/ScrollView'
 // import QDScrollView from './tests/QDScrollView'
 // import RCT from './tests/RCT'
 // import FontSlice from './tests/FontSlice'
@@ -133,13 +133,13 @@ import SelectBoxApp from './src/SelectBoxApp'
 // import App from './thridPartyDemo/vmall/DTS2025111903544/webviewDemo/webviewDemo/index.tsx'
 // import App from './watermelondb/App'
 // import App from './animated/ScaleAnimationDemo.tsx'
-// import App from './IR/251208195649046/GestureHandlerDemo.tsx'
+import App from './IR/251208195649046/GestureHandlerDemo.tsx'
 // import App from './IR/251208195649046/RequireExternalGestureToFailDemo.tsx'
 // import App from './thridPartyDemo/skia.tsx'
 // import App from './DTS/DTS2026011907680/GestureHandlerDemo'
 // import App from './DTS/DTS2025121743837/GestureHandlerDemo1.tsx'
 // import App from './DTS/DTS2025121743837/GesturePreventScrollDemo.tsx'
-import App from './src/absoluteDemo.tsx'
+// import App from './src/absoluteDemo.tsx'
 
-AppRegistry.registerComponent("app_name", () => App);
+AppRegistry.registerComponent("app_name", () => ScrollView);
 // import { transform } from "./testTurboModule/buautify_executor.js"
