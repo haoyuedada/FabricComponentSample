@@ -329,6 +329,7 @@ export default function NestedScrollView() {
                             gesture={Gesture.Simultaneous(outScrollGesture)}
                         >
                             <Animated.ScrollView
+                                nativeID="out"
                                 style={{
                                     backgroundColor: '#3ffff0'
                                 }}
@@ -358,6 +359,7 @@ export default function NestedScrollView() {
 
                                     <GestureDetector gesture={Gesture.Simultaneous(leftScrollGesture)}>
                                         <Animated.ScrollView
+                                            nativeID="zuo"
                                             style={{
                                                 backgroundColor: '#3ffff0',
                                                 width: LeftListWidth,
@@ -415,6 +417,7 @@ export default function NestedScrollView() {
                                         <GestureDetector
                                             gesture={Gesture.Simultaneous(scrollGesture)}>
                                             <Animated.ScrollView
+                                                nativeID="you"
                                                 style={{
                                                     backgroundColor: '#3ffff0',
                                                     flex: 1,
