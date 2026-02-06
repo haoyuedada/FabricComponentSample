@@ -74,8 +74,26 @@ void QDGestureFloatEventEmitter::onScroll(OnScroll $event) const {
 }
 
 
+void QDGestureFloatEventEmitter::onRefresh(OnRefresh $event) const {
+  dispatchEvent("refresh", [$event=std::move($event)](jsi::Runtime &runtime) {
+    auto $payload = jsi::Object(runtime);
+    $payload.setProperty(runtime, "offsetY", $event.offsetY);
+    return $payload;
+  });
+}
+
+
 void QDScrollViewEventEmitter::onScroll(OnScroll $event) const {
   dispatchEvent("scroll", [$event=std::move($event)](jsi::Runtime &runtime) {
+    auto $payload = jsi::Object(runtime);
+    $payload.setProperty(runtime, "offsetY", $event.offsetY);
+    return $payload;
+  });
+}
+
+
+void QDScrollViewEventEmitter::onRefresh(OnRefresh $event) const {
+  dispatchEvent("refresh", [$event=std::move($event)](jsi::Runtime &runtime) {
     auto $payload = jsi::Object(runtime);
     $payload.setProperty(runtime, "offsetY", $event.offsetY);
     return $payload;

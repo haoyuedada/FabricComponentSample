@@ -38,6 +38,7 @@ class QDGestureFloatJSIBinder : public ViewComponentJSIBinder {
     facebook::jsi::Object createDirectEventTypes(facebook::jsi::Runtime &rt) override {
         facebook::jsi::Object events(rt);
         events.setProperty(rt, "topScroll", createDirectEvent(rt, "onScroll"));
+        events.setProperty(rt, "topRefresh", createDirectEvent(rt, "onRefresh"));
         return events;
     }
 };
