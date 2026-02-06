@@ -20,6 +20,7 @@
     "@react-native-ohos/react-native-gesture-handler": "2.23.2-rc.5",
     "@react-native-ohos/react-native-reanimated": "^3.18.1-rc.6",
     "@react-native-ohos/react-native-safe-area-context": "^5.1.1-rc.3",
+    "@react-native-ohos/react-native-mjrefresh": "0.8.0-rc.1",
     "archiver": "^7.0.1",
     "fabric-component-sample-package": "file:../fabric-component-sample-package/fabric-component-sample-package-1.0.0.tgz",
     "react": "18.2.0",

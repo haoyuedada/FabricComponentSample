@@ -52,6 +52,7 @@ export default function PanScrollViewDemo() {
             startY.value = translateY.value;
         })
         .onUpdate((event) => {
+            console.log("chy jshandler onupdate")
             // 只处理垂直方向的移动
             runOnJS(logOnUpdate)(event.translationY);
             translateY.value = startY.value + event.translationY;
@@ -91,6 +92,20 @@ export default function PanScrollViewDemo() {
     return (
         <GestureHandlerRootView style={styles.container}>
             <SafeAreaView style={styles.container}>
+                {/* 新增的垂直 ScrollView - 高度 50，100 个 item */}
+                <View style={styles.smallScrollViewWrapper}>
+                    <ScrollView
+                        style={styles.smallScrollView}
+                        showsVerticalScrollIndicator={true}
+                        contentContainerStyle={styles.smallScrollContent}>
+                        {Array.from({ length: 100 }).map((_, index) => (
+                            <View key={index} style={styles.scrollItem}>
+                                <Text style={styles.scrollItemText}>Item {index + 1}</Text>
+                            </View>
+                        ))}
+                    </ScrollView>
+                </View>
+
                 {/* <View style={styles.header}>
 <Text style={styles.title}>Pan + ScrollView Demo</Text>
 <Text style={styles.subtitle}>
@@ -99,9 +114,14 @@ export default function PanScrollViewDemo() {
 </View> */}
 
                 {/* 纵向 Pan 手势容器 */}
-                <GestureDetector gesture={containerPan}>
+                <GestureDetector 
+                    gesture={containerPan}
+                    >
                     <Animated.View
-                        style={[styles.panContainer, panAnimatedStyle]}
+                        style={[
+                            styles.panContainer, 
+                            panAnimatedStyle
+                        ]}
                         collapsable={false}>
                         <View style={styles.panHeader}>
                             <View style={styles.dragHandle} />
@@ -140,6 +160,38 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#f5f5f5',
+    },
+    smallScrollViewWrapper: {
+        height: 50,
+        marginHorizontal: 16,
+        marginVertical: 8,
+        backgroundColor: '#fff',
+        borderRadius: 8,
+        overflow: 'hidden',
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.18,
+        shadowRadius: 1.0,
+        elevation: 2,
+    },
+    smallScrollView: {
+        height: 50,
+    },
+    smallScrollContent: {
+        paddingVertical: 8,
+    },
+    scrollItem: {
+        paddingHorizontal: 16,
+        paddingVertical: 4,
+        height: 34,
+        justifyContent: 'center',
+    },
+    scrollItemText: {
+        fontSize: 14,
+        color: '#333',
     },
     header: {
         padding: 16,

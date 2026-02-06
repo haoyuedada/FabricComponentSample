@@ -10,6 +10,7 @@
     "@pura/harmony-utils": "^1.2.6",
     "@react-native-ohos/react-native-gesture-handler": "file:../../node_modules/@react-native-ohos/react-native-gesture-handler/harmony/gesture_handler.har",
     "@react-native-ohos/react-native-reanimated": "file:../../node_modules/@react-native-ohos/react-native-reanimated/harmony/reanimated.har",
-    "@react-native-ohos/react-native-safe-area-context": "file:../../node_modules/@react-native-ohos/react-native-safe-area-context/harmony/safe_area.har"
+    "@react-native-ohos/react-native-safe-area-context": "file:../../node_modules/@react-native-ohos/react-native-safe-area-context/harmony/safe_area.har",
+    "@react-native-ohos/react-native-mjrefresh": "file:../../node_modules/@react-native-ohos/react-native-mjrefresh/harmony/mjrefresh.har",
   }
 }
