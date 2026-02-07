@@ -31,26 +31,26 @@ export default function TransformEvent() {
 
   return (
     <View style={styles.page}>
+      <View
+        style={styles.bottomPopupWrapper}
+        onTouchEnd={layerTapClose}
+      >
         <View
-          style={styles.bottomPopupWrapper}
-          onTouchEnd={layerTapClose}
+          style={[styles.bottomPopupLayer, { transform: [{ scale: popupScale }] }]}
+          onTouchEnd={catchTap}
         >
-          <View
-            style={[styles.bottomPopupLayer, { transform: [{ scale: popupScale }] }]}
-            onTouchEnd={catchTap}
-          >
-            <TouchableOpacity style={styles.closeBtn} onPress={closePopup} activeOpacity={0.8}>
-              <Text style={styles.closeBtnText}>关闭弹窗 (scale 0)</Text>
-            </TouchableOpacity>
-            <View style={styles.pinkBlock} />
-            <TextInput
-              style={styles.inputBlock}
-              value={inputValue}
-              onChangeText={setInputValue}
-            />
-            <View style={styles.pinkBlock} />
-          </View>
+          <TouchableOpacity style={styles.closeBtn} onPress={closePopup} activeOpacity={0.8}>
+            <Text style={styles.closeBtnText}>关闭弹窗 (scale 0)</Text>
+          </TouchableOpacity>
+          <View style={styles.pinkBlock} />
+          <TextInput
+            style={styles.inputBlock}
+            value={inputValue}
+            onChangeText={setInputValue}
+          />
+          <View style={styles.pinkBlock} />
         </View>
+      </View>
     </View>
   )
 }

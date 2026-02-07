@@ -199,10 +199,10 @@ export struct UPReactView {
               console.log(`chy updateViewRootTag with params:`);
             }
           })
-            .height("80%")
-          Button("注册字体").onClick(() => {
-            this.RNInstanceManage.registerFont()
-          })
+          .height("80%")
+          // Button("注册字体").onClick(() => {
+          //   this.RNInstanceManage.registerFont()
+          // })
         }
         if (this.rnohCoreContext!.isDebugModeEnabled) {
           RNDevLoadingView({ useSafeAreaInsets: true, ctx: this.rnohCoreContext }).position({ x: 0, y: 0 })
