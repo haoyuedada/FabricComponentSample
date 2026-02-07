@@ -55,7 +55,7 @@
         "name": "EntryAbility",
         "srcEntry": "./ets/entryability/EntryAbility.ets",
         "description": "$string:EntryAbility_desc",
-        "icon": "$media:icon1",
+        "icon": "$media:77",
         "label": "$string:EntryAbility_label",
         // "orientation": "auto_rotation",
         "startWindowIcon": "$media:startIcon",

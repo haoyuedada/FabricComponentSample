@@ -1,7 +1,7 @@
 const { mergeConfig, getDefaultConfig } = require('@react-native/metro-config');
 const {
   createHarmonyMetroConfig,
-} = require('react-native-harmony/metro.config');
+} = require('@react-native-oh/react-native-harmony/metro.config');
 const defaultConfig = getDefaultConfig(__dirname);
 const path = require('path');
 const fs = require('fs');
