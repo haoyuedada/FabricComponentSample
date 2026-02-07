@@ -12,5 +12,6 @@
     "@react-native-ohos/react-native-reanimated": "file:../../node_modules/@react-native-ohos/react-native-reanimated/harmony/reanimated.har",
     "@react-native-ohos/react-native-safe-area-context": "file:../../node_modules/@react-native-ohos/react-native-safe-area-context/harmony/safe_area.har",
     "@react-native-ohos/react-native-mjrefresh": "file:../../node_modules/@react-native-ohos/react-native-mjrefresh/harmony/mjrefresh.har",
+    "@react-native-ohos/react-native-screens": "file: ../../node_modules/@react-native-ohos/react-native-screens/harmony/screens.har"
   }
 }

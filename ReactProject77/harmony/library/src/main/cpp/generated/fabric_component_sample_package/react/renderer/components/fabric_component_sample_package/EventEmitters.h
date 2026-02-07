@@ -63,13 +63,7 @@ class QDGestureFloatEventEmitter : public ViewEventEmitter {
   struct OnScroll {
       Float offsetY;
     };
-
-  struct OnRefresh {
-      Float offsetY;
-    };
   void onScroll(OnScroll value) const;
-
-  void onRefresh(OnRefresh value) const;
 };
 class QDScrollViewEventEmitter : public ViewEventEmitter {
  public:
@@ -78,12 +72,6 @@ class QDScrollViewEventEmitter : public ViewEventEmitter {
   struct OnScroll {
       Float offsetY;
     };
-
-  struct OnRefresh {
-      Float offsetY;
-    };
   void onScroll(OnScroll value) const;
-
-  void onRefresh(OnRefresh value) const;
 };
 } // namespace facebook::react

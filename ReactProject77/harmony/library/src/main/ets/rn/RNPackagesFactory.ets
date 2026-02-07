@@ -10,6 +10,7 @@ import { GeneratedPackage } from './GeneratedPackage'
 import GestureHandlerPackage from '@react-native-ohos/react-native-gesture-handler';
 import { ReanimatedPackage} from '@react-native-ohos/react-native-reanimated/ts';
 import { SafeAreaViewPackage } from '@react-native-ohos/react-native-safe-area-context/ts';
+import RNOHScreensPackage from "@react-native-ohos/react-native-screens"
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
@@ -17,5 +18,6 @@ export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
     new GestureHandlerPackage(ctx),
     new ReanimatedPackage(ctx),
     new SafeAreaViewPackage(ctx),
+    new RNOHScreensPackage(ctx)
   ];
 }

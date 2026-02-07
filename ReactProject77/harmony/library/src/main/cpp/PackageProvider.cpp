@@ -11,6 +11,7 @@
 #include "ReanimatedPackage.h"
 #include "SafeAreaViewPackage.h"
 #include "MJRefreshPackage.h"
+#include "RnohReactNativeHarmonyScreensPackage.h"
 
 using namespace rnoh;
 
@@ -21,5 +22,6 @@ std::vector<std::shared_ptr<Package>> PackageProvider::getPackages(Package::Cont
     std::make_shared<ReanimatedPackage>(ctx),
     std::make_shared<SafeAreaViewPackage>(ctx),
     std::make_shared<MJRefreshPackage>(ctx),
+    std::make_shared<RnohReactNativeHarmonyScreensPackage>(ctx),
   };
 }
