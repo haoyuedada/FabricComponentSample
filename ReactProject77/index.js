@@ -16,7 +16,7 @@ import { AppRegistry } from 'react-native';
 // import App from './tests/DTS2025121743837/GesturePreventScrollDemo.tsx'
 // import App from './tests/ReanimatedDemo'
 import App from './tests/didi/demo.tsx'
-import App from './tests/refresh/demo.tsx'
+// import App from './tests/refresh/demo.tsx'
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"
