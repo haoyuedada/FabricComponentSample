@@ -6,7 +6,7 @@
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
-    "@rnoh/react-native-openharmony": "0.72.112",
+    "@rnoh/react-native-openharmony": "0.72.101",
     "@pura/harmony-utils": "^1.2.6",
     "@react-native-oh-tpl/react-native-fast-image": "file:../libs/fast_image.har",
     "@react-native-ohos/react-native-gesture-handler": "file:../../node_modules/@react-native-ohos/react-native-gesture-handler/harmony/gesture_handler.har",
@@ -19,6 +19,7 @@
     "@react-native-ohos/react-native-webview": "file:../libs/rn_webview.har",
     "@react-native-ohos/react-native-reanimated": "file:../libs/reanimated.har",
     "@react-native-ohos/react-native-skia": "file:../libs/skia.har",
-    "@react-native-oh-tpl/netinfo": "file:../../node_modules/@react-native-oh-tpl/netinfo/harmony/netinfo.har"
+    "@react-native-oh-tpl/netinfo": "file:../../node_modules/@react-native-oh-tpl/netinfo/harmony/netinfo.har",
+    "@react-native-ohos/react-native-keyboard-controller": "file:../../node_modules/@react-native-ohos/react-native-keyboard-controller/harmony/keyboard_controller.har"
   }
 }

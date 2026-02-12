@@ -20,6 +20,7 @@ import { WebViewPackage } from '@react-native-ohos/react-native-webview/ts';
 import { ReanimatedPackage} from '@react-native-ohos/react-native-reanimated/ts';
 import {RNSkiaPackage} from '@react-native-ohos/react-native-skia/ts';
 import {NetInfoPackage} from '@react-native-oh-tpl/netinfo/ts';
+import {RNKeyboardControllerPackage,RNStatusBarManagerCompatPackage} from  "@react-native-ohos/react-native-keyboard-controller/ts";
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
@@ -36,6 +37,8 @@ export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
     // new RNOrientationPackage(ctx)
     new ReanimatedPackage(ctx),
     new RNSkiaPackage(ctx),
-    new NetInfoPackage(ctx)
+    new NetInfoPackage(ctx),
+    new RNKeyboardControllerPackage(ctx),
+    new RNStatusBarManagerCompatPackage(ctx)
   ];
 }
