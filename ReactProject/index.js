@@ -9,7 +9,7 @@
 // initialProps = {};
 import { AppRegistry } from 'react-native';
 // import { name as appName } from './app.json';
-// import App from './testTurboModule/test';
+import App from './src/testTurboModule/test.tsx';
 // import Utils from './tests/Utils';
 
 // import RCTMessage from './tests/RCTMessage';
@@ -127,13 +127,13 @@ import { AppRegistry } from 'react-native';
 // import App from './tests/Display.tsx';
 // import App from './IR/251014164852025/OpacityDemo.tsx';
 // import "./svgDemo.js";
-// import App from './thridPartyDemo/webView.tsx';
+// import App from './src/thridPartyDemo/webView.tsx';
 // import App from './thridPartyDemo/AdaptiveWebView.tsx';
 // import App from './thridPartyDemo/vmall/DTS2025111903544/index.tsx'
 // import App from './thridPartyDemo/vmall/DTS2025111903544/webviewDemo/webviewDemo/index.tsx'
 // import App from './watermelondb/App'
 // import App from './animated/ScaleAnimationDemo.tsx'
-import App from './src/IR/251208195649046/GestureHandlerDemo.tsx'
+// import App from './src/IR/251208195649046/GestureHandlerDemo.tsx'
 // import App from './IR/251208195649046/RequireExternalGestureToFailDemo.tsx'
 // import App from './thridPartyDemo/skia.tsx'
 // import App from './src/DTS/DTS2026011907680/GestureHandlerDemo'

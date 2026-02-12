@@ -17,10 +17,10 @@ import { ViewPagerPackage } from '@react-native-oh-tpl/react-native-pager-view/t
 import { RNCVideoPackage } from '@react-native-oh-tpl/react-native-video/ts';
 import { WebViewPackage } from '@react-native-ohos/react-native-webview/ts';
 // import { RNOrientationPackage } from '@ohmi/react-native-orientation/ts';
-import { ReanimatedPackage} from '@react-native-ohos/react-native-reanimated/ts';
-import {RNSkiaPackage} from '@react-native-ohos/react-native-skia/ts';
-import {NetInfoPackage} from '@react-native-oh-tpl/netinfo/ts';
-import {RNKeyboardControllerPackage,RNStatusBarManagerCompatPackage} from  "@react-native-ohos/react-native-keyboard-controller/ts";
+import { ReanimatedPackage } from '@react-native-ohos/react-native-reanimated/ts';
+import { RNSkiaPackage } from '@react-native-ohos/react-native-skia/ts';
+import { NetInfoPackage } from '@react-native-oh-tpl/netinfo/ts';
+import { RNKeyboardControllerPackage, RNStatusBarManagerCompatPackage } from  "@react-native-ohos/react-native-keyboard-controller/ts";
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
