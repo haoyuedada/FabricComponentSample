@@ -36,6 +36,7 @@ add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-reanimated/src/m
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-skia/src/main/cpp" ./skia)
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/netinfo/src/main/cpp" ./netinfo)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-keyboard-controller/src/main/cpp" ./keyboard-controller)
+add_subdirectory("${OH_MODULES}/@react-native-ohos/flash-list/src/main/cpp" ./flash-list)
 # RNOH_END: manual_package_linking_1
 
 file(GLOB GENERATED_CPP_FILES "./generated/*.cpp")
@@ -63,4 +64,5 @@ target_link_libraries(rnoh_app PUBLIC rnoh_reanimated)
 target_link_libraries(rnoh_app PUBLIC rnoh_skia)
 target_link_libraries(rnoh_app PUBLIC rnoh_netinfo)
 target_link_libraries(rnoh_app PUBLIC rnoh_keyboard_controller)
+target_link_libraries(rnoh_app PUBLIC rnoh_flash_list)
 # RNOH_END: manual_package_linking_2

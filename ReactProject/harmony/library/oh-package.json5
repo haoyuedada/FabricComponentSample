@@ -20,6 +20,7 @@
     "@react-native-ohos/react-native-reanimated": "file:../libs/reanimated.har",
     "@react-native-ohos/react-native-skia": "file:../libs/skia.har",
     "@react-native-oh-tpl/netinfo": "file:../../node_modules/@react-native-oh-tpl/netinfo/harmony/netinfo.har",
-    "@react-native-ohos/react-native-keyboard-controller": "file:../../node_modules/@react-native-ohos/react-native-keyboard-controller/harmony/keyboard_controller.har"
+    "@react-native-ohos/react-native-keyboard-controller": "file:../../node_modules/@react-native-ohos/react-native-keyboard-controller/harmony/keyboard_controller.har",
+    "@react-native-ohos/flash-list": "file:../../node_modules/@react-native-ohos/flash-list/harmony/flash_list.har"
   }
 }

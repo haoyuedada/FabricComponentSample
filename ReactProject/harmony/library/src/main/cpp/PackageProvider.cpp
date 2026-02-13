@@ -21,6 +21,7 @@
 #include "SkiaPackage.h"
 #include "RNCNetInfoPackage.h"
 #include "keyboardControllerPackage.h"
+#include "FlashListPackage.h"
 
 using namespace rnoh;
 
@@ -41,5 +42,6 @@ std::vector<std::shared_ptr<Package>> PackageProvider::getPackages(Package::Cont
     std::make_shared<SkiaPackage>(ctx),
     std::make_shared<RNCNetInfoPackage>(ctx),
     std::make_shared<KeyboardControllerPackage>(ctx),
+    std::make_shared<FlashListPackage>(ctx)
   };
 }

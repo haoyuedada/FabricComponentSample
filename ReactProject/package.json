@@ -45,7 +45,8 @@
     "react-native": "0.72.5",
     "react-native-flipper-performance-plugin": "^0.4.0",
     "react-native-svg": "^15.0.0",
-    "turbo-module": "file:../turbo-module/turbo-module-1.0.0.tgz"
+    "turbo-module": "file:../turbo-module/turbo-module-1.0.0.tgz",
+    "@react-native-ohos/flash-list": "1.6.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

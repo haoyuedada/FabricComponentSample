@@ -9,7 +9,7 @@
 // initialProps = {};
 import { AppRegistry } from 'react-native';
 // import { name as appName } from './app.json';
-import App from './src/testTurboModule/test.tsx';
+// import App from './src/testTurboModule/test.tsx';
 // import Utils from './tests/Utils';
 
 // import RCTMessage from './tests/RCTMessage';
@@ -143,6 +143,7 @@ import App from './src/testTurboModule/test.tsx';
 // import App from './IR/260116160802092/react-native-clipboard/index.tsx'
 // import App from './tests/netInfo.tsx'
 // import App from './src/keyboardController.tsx'
+import App from './src/shopify-flash-list/demo.tsx'
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"
