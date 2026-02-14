@@ -36,7 +36,9 @@ export class UPRNSDKImpl{
       },
       // rnohWorkerScriptUrl: this.getRNOHWorkerScriptUrl(),
     }, {
-      launchURI: want.uri, onGetPackagerClientConfig: (buildMode) => buildMode === "DEBUG" ? {
+      disableCleaningRNInstances: this.onShouldDisableCleaningRNInstances(),
+      launchURI: want.uri,
+      onGetPackagerClientConfig: (buildMode) => buildMode === "DEBUG" ? {
         host: "localhost",
         port: 8081
       } : undefined,
@@ -44,7 +46,7 @@ export class UPRNSDKImpl{
     })
     AppStorage.setOrCreate('RNOHCoreContext', this._rnInstancesCoordinator.getRNOHCoreContext())
 
-    AppStorage.setOrCreate('rnInstancesCoordinator', this._rnInstancesCoordinator)
+    // AppStorage.setOrCreate('rnInstancesCoordinator', this._rnInstancesCoordinator)
     // MiJiaLog.onlyLogcat(TAG, "new MiRNSDKImpl success");
     // 日志
     LogUtil.init(0x1010, 'Pura', true, true);  //该方法建议在Ability里调用
@@ -53,6 +55,13 @@ export class UPRNSDKImpl{
     LogUtil.setTag("大裤衩"); //该方法建议在Ability里调用
     LogUtil.setHilog(true);  //该方法建议在Ability里调用
 
+  }
+
+  /**
+   * Return `true`, if your app bundle provides multiple RNAbilities, for each RNAbility.
+   */
+  onShouldDisableCleaningRNInstances(): boolean {
+    return false;
   }
 
   // getRNOHWorkerScriptUrl() {

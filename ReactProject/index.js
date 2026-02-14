@@ -16,7 +16,7 @@ import { AppRegistry } from 'react-native';
 // import FastImage from './tests/FastImage';
 // import App from './App'
 // import Modal from './tests/Modal'
-// import ScrollView from './tests/ScrollView'
+import ScrollView from './tests/ScrollView'
 // import QDScrollView from './tests/QDScrollView'
 // import RCT from './tests/RCT'
 // import FontSlice from './tests/FontSlice'
@@ -143,7 +143,8 @@ import { AppRegistry } from 'react-native';
 // import App from './IR/260116160802092/react-native-clipboard/index.tsx'
 // import App from './tests/netInfo.tsx'
 // import App from './src/keyboardController.tsx'
-import App from './src/shopify-flash-list/demo.tsx'
+// import App from './src/shopify-flash-list/demo.tsx'
+import App from './src/bottomSheet/App.tsx'
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"
