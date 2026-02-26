@@ -29,6 +29,7 @@ add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-reanimated/src/m
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-safe-area-context/src/main/cpp" ./safe-area)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-mjrefresh/src/main/cpp" ./mjrefresh)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-screens/src/main/cpp" ./screens)
+add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-pager-view/src/main/cpp" ./pager_view)
 # RNOH_END: manual_package_linking_1
 
 #file(GLOB GENERATED_CPP_FILES "./generated/*.cpp")
@@ -48,4 +49,5 @@ target_link_libraries(rnoh_app PUBLIC rnoh_safe_area)
 target_link_libraries(rnoh_app PUBLIC rnoh_gesture_handler)
 target_link_libraries(rnoh_app PUBLIC rnoh_mjrefresh)
 target_link_libraries(rnoh_app PUBLIC rnoh_screens)
+target_link_libraries(rnoh_app PUBLIC rnoh_pager_view)
 # RNOH_END: manual_package_linking_2
