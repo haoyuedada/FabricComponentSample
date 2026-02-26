@@ -1,0 +1,471 @@
+Device info:HUAWEI Mate X5
+Build info:ALT-AL10 6.0.0.130(SP30C00E130R6P8log)
+Fingerprint:eb3b15df4873d894d262d01e6ed0bb1ae7fff8897cf9d4c7fed38a2b6f574b26
+Module name:com.sdu.didi.hmos.psnger
+Version:7.2.6
+VersionCode:1407020601
+PreInstalled:No
+Foreground:No
+Pid:34993
+Uid:20020031
+Process life time:97s
+Process Memory(kB): 1099508(Rss)
+Device Memory(kB): Total 11690592, Free 844340, Available 3803136
+Reason:APP_INPUT_BLOCK
+appfreeze: com.sdu.didi.hmos.psnger APP_INPUT_BLOCK at 20260206131107
+DisplayPowerInfo:powerState:AWAKE
+Page switch history:
+  13:11:00.783 /ets/pages/MainPage:onetravel://home_page/entrance
+  13:10:57.201 /ets/pages/MainPage:158
+  13:10:55.201 /ets/pages/MainPage:onetravel://home_page/entrance
+  13:09:57.291 :enters foreground
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+DOMAIN:AAFWK
+STRINGID:APP_INPUT_BLOCK
+TIMESTAMP:2026/02/06-13:11:07:443
+PID:34993
+UID:20020031
+PACKAGE_NAME:com.sdu.didi.hmos.psnger
+PROCESS_NAME:com.sdu.didi.hmos.psnger
+*******************************************
+start time: 2026/02/06-13:11:07:458
+DOMAIN = AAFWK
+EVENTNAME = APP_INPUT_BLOCK
+TIMESTAMP = 2026/02/06-13:11:07:443
+PID = 34993
+UID = 20020031
+TID = 34993
+PACKAGE_NAME = com.sdu.didi.hmos.psnger
+PROCESS_NAME = com.sdu.didi.hmos.psnger
+eventLog_action = ffrt,t:input,t,cmd:c,cmd:cci,cmd:m,cmd:dam,tr,k:SysRqFile,hot,sli
+eventLog_interval = 10
+MSG = 
+Fault time:2026/02/06-13:11:06
+User input does not respond!
+
+Main handler dump start time: 2026-02-06 13:11:06.714
+mainHandler dump is:
+ EventHandler dump begin curTime: 2026-02-06 13:11:06.714
+ Event runner (Thread name = , Thread ID = 34993) is running
+ Current Running: start at 2026-02-06 13:11:01.297, Event { send thread = 34993, send time = 2026-02-06 13:11:01.297, handle time = 2026-02-06 13:11:01.297, trigger time = 2026-02-06 13:11:01.297, task name = uvLoopTask, caller = [event_queue.cpp(HandleFileDescriptorEvent:277)] }
+ History event queue information:
+ No. 0 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.292, handle time = 2026-03-28 06:13:48.586, trigger time = 2026-02-06 13:11:01.292, completeTime time = 2026-02-06 13:11:01.293, priority = VIP, task name = vSyncTask, caller = [event_queue.cpp(PostTaskForVsync:199)] }
+ No. 1 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.293, handle time = 2026-02-06 13:11:01.293, trigger time = 2026-02-06 13:11:01.293, completeTime time = 2026-02-06 13:11:01.293, priority = High, task name = uvLoopTask, caller = [event_queue.cpp(HandleFileDescriptorEvent:277)] }
+ No. 2 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.242, handle time = 2026-02-06 13:11:01.293, trigger time = 2026-02-06 13:11:01.293, completeTime time = 2026-02-06 13:11:01.293, priority = Low, task name = ArkUIIdleTask, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No. 3 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.279, handle time = 2026-02-06 13:11:01.295, trigger time = 2026-02-06 13:11:01.296, completeTime time = 2026-02-06 13:11:01.296, priority = Low, task name = uv_timer_task, caller = [ohos_loop_handler.cpp(OnTriggered:72)] }
+ No. 4 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.296, handle time = 2026-02-06 13:11:01.296, trigger time = 2026-02-06 13:11:01.296, completeTime time = 2026-02-06 13:11:01.297, priority = High, task name = uvLoopTask, caller = [event_queue.cpp(HandleFileDescriptorEvent:277)] }
+ No. 5 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.297, handle time = 2026-02-06 13:11:01.297, trigger time = 2026-02-06 13:11:01.297, completeTime time = 2026-02-06 13:11:01.297, priority = High, task name = uvLoopTask, caller = [event_queue.cpp(HandleFileDescriptorEvent:277)] }
+ No. 6 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.297, handle time = 2026-02-06 13:11:01.297, trigger time = 2026-02-06 13:11:01.297, completeTime time = , priority = High, task name = uvLoopTask, caller = [event_queue.cpp(HandleFileDescriptorEvent:277)] }
+ No. 7 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.260, handle time = 2026-02-06 13:11:01.260, trigger time = 2026-02-06 13:11:01.260, completeTime time = 2026-02-06 13:11:01.261, priority = High, task name = uvLoopTask, caller = [event_queue.cpp(HandleFileDescriptorEvent:277)] }
+ No. 8 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.261, handle time = 2026-02-06 13:11:01.261, trigger time = 2026-02-06 13:11:01.261, completeTime time = 2026-02-06 13:11:01.262, priority = High, task name = uvLoopTask, caller = [event_queue.cpp(HandleFileDescriptorEvent:277)] }
+ No. 9 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.262, handle time = 2026-02-06 13:11:01.262, trigger time = 2026-02-06 13:11:01.262, completeTime time = 2026-02-06 13:11:01.264, priority = High, task name = uvLoopTask, caller = [event_queue.cpp(HandleFileDescriptorEvent:277)] }
+ No. 10 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.264, handle time = 2026-02-06 13:11:01.264, trigger time = 2026-02-06 13:11:01.264, completeTime time = 2026-02-06 13:11:01.264, priority = High, task name = uvLoopTask, caller = [event_queue.cpp(HandleFileDescriptorEvent:277)] }
+ No. 11 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.264, handle time = 2026-02-06 13:11:01.264, trigger time = 2026-02-06 13:11:01.264, completeTime time = 2026-02-06 13:11:01.264, priority = High, task name = uvLoopTask, caller = [event_queue.cpp(HandleFileDescriptorEvent:277)] }
+ No. 12 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.266, handle time = 2026-03-28 06:13:48.560, trigger time = 2026-02-06 13:11:01.266, completeTime time = 2026-02-06 13:11:01.279, priority = VIP, task name = vSyncTask, caller = [event_queue.cpp(PostTaskForVsync:199)] }
+ No. 13 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.244, handle time = 2026-02-06 13:11:01.274, trigger time = 2026-02-06 13:11:01.279, completeTime time = 2026-02-06 13:11:01.279, priority = VIP, task name = ArkUIImageAnimatedPostPlayTask, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No. 14 : Event { send thread = 35853, send time = 2026-02-06 13:11:01.267, handle time = 2026-02-06 13:11:01.267, trigger time = 2026-02-06 13:11:01.279, completeTime time = 2026-02-06 13:11:01.279, priority = High, task name = WorkerHostOnMessageTask, caller = [worker.cpp(PostWorkerMessageTask:2161)] }
+ No. 15 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.216, handle time = 2026-02-06 13:11:01.267, trigger time = 2026-02-06 13:11:01.279, completeTime time = 2026-02-06 13:11:01.279, priority = Low, task name = ArkUIIdleTask, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No. 16 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.254, handle time = 2026-02-06 13:11:01.270, trigger time = 2026-02-06 13:11:01.279, completeTime time = 2026-02-06 13:11:01.279, priority = Low, task name = uv_timer_task, caller = [ohos_loop_handler.cpp(OnTriggered:72)] }
+ No. 17 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.225, handle time = 2026-02-06 13:11:01.276, trigger time = 2026-02-06 13:11:01.279, completeTime time = 2026-02-06 13:11:01.279, priority = Low, task name = ArkUIIdleTask, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No. 18 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.783, handle time = 2026-02-06 13:11:01.276, trigger time = 2026-02-06 13:11:01.279, completeTime time = 2026-02-06 13:11:01.279, priority = Low, task name = ArkUIGestureLongPressDeadlineTimer, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No. 19 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.278, handle time = 2026-03-28 06:13:48.572, trigger time = 2026-02-06 13:11:01.279, completeTime time = 2026-02-06 13:11:01.280, priority = VIP, task name = vSyncTask, caller = [event_queue.cpp(PostTaskForVsync:199)] }
+ No. 20 : Event { send thread = 36394, send time = 2026-02-06 13:11:01.279, handle time = 2026-02-06 13:11:01.279, trigger time = 2026-02-06 13:11:01.280, completeTime time = 2026-02-06 13:11:01.280, priority = VIP, task name = ArkUIImageDecodeAnimatedFrame, caller = [task_runner_adapter_impl.cpp(PostTask:33)] }
+ No. 21 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.280, handle time = 2026-02-06 13:11:01.280, trigger time = 2026-02-06 13:11:01.280, completeTime time = 2026-02-06 13:11:01.280, priority = High, task name = uvLoopTask, caller = [event_queue.cpp(HandleFileDescriptorEvent:277)] }
+ No. 22 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.280, handle time = 2026-02-06 13:11:01.280, trigger time = 2026-02-06 13:11:01.280, completeTime time = 2026-02-06 13:11:01.280, priority = High, task name = uvLoopTask, caller = [event_queue.cpp(HandleFileDescriptorEvent:277)] }
+ No. 23 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.280, handle time = 2026-02-06 13:11:01.280, trigger time = 2026-02-06 13:11:01.280, completeTime time = 2026-02-06 13:11:01.284, priority = High, task name = uvLoopTask, caller = [event_queue.cpp(HandleFileDescriptorEvent:277)] }
+ No. 24 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.233, handle time = 2026-02-06 13:11:01.284, trigger time = 2026-02-06 13:11:01.284, completeTime time = 2026-02-06 13:11:01.284, priority = Low, task name = ArkUIIdleTask, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No. 25 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.284, handle time = 2026-03-28 06:13:48.578, trigger time = 2026-02-06 13:11:01.284, completeTime time = 2026-02-06 13:11:01.285, priority = VIP, task name = vSyncTask, caller = [event_queue.cpp(PostTaskForVsync:199)] }
+ No. 26 : Event { send thread = 35853, send time = 2026-02-06 13:11:01.285, handle time = 2026-02-06 13:11:01.284, trigger time = 2026-02-06 13:11:01.285, completeTime time = 2026-02-06 13:11:01.285, priority = High, task name = WorkerHostOnMessageTask, caller = [worker.cpp(PostWorkerMessageTask:2161)] }
+ No. 27 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.285, handle time = 2026-02-06 13:11:01.285, trigger time = 2026-02-06 13:11:01.285, completeTime time = 2026-02-06 13:11:01.285, priority = High, task name = uvLoopTask, caller = [event_queue.cpp(HandleFileDescriptorEvent:277)] }
+ No. 28 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.285, handle time = 2026-02-06 13:11:01.285, trigger time = 2026-02-06 13:11:01.285, completeTime time = 2026-02-06 13:11:01.285, priority = High, task name = uvLoopTask, caller = [event_queue.cpp(HandleFileDescriptorEvent:277)] }
+ No. 29 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.285, handle time = 2026-02-06 13:11:01.285, trigger time = 2026-02-06 13:11:01.286, completeTime time = 2026-02-06 13:11:01.287, priority = High, task name = uvLoopTask, caller = [event_queue.cpp(HandleFileDescriptorEvent:277)] }
+ No. 30 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.287, handle time = 2026-02-06 13:11:01.287, trigger time = 2026-02-06 13:11:01.287, completeTime time = 2026-02-06 13:11:01.287, priority = High, task name = uvLoopTask, caller = [event_queue.cpp(HandleFileDescriptorEvent:277)] }
+ No. 31 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.287, handle time = 2026-02-06 13:11:01.287, trigger time = 2026-02-06 13:11:01.287, completeTime time = 2026-02-06 13:11:01.287, priority = High, task name = uvLoopTask, caller = [event_queue.cpp(HandleFileDescriptorEvent:277)] }
+ VIP priority event queue information:
+ No.1 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.279, handle time = 2026-02-06 13:11:01.309, task name = ArkUIImageAnimatedPostPlayTask, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.2 : Event { send thread = 35829, send time = 2026-02-06 13:11:01.616, handle time = 2026-02-06 13:11:01.616, task name = MMITask, caller = [deamon_io_waiter.cpp(HandleFileDescriptorEvent:209)] }
+ No.3 : Event { send thread = 35829, send time = 2026-02-06 13:11:01.665, handle time = 2026-02-06 13:11:01.665, task name = MMITask, caller = [deamon_io_waiter.cpp(HandleFileDescriptorEvent:209)] }
+ No.4 : Event { send thread = 35810, send time = 2026-02-06 13:11:02.097, handle time = 2026-02-06 13:11:02.097, id = 1, caller = [watchdog.cpp(Timer:253)] }
+ No.5 : Event { send thread = 35829, send time = 2026-02-06 13:11:02.329, handle time = 2026-02-06 13:11:02.329, task name = MMITask, caller = [deamon_io_waiter.cpp(HandleFileDescriptorEvent:209)] }
+ No.6 : Event { send thread = 35829, send time = 2026-02-06 13:11:02.368, handle time = 2026-02-06 13:11:02.368, task name = MMITask, caller = [deamon_io_waiter.cpp(HandleFileDescriptorEvent:209)] }
+ No.7 : Event { send thread = 35829, send time = 2026-02-06 13:11:02.374, handle time = 2026-02-06 13:11:02.374, task name = MMITask, caller = [deamon_io_waiter.cpp(HandleFileDescriptorEvent:209)] }
+ No.8 : Event { send thread = 35829, send time = 2026-02-06 13:11:02.379, handle time = 2026-02-06 13:11:02.379, task name = MMITask, caller = [deamon_io_waiter.cpp(HandleFileDescriptorEvent:209)] }
+ No.9 : Event { send thread = 35810, send time = 2026-02-06 13:11:05.083, handle time = 2026-02-06 13:11:05.083, id = 1, caller = [watchdog.cpp(Timer:253)] }
+ Total size of VIP events : 9
+ Immediate priority event queue information:
+ No.1 : Event { send thread = 35808, send time = 2026-02-06 13:11:02.292, handle time = 2026-02-06 13:11:02.292, task name = OnChange558, caller = [native_event.cpp(SendEventByEventHandler:311)] }
+ No.2 : Event { send thread = 35808, send time = 2026-02-06 13:11:02.292, handle time = 2026-02-06 13:11:02.292, task name = OnChange559, caller = [native_event.cpp(SendEventByEventHandler:311)] }
+ No.3 : Event { send thread = 35808, send time = 2026-02-06 13:11:02.292, handle time = 2026-02-06 13:11:02.292, task name = OnChange560, caller = [native_event.cpp(SendEventByEventHandler:311)] }
+ No.4 : Event { send thread = 35808, send time = 2026-02-06 13:11:02.292, handle time = 2026-02-06 13:11:02.292, task name = OnChange561, caller = [native_event.cpp(SendEventByEventHandler:311)] }
+ No.5 : Event { send thread = 35808, send time = 2026-02-06 13:11:02.367, handle time = 2026-02-06 13:11:02.367, task name = OnChange562, caller = [native_event.cpp(SendEventByEventHandler:311)] }
+ No.6 : Event { send thread = 35808, send time = 2026-02-06 13:11:02.367, handle time = 2026-02-06 13:11:02.367, task name = OnChange563, caller = [native_event.cpp(SendEventByEventHandler:311)] }
+ No.7 : Event { send thread = 35808, send time = 2026-02-06 13:11:02.367, handle time = 2026-02-06 13:11:02.367, task name = OnChange564, caller = [native_event.cpp(SendEventByEventHandler:311)] }
+ No.8 : Event { send thread = 35808, send time = 2026-02-06 13:11:02.367, handle time = 2026-02-06 13:11:02.367, task name = OnChange565, caller = [native_event.cpp(SendEventByEventHandler:311)] }
+ No.9 : Event { send thread = 35808, send time = 2026-02-06 13:11:03.011, handle time = 2026-02-06 13:11:03.011, task name = OnChange566, caller = [native_event.cpp(SendEventByEventHandler:311)] }
+ No.10 : Event { send thread = 35808, send time = 2026-02-06 13:11:03.011, handle time = 2026-02-06 13:11:03.011, task name = OnChange567, caller = [native_event.cpp(SendEventByEventHandler:311)] }
+ No.11 : Event { send thread = 35808, send time = 2026-02-06 13:11:03.011, handle time = 2026-02-06 13:11:03.011, task name = OnChange568, caller = [native_event.cpp(SendEventByEventHandler:311)] }
+ No.12 : Event { send thread = 35808, send time = 2026-02-06 13:11:03.011, handle time = 2026-02-06 13:11:03.011, task name = OnChange569, caller = [native_event.cpp(SendEventByEventHandler:311)] }
+ No.13 : Event { send thread = 35857, send time = 2026-02-06 13:11:05.944, handle time = 2026-02-06 13:11:05.944, task name = defaultName570, caller = [native_event.cpp(SendEventByEventHandler:311)] }
+ Total size of Immediate events : 13
+ High priority event queue information:
+ No.1 : Event { send thread = 35883, send time = 2026-02-06 13:11:01.303, handle time = 2026-02-06 13:11:01.303, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.2 : Event { send thread = 35820, send time = 2026-02-06 13:11:01.303, handle time = 2026-02-06 13:11:01.303, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.3 : Event { send thread = 35881, send time = 2026-02-06 13:11:01.303, handle time = 2026-02-06 13:11:01.303, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.4 : Event { send thread = 35918, send time = 2026-02-06 13:11:01.360, handle time = 2026-02-06 13:11:01.360, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.5 : Event { send thread = 35917, send time = 2026-02-06 13:11:01.360, handle time = 2026-02-06 13:11:01.360, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.6 : Event { send thread = 35918, send time = 2026-02-06 13:11:01.360, handle time = 2026-02-06 13:11:01.360, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.7 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.209, handle time = 2026-02-06 13:11:01.373, task name = ArkUIRosenWindowRenderServiceTask, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.8 : Event { send thread = 35820, send time = 2026-02-06 13:11:01.426, handle time = 2026-02-06 13:11:01.426, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.9 : Event { send thread = 35820, send time = 2026-02-06 13:11:01.426, handle time = 2026-02-06 13:11:01.426, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.10 : Event { send thread = 36418, send time = 2026-02-06 13:11:01.426, handle time = 2026-02-06 13:11:01.426, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.11 : Event { send thread = 35880, send time = 2026-02-06 13:11:01.488, handle time = 2026-02-06 13:11:01.488, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.12 : Event { send thread = 35917, send time = 2026-02-06 13:11:01.488, handle time = 2026-02-06 13:11:01.488, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.13 : Event { send thread = 35842, send time = 2026-02-06 13:11:01.488, handle time = 2026-02-06 13:11:01.488, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.14 : Event { send thread = 35881, send time = 2026-02-06 13:11:01.547, handle time = 2026-02-06 13:11:01.547, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.15 : Event { send thread = 35881, send time = 2026-02-06 13:11:01.547, handle time = 2026-02-06 13:11:01.547, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.16 : Event { send thread = 35881, send time = 2026-02-06 13:11:01.547, handle time = 2026-02-06 13:11:01.547, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.17 : Event { send thread = 35917, send time = 2026-02-06 13:11:01.598, handle time = 2026-02-06 13:11:01.598, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.18 : Event { send thread = 35842, send time = 2026-02-06 13:11:01.598, handle time = 2026-02-06 13:11:01.598, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.19 : Event { send thread = 35880, send time = 2026-02-06 13:11:01.598, handle time = 2026-02-06 13:11:01.598, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.20 : Event { send thread = 35881, send time = 2026-02-06 13:11:01.665, handle time = 2026-02-06 13:11:01.665, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.21 : Event { send thread = 35881, send time = 2026-02-06 13:11:01.665, handle time = 2026-02-06 13:11:01.665, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.22 : Event { send thread = 35881, send time = 2026-02-06 13:11:01.665, handle time = 2026-02-06 13:11:01.665, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.23 : Event { send thread = 35918, send time = 2026-02-06 13:11:01.719, handle time = 2026-02-06 13:11:01.719, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.24 : Event { send thread = 35918, send time = 2026-02-06 13:11:01.719, handle time = 2026-02-06 13:11:01.719, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.25 : Event { send thread = 35880, send time = 2026-02-06 13:11:01.719, handle time = 2026-02-06 13:11:01.719, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.26 : Event { send thread = 35917, send time = 2026-02-06 13:11:01.782, handle time = 2026-02-06 13:11:01.782, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.27 : Event { send thread = 35842, send time = 2026-02-06 13:11:01.782, handle time = 2026-02-06 13:11:01.782, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.28 : Event { send thread = 35917, send time = 2026-02-06 13:11:01.782, handle time = 2026-02-06 13:11:01.782, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.29 : Event { send thread = 35820, send time = 2026-02-06 13:11:01.841, handle time = 2026-02-06 13:11:01.841, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.30 : Event { send thread = 35820, send time = 2026-02-06 13:11:01.841, handle time = 2026-02-06 13:11:01.841, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.31 : Event { send thread = 35820, send time = 2026-02-06 13:11:01.841, handle time = 2026-02-06 13:11:01.841, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.32 : Event { send thread = 35917, send time = 2026-02-06 13:11:01.901, handle time = 2026-02-06 13:11:01.901, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.33 : Event { send thread = 35917, send time = 2026-02-06 13:11:01.901, handle time = 2026-02-06 13:11:01.901, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.34 : Event { send thread = 35917, send time = 2026-02-06 13:11:01.902, handle time = 2026-02-06 13:11:01.902, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.35 : Event { send thread = 35880, send time = 2026-02-06 13:11:01.961, handle time = 2026-02-06 13:11:01.961, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.36 : Event { send thread = 35880, send time = 2026-02-06 13:11:01.961, handle time = 2026-02-06 13:11:01.961, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.37 : Event { send thread = 35881, send time = 2026-02-06 13:11:01.962, handle time = 2026-02-06 13:11:01.961, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.38 : Event { send thread = 35883, send time = 2026-02-06 13:11:02.027, handle time = 2026-02-06 13:11:02.027, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.39 : Event { send thread = 36418, send time = 2026-02-06 13:11:02.027, handle time = 2026-02-06 13:11:02.027, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.40 : Event { send thread = 35883, send time = 2026-02-06 13:11:02.027, handle time = 2026-02-06 13:11:02.027, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.41 : Event { send thread = 35881, send time = 2026-02-06 13:11:02.085, handle time = 2026-02-06 13:11:02.085, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.42 : Event { send thread = 35881, send time = 2026-02-06 13:11:02.085, handle time = 2026-02-06 13:11:02.085, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.43 : Event { send thread = 35880, send time = 2026-02-06 13:11:02.085, handle time = 2026-02-06 13:11:02.085, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.44 : Event { send thread = 35883, send time = 2026-02-06 13:11:02.144, handle time = 2026-02-06 13:11:02.144, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.45 : Event { send thread = 35883, send time = 2026-02-06 13:11:02.144, handle time = 2026-02-06 13:11:02.144, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.46 : Event { send thread = 36418, send time = 2026-02-06 13:11:02.144, handle time = 2026-02-06 13:11:02.144, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.47 : Event { send thread = 35880, send time = 2026-02-06 13:11:02.211, handle time = 2026-02-06 13:11:02.211, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.48 : Event { send thread = 35880, send time = 2026-02-06 13:11:02.211, handle time = 2026-02-06 13:11:02.211, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.49 : Event { send thread = 35918, send time = 2026-02-06 13:11:02.211, handle time = 2026-02-06 13:11:02.211, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.50 : Event { send thread = 35883, send time = 2026-02-06 13:11:02.259, handle time = 2026-02-06 13:11:02.259, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.51 : Event { send thread = 36418, send time = 2026-02-06 13:11:02.259, handle time = 2026-02-06 13:11:02.259, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.52 : Event { send thread = 35883, send time = 2026-02-06 13:11:02.259, handle time = 2026-02-06 13:11:02.259, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.53 : Event { send thread = 35820, send time = 2026-02-06 13:11:02.321, handle time = 2026-02-06 13:11:02.321, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.54 : Event { send thread = 35820, send time = 2026-02-06 13:11:02.321, handle time = 2026-02-06 13:11:02.321, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.55 : Event { send thread = 35820, send time = 2026-02-06 13:11:02.321, handle time = 2026-02-06 13:11:02.321, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.56 : Event { send thread = 35883, send time = 2026-02-06 13:11:02.380, handle time = 2026-02-06 13:11:02.380, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.57 : Event { send thread = 35883, send time = 2026-02-06 13:11:02.380, handle time = 2026-02-06 13:11:02.380, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.58 : Event { send thread = 35842, send time = 2026-02-06 13:11:02.380, handle time = 2026-02-06 13:11:02.380, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.59 : Event { send thread = 35880, send time = 2026-02-06 13:11:02.444, handle time = 2026-02-06 13:11:02.444, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.60 : Event { send thread = 35881, send time = 2026-02-06 13:11:02.444, handle time = 2026-02-06 13:11:02.444, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.61 : Event { send thread = 35820, send time = 2026-02-06 13:11:02.444, handle time = 2026-02-06 13:11:02.444, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.62 : Event { send thread = 36418, send time = 2026-02-06 13:11:02.510, handle time = 2026-02-06 13:11:02.510, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.63 : Event { send thread = 36418, send time = 2026-02-06 13:11:02.510, handle time = 2026-02-06 13:11:02.510, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.64 : Event { send thread = 35842, send time = 2026-02-06 13:11:02.511, handle time = 2026-02-06 13:11:02.511, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.65 : Event { send thread = 35881, send time = 2026-02-06 13:11:02.562, handle time = 2026-02-06 13:11:02.562, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.66 : Event { send thread = 35881, send time = 2026-02-06 13:11:02.562, handle time = 2026-02-06 13:11:02.562, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.67 : Event { send thread = 35820, send time = 2026-02-06 13:11:02.563, handle time = 2026-02-06 13:11:02.563, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.68 : Event { send thread = 35883, send time = 2026-02-06 13:11:02.624, handle time = 2026-02-06 13:11:02.624, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.69 : Event { send thread = 36418, send time = 2026-02-06 13:11:02.624, handle time = 2026-02-06 13:11:02.624, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.70 : Event { send thread = 35883, send time = 2026-02-06 13:11:02.624, handle time = 2026-02-06 13:11:02.624, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.71 : Event { send thread = 35918, send time = 2026-02-06 13:11:02.678, handle time = 2026-02-06 13:11:02.678, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.72 : Event { send thread = 35918, send time = 2026-02-06 13:11:02.678, handle time = 2026-02-06 13:11:02.678, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.73 : Event { send thread = 35881, send time = 2026-02-06 13:11:02.678, handle time = 2026-02-06 13:11:02.678, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.74 : Event { send thread = 36418, send time = 2026-02-06 13:11:02.742, handle time = 2026-02-06 13:11:02.742, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.75 : Event { send thread = 35883, send time = 2026-02-06 13:11:02.742, handle time = 2026-02-06 13:11:02.742, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.76 : Event { send thread = 36418, send time = 2026-02-06 13:11:02.742, handle time = 2026-02-06 13:11:02.742, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.77 : Event { send thread = 35820, send time = 2026-02-06 13:11:02.803, handle time = 2026-02-06 13:11:02.803, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.78 : Event { send thread = 35820, send time = 2026-02-06 13:11:02.803, handle time = 2026-02-06 13:11:02.803, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.79 : Event { send thread = 35881, send time = 2026-02-06 13:11:02.803, handle time = 2026-02-06 13:11:02.803, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.80 : Event { send thread = 36418, send time = 2026-02-06 13:11:02.861, handle time = 2026-02-06 13:11:02.861, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.81 : Event { send thread = 35842, send time = 2026-02-06 13:11:02.861, handle time = 2026-02-06 13:11:02.861, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.82 : Event { send thread = 36418, send time = 2026-02-06 13:11:02.861, handle time = 2026-02-06 13:11:02.861, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.83 : Event { send thread = 35880, send time = 2026-02-06 13:11:02.921, handle time = 2026-02-06 13:11:02.921, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.84 : Event { send thread = 35881, send time = 2026-02-06 13:11:02.921, handle time = 2026-02-06 13:11:02.921, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.85 : Event { send thread = 35880, send time = 2026-02-06 13:11:02.921, handle time = 2026-02-06 13:11:02.921, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.86 : Event { send thread = 35883, send time = 2026-02-06 13:11:02.978, handle time = 2026-02-06 13:11:02.978, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.87 : Event { send thread = 35842, send time = 2026-02-06 13:11:02.978, handle time = 2026-02-06 13:11:02.978, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.88 : Event { send thread = 35917, send time = 2026-02-06 13:11:02.978, handle time = 2026-02-06 13:11:02.978, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.89 : Event { send thread = 35880, send time = 2026-02-06 13:11:03.040, handle time = 2026-02-06 13:11:03.040, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.90 : Event { send thread = 35820, send time = 2026-02-06 13:11:03.040, handle time = 2026-02-06 13:11:03.040, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.91 : Event { send thread = 35880, send time = 2026-02-06 13:11:03.040, handle time = 2026-02-06 13:11:03.040, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.92 : Event { send thread = 36418, send time = 2026-02-06 13:11:03.103, handle time = 2026-02-06 13:11:03.103, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.93 : Event { send thread = 35917, send time = 2026-02-06 13:11:03.103, handle time = 2026-02-06 13:11:03.103, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.94 : Event { send thread = 36418, send time = 2026-02-06 13:11:03.103, handle time = 2026-02-06 13:11:03.103, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.95 : Event { send thread = 35820, send time = 2026-02-06 13:11:03.163, handle time = 2026-02-06 13:11:03.163, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.96 : Event { send thread = 35881, send time = 2026-02-06 13:11:03.163, handle time = 2026-02-06 13:11:03.163, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.97 : Event { send thread = 35918, send time = 2026-02-06 13:11:03.163, handle time = 2026-02-06 13:11:03.163, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.98 : Event { send thread = 35883, send time = 2026-02-06 13:11:03.223, handle time = 2026-02-06 13:11:03.223, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.99 : Event { send thread = 35883, send time = 2026-02-06 13:11:03.223, handle time = 2026-02-06 13:11:03.223, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.100 : Event { send thread = 35842, send time = 2026-02-06 13:11:03.223, handle time = 2026-02-06 13:11:03.223, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.101 : Event { send thread = 35881, send time = 2026-02-06 13:11:03.280, handle time = 2026-02-06 13:11:03.280, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.102 : Event { send thread = 35881, send time = 2026-02-06 13:11:03.281, handle time = 2026-02-06 13:11:03.281, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.103 : Event { send thread = 35881, send time = 2026-02-06 13:11:03.281, handle time = 2026-02-06 13:11:03.281, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.104 : Event { send thread = 35842, send time = 2026-02-06 13:11:03.350, handle time = 2026-02-06 13:11:03.350, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.105 : Event { send thread = 35917, send time = 2026-02-06 13:11:03.350, handle time = 2026-02-06 13:11:03.350, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.106 : Event { send thread = 36418, send time = 2026-02-06 13:11:03.350, handle time = 2026-02-06 13:11:03.350, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.107 : Event { send thread = 35881, send time = 2026-02-06 13:11:03.409, handle time = 2026-02-06 13:11:03.409, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.108 : Event { send thread = 35880, send time = 2026-02-06 13:11:03.409, handle time = 2026-02-06 13:11:03.409, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.109 : Event { send thread = 35842, send time = 2026-02-06 13:11:03.410, handle time = 2026-02-06 13:11:03.410, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.110 : Event { send thread = 35917, send time = 2026-02-06 13:11:03.468, handle time = 2026-02-06 13:11:03.468, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.111 : Event { send thread = 35880, send time = 2026-02-06 13:11:03.468, handle time = 2026-02-06 13:11:03.468, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.112 : Event { send thread = 35880, send time = 2026-02-06 13:11:03.468, handle time = 2026-02-06 13:11:03.468, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.113 : Event { send thread = 35918, send time = 2026-02-06 13:11:03.520, handle time = 2026-02-06 13:11:03.520, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.114 : Event { send thread = 35842, send time = 2026-02-06 13:11:03.520, handle time = 2026-02-06 13:11:03.520, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.115 : Event { send thread = 35918, send time = 2026-02-06 13:11:03.520, handle time = 2026-02-06 13:11:03.520, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.116 : Event { send thread = 36418, send time = 2026-02-06 13:11:03.592, handle time = 2026-02-06 13:11:03.592, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.117 : Event { send thread = 36418, send time = 2026-02-06 13:11:03.592, handle time = 2026-02-06 13:11:03.592, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.118 : Event { send thread = 35917, send time = 2026-02-06 13:11:03.592, handle time = 2026-02-06 13:11:03.592, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.119 : Event { send thread = 35842, send time = 2026-02-06 13:11:03.654, handle time = 2026-02-06 13:11:03.654, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.120 : Event { send thread = 35842, send time = 2026-02-06 13:11:03.654, handle time = 2026-02-06 13:11:03.654, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.121 : Event { send thread = 35881, send time = 2026-02-06 13:11:03.654, handle time = 2026-02-06 13:11:03.654, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.122 : Event { send thread = 35917, send time = 2026-02-06 13:11:03.704, handle time = 2026-02-06 13:11:03.704, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.123 : Event { send thread = 35917, send time = 2026-02-06 13:11:03.704, handle time = 2026-02-06 13:11:03.704, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.124 : Event { send thread = 35917, send time = 2026-02-06 13:11:03.704, handle time = 2026-02-06 13:11:03.704, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.125 : Event { send thread = 35918, send time = 2026-02-06 13:11:03.764, handle time = 2026-02-06 13:11:03.764, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.126 : Event { send thread = 35918, send time = 2026-02-06 13:11:03.764, handle time = 2026-02-06 13:11:03.764, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.127 : Event { send thread = 35881, send time = 2026-02-06 13:11:03.764, handle time = 2026-02-06 13:11:03.764, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.128 : Event { send thread = 35880, send time = 2026-02-06 13:11:03.824, handle time = 2026-02-06 13:11:03.824, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.129 : Event { send thread = 35880, send time = 2026-02-06 13:11:03.824, handle time = 2026-02-06 13:11:03.824, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.130 : Event { send thread = 35883, send time = 2026-02-06 13:11:03.824, handle time = 2026-02-06 13:11:03.824, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.131 : Event { send thread = 35820, send time = 2026-02-06 13:11:03.883, handle time = 2026-02-06 13:11:03.883, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.132 : Event { send thread = 35918, send time = 2026-02-06 13:11:03.882, handle time = 2026-02-06 13:11:03.882, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.133 : Event { send thread = 35842, send time = 2026-02-06 13:11:03.883, handle time = 2026-02-06 13:11:03.883, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.134 : Event { send thread = 35917, send time = 2026-02-06 13:11:03.943, handle time = 2026-02-06 13:11:03.943, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.135 : Event { send thread = 35917, send time = 2026-02-06 13:11:03.943, handle time = 2026-02-06 13:11:03.943, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.136 : Event { send thread = 36418, send time = 2026-02-06 13:11:03.943, handle time = 2026-02-06 13:11:03.943, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.137 : Event { send thread = 35820, send time = 2026-02-06 13:11:04.008, handle time = 2026-02-06 13:11:04.008, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.138 : Event { send thread = 35820, send time = 2026-02-06 13:11:04.008, handle time = 2026-02-06 13:11:04.008, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.139 : Event { send thread = 35918, send time = 2026-02-06 13:11:04.008, handle time = 2026-02-06 13:11:04.008, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.140 : Event { send thread = 36418, send time = 2026-02-06 13:11:04.058, handle time = 2026-02-06 13:11:04.058, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.141 : Event { send thread = 36418, send time = 2026-02-06 13:11:04.058, handle time = 2026-02-06 13:11:04.058, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.142 : Event { send thread = 36418, send time = 2026-02-06 13:11:04.058, handle time = 2026-02-06 13:11:04.058, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.143 : Event { send thread = 35820, send time = 2026-02-06 13:11:04.117, handle time = 2026-02-06 13:11:04.117, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.144 : Event { send thread = 35820, send time = 2026-02-06 13:11:04.117, handle time = 2026-02-06 13:11:04.117, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.145 : Event { send thread = 35918, send time = 2026-02-06 13:11:04.117, handle time = 2026-02-06 13:11:04.117, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.146 : Event { send thread = 36418, send time = 2026-02-06 13:11:04.183, handle time = 2026-02-06 13:11:04.183, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.147 : Event { send thread = 36418, send time = 2026-02-06 13:11:04.183, handle time = 2026-02-06 13:11:04.183, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.148 : Event { send thread = 35883, send time = 2026-02-06 13:11:04.183, handle time = 2026-02-06 13:11:04.183, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.149 : Event { send thread = 35918, send time = 2026-02-06 13:11:04.243, handle time = 2026-02-06 13:11:04.243, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.150 : Event { send thread = 35918, send time = 2026-02-06 13:11:04.243, handle time = 2026-02-06 13:11:04.243, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.151 : Event { send thread = 35842, send time = 2026-02-06 13:11:04.243, handle time = 2026-02-06 13:11:04.243, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.152 : Event { send thread = 36418, send time = 2026-02-06 13:11:04.305, handle time = 2026-02-06 13:11:04.305, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.153 : Event { send thread = 35917, send time = 2026-02-06 13:11:04.305, handle time = 2026-02-06 13:11:04.305, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.154 : Event { send thread = 36418, send time = 2026-02-06 13:11:04.305, handle time = 2026-02-06 13:11:04.305, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.155 : Event { send thread = 35881, send time = 2026-02-06 13:11:04.361, handle time = 2026-02-06 13:11:04.361, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.156 : Event { send thread = 35820, send time = 2026-02-06 13:11:04.361, handle time = 2026-02-06 13:11:04.361, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.157 : Event { send thread = 35918, send time = 2026-02-06 13:11:04.362, handle time = 2026-02-06 13:11:04.362, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.158 : Event { send thread = 36418, send time = 2026-02-06 13:11:04.418, handle time = 2026-02-06 13:11:04.418, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.159 : Event { send thread = 36418, send time = 2026-02-06 13:11:04.418, handle time = 2026-02-06 13:11:04.418, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.160 : Event { send thread = 36418, send time = 2026-02-06 13:11:04.418, handle time = 2026-02-06 13:11:04.418, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.161 : Event { send thread = 35820, send time = 2026-02-06 13:11:04.481, handle time = 2026-02-06 13:11:04.481, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.162 : Event { send thread = 35820, send time = 2026-02-06 13:11:04.481, handle time = 2026-02-06 13:11:04.481, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.163 : Event { send thread = 35918, send time = 2026-02-06 13:11:04.481, handle time = 2026-02-06 13:11:04.481, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.164 : Event { send thread = 35917, send time = 2026-02-06 13:11:04.541, handle time = 2026-02-06 13:11:04.541, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.165 : Event { send thread = 35880, send time = 2026-02-06 13:11:04.541, handle time = 2026-02-06 13:11:04.541, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.166 : Event { send thread = 35917, send time = 2026-02-06 13:11:04.541, handle time = 2026-02-06 13:11:04.541, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.167 : Event { send thread = 35820, send time = 2026-02-06 13:11:04.605, handle time = 2026-02-06 13:11:04.605, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.168 : Event { send thread = 35881, send time = 2026-02-06 13:11:04.605, handle time = 2026-02-06 13:11:04.605, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.169 : Event { send thread = 35820, send time = 2026-02-06 13:11:04.605, handle time = 2026-02-06 13:11:04.605, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.170 : Event { send thread = 35880, send time = 2026-02-06 13:11:04.663, handle time = 2026-02-06 13:11:04.663, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.171 : Event { send thread = 35880, send time = 2026-02-06 13:11:04.663, handle time = 2026-02-06 13:11:04.663, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.172 : Event { send thread = 35917, send time = 2026-02-06 13:11:04.663, handle time = 2026-02-06 13:11:04.663, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.173 : Event { send thread = 35820, send time = 2026-02-06 13:11:04.722, handle time = 2026-02-06 13:11:04.722, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.174 : Event { send thread = 35820, send time = 2026-02-06 13:11:04.722, handle time = 2026-02-06 13:11:04.722, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.175 : Event { send thread = 35820, send time = 2026-02-06 13:11:04.722, handle time = 2026-02-06 13:11:04.722, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.176 : Event { send thread = 35880, send time = 2026-02-06 13:11:04.781, handle time = 2026-02-06 13:11:04.781, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.177 : Event { send thread = 35880, send time = 2026-02-06 13:11:04.781, handle time = 2026-02-06 13:11:04.781, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.178 : Event { send thread = 35880, send time = 2026-02-06 13:11:04.781, handle time = 2026-02-06 13:11:04.781, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.179 : Event { send thread = 35842, send time = 2026-02-06 13:11:04.849, handle time = 2026-02-06 13:11:04.849, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.180 : Event { send thread = 35917, send time = 2026-02-06 13:11:04.850, handle time = 2026-02-06 13:11:04.850, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.181 : Event { send thread = 35917, send time = 2026-02-06 13:11:04.850, handle time = 2026-02-06 13:11:04.850, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.182 : Event { send thread = 36418, send time = 2026-02-06 13:11:04.903, handle time = 2026-02-06 13:11:04.903, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.183 : Event { send thread = 35883, send time = 2026-02-06 13:11:04.903, handle time = 2026-02-06 13:11:04.903, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.184 : Event { send thread = 36418, send time = 2026-02-06 13:11:04.903, handle time = 2026-02-06 13:11:04.903, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.185 : Event { send thread = 35880, send time = 2026-02-06 13:11:04.961, handle time = 2026-02-06 13:11:04.961, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.186 : Event { send thread = 35842, send time = 2026-02-06 13:11:04.961, handle time = 2026-02-06 13:11:04.961, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.187 : Event { send thread = 35881, send time = 2026-02-06 13:11:04.962, handle time = 2026-02-06 13:11:04.962, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.188 : Event { send thread = 36418, send time = 2026-02-06 13:11:05.026, handle time = 2026-02-06 13:11:05.026, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.189 : Event { send thread = 35883, send time = 2026-02-06 13:11:05.026, handle time = 2026-02-06 13:11:05.026, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.190 : Event { send thread = 35918, send time = 2026-02-06 13:11:05.026, handle time = 2026-02-06 13:11:05.026, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.191 : Event { send thread = 35842, send time = 2026-02-06 13:11:05.082, handle time = 2026-02-06 13:11:05.082, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.192 : Event { send thread = 35880, send time = 2026-02-06 13:11:05.082, handle time = 2026-02-06 13:11:05.082, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.193 : Event { send thread = 35820, send time = 2026-02-06 13:11:05.082, handle time = 2026-02-06 13:11:05.082, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.194 : Event { send thread = 35917, send time = 2026-02-06 13:11:05.142, handle time = 2026-02-06 13:11:05.142, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.195 : Event { send thread = 35883, send time = 2026-02-06 13:11:05.142, handle time = 2026-02-06 13:11:05.142, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.196 : Event { send thread = 35917, send time = 2026-02-06 13:11:05.142, handle time = 2026-02-06 13:11:05.142, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.197 : Event { send thread = 35880, send time = 2026-02-06 13:11:05.208, handle time = 2026-02-06 13:11:05.208, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.198 : Event { send thread = 35880, send time = 2026-02-06 13:11:05.208, handle time = 2026-02-06 13:11:05.208, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.199 : Event { send thread = 35880, send time = 2026-02-06 13:11:05.208, handle time = 2026-02-06 13:11:05.208, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.200 : Event { send thread = 35917, send time = 2026-02-06 13:11:05.267, handle time = 2026-02-06 13:11:05.267, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.201 : Event { send thread = 35918, send time = 2026-02-06 13:11:05.267, handle time = 2026-02-06 13:11:05.267, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.202 : Event { send thread = 36418, send time = 2026-02-06 13:11:05.267, handle time = 2026-02-06 13:11:05.267, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.203 : Event { send thread = 35880, send time = 2026-02-06 13:11:05.327, handle time = 2026-02-06 13:11:05.327, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.204 : Event { send thread = 35842, send time = 2026-02-06 13:11:05.327, handle time = 2026-02-06 13:11:05.327, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.205 : Event { send thread = 35880, send time = 2026-02-06 13:11:05.328, handle time = 2026-02-06 13:11:05.328, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.206 : Event { send thread = 36418, send time = 2026-02-06 13:11:05.382, handle time = 2026-02-06 13:11:05.382, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.207 : Event { send thread = 35883, send time = 2026-02-06 13:11:05.382, handle time = 2026-02-06 13:11:05.382, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.208 : Event { send thread = 35917, send time = 2026-02-06 13:11:05.382, handle time = 2026-02-06 13:11:05.382, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.209 : Event { send thread = 35881, send time = 2026-02-06 13:11:05.566, handle time = 2026-02-06 13:11:05.566, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.210 : Event { send thread = 35880, send time = 2026-02-06 13:11:05.566, handle time = 2026-02-06 13:11:05.566, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.211 : Event { send thread = 35881, send time = 2026-02-06 13:11:05.566, handle time = 2026-02-06 13:11:05.566, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.212 : Event { send thread = 35881, send time = 2026-02-06 13:11:05.566, handle time = 2026-02-06 13:11:05.566, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.213 : Event { send thread = 35881, send time = 2026-02-06 13:11:05.566, handle time = 2026-02-06 13:11:05.566, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.214 : Event { send thread = 35820, send time = 2026-02-06 13:11:05.566, handle time = 2026-02-06 13:11:05.566, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.215 : Event { send thread = 35880, send time = 2026-02-06 13:11:05.568, handle time = 2026-02-06 13:11:05.568, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.216 : Event { send thread = 35881, send time = 2026-02-06 13:11:05.569, handle time = 2026-02-06 13:11:05.569, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.217 : Event { send thread = 35918, send time = 2026-02-06 13:11:05.569, handle time = 2026-02-06 13:11:05.569, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.218 : Event { send thread = 35820, send time = 2026-02-06 13:11:05.625, handle time = 2026-02-06 13:11:05.625, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.219 : Event { send thread = 35820, send time = 2026-02-06 13:11:05.625, handle time = 2026-02-06 13:11:05.625, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.220 : Event { send thread = 35880, send time = 2026-02-06 13:11:05.625, handle time = 2026-02-06 13:11:05.625, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.221 : Event { send thread = 35883, send time = 2026-02-06 13:11:05.659, handle time = 2026-02-06 13:11:05.659, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.222 : Event { send thread = 35881, send time = 2026-02-06 13:11:05.682, handle time = 2026-02-06 13:11:05.683, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.223 : Event { send thread = 35918, send time = 2026-02-06 13:11:05.683, handle time = 2026-02-06 13:11:05.683, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.224 : Event { send thread = 36418, send time = 2026-02-06 13:11:05.683, handle time = 2026-02-06 13:11:05.683, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.225 : Event { send thread = 35880, send time = 2026-02-06 13:11:05.709, handle time = 2026-02-06 13:11:05.709, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.226 : Event { send thread = 35883, send time = 2026-02-06 13:11:05.709, handle time = 2026-02-06 13:11:05.709, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.227 : Event { send thread = 35880, send time = 2026-02-06 13:11:05.709, handle time = 2026-02-06 13:11:05.709, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.228 : Event { send thread = 35917, send time = 2026-02-06 13:11:05.786, handle time = 2026-02-06 13:11:05.786, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.229 : Event { send thread = 35881, send time = 2026-02-06 13:11:05.786, handle time = 2026-02-06 13:11:05.786, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.230 : Event { send thread = 36418, send time = 2026-02-06 13:11:05.787, handle time = 2026-02-06 13:11:05.787, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.231 : Event { send thread = 35883, send time = 2026-02-06 13:11:05.851, handle time = 2026-02-06 13:11:05.851, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.232 : Event { send thread = 35880, send time = 2026-02-06 13:11:05.851, handle time = 2026-02-06 13:11:05.851, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.233 : Event { send thread = 35883, send time = 2026-02-06 13:11:05.851, handle time = 2026-02-06 13:11:05.851, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.234 : Event { send thread = 35918, send time = 2026-02-06 13:11:05.904, handle time = 2026-02-06 13:11:05.904, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.235 : Event { send thread = 35918, send time = 2026-02-06 13:11:05.904, handle time = 2026-02-06 13:11:05.904, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.236 : Event { send thread = 36418, send time = 2026-02-06 13:11:05.904, handle time = 2026-02-06 13:11:05.904, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.237 : Event { send thread = 35880, send time = 2026-02-06 13:11:05.922, handle time = 2026-02-06 13:11:05.922, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.238 : Event { send thread = 35917, send time = 2026-02-06 13:11:05.922, handle time = 2026-02-06 13:11:05.922, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.239 : Event { send thread = 35917, send time = 2026-02-06 13:11:05.923, handle time = 2026-02-06 13:11:05.923, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.240 : Event { send thread = 35883, send time = 2026-02-06 13:11:05.964, handle time = 2026-02-06 13:11:05.964, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.241 : Event { send thread = 35918, send time = 2026-02-06 13:11:05.964, handle time = 2026-02-06 13:11:05.964, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.242 : Event { send thread = 36418, send time = 2026-02-06 13:11:05.964, handle time = 2026-02-06 13:11:05.964, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.243 : Event { send thread = 35917, send time = 2026-02-06 13:11:06.024, handle time = 2026-02-06 13:11:06.024, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.244 : Event { send thread = 35820, send time = 2026-02-06 13:11:06.024, handle time = 2026-02-06 13:11:06.024, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.245 : Event { send thread = 35842, send time = 2026-02-06 13:11:06.024, handle time = 2026-02-06 13:11:06.024, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.246 : Event { send thread = 36418, send time = 2026-02-06 13:11:06.080, handle time = 2026-02-06 13:11:06.080, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.247 : Event { send thread = 35883, send time = 2026-02-06 13:11:06.080, handle time = 2026-02-06 13:11:06.080, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.248 : Event { send thread = 35881, send time = 2026-02-06 13:11:06.080, handle time = 2026-02-06 13:11:06.080, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.249 : Event { send thread = 35820, send time = 2026-02-06 13:11:06.143, handle time = 2026-02-06 13:11:06.143, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.250 : Event { send thread = 35842, send time = 2026-02-06 13:11:06.143, handle time = 2026-02-06 13:11:06.143, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.251 : Event { send thread = 35820, send time = 2026-02-06 13:11:06.143, handle time = 2026-02-06 13:11:06.143, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.252 : Event { send thread = 35883, send time = 2026-02-06 13:11:06.205, handle time = 2026-02-06 13:11:06.205, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.253 : Event { send thread = 35883, send time = 2026-02-06 13:11:06.205, handle time = 2026-02-06 13:11:06.205, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.254 : Event { send thread = 35918, send time = 2026-02-06 13:11:06.205, handle time = 2026-02-06 13:11:06.205, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.255 : Event { send thread = 35842, send time = 2026-02-06 13:11:06.269, handle time = 2026-02-06 13:11:06.269, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.256 : Event { send thread = 35820, send time = 2026-02-06 13:11:06.269, handle time = 2026-02-06 13:11:06.269, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.257 : Event { send thread = 35917, send time = 2026-02-06 13:11:06.269, handle time = 2026-02-06 13:11:06.269, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.258 : Event { send thread = 35883, send time = 2026-02-06 13:11:06.325, handle time = 2026-02-06 13:11:06.325, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.259 : Event { send thread = 35918, send time = 2026-02-06 13:11:06.325, handle time = 2026-02-06 13:11:06.325, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.260 : Event { send thread = 35881, send time = 2026-02-06 13:11:06.325, handle time = 2026-02-06 13:11:06.325, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.261 : Event { send thread = 35842, send time = 2026-02-06 13:11:06.380, handle time = 2026-02-06 13:11:06.380, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.262 : Event { send thread = 35842, send time = 2026-02-06 13:11:06.380, handle time = 2026-02-06 13:11:06.380, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.263 : Event { send thread = 35917, send time = 2026-02-06 13:11:06.380, handle time = 2026-02-06 13:11:06.380, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.264 : Event { send thread = 36418, send time = 2026-02-06 13:11:06.444, handle time = 2026-02-06 13:11:06.444, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.265 : Event { send thread = 35881, send time = 2026-02-06 13:11:06.444, handle time = 2026-02-06 13:11:06.444, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.266 : Event { send thread = 36418, send time = 2026-02-06 13:11:06.444, handle time = 2026-02-06 13:11:06.444, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.267 : Event { send thread = 35883, send time = 2026-02-06 13:11:06.505, handle time = 2026-02-06 13:11:06.505, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.268 : Event { send thread = 35880, send time = 2026-02-06 13:11:06.505, handle time = 2026-02-06 13:11:06.505, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.269 : Event { send thread = 35842, send time = 2026-02-06 13:11:06.505, handle time = 2026-02-06 13:11:06.505, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.270 : Event { send thread = 35881, send time = 2026-02-06 13:11:06.560, handle time = 2026-02-06 13:11:06.560, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.271 : Event { send thread = 35881, send time = 2026-02-06 13:11:06.560, handle time = 2026-02-06 13:11:06.560, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.272 : Event { send thread = 35918, send time = 2026-02-06 13:11:06.560, handle time = 2026-02-06 13:11:06.560, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.273 : Event { send thread = 35880, send time = 2026-02-06 13:11:06.624, handle time = 2026-02-06 13:11:06.624, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.274 : Event { send thread = 35917, send time = 2026-02-06 13:11:06.624, handle time = 2026-02-06 13:11:06.624, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.275 : Event { send thread = 35880, send time = 2026-02-06 13:11:06.624, handle time = 2026-02-06 13:11:06.624, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.276 : Event { send thread = 35918, send time = 2026-02-06 13:11:06.679, handle time = 2026-02-06 13:11:06.679, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.277 : Event { send thread = 35918, send time = 2026-02-06 13:11:06.679, handle time = 2026-02-06 13:11:06.679, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ No.278 : Event { send thread = 35918, send time = 2026-02-06 13:11:06.679, handle time = 2026-02-06 13:11:06.679, task name = uv_io_cb, caller = [ohos_js_environment_impl.cpp(PostTaskToHandler:70)] }
+ Total size of High events : 278
+ Low priority event queue information:
+ No.1 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.249, handle time = 2026-02-06 13:11:01.300, task name = ArkUIIdleTask, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.2 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.258, handle time = 2026-02-06 13:11:01.309, task name = ArkUIIdleTask, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.3 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.295, handle time = 2026-02-06 13:11:01.311, task name = uv_timer_task, caller = [ohos_loop_handler.cpp(OnTriggered:72)] }
+ No.4 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.266, handle time = 2026-02-06 13:11:01.317, task name = ArkUIIdleTask, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.5 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.279, handle time = 2026-02-06 13:11:01.330, task name = ArkUIIdleTask, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.6 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.284, handle time = 2026-02-06 13:11:01.335, task name = ArkUIIdleTask, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.7 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.291, handle time = 2026-02-06 13:11:01.342, task name = ArkUIIdleTask, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.8 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.783, handle time = 2026-02-06 13:11:01.576, task name = ArkUIGestureLongPressDeadlineTimer, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.9 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.291, handle time = 2026-02-06 13:11:01.791, task name = ArkUIVsyncTimeoutCheck, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.10 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.291, handle time = 2026-02-06 13:11:01.891, task name = vsync_time_out_task_150293790588930, caller = [vsync_station.cpp(RequestVsync:148)] }
+ No.11 : Event { send thread = 34993, send time = 2026-02-06 13:10:59.501, handle time = 2026-02-06 13:11:02.501, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.12 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.195, handle time = 2026-02-06 13:11:03.195, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.13 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.196, handle time = 2026-02-06 13:11:03.196, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.14 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.196, handle time = 2026-02-06 13:11:03.196, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.15 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.196, handle time = 2026-02-06 13:11:03.196, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.16 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.196, handle time = 2026-02-06 13:11:03.196, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.17 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.196, handle time = 2026-02-06 13:11:03.196, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.18 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.196, handle time = 2026-02-06 13:11:03.196, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.19 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.196, handle time = 2026-02-06 13:11:03.196, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.20 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.196, handle time = 2026-02-06 13:11:03.196, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.21 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.201, handle time = 2026-02-06 13:11:03.201, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.22 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.201, handle time = 2026-02-06 13:11:03.201, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.23 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.201, handle time = 2026-02-06 13:11:03.201, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.24 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.201, handle time = 2026-02-06 13:11:03.201, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.25 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.201, handle time = 2026-02-06 13:11:03.201, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.26 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.201, handle time = 2026-02-06 13:11:03.201, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.27 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.201, handle time = 2026-02-06 13:11:03.201, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.28 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.201, handle time = 2026-02-06 13:11:03.201, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.29 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.201, handle time = 2026-02-06 13:11:03.201, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.30 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.265, handle time = 2026-02-06 13:11:03.265, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.31 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.266, handle time = 2026-02-06 13:11:03.266, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.32 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.267, handle time = 2026-02-06 13:11:03.267, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.33 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.268, handle time = 2026-02-06 13:11:03.268, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.34 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.901, handle time = 2026-02-06 13:11:03.901, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.35 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.901, handle time = 2026-02-06 13:11:03.901, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.36 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.901, handle time = 2026-02-06 13:11:03.901, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.37 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.902, handle time = 2026-02-06 13:11:03.902, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.38 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.902, handle time = 2026-02-06 13:11:03.902, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.39 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.902, handle time = 2026-02-06 13:11:03.902, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.40 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.902, handle time = 2026-02-06 13:11:03.902, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.41 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.902, handle time = 2026-02-06 13:11:03.902, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.42 : Event { send thread = 34993, send time = 2026-02-06 13:11:00.902, handle time = 2026-02-06 13:11:03.902, task name = ArkUIAnimationPrintVsyncInfo, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ No.43 : Event { send thread = 34993, send time = 2026-02-06 13:11:01.291, handle time = 2026-02-06 13:11:04.291, task name = ArkUIVsyncTimeoutCheck, caller = [task_runner_adapter_impl.cpp(PostDelayedTask:44)] }
+ Total size of Low events : 43
+ Idle priority event queue information:
+ Total size of Idle events : 0
+ Total event size : 343
+Main handler dump end time: 2026-02-06 13:11:06.722
+
+Catche stack trace start time: 2026-02-06 13:11:06.803
+
+Tid:34993, Name:idi.hmos.psnger
+#00 pc 00000000001ccfa8 /system/lib/ld-musl-aarch64.so.1(__timedwait_cp+156)(6dfe4ecea22714b3e8fc8be36e2d9484)
+#01 pc 00000000001cf078 /system/lib/ld-musl-aarch64.so.1(pthread_cond_timedwait+172)(6dfe4ecea22714b3e8fc8be36e2d9484)
+#02 pc 00000000000c4424 /data/storage/el1/bundle/libs/arm64/libc++_shared.so(std::__n1::condition_variable::wait(std::__n1::unique_lock<std::__n1::mutex>&)+20)(8674881902d2f35781cf2845a042de01609305af)
+#03 pc 00000000000ca08c /data/storage/el1/bundle/libs/arm64/libc++_shared.so(std::__n1::__shared_mutex_base::lock_shared()+84)(8674881902d2f35781cf2845a042de01609305af)
+#04 pc 000000000015954c /data/storage/el1/bundle/libs/arm64/libreactnative.so(facebook::react::ShadowTreeRegistry::visit(int, std::__n1::function<void (facebook::react::ShadowTree const&)> const&) const+28)(b8b2613df7a1872124bf822f519e3cc60167fd4d)
+#05 pc 0000000000273c6c /data/storage/el1/bundle/libs/arm64/libreactnative.so(facebook::react::UIManager::reportMount(int) const+112)(b8b2613df7a1872124bf822f519e3cc60167fd4d)
+#06 pc 00000000000eeaf0 /data/storage/el1/bundle/libs/arm64/librnoh_core.so(rnoh::SchedulerDelegate::reportMount(std::__n1::vector<facebook::react::ShadowViewMutation, std::__n1::allocator<facebook::react::ShadowViewMutation>> const&)+1428)(e00c6582f335f8beb604f90af739038a6942354d)
+#07 pc 00000000000f0ab0 /data/storage/el1/bundle/libs/arm64/librnoh_core.so(e00c6582f335f8beb604f90af739038a6942354d)
+#08 pc 0000000000253ed8 /data/storage/el1/bundle/libs/arm64/libreactnative.so(b8b2613df7a1872124bf822f519e3cc60167fd4d)
+#09 pc 000000000009301c /data/storage/el1/bundle/libs/arm64/librnoh_core.so(rnoh::SchedulerDelegate::performTransaction(std::__n1::shared_ptr<facebook::react::MountingCoordinator const> const&)+136)(e00c6582f335f8beb604f90af739038a6942354d)
+#10 pc 0000000000092f48 /data/storage/el1/bundle/libs/arm64/librnoh_core.so(rnoh::SchedulerDelegate::schedulerShouldRenderTransactions(std::__n1::shared_ptr<facebook::react::MountingCoordinator const> const&)+64)(e00c6582f335f8beb604f90af739038a6942354d)
+#11 pc 000000000013dc44 /data/storage/el1/bundle/libs/arm64/libreactnative.so(facebook::react::Scheduler::uiManagerDidFinishTransaction(std::__n1::shared_ptr<facebook::react::MountingCoordinator const>, bool)+252)(b8b2613df7a1872124bf822f519e3cc60167fd4d)
+#12 pc 000000000013d508 /data/storage/el1/bundle/libs/arm64/libreactnative.so(facebook::react::UIManager::shadowTreeDidFinishTransaction(std::__n1::shared_ptr<facebook::react::MountingCoordinator const>, bool) const+96)(b8b2613df7a1872124bf822f519e3cc60167fd4d)
+#13 pc 000000000013d334 /data/storage/el1/bundle/libs/arm64/libreactnative.so(facebook::react::ShadowTree::mount(facebook::react::ShadowTreeRevision, bool) const+272)(b8b2613df7a1872124bf822f519e3cc60167fd4d)
+#14 pc 000000000013c850 /data/storage/el1/bundle/libs/arm64/libreactnative.so(facebook::react::ShadowTree::tryCommit(std::__n1::function<std::__n1::shared_ptr<facebook::react::RootShadowNode> (facebook::react::RootShadowNode const&)> const&, facebook::react::ShadowTree::CommitOptions const&) const+1528)(b8b2613df7a1872124bf822f519e3cc60167fd4d)
+#15 pc 000000000013c22c /data/storage/el1/bundle/libs/arm64/libreactnative.so(facebook::react::ShadowTree::commit(std::__n1::function<std::__n1::shared_ptr<facebook::react::RootShadowNode> (facebook::react::RootShadowNode const&)> const&, facebook::react::ShadowTree::CommitOptions const&) const+28)(b8b2613df7a1872124bf822f519e3cc60167fd4d)
+#16 pc 0000000000063ff8 /data/storage/el1/bundle/libs/arm64/librnoh_reanimated.so(0824c481d9e9d3b538a52c37f258e29c6dcdcaba)
+#17 pc 0000000000159578 /data/storage/el1/bundle/libs/arm64/libreactnative.so(facebook::react::ShadowTreeRegistry::visit(int, std::__n1::function<void (facebook::react::ShadowTree const&)> const&) const+72)(b8b2613df7a1872124bf822f519e3cc60167fd4d)
+#18 pc 0000000000063d9c /data/storage/el1/bundle/libs/arm64/librnoh_reanimated.so(reanimated::ReanimatedMountHook::shadowTreeDidMount(std::__n1::shared_ptr<facebook::react::RootShadowNode const> const&, double)+244)(0824c481d9e9d3b538a52c37f258e29c6dcdcaba)
+#19 pc 0000000000273cd8 /data/storage/el1/bundle/libs/arm64/libreactnative.so(facebook::react::UIManager::reportMount(int) const+220)(b8b2613df7a1872124bf822f519e3cc60167fd4d)
+#20 pc 00000000000eeaf0 /data/storage/el1/bundle/libs/arm64/librnoh_core.so(rnoh::SchedulerDelegate::reportMount(std::__n1::vector<facebook::react::ShadowViewMutation, std::__n1::allocator<facebook::react::ShadowViewMutation>> const&)+1428)(e00c6582f335f8beb604f90af739038a6942354d)
+#21 pc 00000000000f18f4 /data/storage/el1/bundle/libs/arm64/librnoh_core.so(e00c6582f335f8beb604f90af739038a6942354d)
+#22 pc 00000000000875bc /data/storage/el1/bundle/libs/arm64/librnoh_core.so(rnoh::EventLoopTaskRunner::executeTask()+176)(e00c6582f335f8beb604f90af739038a6942354d)
+#23 pc 00000000000a631c /data/storage/el1/bundle/libs/arm64/librnoh_core.so(rnoh::NapiTaskRunner::executeTask()+164)(e00c6582f335f8beb604f90af739038a6942354d)
+#24 pc 000000000001a628 /system/lib64/platformsdk/libuv.so(uv__async_io+428)(4434249df54b21daa1e9913212d791f5)
+#25 pc 000000000002e718 /system/lib64/platformsdk/libuv.so(uv__io_poll+1064)(4434249df54b21daa1e9913212d791f5)
+#26 pc 000000000001ae44 /system/lib64/platformsdk/libuv.so(uv_run+548)(4434249df54b21daa1e9913212d791f5)
+#27 pc 00000000000a1d54 /system/lib64/platformsdk/libruntime.z.so(OHOS::AbilityRuntime::OHOSLoopHandler::OnTriggered()+232)(43ff7e52edab25fdcd33a6603a965d40)
+#28 pc 00000000000a1c1c /system/lib64/platformsdk/libruntime.z.so(OHOS::AbilityRuntime::OHOSLoopHandler::OnReadable(int)+212)(43ff7e52edab25fdcd33a6603a965d40)
