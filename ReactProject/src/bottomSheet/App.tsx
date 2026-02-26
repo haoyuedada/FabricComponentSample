@@ -215,8 +215,8 @@
 
 
 import React, { useCallback, useRef, useMemo } from "react";
-import { StyleSheet, View, Text, Button } from "react-native";
-import BottomSheet, { BottomSheetView,BottomSheetScrollView } from "@gorhom/bottom-sheet";
+import { StyleSheet, View, Text, Button, ScrollView } from "react-native";
+import BottomSheet, { BottomSheetView, BottomSheetScrollView } from "@gorhom/bottom-sheet";
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const App = () => {
@@ -248,13 +248,18 @@ const App = () => {
         ref={sheetRef}
         snapPoints={snapPoints}
         onChange={handleSheetChange}
-  
+
       >
         <BottomSheetScrollView>
-        {[...Array(50)].map((_, index) => (
-<Text style={{ textAlign: 'center', padding: 50 }} key={index}>第 {index + 1} 个文本</Text>
-))}
+          {[...Array(50)].map((_, index) => (
+            <Text style={{ textAlign: 'center', padding: 50 }} key={index}>第 {index + 1} 个文本</Text>
+          ))}
         </BottomSheetScrollView>
+        {/* <ScrollView>
+          {[...Array(50)].map((_, index) => (
+            <Text style={{ textAlign: 'center', padding: 50 }} key={index}>第 {index + 1} 个文本</Text>
+          ))}
+        </ScrollView> */}
       </BottomSheet>
     </GestureHandlerRootView>
   );

@@ -11,6 +11,7 @@ import GestureHandlerPackage from '@react-native-ohos/react-native-gesture-handl
 import { ReanimatedPackage} from '@react-native-ohos/react-native-reanimated/ts';
 import { SafeAreaViewPackage } from '@react-native-ohos/react-native-safe-area-context/ts';
 import RNOHScreensPackage from "@react-native-ohos/react-native-screens"
+import { ViewPagerPackage } from '@react-native-ohos/react-native-pager-view/ts';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
@@ -18,6 +19,7 @@ export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
     new GestureHandlerPackage(ctx),
     new ReanimatedPackage(ctx),
     new SafeAreaViewPackage(ctx),
-    new RNOHScreensPackage(ctx)
+    new RNOHScreensPackage(ctx),
+    new ViewPagerPackage(ctx)
   ];
 }
