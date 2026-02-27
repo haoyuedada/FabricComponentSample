@@ -145,7 +145,8 @@ import ScrollView from './tests/ScrollView'
 // import App from './src/keyboardController.tsx'
 // import App from './src/shopify-flash-list/demo.tsx'
 // import App from './src/bottomSheet/App.tsx'
-import App from './src/react-native-keyboard-controller/KeyboardController.tsx'
+// import App from './src/react-native-keyboard-controller/KeyboardController.tsx'
+import App from './src/react-native-keyboard-controller/index.tsx'
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"
