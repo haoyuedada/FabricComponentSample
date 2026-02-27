@@ -16,7 +16,6 @@
     "codegen": "react-native codegen-harmony --cpp-output-path ./harmony/library/src/main/cpp/generated --rnoh-module-path ./harmony/library/oh_modules/@rnoh/react-native-openharmony --no-safety-check"
   },
   "dependencies": {
-    "@react-native-oh/react-native-harmony": "0.72.116-2",
     "@nozbe/watermelondb": "^0.28.0",
     "@ohmi/react-native-safe-area-view": "0.11.0-0.7",
     "@ohmi/react-navigation": "2.16.0-rc.1.0.4",
@@ -33,9 +32,10 @@
     "@react-native-oh-tpl/react-native-video": "^5.2.2",
     "@react-native-oh-tpl/react-native-view-shot": "^3.8.0-0.3.2",
     "@react-native-oh-tpl/stack": "^6.4.0-0.0.4",
+    "@react-native-oh/react-native-harmony": "0.72.116-2",
     "@react-native-ohos/flash-list": "1.6.4",
     "@react-native-ohos/react-native-gesture-handler": "2.14.18-rc.6",
-    "@react-native-ohos/react-native-keyboard-controller": "1.12.8-rc.3",
+    "@react-native-ohos/react-native-keyboard-controller": "^1.12.8-rc.7",
     "@react-native-ohos/react-native-reanimated": "3.6.5-rc.2",
     "@react-native-ohos/react-native-skia": "1.3.9-rc.1",
     "@react-native-ohos/react-native-webview": "13.10.5-rc.3",
