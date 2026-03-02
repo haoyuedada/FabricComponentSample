@@ -138,15 +138,15 @@ import ScrollView from './tests/ScrollView'
 // import App from './thridPartyDemo/skia.tsx'
 // import App from './src/DTS/DTS2026011907680/GestureHandlerDemo'
 // import App from './src/DTS/DTS2025121743837/GestureHandlerDemo1.tsx'
-// import App from './DTS/DTS2025121743837/GesturePreventScrollDemo.tsx'
+// import App from './src/DTS/DTS2025121743837/GesturePreventScrollDemo.tsx'
 // import App from './src/absoluteDemo.tsx'
 // import App from './IR/260116160802092/react-native-clipboard/index.tsx'
 // import App from './tests/netInfo.tsx'
 // import App from './src/keyboardController.tsx'
 // import App from './src/shopify-flash-list/demo.tsx'
-// import App from './src/bottomSheet/App.tsx'
+import App from './src/bottomSheet/App.tsx'
 // import App from './src/react-native-keyboard-controller/KeyboardController.tsx'
-import App from './src/react-native-keyboard-controller/index.tsx'
+// import App from './src/react-native-keyboard-controller/index.tsx'
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"
