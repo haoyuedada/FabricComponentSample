@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import {Modal} from 'react-native-paper';
 import {KeyboardStickyView} from 'react-native-keyboard-controller';
-import SafeAreaProvider from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 type PostDetailHeaderProps = {
   title?: string;
@@ -206,7 +206,7 @@ const PostDetailHeader: React.FC<PostDetailHeaderProps> = ({title = ''}) => {
   //   <Text>Keyboard Controller</Text>
   // )
   return (
-    // <SafeAreaProvider>
+    <SafeAreaProvider>
     <View style={styles.root}>
       {/* <CommonHeader title={title} showBack={true} /> */}
       <TouchableOpacity
@@ -365,7 +365,7 @@ const PostDetailHeader: React.FC<PostDetailHeaderProps> = ({title = ''}) => {
       {/* </Portal> */}
       {/* <Toast ref={toastRef} position="center" /> */}
     </View>
-    // </SafeAreaProvider>
+    </SafeAreaProvider>
   );
 };
 
