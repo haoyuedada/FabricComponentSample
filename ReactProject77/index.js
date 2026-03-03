@@ -19,11 +19,14 @@ import { AppRegistry } from 'react-native';
 // import App from './tests/refresh/demo.tsx'
 // import App from './tests/didi/keyboard/KebApp.tsx'
 // import App from './tests/Scrollview/demo1.tsx'
-import App from './tests/OverScrollModeDemo/TestBottomsheet.tsx'
+// import App from './tests/OverScrollModeDemo/TestBottomsheet.tsx'
 // import App from './tests/Scrollview/demo1.tsx'
 // import App from './tests/react-native-modalbox/demo.tsx'
 // import App from './tests/react-native-modalbox/YoneTest.tsx'
 // import App from './tests/page-view/demo.tsx'
+// import App from "./tests/260104193423079/KebApp.tsx"
+// import App from "./tests/260104193423079/transformEvent.tsx"
+import App from "./tests/260104193423079 -1/KebApp.tsx"
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"
