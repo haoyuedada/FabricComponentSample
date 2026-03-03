@@ -22,6 +22,7 @@ import { RNSkiaPackage } from '@react-native-ohos/react-native-skia/ts';
 import { NetInfoPackage } from '@react-native-oh-tpl/netinfo/ts';
 import { RNKeyboardControllerPackage, RNStatusBarManagerCompatPackage } from  "@react-native-ohos/react-native-keyboard-controller/ts";
 import RnohReactNativeHarmonyScreensPackage from '@react-native-ohos/react-native-screens';
+import { SmartRefreshPackage } from '@react-native-ohos/react-native-smartrefreshlayout/ts';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
@@ -42,5 +43,6 @@ export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
     new RNKeyboardControllerPackage(ctx),
     new RNStatusBarManagerCompatPackage(ctx),
     new RnohReactNativeHarmonyScreensPackage(ctx),
+    new SmartRefreshPackage(ctx)
   ];
 }

@@ -147,8 +147,9 @@ import { AppRegistry } from 'react-native';
 // import App from './src/bottomSheet/App.tsx'
 // import App from './src/react-native-keyboard-controller/KeyboardController.tsx'
 // import App from './src/react-native-keyboard-controller/index.tsx'
-import App from "./tests/260104193423079 -1/KebApp.tsx"
+// import App from "./tests/260104193423079 -1/KebApp.tsx"
 // import App from "./tests/260104193423079 -1/transformEvent.tsx"
+import App from "./tests/smartRefresh/demo.tsx"
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"
