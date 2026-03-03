@@ -9,9 +9,11 @@ import { LottieAnimationView, LOTTIE_TYPE } from "@react-native-oh-tpl/lottie-re
 import { WebView, WEB_VIEW } from "@react-native-ohos/react-native-webview"
 import { RNCVideo, RNC_VIDEO_TYPE } from "@react-native-oh-tpl/react-native-video"
 import { RNCSkiaDomView, SKIA_DOM_VIEW_TYPE } from '@react-native-ohos/react-native-skia';
+import { componentBuilder } from "@react-native-ohos/react-native-screens"
 
 @Builder
 export function buildCustomComponent(ctx: ComponentBuilderContext) {
+  componentBuilder(ctx)
   if (ctx.componentName === SelectBox.NAME) {
     SelectBox({
       ctx: ctx.rnComponentContext,
@@ -50,4 +52,20 @@ export function buildCustomComponent(ctx: ComponentBuilderContext) {
    }
 }
 
-export const arkTsComponentNames: Array<string> = [SelectBox.NAME, RCTSelectBox.NAME, RCTMessageDialog.NAME, LOTTIE_TYPE, WEB_VIEW, SKIA_DOM_VIEW_TYPE];
+export const arkTsComponentNames: Array<string> = [
+  SelectBox.NAME,
+  RCTSelectBox.NAME,
+  RCTMessageDialog.NAME,
+  LOTTIE_TYPE,
+  WEB_VIEW,
+  SKIA_DOM_VIEW_TYPE,
+  "RNSScreen",
+  "RNSFullWindowOverlay",
+  "RNSModalScreen",
+  "RNSScreenContainer",
+  "RNSScreenNavigationContainer",
+  "RNSScreenStack",
+  "RNSScreenStackHeaderSubview",
+  "RNSSearchBar",
+  "RNSScreenStackHeaderConfig",
+];

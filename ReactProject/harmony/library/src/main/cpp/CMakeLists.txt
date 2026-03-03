@@ -37,6 +37,7 @@ add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-skia/src/main/cp
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/netinfo/src/main/cpp" ./netinfo)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-keyboard-controller/src/main/cpp" ./keyboard-controller)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/flash-list/src/main/cpp" ./flash-list)
+add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-screens/src/main/cpp" ./rnoh_screens)
 # RNOH_END: manual_package_linking_1
 
 file(GLOB GENERATED_CPP_FILES "./generated/*.cpp")
@@ -45,7 +46,7 @@ add_library(rnoh_app SHARED
     ${GENERATED_CPP_FILES}
     "./PackageProvider.cpp"
     "${RNOH_CPP_DIR}/RNOHAppNapiBridge.cpp"
-)
+ ../../../oh_modules/@rnoh/react-native-openharmony/src/main/cpp/RNOH/RNArkTSComponentDelegate.h)
 
 target_link_libraries(rnoh_app PUBLIC rnoh)
 
@@ -65,4 +66,5 @@ target_link_libraries(rnoh_app PUBLIC rnoh_skia)
 target_link_libraries(rnoh_app PUBLIC rnoh_netinfo)
 target_link_libraries(rnoh_app PUBLIC rnoh_keyboard_controller)
 target_link_libraries(rnoh_app PUBLIC rnoh_flash_list)
+target_link_libraries(rnoh_app PUBLIC rnoh_screens)
 # RNOH_END: manual_package_linking_2
