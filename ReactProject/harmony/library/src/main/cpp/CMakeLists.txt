@@ -32,7 +32,7 @@ add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/lottie-react-native/src/mai
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-pager-view/src/main/cpp" ./pager_view)
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-video/src/main/cpp" ./video)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-webview/src/main/cpp" ./webview)
-add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-reanimated/src/main/cpp" ./reanimated)
+add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-reanimated/src/main/cpp" ./reanimated)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-skia/src/main/cpp" ./skia)
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/netinfo/src/main/cpp" ./netinfo)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-keyboard-controller/src/main/cpp" ./keyboard-controller)
@@ -46,8 +46,7 @@ file(GLOB GENERATED_CPP_FILES "./generated/*.cpp")
 add_library(rnoh_app SHARED
     ${GENERATED_CPP_FILES}
     "./PackageProvider.cpp"
-    "${RNOH_CPP_DIR}/RNOHAppNapiBridge.cpp"
- ../../../oh_modules/@rnoh/react-native-openharmony/src/main/cpp/RNOH/RNArkTSComponentDelegate.h)
+    "${RNOH_CPP_DIR}/RNOHAppNapiBridge.cpp")
 
 target_link_libraries(rnoh_app PUBLIC rnoh)
 
