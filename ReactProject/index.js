@@ -134,7 +134,7 @@ import { AppRegistry } from 'react-native';
 // import App from './watermelondb/App'
 // import App from './animated/ScaleAnimationDemo.tsx'
 // import App from './src/IR/251208195649046/GestureHandlerDemo.tsx'
-// import App from './IR/251208195649046/RequireExternalGestureToFailDemo.tsx'
+// import App from './src/IR/251208195649046/RequireExternalGestureToFailDemo.tsx'
 // import App from './thridPartyDemo/skia.tsx'
 // import App from './src/DTS/DTS2026011907680/GestureHandlerDemo'
 // import App from './src/DTS/DTS2025121743837/GestureHandlerDemo1.tsx'
@@ -150,7 +150,9 @@ import { AppRegistry } from 'react-native';
 // import App from "./tests/260104193423079 -1/KebApp.tsx"
 // import App from "./tests/260104193423079 -1/transformEvent.tsx"
 // import App from "./tests/smartRefresh/demo.tsx"
-import App from './tests/ToptabDemo/TopTabDemo/NavigationMaterialTopTabs.tsx'
+// import App from './tests/ToptabDemo/TopTabDemo/NavigationMaterialTopTabs.tsx'
+import App from './tests/didi/demo'
+// import App from './tests/didi/demohjy'
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"

@@ -37,8 +37,8 @@ add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-pager-view/src/m
 add_library(rnoh_app SHARED
     ${GENERATED_CPP_FILES}
     "./PackageProvider.cpp"
-    "${RNOH_CPP_DIR}/RNOHAppNapiBridge.cpp"
- ../../../oh_modules/@rnoh/react-native-openharmony/src/main/cpp/RNOH/RNArkTSComponentDelegate.h)
+    "${RNOH_CPP_DIR}/RNOHAppNapiBridge.cpp")
+# ../../../oh_modules/@rnoh/react-native-openharmony/src/main/cpp/RNOH/RNArkTSComponentDelegate.h)
 
 
 # RNOH_BEGIN: manual_package_linking_2

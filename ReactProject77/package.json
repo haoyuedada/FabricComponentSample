@@ -17,8 +17,8 @@
   },
   "dependencies": {
     "@gorhom/bottom-sheet": "^5.1.7-rc.1",
-    "@react-native-oh/react-native-harmony": "0.77.48",
-    "@react-native-ohos/react-native-gesture-handler": "2.23.2-rc.5",
+    "@react-native-oh/react-native-harmony": "0.77.50",
+    "@react-native-ohos/react-native-gesture-handler": "2.23.2-rc.4",
     "@react-native-ohos/react-native-mjrefresh": "0.8.0-rc.1",
     "@react-native-ohos/react-native-modalbox": "^2.1.0-rc.2",
     "@react-native-ohos/react-native-pager-view": "^6.7.3-rc.1",

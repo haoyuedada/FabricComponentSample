@@ -22,7 +22,7 @@ const App = () => {
           initialScale={1}
         >
           <Image
-            source={require('../../assets/fig-without-poppy.jpeg')} 
+            source={require('../../../assets/fig-without-poppy.jpeg')} 
             style={styles.image}
           />
         </ZoomableView>

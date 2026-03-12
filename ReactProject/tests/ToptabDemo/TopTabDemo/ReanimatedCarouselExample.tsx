@@ -14,7 +14,7 @@ export default function ReanimatedCarouselExample() {
 				width={PAGE_WIDTH}
 				height={PAGE_HEIGHT / 2}
 				data={[1,2,3,4]}
-                loop={true}
+                loop={false}
                 autoPlay
 				renderItem={({ index }) => {
 					return (
