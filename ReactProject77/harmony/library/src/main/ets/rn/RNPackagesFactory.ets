@@ -12,6 +12,7 @@ import { ReanimatedPackage} from '@react-native-ohos/react-native-reanimated/ts'
 import { SafeAreaViewPackage } from '@react-native-ohos/react-native-safe-area-context/ts';
 import RNOHScreensPackage from "@react-native-ohos/react-native-screens"
 import { ViewPagerPackage } from '@react-native-ohos/react-native-pager-view/ts';
+import { SmartRefreshPackage } from '@react-native-ohos/react-native-smartrefreshlayout/ts';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
@@ -20,6 +21,7 @@ export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
     new ReanimatedPackage(ctx),
     new SafeAreaViewPackage(ctx),
     new RNOHScreensPackage(ctx),
-    new ViewPagerPackage(ctx)
+    new ViewPagerPackage(ctx),
+    new SmartRefreshPackage(ctx)
   ];
 }

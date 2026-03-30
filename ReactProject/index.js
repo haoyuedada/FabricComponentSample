@@ -151,8 +151,9 @@ import { AppRegistry } from 'react-native';
 // import App from "./tests/260104193423079 -1/transformEvent.tsx"
 // import App from "./tests/smartRefresh/demo.tsx"
 // import App from './tests/ToptabDemo/TopTabDemo/NavigationMaterialTopTabs.tsx'
-import App from './tests/didi/demo'
+// import App from './tests/didi/demo'
 // import App from './tests/didi/demohjy'
+import App from './tests/refresh.tsx'
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"

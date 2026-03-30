@@ -13,6 +13,7 @@
     "@react-native-ohos/react-native-safe-area-context": "file:../../node_modules/@react-native-ohos/react-native-safe-area-context/harmony/safe_area.har",
     "@react-native-ohos/react-native-mjrefresh": "file:../../node_modules/@react-native-ohos/react-native-mjrefresh/harmony/mjrefresh.har",
     "@react-native-ohos/react-native-screens": "file: ../../node_modules/@react-native-ohos/react-native-screens/harmony/screens.har",
-    "@react-native-ohos/react-native-pager-view": "file: ../../node_modules/@react-native-ohos/react-native-pager-view/harmony/pager_view.har"
+    "@react-native-ohos/react-native-pager-view": "file: ../../node_modules/@react-native-ohos/react-native-pager-view/harmony/pager_view.har",
+    "@react-native-ohos/react-native-smartrefreshlayout": "file:../../node_modules/@react-native-ohos/react-native-smartrefreshlayout/harmony/smart_refresh_layout.har"
   }
 }
