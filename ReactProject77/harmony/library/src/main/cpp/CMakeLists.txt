@@ -33,7 +33,7 @@ add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-pager-view/src/m
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-smartrefreshlayout/src/main/cpp" ./smart-refresh-layout)
 # RNOH_END: manual_package_linking_1
 
-#file(GLOB GENERATED_CPP_FILES "./generated/*.cpp")
+file(GLOB GENERATED_CPP_FILES "./generated/*.cpp")
 
 add_library(rnoh_app SHARED
     ${GENERATED_CPP_FILES}
