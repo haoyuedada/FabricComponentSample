@@ -7,9 +7,11 @@
 
 import { RNPackageContext, RNPackage } from '@rnoh/react-native-openharmony/ts';
 import { GeneratedPackage } from './GeneratedPackage';
+import GestureHandlerPackage from '@react-native-ohos/react-native-gesture-handler';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
     new GeneratedPackage(ctx),
+    new GestureHandlerPackage(ctx)
   ];
 }
