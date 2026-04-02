@@ -26,11 +26,13 @@ import { AppRegistry } from 'react-native';
 // import App from './tests/page-view/demo.tsx'
 // import App from "./tests/260104193423079/KebApp.tsx"
 // import App from "./tests/260104193423079/transformEvent.tsx"
-import App from "./tests/260104193423079 -1/KebApp.tsx"
+// import App from "./tests/260104193423079 -1/KebApp.tsx"
 // import App from './tests/ToptabDemo/TopTabDemo/NavigationMaterialTopTabs.tsx'
 // import App from "./tests/App1"
 // import App from "./tests/react-native-SmartRefreshLayout/demo.tsx"
 // import App1 from "./tests/react-native-SmartRefreshLayout/demo1.tsx"
+import App from "./tests/yishiyun/YoneTest"
+// import App from "./tests/Modal.tsx"
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"
