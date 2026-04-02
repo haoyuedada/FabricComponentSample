@@ -8,10 +8,14 @@
 import { RNPackageContext, RNPackage } from '@rnoh/react-native-openharmony/ts';
 import { GeneratedPackage } from './GeneratedPackage';
 import GestureHandlerPackage from '@react-native-ohos/react-native-gesture-handler';
+import { ReanimatedWorkletPackage } from '@react-native-ohos/react-native-worklets'
+import { ReanimatedPackage} from '@react-native-ohos/react-native-reanimated/ts';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
     new GeneratedPackage(ctx),
-    new GestureHandlerPackage(ctx)
+    new GestureHandlerPackage(ctx),
+    new ReanimatedWorkletPackage(ctx),
+    new ReanimatedPackage(ctx),
   ];
 }

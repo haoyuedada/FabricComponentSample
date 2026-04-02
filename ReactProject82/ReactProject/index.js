@@ -9,6 +9,8 @@
 
 import { AppRegistry } from 'react-native';
 import { name as appName } from './app.json';
-import App from './App';
+// import App from './App';
+// import App from './src/AnimatedDemo.tsx';
+import App from './src/react-native-reanimated/ReanimateListDemo.tsx';
 
 AppRegistry.registerComponent(appName, () => App);
