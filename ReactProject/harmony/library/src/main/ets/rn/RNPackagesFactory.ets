@@ -12,7 +12,6 @@ import { GestureHandlerPackage } from '@react-native-ohos/react-native-gesture-h
 import { SafeAreaViewPackage } from '@react-native-oh-tpl/react-native-safe-area-context/ts';
 import { ViewShotPackage } from '@react-native-oh-tpl/react-native-view-shot/ts';
 import { SvgPackage } from '@react-native-oh-tpl/react-native-svg/ts';
-import { LottieAnimationViewPackage } from '@react-native-oh-tpl/lottie-react-native/ts';
 import { ViewPagerPackage } from '@react-native-oh-tpl/react-native-pager-view/ts';
 import { RNCVideoPackage } from '@react-native-oh-tpl/react-native-video/ts';
 import { WebViewPackage } from '@react-native-ohos/react-native-webview/ts';
@@ -23,6 +22,7 @@ import { NetInfoPackage } from '@react-native-oh-tpl/netinfo/ts';
 import { RNKeyboardControllerPackage, RNStatusBarManagerCompatPackage } from  "@react-native-ohos/react-native-keyboard-controller/ts";
 import RnohReactNativeHarmonyScreensPackage from '@react-native-ohos/react-native-screens';
 import { SmartRefreshPackage } from '@react-native-ohos/react-native-smartrefreshlayout/ts';
+import {LottieAnimationViewPackage} from '@react-native-ohos/lottie-react-native/ts';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
@@ -43,6 +43,7 @@ export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
     new RNKeyboardControllerPackage(ctx),
     new RNStatusBarManagerCompatPackage(ctx),
     new RnohReactNativeHarmonyScreensPackage(ctx),
-    new SmartRefreshPackage(ctx)
+    new SmartRefreshPackage(ctx),
+    new LottieAnimationViewPackage(ctx)
   ];
 }
