@@ -25,6 +25,7 @@
 #include "RnohReactNativeHarmonyScreensPackage.h"
 #include "ScreensPackage.h"
 #include "SmartRefreshLayoutPackage.h"
+#include "LottieAnimationViewPackage.h"
 
 using namespace rnoh;
 
@@ -48,6 +49,7 @@ std::vector<std::shared_ptr<Package>> PackageProvider::getPackages(Package::Cont
     std::make_shared<FlashListPackage>(ctx),
     std::make_shared<rnoh::RnohReactNativeHarmonyScreensPackage>(ctx),
     std::make_shared<ScreensPackage>(ctx),
-    std::make_shared<SmartRefreshLayoutPackage>(ctx)
+    std::make_shared<SmartRefreshLayoutPackage>(ctx),
+    std::make_shared<LottieAnimationViewPackage>(ctx)
   };
 }

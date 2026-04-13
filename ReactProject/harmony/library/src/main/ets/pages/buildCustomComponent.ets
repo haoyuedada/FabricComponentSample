@@ -5,11 +5,11 @@ import {
 import { SelectBox } from "../FabricComponent/SelectBox"
 import { RCTSelectBox } from "../FabricComponent/RCTSelectBox"
 import { RCTMessageDialog } from "../FabricComponent/RCTMessageDialog"
-import { LottieAnimationView, LOTTIE_TYPE } from "@react-native-oh-tpl/lottie-react-native"
 import { WebView, WEB_VIEW } from "@react-native-ohos/react-native-webview"
 import { RNCVideo, RNC_VIDEO_TYPE } from "@react-native-oh-tpl/react-native-video"
 import { RNCSkiaDomView, SKIA_DOM_VIEW_TYPE } from '@react-native-ohos/react-native-skia';
 import { componentBuilder } from "@react-native-ohos/react-native-screens"
+import { LottieAnimationView, LOTTIE_TYPE } from "@react-native-ohos/lottie-react-native"
 
 @Builder
 export function buildCustomComponent(ctx: ComponentBuilderContext) {
@@ -49,7 +49,12 @@ export function buildCustomComponent(ctx: ComponentBuilderContext) {
       ctx: ctx.rnComponentContext,
       tag: ctx.tag
     })
-   }
+ } else if (ctx.componentName === LOTTIE_TYPE) {
+    LottieAnimationView({
+       ctx: ctx.rnComponentContext,
+       tag: ctx.tag
+       })
+    }
 }
 
 export const arkTsComponentNames: Array<string> = [
@@ -68,4 +73,5 @@ export const arkTsComponentNames: Array<string> = [
   "RNSScreenStackHeaderSubview",
   "RNSSearchBar",
   "RNSScreenStackHeaderConfig",
+  LOTTIE_TYPE
 ];

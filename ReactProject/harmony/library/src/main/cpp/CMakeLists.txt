@@ -28,7 +28,6 @@ add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-gesture-handler/
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-safe-area-context/src/main/cpp" ./safe-area)
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-view-shot/src/main/cpp" ./view-shot)
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-svg/src/main/cpp" ./svg)
-add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/lottie-react-native/src/main/cpp" ./lottie)
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-pager-view/src/main/cpp" ./pager_view)
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-video/src/main/cpp" ./video)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-webview/src/main/cpp" ./webview)
@@ -39,6 +38,7 @@ add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-keyboard-control
 add_subdirectory("${OH_MODULES}/@react-native-ohos/flash-list/src/main/cpp" ./flash-list)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-screens/src/main/cpp" ./rnoh_screens)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-smartrefreshlayout/src/main/cpp" ./smart-refresh-layout)
+add_subdirectory("${OH_MODULES}/@react-native-ohos/lottie-react-native/src/main/cpp" ./lottie)
 # RNOH_END: manual_package_linking_1
 
 file(GLOB GENERATED_CPP_FILES "./generated/*.cpp")
@@ -68,4 +68,5 @@ target_link_libraries(rnoh_app PUBLIC rnoh_keyboard_controller)
 target_link_libraries(rnoh_app PUBLIC rnoh_flash_list)
 target_link_libraries(rnoh_app PUBLIC rnoh_screens)
 target_link_libraries(rnoh_app PUBLIC rnoh_smart_refresh_layout)
+target_link_libraries(rnoh_app PUBLIC rnoh_lottie)
 # RNOH_END: manual_package_linking_2
