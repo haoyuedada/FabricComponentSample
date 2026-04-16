@@ -31,8 +31,9 @@ import { AppRegistry } from 'react-native';
 // import App from "./tests/App1"
 // import App from "./tests/react-native-SmartRefreshLayout/demo.tsx"
 // import App1 from "./tests/react-native-SmartRefreshLayout/demo1.tsx"
-import App from "./tests/yishiyun/YoneTest"
+// import App from "./tests/yishiyun/YoneTest"
 // import App from "./tests/Modal.tsx"
+import App from "./tests/smartrefersh/App.tsx"
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"

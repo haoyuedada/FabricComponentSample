@@ -33,7 +33,7 @@
     "@react-native-oh-tpl/stack": "^6.4.0-0.0.4",
     "@react-native-oh/react-native-harmony": "0.72.101-5",
     "@react-native-ohos/flash-list": "1.6.4",
-    "@react-native-ohos/lottie-react-native": "6.4.2",
+    "@react-native-ohos/lottie-react-native": "6.4.3",
     "@react-native-ohos/react-native-gesture-handler": "2.14.18-rc.7",
     "@react-native-ohos/react-native-keyboard-controller": "^1.12.8-rc.7",
     "@react-native-ohos/react-native-reanimated": "file:./libs/react-native-ohos-react-native-reanimated-3.6.6-rc.1.tgz",

@@ -6,6 +6,12 @@ import { SelectBox } from "../FabricComponent/SelectBox"
 import { RCTSelectBox } from "../FabricComponent/RCTSelectBox"
 import { RCTMessageDialog } from "../FabricComponent/RCTMessageDialog"
 import { componentBuilder } from "@react-native-ohos/react-native-screens"
+import {
+  RN_SMART_REFRESH,
+  RNSmartRefresh,
+  RN_SMART_REFRESH_HEADER,
+  RNSmartRefreshHeader,
+} from '@react-native-ohos/react-native-smart-refresh'
 
 @Builder
 export function buildCustomComponent(ctx: ComponentBuilderContext) {
@@ -24,6 +30,18 @@ export function buildCustomComponent(ctx: ComponentBuilderContext) {
     RCTMessageDialog({
       ctx: ctx.rnComponentContext,
       tag: ctx.tag
+    })
+  }
+  else if (ctx.componentName === RN_SMART_REFRESH) {
+    RNSmartRefresh({
+      ctx:ctx.rnComponentContext,
+      tag:ctx.tag,
+    })
+  }
+  else if (ctx.componentName === RN_SMART_REFRESH_HEADER) {
+    RNSmartRefreshHeader({
+      ctx:ctx.rnComponentContext,
+      tag:ctx.tag,
     })
   }
 }
