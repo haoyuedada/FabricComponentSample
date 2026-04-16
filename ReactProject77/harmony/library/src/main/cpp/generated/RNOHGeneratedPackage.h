@@ -25,12 +25,12 @@ namespace rnoh {
 class RNOHGeneratedPackageTurboModuleFactoryDelegate : public TurboModuleFactoryDelegate {
   public:
     SharedTurboModule createTurboModule(Context ctx, const std::string &name) const override {
-//        if (name == "RunJsBundleTurboModule") {
-//            return std::make_shared<RunJsBundleTurboModule>(ctx, name);
-//        }
-//        if (name == "SampleTurboModule") {
-//            return std::make_shared<SampleTurboModule>(ctx, name);
-//        }
+        if (name == "RunJsBundleTurboModule") {
+            return std::make_shared<RunJsBundleTurboModule>(ctx, name);
+        }
+        if (name == "SampleTurboModule") {
+            return std::make_shared<SampleTurboModule>(ctx, name);
+        }
         return nullptr;
     };
 };
