@@ -13,7 +13,7 @@
     "@react-native-oh-tpl/react-native-safe-area-context": "file:../libs/safe_area.har",
     "@react-native-oh-tpl/react-native-view-shot": "file:../libs/view_shot.har",
     "@react-native-oh-tpl/react-native-svg": "file:../libs/svg.har",
-    "@react-native-oh-tpl/react-native-pager-view": "file:../libs/pager_view.har",
+    "@react-native-ohos/react-native-pager-view": "file:../libs/pager_view.har",
     "@react-native-oh-tpl/react-native-video": "file:../libs/rn_video.har",
     "@react-native-ohos/react-native-webview": "file:../libs/rn_webview.har",
     "@react-native-ohos/react-native-reanimated": "file:../../node_modules/@react-native-ohos/react-native-reanimated/harmony/reanimated.har",

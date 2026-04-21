@@ -12,7 +12,7 @@ import { GestureHandlerPackage } from '@react-native-ohos/react-native-gesture-h
 import { SafeAreaViewPackage } from '@react-native-oh-tpl/react-native-safe-area-context/ts';
 import { ViewShotPackage } from '@react-native-oh-tpl/react-native-view-shot/ts';
 import { SvgPackage } from '@react-native-oh-tpl/react-native-svg/ts';
-import { ViewPagerPackage } from '@react-native-oh-tpl/react-native-pager-view/ts';
+import { ViewPagerPackage } from '@react-native-ohos/react-native-pager-view/ts';
 import { RNCVideoPackage } from '@react-native-oh-tpl/react-native-video/ts';
 import { WebViewPackage } from '@react-native-ohos/react-native-webview/ts';
 // import { RNOrientationPackage } from '@ohmi/react-native-orientation/ts';
