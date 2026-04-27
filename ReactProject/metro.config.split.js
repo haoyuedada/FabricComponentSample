@@ -123,8 +123,8 @@ const config = {
             ||
            "node_modules/react-native-harmony/Libraries/Animated/Easing.js": 269,
          */
-        if (argv.sdk && relative.startsWith("node_modules/react-native-harmony")) {
-          let oldPath = relative.replace("react-native-harmony", "react-native")
+        if (argv.sdk && relative.startsWith("node_modules/@react-native-oh/react-native-harmony")) {
+          let oldPath = relative.replace("@react-native-oh/react-native-harmony", "react-native")
           let oldIndex = pathMap.get(oldPath)
           if (oldIndex !== undefined) { 
             pathMap.delete(oldPath)
@@ -218,7 +218,7 @@ process.once('beforeExit', () => {
 module.exports = mergeConfig(
   defaultConfig,
   createHarmonyMetroConfig({
-    reactNativeHarmonyPackageName: 'react-native-harmony',
+    reactNativeHarmonyPackageName: '@react-native-oh/react-native-harmony',
   }),
   config,
 );
