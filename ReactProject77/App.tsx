@@ -1,8 +1,6 @@
-import * as React from 'react';
-import { Button, Text, View } from 'react-native';
+import React from 'react';
+import CrashDemo from './crash-test/CrashDemo';
 
 export default function App() {
-    return (
-        <Text>234234234</Text>
-    );
+  return <CrashDemo />;
 }
