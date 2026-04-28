@@ -22,7 +22,7 @@
     "@react-native-ohos/react-native-mjrefresh": "0.8.0-rc.1",
     "@react-native-ohos/react-native-modalbox": "^2.1.0-rc.2",
     "@react-native-ohos/react-native-pager-view": "6.7.3",
-    "@react-native-ohos/react-native-reanimated": "3.18.2-rc.2",
+    "@react-native-ohos/react-native-reanimated": "3.18.2",
     "@react-native-ohos/react-native-safe-area-context": "^5.1.1-rc.3",
     "@react-native-ohos/react-native-screens": "file:./tgz/react-native-ohos-react-native-screens-4.8.3-rc.2.tgz",
     "@react-native-ohos/react-native-smart-refresh": "file:./tgz/react-native-ohos-react-native-smart-refresh-0.0.1.tgz",

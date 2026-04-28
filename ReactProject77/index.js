@@ -14,7 +14,7 @@ import { AppRegistry } from 'react-native';
 // import App from './tests/DTS2026011907680/GestureHandlerDemo'
 // import App from './tests/DTS2025121743837/GestureHandlerDemo.tsx'
 // import App from './tests/DTS2025121743837/GesturePreventScrollDemo.tsx'
-// import App from './tests/ReanimatedDemo'
+import App from './tests/ReanimatedDemo'
 // import App from './tests/didi/demo.tsx'
 // import App from './tests/refresh/demo.tsx'
 // import App from './tests/didi/keyboard/KebApp.tsx'
@@ -34,7 +34,8 @@ import { AppRegistry } from 'react-native';
 // import App from "./tests/yishiyun/YoneTest"
 // import App from "./tests/Modal.tsx"
 // import App from "./tests/smartrefersh/App.tsx"
-import App from "./tests/screensDemo.tsx"
+// import App from "./tests/screensDemo.tsx"
+// import WebviewTest from './tests/WebviewTest'
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"

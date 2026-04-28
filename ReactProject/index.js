@@ -139,7 +139,7 @@ import { AppRegistry } from 'react-native';
 // import App from './src/DTS/DTS2026011907680/GestureHandlerDemo'
 // import App from './src/DTS/DTS2025121743837/GestureHandlerDemo1.tsx'
 // import App from './src/DTS/DTS2025121743837/GesturePreventScrollDemo.tsx'
-// import App from './src/absoluteDemo.tsx'
+import App from './src/absoluteDemo.tsx'
 // import App from './IR/260116160802092/react-native-clipboard/index.tsx'
 // import App from './tests/netInfo.tsx'
 // import App from './src/keyboardController.tsx'
@@ -155,7 +155,7 @@ import { AppRegistry } from 'react-native';
 // import App from './tests/didi/demohjy'
 // import App from './tests/refresh.tsx'
 // import App from './tests/lottie/crash_demo_direct.tsx'
-import App from "./tests/screensDemo.tsx"
+// import App from "./tests/screensDemo.tsx"
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"
