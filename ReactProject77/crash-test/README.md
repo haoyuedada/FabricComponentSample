@@ -47,16 +47,31 @@ hdc rport tcp:8081 tcp:8081
 
 ### 4. 触发崩溃
 
+**重要：理解触发方式**
+
+ReanimatedModuleProxy 是 TurboModule（全局单例），生命周期绑定到 ReactInstance：
+- ❌ **React Navigation 返回不会触发析构** - 只是页面导航，ReactInstance 仍存活
+- ✅ **Reload 会触发析构** - 销毁整个 ReactInstance，触发 TurboModule 析构
+
+**正确的测试步骤：**
+
 1. 点击"进入崩溃测试"
 2. 观察动画页面中的多个并发动画:
    - 方块左右弹跳(Spring)
    - 方块大小变化(Spring)
    - 方块旋转(Timing)
    - 透明度变化(DerivedValue)
-3. 在动画运行中点击"返回(触发崩溃)"
-4. **观察应用行为:**
-   - 未修复版本:应用崩溃退出
-   - 修复版本:正常返回主页
+3. **点击"Reload（真正触发析构）"按钮** ⚠️
+   - 这会调用 DevSettings.reload()
+   - 强制重新加载整个 RN 环境
+   - 销毁旧的 ReactInstance → 触发 ReanimatedModuleProxy 析构
+4. **观察崩溃行为:**
+   - 未修复版本: 应用在 reload 时崩溃
+   - 修复版本: 正常 reload，应用重新启动
+
+**对比测试:**
+- 点击"返回主页（不触发析构）" → 只是导航返回，不会崩溃
+- 点击"Reload（真正触发析构）" → 才会触发析构崩溃
 
 ## 检查崩溃日志
 

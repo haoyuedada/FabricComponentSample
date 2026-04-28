@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {StyleSheet, Text, View, Button} from 'react-native';
+import {StyleSheet, Text, View, Button, DevSettings} from 'react-native';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -82,12 +82,39 @@ export default function AnimatedComponent({onGoBack}: {onGoBack: () => void}) {
         <Text style={styles.boxText}>触发崩溃</Text>
       </Animated.View>
 
-      <Text style={styles.warning}>⚠️ 点击返回时动画仍在运行</Text>
+      <Text style={styles.warning}>
+        ⚠️ 动画正在运行，请选择触发方式：
+      </Text>
 
-      <Button title="返回（触发崩溃）" onPress={onGoBack} color="red" />
-
+      {/* 方式1：返回导航（不会触发析构） */}
+      <Button 
+        title="返回主页（不触发析构）" 
+        onPress={onGoBack} 
+        color="#4a5568"
+      />
+      
       <Text style={styles.hint}>
-        在动画运行时返回会触发 PropsRegistry 析构崩溃
+        只是导航返回，ReanimatedModuleProxy 不会析构
+      </Text>
+
+      {/* 方式2：Reload（真正触发析构） */}
+      <Button 
+        title="Reload（真正触发析构） ⚠️" 
+        onPress={() => {
+          // 强制重新加载整个 RN 环境
+          // 会销毁旧的 ReactInstance → 触发 ReanimatedModuleProxy 析构
+          DevSettings.reload();
+        }}
+        color="#e53e3e"
+      />
+      
+      <Text style={styles.hint}>
+        🔧 在动画运行时 reload 会触发 PropsRegistry 析构崩溃
+      </Text>
+      
+      <Text style={styles.note}>
+        原理：reload 会销毁 ReactInstance，触发 TurboModule 析构，
+        PropsRegistry 在 uiWorkletRuntime 销毁后析构 ShadowNode 导致崩溃。
       </Text>
     </View>
   );
@@ -139,5 +166,13 @@ const styles = StyleSheet.create({
     color: '#718096',
     textAlign: 'center',
     marginTop: 15,
+  },
+  note: {
+    fontSize: 11,
+    color: '#a0aec0',
+    textAlign: 'center',
+    marginTop: 20,
+    paddingHorizontal: 15,
+    lineHeight: 16,
   },
 });
