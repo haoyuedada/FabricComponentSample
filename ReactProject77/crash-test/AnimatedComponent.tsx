@@ -9,6 +9,7 @@ import Animated, {
   withSequence,
   Easing,
   useDerivedValue,
+  runOnUI,
 } from 'react-native-reanimated';
 
 export default function AnimatedComponent({onGoBack}: {onGoBack: () => void}) {
@@ -72,6 +73,22 @@ export default function AnimatedComponent({onGoBack}: {onGoBack: () => void}) {
       -1,
       true,
     );
+
+    // 🔧 关键：使用 runOnUI() 确保调用 scheduleOnUI
+    // 这是触发崩溃的核心：在 UI 线程调度持续运行的任务
+    runOnUI(() => {
+      'worklet';
+      // 在 UI 线程中持续执行的任务
+      // 当 reload 发生时，这个任务可能仍在队列中执行
+      // PropsRegistry 会在 uiWorkletRuntime 销毁后析构 ShadowNode → 崩溃
+      let counter = 0;
+      const intervalId = setInterval(() => {
+        'worklet';
+        counter++;
+        // 模拟持续操作（更新 shared value）
+        // 这会创建 ShadowNode 并注册到 PropsRegistry
+      }, 100);
+    })();
   }, []);
 
   return (
@@ -113,8 +130,27 @@ export default function AnimatedComponent({onGoBack}: {onGoBack: () => void}) {
       </Text>
       
       <Text style={styles.note}>
-        原理：reload 会销毁 ReactInstance，触发 TurboModule 析构，
-        PropsRegistry 在 uiWorkletRuntime 销毁后析构 ShadowNode 导致崩溃。
+        原理详解：
+      </Text>
+      
+      <Text style={styles.noteDetail}>
+        1. runOnUI() 调用 ReanimatedModuleProxy::scheduleOnUI()
+      </Text>
+      
+      <Text style={styles.noteDetail}>
+        2. scheduleOnUI 将 worklet 任务调度到 UI 线程队列
+      </Text>
+      
+      <Text style={styles.noteDetail}>
+        3. reload 时，UI 线程任务可能仍在执行
+      </Text>
+      
+      <Text style={styles.noteDetail}>
+        4. 析构顺序：uiWorkletRuntime 先销毁 → PropsRegistry 后析构
+      </Text>
+      
+      <Text style={styles.noteDetail}>
+        5. PropsRegistry 中的 ShadowNode 引用已释放的 runtime → 崩溃！
       </Text>
     </View>
   );
@@ -174,5 +210,14 @@ const styles = StyleSheet.create({
     marginTop: 20,
     paddingHorizontal: 15,
     lineHeight: 16,
+    fontWeight: '600',
+  },
+  noteDetail: {
+    fontSize: 10,
+    color: '#cbd5e0',
+    textAlign: 'left',
+    marginTop: 3,
+    marginLeft: 20,
+    lineHeight: 14,
   },
 });
