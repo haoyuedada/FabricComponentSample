@@ -1,0 +1,20 @@
+# 1. 停止应用
+hdc shell aa force-stop cn.com.cmschina.securities
+
+# 2. 创建临时目录
+tmpdir="data/local/tmp/$(uuidgen | tr -d '-')"
+hdc shell mkdir "$tmpdir"
+
+# 3. 批量推送所有文件
+for f in /Users/liyongjun/Developer/CMSUIKit_Flutter/outputs/ziPT1OZB/*.{hap,hsp}; do
+  hdc file send "$f" "$tmpdir"
+done
+
+# 4. 安装
+hdc shell bm install -p "$tmpdir"
+
+# 5. 删除临时目录
+hdc shell rm -rf "$tmpdir"
+
+# 6. 启动应用
+hdc shell aa start -a EntryAbility -b cn.com.cmschina.securities -m entry
