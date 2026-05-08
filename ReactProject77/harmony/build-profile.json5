@@ -23,7 +23,7 @@
         "runtimeOS": "HarmonyOS",
         "buildOption": {
           "strictMode": {
-            "useNormalizedOHMUrl": true
+            //            "useNormalizedOHMUrl": true
           }
         },
         "targetSdkVersion": "6.0.1(21)"

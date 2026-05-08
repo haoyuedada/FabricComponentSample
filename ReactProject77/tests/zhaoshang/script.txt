@@ -6,7 +6,7 @@ tmpdir="data/local/tmp/$(uuidgen | tr -d '-')"
 hdc shell mkdir "$tmpdir"
 
 # 3. 批量推送所有文件
-for f in /Users/liyongjun/Developer/CMSUIKit_Flutter/outputs/ziPT1OZB/*.{hap,hsp}; do
+for f in /Users/chenhaoyue/Downloads/ziPT1OZB/*.{hap,hsp}; do
   hdc file send "$f" "$tmpdir"
 done
 
