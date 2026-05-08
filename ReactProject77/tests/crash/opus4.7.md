@@ -128,7 +128,8 @@ function PageA() {
 ### diff
 
 ```diff
- workletsModuleProxy_->getUIScheduler()->scheduleOnUI(
+ workletsModuleP
+ (
      [=, weakThis = weak_from_this()] {
 -      const auto strongThis = weakThis.lock();
 +      auto strongThis = weakThis.lock();

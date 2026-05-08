@@ -24,7 +24,8 @@ export default function AnimatedComponent({onGoBack}: {onGoBack: () => void}) {
     return 0.5 + progress.value * 0.5;
   });
 
-  // 创建动画样式
+  // 创建动画样式 —— 每帧都会触发 PropsRegistry::update()
+  // 这确保 PropsRegistry.map_ 中持有 ShadowNode::Shared 引用
   const animatedStyle = useAnimatedStyle(() => {
     return {
       transform: [
@@ -38,14 +39,14 @@ export default function AnimatedComponent({onGoBack}: {onGoBack: () => void}) {
 
   // 启动并发动画（组件挂载时）
   useEffect(() => {
-    // Spring 动画：持续弹跳（模拟用户交互动画）
+    // Spring 动画：持续弹跳
     translateX.value = withRepeat(
       withSequence(
         withSpring(100, {damping: 10, stiffness: 100}),
         withSpring(-100, {damping: 10, stiffness: 100}),
       ),
-      -1, // infinite
-      true, // reverse
+      -1,
+      true,
     );
 
     scale.value = withRepeat(
@@ -57,7 +58,7 @@ export default function AnimatedComponent({onGoBack}: {onGoBack: () => void}) {
       true,
     );
 
-    // Timing 动画：无限旋转（模拟进度动画）
+    // Timing 动画：无限旋转
     rotation.value = withRepeat(
       withTiming(360, {duration: 2000, easing: Easing.linear}),
       -1,
@@ -74,21 +75,32 @@ export default function AnimatedComponent({onGoBack}: {onGoBack: () => void}) {
       true,
     );
 
-    // 🔧 关键：使用 runOnUI() 确保调用 scheduleOnUI
-    // 这是触发崩溃的核心：在 UI 线程调度持续运行的任务
-    runOnUI(() => {
-      'worklet';
-      // 在 UI 线程中持续执行的任务
-      // 当 reload 发生时，这个任务可能仍在队列中执行
-      // PropsRegistry 会在 uiWorkletRuntime 销毁后析构 ShadowNode → 崩溃
-      let counter = 0;
-      const intervalId = setInterval(() => {
+    // 🔥 关键触发点：高频 runOnUI 调度
+    // 每次 runOnUI 都会调用 ReanimatedModuleProxy::scheduleOnUI()
+    // 该方法通过 workletsModuleProxy_->getUIScheduler()->scheduleOnUI() 将 lambda 入队
+    // lambda 用 [=, weakThis = weak_from_this()] 捕获
+    //
+    // 崩溃时序：
+    // 1. reload 触发 → ReactInstance 销毁 → ReanimatedModuleProxy 引用计数减少
+    // 2. UI 线程队列中仍有待执行的 lambda
+    // 3. lambda 执行时 weakThis.lock() 获得 strongThis（可能是最后一个引用）
+    // 4. lambda 执行完毕 → strongThis 释放 → ReanimatedModuleProxy 析构
+    // 5. 析构中 propsRegistry_ 释放 → PropsRegistry::~PropsRegistry()
+    // 6. PropsRegistry.map_ 中的 ShadowNode::Shared 释放
+    // 7. ShadowNode → ShadowNodeFamily → InstanceHandle 析构
+    // 8. InstanceHandle 在 UI 线程析构（应在 JS 线程）→ crash!
+    const scheduleHighFrequency = () => {
+      runOnUI(() => {
         'worklet';
-        counter++;
-        // 模拟持续操作（更新 shared value）
-        // 这会创建 ShadowNode 并注册到 PropsRegistry
-      }, 100);
-    })();
+        // 在 UI 线程执行，触发 shared value 更新
+        // 这会间接导致 PropsRegistry 中注册更多 ShadowNode
+      })();
+    };
+
+    // 高频调度：增加 reload 时队列中有未执行 lambda 的概率
+    const timer = setInterval(scheduleHighFrequency, 16); // ~60fps
+
+    return () => clearInterval(timer);
   }, []);
 
   return (
