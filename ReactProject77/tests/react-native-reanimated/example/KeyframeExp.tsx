@@ -56,13 +56,13 @@ export default function KeyframeExp() {
           <Animated.View
             entering={enteringAnimation}
             exiting={exitingAnimation}
-            style={{
+            style={[{
               height: 100,
               width: 200,
               backgroundColor: 'blue',
               alignItems: 'center',
               justifyContent: 'center',
-            }}
+            }, ]}
           />
         )}
       </View>

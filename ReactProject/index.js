@@ -81,7 +81,10 @@ import { AppRegistry } from 'react-native';
 // import App from './tests/Hierarchy1/Hierarchy2/index.js';
 // import FetchTest from './tests/FetchTest.tsx';
 // import VideoTest2 from './tests/imageMP4'
-// import WebviewTest from './tests/WebviewTest'
+import WebviewTest from './tests/WebviewTest'
+import App from './src/thridPartyDemo/webView.tsx';
+// import App from './thridPartyDemo/AdaptiveWebView.tsx';
+// import App from './thridPartyDemo/vmall/DTS2025111903544/webviewDemo/webviewDemo/index.tsx'
 // import App from './tests/styleDemo'
 // import App from './tests/samplePage'
 // import App from './tests/SafeAreaTest'
@@ -127,10 +130,7 @@ import { AppRegistry } from 'react-native';
 // import App from './tests/Display.tsx';
 // import App from './IR/251014164852025/OpacityDemo.tsx';
 // import "./svgDemo.js";
-// import App from './src/thridPartyDemo/webView.tsx';
-// import App from './thridPartyDemo/AdaptiveWebView.tsx';
 // import App from './thridPartyDemo/vmall/DTS2025111903544/index.tsx'
-// import App from './thridPartyDemo/vmall/DTS2025111903544/webviewDemo/webviewDemo/index.tsx'
 // import App from './watermelondb/App'
 // import App from './animated/ScaleAnimationDemo.tsx'
 // import App from './src/IR/251208195649046/GestureHandlerDemo.tsx'
@@ -139,7 +139,7 @@ import { AppRegistry } from 'react-native';
 // import App from './src/DTS/DTS2026011907680/GestureHandlerDemo'
 // import App from './src/DTS/DTS2025121743837/GestureHandlerDemo1.tsx'
 // import App from './src/DTS/DTS2025121743837/GesturePreventScrollDemo.tsx'
-import App from './src/absoluteDemo.tsx'
+// import App from './src/absoluteDemo.tsx'
 // import App from './IR/260116160802092/react-native-clipboard/index.tsx'
 // import App from './tests/netInfo.tsx'
 // import App from './src/keyboardController.tsx'
@@ -156,6 +156,7 @@ import App from './src/absoluteDemo.tsx'
 // import App from './tests/refresh.tsx'
 // import App from './tests/lottie/crash_demo_direct.tsx'
 // import App from "./tests/screensDemo.tsx"
+// import App from './tests/crash/pingan/ReanimatedCrashRepro.tsx'
 
-AppRegistry.registerComponent("app_name", () => App);
+AppRegistry.registerComponent("app_name", () => WebviewTest);
 // import { transform } from "./testTurboModule/buautify_executor.js"
