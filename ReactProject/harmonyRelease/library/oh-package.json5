@@ -1,0 +1,13 @@
+{
+  "name": "library",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "Index.ets",
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@rnoh/react-native-openharmony": "file:../../node_modules/@react-native-oh/react-native-harmony/react_native_openharmony_release.har",
+    "@pura/harmony-utils": "^1.2.6",
+    "@react-native-ohos/react-native-safe-area-context": "file:../../node_modules/@react-native-ohos/react-native-safe-area-context/harmony/safe_area.har"
+  }
+}

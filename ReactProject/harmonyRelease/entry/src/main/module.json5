@@ -1,0 +1,78 @@
+{
+  "module": {
+    "name": "entry",
+    "type": "entry",
+    "description": "$string:module_desc",
+    "mainElement": "EntryAbility",
+    "deviceTypes": [
+      "phone",
+      "tablet",
+      "2in1"
+    ],
+    "metadata": [
+      {
+        "name": "half_leading",
+        "value": "true"
+      },
+      {
+        "name": "can_preview_text",
+        "value": "true",
+      }
+    ],
+    "libIsolation": false,
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.WRITE_IMAGEVIDEO",
+        "usedScene": {abilities: []},
+        "reason": "$string:app_name"
+      },
+      {
+        "name": "ohos.permission.READ_IMAGEVIDEO",
+        "usedScene": {abilities: []},
+        "reason": "$string:app_name"
+      },
+      {
+        "name": "ohos.permission.READ_AUDIO",
+        "usedScene": {abilities: []},
+        "reason": "$string:app_name"
+      },
+      {
+        "name": "ohos.permission.READ_MEDIA",
+        "usedScene": {abilities: []},
+        "reason": "$string:app_name"
+      },
+      {
+        "name": "ohos.permission.WRITE_MEDIA",
+        "usedScene": {abilities: []},
+        "reason": "$string:app_name"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:72",
+        "label": "$string:EntryAbility_label",
+        // "orientation": "auto_rotation",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "orientation": "auto_rotation"
+      },
+    ]
+  }
+}
