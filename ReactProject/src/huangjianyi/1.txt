@@ -1,0 +1,34 @@
+### 迁移仓库列表（原 openharmony-RN 组织 → 新组织 CPF-RN）
+
+| 序号 | 仓库名（openharmony-RN 组织下）        | 新仓库地址（CPF-RN 下）                |
+| ------ | ---------------------------------- | ---------------------------------------------------- |
+|1|rntpc_segmented-control|https://gitcode.com/CPF-RN/rntpc_segmented-control|
+|2|rntpc_react-native-ui-lib|https://gitcode.com/CPF-RN/rntpc_react-native-ui-lib|
+|3|rntpc_react-native-shared-element|https://gitcode.com/CPF-RN/rntpc_react-native-shared-element|
+|4|rntpc_react-native-keyboard-controller|https://gitcode.com/CPF-RN/rntpc_react-native-keyboard-controller|
+|5|rntpc_mixpanel-react-native|https://gitcode.com/CPF-RN/rntpc_mixpanel-react-native|
+|6|rntpc_react-native-mail|https://gitcode.com/CPF-RN/rntpc_react-native-mail|
+|7|rntpc_react-native-context-menu-view|https://gitcode.com/CPF-RN/rntpc_react-native-context-menu-view|
+|8|rntpc_react-native-tts|https://gitcode.com/CPF-RN/rntpc_react-native-tts|
+|9|rntpc_react-native-version-number|https://gitcode.com/CPF-RN/rntpc_react-native-version-number|
+|10|rntpc_react-native-callkeep|https://gitcode.com/CPF-RN/rntpc_react-native-callkeep|
+|11|rntpc_react-native-spinkit|https://gitcode.com/CPF-RN/rntpc_react-native-spinkit|
+|12|rntpc_react-native-drax|https://gitcode.com/CPF-RN/rntpc_react-native-drax|
+|13|rntpc_react-native-textinput-maxlength-fixed|https://gitcode.com/CPF-RN/rntpc_react-native-textinput-maxlength-fixed|
+|14|rntpc_realm-js|https://gitcode.com/CPF-RN/rntpc_realm-js|
+|15|rntpc_ffmpeg-kit-react-native|https://gitcode.com/CPF-RN/rntpc_ffmpeg-kit-react-native|
+|16|rntpc_react-native-wechat-lib|https://gitcode.com/CPF-RN/rntpc_react-native-wechat-lib|
+|17|rntpc_react-native-smartassets|https://gitcode.com/CPF-RN/rntpc_react-native-smartassets|
+|18|rntpc_react-native-push-nRNotification|https://gitcode.com/CPF-RN/rntpc_react-native-push-nRNotification|
+|19|rntpc_react-native-extra-dimensions|https://gitcode.com/CPF-RN/rntpc_react-native-extra-dimensions|
+|20|rntpc_react-native-bluetooth-printer|https://gitcode.com/CPF-RN/rntpc_react-native-bluetooth-printer|
+|21|rntpc_react-native-smart-refresh|https://gitcode.com/CPF-RN/rntpc_react-native-smart-refresh|
+|22|rntpc_react-native-turbo-log|https://gitcode.com/CPF-RN/rntpc_react-native-turbo-log|
+|23|rntpc_react-native-nitro-modules|https://gitcode.com/CPF-RN/rntpc_react-native-nitro-modules|
+|24|rntpc_react-native-wifi-reborn|https://gitcode.com/CPF-RN/rntpc_react-native-wifi-reborn|
+|25|rntpc_watermelondb|https://gitcode.com/CPF-RN/rntpc_watermelondb|
+|26|rntpc_react-native-iap|https://gitcode.com/CPF-RN/rntpc_react-native-iap|
+|27|rntpc_react-native-compressor|https://gitcode.com/CPF-RN/rntpc_react-native-compressor|
+|28|rntpc_lottie-turbo-react-native|https://gitcode.com/CPF-RN/rntpc_lottie-turbo-react-native|
+|29|rntpc_react-native-screen-capture|https://gitcode.com/CPF-RN/rntpc_react-native-screen-capture|
+|30|rntpc_react-native-secure-key-store|https://gitcode.com/CPF-RN/rntpc_react-native-secure-key-store|
