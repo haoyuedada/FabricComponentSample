@@ -26,6 +26,8 @@
 #include "ScreensPackage.h"
 #include "SmartRefreshLayoutPackage.h"
 #include "LottieAnimationViewPackage.h"
+#include "VisionCameraPackage.h"
+#include "OrientationLockerPackage.h"
 
 using namespace rnoh;
 
@@ -50,6 +52,8 @@ std::vector<std::shared_ptr<Package>> PackageProvider::getPackages(Package::Cont
     std::make_shared<rnoh::RnohReactNativeHarmonyScreensPackage>(ctx),
     std::make_shared<ScreensPackage>(ctx),
     std::make_shared<SmartRefreshLayoutPackage>(ctx),
-    std::make_shared<LottieAnimationViewPackage>(ctx)
+    std::make_shared<LottieAnimationViewPackage>(ctx),
+    std::make_shared<VisionCameraPackage>(ctx),
+    std::make_shared<OrientationLockerPackage>(ctx),
   };
 }

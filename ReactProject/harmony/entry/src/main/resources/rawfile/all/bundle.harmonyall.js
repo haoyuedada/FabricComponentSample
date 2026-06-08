@@ -1315,7 +1315,7 @@ var __BUNDLE_START_TIME__=globalThis.nativePerformanceNow?nativePerformanceNow()
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   var _reactNative = _$$_REQUIRE(_dependencyMap[1], "react-native");
-  var _WebviewTest = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "./tests/WebviewTest"));
+  var _VisionCameraDemo = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "./src/xiaoyi/camerapage/VisionCameraDemo"));
   /**
    * Copyright (c) 2024 Huawei Technologies Co., Ltd.
    *
@@ -1399,7 +1399,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // import App from './tests/Hierarchy1/Hierarchy2/index.js';
   // import FetchTest from './tests/FetchTest.tsx';
   // import VideoTest2 from './tests/imageMP4'
-
+  // import WebviewTest from './tests/WebviewTest'
   // import App from './src/thridPartyDemo/webView.tsx';
   // import App from './thridPartyDemo/AdaptiveWebView.tsx';
   // import App from './thridPartyDemo/vmall/DTS2025111903544/webviewDemo/webviewDemo/index.tsx'
@@ -1475,12 +1475,16 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // import App from './tests/lottie/crash_demo_direct.tsx'
   // import App from "./tests/screensDemo.tsx"
   // import App from './tests/crash/pingan/ReanimatedCrashRepro.tsx'
+  // import App from './App1.tsx'
+  // import App from './tests/camera/Camera.tsx'
+  // import App from './tests/react-native-vision-camera/App.tsx'
 
+  // 在导航或 App 中注册该组件
   _reactNative.AppRegistry.registerComponent("app_name", function () {
-    return _WebviewTest.default;
+    return _VisionCameraDemo.default;
   });
   // import { transform } from "./testTurboModule/buautify_executor.js"
-},0,[1,2,537],"index.js");
+},0,[1,2,538],"index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   function _interopRequireDefault(e) {
     return e && e.__esModule ? e : {
@@ -1517,7 +1521,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[5], "./Libraries/ReactNative/AppRegistry");
     },
     get AppState() {
-      return _$$_REQUIRE(_dependencyMap[6], "react-native/Libraries/AppState/AppState");
+      return _$$_REQUIRE(_dependencyMap[6], "./Libraries/AppState/AppState");
     },
     get BackHandler() {
       return _$$_REQUIRE(_dependencyMap[7], "./Libraries/Utilities/BackHandler");
@@ -1699,7 +1703,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
     // END: react-native-harmony specific exports
   };
-},2,[3,470,161,378,178,214,195,446,474,184,248,4,477,342,37,381,478,499,263,367,438,76,500,366,504,152,23,247,17,176,507,407,270,443,288,509,325,457,259,512,33,289,515,517,519,421,523,476,425,21,230,524,525,529,225,339,530,173,411,532,534,250,535,414,536],"node_modules/@react-native-oh/react-native-harmony/index.js");
+},2,[3,470,161,378,178,214,474,446,475,184,248,4,478,342,37,381,479,500,263,367,438,76,501,366,505,152,23,247,17,176,508,407,270,443,288,510,325,457,259,513,33,289,516,518,520,421,524,477,425,21,230,525,526,530,225,339,531,173,411,533,535,250,536,414,537],"node_modules/@react-native-oh/react-native-harmony/index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   Object.defineProperty(exports, "__esModule", {
@@ -26913,7 +26917,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _LogBoxLog = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "./LogBoxLog"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[9], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/Data/LogBoxData.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/Data/LogBoxData.js";
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
@@ -58451,7 +58455,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "react"));
   _$$_REQUIRE(_dependencyMap[9], "../Utilities/BackHandler");
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/ReactNative/renderApplication.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/ReactNative/renderApplication.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -58556,7 +58560,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _StyleSheet = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "../StyleSheet/StyleSheet"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[9], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/ReactNative/AppContainer.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/ReactNative/AppContainer.js";
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); } /**
@@ -58709,7 +58713,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[6], "react/jsx-runtime");
   var _excluded = ["accessibilityElementsHidden", "accessibilityLabel", "accessibilityLabelledBy", "accessibilityLiveRegion", "accessibilityRole", "accessibilityState", "accessibilityValue", "aria-busy", "aria-checked", "aria-disabled", "aria-expanded", "aria-hidden", "aria-label", "aria-labelledby", "aria-live", "aria-selected", "aria-valuemax", "aria-valuemin", "aria-valuenow", "aria-valuetext", "focusable", "id", "importantForAccessibility", "nativeID", "pointerEvents", "role", "tabIndex", "collapsable"];
   var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/@react-native-oh/react-native-harmony/Libraries/Components/View/View.harmony.js";
+    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/@react-native-oh/react-native-harmony/Libraries/Components/View/View.harmony.js";
   /*
   * RNOH patches:
   * - imports
@@ -61763,7 +61767,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _ElementBox = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "./ElementBox"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[8], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Inspector/DevtoolsOverlay.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Inspector/DevtoolsOverlay.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -61957,7 +61961,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _possibleConstructorReturn = _$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn");
   var _getPrototypeOf = _$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf");
   var _inherits = _$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Inspector/ElementBox.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Inspector/ElementBox.js";
   function _callSuper(t, o, e) { return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
   var React = _$$_REQUIRE(_dependencyMap[6], "react");
@@ -62301,7 +62305,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _possibleConstructorReturn = _$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn");
   var _getPrototypeOf = _$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf");
   var _inherits = _$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Inspector/BorderBox.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Inspector/BorderBox.js";
   function _callSuper(t, o, e) { return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
   var React = _$$_REQUIRE(_dependencyMap[6], "react");
@@ -62387,7 +62391,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _TraceUpdateOverlayNativeComponent = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "./TraceUpdateOverlayNativeComponent"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[9], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Components/TraceUpdateOverlay/TraceUpdateOverlay.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Components/TraceUpdateOverlay/TraceUpdateOverlay.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -63617,7 +63621,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
   var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[6], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Inspector/Inspector.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Inspector/Inspector.js";
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
   var React = _$$_REQUIRE(_dependencyMap[7], "react");
@@ -63874,7 +63878,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _normalizeColor = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "../StyleSheet/normalizeColor"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[3], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[4], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Pressability/PressabilityDebug.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Pressability/PressabilityDebug.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -63993,7 +63997,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
   var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[6], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Inspector/InspectorOverlay.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Inspector/InspectorOverlay.js";
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
   var React = _$$_REQUIRE(_dependencyMap[7], "react");
@@ -64072,7 +64076,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
   var _SafeAreaView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "../Components/SafeAreaView/SafeAreaView"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Inspector/InspectorPanel.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Inspector/InspectorPanel.js";
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
   var React = _$$_REQUIRE(_dependencyMap[8], "react");
@@ -64224,7 +64228,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[6], "react/jsx-runtime");
   var _excluded = ["children", "style"];
   var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/@react-native-oh/react-native-harmony/Libraries/Components/SafeAreaView/SafeAreaView.harmony.tsx";
+    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/@react-native-oh/react-native-harmony/Libraries/Components/SafeAreaView/SafeAreaView.harmony.tsx";
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   var safeAreaTurboModule = _reactNative.TurboModuleRegistry.get("SafeAreaTurboModule");
   var cachedInitialInsets = null;
@@ -64341,6 +64345,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         setBottomInset(insets.bottom);
         setLeftInset(insets.left);
         setRightInset(insets.right);
+        measureView();
       });
       return function () {
         subscription.remove();
@@ -64366,7 +64371,6 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }],
       onLayout: function onLayout(event) {
         setLayout(event.nativeEvent.layout);
-        measureView();
         (otherProps == null ? void 0 : otherProps.onLayout) && otherProps.onLayout(event);
       }
     }, otherProps, {
@@ -64389,7 +64393,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime");
   var _excluded = ["accessible", "accessibilityLabel", "accessibilityRole", "accessibilityState", "allowFontScaling", "aria-busy", "aria-checked", "aria-disabled", "aria-expanded", "aria-label", "aria-selected", "ellipsizeMode", "id", "nativeID", "onLongPress", "onPress", "onPressIn", "onPressOut", "onResponderGrant", "onResponderMove", "onResponderRelease", "onResponderTerminate", "onResponderTerminationRequest", "onStartShouldSetResponder", "pressRetentionOffset", "role", "suppressHighlighting"];
   var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Text/Text.js";
+    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Text/Text.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -67624,7 +67628,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _nullthrows = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[29], "nullthrows"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[30], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[31], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/@react-native-oh/react-native-harmony/Libraries/Components/ScrollView/ScrollView.harmony.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/@react-native-oh/react-native-harmony/Libraries/Components/ScrollView/ScrollView.harmony.js";
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); } /**
@@ -73451,7 +73455,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _useAnimatedProps3 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./useAnimatedProps"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[6], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Animated/createAnimatedComponent.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Animated/createAnimatedComponent.js";
   var _excluded = ["style"];
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -75030,7 +75034,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[6], "react/jsx-runtime");
   var _excluded = ["accessibilityElementsHidden", "accessibilityLabel", "accessibilityLabelledBy", "accessibilityLiveRegion", "accessibilityRole", "accessibilityState", "accessibilityValue", "aria-busy", "aria-checked", "aria-disabled", "aria-expanded", "aria-hidden", "aria-label", "aria-labelledby", "aria-live", "aria-selected", "aria-valuemax", "aria-valuemin", "aria-valuenow", "aria-valuetext", "focusable", "id", "importantForAccessibility", "nativeID", "pointerEvents", "role", "tabIndex"];
   var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Components/View/View.js";
+    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Components/View/View.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -75229,9 +75233,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   function processDecelerationRate(decelerationRate) {
     if (decelerationRate === "normal") {
-      return 0.998;
+      return 0.997;
     } else if (decelerationRate === "fast") {
-      return 0.99;
+      return 0.992;
     }
     return decelerationRate;
   }
@@ -75497,7 +75501,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[6], "react"));
   var React = _react;
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Components/ScrollView/ScrollViewStickyHeader.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Components/ScrollView/ScrollViewStickyHeader.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -75950,7 +75954,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[3], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[4], "react/jsx-runtime");
   var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Animated/components/AnimatedFlatList.js";
+    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Animated/components/AnimatedFlatList.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -75984,7 +75988,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _memoizeOne = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "memoize-one"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[8], "react/jsx-runtime");
   var _excluded = ["numColumns", "columnWrapperStyle", "removeClippedSubviews", "strictMode"];
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Lists/FlatList.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Lists/FlatList.js";
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); } /**
  * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -76761,7 +76765,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _nullthrows = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[18], "nullthrows"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[19], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[20], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/@react-native/virtualized-lists/Lists/VirtualizedList.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/@react-native/virtualized-lists/Lists/VirtualizedList.js";
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); } /**
@@ -79082,7 +79086,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _invariant = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "invariant"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[9], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/@react-native/virtualized-lists/Lists/VirtualizedListCellRenderer.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/@react-native/virtualized-lists/Lists/VirtualizedListCellRenderer.js";
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); } /**
@@ -79265,7 +79269,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[0], "react"));
   var React = _react;
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[1], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/@react-native/virtualized-lists/Lists/VirtualizedListContext.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/@react-native/virtualized-lists/Lists/VirtualizedListContext.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -79481,7 +79485,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[11], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[12], "react/jsx-runtime");
   var _excluded = ["ItemSeparatorComponent", "SectionSeparatorComponent", "renderItem", "renderSectionFooter", "renderSectionHeader", "sections", "stickySectionHeadersEnabled"];
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/@react-native/virtualized-lists/Lists/VirtualizedSectionList.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/@react-native/virtualized-lists/Lists/VirtualizedSectionList.js";
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); } /**
@@ -79926,7 +79930,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[12], "react/jsx-runtime");
   var _excluded = ["aria-busy", "aria-checked", "aria-disabled", "aria-expanded", "aria-selected", "height", "src", "width"];
   var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Image/Image.ios.js";
+    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Image/Image.ios.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -80501,7 +80505,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var React = _react;
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[12], "react/jsx-runtime");
   var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Animated/components/AnimatedScrollView.js";
+    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Animated/components/AnimatedScrollView.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -80603,7 +80607,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _AndroidSwipeRefreshLayoutNativeComponent = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react-native/Libraries/Components/RefreshControl/AndroidSwipeRefreshLayoutNativeComponent"));
   var _PullToRefreshViewNativeComponent = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "react-native/Libraries/Components/RefreshControl/PullToRefreshViewNativeComponent"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[9], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/@react-native-oh/react-native-harmony/Libraries/Components/RefreshControl/RefreshControl.harmony.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/@react-native-oh/react-native-harmony/Libraries/Components/RefreshControl/RefreshControl.harmony.js";
   var _excluded = ["colors"],
     _excluded2 = ["tintColor", "titleColor", "title"];
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
@@ -80811,7 +80815,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[3], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[4], "react/jsx-runtime");
   var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Animated/components/AnimatedSectionList.js";
+    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Animated/components/AnimatedSectionList.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -80861,7 +80865,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _Platform = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "../Utilities/Platform"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[9], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Lists/SectionList.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Lists/SectionList.js";
   var _excluded = ["stickySectionHeadersEnabled"];
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
@@ -105406,7 +105410,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
   var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[6], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Inspector/ElementProperties.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Inspector/ElementProperties.js";
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
   var React = _$$_REQUIRE(_dependencyMap[7], "react");
@@ -105547,7 +105551,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _Platform = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "react-native/Libraries/Utilities/Platform"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[11], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[12], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/@react-native-oh/react-native-harmony/Libraries/Components/Touchable/TouchableHighlight.harmony.js",
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/@react-native-oh/react-native-harmony/Libraries/Components/Touchable/TouchableHighlight.harmony.js",
     _this3 = this;
   var _excluded = ["onBlur", "onFocus"];
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
@@ -105998,7 +106002,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime");
   var _excluded = ["onBlur", "onFocus"],
     _excluded2 = ["aria-disabled"];
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/@react-native-oh/react-native-harmony/Libraries/Components/Touchable/TouchableWithoutFeedback.harmony.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/@react-native-oh/react-native-harmony/Libraries/Components/Touchable/TouchableWithoutFeedback.harmony.js";
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); } /**
@@ -106155,7 +106159,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _possibleConstructorReturn = _$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn");
   var _getPrototypeOf = _$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf");
   var _inherits = _$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Inspector/StyleInspector.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Inspector/StyleInspector.js";
   function _callSuper(t, o, e) { return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
   var React = _$$_REQUIRE(_dependencyMap[6], "react");
@@ -106237,7 +106241,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _possibleConstructorReturn = _$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn");
   var _getPrototypeOf = _$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf");
   var _inherits = _$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Inspector/BoxInspector.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Inspector/BoxInspector.js";
   function _callSuper(t, o, e) { return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
   var React = _$$_REQUIRE(_dependencyMap[6], "react");
@@ -106375,7 +106379,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _possibleConstructorReturn = _$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn");
   var _getPrototypeOf = _$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf");
   var _inherits = _$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Inspector/PerformanceOverlay.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Inspector/PerformanceOverlay.js";
   function _callSuper(t, o, e) { return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
   var React = _$$_REQUIRE(_dependencyMap[6], "react");
@@ -106455,7 +106459,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
   var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[6], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Inspector/NetworkOverlay.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Inspector/NetworkOverlay.js";
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
   var React = _$$_REQUIRE(_dependencyMap[7], "react");
@@ -107360,7 +107364,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _LogBoxNotification = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./UI/LogBoxNotification"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[6], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/LogBoxNotificationContainer.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/LogBoxNotificationContainer.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -107459,7 +107463,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var LogBoxStyle = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[9], "./LogBoxStyle"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[10], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[11], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxNotification.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxNotification.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -107672,7 +107676,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var LogBoxStyle = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[5], "./LogBoxStyle"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[6], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxButton.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxButton.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -107797,7 +107801,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _Text = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "../../Text/Text"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[4], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[5], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxMessage.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxMessage.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -108344,7 +108348,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _LogBoxInspector = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./UI/LogBoxInspector"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[10], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[11], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/LogBoxInspectorContainer.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/LogBoxInspectorContainer.js";
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); } /**
@@ -108430,7 +108434,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var LogBoxStyle = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[14], "./LogBoxStyle"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[15], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[16], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxInspector.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxInspector.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -108578,7 +108582,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var LogBoxStyle = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[11], "./LogBoxStyle"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[12], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxInspectorCodeFrame.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxInspectorCodeFrame.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -108730,7 +108734,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _Text = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "../../Text/Text"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[4], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[5], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/AnsiHighlight.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/AnsiHighlight.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -109482,7 +109486,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var LogBoxStyle = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[4], "./LogBoxStyle"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[5], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[6], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxInspectorSection.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxInspectorSection.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -109546,7 +109550,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var LogBoxStyle = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[6], "./LogBoxStyle"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[8], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxInspectorFooter.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxInspectorFooter.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -109676,7 +109680,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var LogBoxStyle = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "./LogBoxStyle"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[9], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxInspectorHeader.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxInspectorHeader.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -110266,7 +110270,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var LogBoxStyle = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[5], "./LogBoxStyle"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[6], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxInspectorMessageHeader.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxInspectorMessageHeader.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -110390,7 +110394,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var LogBoxStyle = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[9], "./LogBoxStyle"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[10], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[11], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxInspectorReactFrames.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxInspectorReactFrames.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -110591,7 +110595,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var LogBoxStyle = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[10], "./LogBoxStyle"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[11], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[12], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxInspectorStackFrames.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxInspectorStackFrames.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -110781,7 +110785,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var LogBoxStyle = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "./LogBoxStyle"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[9], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxInspectorSourceMapStatus.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxInspectorSourceMapStatus.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -110940,7 +110944,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var LogBoxStyle = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[6], "./LogBoxStyle"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[8], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxInspectorStackFrame.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/LogBox/UI/LogBoxInspectorStackFrame.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -121248,7 +121252,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[6], "react/jsx-runtime");
   var _excluded = ["animating", "color", "hidesWhenStopped", "onLayout", "size", "style"];
   var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Components/ActivityIndicator/ActivityIndicator.js";
+    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Components/ActivityIndicator/ActivityIndicator.js";
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   var PlatformActivityIndicator = _Platform.default.OS === 'android' ? _$$_REQUIRE(_dependencyMap[7], "../ProgressBarAndroid/ProgressBarAndroid") : _$$_REQUIRE(_dependencyMap[8], "./ActivityIndicatorViewNativeComponent").default;
   var GRAY = '#999999';
@@ -121426,7 +121430,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _StyleSheet = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "../../StyleSheet/StyleSheet"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[8], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Components/UnimplementedViews/UnimplementedView.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Components/UnimplementedViews/UnimplementedView.js";
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); } /**
@@ -121487,6 +121491,34 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
    * This source code is licensed under the MIT license found in the
    * LICENSE file in the root directory of this source tree.
    *
+   * 
+   * @format
+   */
+
+  // RNOH: patch
+  // Wrap the upstream AppState implementation and only extend it with
+  // the Harmony-specific `memoryLevelChange` event.
+
+  var originalAddEventListener = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/AppState/AppState").addEventListener.bind(_$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/AppState/AppState"));
+  _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/AppState/AppState").addEventListener = function (type, handler) {
+    if (type === 'memoryLevelChange') {
+      var emitter = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/AppState/AppState")._emitter;
+      if (emitter == null) {
+        throw new Error('Cannot use AppState when `isAvailable` is false.');
+      }
+      return emitter.addListener('memoryLevelChange', handler);
+    }
+    return originalAddEventListener(type, handler);
+  };
+  module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/AppState/AppState");
+},474,[195],"node_modules/@react-native-oh/react-native-harmony/Libraries/AppState/AppState.harmony.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  /**
+   * Copyright (c) Meta Platforms, Inc. and affiliates.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   *
    * @format
    * 
    * @generate-docs
@@ -121509,7 +121541,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _invariant = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "invariant"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[13], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[14], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/@react-native-oh/react-native-harmony/Libraries/Components/Button/Button.harmony.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/@react-native-oh/react-native-harmony/Libraries/Components/Button/Button.harmony.js";
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
@@ -121783,7 +121815,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     })
   });
   module.exports = Button;
-},474,[1,12,13,49,51,52,259,289,17,475,476,369,22,41,88],"node_modules/@react-native-oh/react-native-harmony/Libraries/Components/Button/Button.harmony.js");
+},475,[1,12,13,49,51,52,259,289,17,476,477,369,22,41,88],"node_modules/@react-native-oh/react-native-harmony/Libraries/Components/Button/Button.harmony.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   var _objectWithoutProperties2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/objectWithoutProperties"));
@@ -121800,7 +121832,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[12], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime");
   var _excluded = ["onBlur", "onFocus"];
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Components/Touchable/TouchableNativeFeedback.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Components/Touchable/TouchableNativeFeedback.js";
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); } /**
@@ -122034,7 +122066,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   };
   TouchableNativeFeedback.displayName = 'TouchableNativeFeedback';
   module.exports = TouchableNativeFeedback;
-},475,[1,150,12,13,49,51,52,225,291,173,17,22,41,88,37,227,284],"node_modules/react-native/Libraries/Components/Touchable/TouchableNativeFeedback.js");
+},476,[1,150,12,13,49,51,52,225,291,173,17,22,41,88,37,227,284],"node_modules/react-native/Libraries/Components/Touchable/TouchableNativeFeedback.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   var _objectWithoutProperties2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/objectWithoutProperties"));
@@ -122050,7 +122082,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _Platform = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[11], "../../Utilities/Platform"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[12], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Components/Touchable/TouchableOpacity.js",
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Components/Touchable/TouchableOpacity.js",
     _this3 = this;
   var _excluded = ["onBlur", "onFocus"];
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
@@ -122334,7 +122366,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   Touchable.displayName = 'TouchableOpacity';
   module.exports = Touchable;
-},476,[1,150,12,13,49,51,52,378,342,291,206,17,41,88,284],"node_modules/react-native/Libraries/Components/Touchable/TouchableOpacity.js");
+},477,[1,150,12,13,49,51,52,378,342,291,206,17,41,88,284],"node_modules/react-native/Libraries/Components/Touchable/TouchableOpacity.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -122348,7 +122380,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   'use strict';
 
   module.exports = _$$_REQUIRE(_dependencyMap[0], "../UnimplementedViews/UnimplementedView");
-},477,[472],"node_modules/react-native/Libraries/Components/DrawerAndroid/DrawerLayoutAndroid.ios.js");
+},478,[472],"node_modules/react-native/Libraries/Components/DrawerAndroid/DrawerLayoutAndroid.ios.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   var _objectWithoutProperties2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/objectWithoutProperties"));
@@ -122365,7 +122397,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[12], "react/jsx-runtime");
   var _excluded = ["aria-busy", "aria-checked", "aria-disabled", "aria-expanded", "aria-selected", "height", "src", "width"];
   var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/@react-native-oh/react-native-harmony/Libraries/Components/Image/Image.harmony.js";
+    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/@react-native-oh/react-native-harmony/Libraries/Components/Image/Image.harmony.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -122609,7 +122641,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   });
   module.exports = Image;
-},478,[1,150,83,24,206,259,399,400,401,479,242,41,88,404,405,480],"node_modules/@react-native-oh/react-native-harmony/Libraries/Components/Image/Image.harmony.js");
+},479,[1,150,83,24,206,259,399,400,401,480,242,41,88,404,405,481],"node_modules/@react-native-oh/react-native-harmony/Libraries/Components/Image/Image.harmony.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -122627,7 +122659,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
    * @format
    */
   var _default = exports.default = TurboModuleRegistry.getEnforcing('ImageLoader');
-},479,[21],"node_modules/@react-native-oh/react-native-harmony/Libraries/Components/Image/NativeImageLoaderHarmony.js");
+},480,[21],"node_modules/@react-native-oh/react-native-harmony/Libraries/Components/Image/NativeImageLoaderHarmony.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -122664,7 +122696,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[6], "./DeprecatedViewPropTypes");
     }
   };
-},480,[481,483,484,495,496,497,485],"node_modules/deprecated-react-native-prop-types/index.js");
+},481,[482,484,485,496,497,498,486],"node_modules/deprecated-react-native-prop-types/index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -122702,7 +122734,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var ColorPropType = colorPropType.bind(null, false /* isRequired */);
   ColorPropType.isRequired = colorPropType.bind(null, true /* isRequired */);
   module.exports = ColorPropType;
-},481,[482],"node_modules/deprecated-react-native-prop-types/DeprecatedColorPropType.js");
+},482,[483],"node_modules/deprecated-react-native-prop-types/DeprecatedColorPropType.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -123263,7 +123295,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     return null;
   }
   module.exports = normalizeColor;
-},482,[],"node_modules/@react-native/normalize-colors/index.js");
+},483,[],"node_modules/@react-native/normalize-colors/index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -123287,7 +123319,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     top: _$$_REQUIRE(_dependencyMap[0], "prop-types").number
   });
   module.exports = DeprecatedEdgeInsetsPropType;
-},483,[300],"node_modules/deprecated-react-native-prop-types/DeprecatedEdgeInsetsPropType.js");
+},484,[300],"node_modules/deprecated-react-native-prop-types/DeprecatedEdgeInsetsPropType.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -123335,7 +123367,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     width: _$$_REQUIRE(_dependencyMap[1], "prop-types").number
   });
   module.exports = DeprecatedImagePropType;
-},484,[485,300,483,493,487,494,481],"node_modules/deprecated-react-native-prop-types/DeprecatedImagePropType.js");
+},485,[486,300,484,494,488,495,482],"node_modules/deprecated-react-native-prop-types/DeprecatedImagePropType.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -123459,7 +123491,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     testID: _$$_REQUIRE(_dependencyMap[0], "prop-types").string
   });
   module.exports = DeprecatedViewPropTypes;
-},485,[300,486,483,487,489],"node_modules/deprecated-react-native-prop-types/DeprecatedViewPropTypes.js");
+},486,[300,487,484,488,490],"node_modules/deprecated-react-native-prop-types/DeprecatedViewPropTypes.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -123484,7 +123516,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     RolePropType: _$$_REQUIRE(_dependencyMap[0], "prop-types").oneOf(['alert', 'alertdialog', 'application', 'article', 'banner', 'button', 'cell', 'checkbox', 'columnheader', 'combobox', 'complementary', 'contentinfo', 'definition', 'dialog', 'directory', 'document', 'feed', 'figure', 'form', 'grid', 'group', 'heading', 'img', 'link', 'list', 'listitem', 'log', 'main', 'marquee', 'math', 'menu', 'menubar', 'menuitem', 'meter', 'navigation', 'none', 'note', 'option', 'presentation', 'progressbar', 'radio', 'radiogroup', 'region', 'row', 'rowgroup', 'rowheader', 'scrollbar', 'searchbox', 'separator', 'slider', 'spinbutton', 'status', 'summary', 'switch', 'tab', 'table', 'tablist', 'tabpanel', 'term', 'timer', 'toolbar', 'tooltip', 'tree', 'treegrid', 'treeitem'])
   };
   module.exports = DeprecatedViewAccessibility;
-},486,[300],"node_modules/deprecated-react-native-prop-types/DeprecatedViewAccessibility.js");
+},487,[300],"node_modules/deprecated-react-native-prop-types/DeprecatedViewAccessibility.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -123532,7 +123564,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     return result;
   }
   module.exports = DeprecatedStyleSheetPropType;
-},487,[488],"node_modules/deprecated-react-native-prop-types/DeprecatedStyleSheetPropType.js");
+},488,[489],"node_modules/deprecated-react-native-prop-types/DeprecatedStyleSheetPropType.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -123587,7 +123619,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     return chainedCheckType;
   }
   module.exports = deprecatedCreateStrictShapeTypeChecker;
-},488,[22],"node_modules/deprecated-react-native-prop-types/deprecatedCreateStrictShapeTypeChecker.js");
+},489,[22],"node_modules/deprecated-react-native-prop-types/deprecatedCreateStrictShapeTypeChecker.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -123639,7 +123671,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     pointerEvents: _$$_REQUIRE(_dependencyMap[3], "prop-types").oneOf(['auto', 'box-none', 'box-only', 'none'])
   });
   module.exports = DeprecatedViewStylePropTypes;
-},489,[490,491,492,300,481],"node_modules/deprecated-react-native-prop-types/DeprecatedViewStylePropTypes.js");
+},490,[491,492,493,300,482],"node_modules/deprecated-react-native-prop-types/DeprecatedViewStylePropTypes.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -123736,7 +123768,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     zIndex: _$$_REQUIRE(_dependencyMap[0], "prop-types").number
   };
   module.exports = DeprecatedLayoutPropTypes;
-},490,[300],"node_modules/deprecated-react-native-prop-types/DeprecatedLayoutPropTypes.js");
+},491,[300],"node_modules/deprecated-react-native-prop-types/DeprecatedLayoutPropTypes.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -123763,7 +123795,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     shadowRadius: _$$_REQUIRE(_dependencyMap[1], "prop-types").number
   };
   module.exports = DeprecatedShadowPropTypesIOS;
-},491,[481,300],"node_modules/deprecated-react-native-prop-types/DeprecatedShadowPropTypesIOS.js");
+},492,[482,300],"node_modules/deprecated-react-native-prop-types/DeprecatedShadowPropTypesIOS.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -123808,7 +123840,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     })]))
   };
   module.exports = DeprecatedTransformPropTypes;
-},492,[300],"node_modules/deprecated-react-native-prop-types/DeprecatedTransformPropTypes.js");
+},493,[300],"node_modules/deprecated-react-native-prop-types/DeprecatedTransformPropTypes.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -123838,7 +123870,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   var ImageSourcePropType = _$$_REQUIRE(_dependencyMap[0], "prop-types").oneOfType([ImageURISourcePropType, _$$_REQUIRE(_dependencyMap[0], "prop-types").number, _$$_REQUIRE(_dependencyMap[0], "prop-types").arrayOf(ImageURISourcePropType)]);
   module.exports = ImageSourcePropType;
-},493,[300],"node_modules/deprecated-react-native-prop-types/DeprecatedImageSourcePropType.js");
+},494,[300],"node_modules/deprecated-react-native-prop-types/DeprecatedImageSourcePropType.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -123873,7 +123905,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     resizeMode: _$$_REQUIRE(_dependencyMap[3], "prop-types").oneOf(['center', 'contain', 'cover', 'repeat', 'stretch'])
   });
   module.exports = DeprecatedImageStylePropTypes;
-},494,[490,491,492,300,481],"node_modules/deprecated-react-native-prop-types/DeprecatedImageStylePropTypes.js");
+},495,[491,492,493,300,482],"node_modules/deprecated-react-native-prop-types/DeprecatedImageStylePropTypes.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -123895,7 +123927,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     y: _$$_REQUIRE(_dependencyMap[0], "prop-types").number
   });
   module.exports = PointPropType;
-},495,[300],"node_modules/deprecated-react-native-prop-types/DeprecatedPointPropType.js");
+},496,[300],"node_modules/deprecated-react-native-prop-types/DeprecatedPointPropType.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -123980,7 +124012,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     value: _$$_REQUIRE(_dependencyMap[1], "prop-types").string
   });
   module.exports = DeprecatedTextInputPropTypes;
-},496,[485,300,481,497],"node_modules/deprecated-react-native-prop-types/DeprecatedTextInputPropTypes.js");
+},497,[486,300,482,498],"node_modules/deprecated-react-native-prop-types/DeprecatedTextInputPropTypes.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -124048,7 +124080,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     textBreakStrategy: _$$_REQUIRE(_dependencyMap[0], "prop-types").oneOf(['balanced', 'highQuality', 'simple'])
   };
   module.exports = DeprecatedTextPropTypes;
-},497,[300,486,483,481,487,498],"node_modules/deprecated-react-native-prop-types/DeprecatedTextPropTypes.js");
+},498,[300,487,484,482,488,499],"node_modules/deprecated-react-native-prop-types/DeprecatedTextPropTypes.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -124092,7 +124124,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     writingDirection: _$$_REQUIRE(_dependencyMap[2], "prop-types").oneOf(['auto', 'ltr', 'rtl'])
   });
   module.exports = DeprecatedTextStylePropTypes;
-},498,[489,481,300],"node_modules/deprecated-react-native-prop-types/DeprecatedTextStylePropTypes.js");
+},499,[490,482,300],"node_modules/deprecated-react-native-prop-types/DeprecatedTextStylePropTypes.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -124119,7 +124151,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _Image = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "./Image"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[11], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[12], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Image/ImageBackground.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Image/ImageBackground.js";
   var _excluded = ["children", "style", "imageStyle", "imageRef", "importantForAccessibility"];
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
@@ -124209,7 +124241,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(React.Component);
   module.exports = ImageBackground;
-},499,[1,150,12,13,49,51,52,225,206,259,398,41,88],"node_modules/react-native/Libraries/Image/ImageBackground.js");
+},500,[1,150,12,13,49,51,52,225,206,259,398,41,88],"node_modules/react-native/Libraries/Image/ImageBackground.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   var _defineProperty2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/defineProperty"));
@@ -124223,7 +124255,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _NativeModalManager = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./NativeModalManager"));
   var _RCTModalHostViewNativeComponent = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "./RCTModalHostViewNativeComponent"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[11], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Modal/Modal.js",
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Modal/Modal.js",
     _ModalInjection$unsta;
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); } /**
@@ -124377,7 +124409,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   var ExportedModal = (_ModalInjection$unsta = _ModalInjection.default.unstable_Modal) != null ? _ModalInjection$unsta : Modal;
   module.exports = ExportedModal;
-},500,[1,202,12,13,49,51,52,152,501,502,503,88,41,224,383,325,225,443,263,259],"node_modules/react-native/Libraries/Modal/Modal.js");
+},501,[1,202,12,13,49,51,52,152,502,503,504,88,41,224,383,325,225,443,263,259],"node_modules/react-native/Libraries/Modal/Modal.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -124395,7 +124427,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _default = exports.default = {
     unstable_Modal: null
   };
-},501,[],"node_modules/react-native/Libraries/Modal/ModalInjection.js");
+},502,[],"node_modules/react-native/Libraries/Modal/ModalInjection.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -124413,7 +124445,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
    * @format
    */
   var _default = exports.default = TurboModuleRegistry.get('ModalManager');
-},502,[21],"node_modules/react-native/Libraries/Modal/NativeModalManager.js");
+},503,[21],"node_modules/react-native/Libraries/Modal/NativeModalManager.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   Object.defineProperty(exports, "__esModule", {
@@ -124434,7 +124466,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     interfaceOnly: true,
     paperComponentName: 'RCTModalHostView'
   });
-},503,[1,269],"node_modules/react-native/Libraries/Modal/RCTModalHostViewNativeComponent.js");
+},504,[1,269],"node_modules/react-native/Libraries/Modal/RCTModalHostViewNativeComponent.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   Object.defineProperty(exports, "__esModule", {
@@ -124456,7 +124488,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _Keyboard = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[13], "react-native/Libraries/Components/Keyboard/Keyboard"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[14], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[15], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/@react-native-oh/react-native-harmony/Libraries/Components/Keyboard/KeyboardAvoidingView.harmony.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/@react-native-oh/react-native-harmony/Libraries/Components/Keyboard/KeyboardAvoidingView.harmony.js";
   var _excluded = ["behavior", "children", "contentContainerStyle", "enabled", "keyboardVerticalOffset", "style", "onLayout"];
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
@@ -124669,7 +124701,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(React.Component);
   var _default = exports.default = KeyboardAvoidingView;
-},504,[1,150,83,12,13,49,51,52,367,259,17,505,369,366,41,88],"node_modules/@react-native-oh/react-native-harmony/Libraries/Components/Keyboard/KeyboardAvoidingView.harmony.js");
+},505,[1,150,83,12,13,49,51,52,367,259,17,506,369,366,41,88],"node_modules/@react-native-oh/react-native-harmony/Libraries/Components/Keyboard/KeyboardAvoidingView.harmony.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   Object.defineProperty(exports, "__esModule", {
@@ -124998,7 +125030,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   };
   var _default = exports.default = AccessibilityInfo;
-},505,[1,4,17,19,506,20,37],"node_modules/react-native/Libraries/Components/AccessibilityInfo/AccessibilityInfo.js");
+},506,[1,4,17,19,507,20,37],"node_modules/react-native/Libraries/Components/AccessibilityInfo/AccessibilityInfo.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -125016,7 +125048,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
    * @format
    */
   var _default = exports.default = TurboModuleRegistry.get('AccessibilityInfo');
-},506,[21],"node_modules/react-native/Libraries/Components/AccessibilityInfo/NativeAccessibilityInfo.js");
+},507,[21],"node_modules/react-native/Libraries/Components/AccessibilityInfo/NativeAccessibilityInfo.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   Object.defineProperty(exports, "__esModule", {
@@ -125031,7 +125063,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[6], "react"));
   var React = _react;
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Components/Pressable/Pressable.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Components/Pressable/Pressable.js";
   var _excluded = ["accessible", "accessibilityState", "aria-live", "android_disableSound", "android_ripple", "aria-busy", "aria-checked", "aria-disabled", "aria-expanded", "aria-label", "aria-selected", "cancelable", "children", "delayHoverIn", "delayHoverOut", "delayLongPress", "disabled", "focusable", "hitSlop", "onHoverIn", "onHoverOut", "onLongPress", "onPress", "onPressIn", "onPressOut", "pressRetentionOffset", "style", "testOnly_pressed", "unstable_pressDelay"];
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -125179,7 +125211,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var MemoedPressable = React.memo(React.forwardRef(Pressable));
   MemoedPressable.displayName = 'Pressable';
   var _default = exports.default = MemoedPressable;
-},507,[1,24,150,290,225,508,41,88,284],"node_modules/react-native/Libraries/Components/Pressable/Pressable.js");
+},508,[1,24,150,290,225,509,41,88,284],"node_modules/react-native/Libraries/Components/Pressable/Pressable.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   Object.defineProperty(exports, "__esModule", {
@@ -125255,7 +125287,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return null;
     }, [borderless, color, foreground, radius, viewRef]);
   }
-},508,[1,173,17,225,22,41,227],"node_modules/react-native/Libraries/Components/Pressable/useAndroidRippleForView.js");
+},509,[1,173,17,225,22,41,227],"node_modules/react-native/Libraries/Components/Pressable/useAndroidRippleForView.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
@@ -125382,7 +125414,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
    */
   Share.dismissedAction = 'dismissedAction';
   module.exports = Share;
-},509,[1,12,13,510,511,22,173],"node_modules/@react-native-oh/react-native-harmony/Libraries/Share/Share.harmony.js");
+},510,[1,12,13,511,512,22,173],"node_modules/@react-native-oh/react-native-harmony/Libraries/Share/Share.harmony.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -125400,7 +125432,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
    * @format
    */
   var _default = exports.default = TurboModuleRegistry.get('ActionSheetManager');
-},510,[21],"node_modules/react-native/Libraries/ActionSheetIOS/NativeActionSheetManager.js");
+},511,[21],"node_modules/react-native/Libraries/ActionSheetIOS/NativeActionSheetManager.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -125418,7 +125450,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
    * @format
    */
   var _default = exports.default = TurboModuleRegistry.get('ShareModule');
-},511,[21],"node_modules/react-native/Libraries/Share/NativeShareModule.js");
+},512,[21],"node_modules/react-native/Libraries/Share/NativeShareModule.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   Object.defineProperty(exports, "__esModule", {
@@ -125434,7 +125466,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _SwitchNativeComponent = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "./SwitchNativeComponent"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[9], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Components/Switch/Switch.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Components/Switch/Switch.js";
   var _excluded = ["disabled", "ios_backgroundColor", "onChange", "onValueChange", "style", "thumbColor", "trackColor", "value"];
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -125590,7 +125622,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   });
   var _default = exports.default = SwitchWithForwardedRef;
-},512,[1,24,150,259,17,350,513,514,41,88],"node_modules/react-native/Libraries/Components/Switch/Switch.js");
+},513,[1,24,150,259,17,350,514,515,41,88],"node_modules/react-native/Libraries/Components/Switch/Switch.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   Object.defineProperty(exports, "__esModule", {
@@ -125617,7 +125649,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _default = exports.default = (0, _codegenNativeComponent.default)('AndroidSwitch', {
     interfaceOnly: true
   });
-},513,[1,257,269,41],"node_modules/react-native/Libraries/Components/Switch/AndroidSwitchNativeComponent.js");
+},514,[1,257,269,41],"node_modules/react-native/Libraries/Components/Switch/AndroidSwitchNativeComponent.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   Object.defineProperty(exports, "__esModule", {
@@ -125645,7 +125677,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     paperComponentName: 'RCTSwitch',
     excludedPlatforms: ['android']
   });
-},514,[1,257,269,41],"node_modules/react-native/Libraries/Components/Switch/SwitchNativeComponent.js");
+},515,[1,257,269,41],"node_modules/react-native/Libraries/Components/Switch/SwitchNativeComponent.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   var _slicedToArray2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/slicedToArray"));
@@ -125662,7 +125694,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _nullthrows = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[12], "nullthrows"));
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[13], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[14], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/@react-native-oh/react-native-harmony/Libraries/Components/TextInput/TextInput.harmony.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/@react-native-oh/react-native-harmony/Libraries/Components/TextInput/TextInput.harmony.js";
   var _excluded = ["aria-busy", "aria-checked", "aria-disabled", "aria-expanded", "aria-selected", "accessibilityState", "id", "tabIndex", "selection"],
     _excluded2 = ["onBlur", "onFocus"],
     _excluded3 = ["allowFontScaling", "rejectResponderTermination", "underlineColorAndroid", "autoComplete", "textContentType", "readOnly", "editable", "enterKeyHint", "returnKeyType", "inputMode", "showSoftInputOnFocus", "keyboardType"];
@@ -126335,7 +126367,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   // $FlowFixMe[unclear-type] Unclear type. Using `any` type is not safe.
   module.exports = ExportedForwardRef;
-},515,[1,24,150,290,206,259,289,226,17,350,274,22,231,41,88,277,275,516,480],"node_modules/@react-native-oh/react-native-harmony/Libraries/Components/TextInput/TextInput.harmony.js");
+},516,[1,24,150,290,206,259,289,226,17,350,274,22,231,41,88,277,275,517,481],"node_modules/@react-native-oh/react-native-harmony/Libraries/Components/TextInput/TextInput.harmony.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   Object.defineProperty(exports, "__esModule", {
@@ -126372,7 +126404,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   // flowlint-next-line unclear-type:off
   var _default = exports.default = MultilineTextInputNativeComponent;
-},516,[1,228,257,276],"node_modules/react-native/Libraries/Components/TextInput/RCTMultilineTextInputNativeComponent.js");
+},517,[1,228,257,276],"node_modules/react-native/Libraries/Components/TextInput/RCTMultilineTextInputNativeComponent.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   var _NativeToastAndroid = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "./NativeToastAndroid"));
@@ -126427,7 +126459,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   };
   module.exports = ToastAndroid;
-},517,[1,518],"node_modules/react-native/Libraries/Components/ToastAndroid/ToastAndroid.android.js");
+},518,[1,519],"node_modules/react-native/Libraries/Components/ToastAndroid/ToastAndroid.android.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -126445,7 +126477,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
    * @format
    */
   var _default = exports.default = TurboModuleRegistry.getEnforcing('ToastAndroid');
-},518,[21],"node_modules/react-native/Libraries/Components/ToastAndroid/NativeToastAndroid.js");
+},519,[21],"node_modules/react-native/Libraries/Components/ToastAndroid/NativeToastAndroid.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   var _objectWithoutProperties2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/objectWithoutProperties"));
@@ -126457,7 +126489,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[8], "react/jsx-runtime");
   var _this2 = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Components/Touchable/Touchable.js";
+    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/react-native/Libraries/Components/Touchable/Touchable.js";
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
    *
@@ -127237,7 +127269,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   };
   module.exports = Touchable;
-},519,[1,150,230,17,292,520,522,41,88,284],"node_modules/react-native/Libraries/Components/Touchable/Touchable.js");
+},520,[1,150,230,17,292,521,523,41,88,284],"node_modules/react-native/Libraries/Components/Touchable/Touchable.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -127279,7 +127311,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   };
   _PooledClass.default.addPoolingTo(BoundingDimensions, twoArgumentPooler);
   module.exports = BoundingDimensions;
-},520,[1,521],"node_modules/react-native/Libraries/Components/Touchable/BoundingDimensions.js");
+},521,[1,522],"node_modules/react-native/Libraries/Components/Touchable/BoundingDimensions.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -127397,7 +127429,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     fourArgumentPooler: fourArgumentPooler
   };
   module.exports = PooledClass;
-},521,[1,22],"node_modules/react-native/Libraries/Components/Touchable/PooledClass.js");
+},522,[1,22],"node_modules/react-native/Libraries/Components/Touchable/PooledClass.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -127432,7 +127464,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   };
   _PooledClass.default.addPoolingTo(Position, twoArgumentPooler);
   module.exports = Position;
-},522,[1,521],"node_modules/react-native/Libraries/Components/Touchable/Position.js");
+},523,[1,522],"node_modules/react-native/Libraries/Components/Touchable/Position.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   var _objectWithoutProperties2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/objectWithoutProperties"));
@@ -127449,7 +127481,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[12], "react"));
   var _jsxRuntime = _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime");
   var _excluded = ["onBlur", "onFocus"];
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/@react-native-oh/react-native-harmony/Libraries/Components/Touchable/TouchableNativeFeedback.harmony.js";
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/@react-native-oh/react-native-harmony/Libraries/Components/Touchable/TouchableNativeFeedback.harmony.js";
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); } /**
@@ -127684,7 +127716,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   };
   TouchableNativeFeedback.displayName = "TouchableNativeFeedback";
   module.exports = TouchableNativeFeedback;
-},523,[1,150,12,13,49,51,52,369,291,173,422,22,41,88,37,227,284],"node_modules/@react-native-oh/react-native-harmony/Libraries/Components/Touchable/TouchableNativeFeedback.harmony.js");
+},524,[1,150,12,13,49,51,52,369,291,173,422,22,41,88,37,227,284],"node_modules/@react-native-oh/react-native-harmony/Libraries/Components/Touchable/TouchableNativeFeedback.harmony.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   Object.defineProperty(exports, "__esModule", {
@@ -127710,7 +127742,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
     return ref.current;
   }
-},524,[1,378,41],"node_modules/react-native/Libraries/Animated/useAnimatedValue.js");
+},525,[1,378,41],"node_modules/react-native/Libraries/Animated/useAnimatedValue.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -127740,7 +127772,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _Appearance.default.getColorScheme();
     });
   }
-},525,[1,178,526],"node_modules/react-native/Libraries/Utilities/useColorScheme.js");
+},526,[1,178,527],"node_modules/react-native/Libraries/Utilities/useColorScheme.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -127749,7 +127781,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   } else {
     module.exports = _$$_REQUIRE(_dependencyMap[1], "../cjs/use-sync-external-store-shim.native.development.js");
   }
-},526,[527,528],"node_modules/use-sync-external-store/shim/index.native.js");
+},527,[528,529],"node_modules/use-sync-external-store/shim/index.native.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * @license React
@@ -127813,7 +127845,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   }
   exports.useSyncExternalStore = void 0 !== React.useSyncExternalStore ? React.useSyncExternalStore : useSyncExternalStore$1;
-},527,[41],"node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.native.production.js");
+},528,[41],"node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.native.production.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * @license React
@@ -127888,7 +127920,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     exports.useSyncExternalStore = void 0 !== React.useSyncExternalStore ? React.useSyncExternalStore : useSyncExternalStore$1;
     "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(Error());
   }();
-},528,[41],"node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.native.development.js");
+},529,[41],"node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.native.development.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   Object.defineProperty(exports, "__esModule", {
@@ -127935,7 +127967,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, [dimensions]);
     return dimensions;
   }
-},529,[1,24,248,41],"node_modules/react-native/Libraries/Utilities/useWindowDimensions.js");
+},530,[1,24,248,41],"node_modules/react-native/Libraries/Utilities/useWindowDimensions.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -128321,7 +128353,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   }
   var _default = exports.default = PanResponder;
-},530,[531,339],"node_modules/react-native/Libraries/Interaction/PanResponder.js");
+},531,[532,339],"node_modules/react-native/Libraries/Interaction/PanResponder.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -128423,7 +128455,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     noCentroid: -1
   };
   module.exports = TouchHistoryMath;
-},531,[],"node_modules/react-native/Libraries/Interaction/TouchHistoryMath.js");
+},532,[],"node_modules/react-native/Libraries/Interaction/TouchHistoryMath.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   var _NativeVibration = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react-native/Libraries/Vibration/NativeVibration"));
@@ -128504,7 +128536,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   };
   module.exports = Vibration;
-},532,[1,533],"node_modules/@react-native-oh/react-native-harmony/Libraries/Vibration/Vibration.harmony.js");
+},533,[1,534],"node_modules/@react-native-oh/react-native-harmony/Libraries/Vibration/Vibration.harmony.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -128522,7 +128554,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
    * @format
    */
   var _default = exports.default = TurboModuleRegistry.getEnforcing('Vibration');
-},533,[21],"node_modules/react-native/Libraries/Vibration/NativeVibration.js");
+},534,[21],"node_modules/react-native/Libraries/Vibration/NativeVibration.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -128537,7 +128569,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   'use strict';
 
   module.exports = _$$_REQUIRE(_dependencyMap[0], "@react-native/virtualized-lists").VirtualizedList;
-},534,[383],"node_modules/react-native/Libraries/Lists/VirtualizedList.js");
+},535,[383],"node_modules/react-native/Libraries/Lists/VirtualizedList.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /**
    * Copyright (c) Meta Platforms, Inc. and affiliates.
@@ -128591,7 +128623,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     RCTView: RCTView
   };
   module.exports = ReactNativeViewAttributes;
-},535,[1,198],"node_modules/react-native/Libraries/Components/View/ReactNativeViewAttributes.js");
+},536,[1,198],"node_modules/react-native/Libraries/Components/View/ReactNativeViewAttributes.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -128605,345 +128637,2268 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
    * LICENSE file in the root directory of this source tree.
    */
   var _default = exports.default = _reactNative.TurboModuleRegistry.get("RegisterPageName");
-},536,[2],"node_modules/@react-native-oh/react-native-harmony/Libraries/RegisterPageName/RegisterPageName.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = WebViewScreen;
-  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react"));
-  var _jsxRuntime = _$$_REQUIRE(_dependencyMap[2], "react/jsx-runtime");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/tests/WebviewTest.tsx"; // 直接导入 HTML 文件内容（需要额外配置）
-  var htmlContent = "\n<!DOCTYPE html>\n<html>\n\t<head>\n\t\t<meta charset=\"utf-8\" />\n\t\t<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no\" />\n\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n\t\t<title>\u4E3A\u4EC0\u4E48\u6CA1\u6709\u89C6\u9891\uFF1F</title>\n\t\t<style>\n\t\t\t*{\n\t\t\t\tmargin: 0;\n\t\t\t}\n\t\t\thtml{ font-size:16px;}\n\t\t\tbody{\n\t\t\t\tbackground-color: #fff;\n\t\t\t}\n\t\t\t.question-wrap{\n\t\t\t\tmargin: 18px 24px;\n\t\t\t}\n\t\t\t.question-title{\n\t\t\t\tcolor: #000;\n\t\t\t\tfont-size: 1.125rem;\n\t\t\t}\n\t\t\t.step-one-title,.step-two-title,.step-three-title{\n\t\t\t\tmargin: 18px 0 9px 0;\n\t\t\t\tcolor: #000;\n\t\t\t\tfont-size: 0.8125rem;\n\t\t\t}\n\t\t\ta{\n\t\t\t\tcolor: #32BAC0;\n\t\t\t\ttext-decoration: underline;\n\t\t\t\tdisplay: inline-block;\n\t\t\t\tfont-size: 0.75rem;\n\t\t\t\t -webkit-tap-highlight-color: rgba(0,0,0,0);\n\t\t\t}\n\t\t\tp{\n\t\t\t\tfont-size: 0.75rem;\n\t\t\t\tcolor: #666;\n\t\t\t\tline-height: 2;\n\t\t\t\twidth: 100%;\n\t\t\t}\n\t\t\timg{\n\t\t\t\tmargin: 17px 0;\n\t\t\t\twidth: 100%;\n\t\t\t\theight: 100%;\n\t\t\t}\n\t\t\t.m5{\n\t\t\t\tmargin: 5px 0;\n\t\t\t}\n\t\t\t.toast-box {\n\t\t\t    width: 100%;\n\t\t\t    height: 100%;\n\t\t\t    opacity: 1;\n\t\t\t    position: fixed;\n\t\t\t    top: 0px;\n\t\t\t    left: 0px;\n\t\t\t}\n\t\t\t\n\t\t\t.toastbg {\n\t\t\t    background-color: rgba(0,0,0,.4);\n\t\t\t    position: absolute;\n\t\t\t    width: 100%;\n\t\t\t    height: 100%;\n\t\t\t\ttop: 0;\n\t\t\t\tleft: 0;\n\t\t\t}\n\t\t\t\n\t\t\t.showToast-set{\n\t\t\t\tposition: fixed;\n\t\t\t\topacity: 1;\n\t\t\t\twidth: 100%;\n\t\t\t\tleft: 0;\n\t\t\t\tright: 0;\n\t\t\t\tbottom: 0;\n\t\t\t\tmargin: auto;\n\t\t\t\tbackground-color: #FFFFFF;\n\t\t\t\tborder-top-right-radius: 20px;\n\t\t\t\tborder-top-left-radius: 20px;\n\t\t\t}\n\t\t\t\n\t\t\t.toast-title {\n\t\t\t    color: #000;\n\t\t\t    font-size: 16px;\n\t\t\t\tline-height: 22px;\n\t\t\t    text-align: center;\n\t\t\t    padding-top: 25px;\n\t\t\t    padding-bottom: 23px;\n\t\t\t}\n\t\t\t\n\t\t\t.toast-main-set {\n\t\t\t    padding: 0 40px 28px 40px;\n\t\t\t}\n\t\t\t.toast-describe{\n\t\t\t\tfont-size: 16px;\n\t\t\t\tline-height: 22px;\n\t\t\t\tcolor: #333333;\n\t\t\t}\n\t\t\t.toast-button {\n\t\t\t    display: flex;\n\t\t\t\tmargin: 0 27px;\n\t\t\t}\n\t\t\t\n\t\t\t.button-left,.button-right{\n\t\t\t\ttext-align: center;\n\t\t\t    width: 100%;\n\t\t\t    height: 46px;\n\t\t\t    display: flex;\n\t\t\t\tjustify-content: center;\n\t\t\t\tpadding-bottom: 27px;\n\t\t\t}\n\t\t\t.button-left-bg{\n\t\t\t\twidth: 100%;\n\t\t\t\theight: 46px;\n\t\t\t\tline-height: 46px;\n\t\t\t\tborder-radius: 23px;\n\t\t\t\tfont-size: 16px;\n\t\t\t\tbackground-color: rgba(0,0,0,.03);\n\t\t\t\tcolor: #000000;\n\t\t\t\tmargin-right: 6.5px;\n\t\t\t}\n\t\t\t.button-left-bg.black{\n\t\t\t\t\tbackground-color: #333333;\n\t\t\t\t\tcolor: #e6e6e6;\n\t\t    }\n\t\t\t.button-right-bg{\n\t\t\t\twidth: 100%;\n\t\t\t\theight: 46px;\n\t\t\t\tline-height: 46px;\n\t\t\t\tfont-size: 16px;\n\t\t\t\tborder-radius: 23px;\n\t\t\t\tbackground-color: #32BAC0;\n\t\t\t\tcolor: #FFFFFF;\n\t\t\t\tmargin-left: 6.5px;\n\t\t\t}\n\t\t\t.faq-set-image-box{\n\t\t\t\tbackground-image: url(https://cdn.cnbj1.fds.api.mi-img.com/miot-images/f5f93828a6840f188f58e80b3a72052d_1702039915770.png?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=74d2R3lNwKRk0tq0m6+a+e8e+zE=);\n\t\t\t\tbackground-repeat: no-repeat;\n\t\t\t\tbackground-size: 100% auto;\n\t\t\t\tmargin: 17px 0;\n\t\t\t\twidth: 100%;\n\t\t\t}\n\t\t\t.faq-set-image-box::before{\n\t\t\t\tcontent: \"\";\n\t\t\t\tdisplay: block;\n\t\t\t\tpadding-top: 92%;\n\t\t\t}\n\t\t\t.faq-notice-image-box{\n\t\t\t\tbackground-image: url(https://cdn.cnbj1.fds.api.mi-img.com/miot-images/b0928e29484614b5e19fc8adb11862e4_1702039915757.png?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=Wgt3peETePtH9O7D01SeCCIpbC4=);\n\t\t\t\tbackground-repeat: no-repeat;\n\t\t\t\tbackground-size: 100% auto;\n\t\t\t\tmargin: 17px 0;\n\t\t\t\twidth: 100%;\n\t\t\t}\n\t\t\t.faq-set-image-box.black{\n\t\t\t\t\tbackground-image: url(https://cdn.cnbj1.fds.api.mi-img.com/miot-images/875c545c3ffe6bd5bc54fa79eac02ab0_1702039915770.png?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=myoOTtFqvDayAgrC98bYkbpcBKA=)!important;\n\t\t\t\t}\n\t\t\t.faq-notice-image-box.black{\n\t\t\t\tbackground-image: url(https://cdn.cnbj1.fds.api.mi-img.com/miot-images/be09bb77ab9e67f9f22eccb81f820fdc_1702039915766.png?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=3JS5LLCV1IrlwMGMOxuj/yYPX3Q=)!important;\n\t\t\t}\n\t\t\t.faq-notice-image-box::before{\n\t\t\t\tcontent: \"\";\n\t\t\t\tdisplay: block;\n\t\t\t\tpadding-top: 26%;\n\t\t\t}\n\t\t\t@media (prefers-color-scheme: dark){\n\t\t\t\tbody{\n\t\t\t\t\tbackground-color: #000 !important;\n\t\t\t\t}\n\t\t\t\t.question-title{\n\t\t\t\t\tcolor: #FFFFFF !important;\n\t\t\t\t}\n\t\t\t\t.step-one-title,.step-two-title,.step-three-title{\n\t\t\t\t\tcolor: #FFFFFF !important;\n\t\t\t\t}\n\t\t\t\ta{\n\t\t\t\t\tcolor: #23A4A9 !important;\n\t\t\t\t}\n\t\t\t\tp{\n\t\t\t\t\tcolor: #999 !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t.showToast-set{\n\t\t\t\t\tbackground-color: #1a1a1a !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t.toast-title {\n\t\t\t\t    color: #FFFFFF !important;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\t.toast-describe{\n\t\t\t\t\tcolor: #CCCCCC !important;\n\t\t\t\t}\n\t\t\t\t.button-left-bg{\n\t\t\t\t\tbackground-color: #333333;\n\t\t\t\t\tcolor: #e6e6e6;\n\t\t\t\t}\n\t\t\t\t.button-right-bg{\n\t\t\t\t\tbackground-color: #23A4A9 !important;\n\t\t\t\t}\n\t\t\t\t.faq-set-image-box{\n\t\t\t\t\tbackground-image: url(https://cdn.cnbj1.fds.api.mi-img.com/miot-images/875c545c3ffe6bd5bc54fa79eac02ab0_1702039915770.png?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=myoOTtFqvDayAgrC98bYkbpcBKA=)!important;\n\t\t\t\t}\n\t\t\t\t.faq-notice-image-box{\n\t\t\t\t\tbackground-image: url(https://cdn.cnbj1.fds.api.mi-img.com/miot-images/be09bb77ab9e67f9f22eccb81f820fdc_1702039915766.png?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=3JS5LLCV1IrlwMGMOxuj/yYPX3Q=)!important;\n\t\t\t\t}\n\t\t\t}\n\t\t</style>\n\t</head>\n\t<body>\n\t\t<section class=\"question-wrap\">\n\t\t\t<h3 class=\"question-title\">\u4E3A\u4EC0\u4E48\u6CA1\u6709\u89C6\u9891\uFF1F</h3>\n\t\t\t<section class=\"step-one\">\n\t\t\t\t<h4 class=\"step-one-title\">\u7B2C\u4E00\u6B65\u3001\u68C0\u67E5\u732B\u773C\u662F\u5426\u6B63\u5E38\u5DE5\u4F5C</h4>\n\t\t\t\t<p>\u6309\u95E8\u94C3\u540E\uFF0C\u624B\u673A\u4E0A\u6536\u5230\u6D88\u606F\u63A8\u9001\u6216\u80FD\u6536\u5230\u89C6\u9891\uFF0C\u5219\u732B\u773C\u6B63\u5E38\u5DE5\u4F5C\u3002\u9700\u8FDB\u884C\u7B2C\u4E8C\u6B65\u68C0\u67E5\u3002</p>\n\t\t\t\t<div id=\"pic1\" class=\"faq-notice-image-box\"></div>\n\t\t\t\t\n\t\t\t\t<p>\u732B\u773C\u4E0D\u80FD\u6B63\u5E38\u5DE5\u4F5C\u65F6\uFF1A</p>\n\t\t\t\t<p>1\u3001\u68C0\u67E5\u732B\u773C\u662F\u5426\u6709\u7535</p>\n\t\t\t\t<p>\u732B\u773C\u7535\u91CF\u8017\u5C3D\u4E0D\u80FD\u6B63\u5E38\u5DE5\u4F5C\u65F6\uFF0C\u6309\u95E8\u94C3\u540E\u5B8C\u5168\u6CA1\u6709\u4EFB\u4F55\u53CD\u5E94\uFF0C\u6B64\u65F6\u8BF7\u5145\u7535\u540E\u518D\u4F7F\u7528\u3002</p>\n\t\t\t\t<p>2\u3001\u68C0\u67E5\u8DEF\u7531\u5668\u662F\u5426\u6B63\u5E38\u5DE5\u4F5C\uFF0C\u6216\u662F\u5426\u4FEE\u6539\u8FC7WiFi\u540D\u5B57\u6216\u5BC6\u7801</p>\n\t\t\t\t<p>\u8DEF\u7531\u4E0D\u80FD\u6B63\u5E38\u5DE5\u4F5C\u65F6\uFF0C\u624B\u673A\u8FDE\u4E0AWiFi\u4E5F\u4E0D\u80FD\u8FDE\u63A5\u7F51\u7EDC\uFF0C\u6B64\u65F6\u8BF7\u8054\u7CFB\u8DEF\u7531\u7684\u552E\u540E\u89E3\u51B3\u3002\u82E5\u662F\u4FEE\u6539\u4E86WiFi\u540D\u5B57\u6216\u5BC6\u7801\uFF0C\u732B\u773C\u9700\u8981\u91CD\u65B0\u8FDE\u63A5\u7F51\u7EDC\uFF0C\u6309\u7167\u7B2C\u4E00\u6B21\u6DFB\u52A0\u8BBE\u5907\u7684\u6B65\u9AA4\u518D\u6B21\u6DFB\u52A0\u5373\u53EF\u3002</p>\n\n\t\t\t</section>\n\t\t\t<section class=\"step-two\">\n\t\t\t\t<h4 class=\"step-two-title\">\u7B2C\u4E8C\u6B65\u3001\u68C0\u67E5\u79FB\u52A8\u4EBA\u5F62\u4FA6\u6D4B\u76F8\u5173\u8BBE\u7F6E\u662F\u5426\u4FEE\u6539</h4>\n\t\t\t\t<p id=\"wu66\">\u6709\u4EBA\u7ECF\u8FC7\u548C\u505C\u7559\u7684\u4E8B\u4EF6\u4F1A\u6839\u636E\u6240\u8BBE\u7F6E\u7684\u79FB\u52A8\u4EBA\u5F62\u4FA6\u6D4B\u8BBE\u7F6E\u8FDB\u884C\u62CD\u6444\u3002\u82E5\u5173\u95ED\u79FB\u52A8\u4EBA\u5F62\u4FA6\u6D4B\uFF0C\u5219\u4E0D\u4F1A\u62CD\u6444\u89C6\u9891\u3002</p>\n\t\t\t\t<div id=\"pic2\" class=\"faq-set-image-box\"></div>\n\t\t\t\t\n\t\t\t\t<a class=\"m5 set-link\" id=\"goMotionDetection\" href=\"javascript:void(0)\">\u8BBE\u7F6E\u79FB\u52A8\u4EBA\u5F62\u4FA6\u6D4B</a>\n\t\t\t\t\n\t\t\t</section>\n\t\t\t<section class=\"step-three\">\n\t\t\t\t<h4 class=\"step-three-title\">\u7B2C\u4E09\u6B65\u3001\u68C0\u67E5\u4E91\u5B58\u89C6\u9891\u662F\u5426\u88AB\u5220\u9664</h4>\n\t\t\t\t<p>\u89C6\u9891\u88AB\u5220\u9664\u540E\uFF0C\u5217\u8868\u91CC\u5C06\u4E0D\u4F1A\u663E\u793A\u3002</p>\n\t\t\t\t<p>\u66F4\u591A\u95EE\u9898\u53EF\u8054\u7CFB\u552E\u540E\u6216\u5BA2\u670D\u89E3\u51B3\u3002</p>\n\t\t\t</section>\n\t\t</section>\n\t\t<div id=\"mask\" class=\"toast-box\" style=\"display: none;\">\n\t\t\t<div  id=\"closeMask\" class=\"toastbg\" onclick=\"setCloseMask()\"></div>\n\t\t\t<div class=\"showToast-set\">\n\t\t\t\t<div class=\"toast-title\">\u8FD8\u539F\u79FB\u52A8\u4FA6\u6D4B\u8BBE\u7F6E</div>\n\t\t\t\t<div class=\"toast-main-set\">\n\t\t\t\t\t<div class=\"toast-describe\">\u8FD8\u539F\u79FB\u52A8\u4FA6\u6D4B\u8BBE\u7F6E\u540E, \u53EA\u4F1A\u5C06\u79FB\u52A8\u4FA6\u6D4B\u76F8\u5173\u7684\u8BBE\u7F6E\u6062\u590D\u6210\u7CFB\u7EDF\u9ED8\u8BA4\u8BBE\u7F6E, \u4E0D\u4F1A\u5F71\u54CD\u8D26\u53F7\u7ED1\u5B9A\u7B49,\u786E\u5B9A\u8981\u8FD8\u539F\u5417\uFF1F</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"toast-button\">\n\t\t\t\t\t<div class=\"button-left\">\n\t\t\t\t\t\t<div id=\"left_bg\" class=\"button-left-bg\" onclick=\"setCloseMask()\">\u53D6\u6D88</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"button-right\">\n\t\t\t\t\t\t<div class=\"button-right-bg\" onclick=\"sendMessage()\">\u8FD8\u539F</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<script type=\"text/javascript\">\n\t\t\tvar goMotion = document.getElementById(\"goMotionDetection\");\n\t\t\tvar closeMask = document.getElementById(\"closeMask\");\n\t\t\tvar wu66 = document.getElementById(\"wu66\");\n\t\t\tvar s1img = document.getElementById(\"pic1\");\n\t\t\tvar s2img = document.getElementById(\"pic2\");\n\t\t\tvar left_bg = document.getElementById(\"left_bg\");\n\n\t\t\tdocument.addEventListener('message', function(e) {\n\t\t\t\tif(e.data == \"dark\"){\n\t\t\t\t\ts1img.className = 'faq-notice-image-box black';\n\t\t\t\t\ts2img.className = 'faq-set-image-box black';\n\t\t\t\t\tleft_bg.className = 'button-left-bg black';\n\t\t\t\t}\n\t\t\t});\n\n\t\t\tgoMotion.onclick = function(e) {\n\t\t\t\twindow.postMessage(\n\t\t\t\t\t\tJSON.stringify({\n\t\t\t\t\t\t\tmethod: 'navigation.navigate',\n\t\t\t\t\t\t\targs: ['SubSetting']\n\t\t\t\t\t\t})\n\t\t\t\t);\n\t\t\t}\n\n\t\t\tcloseMask.onclick = function(e){\n\t\t\t\tmask.style.display = \"none\";\n\t\t\t};\n\n\t\t\tfunction setCloseMask(){\n\t\t\t\tmask.style.display = \"none\";\n\t\t\t}\n\t\t\tfunction sendMessage(){\n\t\t\t\tlet mes = {\n\t\t\t\t\t\"method\": \"setSpec\",\n\t\t\t\t\t\"args\": [\n\t\t\t\t\t  {\n\t\t\t\t\t\t\"key\": { siid: 5, piid: 42 },\n\t\t\t\t\t\t\"value\": \"true\"\n\t\t\t\t\t  },\n\t\t\t\t\t  {\n\t\t\t\t\t\t\"key\": { siid: 4, piid: 3 },\n\t\t\t\t\t\t\"value\": \"1\"\n\t\t\t\t\t  },\n\t\t\t\t\t  {\n\t\t\t\t\t\t\"key\": { siid: 4, piid: 4 },\n\t\t\t\t\t\t\"value\": \"00:00\"\n\t\t\t\t\t  },\n\t\t\t\t\t  {\n\t\t\t\t\t\t\"key\": { siid: 4, piid: 5 },\n\t\t\t\t\t\t\"value\": \"00:00\"\n\t\t\t\t\t  },\n\t\t\t\t\t  {\n\t\t\t\t\t\t\"key\": { siid: 5, piid: 8 },\n\t\t\t\t\t\t\"value\": \"0\"\n            },\n            {\n\t\t\t\t\t\t\"key\": { siid: 5, piid: 7 },\n\t\t\t\t\t\t\"value\": \"0\"\n\t\t\t\t\t  },\n\t\t\t\t\t  {\n\t\t\t\t\t\t\"key\": { siid: 4, piid: 6 },\n\t\t\t\t\t\t\"value\": \"0\"\n\t\t\t\t\t  },\n\t\t\t\t\t  {\n\t\t\t\t\t\t\"key\": { siid: 5, piid: 30 },\n\t\t\t\t\t\t\"value\": \"60\"\n\t\t\t\t\t  }\n\t\t\t\t\t  \n\t\t\t\t\t]\n\t\t\t\t  };\n\t\t\t\t  window.postMessage(JSON.stringify(mes));\n\t\t\t\t  mask.style.display = \"none\";\n\t\t\t}\n\t\t</script>\n\t</body>\n</html>\n";
-  function WebViewScreen() {
-    return /*#__PURE__*/(0, _jsxRuntime.jsx)(_$$_REQUIRE(_dependencyMap[3], "react-native-webview").WebView, {
-      style: {
-        width: 300,
-        height: 300,
-        backgroundColor: "#00000000"
-      }
-      // source={{ html: htmlContentt }}
-      ,
-      source: _$$_REQUIRE(_dependencyMap[4], "./html/faq_99.html"),
-      originWhitelist: ['*']
-      // source={{ uri: 'resource://rawfile/faq_99.html' }}
-      ,
-      usewebkit: true
-    });
-  }
-  ;
-},537,[1,41,88,538,545],"tests/WebviewTest.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(exports, "WebView", {
-    enumerable: true,
-    get: function get() {
-      return _WebView.default;
-    }
-  });
-  exports.default = void 0;
-  var _WebView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "./WebView"));
-  var _default = exports.default = _WebView.default;
-},538,[1,539],"node_modules/@react-native-ohos/react-native-webview/src/index.ts");
+},537,[2],"node_modules/@react-native-oh/react-native-harmony/Libraries/RegisterPageName/RegisterPageName.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.default = void 0;
-  var _asyncToGenerator2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/asyncToGenerator"));
-  var _defineProperty2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/defineProperty"));
+  var _toConsumableArray2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
+  var _asyncToGenerator2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/asyncToGenerator"));
   var _slicedToArray2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/slicedToArray"));
-  var _objectWithoutProperties2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/objectWithoutProperties"));
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[5], "react"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[6], "react-native");
-  var _invariant = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "invariant"));
-  var _RNCWebViewNativeComponent = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "./RNCWebViewNativeComponent"));
-  var _NativeRNCWebViewModule = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./NativeRNCWebViewModule"));
-  var _WebView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "react-native-webview/src/WebView.styles"));
-  var _jsxRuntime = _$$_REQUIRE(_dependencyMap[11], "react/jsx-runtime");
-  var _excluded = ["fraudulentWebsiteWarningEnabled", "javaScriptEnabled", "cacheEnabled", "originWhitelist", "applicationNameForUserAgent", "ignoreSilentHardwareSwitch", "minimumFontSize", "useSharedProcessPool", "textInteractionEnabled", "injectedJavaScript", "injectedJavaScriptBeforeContentLoaded", "menuItems", "injectedJavaScriptForMainFrameOnly", "injectedJavaScriptBeforeContentLoadedForMainFrameOnly", "thirdPartyCookiesEnabled", "geolocationEnabled", "webviewDebuggingEnabled", "injectedJavaScriptObject", "startInLoadingState", "onNavigationStateChange", "onLoadStart", "onCustomMenuSelection", "onError", "onLoad", "onLoadEnd", "onLoadProgress", "onScroll", "onContentProcessDidTerminate", "onFileDownload", "onHttpError", "onMessage", "onOpenWindow", "renderLoading", "renderError", "style", "containerStyle", "source", "nativeConfig", "allowsInlineMediaPlayback", "allowsAirPlayForMediaPlayback", "mediaPlaybackRequiresUserAction", "dataDetectorTypes", "incognito", "decelerationRate", "onShouldStartLoadWithRequest", "onStartShouldSetResponder", "onMoveShouldSetResponderCapture", "pullToRefreshEnabled", "onResponderMove"];
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/classCallCheck"));
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/createClass"));
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[6], "react"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[7], "react-native");
+  var _reactNativeOrientationLocker = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "react-native-orientation-locker"));
+  var _jsxRuntime = _$$_REQUIRE(_dependencyMap[9], "react/jsx-runtime");
   var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/@react-native-ohos/react-native-webview/src/WebView.harmony.tsx"; // Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
-  // Use of this source code is governed by a Apache-2.0 license that can be
-  // found in the LICENSE file.
+    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/src/xiaoyi/camerapage/VisionCameraDemo.tsx";
+  /**
+   * VisionCamera Demo - 从 EducationCamera 业务代码中抽取
+   *
+   * ★★★ 还原了横屏分屏下相机比例异常的真实 Bug ★★★
+   *
+   * 问题场景:
+   *   横屏分屏模式下，左边是另一个 app，本 app 在右侧。
+   *   此时相机比例应该是 3:4，但 handleLandscape43Split 算出的是 4:3。
+   *
+   * 根本原因:
+   *   handleLandscape43Split 函数注释写着 "4:3"，逻辑也确实产出 4:3 比例。
+   *   但在横屏分屏场景下，用户期望的是 3:4 (竖向窄窗口内相机预览)。
+   *   而 handle34BarPhone 算出的才是 3:4。
+   *
+   * Demo 提供两种模式对比:
+   *   - "模拟分屏": 在全屏环境下模拟分屏窗口尺寸，无需真分屏
+   *   - "原始逻辑": 使用业务代码的 handleLandscape43Split (有 Bug, 4:3)
+   *   - "修复逻辑": 使用 handle34BarPhone (正确, 3:4)
+   *
+   * 依赖:
+   *   - react-native-vision-camera
+   *   - react-native-orientation-locker
+   */
+  // ============================================================
+  // 常量 & 类型定义
+  // ============================================================
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  var resolveAssetSource = _reactNative.Image.resolveAssetSource;
-  var processDecelerationRate = function processDecelerationRate(decelerationRate) {
-    var newDecelerationRate = decelerationRate;
-    if (newDecelerationRate === 'normal') {
-      newDecelerationRate = 0.998;
-    } else if (newDecelerationRate === 'fast') {
-      newDecelerationRate = 0.99;
+  var TAG = '[VisionCameraDemo]';
+
+  /** 相机取景框固定比例: 3/4 (竖屏) */
+  var CAMERA_RATIO_3_4 = 3 / 4;
+
+  /** 最大图片数量 */
+  var AI_COACH_MAX_PIC_LEN = 6;
+
+  /** 黑色遮罩超时时间 (ms) */
+  var BLACK_COVER_TIMEOUT_MS = 120000; // 120s
+
+  /** 拍照超时时间 (ms) */
+  var TAKE_PHOTO_TIMEOUT_MS = 2500;
+
+  /** 设备类型 */
+  var DeviceType = /*#__PURE__*/function (DeviceType) {
+    DeviceType["PHONE"] = "PHONE";
+    DeviceType["TABLET"] = "TABLET";
+    return DeviceType;
+  }(DeviceType || {});
+  /** 窗口模式 */
+  var WindowMode = /*#__PURE__*/function (WindowMode) {
+    WindowMode[WindowMode["WINDOW_MODE_FULLSCREEN"] = 0] = "WINDOW_MODE_FULLSCREEN";
+    WindowMode[WindowMode["WINDOW_MODE_SPLIT_SCREEN"] = 1] = "WINDOW_MODE_SPLIT_SCREEN";
+    WindowMode[WindowMode["WINDOW_MODE_FLOAT_WINDOW"] = 2] = "WINDOW_MODE_FLOAT_WINDOW";
+    return WindowMode;
+  }(WindowMode || {});
+  /** 折叠状态 */
+  var FoldStatusValue = /*#__PURE__*/function (FoldStatusValue) {
+    FoldStatusValue[FoldStatusValue["FOLD_STATUS_UNKNOWN"] = 0] = "FOLD_STATUS_UNKNOWN";
+    FoldStatusValue[FoldStatusValue["FOLD_STATUS_EXPANDED"] = 1] = "FOLD_STATUS_EXPANDED";
+    FoldStatusValue[FoldStatusValue["FOLD_STATUS_FOLDED"] = 2] = "FOLD_STATUS_FOLDED";
+    FoldStatusValue[FoldStatusValue["FOLD_STATUS_EXPANDED_WITH_SECOND_EXPANDED"] = 3] = "FOLD_STATUS_EXPANDED_WITH_SECOND_EXPANDED"; // 三折叠全展开
+    return FoldStatusValue;
+  }(FoldStatusValue || {});
+  /** 布局处理器类型 */
+  var LayoutHandlerFunc = /*#__PURE__*/function (LayoutHandlerFunc) {
+    LayoutHandlerFunc["HANDLE_34_BAR_PHONE"] = "handle34BarPhone";
+    LayoutHandlerFunc["HANDLE_LANDSCAPE_43_SPLIT"] = "handleLandscape43Split";
+    return LayoutHandlerFunc;
+  }(LayoutHandlerFunc || {});
+  /** 布局计算结果 */
+  // ============================================================
+  // 简易 Logger (替代业务代码中的 EduLogger)
+  // ============================================================
+
+  var log = {
+    info: function info() {
+      var _console;
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+      return (_console = console).log.apply(_console, [TAG].concat(args));
+    },
+    warn: function warn() {
+      var _console2;
+      for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        args[_key2] = arguments[_key2];
+      }
+      return (_console2 = console).warn.apply(_console2, [TAG].concat(args));
+    },
+    error: function error() {
+      var _console3;
+      for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+        args[_key3] = arguments[_key3];
+      }
+      return (_console3 = console).error.apply(_console3, [TAG].concat(args));
     }
-    return newDecelerationRate;
   };
-  var useWarnIfChanges = function useWarnIfChanges(value, name) {
-    var ref = (0, _react.useRef)(value);
-    if (ref.current !== value) {
-      console.warn("Changes to property " + name + " do nothing after the initial render.");
-      ref.current = value;
-    }
+
+  // ============================================================
+  // 简易 Toast (替代业务代码中的 showToast)
+  // ============================================================
+
+  var showToast = function showToast(msg) {
+    return _reactNative.Alert.alert('提示', msg);
   };
-  var WebViewComponent = (0, _react.forwardRef)(function (_ref, ref) {
-    var _otherProps$scrollEna, _otherProps$scalesPag;
-    var _ref$fraudulentWebsit = _ref.fraudulentWebsiteWarningEnabled,
-      fraudulentWebsiteWarningEnabled = _ref$fraudulentWebsit === void 0 ? true : _ref$fraudulentWebsit,
-      _ref$javaScriptEnable = _ref.javaScriptEnabled,
-      javaScriptEnabled = _ref$javaScriptEnable === void 0 ? true : _ref$javaScriptEnable,
-      _ref$cacheEnabled = _ref.cacheEnabled,
-      cacheEnabled = _ref$cacheEnabled === void 0 ? true : _ref$cacheEnabled,
-      _ref$originWhitelist = _ref.originWhitelist,
-      originWhitelist = _ref$originWhitelist === void 0 ? _$$_REQUIRE(_dependencyMap[12], "react-native-webview/src/WebViewShared").defaultOriginWhitelist : _ref$originWhitelist,
-      applicationNameForUserAgent = _ref.applicationNameForUserAgent,
-      ignoreSilentHardwareSwitch = _ref.ignoreSilentHardwareSwitch,
-      minimumFontSize = _ref.minimumFontSize,
-      _ref$useSharedProcess = _ref.useSharedProcessPool,
-      useSharedProcessPool = _ref$useSharedProcess === void 0 ? true : _ref$useSharedProcess,
-      _ref$textInteractionE = _ref.textInteractionEnabled,
-      textInteractionEnabled = _ref$textInteractionE === void 0 ? true : _ref$textInteractionE,
-      injectedJavaScript = _ref.injectedJavaScript,
-      injectedJavaScriptBeforeContentLoaded = _ref.injectedJavaScriptBeforeContentLoaded,
-      _ref$menuItems = _ref.menuItems,
-      menuItems = _ref$menuItems === void 0 ? [] : _ref$menuItems,
-      _ref$injectedJavaScri = _ref.injectedJavaScriptForMainFrameOnly,
-      injectedJavaScriptForMainFrameOnly = _ref$injectedJavaScri === void 0 ? true : _ref$injectedJavaScri,
-      _ref$injectedJavaScri2 = _ref.injectedJavaScriptBeforeContentLoadedForMainFrameOnly,
-      injectedJavaScriptBeforeContentLoadedForMainFrameOnly = _ref$injectedJavaScri2 === void 0 ? true : _ref$injectedJavaScri2,
-      _ref$thirdPartyCookie = _ref.thirdPartyCookiesEnabled,
-      thirdPartyCookiesEnabled = _ref$thirdPartyCookie === void 0 ? false : _ref$thirdPartyCookie,
-      _ref$geolocationEnabl = _ref.geolocationEnabled,
-      geolocationEnabled = _ref$geolocationEnabl === void 0 ? false : _ref$geolocationEnabl,
-      _ref$webviewDebugging = _ref.webviewDebuggingEnabled,
-      webviewDebuggingEnabled = _ref$webviewDebugging === void 0 ? false : _ref$webviewDebugging,
-      injectedJavaScriptObject = _ref.injectedJavaScriptObject,
-      startInLoadingState = _ref.startInLoadingState,
-      onNavigationStateChange = _ref.onNavigationStateChange,
-      onLoadStart = _ref.onLoadStart,
-      onCustomMenuSelection = _ref.onCustomMenuSelection,
-      onError = _ref.onError,
-      onLoad = _ref.onLoad,
-      onLoadEnd = _ref.onLoadEnd,
-      onLoadProgress = _ref.onLoadProgress,
-      onScroll = _ref.onScroll,
-      onContentProcessDidTerminateProp = _ref.onContentProcessDidTerminate,
-      onFileDownload = _ref.onFileDownload,
-      onHttpErrorProp = _ref.onHttpError,
-      onMessageProp = _ref.onMessage,
-      onOpenWindowProp = _ref.onOpenWindow,
-      renderLoading = _ref.renderLoading,
-      renderError = _ref.renderError,
-      style = _ref.style,
-      containerStyle = _ref.containerStyle,
-      source = _ref.source,
-      nativeConfig = _ref.nativeConfig,
-      allowsInlineMediaPlayback = _ref.allowsInlineMediaPlayback,
-      allowsAirPlayForMediaPlayback = _ref.allowsAirPlayForMediaPlayback,
-      _ref$mediaPlaybackReq = _ref.mediaPlaybackRequiresUserAction,
-      mediaPlaybackRequiresUserAction = _ref$mediaPlaybackReq === void 0 ? true : _ref$mediaPlaybackReq,
-      dataDetectorTypes = _ref.dataDetectorTypes,
-      incognito = _ref.incognito,
-      decelerationRateProp = _ref.decelerationRate,
-      onShouldStartLoadWithRequestProp = _ref.onShouldStartLoadWithRequest,
-      _onStartShouldSetResponder = _ref.onStartShouldSetResponder,
-      _onMoveShouldSetResponderCapture = _ref.onMoveShouldSetResponderCapture,
-      _ref$pullToRefreshEna = _ref.pullToRefreshEnabled,
-      pullToRefreshEnabled = _ref$pullToRefreshEna === void 0 ? false : _ref$pullToRefreshEna,
-      _onResponderMove = _ref.onResponderMove,
-      otherProps = (0, _objectWithoutProperties2.default)(_ref, _excluded);
-    var webViewRef = (0, _react.useRef)(null);
-    var onShouldStartLoadWithRequestCallback = (0, _react.useCallback)(function (shouldStart, _url) {
-      var lockIdentifier = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-      _NativeRNCWebViewModule.default.shouldStartLoadWithLockIdentifier(shouldStart, lockIdentifier);
-    }, []);
-    var _useWebViewLogic = (0, _$$_REQUIRE(_dependencyMap[12], "react-native-webview/src/WebViewShared").useWebViewLogic)({
-        onNavigationStateChange: onNavigationStateChange,
-        onLoad: onLoad,
-        onError: onError,
-        onHttpErrorProp: onHttpErrorProp,
-        onLoadEnd: onLoadEnd,
-        onLoadProgress: onLoadProgress,
-        // @ts-expect-error old arch only
-        onScroll: onScroll,
-        onLoadStart: onLoadStart,
-        onMessageProp: onMessageProp,
-        onOpenWindowProp: onOpenWindowProp,
-        startInLoadingState: startInLoadingState,
-        originWhitelist: originWhitelist,
-        ignoreSilentHardwareSwitch: ignoreSilentHardwareSwitch,
-        minimumFontSize: minimumFontSize,
-        onShouldStartLoadWithRequestProp: onShouldStartLoadWithRequestProp,
-        onShouldStartLoadWithRequestCallback: onShouldStartLoadWithRequestCallback,
-        onContentProcessDidTerminateProp: onContentProcessDidTerminateProp
-      }),
-      onLoadingStart = _useWebViewLogic.onLoadingStart,
-      onShouldStartLoadWithRequest = _useWebViewLogic.onShouldStartLoadWithRequest,
-      onMessage = _useWebViewLogic.onMessage,
-      viewState = _useWebViewLogic.viewState,
-      setViewState = _useWebViewLogic.setViewState,
-      lastErrorEvent = _useWebViewLogic.lastErrorEvent,
-      onHttpError = _useWebViewLogic.onHttpError,
-      onLoadingError = _useWebViewLogic.onLoadingError,
-      onLoadingFinish = _useWebViewLogic.onLoadingFinish,
-      onLoadingProgress = _useWebViewLogic.onLoadingProgress,
-      onOpenWindow = _useWebViewLogic.onOpenWindow,
-      onContentProcessDidTerminate = _useWebViewLogic.onContentProcessDidTerminate;
-    (0, _react.useImperativeHandle)(ref, function () {
-      return {
-        goForward: function goForward() {
-          return webViewRef.current && _RNCWebViewNativeComponent.Commands.goForward(webViewRef.current);
-        },
-        goBack: function goBack() {
-          return webViewRef.current && _RNCWebViewNativeComponent.Commands.goBack(webViewRef.current);
-        },
-        reload: function reload() {
-          setViewState('LOADING');
-          if (webViewRef.current) {
-            _RNCWebViewNativeComponent.Commands.reload(webViewRef.current);
-          }
-        },
-        stopLoading: function stopLoading() {
-          return webViewRef.current && _RNCWebViewNativeComponent.Commands.stopLoading(webViewRef.current);
-        },
-        postMessage: function postMessage(data) {
-          return webViewRef.current && _RNCWebViewNativeComponent.Commands.postMessage(webViewRef.current, data);
-        },
-        injectJavaScript: function injectJavaScript(data) {
-          return webViewRef.current && _RNCWebViewNativeComponent.Commands.injectJavaScript(webViewRef.current, data);
-        },
-        requestFocus: function requestFocus() {
-          return webViewRef.current && _RNCWebViewNativeComponent.Commands.requestFocus(webViewRef.current);
-        },
-        clearCache: function clearCache(includeDiskFiles) {
-          return webViewRef.current && _RNCWebViewNativeComponent.Commands.clearCache(webViewRef.current, includeDiskFiles);
-        },
-        clearHistory: function clearHistory() {
-          return webViewRef.current && _RNCWebViewNativeComponent.Commands.clearHistory(webViewRef.current);
-        },
-        loadUrl: function loadUrl(data) {
-          return webViewRef.current && _RNCWebViewNativeComponent.Commands.loadUrl(webViewRef.current, data);
-        }
-      };
-    }, [setViewState, webViewRef]);
-    useWarnIfChanges(allowsInlineMediaPlayback, 'allowsInlineMediaPlayback');
-    useWarnIfChanges(allowsAirPlayForMediaPlayback, 'allowsAirPlayForMediaPlayback');
-    useWarnIfChanges(incognito, 'incognito');
-    useWarnIfChanges(mediaPlaybackRequiresUserAction, 'mediaPlaybackRequiresUserAction');
-    useWarnIfChanges(dataDetectorTypes, 'dataDetectorTypes');
-    var otherView = null;
-    if (viewState === 'LOADING') {
-      otherView = (renderLoading || _$$_REQUIRE(_dependencyMap[12], "react-native-webview/src/WebViewShared").defaultRenderLoading)();
-    } else if (viewState === 'ERROR') {
-      var _lastErrorEvent$code, _lastErrorEvent$descr;
-      (0, _invariant.default)(lastErrorEvent != null, 'lastErrorEvent expected to be non-null');
-      otherView = (renderError || _$$_REQUIRE(_dependencyMap[12], "react-native-webview/src/WebViewShared").defaultRenderError)(lastErrorEvent == null ? void 0 : lastErrorEvent.domain, (_lastErrorEvent$code = lastErrorEvent == null ? void 0 : lastErrorEvent.code) != null ? _lastErrorEvent$code : 0, (_lastErrorEvent$descr = lastErrorEvent == null ? void 0 : lastErrorEvent.description) != null ? _lastErrorEvent$descr : '');
-    } else if (viewState !== 'IDLE') {
-      console.error("RNCWebView invalid state encountered: " + viewState);
+
+  // ============================================================
+  // 相机布局计算器 (从 CameraLayoutController 简化抽取)
+  // ============================================================
+  var CameraLayoutController = /*#__PURE__*/function () {
+    function CameraLayoutController() {
+      (0, _classCallCheck2.default)(this, CameraLayoutController);
     }
-    var webViewStyles = [_WebView.default.container, _WebView.default.webView, style];
-    var webViewContainerStyle = [_WebView.default.container, containerStyle];
-    var decelerationRate = processDecelerationRate(decelerationRateProp);
-    var NativeWebView = (nativeConfig == null ? void 0 : nativeConfig.component) || _RNCWebViewNativeComponent.default;
-    var sourceResolved = resolveAssetSource(source);
-    var newSource = typeof sourceResolved === 'object' ? Object.entries(sourceResolved).reduce(function (prev, _ref2) {
-      var _ref3 = (0, _slicedToArray2.default)(_ref2, 2),
-        currKey = _ref3[0],
-        currValue = _ref3[1];
-      return Object.assign({}, prev, (0, _defineProperty2.default)({}, currKey, currKey === 'headers' && currValue && typeof currValue === 'object' ? Object.entries(currValue).map(function (_ref4) {
-        var _ref5 = (0, _slicedToArray2.default)(_ref4, 2),
-          key = _ref5[0],
-          value = _ref5[1];
-        return {
-          name: key,
-          value: value
+    return (0, _createClass2.default)(CameraLayoutController, [{
+      key: "calculateLayout",
+      value:
+      /**
+       * 计算相机布局参数
+       * - 简化版: 去掉了与原生桥接的设备信息获取，改为通过参数传入
+       */
+      function calculateLayout(windowWidth, windowHeight, screenWidth, screenHeight, deviceType, foldStatus) {
+        var isPortraitMode = this.checkIsPortraitMode(screenWidth, screenHeight);
+        var isFloatingWindowStatus = this.checkIsFloatingWindowStatus(windowWidth, windowHeight, screenWidth, screenHeight);
+        var isLandscapeSplit = this.checkIsLandscapeSplitScreenWindowStatus(windowWidth, windowHeight, screenWidth, screenHeight);
+        var isPortraitSplit = this.checkIsPortraitSplitScreenWindowStatus(windowWidth, windowHeight, screenWidth, screenHeight);
+        var result = {
+          isPortraitMode: isPortraitMode,
+          isFloatingWindowStatus: isFloatingWindowStatus,
+          isSplitWindowStatus: isLandscapeSplit || isPortraitSplit,
+          isCameraSleepByWindowStatus: false,
+          isGRLExpandPortrait: false,
+          isGRLExpandLandscape: false,
+          layoutHandler: LayoutHandlerFunc.HANDLE_34_BAR_PHONE
         };
-      }) : currValue));
-    }, {}) : sourceResolved;
-    console.log("chy sourceResolved: ", JSON.stringify(sourceResolved));
-    var webView = /*#__PURE__*/(0, _jsxRuntime.jsx)(NativeWebView, Object.assign({}, otherProps, {
-      scrollEnabled: (_otherProps$scrollEna = otherProps.scrollEnabled) != null ? _otherProps$scrollEna : true,
-      ignoreSilentHardwareSwitch: ignoreSilentHardwareSwitch,
-      minimumFontSize: minimumFontSize,
-      scalesPageToFit: (_otherProps$scalesPag = otherProps.scalesPageToFit) != null ? _otherProps$scalesPag : true,
-      fraudulentWebsiteWarningEnabled: fraudulentWebsiteWarningEnabled,
-      javaScriptEnabled: javaScriptEnabled,
-      onCustomMenuSelection: onCustomMenuSelection,
-      applicationNameForUserAgent: applicationNameForUserAgent,
-      cacheEnabled: cacheEnabled,
-      useSharedProcessPool: useSharedProcessPool,
-      textInteractionEnabled: textInteractionEnabled,
-      geolocationEnabled: geolocationEnabled,
-      decelerationRate: decelerationRate,
-      messagingEnabled: typeof onMessageProp === 'function',
-      messagingModuleName: "" // android ONLY
-      ,
-      onLoadingError: onLoadingError,
-      onLoadingFinish: onLoadingFinish,
-      onLoadingProgress: onLoadingProgress,
-      onScroll: onScroll,
-      onFileDownload: onFileDownload,
-      onLoadingStart: onLoadingStart,
-      onHttpError: onHttpError,
-      onMessage: onMessage,
-      onOpenWindow: onOpenWindowProp && onOpenWindow,
-      hasOnOpenWindowEvent: onOpenWindowProp !== undefined,
-      onShouldStartLoadWithRequest: onShouldStartLoadWithRequest,
-      onContentProcessDidTerminate: onContentProcessDidTerminate,
-      thirdPartyCookiesEnabled: thirdPartyCookiesEnabled,
-      pullToRefreshEnabled: pullToRefreshEnabled,
-      injectedJavaScript: injectedJavaScript,
-      injectedJavaScriptBeforeContentLoaded: injectedJavaScriptBeforeContentLoaded,
-      injectedJavaScriptForMainFrameOnly: injectedJavaScriptForMainFrameOnly,
-      injectedJavaScriptBeforeContentLoadedForMainFrameOnly: injectedJavaScriptBeforeContentLoadedForMainFrameOnly,
-      injectedJavaScriptObject: JSON.stringify(injectedJavaScriptObject),
-      dataDetectorTypes: !dataDetectorTypes || Array.isArray(dataDetectorTypes) ? dataDetectorTypes : [dataDetectorTypes],
-      allowsAirPlayForMediaPlayback: allowsAirPlayForMediaPlayback,
-      allowsInlineMediaPlayback: allowsInlineMediaPlayback,
-      incognito: incognito,
-      mediaPlaybackRequiresUserAction: mediaPlaybackRequiresUserAction,
-      menuItems: menuItems,
-      newSource: newSource,
-      style: webViewStyles,
-      webviewDebuggingEnabled: webviewDebuggingEnabled,
-      hasOnFileDownload: !!onFileDownload,
-      ref: webViewRef
-      // @ts-expect-error old arch only
-      ,
-      source: sourceResolved
-    }, nativeConfig == null ? void 0 : nativeConfig.props), "webViewKey");
+
+        // 悬浮窗
+        if (isFloatingWindowStatus) {
+          result.layoutHandler = isPortraitMode ? LayoutHandlerFunc.HANDLE_34_BAR_PHONE : LayoutHandlerFunc.HANDLE_LANDSCAPE_43_SPLIT;
+        }
+        // 平板分屏
+        else if (isPortraitSplit && deviceType === DeviceType.TABLET) {
+          result.layoutHandler = LayoutHandlerFunc.HANDLE_34_BAR_PHONE;
+        } else if (isLandscapeSplit && deviceType === DeviceType.TABLET) {
+          result.layoutHandler = LayoutHandlerFunc.HANDLE_LANDSCAPE_43_SPLIT;
+        }
+        // 平板
+        else if (deviceType === DeviceType.TABLET) {
+          result.layoutHandler = screenWidth < screenHeight ? LayoutHandlerFunc.HANDLE_34_BAR_PHONE : LayoutHandlerFunc.HANDLE_LANDSCAPE_43_SPLIT;
+        }
+        // 折叠屏展开态
+        else if (deviceType === DeviceType.PHONE && foldStatus === FoldStatusValue.FOLD_STATUS_EXPANDED) {
+          result.layoutHandler = screenWidth < screenHeight ? LayoutHandlerFunc.HANDLE_34_BAR_PHONE : LayoutHandlerFunc.HANDLE_LANDSCAPE_43_SPLIT;
+        }
+        // 默认直板机
+        else {
+          result.layoutHandler = LayoutHandlerFunc.HANDLE_34_BAR_PHONE;
+        }
+        return result;
+      }
+    }, {
+      key: "checkIsLandscapeSplitScreenWindowStatus",
+      value: function checkIsLandscapeSplitScreenWindowStatus(winWidth, winHeight, screenWidth, screenHeight) {
+        return Math.floor(winWidth) !== Math.floor(screenWidth) && Math.floor(winHeight) === Math.floor(screenHeight);
+      }
+    }, {
+      key: "checkIsPortraitSplitScreenWindowStatus",
+      value: function checkIsPortraitSplitScreenWindowStatus(winWidth, winHeight, screenWidth, screenHeight) {
+        return Math.floor(winWidth) === Math.floor(screenWidth) && Math.floor(winHeight) !== Math.floor(screenHeight);
+      }
+    }, {
+      key: "checkIsFloatingWindowStatus",
+      value: function checkIsFloatingWindowStatus(winWidth, winHeight, screenWidth, screenHeight) {
+        return Math.floor(winWidth) !== Math.floor(screenWidth) && Math.floor(winHeight) !== Math.floor(screenHeight);
+      }
+    }, {
+      key: "checkIsPortraitMode",
+      value: function checkIsPortraitMode(screenWidth, screenHeight) {
+        return screenWidth < screenHeight;
+      }
+    }]);
+  }(); // ============================================================
+  // 九宫格参考线覆盖层
+  // ============================================================
+  var GridOverlay = function GridOverlay(_ref) {
+    var title = _ref.title,
+      subTitle = _ref.subTitle;
     return /*#__PURE__*/(0, _jsxRuntime.jsxs)(_reactNative.View, {
-      style: webViewContainerStyle,
-      onStartShouldSetResponder: function onStartShouldSetResponder(e) {
-        return _onStartShouldSetResponder ? _onStartShouldSetResponder(e) : false;
-      },
-      onMoveShouldSetResponderCapture: function onMoveShouldSetResponderCapture(e) {
-        return _onMoveShouldSetResponderCapture ? _onMoveShouldSetResponderCapture(e) : false;
-      },
-      onResponderMove: function onResponderMove(e) {
-        return _onResponderMove ? _onResponderMove(e) : null;
-      },
-      children: [webView, otherView]
+      style: gridStyles.container,
+      children: [[1, 2].map(function (i) {
+        return /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.View, {
+          style: [gridStyles.line, gridStyles.horizontalLine, {
+            top: i * 33.33 + "%"
+          }]
+        }, "h" + i);
+      }), [1, 2].map(function (i) {
+        return /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.View, {
+          style: [gridStyles.line, gridStyles.verticalLine, {
+            left: i * 33.33 + "%"
+          }]
+        }, "v" + i);
+      }), /*#__PURE__*/(0, _jsxRuntime.jsxs)(_reactNative.View, {
+        style: gridStyles.textContainer,
+        children: [title ? /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.Text, {
+          style: gridStyles.title,
+          children: title
+        }) : null, subTitle ? /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.Text, {
+          style: gridStyles.subTitle,
+          children: subTitle
+        }) : null]
+      })]
     });
+  };
+  var gridStyles = _reactNative.StyleSheet.create({
+    container: {
+      flex: 1,
+      position: 'relative'
+    },
+    line: {
+      position: 'absolute',
+      backgroundColor: 'rgba(255,255,255,0.3)'
+    },
+    horizontalLine: {
+      left: 0,
+      right: 0,
+      height: _reactNative.StyleSheet.hairlineWidth
+    },
+    verticalLine: {
+      top: 0,
+      bottom: 0,
+      width: _reactNative.StyleSheet.hairlineWidth
+    },
+    textContainer: {
+      position: 'absolute',
+      bottom: 20,
+      left: 0,
+      right: 0,
+      alignItems: 'center'
+    },
+    title: {
+      color: '#FFF',
+      fontSize: 16,
+      fontWeight: 'bold',
+      textAlign: 'center'
+    },
+    subTitle: {
+      color: 'rgba(255,255,255,0.8)',
+      fontSize: 13,
+      marginTop: 4,
+      textAlign: 'center'
+    }
   });
 
-  // no native implementation for iOS, depends only on permissions
-  var isFileUploadSupported = /*#__PURE__*/function () {
-    var _ref6 = (0, _asyncToGenerator2.default)(function* () {
-      return true;
+  // ============================================================
+  // 拍照按钮
+  // ============================================================
+
+  var CaptureButton = function CaptureButton(_ref2) {
+    var enabled = _ref2.enabled;
+    return /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.View, {
+      style: [captureStyles.outer, {
+        opacity: enabled ? 1 : 0.4
+      }],
+      children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.View, {
+        style: captureStyles.inner
+      })
     });
-    return function isFileUploadSupported() {
-      return _ref6.apply(this, arguments);
-    };
-  }();
-  var WebView = Object.assign(WebViewComponent, {
-    isFileUploadSupported: isFileUploadSupported
+  };
+  var captureStyles = _reactNative.StyleSheet.create({
+    outer: {
+      width: 68,
+      height: 68,
+      borderRadius: 34,
+      borderWidth: 4,
+      borderColor: '#FFF',
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
+    inner: {
+      width: 54,
+      height: 54,
+      borderRadius: 27,
+      backgroundColor: '#FFF'
+    }
   });
-  var _default = exports.default = WebView;
-},539,[1,83,202,24,150,41,2,22,540,541,542,88,543],"node_modules/@react-native-ohos/react-native-webview/src/WebView.harmony.tsx");
+
+  // ============================================================
+  // 主组件: VisionCameraDemo
+  // ============================================================
+
+  var VisionCameraDemo = function VisionCameraDemo() {
+    // ---- Camera 相关 ----
+    var device = (0, _$$_REQUIRE(_dependencyMap[10], "react-native-vision-camera").useCameraDevice)('back');
+    var cameraRef = (0, _react.useRef)(null);
+    var _useCameraPermission = (0, _$$_REQUIRE(_dependencyMap[10], "react-native-vision-camera").useCameraPermission)(),
+      hasPermission = _useCameraPermission.hasPermission,
+      requestPermission = _useCameraPermission.requestPermission;
+
+    // ---- 窗口 & 方向 ----
+    var _useWindowDimensions = (0, _reactNative.useWindowDimensions)(),
+      windowWidth = _useWindowDimensions.width,
+      windowHeight = _useWindowDimensions.height;
+    var _useState = (0, _react.useState)(_reactNativeOrientationLocker.OrientationType.PORTRAIT),
+      _useState2 = (0, _slicedToArray2.default)(_useState, 2),
+      deviceOrientation = _useState2[0],
+      setDeviceOrientation = _useState2[1];
+
+    // ---- 相机尺寸 ----
+    var _useState3 = (0, _react.useState)(0),
+      _useState4 = (0, _slicedToArray2.default)(_useState3, 2),
+      cameraWidth = _useState4[0],
+      setCameraWidth = _useState4[1];
+    var _useState5 = (0, _react.useState)(0),
+      _useState6 = (0, _slicedToArray2.default)(_useState5, 2),
+      cameraHeight = _useState6[0],
+      setCameraHeight = _useState6[1];
+
+    // ---- 状态标记 ----
+    var _useState7 = (0, _react.useState)(false),
+      _useState8 = (0, _slicedToArray2.default)(_useState7, 2),
+      isActive = _useState8[0],
+      setIsActive = _useState8[1];
+    var _useState9 = (0, _react.useState)(false),
+      _useState0 = (0, _slicedToArray2.default)(_useState9, 2),
+      isCapturing = _useState0[0],
+      setIsCapturing = _useState0[1];
+    var isUploadingRef = (0, _react.useRef)(false);
+
+    // ---- 图片相关 ----
+    var _useState1 = (0, _react.useState)([]),
+      _useState10 = (0, _slicedToArray2.default)(_useState1, 2),
+      selectedPics = _useState10[0],
+      setSelectedPics = _useState10[1];
+    var _useState11 = (0, _react.useState)(false),
+      _useState12 = (0, _slicedToArray2.default)(_useState11, 2),
+      isPicFromGallery = _useState12[0],
+      setIsPicFromGallery = _useState12[1];
+
+    // ---- 遮罩相关 ----
+    var _useState13 = (0, _react.useState)(false),
+      _useState14 = (0, _slicedToArray2.default)(_useState13, 2),
+      isShowBlackCover = _useState14[0],
+      setIsShowBlackCover = _useState14[1];
+    var timerRef = (0, _react.useRef)(null);
+
+    // ---- 布局标记 ----
+    var _useState15 = (0, _react.useState)(false),
+      _useState16 = (0, _slicedToArray2.default)(_useState15, 2),
+      isPortraitMode = _useState16[0],
+      setIsPortraitMode = _useState16[1];
+    var _useState17 = (0, _react.useState)(false),
+      _useState18 = (0, _slicedToArray2.default)(_useState17, 2),
+      isFloatingWindowStatus = _useState18[0],
+      setIsFloatingWindowStatus = _useState18[1];
+    var _useState19 = (0, _react.useState)(false),
+      _useState20 = (0, _slicedToArray2.default)(_useState19, 2),
+      isSplitWindowStatus = _useState20[0],
+      setIsSplitWindowStatus = _useState20[1];
+    var layoutController = (0, _react.useRef)(new CameraLayoutController()).current;
+
+    // ============================================================
+    // 权限请求
+    // ============================================================
+
+    (0, _react.useEffect)(function () {
+      if (!hasPermission) {
+        requestPermission().then(function (granted) {
+          if (!granted) {
+            log.error('camera permission denied');
+          }
+        });
+      }
+    }, [hasPermission]);
+
+    // ============================================================
+    // 初始化 & 方向监听
+    // ============================================================
+
+    (0, _react.useEffect)(function () {
+      _reactNativeOrientationLocker.default.lockToPortrait();
+      _reactNative.StatusBar.setBarStyle('light-content');
+      var handleOrientationChange = function handleOrientationChange(orientation) {
+        log.info("orientation: " + orientation);
+        if (orientation.startsWith('PORTRAIT') || orientation.startsWith('LANDSCAPE')) {
+          setDeviceOrientation(orientation);
+        }
+      };
+      _reactNativeOrientationLocker.default.getDeviceOrientation(handleOrientationChange);
+      _reactNativeOrientationLocker.default.addDeviceOrientationListener(handleOrientationChange);
+      return function () {
+        _reactNativeOrientationLocker.default.removeOrientationListener(handleOrientationChange);
+        _reactNativeOrientationLocker.default.unlockAllOrientations();
+        _reactNative.StatusBar.setBarStyle('dark-content');
+        setIsActive(false);
+        cancelTimeoutCover();
+      };
+    }, []);
+
+    // ============================================================
+    // 相机 active 状态管理
+    // ============================================================
+
+    (0, _react.useEffect)(function () {
+      // 等相机初始化完成后才允许操作
+      var timer = setTimeout(function () {
+        setIsActive(true);
+      }, 350);
+      return function () {
+        return clearTimeout(timer);
+      };
+    }, []);
+
+    // ============================================================
+    // 布局计算: 核心比例逻辑
+    // ============================================================
+
+    var refreshCameraLayout = (0, _react.useCallback)(function () {
+      var screenWidth = _reactNative.Dimensions.get('screen').width;
+      var screenHeight = _reactNative.Dimensions.get('screen').height;
+
+      // 简化版: 默认直板机、折叠态
+      var layoutResult = layoutController.calculateLayout(windowWidth, windowHeight, screenWidth, screenHeight, DeviceType.PHONE, FoldStatusValue.FOLD_STATUS_FOLDED);
+      setIsPortraitMode(layoutResult.isPortraitMode);
+      setIsFloatingWindowStatus(layoutResult.isFloatingWindowStatus);
+      setIsSplitWindowStatus(layoutResult.isSplitWindowStatus);
+
+      // 根据布局处理器计算相机窗口尺寸
+      if (layoutResult.layoutHandler === LayoutHandlerFunc.HANDLE_34_BAR_PHONE) {
+        handle34BarPhone(windowWidth, windowHeight);
+      } else if (layoutResult.layoutHandler === LayoutHandlerFunc.HANDLE_LANDSCAPE_43_SPLIT) {
+        handleLandscape43Split(windowWidth, windowHeight);
+      }
+      log.info("layout result: portrait=" + layoutResult.isPortraitMode + ", " + ("floating=" + layoutResult.isFloatingWindowStatus + ", split=" + layoutResult.isSplitWindowStatus));
+    }, [windowWidth, windowHeight]);
+    (0, _react.useEffect)(function () {
+      refreshCameraLayout();
+    }, [refreshCameraLayout]);
+
+    // ============================================================
+    // 相机窗口尺寸计算: 3:4 比例
+    // ============================================================
+
+    /**
+     * 直板机/竖屏模式: 相机取景框比例 3:4
+     * 即 width:height = 3:4
+     */
+    var handle34BarPhone = function handle34BarPhone(width, height) {
+      var calculatedWidth, calculatedHeight;
+      if (width / height > CAMERA_RATIO_3_4) {
+        console.log("chy 4:3 split - width is the limit factor");
+        // 窗口太窄，宽度撑满，高度按比例
+        calculatedWidth = width;
+        calculatedHeight = width / CAMERA_RATIO_3_4;
+      } else {
+        console.log("chy 3:4 split - width is the limit factor");
+        // 窗口够宽，高度撑满，宽度按比例
+        calculatedHeight = height;
+        calculatedWidth = height * CAMERA_RATIO_3_4;
+      }
+      setCameraWidth(calculatedWidth);
+      setCameraHeight(calculatedHeight);
+      log.info("handle34BarPhone - cameraSize: " + calculatedWidth + " x " + calculatedHeight);
+    };
+
+    /**
+     * 横屏分屏模式: 相机取景框比例 4:3
+     * 即 width:height = 4:3
+     */
+    var handleLandscape43Split = function handleLandscape43Split(winWidth, winHeight) {
+      var calculatedWidth, calculatedHeight;
+      if (winWidth / winHeight < 1 / CAMERA_RATIO_3_4) {
+        console.log("chy 4:3 split - width is the limit factor");
+        calculatedWidth = winWidth;
+        calculatedHeight = calculatedWidth * CAMERA_RATIO_3_4;
+      } else {
+        console.log("chy 3:4 split - width is the limit factor");
+        calculatedHeight = winHeight;
+        calculatedWidth = winHeight / CAMERA_RATIO_3_4;
+      }
+      setCameraWidth(calculatedWidth);
+      setCameraHeight(calculatedHeight);
+      log.info("handleLandscape43Split - cameraSize: " + calculatedWidth + " x " + calculatedHeight);
+    };
+
+    // ============================================================
+    // 拍照逻辑 (含超时保护)
+    // ============================================================
+
+    var takePhoto = /*#__PURE__*/function () {
+      var _ref3 = (0, _asyncToGenerator2.default)(function* () {
+        if (isUploadingRef.current) {
+          log.warn('Upload in progress, ignore click');
+          return;
+        }
+        try {
+          var _cameraRef$current;
+          isUploadingRef.current = true;
+          setIsCapturing(true);
+          log.info('takePhoto start');
+
+          // ★ 超时保护: 与业务代码一致
+          var timeoutPromise = new Promise(function (_, reject) {
+            return setTimeout(function () {
+              return reject(new Error('takePhoto timeout'));
+            }, TAKE_PHOTO_TIMEOUT_MS);
+          });
+          var file = yield Promise.race([(_cameraRef$current = cameraRef.current) == null ? void 0 : _cameraRef$current.takePhoto({}), timeoutPromise]);
+          log.info("takePhoto success, file: " + JSON.stringify(file));
+          if (file != null && file.path) {
+            var uri = "file://" + file.path;
+            log.info("photo uri: " + uri + ", width: " + file.width + ", height: " + file.height);
+            addImageUri(uri);
+          }
+        } catch (error) {
+          log.error("takePhoto failed: " + (error == null ? void 0 : error.message));
+          isUploadingRef.current = false;
+          setTimeout(function () {
+            return setIsCapturing(false);
+          }, 100);
+        } finally {
+          log.info('takePhoto process end');
+        }
+      });
+      return function takePhoto() {
+        return _ref3.apply(this, arguments);
+      };
+    }();
+
+    // ============================================================
+    // 图库选择
+    // ============================================================
+
+    var selectFromGallery = /*#__PURE__*/function () {
+      var _ref4 = (0, _asyncToGenerator2.default)(function* () {
+        var _result$assets;
+        log.info('selectFromGallery');
+        var result = yield launchImageLibrary({
+          mediaType: 'photo',
+          selectionLimit: AI_COACH_MAX_PIC_LEN,
+          quality: 1
+        }).catch(function (e) {
+          return log.error("launchImageLibrary error: " + (e == null ? void 0 : e.message));
+        });
+        if (result != null && (_result$assets = result.assets) != null && _result$assets.length) {
+          var uris = [];
+          result.assets.forEach(function (asset) {
+            (asset == null ? void 0 : asset.uri) && uris.push(asset.uri);
+          });
+          if (uris.length > 0) {
+            setSelectedPics(uris);
+            setIsPicFromGallery(true);
+            // 模拟: 图库选择后禁用拍照
+            setIsCapturing(true);
+          }
+        }
+      });
+      return function selectFromGallery() {
+        return _ref4.apply(this, arguments);
+      };
+    }();
+    var addImageUri = function addImageUri(uri) {
+      setSelectedPics(function (prev) {
+        return [].concat((0, _toConsumableArray2.default)(prev), [uri]);
+      });
+      // 模拟上传完成
+      setTimeout(function () {
+        isUploadingRef.current = false;
+        if (selectedPics.length + 1 < AI_COACH_MAX_PIC_LEN) {
+          setIsCapturing(false);
+        }
+      }, 500);
+    };
+
+    // ============================================================
+    // 删除图片
+    // ============================================================
+
+    var handleImageDelete = function handleImageDelete(index) {
+      log.info("delete image at index: " + index);
+      var newList = (0, _toConsumableArray2.default)(selectedPics);
+      newList.splice(index, 1);
+      setSelectedPics(newList);
+      if (newList.length === 0) {
+        setIsPicFromGallery(false);
+        setIsCapturing(false);
+        isUploadingRef.current = false;
+      }
+    };
+
+    // ============================================================
+    // 黑色遮罩超时逻辑
+    // ============================================================
+
+    var createTimeoutCover = function createTimeoutCover() {
+      if (timerRef.current !== null) {
+        clearTimeout(timerRef.current);
+      }
+      cancelBlackCover();
+      timerRef.current = window.setTimeout(function () {
+        setIsShowBlackCover(true);
+        setIsActive(false);
+        timerRef.current = null;
+      }, BLACK_COVER_TIMEOUT_MS);
+    };
+    var cancelTimeoutCover = function cancelTimeoutCover() {
+      setIsShowBlackCover(false);
+      if (timerRef.current !== null) {
+        clearTimeout(timerRef.current);
+        timerRef.current = null;
+      }
+    };
+    var cancelBlackCover = function cancelBlackCover() {
+      setIsShowBlackCover(false);
+      setIsActive(true);
+    };
+
+    // 拦截手势返回
+    (0, _react.useEffect)(function () {
+      var backHandler = _reactNative.BackHandler.addEventListener('hardwareBackPress', function () {
+        if (isShowBlackCover) {
+          createTimeoutCover();
+          return true;
+        }
+        return false;
+      });
+      return function () {
+        return backHandler.remove();
+      };
+    }, [isShowBlackCover]);
+
+    // ============================================================
+    // 拍摄按钮禁用判断
+    // ============================================================
+
+    var canCaptureDisabled = function canCaptureDisabled() {
+      return isCapturing || isPicFromGallery || selectedPics.length >= AI_COACH_MAX_PIC_LEN;
+    };
+
+    // ============================================================
+    // 设备方向对应的旋转角度
+    // ============================================================
+
+    var getRotateDegree = function getRotateDegree() {
+      switch (deviceOrientation) {
+        case _reactNativeOrientationLocker.OrientationType['LANDSCAPE-LEFT']:
+          return 90;
+        case _reactNativeOrientationLocker.OrientationType['LANDSCAPE-RIGHT']:
+          return 270;
+        case _reactNativeOrientationLocker.OrientationType['PORTRAIT-UPSIDEDOWN']:
+          return 180;
+        default:
+          return 0;
+      }
+    };
+
+    // ============================================================
+    // 早期返回: 无设备 / 无权限
+    // ============================================================
+
+    if (!device) {
+      return /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.View, {
+        style: styles.center,
+        children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.Text, {
+          style: styles.whiteText,
+          children: "\u6CA1\u6709\u53EF\u7528\u7684\u6444\u50CF\u5934\u8BBE\u5907"
+        })
+      });
+    }
+    if (!hasPermission) {
+      return /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.View, {
+        style: styles.center,
+        children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.Text, {
+          style: styles.whiteText,
+          children: "\u9700\u8981\u6444\u50CF\u5934\u6743\u9650"
+        })
+      });
+    }
+
+    // ============================================================
+    // 渲染
+    // ============================================================
+
+    var isCameraReady = cameraWidth > 0 && cameraHeight > 0;
+    return /*#__PURE__*/(0, _jsxRuntime.jsxs)(_reactNative.View, {
+      style: styles.fullScreen,
+      onTouchStart: createTimeoutCover,
+      children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.View, {
+        style: styles.cameraLayer,
+        children: isCameraReady && /*#__PURE__*/(0, _jsxRuntime.jsxs)(_reactNative.View, {
+          style: {
+            width: cameraWidth,
+            height: cameraHeight,
+            overflow: 'hidden'
+          },
+          children: [isActive ? /*#__PURE__*/(0, _jsxRuntime.jsx)(_$$_REQUIRE(_dependencyMap[10], "react-native-vision-camera").Camera, {
+            ref: cameraRef,
+            resizeMode: "cover",
+            style: {
+              flex: 1
+            },
+            device: device,
+            isActive: isActive,
+            photo: true,
+            onInitialized: function onInitialized() {
+              return log.info('camera initialized');
+            },
+            onError: function onError(error) {
+              return log.error("camera error: " + JSON.stringify(error));
+            }
+          }) : /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.View, {
+            style: [styles.cameraPlaceholder, {
+              width: cameraWidth,
+              height: cameraHeight
+            }],
+            children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.Text, {
+              style: styles.whiteText,
+              children: "\u76F8\u673A\u672A\u6FC0\u6D3B"
+            })
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.View, {
+            style: _reactNative.StyleSheet.absoluteFill,
+            pointerEvents: "none",
+            children: /*#__PURE__*/(0, _jsxRuntime.jsx)(GridOverlay, {
+              title: selectedPics.length >= AI_COACH_MAX_PIC_LEN ? "\u6700\u591A\u53EF\u62CD " + AI_COACH_MAX_PIC_LEN + " \u5F20, \u5DF2\u8FBE\u4E0A\u9650" : selectedPics.length > 0 ? "\u62CD\u6444\u9898\u76EE\u7B2C " + (selectedPics.length + 1) + " \u90E8\u5206" : '一次拍摄一整页',
+              subTitle: "\u6587\u5B57\u4E0E\u53C2\u8003\u7EBF\u5E73\u884C"
+            })
+          })]
+        })
+      }), /*#__PURE__*/(0, _jsxRuntime.jsxs)(_reactNative.View, {
+        style: styles.uiLayer,
+        pointerEvents: "box-none",
+        children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)(_reactNative.View, {
+          style: styles.topBar,
+          children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.TouchableOpacity, {
+            style: styles.backButton,
+            onPress: function onPress() {
+              log.info('back pressed');
+              cancelTimeoutCover();
+            },
+            children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.Text, {
+              style: styles.whiteText,
+              children: "\u2190 \u8FD4\u56DE"
+            })
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.View, {
+            style: styles.infoTag,
+            children: /*#__PURE__*/(0, _jsxRuntime.jsxs)(_reactNative.Text, {
+              style: styles.infoText,
+              children: [isPortraitMode ? '竖屏' : '横屏', " |", isSplitWindowStatus ? '分屏' : isFloatingWindowStatus ? '悬浮窗' : '全屏', " |", Math.round(cameraWidth) + "\xD7" + Math.round(cameraHeight)]
+            })
+          })]
+        }), selectedPics.length > 0 && /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.View, {
+          style: styles.thumbnailContainer,
+          children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.ScrollView, {
+            horizontal: true,
+            showsHorizontalScrollIndicator: false,
+            children: selectedPics.map(function (uri, index) {
+              return /*#__PURE__*/(0, _jsxRuntime.jsxs)(_reactNative.View, {
+                style: styles.thumbnailWrapper,
+                children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.Image, {
+                  source: {
+                    uri: uri
+                  },
+                  style: styles.thumbnail,
+                  resizeMode: "cover"
+                }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.TouchableOpacity, {
+                  style: styles.thumbnailDelete,
+                  onPress: function onPress() {
+                    return handleImageDelete(index);
+                  },
+                  children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.Text, {
+                    style: styles.thumbnailDeleteText,
+                    children: "\u2715"
+                  })
+                })]
+              }, index);
+            })
+          })
+        }), /*#__PURE__*/(0, _jsxRuntime.jsxs)(_reactNative.View, {
+          style: styles.bottomBar,
+          children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)(_reactNative.TouchableOpacity, {
+            style: styles.galleryButton
+            // onPress={selectFromGallery}
+            ,
+            children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.Text, {
+              style: styles.whiteText,
+              children: "\uD83D\uDCF7"
+            }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.Text, {
+              style: styles.smallText,
+              children: "\u56FE\u5E93"
+            })]
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.TouchableOpacity, {
+            testID: "captureButton",
+            onPress: function onPress() {
+              log.info("capture press, disabled: " + canCaptureDisabled() + ", active: " + isActive);
+              if (!canCaptureDisabled()) {
+                setIsCapturing(true);
+                takePhoto();
+              }
+            },
+            disabled: canCaptureDisabled(),
+            style: styles.captureButtonContainer,
+            children: /*#__PURE__*/(0, _jsxRuntime.jsx)(CaptureButton, {
+              enabled: !canCaptureDisabled() && isActive
+            })
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.View, {
+            style: styles.evaluateArea,
+            children: selectedPics.length > 0 ? /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.TouchableOpacity, {
+              style: styles.evaluateButton,
+              onPress: function onPress() {
+                showToast("\u5DF2\u9009\u62E9 " + selectedPics.length + " \u5F20\u56FE\u7247\uFF0C\u53EF\u7EE7\u7EED\u5904\u7406");
+              },
+              children: /*#__PURE__*/(0, _jsxRuntime.jsxs)(_reactNative.Text, {
+                style: styles.evaluateButtonText,
+                children: ["\u53BB\u8BC4\u4F30 (", selectedPics.length, ")"]
+              })
+            }) : /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.View, {
+              style: styles.evaluatePlaceholder,
+              children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.Text, {
+                style: styles.smallText,
+                children: "\u62CD\u7167\u6216\u9009\u56FE"
+              })
+            })
+          })]
+        }), /*#__PURE__*/(0, _jsxRuntime.jsxs)(_reactNative.View, {
+          style: styles.modeTag,
+          children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.Text, {
+            style: styles.modeText,
+            children: "\u62CD\u7167\u89E3\u9898"
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.View, {
+            style: styles.modeDot
+          })]
+        })]
+      }), isShowBlackCover && /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.Pressable, {
+        style: styles.blackCover,
+        onPress: cancelBlackCover,
+        children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.Text, {
+          style: styles.blackCoverText,
+          children: "\u70B9\u51FB\u8FD4\u56DE\u76F8\u673A"
+        })
+      })]
+    });
+  };
+
+  // ============================================================
+  // 样式
+  // ============================================================
+
+  var styles = _reactNative.StyleSheet.create({
+    fullScreen: {
+      flex: 1,
+      backgroundColor: '#000'
+    },
+    // 相机层
+    cameraLayer: Object.assign({}, _reactNative.StyleSheet.absoluteFillObject, {
+      alignItems: 'center',
+      justifyContent: 'center'
+    }),
+    cameraPlaceholder: {
+      backgroundColor: '#111',
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+    // UI 覆盖层
+    uiLayer: Object.assign({}, _reactNative.StyleSheet.absoluteFillObject, {
+      flexDirection: 'column',
+      justifyContent: 'space-between'
+    }),
+    // 顶部栏
+    topBar: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      paddingTop: 50,
+      paddingHorizontal: 16
+    },
+    backButton: {
+      padding: 8
+    },
+    infoTag: {
+      marginLeft: 'auto',
+      backgroundColor: 'rgba(255,255,255,0.15)',
+      borderRadius: 12,
+      paddingHorizontal: 10,
+      paddingVertical: 4
+    },
+    infoText: {
+      color: 'rgba(255,255,255,0.8)',
+      fontSize: 11
+    },
+    // 缩略图
+    thumbnailContainer: {
+      position: 'absolute',
+      bottom: 180,
+      left: 0,
+      right: 0,
+      zIndex: 10
+    },
+    thumbnailWrapper: {
+      marginLeft: 8,
+      position: 'relative'
+    },
+    thumbnail: {
+      width: 56,
+      height: 56,
+      borderRadius: 6,
+      borderWidth: 1,
+      borderColor: 'rgba(255,255,255,0.5)'
+    },
+    thumbnailDelete: {
+      position: 'absolute',
+      top: -4,
+      right: -4,
+      width: 18,
+      height: 18,
+      borderRadius: 9,
+      backgroundColor: 'rgba(0,0,0,0.7)',
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+    thumbnailDeleteText: {
+      color: '#FFF',
+      fontSize: 10
+    },
+    // 底部操作栏
+    bottomBar: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-around',
+      paddingBottom: 40,
+      paddingTop: 16,
+      backgroundColor: 'rgba(0,0,0,0.4)'
+    },
+    galleryButton: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 48,
+      height: 48,
+      borderRadius: 24,
+      backgroundColor: 'rgba(255,255,255,0.15)'
+    },
+    captureButtonContainer: {
+      overflow: 'hidden'
+    },
+    evaluateArea: {
+      width: 80,
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+    evaluateButton: {
+      backgroundColor: '#0A59F7',
+      borderRadius: 16,
+      paddingHorizontal: 12,
+      paddingVertical: 8
+    },
+    evaluateButtonText: {
+      color: '#FFF',
+      fontSize: 13,
+      fontWeight: 'bold'
+    },
+    evaluatePlaceholder: {
+      alignItems: 'center'
+    },
+    // 模式标签
+    modeTag: {
+      position: 'absolute',
+      bottom: 110,
+      left: 0,
+      right: 0,
+      alignItems: 'center',
+      flexDirection: 'row',
+      justifyContent: 'center',
+      gap: 5
+    },
+    modeText: {
+      color: '#FFF',
+      fontSize: 14,
+      fontWeight: 'bold'
+    },
+    modeDot: {
+      width: 6,
+      height: 6,
+      borderRadius: 3,
+      backgroundColor: '#0A59F7'
+    },
+    // 黑色遮罩
+    blackCover: Object.assign({}, _reactNative.StyleSheet.absoluteFillObject, {
+      backgroundColor: 'black',
+      alignItems: 'center',
+      justifyContent: 'center',
+      zIndex: 101
+    }),
+    blackCoverText: {
+      color: '#FFF',
+      fontSize: 16
+    },
+    // 通用
+    center: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: 'black'
+    },
+    whiteText: {
+      color: '#FFF',
+      fontSize: 16
+    },
+    smallText: {
+      color: 'rgba(255,255,255,0.7)',
+      fontSize: 11,
+      marginTop: 2
+    }
+  });
+  var _default = exports.default = VisionCameraDemo;
+},538,[1,6,83,24,12,13,41,2,539,88,548],"src/xiaoyi/camerapage/VisionCameraDemo.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  //
+  //  react-native-orientation-locker
+  //
+  //
+  //  Created by Wonday on 17/5/12.
+  //  Copyright (c) wonday.org All rights reserved.
+  //
+
+  "use strict";
+
+  // import Orientation from './src/orientation';
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var _exportNames = {
+    OrientationType: true
+  };
+  exports.default = exports.OrientationType = void 0;
+  var _orientation = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "./src/orientation.android"));
+  var _orientation2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "./src/orientation.ios"));
+  var _orientation3 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "./src/orientation.harmony"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[4], "react-native");
+  Object.keys(_$$_REQUIRE(_dependencyMap[5], "./src/hooks")).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+    if (key in exports && exports[key] === _$$_REQUIRE(_dependencyMap[5], "./src/hooks")[key]) return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function get() {
+        return _$$_REQUIRE(_dependencyMap[5], "./src/hooks")[key];
+      }
+    });
+  });
+  Object.keys(_$$_REQUIRE(_dependencyMap[6], "./src/OrientationLocker")).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+    if (key in exports && exports[key] === _$$_REQUIRE(_dependencyMap[6], "./src/OrientationLocker")[key]) return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function get() {
+        return _$$_REQUIRE(_dependencyMap[6], "./src/OrientationLocker")[key];
+      }
+    });
+  });
+  var OrientationType = exports.OrientationType = {
+    PORTRAIT: 'PORTRAIT',
+    'PORTRAIT-UPSIDEDOWN': 'PORTRAIT-UPSIDEDOWN',
+    'LANDSCAPE-LEFT': 'LANDSCAPE-LEFT',
+    'LANDSCAPE-RIGHT': 'LANDSCAPE-RIGHT',
+    'FACE-UP': 'FACE-UP',
+    'FACE-DOWN': 'FACE-DOWN',
+    UNKNOWN: 'UNKNOWN'
+  };
+  var Orientation;
+  if (_reactNative.Platform.OS === 'harmony') {
+    Orientation = _orientation3.default;
+  } else if (_reactNative.Platform.OS === 'android') {
+    Orientation = _orientation.default;
+  } else if (_reactNative.Platform.OS === 'ios') {
+    Orientation = _orientation2.default;
+  }
+  var _default = exports.default = Orientation;
+},539,[1,540,541,542,2,543,547],"node_modules/@react-native-ohos/react-native-orientation-locker/index.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  //
+  //  react-native-orientation-locker
+  //
+  //
+  //  Created by Wonday on 17/5/12.
+  //  Copyright (c) wonday.org All rights reserved.
+  //
+
+  "use strict";
+
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/createClass"));
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+  var OrientationNative = _$$_REQUIRE(_dependencyMap[3], "react-native").NativeModules.Orientation;
+  var _require = _$$_REQUIRE(_dependencyMap[3], "react-native"),
+    NativeEventEmitter = _require.NativeEventEmitter;
+  var LocalEventEmitter;
+  var listeners = {};
+  var id = 0;
+  var META = "__listener_id";
+  var locked = false;
+  function getKey(listener) {
+    if (!listener.hasOwnProperty(META)) {
+      if (!Object.isExtensible(listener)) {
+        return "F";
+      }
+      Object.defineProperty(listener, META, {
+        value: "L" + ++id
+      });
+    }
+    return listener[META];
+  }
+  var Orientation = exports.default = /*#__PURE__*/(0, _createClass2.default)(function Orientation() {
+    (0, _classCallCheck2.default)(this, Orientation);
+  });
+  Orientation.configure = function (_options) {
+    // ios only
+  };
+  Orientation.getOrientation = function (cb) {
+    OrientationNative.getOrientation(function (orientation) {
+      cb(orientation);
+    });
+  };
+  Orientation.getDeviceOrientation = function (cb) {
+    OrientationNative.getDeviceOrientation(function (deviceOrientation) {
+      cb(deviceOrientation);
+    });
+  };
+  Orientation.isLocked = function () {
+    return locked;
+  };
+  Orientation.lockToPortrait = function () {
+    locked = true;
+    OrientationNative.lockToPortrait();
+  };
+  Orientation.lockToPortraitUpsideDown = function () {
+    locked = true;
+    OrientationNative.lockToPortraitUpsideDown();
+  };
+  Orientation.lockToLandscape = function () {
+    locked = true;
+    OrientationNative.lockToLandscape();
+  };
+  Orientation.lockToLandscapeRight = function () {
+    locked = true;
+    OrientationNative.lockToLandscapeRight();
+  };
+  Orientation.lockToLandscapeLeft = function () {
+    locked = true;
+    OrientationNative.lockToLandscapeLeft();
+  };
+  // OrientationMaskAllButUpsideDown
+  Orientation.lockToAllOrientationsButUpsideDown = function () {
+    locked = true;
+  };
+  Orientation.unlockAllOrientations = function () {
+    locked = false;
+    OrientationNative.unlockAllOrientations();
+  };
+  Orientation.addOrientationListener = function (cb) {
+    var _LocalEventEmitter;
+    var key = getKey(cb);
+    LocalEventEmitter = (_LocalEventEmitter = LocalEventEmitter) != null ? _LocalEventEmitter : new NativeEventEmitter(OrientationNative);
+    listeners[key] = LocalEventEmitter.addListener("orientationDidChange", function (body) {
+      cb(body.orientation);
+    });
+  };
+  Orientation.removeOrientationListener = function (cb) {
+    var key = getKey(cb);
+    if (!listeners[key]) {
+      return;
+    }
+    listeners[key].remove();
+    listeners[key] = null;
+  };
+  Orientation.addDeviceOrientationListener = function (cb) {
+    var _LocalEventEmitter2;
+    var key = getKey(cb);
+    LocalEventEmitter = (_LocalEventEmitter2 = LocalEventEmitter) != null ? _LocalEventEmitter2 : new NativeEventEmitter(OrientationNative);
+    listeners[key] = LocalEventEmitter.addListener("deviceOrientationDidChange", function (body) {
+      cb(body.deviceOrientation);
+    });
+  };
+  Orientation.removeDeviceOrientationListener = function (cb) {
+    var key = getKey(cb);
+    if (!listeners[key]) {
+      return;
+    }
+    listeners[key].remove();
+    listeners[key] = null;
+  };
+  Orientation.addLockListener = function (cb) {
+    var _LocalEventEmitter3;
+    var key = getKey(cb);
+    LocalEventEmitter = (_LocalEventEmitter3 = LocalEventEmitter) != null ? _LocalEventEmitter3 : new NativeEventEmitter(OrientationNative);
+    listeners[key] = LocalEventEmitter.addListener("lockDidChange", function (body) {
+      cb(body.orientation);
+    });
+  };
+  Orientation.removeLockListener = function (cb) {
+    var key = getKey(cb);
+    if (!listeners[key]) {
+      return;
+    }
+    listeners[key].remove();
+    listeners[key] = null;
+  };
+  Orientation.removeAllListeners = function () {
+    for (var key in listeners) {
+      if (!listeners[key]) {
+        continue;
+      }
+      listeners[key].remove();
+      listeners[key] = null;
+    }
+  };
+  Orientation.getInitialOrientation = function () {
+    return OrientationNative.initialOrientation;
+  };
+  Orientation.getAutoRotateState = function (cb) {
+    OrientationNative.getAutoRotateState(function (state) {
+      cb(state);
+    });
+  };
+},540,[1,13,12,2],"node_modules/@react-native-ohos/react-native-orientation-locker/src/orientation.android.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  //
+  //  react-native-orientation-locker
+  //
+  //
+  //  Created by Wonday on 17/5/12.
+  //  Copyright (c) wonday.org All rights reserved.
+  //
+
+  "use strict";
+
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/createClass"));
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+  var OrientationNative = _$$_REQUIRE(_dependencyMap[3], "react-native").NativeModules.Orientation;
+  var _require = _$$_REQUIRE(_dependencyMap[3], "react-native"),
+    NativeEventEmitter = _require.NativeEventEmitter;
+  var LocalEventEmitter = new NativeEventEmitter(OrientationNative);
+  var listeners = {};
+  var id = 0;
+  var META = "__listener_id";
+  var locked = false;
+  function getKey(listener) {
+    if (!listener.hasOwnProperty(META)) {
+      if (!Object.isExtensible(listener)) {
+        return "F";
+      }
+      Object.defineProperty(listener, META, {
+        value: "L" + ++id
+      });
+    }
+    return listener[META];
+  }
+  var Orientation = exports.default = /*#__PURE__*/(0, _createClass2.default)(function Orientation() {
+    (0, _classCallCheck2.default)(this, Orientation);
+  });
+  Orientation.configure = function (options) {
+    OrientationNative.configure(options);
+  };
+  Orientation.getOrientation = function (cb) {
+    OrientationNative.getOrientation(function (orientation) {
+      cb(orientation);
+    });
+  };
+  Orientation.getDeviceOrientation = function (cb) {
+    OrientationNative.getDeviceOrientation(function (deviceOrientation) {
+      cb(deviceOrientation);
+    });
+  };
+  Orientation.isLocked = function () {
+    return locked;
+  };
+  Orientation.lockToPortrait = function () {
+    locked = true;
+    OrientationNative.lockToPortrait();
+  };
+  Orientation.lockToPortraitUpsideDown = function () {
+    locked = true;
+    OrientationNative.lockToPortraitUpsideDown();
+  };
+  Orientation.lockToLandscape = function () {
+    locked = true;
+    OrientationNative.lockToLandscape();
+  };
+  Orientation.lockToLandscapeRight = function () {
+    locked = true;
+    OrientationNative.lockToLandscapeRight();
+  };
+  Orientation.lockToLandscapeLeft = function () {
+    locked = true;
+    OrientationNative.lockToLandscapeLeft();
+  };
+  // OrientationMaskAllButUpsideDown
+  Orientation.lockToAllOrientationsButUpsideDown = function () {
+    locked = true;
+    OrientationNative.lockToAllOrientationsButUpsideDown();
+  };
+  Orientation.unlockAllOrientations = function () {
+    locked = false;
+    OrientationNative.unlockAllOrientations();
+  };
+  Orientation.addOrientationListener = function (cb) {
+    var key = getKey(cb);
+    listeners[key] = LocalEventEmitter.addListener("orientationDidChange", function (body) {
+      cb(body.orientation);
+    });
+  };
+  Orientation.removeOrientationListener = function (cb) {
+    var key = getKey(cb);
+    if (!listeners[key]) {
+      return;
+    }
+    listeners[key].remove();
+    listeners[key] = null;
+  };
+  Orientation.addDeviceOrientationListener = function (cb) {
+    var key = getKey(cb);
+    listeners[key] = LocalEventEmitter.addListener("deviceOrientationDidChange", function (body) {
+      cb(body.deviceOrientation);
+    });
+  };
+  Orientation.removeDeviceOrientationListener = function (cb) {
+    var key = getKey(cb);
+    if (!listeners[key]) {
+      return;
+    }
+    listeners[key].remove();
+    listeners[key] = null;
+  };
+  Orientation.addLockListener = function (cb) {
+    var key = getKey(cb);
+    listeners[key] = LocalEventEmitter.addListener("lockDidChange", function (body) {
+      cb(body.orientation);
+    });
+  };
+  Orientation.removeLockListener = function (cb) {
+    var key = getKey(cb);
+    if (!listeners[key]) {
+      return;
+    }
+    listeners[key].remove();
+    listeners[key] = null;
+  };
+  Orientation.removeAllListeners = function () {
+    for (var key in listeners) {
+      if (!listeners[key]) {
+        continue;
+      }
+      listeners[key].remove();
+      listeners[key] = null;
+    }
+  };
+  Orientation.getInitialOrientation = function () {
+    return OrientationNative.initialOrientation;
+  };
+  Orientation.getAutoRotateState = function (cb) {
+    cb(true); // iOS not implement
+  };
+},541,[1,13,12,2],"node_modules/@react-native-ohos/react-native-orientation-locker/src/orientation.ios.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  //
+  //  react-native-orientation-locker
+  //
+  //
+  //  Created by Wonday on 17/5/12.
+  //  Copyright (c) wonday.org All rights reserved.
+  //
+
+  "use strict";
+
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/createClass"));
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[3], "react-native");
+  var OrientationNative = _reactNative.TurboModuleRegistry ? _reactNative.TurboModuleRegistry.get('OreitationLockerNativeModule') : _$$_REQUIRE(_dependencyMap[4], "react-native").NativeModules.Orientation;
+  var deviceEventEmitter = _$$_REQUIRE(_dependencyMap[4], "react-native").DeviceEventEmitter;
+  var listeners = {};
+  var id = 0;
+  var META = "__listener_id";
+  var locked = false;
+  function getKey(listener) {
+    if (!listener.hasOwnProperty(META)) {
+      if (!Object.isExtensible(listener)) {
+        return "F";
+      }
+      Object.defineProperty(listener, META, {
+        value: "L" + (id + 1)
+      });
+    }
+    return listener[META];
+  }
+  var Orientation = exports.default = /*#__PURE__*/(0, _createClass2.default)(function Orientation() {
+    (0, _classCallCheck2.default)(this, Orientation);
+  });
+  Orientation.configure = function (options) {
+    // OrientationNative.configure(options);
+  };
+  Orientation.getOrientation = function (cb) {
+    OrientationNative.getOrientation(function (orientation) {
+      cb(orientation);
+    });
+  };
+  Orientation.getDeviceOrientation = function (cb) {
+    OrientationNative.getDeviceOrientation(function (deviceOrientation) {
+      cb(deviceOrientation);
+    });
+  };
+  Orientation.isLocked = function () {
+    return locked;
+  };
+  Orientation.lockToPortrait = function () {
+    locked = true;
+    OrientationNative.lockToPortrait();
+  };
+  Orientation.lockToPortraitUpsideDown = function () {
+    locked = true;
+    OrientationNative.lockToPortraitUpsideDown();
+  };
+  Orientation.lockToLandscape = function () {
+    locked = true;
+    OrientationNative.lockToLandscape();
+  };
+  Orientation.lockToLandscapeRight = function () {
+    locked = true;
+    OrientationNative.lockToLandscapeRight();
+  };
+  Orientation.lockToLandscapeLeft = function () {
+    locked = true;
+    OrientationNative.lockToLandscapeLeft();
+  };
+  // OrientationMaskAllButUpsideDown
+  Orientation.lockToAllOrientationsButUpsideDown = function () {
+    locked = true;
+    OrientationNative.lockToAllOrientationsButUpsideDown();
+  };
+  Orientation.unlockAllOrientations = function () {
+    locked = false;
+    OrientationNative.unlockAllOrientations();
+  };
+  Orientation.addOrientationListener = function (cb) {
+    var key = getKey(cb);
+    listeners[key] = deviceEventEmitter.addListener("orientationDidChange", function (body) {
+      cb(body.orientation);
+    });
+  };
+  Orientation.removeOrientationListener = function (cb) {
+    var key = getKey(cb);
+    if (!listeners[key]) {
+      return;
+    }
+    listeners[key].remove();
+    listeners[key] = null;
+  };
+  Orientation.addDeviceOrientationListener = function (cb) {
+    var key = getKey(cb);
+    listeners[key] = deviceEventEmitter.addListener("deviceOrientationDidChange", function (body) {
+      cb(body.deviceOrientation);
+    });
+  };
+  Orientation.removeDeviceOrientationListener = function (cb) {
+    var key = getKey(cb);
+    if (!listeners[key]) {
+      return;
+    }
+    listeners[key].remove();
+    listeners[key] = null;
+  };
+  Orientation.addLockListener = function (cb) {
+    var key = getKey(cb);
+    listeners[key] = deviceEventEmitter.addListener("lockDidChange", function (body) {
+      cb(body.orientation);
+    });
+  };
+  Orientation.removeLockListener = function (cb) {
+    var key = getKey(cb);
+    if (!listeners[key]) {
+      return;
+    }
+    listeners[key].remove();
+    listeners[key] = null;
+  };
+  Orientation.removeAllListeners = function () {
+    for (var key in listeners) {
+      if (!listeners[key]) {
+        continue;
+      }
+      listeners[key].remove();
+      listeners[key] = null;
+    }
+  };
+  Orientation.getInitialOrientation = function () {
+    //暂时注释
+    return OrientationNative.initialOrientation;
+    // return 'PORTRAIT';
+  };
+  Orientation.getAutoRotateState = function (cb) {
+    cb(true); // iOS not implement
+  };
+},542,[1,13,12,2,2],"node_modules/@react-native-ohos/react-native-orientation-locker/src/orientation.harmony.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.keys(_$$_REQUIRE(_dependencyMap[0], "./useOrientationChange")).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    if (key in exports && exports[key] === _$$_REQUIRE(_dependencyMap[0], "./useOrientationChange")[key]) return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function get() {
+        return _$$_REQUIRE(_dependencyMap[0], "./useOrientationChange")[key];
+      }
+    });
+  });
+  Object.keys(_$$_REQUIRE(_dependencyMap[1], "./useDeviceOrientationChange")).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    if (key in exports && exports[key] === _$$_REQUIRE(_dependencyMap[1], "./useDeviceOrientationChange")[key]) return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function get() {
+        return _$$_REQUIRE(_dependencyMap[1], "./useDeviceOrientationChange")[key];
+      }
+    });
+  });
+  Object.keys(_$$_REQUIRE(_dependencyMap[2], "./useLockListener")).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    if (key in exports && exports[key] === _$$_REQUIRE(_dependencyMap[2], "./useLockListener")[key]) return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function get() {
+        return _$$_REQUIRE(_dependencyMap[2], "./useLockListener")[key];
+      }
+    });
+  });
+},543,[544,545,546],"node_modules/@react-native-ohos/react-native-orientation-locker/src/hooks/index.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.useOrientationChange = useOrientationChange;
+  var _react = _$$_REQUIRE(_dependencyMap[1], "react");
+  var _orientation = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "../orientation"));
+  function useOrientationChange(callback) {
+    var savedCallback = (0, _react.useRef)();
+    (0, _react.useEffect)(function () {
+      savedCallback.current = callback;
+    }, [callback]);
+    (0, _react.useEffect)(function () {
+      function listener(ori) {
+        savedCallback.current(ori);
+      }
+      var initial = _orientation.default.getInitialOrientation();
+      listener(initial);
+      _orientation.default.addOrientationListener(listener);
+      return function () {
+        _orientation.default.removeOrientationListener(listener);
+      };
+    }, []);
+  }
+},544,[1,41,542],"node_modules/@react-native-ohos/react-native-orientation-locker/src/hooks/useOrientationChange.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.useDeviceOrientationChange = useDeviceOrientationChange;
+  var _react = _$$_REQUIRE(_dependencyMap[1], "react");
+  var _orientation = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "../orientation"));
+  function useDeviceOrientationChange(callback) {
+    var savedCallback = (0, _react.useRef)();
+    (0, _react.useEffect)(function () {
+      savedCallback.current = callback;
+    }, [callback]);
+    (0, _react.useEffect)(function () {
+      function listener(ori) {
+        savedCallback.current(ori);
+      }
+      var initial = _orientation.default.getInitialOrientation();
+      listener(initial);
+      _orientation.default.addDeviceOrientationListener(listener);
+      return function () {
+        _orientation.default.removeDeviceOrientationListener(listener);
+      };
+    }, []);
+  }
+},545,[1,41,542],"node_modules/@react-native-ohos/react-native-orientation-locker/src/hooks/useDeviceOrientationChange.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.useLockListener = useLockListener;
+  var _react = _$$_REQUIRE(_dependencyMap[1], "react");
+  var _orientation = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "../orientation"));
+  function useLockListener(callback) {
+    var savedCallback = (0, _react.useRef)();
+    (0, _react.useEffect)(function () {
+      savedCallback.current = callback;
+    }, [callback]);
+    (0, _react.useEffect)(function () {
+      function listener(ori) {
+        savedCallback.current(ori);
+      }
+      _orientation.default.addLockListener(listener);
+      return function () {
+        _orientation.default.removeLockListener(listener);
+      };
+    }, []);
+  }
+},546,[1,41,542],"node_modules/@react-native-ohos/react-native-orientation-locker/src/hooks/useLockListener.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.LANDSCAPE_RIGHT = exports.LANDSCAPE_LEFT = exports.LANDSCAPE = exports.ALL_ORIENTATIONS_BUT_UPSIDE_DOWN = void 0;
+  exports.OrientationLocker = OrientationLocker;
+  exports.UNLOCK = exports.PORTRAIT_UPSIDE_DOWN = exports.PORTRAIT = void 0;
+  var _react = _$$_REQUIRE(_dependencyMap[1], "react");
+  var _orientation = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "./orientation"));
+  var UNLOCK = exports.UNLOCK = 'UNLOCK';
+  var PORTRAIT = exports.PORTRAIT = 'PORTRAIT';
+  var LANDSCAPE = exports.LANDSCAPE = 'LANDSCAPE';
+  var LANDSCAPE_LEFT = exports.LANDSCAPE_LEFT = 'LANDSCAPE_LEFT';
+  var LANDSCAPE_RIGHT = exports.LANDSCAPE_RIGHT = 'LANDSCAPE_RIGHT';
+  var PORTRAIT_UPSIDE_DOWN = exports.PORTRAIT_UPSIDE_DOWN = 'PORTRAIT_UPSIDE_DOWN';
+  var ALL_ORIENTATIONS_BUT_UPSIDE_DOWN = exports.ALL_ORIENTATIONS_BUT_UPSIDE_DOWN = 'ALL_ORIENTATIONS_BUT_UPSIDE_DOWN';
+  var stack = [];
+  var immediateId;
+  function update() {
+    clearImmediate(immediateId);
+    immediateId = setImmediate(function () {
+      var orientation;
+      var length = stack.length;
+      while (!orientation && length--) {
+        orientation = stack[length].orientation;
+      }
+      switch (orientation) {
+        case UNLOCK:
+          _orientation.default.unlockAllOrientations();
+          break;
+        case PORTRAIT:
+          _orientation.default.lockToPortrait();
+          break;
+        case LANDSCAPE:
+          _orientation.default.lockToLandscape();
+          break;
+        case LANDSCAPE_LEFT:
+          _orientation.default.lockToLandscapeLeft();
+          break;
+        case LANDSCAPE_RIGHT:
+          _orientation.default.lockToLandscapeRight();
+          break;
+        case PORTRAIT_UPSIDE_DOWN:
+          _orientation.default.lockToPortraitUpsideDown();
+          break;
+        case ALL_ORIENTATIONS_BUT_UPSIDE_DOWN:
+          _orientation.default.lockToAllOrientationsButUpsideDown();
+          break;
+      }
+    });
+  }
+  function OrientationLocker(_ref) {
+    var orientation = _ref.orientation,
+      onChange = _ref.onChange,
+      onDeviceChange = _ref.onDeviceChange;
+    var stackEntry = (0, _react.useRef)({});
+
+    // didMount: add to stack
+    (0, _react.useEffect)(function () {
+      var current = stackEntry.current;
+      stack.push(current);
+
+      // willUnmount: remove from stack
+      return function () {
+        var index = stack.indexOf(current);
+        if (index !== -1) {
+          stack.splice(index, 1);
+        }
+        update();
+      };
+    }, []);
+
+    // props.orientation
+    (0, _react.useEffect)(function () {
+      stackEntry.current.orientation = orientation;
+      update();
+    }, [orientation]);
+
+    // props.onChange
+    (0, _react.useEffect)(function () {
+      if (onChange) {
+        _orientation.default.addOrientationListener(onChange);
+        return function () {
+          return _orientation.default.removeOrientationListener(onChange);
+        };
+      }
+    }, [onChange]);
+
+    // props.onDeviceChange
+    (0, _react.useEffect)(function () {
+      if (onDeviceChange) {
+        _orientation.default.addDeviceOrientationListener(onDeviceChange);
+        return function () {
+          return _orientation.default.removeDeviceOrientationListener(onDeviceChange);
+        };
+      }
+    }, [onDeviceChange]);
+    return null;
+  }
+},547,[1,41,542],"node_modules/@react-native-ohos/react-native-orientation-locker/src/OrientationLocker.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var _exportNames = {
+    Camera: true,
+    NativeVisionCameraModule: true
+  };
+  exports.Camera = void 0;
+  Object.defineProperty(exports, "NativeVisionCameraModule", {
+    enumerable: true,
+    get: function get() {
+      return _NativeVisionCameraModule.default;
+    }
+  });
+  exports.default = void 0;
+  var _objectWithoutProperties2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/objectWithoutProperties"));
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[2], "react"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[3], "react-native");
+  var _NativeVisionCameraView = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[4], "./NativeVisionCameraView"));
+  var _NativeVisionCameraModule = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./NativeVisionCameraModule"));
+  var _jsxRuntime = _$$_REQUIRE(_dependencyMap[6], "react/jsx-runtime");
+  Object.keys(_$$_REQUIRE(_dependencyMap[7], "./types/CameraDevice")).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+    if (key in exports && exports[key] === _$$_REQUIRE(_dependencyMap[7], "./types/CameraDevice")[key]) return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function get() {
+        return _$$_REQUIRE(_dependencyMap[7], "./types/CameraDevice")[key];
+      }
+    });
+  });
+  Object.keys(_$$_REQUIRE(_dependencyMap[8], "./types/Frame")).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+    if (key in exports && exports[key] === _$$_REQUIRE(_dependencyMap[8], "./types/Frame")[key]) return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function get() {
+        return _$$_REQUIRE(_dependencyMap[8], "./types/Frame")[key];
+      }
+    });
+  });
+  Object.keys(_$$_REQUIRE(_dependencyMap[9], "./types/Orientation")).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+    if (key in exports && exports[key] === _$$_REQUIRE(_dependencyMap[9], "./types/Orientation")[key]) return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function get() {
+        return _$$_REQUIRE(_dependencyMap[9], "./types/Orientation")[key];
+      }
+    });
+  });
+  Object.keys(_$$_REQUIRE(_dependencyMap[10], "./types/PhotoFile")).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+    if (key in exports && exports[key] === _$$_REQUIRE(_dependencyMap[10], "./types/PhotoFile")[key]) return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function get() {
+        return _$$_REQUIRE(_dependencyMap[10], "./types/PhotoFile")[key];
+      }
+    });
+  });
+  Object.keys(_$$_REQUIRE(_dependencyMap[11], "./types/PixelFormat")).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+    if (key in exports && exports[key] === _$$_REQUIRE(_dependencyMap[11], "./types/PixelFormat")[key]) return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function get() {
+        return _$$_REQUIRE(_dependencyMap[11], "./types/PixelFormat")[key];
+      }
+    });
+  });
+  Object.keys(_$$_REQUIRE(_dependencyMap[12], "./types/Point")).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+    if (key in exports && exports[key] === _$$_REQUIRE(_dependencyMap[12], "./types/Point")[key]) return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function get() {
+        return _$$_REQUIRE(_dependencyMap[12], "./types/Point")[key];
+      }
+    });
+  });
+  Object.keys(_$$_REQUIRE(_dependencyMap[13], "./types/CodeScanner")).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+    if (key in exports && exports[key] === _$$_REQUIRE(_dependencyMap[13], "./types/CodeScanner")[key]) return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function get() {
+        return _$$_REQUIRE(_dependencyMap[13], "./types/CodeScanner")[key];
+      }
+    });
+  });
+  Object.keys(_$$_REQUIRE(_dependencyMap[14], "./devices/getCameraFormat")).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+    if (key in exports && exports[key] === _$$_REQUIRE(_dependencyMap[14], "./devices/getCameraFormat")[key]) return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function get() {
+        return _$$_REQUIRE(_dependencyMap[14], "./devices/getCameraFormat")[key];
+      }
+    });
+  });
+  Object.keys(_$$_REQUIRE(_dependencyMap[15], "./devices/getCameraDevice")).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+    if (key in exports && exports[key] === _$$_REQUIRE(_dependencyMap[15], "./devices/getCameraDevice")[key]) return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function get() {
+        return _$$_REQUIRE(_dependencyMap[15], "./devices/getCameraDevice")[key];
+      }
+    });
+  });
+  Object.keys(_$$_REQUIRE(_dependencyMap[16], "./devices/Templates")).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+    if (key in exports && exports[key] === _$$_REQUIRE(_dependencyMap[16], "./devices/Templates")[key]) return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function get() {
+        return _$$_REQUIRE(_dependencyMap[16], "./devices/Templates")[key];
+      }
+    });
+  });
+  Object.keys(_$$_REQUIRE(_dependencyMap[17], "./hooks/useCameraDevice")).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+    if (key in exports && exports[key] === _$$_REQUIRE(_dependencyMap[17], "./hooks/useCameraDevice")[key]) return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function get() {
+        return _$$_REQUIRE(_dependencyMap[17], "./hooks/useCameraDevice")[key];
+      }
+    });
+  });
+  Object.keys(_$$_REQUIRE(_dependencyMap[18], "./hooks/useCameraDevices")).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+    if (key in exports && exports[key] === _$$_REQUIRE(_dependencyMap[18], "./hooks/useCameraDevices")[key]) return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function get() {
+        return _$$_REQUIRE(_dependencyMap[18], "./hooks/useCameraDevices")[key];
+      }
+    });
+  });
+  Object.keys(_$$_REQUIRE(_dependencyMap[19], "./hooks/useCameraFormat")).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+    if (key in exports && exports[key] === _$$_REQUIRE(_dependencyMap[19], "./hooks/useCameraFormat")[key]) return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function get() {
+        return _$$_REQUIRE(_dependencyMap[19], "./hooks/useCameraFormat")[key];
+      }
+    });
+  });
+  Object.keys(_$$_REQUIRE(_dependencyMap[20], "./hooks/useCameraPermission")).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+    if (key in exports && exports[key] === _$$_REQUIRE(_dependencyMap[20], "./hooks/useCameraPermission")[key]) return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function get() {
+        return _$$_REQUIRE(_dependencyMap[20], "./hooks/useCameraPermission")[key];
+      }
+    });
+  });
+  Object.keys(_$$_REQUIRE(_dependencyMap[21], "./hooks/useCodeScanner")).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+    if (key in exports && exports[key] === _$$_REQUIRE(_dependencyMap[21], "./hooks/useCodeScanner")[key]) return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function get() {
+        return _$$_REQUIRE(_dependencyMap[21], "./hooks/useCodeScanner")[key];
+      }
+    });
+  });
+  var _excluded = ["style", "device", "isActive", "preview", "resizeMode", "fps", "videoBitRate", "videoHdr", "enableZoomGesture", "codeScanner", "format", "exposure", "zoom", "audio", "video", "torch", "photo", "videoStabilizationMode", "isMirrored", "androidPreviewViewType", "enableLocation", "photoQualityBalance", "onTouchEnd", "onStarted", "onStopped", "onPreviewStarted", "onInitialized", "onShutter", "onError"];
+  var _this = this,
+    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject/node_modules/@react-native-ohos/react-native-vision-camera/src/index.tsx";
+  /*
+   * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
+   * Use of this source code is governed by a MIT license that can be
+   * found in the LICENSE file.
+   */
+  // Types
+  // Devices API
+  // Hooks
+  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
+  var BITRATE_MULTIPLIERS = {
+    EXTRA_LOW: 0.6,
+    LOW: 0.8,
+    NORMAL: 1,
+    HIGH: 1.2,
+    EXTRA_HIGH: 1.4
+  };
+  var Camera = exports.Camera = (0, _react.forwardRef)(function (_ref, ref) {
+    var style = _ref.style,
+      device = _ref.device,
+      isActive = _ref.isActive,
+      preview = _ref.preview,
+      resizeMode = _ref.resizeMode,
+      fps = _ref.fps,
+      videoBitRate = _ref.videoBitRate,
+      videoHdr = _ref.videoHdr,
+      enableZoomGesture = _ref.enableZoomGesture,
+      codeScanner = _ref.codeScanner,
+      format = _ref.format,
+      exposure = _ref.exposure,
+      zoom = _ref.zoom,
+      audio = _ref.audio,
+      video = _ref.video,
+      torch = _ref.torch,
+      photo = _ref.photo,
+      videoStabilizationMode = _ref.videoStabilizationMode,
+      isMirrored = _ref.isMirrored,
+      androidPreviewViewType = _ref.androidPreviewViewType,
+      enableLocation = _ref.enableLocation,
+      photoQualityBalance = _ref.photoQualityBalance,
+      onTouchEnd = _ref.onTouchEnd,
+      onStarted = _ref.onStarted,
+      onStopped = _ref.onStopped,
+      onPreviewStarted = _ref.onPreviewStarted,
+      onInitialized = _ref.onInitialized,
+      onShutter = _ref.onShutter,
+      onError = _ref.onError,
+      rest = (0, _objectWithoutProperties2.default)(_ref, _excluded);
+    var VisionCameraRef = (0, _react.useRef)(null);
+    var takePhoto = function takePhoto(options) {
+      return new Promise(function (resolve) {
+        var onCodeScannedListener = _reactNative.DeviceEventEmitter.addListener('onTaskPhoto', function (data) {
+          resolve(data);
+          onCodeScannedListener.remove();
+        });
+        if (!VisionCameraRef.current) throw new Error("VisionCameraRef.current is NaN");
+        var optionsJson = options === undefined || options === null ? '{}' : JSON.stringify(options);
+        _NativeVisionCameraView.Commands.takePhoto(VisionCameraRef.current, optionsJson);
+      });
+    };
+    var focus = (0, _react.useCallback)(function (point) {
+      if (!point) throw new Error("VisionCameraCommands focus point is Null");
+      if (!VisionCameraRef.current) throw new Error("VisionCameraRef.current is NaN");
+      var pointJson = JSON.stringify(point);
+      return _NativeVisionCameraView.Commands.focus(VisionCameraRef.current, pointJson);
+    }, []);
+    var setIsActive = (0, _react.useCallback)(function (isActive) {
+      if (isActive === undefined) throw new Error("VisionCameraCommands isActive is undefined");
+      if (!VisionCameraRef.current) throw new Error("VisionCameraRef.current is NaN");
+      return _NativeVisionCameraView.Commands.setIsActive(VisionCameraRef.current, isActive);
+    }, [isActive]);
+    var startRecording = (0, _react.useCallback)(function (options) {
+      if (!VisionCameraRef.current) throw new Error("VisionCameraRef.current is NaN");
+      var onRecordingFinishedListener = _reactNative.DeviceEventEmitter.addListener('onRecordingFinished', function (video) {
+        options.onRecordingFinished(video);
+        onRecordingFinishedListener.remove();
+      });
+      var onRecordingErrorListener = _reactNative.DeviceEventEmitter.addListener('onRecordingError', function (error) {
+        options.onRecordingError(error);
+        onRecordingErrorListener.remove();
+        onRecordingFinishedListener.remove();
+      });
+      var optionsJson = JSON.stringify(options);
+      return _NativeVisionCameraView.Commands.startRecording(VisionCameraRef.current, optionsJson);
+    }, []);
+    var stopRecording = (0, _react.useCallback)(function () {
+      if (!VisionCameraRef.current) throw new Error("VisionCameraRef.current is NaN");
+      return _NativeVisionCameraView.Commands.stopRecording(VisionCameraRef.current);
+    }, []);
+    var pauseRecording = (0, _react.useCallback)(function () {
+      if (!VisionCameraRef.current) throw new Error("VisionCameraRef.current is NaN");
+      return _NativeVisionCameraView.Commands.pauseRecording(VisionCameraRef.current);
+    }, []);
+    var resumeRecording = (0, _react.useCallback)(function () {
+      if (!VisionCameraRef.current) throw new Error("VisionCameraRef.current is NaN");
+      return _NativeVisionCameraView.Commands.resumeRecording(VisionCameraRef.current);
+    }, []);
+    var cancelRecording = (0, _react.useCallback)(function () {
+      if (!VisionCameraRef.current) throw new Error("VisionCameraRef.current is NaN");
+      return _NativeVisionCameraView.Commands.cancelRecording(VisionCameraRef.current);
+    }, []);
+    var getAvailableCameraDevices = (0, _react.useCallback)(function () {
+      return new Promise(function (resolve) {
+        var eventListener = _reactNative.DeviceEventEmitter.addListener('getAvailableCameraDevices', function (data) {
+          resolve(data);
+          eventListener.remove();
+        });
+        if (!VisionCameraRef.current) throw new Error("VisionCameraRef.current is NaN");
+        _NativeVisionCameraView.Commands.getAvailableCameraDevices(VisionCameraRef.current);
+      });
+    }, []);
+    var addCameraDevicesChangedListener = (0, _react.useCallback)(function () {
+      if (!VisionCameraRef.current) throw new Error("VisionCameraRef.current is NaN");
+      return _NativeVisionCameraView.Commands.addCameraDevicesChangedListener(VisionCameraRef.current);
+    }, []);
+    var getCameraPermissionStatus = (0, _react.useCallback)(function () {
+      return new Promise(function (resolve) {
+        var eventListener = _reactNative.DeviceEventEmitter.addListener('getCameraPermissionStatus', function (data) {
+          resolve(data);
+          eventListener.remove();
+        });
+        if (!VisionCameraRef.current) throw new Error("VisionCameraRef.current is NaN");
+        _NativeVisionCameraView.Commands.getCameraPermissionStatus(VisionCameraRef.current);
+      });
+    }, []);
+    var requestCameraPermission = (0, _react.useCallback)(function () {
+      return new Promise(function (resolve) {
+        var eventListener = _reactNative.DeviceEventEmitter.addListener('requestCameraPermission', function (data) {
+          resolve(data);
+          eventListener.remove();
+        });
+        if (!VisionCameraRef.current) throw new Error("VisionCameraRef.current is NaN");
+        _NativeVisionCameraView.Commands.requestCameraPermission(VisionCameraRef.current);
+      });
+    }, []);
+    var getMicrophonePermissionStatus = (0, _react.useCallback)(function () {
+      return new Promise(function (resolve) {
+        var eventListener = _reactNative.DeviceEventEmitter.addListener('getMicrophonePermissionStatus', function (data) {
+          resolve(data);
+          eventListener.remove();
+        });
+        if (!VisionCameraRef.current) throw new Error("VisionCameraRef.current is NaN");
+        _NativeVisionCameraView.Commands.getMicrophonePermissionStatus(VisionCameraRef.current);
+      });
+    }, []);
+    var requestMicrophonePermission = (0, _react.useCallback)(function () {
+      return new Promise(function (resolve) {
+        var eventListener = _reactNative.DeviceEventEmitter.addListener('requestMicrophonePermission', function (data) {
+          resolve(data);
+          eventListener.remove();
+        });
+        if (!VisionCameraRef.current) throw new Error("VisionCameraRef.current is NaN");
+        _NativeVisionCameraView.Commands.requestMicrophonePermission(VisionCameraRef.current);
+      });
+    }, []);
+    var getLocationPermissionStatus = (0, _react.useCallback)(function () {
+      return new Promise(function (resolve) {
+        var eventListener = _reactNative.DeviceEventEmitter.addListener('getLocationPermissionStatus', function (data) {
+          resolve(data);
+          eventListener.remove();
+        });
+        if (!VisionCameraRef.current) throw new Error("VisionCameraRef.current is NaN");
+        _NativeVisionCameraView.Commands.getLocationPermissionStatus(VisionCameraRef.current);
+      });
+    }, []);
+    var requestLocationPermission = (0, _react.useCallback)(function () {
+      return new Promise(function (resolve) {
+        var eventListener = _reactNative.DeviceEventEmitter.addListener('requestLocationPermission', function (data) {
+          resolve(data);
+          eventListener.remove();
+        });
+        if (!VisionCameraRef.current) throw new Error("VisionCameraRef.current is NaN");
+        _NativeVisionCameraView.Commands.requestLocationPermission(VisionCameraRef.current);
+      });
+    }, []);
+    var onVisionCameraStarted = (0, _react.useCallback)(function () {
+      onStarted == null ? void 0 : onStarted();
+    }, [onStarted]);
+    var onVisionCameraPreviewStarted = (0, _react.useCallback)(function () {
+      onPreviewStarted == null ? void 0 : onPreviewStarted();
+    }, [onPreviewStarted]);
+    var onVisionCameraTouchEnd = (0, _react.useCallback)(function (event) {
+      onTouchEnd == null ? void 0 : onTouchEnd(event);
+    }, [onTouchEnd]);
+    var onVisionCameraStopped = (0, _react.useCallback)(function () {
+      onStopped == null ? void 0 : onStopped();
+    }, [onStopped]);
+    var onVisionCameraInitialized = (0, _react.useCallback)(function () {
+      onInitialized == null ? void 0 : onInitialized();
+    }, [onInitialized]);
+    var onVisionCameraShutter = (0, _react.useCallback)(function (shutterEvent) {
+      onShutter == null ? void 0 : onShutter(shutterEvent.nativeEvent);
+    }, [onShutter]);
+    var onVisionCameraError = (0, _react.useCallback)(function (error) {
+      onError == null ? void 0 : onError(error.nativeEvent);
+    }, [onError]);
+    var onVisionCameraCodeScanned = (0, _react.useCallback)(function (codes, frame) {
+      if (codeScanner != null && codeScanner.onCodeScanned) {
+        codeScanner.onCodeScanned == null ? void 0 : codeScanner.onCodeScanned(codes, frame);
+      }
+    }, [codeScanner]);
+    (0, _react.useEffect)(function () {
+      var onInitializedListener = _reactNative.DeviceEventEmitter.addListener('onInitialized', function () {
+        onInitialized == null ? void 0 : onInitialized();
+      });
+      var onShutterListener = _reactNative.DeviceEventEmitter.addListener('onShutter', function (shutterEvent) {
+        onShutter == null ? void 0 : onShutter(shutterEvent);
+      });
+      var onStartedListener = _reactNative.DeviceEventEmitter.addListener('onCameraStarted', function () {
+        onStarted == null ? void 0 : onStarted();
+      });
+      var onStoppedListener = _reactNative.DeviceEventEmitter.addListener('onCameraStopped', function () {
+        onStopped == null ? void 0 : onStopped();
+      });
+      var onPreviewStartedListener = _reactNative.DeviceEventEmitter.addListener('onPreviewStarted', function () {
+        onPreviewStarted == null ? void 0 : onPreviewStarted();
+      });
+      var onErrorListener = _reactNative.DeviceEventEmitter.addListener('onError', function (err) {
+        onError == null ? void 0 : onError(err);
+      });
+      var onCodeScannedListener = _reactNative.DeviceEventEmitter.addListener('onCodeScanned', function (scanResultJson) {
+        var _ref2 = JSON.parse(scanResultJson),
+          codes = _ref2.codes,
+          frame = _ref2.frame;
+        codeScanner == null ? void 0 : codeScanner.onCodeScanned == null ? void 0 : codeScanner.onCodeScanned(codes, frame);
+      });
+      return function () {
+        onInitializedListener.remove();
+        onShutterListener.remove();
+        onStartedListener.remove();
+        onStoppedListener.remove();
+        onPreviewStartedListener.remove();
+        onErrorListener.remove();
+        onCodeScannedListener.remove();
+      };
+    });
+    (0, _react.useImperativeHandle)(ref, function () {
+      return {
+        focus: focus,
+        setIsActive: setIsActive,
+        takePhoto: takePhoto,
+        startRecording: startRecording,
+        stopRecording: stopRecording,
+        pauseRecording: pauseRecording,
+        resumeRecording: resumeRecording,
+        cancelRecording: cancelRecording,
+        getAvailableCameraDevices: getAvailableCameraDevices,
+        addCameraDevicesChangedListener: addCameraDevicesChangedListener,
+        getCameraPermissionStatus: getCameraPermissionStatus,
+        requestCameraPermission: requestCameraPermission,
+        getMicrophonePermissionStatus: getMicrophonePermissionStatus,
+        requestMicrophonePermission: requestMicrophonePermission,
+        getLocationPermissionStatus: getLocationPermissionStatus,
+        requestLocationPermission: requestLocationPermission
+      };
+    }, [focus, setIsActive, takePhoto, startRecording, stopRecording, pauseRecording, resumeRecording, cancelRecording, getAvailableCameraDevices, addCameraDevicesChangedListener, getCameraPermissionStatus, requestCameraPermission, getMicrophonePermissionStatus, requestMicrophonePermission, getLocationPermissionStatus, requestLocationPermission]);
+    var visionVideoBitRate;
+    if (videoBitRate === undefined) {
+      visionVideoBitRate = BITRATE_MULTIPLIERS.NORMAL;
+    } else if (typeof videoBitRate === 'number') {
+      visionVideoBitRate = videoBitRate;
+    } else if (typeof videoBitRate === 'string') {
+      switch (videoBitRate) {
+        case 'extra-low':
+          visionVideoBitRate = BITRATE_MULTIPLIERS.EXTRA_LOW;
+          break;
+        case 'low':
+          visionVideoBitRate = BITRATE_MULTIPLIERS.LOW;
+          break;
+        case 'normal':
+          visionVideoBitRate = BITRATE_MULTIPLIERS.NORMAL;
+          break;
+        case 'high':
+          visionVideoBitRate = BITRATE_MULTIPLIERS.HIGH;
+          break;
+        case 'extra-high':
+          visionVideoBitRate = BITRATE_MULTIPLIERS.EXTRA_HIGH;
+          break;
+        default:
+          visionVideoBitRate = BITRATE_MULTIPLIERS.NORMAL;
+      }
+    } else {
+      throw new Error("The videoBitRate should be EXTRA_LOW, LOW, NORMAL, HIGH, EXTRA_HIGH, or a number.");
+    }
+    return /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.View, {
+      onTouchEnd: onVisionCameraTouchEnd,
+      style: style,
+      children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_NativeVisionCameraView.default, Object.assign({
+        onCodeScanned: onVisionCameraCodeScanned,
+        ref: VisionCameraRef,
+        style: _reactNative.StyleSheet.absoluteFill,
+        codeScanner: codeScanner,
+        fps: fps,
+        videoBitRate: visionVideoBitRate,
+        videoHdr: videoHdr,
+        isActive: isActive,
+        preview: preview === undefined ? true : preview,
+        device: device,
+        resizeMode: resizeMode || 'cover',
+        enableZoomGesture: enableZoomGesture,
+        exposure: exposure,
+        zoom: zoom,
+        audio: audio,
+        video: video,
+        torch: torch,
+        photo: photo,
+        videoStabilizationMode: videoStabilizationMode,
+        isMirrored: isMirrored,
+        androidPreviewViewType: androidPreviewViewType,
+        enableLocation: enableLocation,
+        photoQualityBalance: photoQualityBalance,
+        onStarted: onVisionCameraStarted,
+        onStopped: onVisionCameraStopped,
+        onPreviewStarted: onVisionCameraPreviewStarted,
+        onInitialized: onVisionCameraInitialized,
+        onShutter: onVisionCameraShutter,
+        onError: onVisionCameraError
+      }, rest))
+    });
+  });
+  ;
+  Camera.getAvailableCameraDevices = _NativeVisionCameraModule.default.getAvailableCameraDevices;
+  Camera.getCameraPermissionStatus = _NativeVisionCameraModule.default.getCameraPermissionStatus;
+  Camera.requestCameraPermission = _NativeVisionCameraModule.default.requestCameraPermission;
+  Camera.getMicrophonePermissionStatus = _NativeVisionCameraModule.default.getMicrophonePermissionStatus;
+  Camera.requestMicrophonePermission = _NativeVisionCameraModule.default.requestMicrophonePermission;
+  Camera.getLocationPermissionStatus = _NativeVisionCameraModule.default.getLocationPermissionStatus;
+  Camera.requestLocationPermission = _NativeVisionCameraModule.default.requestLocationPermission;
+  var _default = exports.default = Camera;
+},548,[1,150,41,2,549,550,88,551,552,553,554,555,556,557,558,561,562,563,564,565,566,567],"node_modules/@react-native-ohos/react-native-vision-camera/src/index.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   Object.defineProperty(exports, "__esModule", {
@@ -128952,283 +130907,749 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   exports.default = exports.Commands = void 0;
   var _codegenNativeComponent = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "react-native/Libraries/Utilities/codegenNativeComponent"));
   var _codegenNativeCommands = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "react-native/Libraries/Utilities/codegenNativeCommands"));
-  // type MenuItem = Readonly<{label: string, key: string}>;
+  /*
+   * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
+   * Use of this source code is governed by a MIT license that can be
+   * found in the LICENSE file.
+   */
+
+  ;
+  // export interface Point 
 
   var Commands = exports.Commands = (0, _codegenNativeCommands.default)({
-    supportedCommands: ['goBack', 'goForward', 'reload', 'stopLoading', 'injectJavaScript', 'requestFocus', 'postMessage', 'loadUrl', 'clearFormData', 'clearCache', 'clearHistory']
+    supportedCommands: ['takePhoto', 'focus', 'setIsActive', 'startRecording', 'stopRecording', 'pauseRecording', 'resumeRecording', 'cancelRecording', 'getAvailableCameraDevices', 'addCameraDevicesChangedListener', 'getCameraPermissionStatus', 'requestCameraPermission', 'getMicrophonePermissionStatus', 'requestMicrophonePermission', 'getLocationPermissionStatus', 'requestLocationPermission']
   });
-  var _default = exports.default = (0, _codegenNativeComponent.default)('RNCWebView');
-},540,[1,269,257],"node_modules/@react-native-ohos/react-native-webview/src/RNCWebViewNativeComponent.ts");
+  var _default = exports.default = (0, _codegenNativeComponent.default)("VisionCameraView");
+},549,[1,269,257],"node_modules/@react-native-ohos/react-native-vision-camera/src/NativeVisionCameraView.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.default = void 0;
   var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-  // Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
-  // Use of this source code is governed by a Apache-2.0 license that can be
-  // found in the LICENSE file.
-  var _default = exports.default = _reactNative.TurboModuleRegistry.getEnforcing('RNCWebViewModule');
-},541,[2],"node_modules/@react-native-ohos/react-native-webview/src/NativeRNCWebViewModule.ts");
+  /*
+   * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
+   * Use of this source code is governed by a MIT license that can be
+   * found in the LICENSE file.
+   */
+  var _default = exports.default = _reactNative.TurboModuleRegistry.getEnforcing('VisionCameraModule');
+},550,[2],"node_modules/@react-native-ohos/react-native-vision-camera/src/NativeVisionCameraModule.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = void 0;
-  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-  var styles = _reactNative.StyleSheet.create({
-    container: {
-      flex: 1,
-      overflow: 'hidden'
-    },
-    loadingOrErrorView: {
-      position: 'absolute',
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '100%',
-      width: '100%',
-      backgroundColor: 'white'
-    },
-    loadingProgressBar: {
-      height: 20
-    },
-    errorText: {
-      fontSize: 14,
-      textAlign: 'center',
-      marginBottom: 2
-    },
-    errorTextTitle: {
-      fontSize: 15,
-      fontWeight: '500',
-      marginBottom: 10
-    },
-    webView: {
-      backgroundColor: '#ffffff'
-    },
-    flexStart: {
-      alignSelf: 'flex-start'
-    },
-    colorRed: {
-      color: 'red'
+},551,[],"node_modules/@react-native-ohos/react-native-vision-camera/src/types/CameraDevice.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+},552,[],"node_modules/@react-native-ohos/react-native-vision-camera/src/types/Frame.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {},553,[],"node_modules/@react-native-ohos/react-native-vision-camera/src/types/Orientation.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+},554,[],"node_modules/@react-native-ohos/react-native-vision-camera/src/types/PhotoFile.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {},555,[],"node_modules/@react-native-ohos/react-native-vision-camera/src/types/PixelFormat.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {},556,[],"node_modules/@react-native-ohos/react-native-vision-camera/src/types/Point.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+},557,[],"node_modules/@react-native-ohos/react-native-vision-camera/src/types/CodeScanner.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.getCameraFormat = getCameraFormat;
+  function filtersToFilterMap(filters) {
+    return filters.reduce(function (map, curr, index) {
+      for (var key in curr) {
+        // @ts-expect-error keys are untyped
+        map[key] = {
+          // @ts-expect-error keys are untyped
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          target: curr[key],
+          priority: filters.length - index
+        };
+      }
+      return map;
+    }, {});
+  }
+
+  /**
+   * Get the best matching Camera format for the given device that satisfies your requirements using a sorting filter. By default, formats are sorted by highest to lowest resolution.
+   *
+   * The {@linkcode filters | filters} are ranked by priority, from highest to lowest.
+   * This means the first item you pass will have a higher priority than the second, and so on.
+   *
+   * @param device The Camera Device you're currently using
+   * @param filters The filters you want to use. The format that matches your filter the closest will be returned
+   * @returns The format that matches your filter the closest.
+   *
+   * @example
+   * ```ts
+   * const format = getCameraFormat(device, [
+   *   { videoResolution: { width: 3048, height: 2160 } },
+   *   { fps: 60 }
+   * ])
+   * ```
+   */
+  function getCameraFormat(device, filters) {
+    // Combine filters into a single filter map for constant-time lookup
+    var filter = filtersToFilterMap(filters);
+    var bestFormat = device.formats[0];
+    if (bestFormat == null) throw new (_$$_REQUIRE(_dependencyMap[0], "../CameraError").CameraRuntimeError)('device/invalid-device', "The given Camera Device (" + device.id + ") does not have any formats!");
+
+    // Compare each format using a point scoring system
+    for (var format of device.formats) {
+      var leftPoints = 0;
+      var rightPoints = 0;
+
+      // Video Resolution
+      if (filter.videoResolution != null) {
+        var leftVideoResolution = bestFormat.videoWidth * bestFormat.videoHeight;
+        var rightVideoResolution = format.videoWidth * format.videoHeight;
+        if (filter.videoResolution.target === 'max') {
+          // We just want the maximum resolution
+          if (leftVideoResolution > rightVideoResolution) leftPoints += filter.videoResolution.priority;
+          if (rightVideoResolution > leftVideoResolution) rightPoints += filter.videoResolution.priority;
+        } else {
+          // Find video resolution closest to the filter (ignoring orientation)
+          var targetResolution = filter.videoResolution.target.width * filter.videoResolution.target.height;
+          var leftDiff = Math.abs(leftVideoResolution - targetResolution);
+          var rightDiff = Math.abs(rightVideoResolution - targetResolution);
+          if (leftDiff < rightDiff) leftPoints += filter.videoResolution.priority;
+          if (rightDiff < leftDiff) rightPoints += filter.videoResolution.priority;
+        }
+      }
+
+      // Photo Resolution
+      if (filter.photoResolution != null) {
+        var leftPhotoResolution = bestFormat.photoWidth * bestFormat.photoHeight;
+        var rightPhotoResolution = format.photoWidth * format.photoHeight;
+        if (filter.photoResolution.target === 'max') {
+          // We just want the maximum resolution
+          if (leftPhotoResolution > rightPhotoResolution) leftPoints += filter.photoResolution.priority;
+          if (rightPhotoResolution > leftPhotoResolution) rightPoints += filter.photoResolution.priority;
+        } else {
+          // Find closest photo resolution to the filter (ignoring orientation)
+          var _targetResolution = filter.photoResolution.target.width * filter.photoResolution.target.height;
+          var _leftDiff = Math.abs(leftPhotoResolution - _targetResolution);
+          var _rightDiff = Math.abs(rightPhotoResolution - _targetResolution);
+          if (_leftDiff < _rightDiff) leftPoints += filter.photoResolution.priority;
+          if (_rightDiff < _leftDiff) rightPoints += filter.photoResolution.priority;
+        }
+      }
+
+      // Find closest aspect ratio (video)
+      if (filter.videoAspectRatio != null) {
+        var leftAspect = bestFormat.videoWidth / bestFormat.videoHeight;
+        var rightAspect = format.videoWidth / format.videoHeight;
+        var _leftDiff2 = Math.abs(leftAspect - filter.videoAspectRatio.target);
+        var _rightDiff2 = Math.abs(rightAspect - filter.videoAspectRatio.target);
+        if (_leftDiff2 < _rightDiff2) leftPoints += filter.videoAspectRatio.priority;
+        if (_rightDiff2 < _leftDiff2) rightPoints += filter.videoAspectRatio.priority;
+      }
+
+      // Find closest aspect ratio (photo)
+      if (filter.photoAspectRatio != null) {
+        var _leftAspect = bestFormat.photoWidth / bestFormat.photoHeight;
+        var _rightAspect = format.photoWidth / format.photoHeight;
+        var _leftDiff3 = Math.abs(_leftAspect - filter.photoAspectRatio.target);
+        var _rightDiff3 = Math.abs(_rightAspect - filter.photoAspectRatio.target);
+        if (_leftDiff3 < _rightDiff3) leftPoints += filter.photoAspectRatio.priority;
+        if (_rightDiff3 < _leftDiff3) rightPoints += filter.photoAspectRatio.priority;
+      }
+
+      // Find closest max FPS
+      if (filter.fps != null) {
+        if (filter.fps.target === 'max') {
+          if (bestFormat.maxFps > format.maxFps) leftPoints += filter.fps.priority;
+          if (format.maxFps > bestFormat.maxFps) rightPoints += filter.fps.priority;
+        } else {
+          if (bestFormat.maxFps >= filter.fps.target) leftPoints += filter.fps.priority;
+          if (format.maxFps >= filter.fps.target) rightPoints += filter.fps.priority;
+        }
+      }
+
+      // Find closest ISO
+      if (filter.iso != null) {
+        if (filter.iso.target === 'max') {
+          if (bestFormat.maxISO > format.maxISO) leftPoints += filter.iso.priority;
+          if (format.maxISO > bestFormat.maxISO) rightPoints += filter.iso.priority;
+        } else if (filter.iso.target === 'min') {
+          if (bestFormat.minISO < format.minISO) leftPoints += filter.iso.priority;
+          if (format.minISO < bestFormat.minISO) rightPoints += filter.iso.priority;
+        } else {
+          if (filter.iso.target >= bestFormat.minISO && filter.iso.target <= bestFormat.maxISO) leftPoints += filter.iso.priority;
+          if (filter.iso.target >= format.minISO && filter.iso.target <= format.maxISO) rightPoints += filter.iso.priority;
+        }
+      }
+
+      // Find video stabilization mode
+      if (filter.videoStabilizationMode != null) {
+        if (bestFormat.videoStabilizationModes.includes(filter.videoStabilizationMode.target)) leftPoints += filter.videoStabilizationMode.priority;
+        if (format.videoStabilizationModes.includes(filter.videoStabilizationMode.target)) rightPoints += filter.videoStabilizationMode.priority;
+      }
+
+      // Find Photo HDR formats
+      if (filter.photoHdr != null) {
+        if (bestFormat.supportsPhotoHdr === filter.photoHdr.target) leftPoints += filter.photoHdr.priority;
+        if (format.supportsPhotoHdr === filter.photoHdr.target) rightPoints += filter.photoHdr.priority;
+      }
+
+      // Find Video HDR formats
+      if (filter.videoHdr != null) {
+        if (bestFormat.supportsVideoHdr === filter.videoHdr.target) leftPoints += filter.videoHdr.priority;
+        if (format.supportsVideoHdr === filter.videoHdr.target) rightPoints += filter.videoHdr.priority;
+      }
+
+      // Find matching AF system
+      if (filter.autoFocusSystem != null) {
+        if (bestFormat.autoFocusSystem === filter.autoFocusSystem.target) leftPoints += filter.autoFocusSystem.priority;
+        if (format.autoFocusSystem === filter.autoFocusSystem.target) rightPoints += filter.autoFocusSystem.priority;
+      }
+      if (rightPoints > leftPoints) bestFormat = format;
     }
-  });
-  var _default = exports.default = styles;
-},542,[2],"node_modules/react-native-webview/src/WebView.styles.ts");
+    return bestFormat;
+  }
+},558,[559],"node_modules/@react-native-ohos/react-native-vision-camera/src/devices/getCameraFormat.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.useWebViewLogic = exports.defaultRenderLoading = exports.defaultRenderError = exports.defaultOriginWhitelist = exports.createOnShouldStartLoadWithRequest = void 0;
-  var _slicedToArray2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/slicedToArray"));
-  var _toConsumableArray2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/toConsumableArray"));
-  var _escapeStringRegexp = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "escape-string-regexp"));
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[4], "react"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[5], "react-native");
-  var _WebView = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "./WebView.styles"));
-  var _jsxRuntime = _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime");
-  var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/MI/FabricComponentSample/ReactProject/node_modules/react-native-webview/src/WebViewShared.tsx";
-  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  var defaultOriginWhitelist = exports.defaultOriginWhitelist = ['http://*', 'https://*'];
-  var extractOrigin = function extractOrigin(url) {
-    var result = /^[A-Za-z][A-Za-z0-9+\-.]+:(\/\/)?[^/]*/.exec(url);
-    return result === null ? '' : result[0];
-  };
-  var originWhitelistToRegex = function originWhitelistToRegex(originWhitelist) {
-    return "^" + (0, _escapeStringRegexp.default)(originWhitelist).replace(/\\\*/g, '.*');
-  };
-  var passesWhitelist = function passesWhitelist(compiledWhitelist, url) {
-    var origin = extractOrigin(url);
-    return compiledWhitelist.some(function (x) {
-      return new RegExp(x).test(origin);
-    });
-  };
-  var compileWhitelist = function compileWhitelist(originWhitelist) {
-    return ['about:blank'].concat((0, _toConsumableArray2.default)(originWhitelist || [])).map(originWhitelistToRegex);
-  };
-  var createOnShouldStartLoadWithRequest = exports.createOnShouldStartLoadWithRequest = function createOnShouldStartLoadWithRequest(loadRequest, originWhitelist, onShouldStartLoadWithRequest) {
-    return function (_ref) {
-      var nativeEvent = _ref.nativeEvent;
-      var shouldStart = true;
-      var url = nativeEvent.url,
-        lockIdentifier = nativeEvent.lockIdentifier;
-      if (!passesWhitelist(compileWhitelist(originWhitelist), url)) {
-        _reactNative.Linking.canOpenURL(url).then(function (supported) {
-          if (supported) {
-            return _reactNative.Linking.openURL(url);
-          }
-          console.warn("Can't open url: " + url);
-          return undefined;
-        }).catch(function (e) {
-          console.warn('Error opening URL: ', e);
-        });
-        shouldStart = false;
-      } else if (onShouldStartLoadWithRequest) {
-        shouldStart = onShouldStartLoadWithRequest(nativeEvent);
-      }
-      loadRequest(shouldStart, url, lockIdentifier);
-    };
-  };
-  var defaultRenderLoading = exports.defaultRenderLoading = function defaultRenderLoading() {
-    return /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.View, {
-      style: _WebView.default.loadingOrErrorView,
-      children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.ActivityIndicator, {})
-    });
-  };
-  var defaultRenderError = exports.defaultRenderError = function defaultRenderError(errorDomain, errorCode, errorDesc) {
-    return /*#__PURE__*/(0, _jsxRuntime.jsxs)(_reactNative.View, {
-      style: _WebView.default.loadingOrErrorView,
-      children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.Text, {
-        style: _WebView.default.errorTextTitle,
-        children: "Error loading page"
-      }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.Text, {
-        style: _WebView.default.errorText,
-        children: "Domain: " + errorDomain
-      }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.Text, {
-        style: _WebView.default.errorText,
-        children: "Error Code: " + errorCode
-      }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_reactNative.Text, {
-        style: _WebView.default.errorText,
-        children: "Description: " + errorDesc
-      })]
-    });
-  };
-  var useWebViewLogic = exports.useWebViewLogic = function useWebViewLogic(_ref2) {
-    var startInLoadingState = _ref2.startInLoadingState,
-      onNavigationStateChange = _ref2.onNavigationStateChange,
-      onLoadStart = _ref2.onLoadStart,
-      onLoad = _ref2.onLoad,
-      onLoadProgress = _ref2.onLoadProgress,
-      onLoadEnd = _ref2.onLoadEnd,
-      onError = _ref2.onError,
-      onHttpErrorProp = _ref2.onHttpErrorProp,
-      onMessageProp = _ref2.onMessageProp,
-      onOpenWindowProp = _ref2.onOpenWindowProp,
-      onRenderProcessGoneProp = _ref2.onRenderProcessGoneProp,
-      onContentProcessDidTerminateProp = _ref2.onContentProcessDidTerminateProp,
-      originWhitelist = _ref2.originWhitelist,
-      onShouldStartLoadWithRequestProp = _ref2.onShouldStartLoadWithRequestProp,
-      onShouldStartLoadWithRequestCallback = _ref2.onShouldStartLoadWithRequestCallback;
-    var _useState = (0, _react.useState)(startInLoadingState ? 'LOADING' : 'IDLE'),
-      _useState2 = (0, _slicedToArray2.default)(_useState, 2),
-      viewState = _useState2[0],
-      setViewState = _useState2[1];
-    var _useState3 = (0, _react.useState)(null),
-      _useState4 = (0, _slicedToArray2.default)(_useState3, 2),
-      lastErrorEvent = _useState4[0],
-      setLastErrorEvent = _useState4[1];
-    var startUrl = (0, _react.useRef)(null);
-    var updateNavigationState = (0, _react.useCallback)(function (event) {
-      onNavigationStateChange == null ? void 0 : onNavigationStateChange(event.nativeEvent);
-    }, [onNavigationStateChange]);
-    var onLoadingStart = (0, _react.useCallback)(function (event) {
-      // Needed for android
-      startUrl.current = event.nativeEvent.url;
-      // !Needed for android
-
-      onLoadStart == null ? void 0 : onLoadStart(event);
-      updateNavigationState(event);
-    }, [onLoadStart, updateNavigationState]);
-    var onLoadingError = (0, _react.useCallback)(function (event) {
-      event.persist();
-      if (onError) {
-        onError(event);
-      } else {
-        console.warn('Encountered an error loading page', event.nativeEvent);
-      }
-      onLoadEnd == null ? void 0 : onLoadEnd(event);
-      if (event.isDefaultPrevented()) {
-        return;
-      }
-      setViewState('ERROR');
-      setLastErrorEvent(event.nativeEvent);
-    }, [onError, onLoadEnd]);
-    var onHttpError = (0, _react.useCallback)(function (event) {
-      onHttpErrorProp == null ? void 0 : onHttpErrorProp(event);
-    }, [onHttpErrorProp]);
-
-    // Android Only
-    var onRenderProcessGone = (0, _react.useCallback)(function (event) {
-      onRenderProcessGoneProp == null ? void 0 : onRenderProcessGoneProp(event);
-    }, [onRenderProcessGoneProp]);
-    // !Android Only
-
-    // iOS Only
-    var onContentProcessDidTerminate = (0, _react.useCallback)(function (event) {
-      onContentProcessDidTerminateProp == null ? void 0 : onContentProcessDidTerminateProp(event);
-    }, [onContentProcessDidTerminateProp]);
-    // !iOS Only
-
-    var onLoadingFinish = (0, _react.useCallback)(function (event) {
-      onLoad == null ? void 0 : onLoad(event);
-      onLoadEnd == null ? void 0 : onLoadEnd(event);
-      var url = event.nativeEvent.url;
-      // on Android, only if url === startUrl
-      if (_reactNative.Platform.OS !== 'android' || url === startUrl.current) {
-        setViewState('IDLE');
-      }
-      // !on Android, only if url === startUrl
-      updateNavigationState(event);
-    }, [onLoad, onLoadEnd, updateNavigationState]);
-    var onMessage = (0, _react.useCallback)(function (event) {
-      onMessageProp == null ? void 0 : onMessageProp(event);
-    }, [onMessageProp]);
-    var onLoadingProgress = (0, _react.useCallback)(function (event) {
-      var progress = event.nativeEvent.progress;
-      // patch for Android only
-      if (_reactNative.Platform.OS === 'android' && progress === 1) {
-        setViewState(function (prevViewState) {
-          return prevViewState === 'LOADING' ? 'IDLE' : prevViewState;
-        });
-      }
-      // !patch for Android only
-      onLoadProgress == null ? void 0 : onLoadProgress(event);
-    }, [onLoadProgress]);
-    var onShouldStartLoadWithRequest = (0, _react.useMemo)(function () {
-      return createOnShouldStartLoadWithRequest(onShouldStartLoadWithRequestCallback, originWhitelist, onShouldStartLoadWithRequestProp);
-    }, [originWhitelist, onShouldStartLoadWithRequestProp, onShouldStartLoadWithRequestCallback]);
-    var onOpenWindow = (0, _react.useCallback)(function (event) {
-      onOpenWindowProp == null ? void 0 : onOpenWindowProp(event);
-    }, [onOpenWindowProp]);
-    return {
-      onShouldStartLoadWithRequest: onShouldStartLoadWithRequest,
-      onLoadingStart: onLoadingStart,
-      onLoadingProgress: onLoadingProgress,
-      onLoadingError: onLoadingError,
-      onLoadingFinish: onLoadingFinish,
-      onHttpError: onHttpError,
-      onRenderProcessGone: onRenderProcessGone,
-      onContentProcessDidTerminate: onContentProcessDidTerminate,
-      onMessage: onMessage,
-      onOpenWindow: onOpenWindow,
-      viewState: viewState,
-      setViewState: setViewState,
-      lastErrorEvent: lastErrorEvent
-    };
-  };
-},543,[1,24,6,544,41,2,542,88],"node_modules/react-native-webview/src/WebViewShared.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  'use strict';
-
-  var matchOperatorsRegex = /[|\\{}()[\]^$+*?.-]/g;
-  module.exports = function (string) {
-    if (typeof string !== 'string') {
-      throw new TypeError('Expected a string');
+  exports.tryParseNativeCameraError = exports.isErrorWithCause = exports.CameraRuntimeError = exports.CameraCaptureError = void 0;
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/inherits"));
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
+  var _set2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/set"));
+  var _wrapNativeSuper2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/wrapNativeSuper"));
+  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
+  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+  function _superPropSet(t, e, o, r, p, f) { return (0, _set2.default)((0, _getPrototypeOf2.default)(f ? t.prototype : t), e, o, r, p); }
+  /**
+   * Represents a JSON-style error cause. This contains native `NSError`/`Throwable` information, and can have recursive {@linkcode ErrorWithCause.cause | .cause} properties until the ultimate cause has been found.
+   */
+  /**
+   * Represents any kind of error that occured in the {@linkcode Camera} View Module.
+   */
+  var CameraError = /*#__PURE__*/function (_Error) {
+    /**
+     * @internal
+     */
+    function CameraError(code, message, cause) {
+      var _this;
+      (0, _classCallCheck2.default)(this, CameraError);
+      _this = _callSuper(this, CameraError, ["[" + code + "]: " + message + (cause != null ? " (Cause: " + cause.message + ")" : '')]);
+      _superPropSet((_this, CameraError), "name", code, _this, 1, 1);
+      _superPropSet((_this, CameraError), "message", message, _this, 1, 1);
+      _this._code = code;
+      _this._message = message;
+      _this._cause = cause;
+      return _this;
     }
-    return string.replace(matchOperatorsRegex, '\\$&');
+    (0, _inherits2.default)(CameraError, _Error);
+    return (0, _createClass2.default)(CameraError, [{
+      key: "code",
+      get: function get() {
+        return this._code;
+      }
+    }, {
+      key: "message",
+      get: function get() {
+        return this._message;
+      }
+    }, {
+      key: "cause",
+      get: function get() {
+        var c = this._cause;
+        if (c == null) return undefined;
+        return new Error("[" + c.code + "]: " + c.message);
+      }
+    }, {
+      key: "toString",
+      value: function toString() {
+        var string = "[" + this.code + "]: " + this.message;
+        if (this._cause != null) string += " (caused by " + JSON.stringify(this._cause) + ")";
+        return string;
+      }
+    }]);
+  }(/*#__PURE__*/(0, _wrapNativeSuper2.default)(Error));
+  /**
+   * Represents any kind of error that occured while trying to capture a video or photo.
+   *
+   * See the ["Camera Errors" documentation](https://react-native-vision-camera.com/docs/guides/errors) for more information about Camera Errors.
+   */
+  var CameraCaptureError = exports.CameraCaptureError = /*#__PURE__*/function (_CameraError) {
+    function CameraCaptureError() {
+      (0, _classCallCheck2.default)(this, CameraCaptureError);
+      return _callSuper(this, CameraCaptureError, arguments);
+    }
+    (0, _inherits2.default)(CameraCaptureError, _CameraError);
+    return (0, _createClass2.default)(CameraCaptureError);
+  }(CameraError);
+  /**
+   * Represents any kind of error that occured in the Camera View Module.
+   *
+   * See the ["Camera Errors" documentation](https://react-native-vision-camera.com/docs/guides/errors) for more information about Camera Errors.
+   */
+  var CameraRuntimeError = exports.CameraRuntimeError = /*#__PURE__*/function (_CameraError2) {
+    function CameraRuntimeError() {
+      (0, _classCallCheck2.default)(this, CameraRuntimeError);
+      return _callSuper(this, CameraRuntimeError, arguments);
+    }
+    (0, _inherits2.default)(CameraRuntimeError, _CameraError2);
+    return (0, _createClass2.default)(CameraRuntimeError);
+  }(CameraError);
+  /**
+   * Checks if the given `error` is of type {@linkcode ErrorWithCause}
+   * @param {unknown} error Any unknown object to validate
+   * @returns `true` if the given `error` is of type {@linkcode ErrorWithCause}
+   */
+  var _isErrorWithCause = exports.isErrorWithCause = function isErrorWithCause(error) {
+    return typeof error === 'object' && error != null &&
+    // @ts-expect-error error is still unknown
+    typeof error.message === 'string' && (
+    // @ts-expect-error error is still unknown
+    typeof error.stacktrace === 'string' || error.stacktrace == null) && (
+    // @ts-expect-error error is still unknown
+    _isErrorWithCause(error.cause) || error.cause == null);
   };
-},544,[],"node_modules/escape-string-regexp/index.js");
+  var isCameraErrorJson = function isCameraErrorJson(error) {
+    return typeof error === 'object' && error != null &&
+    // @ts-expect-error error is still unknown
+    typeof error.code === 'string' &&
+    // @ts-expect-error error is still unknown
+    typeof error.message === 'string' && (
+    // @ts-expect-error error is still unknown
+    typeof error.cause === 'object' || error.cause == null);
+  };
+
+  /**
+   * Tries to parse an error coming from native to a typed JS camera error.
+   * @param {CameraError} nativeError The native error instance. This is a JSON in the legacy native module architecture.
+   * @returns A {@linkcode CameraRuntimeError} or {@linkcode CameraCaptureError}, or the `nativeError` itself if it's not parsable
+   * @method
+   */
+  var tryParseNativeCameraError = exports.tryParseNativeCameraError = function tryParseNativeCameraError(nativeError) {
+    if (isCameraErrorJson(nativeError)) {
+      if (nativeError.code.startsWith('capture')) {
+        return new CameraCaptureError(nativeError.code, nativeError.message, nativeError.cause);
+      } else {
+        return new CameraRuntimeError(
+        // @ts-expect-error the code is string, we narrow it down to TS union.
+        nativeError.code, nativeError.message, nativeError.cause);
+      }
+    } else {
+      return nativeError;
+    }
+  };
+},559,[1,12,13,49,52,51,560,69],"node_modules/@react-native-ohos/react-native-vision-camera/src/CameraError.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
-    "__packager_asset": true,
-    "httpServerLocation": "/assets/tests/html",
-    "scales": [1],
-    "hash": "88a53e45cce830b90e9b1dc902d95072",
-    "name": "faq_99",
-    "type": "html"
+  function set(e, r, t, o) {
+    return set = "undefined" != typeof Reflect && Reflect.set ? Reflect.set : function (e, r, t, o) {
+      var f,
+        i = _$$_REQUIRE(_dependencyMap[0], "./superPropBase.js")(e, r);
+      if (i) {
+        if ((f = Object.getOwnPropertyDescriptor(i, r)).set) return f.set.call(o, t), !0;
+        if (!f.writable) return !1;
+      }
+      if (f = Object.getOwnPropertyDescriptor(o, r)) {
+        if (!f.writable) return !1;
+        f.value = t, Object.defineProperty(o, r, f);
+      } else _$$_REQUIRE(_dependencyMap[1], "./defineProperty.js")(o, r, t);
+      return !0;
+    }, set(e, r, t, o);
+  }
+  function _set(e, r, t, o, f) {
+    if (!set(e, r, t, o || e) && f) throw new TypeError("failed to set property");
+    return t;
+  }
+  module.exports = _set, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},560,[133,202],"node_modules/@babel/runtime/helpers/set.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
   });
-},545,[442],"tests/html/faq_99.html");
+  exports.getCameraDevice = getCameraDevice;
+  /**
+   * Get the best matching Camera device that best satisfies your requirements using a sorting filter, or `undefined` if {@linkcode devices} does not contain any devices.
+   * @param position The position of the Camera device relative to the phone.
+   * @param filter The filter you want to use. The Camera device that matches your filter the closest will be returned
+   * @returns The Camera device that matches your filter the closest, or `undefined` if no such Camera Device exists on the given {@linkcode position}.
+   * @example
+   * ```ts
+   * const devices = Camera.getAvailableCameraDevices()
+   * const device = getCameraDevice(devices, 'back', {
+   *    physicalDevices: ['wide-angle-camera']
+   * })
+   * ```
+   */
+  function getCameraDevice(devices, position) {
+    var filter = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+    var filtered = devices.filter(function (d) {
+      return d.position === position;
+    });
+    var bestDevice = filtered[0];
+    if (bestDevice == null) return undefined;
+
+    // Compare each device using a point scoring system
+    for (var device of filtered) {
+      var leftPoints = 0;
+      var rightPoints = 0;
+
+      // prefer higher hardware-level
+      if (bestDevice.hardwareLevel === 'full') leftPoints += 4;
+      if (device.hardwareLevel === 'full') rightPoints += 4;
+      if (filter.physicalDevices != null) {
+        // user did pass a physical device filter, two possible scenarios:
+        // 1. user wants all cameras ([ultra-wide, wide, tele]) to zoom. prefer those devices that have all 3 cameras.
+        // 2. user wants only one ([wide]) for faster performance. prefer those devices that only have one camera, if they have more, we rank them lower.
+        for (var d of bestDevice.physicalDevices) {
+          if (filter.physicalDevices.includes(d)) leftPoints += 1;else leftPoints -= 1;
+        }
+        for (var _d of device.physicalDevices) {
+          if (filter.physicalDevices.includes(_d)) rightPoints += 1;else rightPoints -= 1;
+        }
+      } else {
+        // user did not pass a physical device filter. prefer wide-angle-camera as a default
+        if (bestDevice.physicalDevices.includes('wide-angle-camera')) leftPoints += 2;
+        if (device.physicalDevices.includes('wide-angle-camera')) rightPoints += 2;
+        // if we have more than one device, we rank it lower. we only want a simple camera
+        if (bestDevice.physicalDevices.length > device.physicalDevices.length) leftPoints -= 1;
+        if (device.physicalDevices.length > bestDevice.physicalDevices.length) rightPoints -= 1;
+      }
+      if (rightPoints > leftPoints) bestDevice = device;
+    }
+    return bestDevice;
+  }
+},561,[],"node_modules/@react-native-ohos/react-native-vision-camera/src/devices/getCameraDevice.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.Templates = void 0;
+  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
+  var SnapchatResolution = {
+    width: 1920,
+    height: 1080
+  };
+  var InstagramResolution = {
+    width: 3840,
+    height: 2160
+  };
+  var ScreenAspectRatio = _reactNative.Dimensions.get('window').height / _reactNative.Dimensions.get('window').width;
+
+  /**
+   * Predefined templates for use in `useCameraFormat`/`getCameraFormat`.
+   * @example
+   * ```ts
+   * const format = useCameraFormat(device, Templates.Snapchat)
+   * ```
+   */
+  var Templates = exports.Templates = {
+    /**
+     * Highest resolution video recordings (e.g. 4k)
+     */
+    Video: [{
+      videoResolution: 'max'
+    }],
+    /**
+     * High resolution 60 FPS video recordings (e.g. 1080@60 FPS)
+     */
+    Video60Fps: [{
+      fps: 60
+    }, {
+      videoResolution: 'max'
+    }],
+    /**
+     * High-FPS video recordings (e.g. 720@240 FPS)
+     */
+    VideoSlowMotion: [{
+      fps: 240
+    }, {
+      videoResolution: 'max'
+    }],
+    /**
+     * High resolution video recordings with cinematic video stabilization
+     */
+    VideoStabilized: [{
+      videoResolution: 'max'
+    }, {
+      videoStabilizationMode: 'cinematic-extended'
+    }],
+    /**
+     * Highest resolution photo capture (e.g. 4k)
+     */
+    Photo: [{
+      photoResolution: 'max'
+    }],
+    /**
+     * Highest resolution photo capture with portrait screen aspect ratio (e.g. 4k)
+     */
+    PhotoPortrait: [{
+      photoResolution: 'max'
+    }, {
+      photoAspectRatio: ScreenAspectRatio
+    }],
+    /**
+     * HD-quality for faster Frame Processing (e.g. 720p)
+     */
+    FrameProcessing: [{
+      videoResolution: {
+        width: 1080,
+        height: 720
+      }
+    }],
+    /**
+     * Snapchat-style video recordings and photo capture
+     * Targets Full HD-quality for lower file sizes and portrait screen aspect ratio.
+     */
+    Snapchat: [{
+      videoAspectRatio: ScreenAspectRatio
+    }, {
+      videoResolution: SnapchatResolution
+    }, {
+      photoAspectRatio: ScreenAspectRatio
+    }, {
+      photoResolution: SnapchatResolution
+    }],
+    /**
+     * Instagram-style video recordings and photo capture.
+     * Targets 4k-quality and portrait screen aspect ratio.
+     */
+    Instagram: [{
+      videoAspectRatio: ScreenAspectRatio
+    }, {
+      videoResolution: InstagramResolution
+    }, {
+      photoAspectRatio: ScreenAspectRatio
+    }, {
+      photoResolution: InstagramResolution
+    }]
+  };
+},562,[2],"node_modules/@react-native-ohos/react-native-vision-camera/src/devices/Templates.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.useCameraDevice = useCameraDevice;
+  var _react = _$$_REQUIRE(_dependencyMap[0], "react");
+  /**
+   * Get the best matching Camera device that best satisfies your requirements using a sorting filter.
+   * @param position The position of the Camera device relative to the phone.
+   * @param filter The filter you want to use. The Camera device that matches your filter the closest will be returned
+   * @returns The Camera device that matches your filter the closest, or `undefined` if no such Camera Device exists on the given {@linkcode position}.
+   * @example
+   * ```ts
+   * const device = useCameraDevice('back', {
+   *    physicalDevices: ['wide-angle-camera']
+   * })
+   * ```
+   */
+  function useCameraDevice(position, filter) {
+    var devices = (0, _$$_REQUIRE(_dependencyMap[1], "./useCameraDevices").useCameraDevices)();
+    var device = (0, _react.useMemo)(function () {
+      return (0, _$$_REQUIRE(_dependencyMap[2], "../devices/getCameraDevice").getCameraDevice)(devices, position, filter);
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [devices, position, JSON.stringify(filter)]);
+    return device;
+  }
+},563,[41,564,561],"node_modules/@react-native-ohos/react-native-vision-camera/src/hooks/useCameraDevice.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.useCameraDevices = useCameraDevices;
+  var _slicedToArray2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/slicedToArray"));
+  var _react = _$$_REQUIRE(_dependencyMap[2], "react");
+  var _NativeVisionCameraModule = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "../NativeVisionCameraModule"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[4], "react-native");
+  function useCameraDevices() {
+    var _useState = (0, _react.useState)(function () {
+        return _NativeVisionCameraModule.default.getAvailableCameraDevices();
+      }),
+      _useState2 = (0, _slicedToArray2.default)(_useState, 2),
+      devices = _useState2[0],
+      setDevices = _useState2[1];
+    (0, _react.useEffect)(function () {
+      var onCameraDevicesChangeListener = _reactNative.DeviceEventEmitter.addListener('onCameraDevicesChange', function (newDevices) {
+        setDevices(newDevices);
+      });
+      return function () {
+        return onCameraDevicesChangeListener.remove();
+      };
+    }, []);
+    return devices;
+  }
+},564,[1,24,41,550,2],"node_modules/@react-native-ohos/react-native-vision-camera/src/hooks/useCameraDevices.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.useCameraFormat = useCameraFormat;
+  var _react = _$$_REQUIRE(_dependencyMap[0], "react");
+  /**
+   * Get the best matching Camera format for the given device that satisfies your requirements using a sorting filter. By default, formats are sorted by highest to lowest resolution.
+   *
+   * The {@linkcode filters | filters} are ranked by priority, from highest to lowest.
+   * This means the first item you pass will have a higher priority than the second, and so on.
+   *
+   * @param device The Camera Device you're currently using
+   * @param filters The filters you want to use. The format that matches your filter the closest will be returned
+   * @returns The format that matches your filter the closest.
+   * @example
+   * ```ts
+   * const device = useCameraDevice(...)
+   * const format = useCameraFormat(device, [
+   *   { videoResolution: { width: 3048, height: 2160 } },
+   *   { fps: 60 }
+   * ])
+   * ```
+   */
+  function useCameraFormat(device, filters) {
+    var format = (0, _react.useMemo)(function () {
+      if (device == null) return undefined;
+      return (0, _$$_REQUIRE(_dependencyMap[1], "../devices/getCameraFormat").getCameraFormat)(device, filters);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [device, JSON.stringify(filters)]);
+    return format;
+  }
+},565,[41,558],"node_modules/@react-native-ohos/react-native-vision-camera/src/hooks/useCameraFormat.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.useCameraPermission = useCameraPermission;
+  exports.useLocationPermission = useLocationPermission;
+  exports.useMicrophonePermission = useMicrophonePermission;
+  var _asyncToGenerator2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/asyncToGenerator"));
+  var _slicedToArray2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/slicedToArray"));
+  var _react = _$$_REQUIRE(_dependencyMap[3], "react");
+  var _NativeVisionCameraModule = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "../NativeVisionCameraModule"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[5], "react-native");
+  function usePermission(get, request) {
+    var _useState = (0, _react.useState)(function () {
+        return get() === 'granted';
+      }),
+      _useState2 = (0, _slicedToArray2.default)(_useState, 2),
+      hasPermission = _useState2[0],
+      setHasPermission = _useState2[1];
+    var requestPermission = (0, _react.useCallback)(/*#__PURE__*/(0, _asyncToGenerator2.default)(function* () {
+      var result = yield request();
+      var hasPermissionNow = result === 'granted';
+      setHasPermission(hasPermissionNow);
+      return hasPermissionNow;
+    }), [request]);
+    (0, _react.useEffect)(function () {
+      // Refresh permission when app state changes, as user might have allowed it in Settings
+      var listener = _reactNative.AppState.addEventListener('change', function () {
+        setHasPermission(get() === 'granted');
+      });
+      return function () {
+        return listener.remove();
+      };
+    }, [get]);
+    return (0, _react.useMemo)(function () {
+      return {
+        hasPermission: hasPermission,
+        requestPermission: requestPermission
+      };
+    }, [hasPermission, requestPermission]);
+  }
+
+  /**
+   * Returns whether the user has granted permission to use the Camera, or not.
+   *
+   * If the user doesn't grant Camera Permission, you cannot use the `<Camera>`.
+   *
+   * @example
+   * ```tsx
+   * const { hasPermission, requestPermission } = useCameraPermission()
+   *
+   * if (!hasPermission) {
+   *   return <PermissionScreen onPress={requestPermission} />
+   * } else {
+   *   return <Camera ... />
+   * }
+   * ```
+   */
+  function useCameraPermission() {
+    return usePermission(_NativeVisionCameraModule.default.getCameraPermissionStatus, _NativeVisionCameraModule.default.requestCameraPermission);
+  }
+
+  /**
+   * Returns whether the user has granted permission to use the Microphone, or not.
+   *
+   * If the user doesn't grant Audio Permission, you can use the `<Camera>` but you cannot
+   * record videos with audio (the `audio={..}` prop).
+   *
+   * @example
+   * ```tsx
+   * const { hasPermission, requestPermission } = useMicrophonePermission()
+   * const canRecordAudio = hasPermission
+   *
+   * return <Camera video={true} audio={canRecordAudio} />
+   * ```
+   */
+  function useMicrophonePermission() {
+    return usePermission(_NativeVisionCameraModule.default.getMicrophonePermissionStatus, _NativeVisionCameraModule.default.requestMicrophonePermission);
+  }
+
+  /**
+   * Returns whether the user has granted permission to use the Location, or not.
+   *
+   * If the user doesn't grant Location Permission, you can use the `<Camera>` but you cannot
+   * capture photos or videos with GPS EXIF tags (the `location={..}` prop).
+   *
+   * @example
+   * ```tsx
+   * const { hasPermission, requestPermission } = useLocationPermission()
+   * const canCaptureLocation = hasPermission
+   *
+   * return <Camera photo={true} location={canCaptureLocation} />
+   * ```
+   */
+  function useLocationPermission() {
+    return usePermission(_NativeVisionCameraModule.default.getLocationPermissionStatus, _NativeVisionCameraModule.default.requestLocationPermission);
+  }
+},566,[1,83,24,41,550,2],"node_modules/@react-native-ohos/react-native-vision-camera/src/hooks/useCameraPermission.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.useCodeScanner = useCodeScanner;
+  var _objectWithoutProperties2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/objectWithoutProperties"));
+  var _react = _$$_REQUIRE(_dependencyMap[2], "react");
+  var _excluded = ["onCodeScanned"];
+  function useCodeScanner(codeScanner) {
+    var onCodeScanned = codeScanner.onCodeScanned,
+      codeScannerOptions = (0, _objectWithoutProperties2.default)(codeScanner, _excluded);
+
+    // Memoize the  function once and use a ref on any identity changes
+    var ref = (0, _react.useRef)(onCodeScanned);
+    ref.current = onCodeScanned;
+    var callback = (0, _react.useCallback)(function (codes, frame) {
+      ref.current(codes, frame);
+    }, []);
+
+    // CodeScanner needs to be memoized so it doesn't trigger a Camera Session re-build
+    return (0, _react.useMemo)(function () {
+      return Object.assign({}, codeScannerOptions, {
+        onCodeScanned: callback
+      });
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [JSON.stringify(codeScannerOptions), callback]);
+  }
+},567,[1,150,41],"node_modules/@react-native-ohos/react-native-vision-camera/src/hooks/useCodeScanner.ts");
 __r(45);
 __r(0);

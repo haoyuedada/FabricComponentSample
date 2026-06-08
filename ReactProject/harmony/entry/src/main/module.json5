@@ -48,6 +48,49 @@
         "name": "ohos.permission.WRITE_MEDIA",
         "usedScene": {abilities: []},
         "reason": "$string:app_name"
+      },
+      {
+        "name": "ohos.permission.CAMERA",
+        "reason": "$string:app_name",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when":"inuse"
+        }
+      },
+      {
+        "name": "ohos.permission.MICROPHONE",
+        "reason": "$string:app_name",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when":"inuse"
+        }
+      },
+      {
+        "name": "ohos.permission.APPROXIMATELY_LOCATION",
+        "reason": "$string:app_name",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when":"inuse"
+        }
+      },
+      {
+        "name" : "ohos.permission.ACCELEROMETER",
+      },
+      {
+        "name" : "ohos.permission.GYROSCOPE",
+        "reason": "$string:app_name",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when":"inuse"
+        }
       }
     ],
     "abilities": [

@@ -39,6 +39,8 @@ add_subdirectory("${OH_MODULES}/@react-native-ohos/flash-list/src/main/cpp" ./fl
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-screens/src/main/cpp" ./rnoh_screens)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-smartrefreshlayout/src/main/cpp" ./smart-refresh-layout)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/lottie-react-native/src/main/cpp" ./lottie)
+add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-vision-camera/src/main/cpp" ./vision-camera)
+add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-orientation-locker/src/main/cpp" ./orientation_locker)
 # RNOH_END: manual_package_linking_1
 
 file(GLOB GENERATED_CPP_FILES "./generated/*.cpp")
@@ -69,4 +71,6 @@ target_link_libraries(rnoh_app PUBLIC rnoh_flash_list)
 target_link_libraries(rnoh_app PUBLIC rnoh_screens)
 target_link_libraries(rnoh_app PUBLIC rnoh_smart_refresh_layout)
 target_link_libraries(rnoh_app PUBLIC rnoh_lottie)
+target_link_libraries(rnoh_app PUBLIC rnoh_vision_camera)
+target_link_libraries(rnoh_app PUBLIC rnoh_orientation_locker)
 # RNOH_END: manual_package_linking_2

@@ -10,6 +10,7 @@ import { RNCVideo, RNC_VIDEO_TYPE } from "@react-native-oh-tpl/react-native-vide
 import { RNCSkiaDomView, SKIA_DOM_VIEW_TYPE } from '@react-native-ohos/react-native-skia';
 import { componentBuilder } from "@react-native-ohos/react-native-screens"
 import { LottieAnimationView, LOTTIE_TYPE } from "@react-native-ohos/lottie-react-native"
+import { VisionCameraView } from "@react-native-ohos/react-native-vision-camera";
 
 @Builder
 export function buildCustomComponent(ctx: ComponentBuilderContext) {
@@ -49,11 +50,16 @@ export function buildCustomComponent(ctx: ComponentBuilderContext) {
       ctx: ctx.rnComponentContext,
       tag: ctx.tag
     })
- } else if (ctx.componentName === LOTTIE_TYPE) {
+  } else if (ctx.componentName === LOTTIE_TYPE) {
     LottieAnimationView({
-       ctx: ctx.rnComponentContext,
-       tag: ctx.tag
-       })
+      ctx: ctx.rnComponentContext,
+      tag: ctx.tag
+    })
+  } else if (ctx.componentName === VisionCameraView.NAME) {
+      VisionCameraView({
+        ctx: ctx.rnComponentContext,
+        tag: ctx.tag,
+      })
     }
 }
 
@@ -73,5 +79,6 @@ export const arkTsComponentNames: Array<string> = [
   "RNSScreenStackHeaderSubview",
   "RNSSearchBar",
   "RNSScreenStackHeaderConfig",
-  LOTTIE_TYPE
+  LOTTIE_TYPE,
+  VisionCameraView.NAME
 ];

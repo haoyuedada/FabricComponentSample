@@ -23,6 +23,8 @@ import { RNKeyboardControllerPackage, RNStatusBarManagerCompatPackage } from  "@
 import RnohReactNativeHarmonyScreensPackage from '@react-native-ohos/react-native-screens';
 import { SmartRefreshPackage } from '@react-native-ohos/react-native-smartrefreshlayout/ts';
 import {LottieAnimationViewPackage} from '@react-native-ohos/lottie-react-native/ts';
+import { VisionCameraModulePackage } from "@react-native-ohos/react-native-vision-camera/ts";
+import { RNOrientationLockerPackage } from '@react-native-ohos/react-native-orientation-locker/ts';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
@@ -44,6 +46,8 @@ export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
     new RNStatusBarManagerCompatPackage(ctx),
     new RnohReactNativeHarmonyScreensPackage(ctx),
     new SmartRefreshPackage(ctx),
-    new LottieAnimationViewPackage(ctx)
+    new LottieAnimationViewPackage(ctx),
+    new VisionCameraModulePackage(ctx),
+    new RNOrientationLockerPackage(ctx)
   ];
 }

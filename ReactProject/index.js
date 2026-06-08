@@ -81,8 +81,8 @@ import { AppRegistry } from 'react-native';
 // import App from './tests/Hierarchy1/Hierarchy2/index.js';
 // import FetchTest from './tests/FetchTest.tsx';
 // import VideoTest2 from './tests/imageMP4'
-import WebviewTest from './tests/WebviewTest'
-import App from './src/thridPartyDemo/webView.tsx';
+// import WebviewTest from './tests/WebviewTest'
+// import App from './src/thridPartyDemo/webView.tsx';
 // import App from './thridPartyDemo/AdaptiveWebView.tsx';
 // import App from './thridPartyDemo/vmall/DTS2025111903544/webviewDemo/webviewDemo/index.tsx'
 // import App from './tests/styleDemo'
@@ -157,6 +157,11 @@ import App from './src/thridPartyDemo/webView.tsx';
 // import App from './tests/lottie/crash_demo_direct.tsx'
 // import App from "./tests/screensDemo.tsx"
 // import App from './tests/crash/pingan/ReanimatedCrashRepro.tsx'
+// import App from './App1.tsx'
+// import App from './tests/camera/Camera.tsx'
+// import App from './tests/react-native-vision-camera/App.tsx'
+import VisionCameraDemo from './src/xiaoyi/camerapage/VisionCameraDemo';
 
-AppRegistry.registerComponent("app_name", () => WebviewTest);
+// 在导航或 App 中注册该组件
+AppRegistry.registerComponent("app_name", () => VisionCameraDemo);
 // import { transform } from "./testTurboModule/buautify_executor.js"

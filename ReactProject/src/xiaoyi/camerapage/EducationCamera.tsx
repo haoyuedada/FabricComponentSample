@@ -847,9 +847,11 @@ const educationCamera = (): React.ReactElement => {
     const handleLandscape43Split = (winWidth: number, winHeight: number): void => {
       let calculatedWidth, calculatedHeight;
       if (winWidth / winHeight < 1 / CAMERA_RATIO_3_4) {
+        console.log(`chy 4:3 split - width is the limit factor`);
         calculatedWidth = winWidth;
         calculatedHeight = calculatedWidth * CAMERA_RATIO_3_4;
       } else {
+        console.log(`chy 3:4 split - width is the limit factor`);
         calculatedHeight = winHeight;
         calculatedWidth = winHeight / CAMERA_RATIO_3_4;
       }

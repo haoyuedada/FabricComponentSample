@@ -23,6 +23,8 @@
     "@react-native-ohos/flash-list": "file:../../node_modules/@react-native-ohos/flash-list/harmony/flash_list.har",
     "@react-native-ohos/react-native-screens": "file:../../node_modules/@react-native-ohos/react-native-screens/harmony/screens.har",
     "@react-native-ohos/react-native-smartrefreshlayout": "file:../../node_modules/@react-native-ohos/react-native-smartrefreshlayout/harmony/smart_refresh_layout.har",
-    "@react-native-ohos/lottie-react-native": "file:../../node_modules/@react-native-ohos/lottie-react-native/harmony/lottie.har"
+    "@react-native-ohos/lottie-react-native": "file:../../node_modules/@react-native-ohos/lottie-react-native/harmony/lottie.har",
+    "@react-native-ohos/react-native-vision-camera": "file:../../node_modules/@react-native-ohos/react-native-vision-camera/harmony/vision_camera.har",
+    "@react-native-ohos/react-native-orientation-locker":"file:../../node_modules/@react-native-ohos/react-native-orientation-locker/harmony/orientation_locker.har"
   }
 }
