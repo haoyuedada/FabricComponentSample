@@ -85,7 +85,13 @@ import { AppRegistry } from 'react-native';
 // import WorkletRuntimeExample from "./tests/react-native-reanimated/example/WorkletRuntimeExample"
 // reanimated end
 
-import App from "./tests/react-native-reanimated/AI/obtainPropFromShadowNodeCrash.tsx"
+// import App from "./tests/react-native-reanimated/AI/obtainPropFromShadowNodeCrash.tsx"
+// import App from './tests/react-native-gesture/App.tsx'
+// import App from './tests/react-native-gesture/App1.tsx'
+// import App from './tests/react-native-gesture/meituan/RNPanBasicDemo.tsx'
+// import App from './tests/react-native-gesture/meituan/RNGestureHandlerDemo.tsx'
+import App from './tests/react-native-gesture/meituan/PanGestureHandlerBasicDemo.tsx'
+// import App from './tests/react-native-gesture-handler/App.tsx'
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"

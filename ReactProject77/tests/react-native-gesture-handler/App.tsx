@@ -21,7 +21,7 @@ const App = (): React.JSX.Element => {
 
   return (
     <ScrollView>
-      <View style={{width: 200, height: 200}} />
+      <View style={{width: 400, height: 400}} />
       {Array.from(new Array(100)).map((_, index) => {
         return (
           <View
