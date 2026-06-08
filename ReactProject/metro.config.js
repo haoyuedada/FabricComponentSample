@@ -21,9 +21,9 @@ const config = {
       },
     }),
   },
-  resolver: {
-    sourceExts: ['tsx', 'ts', 'jsx', 'js', 'json', 'html'],
-  },
+  // resolver: {
+  //   sourceExts: ['tsx', 'ts', 'jsx', 'js', 'json', 'html'],
+  // },
 };
 
 module.exports = mergeConfig(
