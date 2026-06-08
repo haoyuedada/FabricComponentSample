@@ -10,6 +10,7 @@ import { GeneratedPackage } from './GeneratedPackage';
 import GestureHandlerPackage from '@react-native-ohos/react-native-gesture-handler';
 import { ReanimatedWorkletPackage } from '@react-native-ohos/react-native-worklets'
 import { ReanimatedPackage} from '@react-native-ohos/react-native-reanimated/ts';
+import {SpringScrollViewPackage} from '@react-native-ohos/react-native-spring-scrollview/ts';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
@@ -17,5 +18,6 @@ export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
     new GestureHandlerPackage(ctx),
     new ReanimatedWorkletPackage(ctx),
     new ReanimatedPackage(ctx),
+    new SpringScrollViewPackage(ctx),
   ];
 }

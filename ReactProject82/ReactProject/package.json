@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "listen": "hdc rport tcp:8081 tcp:8081",
     "lint": "eslint .",
     "start": "npm run codegen && react-native start --reset-cache",
     "dev": "npm run codegen && react-native bundle-harmony --dev false --bundle-output ./harmony/entry/src/main/resources/rawfile/bundle.harmony.js",
@@ -14,6 +15,7 @@
     "@react-native-ohos/react-native-gesture-handler": "file:./tgz/react-native-ohos-react-native-gesture-handler-2.30.1-rc.6.tgz",
     "@react-native-ohos/react-native-reanimated": "^4.0.0-rc.1",
     "@react-native-ohos/react-native-worklets": "^1.0.0-rc.1",
+    "@react-native-ohos/react-native-spring-scrollview": "3.1.0",
     "fabric-component-sample-package": "file:../fabric-component-sample-package/fabric-component-sample-package-1.0.0.tgz",
     "react": "19.1.1",
     "react-native": "0.82.1",

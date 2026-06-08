@@ -16,8 +16,8 @@ import {
     StyleSheet,
     TouchableOpacity,
     SafeAreaView
-} from '@mrn/react-native'
-import { MRNSpringScrollView } from '@mrn/react-native-spring-scrollview'
+} from 'react-native'
+import { SpringScrollView as MRNSpringScrollView } from 'react-native-spring-scrollview'
 
 // ==================== SimpleTabBar 组件 ====================
 

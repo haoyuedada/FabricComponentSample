@@ -11,6 +11,7 @@
 #include "GestureHandlerPackage.h"
 #include "ReanimatedWorkletPackage.h"
 #include "ReanimatedPackage.h"
+#include "SpringScrollViewPackage.h"
 
 using namespace rnoh;
 
@@ -20,6 +21,7 @@ std::vector<std::shared_ptr<Package>> PackageProvider::getPackages(Package::Cont
     std::make_shared<FabricComponentSamplePackagePackage>(ctx),
     std::make_shared<GestureHandlerPackage>(ctx),
     std::make_shared<ReanimatedWorkletPackage>(ctx),
-    std::make_shared<ReanimatedPackage>(ctx)
+    std::make_shared<ReanimatedPackage>(ctx),
+    std::make_shared<SpringScrollViewPackage>(ctx),
   };
 }
