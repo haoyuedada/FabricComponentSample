@@ -1,0 +1,62 @@
+开源库名称	使用app	链接地址	是否需要升级	升级前版社区本号	82升级后社区版本号（实际版本按开发启动时锁定为准）	是否录入6.1SR	是否录入7.0SR	SR是否录入	是否转测	转测版本号
+react-native-video		https://github.com/TheWidlarzGroup/react-native-video	是	6.13.0	6.18.0		是	是		
+react-native-community/clipboard	滴滴出行	https://github.com/react-native-clipboard/clipboard	是	1.16.2	1.16.3		是	是		
+react-native-community/cameraroll		https://github.com/react-native-cameraroll/react-native-cameraroll	是	7.10.0	7.10.2		是	是		
+react-native-view-shot		https://github.com/gre/react-native-view-shot	是	3.8.0	4.0.3		是	是		
+react-native-sound		https://github.com/zmxv/react-native-sound	是	0.12.0	0.13.0		是	是		
+react-native-pdf		https://github.com/wonday/react-native-pdf	是	6.7.6	7.0.3		是	是		
+react-native-maps		https://github.com/react-native-maps/react-native-maps	是	1.24.3	1.26.17		是	是		
+react-native-picker		https://github.com/beefe/react-native-picker	是	4.0.3	4.3.7		是	是		
+react-native-drag-sort		https://github.com/mochixuan/react-native-drag-sort	是	2.4.2	2.4.4		是	是		
+react-native-blob-util		https://github.com/RonRadtke/react-native-blob-util	是	0.22.1	0.22.2		是	是		
+react-native-intersection-observer		https://github.com/zhbhun/react-native-intersection-observer	是	0.2.0	0.2.1		是	是		
+react-native-vision-camera	滴滴出行	https://github.com/mrousavy/react-native-vision-camera	是	4.7.0	4.7.2		是	是		
+react-native-worklets-core		https://github.com/margelo/react-native-worklets-core	是	1.5.0	1.6.2		是	是		
+react-native-fileupload		https://github.com/PhilippKrone/react-native-fileupload	是	1.1.0	1.2.0		是	是		
+react-native-root-modal		https://github.com/magicismight/react-native-root-modal	是	5.0.0	5.0.1		是	是		
+react-native-device-info		https://github.com/react-native-device-info/react-native-device-info	是	14.0.4	14.1.1		是	是		
+react-native-amap3d		https://github.com/qiuxiang/react-native-amap3d	是	v3.2.4	3.2.4		是	是		
+react-native-bottom-sheet		https://github.com/gorhom/react-native-bottom-sheet	是	5.1.6	5.2.8		是	是		
+react-native-share		https://github.com/react-native-share/react-native-share	是	12.1.0	12.2.0		是	是		
+react-native-mmkv-storage		https://github.com/ammarahm-ed/react-native-mmkv-storage	是	0.11.2	12.0.0		是	是		
+react-native-bootsplash		https://github.com/zoontek/react-native-bootsplash	是	6.3.4	6.3.11		是	是		
+react-native-ui-lib		https://github.com/wix/react-native-ui-lib	是	7.43.0	7.46.3		是	是		
+react-native-track-player		https://github.com/doublesymmetry/react-native-track-player	是	4.1.1	4.1.2		是	是		
+react-native-contacts			是	8.0.5	8.0.7		是	是		
+nativewind		https://github.com/marklawlor/nativewind	是	4.1.23	4.2.1		是	是		
+react-native-camera-kit			是	15.1.0	16.1.3		是	是		
+react-native-dropdownalert		https://github.com/testshallpass/react-native-dropdownalert	是	5.1.0	5.2.0		是	是		
+react-native-nfc-manager		https://github.com/revtel/react-native-nfc-manager	是	3.16.1	3.17.1		是	是		
+react-native-text-input-mask		https://github.com/react-native-text-input-mask/react-native-text-input-mask	是	3.1.5	3.2.0		是	是		
+react-native-keyboard-controller		https://github.com/kirillzyusko/react-native-keyboard-controller	是	1.16.5	1.19.1		是	是		
+react-native-ble-manager	滴滴出行	https://github.com/innoveit/react-native-ble-manager	是	12.1.5	12.2.2		是	是		
+react-native-svg-charts		https://github.com/JesperLekland/react-native-svg-charts	是	5.3.0	5.4.0		是	是		
+react-content-loader		https://github.com/danilowoz/react-content-loader	是	7.0.2	7.1.1		是	是		
+react-native-reanimated-bottom-sheet		https://github.com/osdnk/react-native-reanimated-bottom-sheet	是	1.0.0-alpha.22	1.0.0-alpha.22		是	是		
+react-native-audio-recorder-player		https://github.com/dooboolab/react-native-audio-recorder-player	是	3.6.13	4.5.0		是	是		
+react-native-map-clustering		https://github.com/venits/react-native-map-clustering	是	3.4.0	4.0.0		是	是		
+react-native-shake		https://github.com/Doko-Demo-Doa/react-native-shake	是	6.0.0-beta.2	6.8.1		是	是		
+react-native-gifted-charts		https://github.com/Abhinandan-Kushwaha/react-native-gifted-charts	是	1.4.61	1.4.64		是	是		
+react-native-quick-base64		https://github.com/craftzdog/react-native-quick-base64	是	2.1.2	2.2.2		是	是		
+react-native-context-menu-view		https://github.com/mpiannucci/react-native-context-menu-view	是	1.19.0	1.20.0		是	是		
+react-native-unistyles		https://github.com/jpudysz/react-native-unistyles	是	2.43.0	3.0.15 (3.0.20)		是	是		
+react-native-signature-capture		https://github.com/RepairShopr/react-native-signature-capture	是	0.4.11	0.4.12		是	是		
+react-native-create-thumbnail		https://github.com/souvik-ghosh/react-native-create-thumbnail	是	2.0.1	2.1.1		是	是		
+react-native-file-access		https://github.com/alpha0010/react-native-file-access	是	3.1.1	3.2.0		是	是		
+react-native-bars		https://github.com/zoontek/react-native-edge-to-edge	是	1.4.3	2.4.3(1.7.0)		是	是		
+op-sqlite		https://github.com/OP-Engineering/op-sqlite	是	14.0.1-rc.1	15.0.7		是	是		
+react-native-keys		https://github.com/numandev1/react-native-keys	是	0.7.10	0.7.13		是	是		
+react-native-theme-control		https://github.com/vonovak/react-native-theme-control	是	6.1.0	7.0.2		是	是		
+react-native-vector-drawable		https://github.com/klarna-incubator/react-native-vector-drawable	是	0.5.1	0.5.1		是	是		
+react-native-iphone-screen-helper		https://github.com/chlee1001/react-native-iphone-screen-helper	是	2.1.2	2.2.1		是	是		
+react-native-drax		https://github.com/nuclearpasta/react-native-drax	是	0.11.0	0.11.0-alpha.2		是	是		
+react-native-video-cache		https://github.com/zhigang1992/react-native-video-cache	是	2.7.1	2.7.4		是	是		
+react-native-better-banner		https://github.com/tmxiong/better-banner	是	0.0.1	1.1.3		是	是		
+victory-native-xl		https://github.com/FormidableLabs/victory-native-xl	是	41.17.4	41.20.2		是	是		
+react-native-config		https://github.com/lugg/react-native-config	是	1.5.5	1.5.9		是	是		
+react-native-custom-keyboard		https://github.com/reactnativecn/react-native-custom-keyboard	是	1.0.3	1.0.4		是	是		
+realm-js		https://github.com/realm/realm-js	是	12.14.2	12.15.0		是	是		
+react-native-ssl-pinning		https://github.com/MaxToyberman/react-native-ssl-pinning	是	1.5.9	1.6.0		是	是		
+jpush-react-native		https://github.com/jpush/jpush-react-native	是	3.1.8	3.2.0		是	是		
+react-native-mmkv		https://github.com/mrousavy/react-native-mmkv	是	0	4.0.1		是	是		
+react-native-nitro-modules		https://github.com/mrousavy/nitro/tree/main/packages/react-native-nitro-modules	是	0	0.31.9		是	是		
