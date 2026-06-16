@@ -137,6 +137,7 @@ import { AppRegistry } from 'react-native';
 // import App from './src/IR/251208195649046/RequireExternalGestureToFailDemo.tsx'
 // import App from './thridPartyDemo/skia.tsx'
 // import App from './src/DTS/DTS2026011907680/GestureHandlerDemo'
+// import App from './src/DTS/DTS2025121743837/GestureHandlerDemo.tsx'
 // import App from './src/DTS/DTS2025121743837/GestureHandlerDemo1.tsx'
 // import App from './src/DTS/DTS2025121743837/GesturePreventScrollDemo.tsx'
 // import App from './src/absoluteDemo.tsx'
@@ -160,8 +161,13 @@ import { AppRegistry } from 'react-native';
 // import App from './App1.tsx'
 // import App from './tests/camera/Camera.tsx'
 // import App from './tests/react-native-vision-camera/App.tsx'
-import VisionCameraDemo from './src/xiaoyi/camerapage/VisionCameraDemo';
+// import VisionCameraDemo from './src/xiaoyi/camerapage/VisionCameraDemo';
+// import App from './tests/react-native-animated/App.tsx'
+// import App from './tests/react-native-gesture-handler/App.tsx'
+// import App from './tests/react-native-gesture-handler/RNPanBasicDemo.tsx'
+// import App from './tests/react-native-gesture-handler/RNGestureHandlerDemo.tsx'
+import App from './tests/react-native-gesture-handler/PinchWithRotationDemo.tsx'
 
 // 在导航或 App 中注册该组件
-AppRegistry.registerComponent("app_name", () => VisionCameraDemo);
+AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"
