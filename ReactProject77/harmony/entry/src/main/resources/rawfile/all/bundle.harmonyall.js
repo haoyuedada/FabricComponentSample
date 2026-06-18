@@ -1420,7 +1420,7 @@ var __BUNDLE_START_TIME__=this.nativePerformanceNow?nativePerformanceNow():Date.
 })(typeof globalThis !== 'undefined' ? globalThis : typeof global !== 'undefined' ? global : typeof window !== 'undefined' ? window : this);
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-  var _GestureHandlerDemo = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./tests/DTS2026011907680/GestureHandlerDemo"));
+  var _RNPanBasicDemo = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./tests/react-native-gesture/meituan/RNPanBasicDemo.tsx"));
   /**
    * Copyright (c) 2024 Huawei Technologies Co., Ltd.
    *
@@ -1434,7 +1434,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // import { name as appName } from './app.json';
   // import App from './App'
   // import App from './tests/260116160802092/react-native-clipboard/index.tsx'
-
+  // import App from './tests/DTS2026011907680/GestureHandlerDemo'
   // import App from './tests/DTS2025121743837/GestureHandlerDemo.tsx'
   // import App from './tests/DTS2025121743837/GesturePreventScrollDemo.tsx'
   // import App from './tests/ReanimatedDemo'
@@ -1509,9 +1509,15 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // reanimated end
 
   // import App from "./tests/react-native-reanimated/AI/obtainPropFromShadowNodeCrash.tsx"
+  // import App from './tests/react-native-gesture/App.tsx'
+  // import App from './tests/react-native-gesture/App1.tsx'
+
+  // import App from './tests/react-native-gesture/meituan/RNGestureHandlerDemo.tsx'
+  // import App from './tests/react-native-gesture/meituan/PanGestureHandlerBasicDemo.tsx'
+  // import App from './tests/react-native-gesture-handler/App.tsx'
 
   _reactNative.AppRegistry.registerComponent("app_name", function () {
-    return _GestureHandlerDemo.default;
+    return _RNPanBasicDemo.default;
   });
   // import { transform } from "./testTurboModule/buautify_executor.js"
 },0,[1,8,630],"index.js");
@@ -120509,362 +120515,3887 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     value: true
   });
   exports.default = void 0;
-  var _react = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "react"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
-  var _ZoomableView = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "./ZoomableView"));
+  var _defineProperty2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/defineProperty"));
+  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/toConsumableArray"));
+  var _slicedToArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/slicedToArray"));
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[4], "react"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[5], "react-native");
   var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/DTS2026011907680/GestureHandlerDemo.tsx";
-  var App = function App() {
-    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[4], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[5], "react-native-gesture-handler").GestureHandlerRootView, {
-      children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[4], "react/jsx-runtime").jsx)(_reactNative.Modal, {
-        statusBarTranslucent: true,
-        navigationBarTranslucent: true,
-        animationType: "fade",
-        visible: true,
-        children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[4], "react/jsx-runtime").jsx)(_ZoomableView.default, {
-          style: styles.zoomableView,
-          contentContainerStyle: styles.contentContainer,
-          doubleTapToZoom: true,
-          minScale: 1,
-          maxScale: 3,
-          initialScale: 1,
-          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[4], "react/jsx-runtime").jsx)(_reactNative.Image, {
-            source: _$$_REQUIRE(_dependencyMap[6], "../../assets/fig-without-poppy.jpeg"),
-            style: styles.image
-          })
-        })
-      })
-    });
-  };
-  var styles = _reactNative.StyleSheet.create({
-    safeArea: {
-      flex: 1
-    },
-    zoomableView: {
-      flex: 1
-    },
-    contentContainer: {
-      alignItems: 'center',
-      justifyContent: 'center'
-    },
-    image: {
-      width: '100%',
-      height: '100%'
-    }
-  });
-  var _default = exports.default = App;
-},630,[8,86,1,631,92,818,902],"tests/DTS2026011907680/GestureHandlerDemo.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var _react = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "react"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
-  var _reactNativeReanimated = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[3], "react-native-reanimated"));
-  var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/DTS2026011907680/ZoomableView.tsx";
+    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/react-native-gesture/meituan/RNPanBasicDemo.tsx";
+  /**
+   * 复现 "手势回弹动画未结束立即重新拖拽导致闪动" 问题。
+   * 
+   * 为什么必须用 PanGestureHandler：
+   * 这个 bug 出在 C++ EventAnimationDriver::updateWithEvent() 直接调用 valueNode.setValue()
+   * 而不停掉正在运行的 spring 动画，导致两个 C++ 驱动同时写同一个 ValueAnimatedNode。
+   * 
+   * 在 OpenHarmony 上，只有 PanGestureHandler 的事件确定走 C++ EventAnimationDriver 路径：
+   *   PanGestureHandler 事件 → NativeAnimatedTurboModule::handleEvent()
+   *     → AnimatedNodesManager::handleEvent() → EventAnimationDriver::updateWithEvent()
+   *       → valueNode.setValue()  ← 不停动画！与 spring 冲突 → 闪动
+   * 
+   * 其他方式（Responder + setValue / Animated.ScrollView）都走不到这条路径：
+   *   - Responder + Animated.setValue() → JS 桥 → AnimatedNodesManager::setValue()
+   *     → 先 stopAnimationsForNode() 再设值 ✅ 不冲突
+   *   - Animated.ScrollView onScroll → 未走 EventAnimationDriver（或回退 JS 驱动）✅ 不冲突
+   */
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  var _worklet_6251936950689_init_data = {
-    code: "function ZoomableViewTsx1(){const{onSingleTap,runOnJS}=this.__closure;if(onSingleTap){runOnJS(onSingleTap)();}}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/DTS2026011907680/ZoomableView.tsx",
-    sourceMap: "{\"version\":3,\"names\":[\"ZoomableViewTsx1\",\"onSingleTap\",\"runOnJS\",\"__closure\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/DTS2026011907680/ZoomableView.tsx\"],\"mappings\":\"AAgDW,SAAAA,gBAAMA,CAAA,QAAAC,WAAA,CAAAC,OAAA,OAAAC,SAAA,CACX,GAAIF,WAAW,CAAE,CACfC,OAAO,CAACD,WAAW,CAAC,CAAC,CAAC,CACxB,CACF\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var _worklet_5321314749456_init_data = {
-    code: "function ZoomableViewTsx2(){const{doubleTapToZoom,scale,initialScale,withTiming,translateX,translateY,savedScale,maxScale}=this.__closure;debugger;if(!doubleTapToZoom)return;if(scale.value!==initialScale){scale.value=withTiming(initialScale);translateX.value=withTiming(0);translateY.value=withTiming(0);savedScale.value=initialScale;}else{const targetScale=Math.min(2,maxScale);scale.value=withTiming(targetScale);savedScale.value=targetScale;}}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/DTS2026011907680/ZoomableView.tsx",
-    sourceMap: "{\"version\":3,\"names\":[\"ZoomableViewTsx2\",\"doubleTapToZoom\",\"scale\",\"initialScale\",\"withTiming\",\"translateX\",\"translateY\",\"savedScale\",\"maxScale\",\"__closure\",\"value\",\"targetScale\",\"Math\",\"min\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/DTS2026011907680/ZoomableView.tsx\"],\"mappings\":\"AA0DW,SAAAA,gBAAMA,CAAA,QAAAC,eAAA,CAAAC,KAAA,CAAAC,YAAA,CAAAC,UAAA,CAAAC,UAAA,CAAAC,UAAA,CAAAC,UAAA,CAAAC,QAAA,OAAAC,SAAA,CACX,SACA,GAAI,CAACR,eAAe,CAAE,OAEtB,GAAIC,KAAK,CAACQ,KAAK,GAAKP,YAAY,CAAE,CAEhCD,KAAK,CAACQ,KAAK,CAAGN,UAAU,CAACD,YAAY,CAAC,CACtCE,UAAU,CAACK,KAAK,CAAGN,UAAU,CAAC,CAAC,CAAC,CAChCE,UAAU,CAACI,KAAK,CAAGN,UAAU,CAAC,CAAC,CAAC,CAChCG,UAAU,CAACG,KAAK,CAAGP,YAAY,CACjC,CAAC,IAAM,CAEL,KAAM,CAAAQ,WAAW,CAAGC,IAAI,CAACC,GAAG,CAAC,CAAC,CAAEL,QAAQ,CAAC,CACzCN,KAAK,CAACQ,KAAK,CAAGN,UAAU,CAACO,WAAW,CAAC,CACrCJ,UAAU,CAACG,KAAK,CAAGC,WAAW,CAChC,CACF\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var _worklet_3048894834898_init_data = {
-    code: "function ZoomableViewTsx3(){const{scale,minScale,withTiming,savedScale,maxScale}=this.__closure;if(scale.value<minScale){scale.value=withTiming(minScale);savedScale.value=minScale;}else if(scale.value>maxScale){scale.value=withTiming(maxScale);savedScale.value=maxScale;}else{savedScale.value=scale.value;}}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/DTS2026011907680/ZoomableView.tsx",
-    sourceMap: "{\"version\":3,\"names\":[\"ZoomableViewTsx3\",\"scale\",\"minScale\",\"withTiming\",\"savedScale\",\"maxScale\",\"__closure\",\"value\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/DTS2026011907680/ZoomableView.tsx\"],\"mappings\":\"AAiFW,SAAAA,gBAAMA,CAAA,QAAAC,KAAA,CAAAC,QAAA,CAAAC,UAAA,CAAAC,UAAA,CAAAC,QAAA,OAAAC,SAAA,CAEX,GAAIL,KAAK,CAACM,KAAK,CAAGL,QAAQ,CAAE,CAC1BD,KAAK,CAACM,KAAK,CAAGJ,UAAU,CAACD,QAAQ,CAAC,CAClCE,UAAU,CAACG,KAAK,CAAGL,QAAQ,CAC7B,CAAC,IAAM,IAAID,KAAK,CAACM,KAAK,CAAGF,QAAQ,CAAE,CACjCJ,KAAK,CAACM,KAAK,CAAGJ,UAAU,CAACE,QAAQ,CAAC,CAClCD,UAAU,CAACG,KAAK,CAAGF,QAAQ,CAC7B,CAAC,IAAM,CACLD,UAAU,CAACG,KAAK,CAAGN,KAAK,CAACM,KAAK,CAChC,CACF\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var _worklet_6832246852979_init_data = {
-    code: "function ZoomableViewTsx4(e){const{scale,savedScale}=this.__closure;scale.value=savedScale.value*e.scale;}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/DTS2026011907680/ZoomableView.tsx",
-    sourceMap: "{\"version\":3,\"names\":[\"ZoomableViewTsx4\",\"e\",\"scale\",\"savedScale\",\"__closure\",\"value\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/DTS2026011907680/ZoomableView.tsx\"],\"mappings\":\"AA8Ec,QAAC,CAAAA,gBAAIA,CAAAC,CAAA,QAAAC,KAAA,CAAAC,UAAA,OAAAC,SAAA,CACbF,KAAK,CAACG,KAAK,CAAGF,UAAU,CAACE,KAAK,CAAGJ,CAAC,CAACC,KAAK,CAC1C\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var _worklet_15291044508584_init_data = {
-    code: "function ZoomableViewTsx5(){const{savedTranslateX,translateX,savedTranslateY,translateY}=this.__closure;savedTranslateX.value=translateX.value;savedTranslateY.value=translateY.value;}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/DTS2026011907680/ZoomableView.tsx",
-    sourceMap: "{\"version\":3,\"names\":[\"ZoomableViewTsx5\",\"savedTranslateX\",\"translateX\",\"savedTranslateY\",\"translateY\",\"__closure\",\"value\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/DTS2026011907680/ZoomableView.tsx\"],\"mappings\":\"AA0GW,SAAAA,gBAAMA,CAAA,QAAAC,eAAA,CAAAC,UAAA,CAAAC,eAAA,CAAAC,UAAA,OAAAC,SAAA,CAEXJ,eAAe,CAACK,KAAK,CAAGJ,UAAU,CAACI,KAAK,CACxCH,eAAe,CAACG,KAAK,CAAGF,UAAU,CAACE,KAAK,CAC1C\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var _worklet_9025677066511_init_data = {
-    code: "function ZoomableViewTsx6(e){const{translateX,savedTranslateX,translateY,savedTranslateY}=this.__closure;translateX.value=savedTranslateX.value+e.translationX;translateY.value=savedTranslateY.value+e.translationY;}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/DTS2026011907680/ZoomableView.tsx",
-    sourceMap: "{\"version\":3,\"names\":[\"ZoomableViewTsx6\",\"e\",\"translateX\",\"savedTranslateX\",\"translateY\",\"savedTranslateY\",\"__closure\",\"value\",\"translationX\",\"translationY\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/DTS2026011907680/ZoomableView.tsx\"],\"mappings\":\"AAqGc,QAAC,CAAAA,gBAAIA,CAAAC,CAAA,QAAAC,UAAA,CAAAC,eAAA,CAAAC,UAAA,CAAAC,eAAA,OAAAC,SAAA,CAEbJ,UAAU,CAACK,KAAK,CAAGJ,eAAe,CAACI,KAAK,CAAGN,CAAC,CAACO,YAAY,CACzDJ,UAAU,CAACG,KAAK,CAAGF,eAAe,CAACE,KAAK,CAAGN,CAAC,CAACQ,YAAY,CAC3D\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var _worklet_14057559699754_init_data = {
-    code: "function ZoomableViewTsx7(){const{savedTranslateX,translateX,savedTranslateY,translateY}=this.__closure;savedTranslateX.value=translateX.value;savedTranslateY.value=translateY.value;}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/DTS2026011907680/ZoomableView.tsx",
-    sourceMap: "{\"version\":3,\"names\":[\"ZoomableViewTsx7\",\"savedTranslateX\",\"translateX\",\"savedTranslateY\",\"translateY\",\"__closure\",\"value\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/DTS2026011907680/ZoomableView.tsx\"],\"mappings\":\"AAgGa,SAAAA,gBAAMA,CAAA,QAAAC,eAAA,CAAAC,UAAA,CAAAC,eAAA,CAAAC,UAAA,OAAAC,SAAA,CAEbJ,eAAe,CAACK,KAAK,CAAGJ,UAAU,CAACI,KAAK,CACxCH,eAAe,CAACG,KAAK,CAAGF,UAAU,CAACE,KAAK,CAC1C\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var _worklet_4242428802158_init_data = {
-    code: "function ZoomableViewTsx8(){const{translateX,translateY,scale}=this.__closure;return{transform:[{translateX:translateX.value},{translateY:translateY.value},{scale:scale.value}]};}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/DTS2026011907680/ZoomableView.tsx",
-    sourceMap: "{\"version\":3,\"names\":[\"ZoomableViewTsx8\",\"translateX\",\"translateY\",\"scale\",\"__closure\",\"transform\",\"value\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/DTS2026011907680/ZoomableView.tsx\"],\"mappings\":\"AAwHyC,SAAAA,gBAAMA,CAAA,QAAAC,UAAA,CAAAC,UAAA,CAAAC,KAAA,OAAAC,SAAA,CAC3C,MAAO,CACLC,SAAS,CAAE,CACT,CAACJ,UAAU,CAAEA,UAAU,CAACK,KAAK,CAAC,CAC9B,CAACJ,UAAU,CAAEA,UAAU,CAACI,KAAK,CAAC,CAC9B,CAACH,KAAK,CAAEA,KAAK,CAACG,KAAK,CAAC,CAExB,CAAC,CACH\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var ZoomableView = function ZoomableView(_ref) {
-    var children = _ref.children,
-      onSingleTap = _ref.onSingleTap,
-      _ref$minScale = _ref.minScale,
-      minScale = _ref$minScale === void 0 ? 1 : _ref$minScale,
-      _ref$maxScale = _ref.maxScale,
-      maxScale = _ref$maxScale === void 0 ? 3 : _ref$maxScale,
-      _ref$initialScale = _ref.initialScale,
-      initialScale = _ref$initialScale === void 0 ? 1 : _ref$initialScale,
-      _ref$doubleTapToZoom = _ref.doubleTapToZoom,
-      doubleTapToZoom = _ref$doubleTapToZoom === void 0 ? true : _ref$doubleTapToZoom,
-      style = _ref.style,
-      contentContainerStyle = _ref.contentContainerStyle;
-    // 缩放相关状态
-    var scale = (0, _reactNativeReanimated.useSharedValue)(initialScale);
-    var savedScale = (0, _reactNativeReanimated.useSharedValue)(initialScale);
-    // 位移相关状态
-    var translateX = (0, _reactNativeReanimated.useSharedValue)(0);
-    var translateY = (0, _reactNativeReanimated.useSharedValue)(0);
-    var savedTranslateX = (0, _reactNativeReanimated.useSharedValue)(0);
-    var savedTranslateY = (0, _reactNativeReanimated.useSharedValue)(0);
+  var RNPanBasicDemo = function RNPanBasicDemo() {
+    var panX = (0, _react.useRef)(new _reactNative.Animated.Value(0)).current;
+    var panY = (0, _react.useRef)(new _reactNative.Animated.Value(0)).current;
+    var _useState = (0, _react.useState)([]),
+      _useState2 = (0, _slicedToArray2.default)(_useState, 2),
+      logs = _useState2[0],
+      setLogs = _useState2[1];
+    var addLog = (0, _react.useCallback)(function (msg) {
+      console.log(msg);
+      setLogs(function (prev) {
+        return [].concat((0, _toConsumableArray2.default)(prev.slice(-19)), [msg]);
+      });
+    }, []);
 
-    // 单击手势
-    var singleTap = _$$_REQUIRE(_dependencyMap[4], "react-native-gesture-handler").Gesture.Tap().numberOfTaps(1).maxDuration(250).onEnd(function () {
-      var _e = [new global.Error(), -3, -27];
-      var ZoomableViewTsx1 = function ZoomableViewTsx1() {
-        if (onSingleTap) {
-          (0, _reactNativeReanimated.runOnJS)(onSingleTap)();
-        }
-      };
-      ZoomableViewTsx1.__closure = {
-        onSingleTap: onSingleTap,
-        runOnJS: _reactNativeReanimated.runOnJS
-      };
-      ZoomableViewTsx1.__workletHash = 6251936950689;
-      ZoomableViewTsx1.__initData = _worklet_6251936950689_init_data;
-      ZoomableViewTsx1.__stackDetails = _e;
-      return ZoomableViewTsx1;
-    }());
-
-    // 双击手势
-    var doubleTap = _$$_REQUIRE(_dependencyMap[4], "react-native-gesture-handler").Gesture.Tap().numberOfTaps(2).maxDuration(300).onEnd(function () {
-      var _e = [new global.Error(), -9, -27];
-      var ZoomableViewTsx2 = function ZoomableViewTsx2() {
-        debugger;
-        if (!doubleTapToZoom) return;
-        if (scale.value !== initialScale) {
-          // 重置视图
-          scale.value = (0, _reactNativeReanimated.withTiming)(initialScale);
-          translateX.value = (0, _reactNativeReanimated.withTiming)(0);
-          translateY.value = (0, _reactNativeReanimated.withTiming)(0);
-          savedScale.value = initialScale;
-        } else {
-          // 放大到2倍或最大缩放值
-          var targetScale = Math.min(2, maxScale);
-          scale.value = (0, _reactNativeReanimated.withTiming)(targetScale);
-          savedScale.value = targetScale;
-        }
-      };
-      ZoomableViewTsx2.__closure = {
-        doubleTapToZoom: doubleTapToZoom,
-        scale: scale,
-        initialScale: initialScale,
-        withTiming: _reactNativeReanimated.withTiming,
-        translateX: translateX,
-        translateY: translateY,
-        savedScale: savedScale,
-        maxScale: maxScale
-      };
-      ZoomableViewTsx2.__workletHash = 5321314749456;
-      ZoomableViewTsx2.__initData = _worklet_5321314749456_init_data;
-      ZoomableViewTsx2.__stackDetails = _e;
-      return ZoomableViewTsx2;
-    }());
-
-    // 双指捏合手势
-    var pinchGesture = _$$_REQUIRE(_dependencyMap[4], "react-native-gesture-handler").Gesture.Pinch().onUpdate(function () {
-      var _e = [new global.Error(), -3, -27];
-      var ZoomableViewTsx4 = function ZoomableViewTsx4(e) {
-        scale.value = savedScale.value * e.scale;
-      };
-      ZoomableViewTsx4.__closure = {
-        scale: scale,
-        savedScale: savedScale
-      };
-      ZoomableViewTsx4.__workletHash = 6832246852979;
-      ZoomableViewTsx4.__initData = _worklet_6832246852979_init_data;
-      ZoomableViewTsx4.__stackDetails = _e;
-      return ZoomableViewTsx4;
-    }()).onEnd(function () {
-      var _e = [new global.Error(), -6, -27];
-      var ZoomableViewTsx3 = function ZoomableViewTsx3() {
-        // 限制缩放范围
-        if (scale.value < minScale) {
-          scale.value = (0, _reactNativeReanimated.withTiming)(minScale);
-          savedScale.value = minScale;
-        } else if (scale.value > maxScale) {
-          scale.value = (0, _reactNativeReanimated.withTiming)(maxScale);
-          savedScale.value = maxScale;
-        } else {
-          savedScale.value = scale.value;
-        }
-      };
-      ZoomableViewTsx3.__closure = {
-        scale: scale,
-        minScale: minScale,
-        withTiming: _reactNativeReanimated.withTiming,
-        savedScale: savedScale,
-        maxScale: maxScale
-      };
-      ZoomableViewTsx3.__workletHash = 3048894834898;
-      ZoomableViewTsx3.__initData = _worklet_3048894834898_init_data;
-      ZoomableViewTsx3.__stackDetails = _e;
-      return ZoomableViewTsx3;
-    }());
-
-    // 拖拽手势（平移）
-    var panGesture = _$$_REQUIRE(_dependencyMap[4], "react-native-gesture-handler").Gesture.Pan().onBegin(function () {
-      var _e = [new global.Error(), -5, -27];
-      var ZoomableViewTsx7 = function ZoomableViewTsx7() {
-        // 记录当前位移
-        savedTranslateX.value = translateX.value;
-        savedTranslateY.value = translateY.value;
-      };
-      ZoomableViewTsx7.__closure = {
-        savedTranslateX: savedTranslateX,
-        translateX: translateX,
-        savedTranslateY: savedTranslateY,
-        translateY: translateY
-      };
-      ZoomableViewTsx7.__workletHash = 14057559699754;
-      ZoomableViewTsx7.__initData = _worklet_14057559699754_init_data;
-      ZoomableViewTsx7.__stackDetails = _e;
-      return ZoomableViewTsx7;
-    }()).onUpdate(function () {
-      var _e = [new global.Error(), -5, -27];
-      var ZoomableViewTsx6 = function ZoomableViewTsx6(e) {
-        // 在缩放大于1时允许拖动；等于1时也允许轻微拖动（不做边界裁剪，避免复杂度）
-        translateX.value = savedTranslateX.value + e.translationX;
-        translateY.value = savedTranslateY.value + e.translationY;
-      };
-      ZoomableViewTsx6.__closure = {
-        translateX: translateX,
-        savedTranslateX: savedTranslateX,
-        translateY: translateY,
-        savedTranslateY: savedTranslateY
-      };
-      ZoomableViewTsx6.__workletHash = 9025677066511;
-      ZoomableViewTsx6.__initData = _worklet_9025677066511_init_data;
-      ZoomableViewTsx6.__stackDetails = _e;
-      return ZoomableViewTsx6;
-    }()).onEnd(function () {
-      var _e = [new global.Error(), -5, -27];
-      var ZoomableViewTsx5 = function ZoomableViewTsx5() {
-        // 结束时保持当前位置为基准
-        savedTranslateX.value = translateX.value;
-        savedTranslateY.value = translateY.value;
-      };
-      ZoomableViewTsx5.__closure = {
-        savedTranslateX: savedTranslateX,
-        translateX: translateX,
-        savedTranslateY: savedTranslateY,
-        translateY: translateY
-      };
-      ZoomableViewTsx5.__workletHash = 15291044508584;
-      ZoomableViewTsx5.__initData = _worklet_15291044508584_init_data;
-      ZoomableViewTsx5.__stackDetails = _e;
-      return ZoomableViewTsx5;
-    }());
-
-    // 组合手势 - 关键修复
-    var composedGestures = _$$_REQUIRE(_dependencyMap[4], "react-native-gesture-handler").Gesture.Simultaneous(pinchGesture, panGesture, _$$_REQUIRE(_dependencyMap[4], "react-native-gesture-handler").Gesture.Race(_$$_REQUIRE(_dependencyMap[4], "react-native-gesture-handler").Gesture.Exclusive(doubleTap, singleTap)));
-
-    // 应用动画样式
-    var animatedStyle = (0, _reactNativeReanimated.useAnimatedStyle)(function () {
-      var _e = [new global.Error(), -4, -27];
-      var ZoomableViewTsx8 = function ZoomableViewTsx8() {
-        return {
-          transform: [{
-            translateX: translateX.value
-          }, {
-            translateY: translateY.value
-          }, {
-            scale: scale.value
-          }]
-        };
-      };
-      ZoomableViewTsx8.__closure = {
-        translateX: translateX,
-        translateY: translateY,
-        scale: scale
-      };
-      ZoomableViewTsx8.__workletHash = 4242428802158;
-      ZoomableViewTsx8.__initData = _worklet_4242428802158_init_data;
-      ZoomableViewTsx8.__stackDetails = _e;
-      return ZoomableViewTsx8;
-    }());
-    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[5], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[4], "react-native-gesture-handler").GestureHandlerRootView, {
-      style: {
-        flex: 1
-      },
-      children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[5], "react/jsx-runtime").jsx)(_reactNative.View, {
-        style: [styles.container, style],
-        children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[5], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[4], "react-native-gesture-handler").GestureDetector, {
-          gesture: composedGestures,
-          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[5], "react/jsx-runtime").jsx)(_reactNativeReanimated.default.View, {
-            style: [styles.content, animatedStyle, contentContainerStyle],
-            children: children
-          })
-        })
-      })
-    });
-  };
-  var styles = _reactNative.StyleSheet.create({
-    container: {
-      flex: 1,
-      overflow: 'hidden',
-      backgroundColor: 'black'
-    },
-    content: {
-      width: '100%',
-      height: '100%'
-    }
-  });
-  var _default = exports.default = ZoomableView;
-},631,[8,86,1,632,818,92],"tests/DTS2026011907680/ZoomableView.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  // Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
-  // Use of this source code is governed by a MIT license that can be
-  // found in the LICENSE file.
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  var _exportNames = {};
-  exports.default = void 0;
-  var _reactNativeReanimated = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[0], "react-native-reanimated"));
-  Object.keys(_reactNativeReanimated).forEach(function (key) {
-    if (key === "default" || key === "__esModule") return;
-    if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
-    if (key in exports && exports[key] === _reactNativeReanimated[key]) return;
-    Object.defineProperty(exports, key, {
-      enumerable: true,
-      get: function get() {
-        return _reactNativeReanimated[key];
+    // 核心：Animated.event + useNativeDriver:true
+    // PanGestureHandler 事件走 C++ EventAnimationDriver，直接写 ValueAnimatedNode
+    var onPanEvent = (0, _react.useRef)(_reactNative.Animated.event([{
+      nativeEvent: {
+        translationX: panX,
+        translationY: panY
       }
+    }], {
+      useNativeDriver: true // ← 关键！走 C++ EventAnimationDriver 路径
+    })).current;
+    var onHandlerStateChange = (0, _react.useCallback)(function (e) {
+      var state = e.nativeEvent.state;
+      addLog(`[State] ${stateName(state)}`);
+      if (state === _$$_REQUIRE(_dependencyMap[6], "react-native-gesture-handler").State.END) {
+        // 松手 → spring 回弹 (C++ SpringAnimationDriver)
+        // 如果用户在回弹未结束前再次拖拽，C++ EventAnimationDriver 写值不停 spring → 闪动
+        addLog('[State] spring back → 0');
+        _reactNative.Animated.spring(panX, {
+          toValue: 0,
+          useNativeDriver: true
+        }).start();
+        _reactNative.Animated.spring(panY, {
+          toValue: 0,
+          useNativeDriver: true
+        }).start();
+      }
+    }, [panX, panY, addLog]);
+    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[6], "react-native-gesture-handler").GestureHandlerRootView, {
+      style: styles.flex1,
+      children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsxs)(_reactNative.View, {
+        style: styles.header,
+        children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.Text, {
+          style: styles.title,
+          children: "PanGestureHandler \u95EA\u52A8\u590D\u73B0"
+        }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.Text, {
+          style: styles.subtitle,
+          children: "Animated.event + useNativeDriver:true"
+        })]
+      }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.View, {
+        style: styles.guideArea,
+        children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+          style: styles.guideText,
+          children: ["1. \u62D6\u62FD\u65B9\u5757\u5411\u53F3\u79FB\u52A8", '\n', "2. \u677E\u624B\uFF0C\u65B9\u5757\u5F00\u59CB spring \u56DE\u5F39", '\n', "3. \u56DE\u5F39\u672A\u7ED3\u675F\u524D\u7ACB\u5373\u518D\u6B21\u62D6\u62FD", '\n', "4. \u65B9\u5757\u51FA\u73B0\u95EA\u70C1/\u8DF3\u52A8 = \u590D\u73B0\u6210\u529F"]
+        })
+      }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.View, {
+        style: styles.operationArea,
+        children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[6], "react-native-gesture-handler").PanGestureHandler, {
+          onGestureEvent: onPanEvent,
+          onHandlerStateChange: onHandlerStateChange,
+          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.Animated.View, {
+            style: [styles.dragBox, {
+              transform: [{
+                translateX: panX
+              }, {
+                translateY: panY
+              }]
+            }],
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.Text, {
+              style: styles.boxText,
+              children: "\u62D6\u62FD\u6211"
+            })
+          })
+        })
+      }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsxs)(_reactNative.View, {
+        style: styles.logArea,
+        children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.Text, {
+          style: styles.logTitle,
+          children: "\u4E8B\u4EF6\u65E5\u5FD7"
+        }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.ScrollView, {
+          style: styles.logScroll,
+          children: logs.length === 0 ? /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.logEmpty,
+            children: "\u8BF7\u6309\u4E0A\u65B9\u6B65\u9AA4\u64CD\u4F5C"
+          }) : logs.map(function (log, i) {
+            return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.Text, {
+              style: styles.logItem,
+              children: log
+            }, i);
+          })
+        })]
+      })]
     });
+  };
+  var stateName = function stateName(s) {
+    var map = (0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)({}, _$$_REQUIRE(_dependencyMap[6], "react-native-gesture-handler").State.UNDETERMINED, 'UNDETERMINED'), _$$_REQUIRE(_dependencyMap[6], "react-native-gesture-handler").State.FAILED, 'FAILED'), _$$_REQUIRE(_dependencyMap[6], "react-native-gesture-handler").State.BEGAN, 'BEGAN'), _$$_REQUIRE(_dependencyMap[6], "react-native-gesture-handler").State.CANCELLED, 'CANCELLED'), _$$_REQUIRE(_dependencyMap[6], "react-native-gesture-handler").State.ACTIVE, 'ACTIVE'), _$$_REQUIRE(_dependencyMap[6], "react-native-gesture-handler").State.END, 'END');
+    return map[s] || `UNKNOWN(${s})`;
+  };
+  var styles = _reactNative.StyleSheet.create({
+    flex1: {
+      flex: 1
+    },
+    header: {
+      padding: 16,
+      backgroundColor: '#fff',
+      borderBottomWidth: 1,
+      borderBottomColor: '#eee'
+    },
+    title: {
+      fontSize: 18,
+      fontWeight: 'bold',
+      color: '#333',
+      marginBottom: 4
+    },
+    subtitle: {
+      fontSize: 13,
+      color: '#e74c3c',
+      fontWeight: '600'
+    },
+    guideArea: {
+      margin: 16,
+      marginBottom: 0,
+      padding: 12,
+      backgroundColor: '#fff3cd',
+      borderRadius: 8,
+      borderWidth: 1,
+      borderColor: '#ffc107'
+    },
+    guideText: {
+      fontSize: 13,
+      color: '#856404',
+      lineHeight: 22
+    },
+    operationArea: {
+      height: 280,
+      margin: 16,
+      backgroundColor: '#fff',
+      borderRadius: 12,
+      justifyContent: 'center',
+      alignItems: 'center',
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2
+      },
+      shadowOpacity: 0.1,
+      shadowRadius: 4,
+      elevation: 3
+    },
+    dragBox: {
+      width: 100,
+      height: 100,
+      borderRadius: 12,
+      backgroundColor: '#e74c3c',
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
+    boxText: {
+      color: '#fff',
+      fontWeight: 'bold',
+      fontSize: 16
+    },
+    logArea: {
+      flex: 1,
+      marginHorizontal: 16,
+      marginBottom: 16,
+      backgroundColor: '#1a1a2e',
+      borderRadius: 8,
+      padding: 8
+    },
+    logTitle: {
+      fontSize: 12,
+      fontWeight: 'bold',
+      color: '#aaa',
+      marginBottom: 4
+    },
+    logScroll: {
+      flex: 1
+    },
+    logEmpty: {
+      color: '#666',
+      fontSize: 12
+    },
+    logItem: {
+      color: '#0f0',
+      fontSize: 11,
+      fontFamily: 'monospace',
+      lineHeight: 16
+    }
   });
+  var _default = exports.default = RNPanBasicDemo;
+},630,[8,224,46,27,86,1,631,92],"tests/react-native-gesture/meituan/RNPanBasicDemo.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, "BaseButton", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[0], "./components/GestureButtons").BaseButton;
+    }
+  });
+  Object.defineProperty(exports, "BorderlessButton", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[0], "./components/GestureButtons").BorderlessButton;
+    }
+  });
+  Object.defineProperty(exports, "Directions", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[1], "./Directions").Directions;
+    }
+  });
+  Object.defineProperty(exports, "DrawerLayout", {
+    enumerable: true,
+    get: function get() {
+      return _DrawerLayout.default;
+    }
+  });
+  Object.defineProperty(exports, "DrawerLayoutAndroid", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[2], "./components/GestureComponents").DrawerLayoutAndroid;
+    }
+  });
+  Object.defineProperty(exports, "FlatList", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[2], "./components/GestureComponents").FlatList;
+    }
+  });
+  Object.defineProperty(exports, "FlingGestureHandler", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[3], "./handlers/FlingGestureHandler").FlingGestureHandler;
+    }
+  });
+  Object.defineProperty(exports, "ForceTouchGestureHandler", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[4], "./handlers/ForceTouchGestureHandler").ForceTouchGestureHandler;
+    }
+  });
+  Object.defineProperty(exports, "Gesture", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[5], "./handlers/gestures/gestureObjects").GestureObjects;
+    }
+  });
+  Object.defineProperty(exports, "GestureDetector", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[6], "./handlers/gestures/GestureDetector").GestureDetector;
+    }
+  });
+  Object.defineProperty(exports, "GestureHandlerRootView", {
+    enumerable: true,
+    get: function get() {
+      return _GestureHandlerRootView.default;
+    }
+  });
+  Object.defineProperty(exports, "HoverEffect", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[7], "./handlers/gestures/hoverGesture").HoverEffect;
+    }
+  });
+  Object.defineProperty(exports, "LongPressGestureHandler", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[8], "./handlers/LongPressGestureHandler").LongPressGestureHandler;
+    }
+  });
+  Object.defineProperty(exports, "MouseButton", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[9], "./handlers/gestureHandlerCommon").MouseButton;
+    }
+  });
+  Object.defineProperty(exports, "NativeViewGestureHandler", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[10], "./handlers/NativeViewGestureHandler").NativeViewGestureHandler;
+    }
+  });
+  Object.defineProperty(exports, "PanGestureHandler", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[11], "./handlers/PanGestureHandler").PanGestureHandler;
+    }
+  });
+  Object.defineProperty(exports, "PinchGestureHandler", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[12], "./handlers/PinchGestureHandler").PinchGestureHandler;
+    }
+  });
+  Object.defineProperty(exports, "PointerType", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[13], "./PointerType").PointerType;
+    }
+  });
+  Object.defineProperty(exports, "Pressable", {
+    enumerable: true,
+    get: function get() {
+      return _Pressable.default;
+    }
+  });
+  Object.defineProperty(exports, "PureNativeButton", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[0], "./components/GestureButtons").PureNativeButton;
+    }
+  });
+  Object.defineProperty(exports, "RawButton", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[0], "./components/GestureButtons").RawButton;
+    }
+  });
+  Object.defineProperty(exports, "RectButton", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[0], "./components/GestureButtons").RectButton;
+    }
+  });
+  Object.defineProperty(exports, "RefreshControl", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[2], "./components/GestureComponents").RefreshControl;
+    }
+  });
+  Object.defineProperty(exports, "RotationGestureHandler", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[14], "./handlers/RotationGestureHandler").RotationGestureHandler;
+    }
+  });
+  Object.defineProperty(exports, "ScrollView", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[2], "./components/GestureComponents").ScrollView;
+    }
+  });
+  Object.defineProperty(exports, "State", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[15], "./State").State;
+    }
+  });
+  Object.defineProperty(exports, "Swipeable", {
+    enumerable: true,
+    get: function get() {
+      return _Swipeable.default;
+    }
+  });
+  Object.defineProperty(exports, "Switch", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[2], "./components/GestureComponents").Switch;
+    }
+  });
+  Object.defineProperty(exports, "TapGestureHandler", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[16], "./handlers/TapGestureHandler").TapGestureHandler;
+    }
+  });
+  Object.defineProperty(exports, "Text", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[17], "./components/Text").Text;
+    }
+  });
+  Object.defineProperty(exports, "TextInput", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[2], "./components/GestureComponents").TextInput;
+    }
+  });
+  Object.defineProperty(exports, "TouchableHighlight", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[18], "./components/touchables").TouchableHighlight;
+    }
+  });
+  Object.defineProperty(exports, "TouchableNativeFeedback", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[18], "./components/touchables").TouchableNativeFeedback;
+    }
+  });
+  Object.defineProperty(exports, "TouchableOpacity", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[18], "./components/touchables").TouchableOpacity;
+    }
+  });
+  Object.defineProperty(exports, "TouchableWithoutFeedback", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[18], "./components/touchables").TouchableWithoutFeedback;
+    }
+  });
+  Object.defineProperty(exports, "createNativeWrapper", {
+    enumerable: true,
+    get: function get() {
+      return _createNativeWrapper.default;
+    }
+  });
+  Object.defineProperty(exports, "enableExperimentalWebImplementation", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[19], "./EnableNewWebImplementation").enableExperimentalWebImplementation;
+    }
+  });
+  Object.defineProperty(exports, "enableLegacyWebImplementation", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[19], "./EnableNewWebImplementation").enableLegacyWebImplementation;
+    }
+  });
+  Object.defineProperty(exports, "gestureHandlerRootHOC", {
+    enumerable: true,
+    get: function get() {
+      return _gestureHandlerRootHOC.default;
+    }
+  });
+  var _gestureHandlerRootHOC = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[21], "./components/gestureHandlerRootHOC"));
+  var _GestureHandlerRootView = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[22], "./components/GestureHandlerRootView"));
+  var _createNativeWrapper = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[23], "./handlers/createNativeWrapper"));
+  var _Swipeable = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[24], "./components/Swipeable"));
+  var _Pressable = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[25], "./components/Pressable"));
+  var _DrawerLayout = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[26], "./components/DrawerLayout"));
+  (0, _$$_REQUIRE(_dependencyMap[27], "./init").initialize)();
+},631,[632,653,654,655,656,658,671,669,675,650,634,674,877,878,879,642,673,880,881,866,8,887,892,633,894,895,898,893],"node_modules/react-native-gesture-handler/src/index.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.BorderlessButton = exports.BaseButton = void 0;
+  Object.defineProperty(exports, "PureNativeButton", {
+    enumerable: true,
+    get: function get() {
+      return _GestureHandlerButton.default;
+    }
+  });
+  exports.RectButton = exports.RawButton = void 0;
+  var _objectWithoutProperties2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/objectWithoutProperties"));
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[8], "react-native");
+  var _createNativeWrapper = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[9], "../handlers/createNativeWrapper"));
+  var _GestureHandlerButton = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[10], "./GestureHandlerButton"));
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/GestureButtons.tsx",
+    _this2 = this;
+  var _excluded = ["rippleColor", "style"],
+    _excluded2 = ["children", "style"],
+    _excluded3 = ["children", "style", "innerRef"];
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  var _default = exports.default = _reactNativeReanimated.default;
-},632,[633],"node_modules/@react-native-ohos/react-native-reanimated/lib/index.js");
+  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
+  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+  var RawButton = exports.RawButton = (0, _createNativeWrapper.default)(_GestureHandlerButton.default, {
+    shouldCancelWhenOutside: false,
+    shouldActivateOnStart: false
+  });
+  var IS_FABRIC = null;
+  var InnerBaseButton = /*#__PURE__*/function (_React$Component) {
+    function InnerBaseButton(props) {
+      var _this;
+      (0, _classCallCheck2.default)(this, InnerBaseButton);
+      _this = _callSuper(this, InnerBaseButton, [props]);
+      _this.handleEvent = function (_ref) {
+        var nativeEvent = _ref.nativeEvent;
+        var state = nativeEvent.state,
+          oldState = nativeEvent.oldState,
+          pointerInside = nativeEvent.pointerInside;
+        var active = pointerInside && state === _$$_REQUIRE(_dependencyMap[11], "../State").State.ACTIVE;
+        if (active !== _this.lastActive && _this.props.onActiveStateChange) {
+          _this.props.onActiveStateChange(active);
+        }
+        if (!_this.longPressDetected && oldState === _$$_REQUIRE(_dependencyMap[11], "../State").State.ACTIVE && state !== _$$_REQUIRE(_dependencyMap[11], "../State").State.CANCELLED && _this.lastActive && _this.props.onPress) {
+          _this.props.onPress(pointerInside);
+        }
+        if (!_this.lastActive &&
+        // NativeViewGestureHandler sends different events based on platform
+        state === (_reactNative.Platform.OS !== 'android' ? _$$_REQUIRE(_dependencyMap[11], "../State").State.ACTIVE : _$$_REQUIRE(_dependencyMap[11], "../State").State.BEGAN) && pointerInside) {
+          _this.longPressDetected = false;
+          if (_this.props.onLongPress) {
+            _this.longPressTimeout = setTimeout(_this.onLongPress, _this.props.delayLongPress);
+          }
+        } else if (
+        // Cancel longpress timeout if it's set and the finger moved out of the view
+        state === _$$_REQUIRE(_dependencyMap[11], "../State").State.ACTIVE && !pointerInside && _this.longPressTimeout !== undefined) {
+          clearTimeout(_this.longPressTimeout);
+          _this.longPressTimeout = undefined;
+        } else if (
+        // Cancel longpress timeout if it's set and the gesture has finished
+        _this.longPressTimeout !== undefined && (state === _$$_REQUIRE(_dependencyMap[11], "../State").State.END || state === _$$_REQUIRE(_dependencyMap[11], "../State").State.CANCELLED || state === _$$_REQUIRE(_dependencyMap[11], "../State").State.FAILED)) {
+          clearTimeout(_this.longPressTimeout);
+          _this.longPressTimeout = undefined;
+        }
+        _this.lastActive = active;
+      };
+      _this.onLongPress = function () {
+        _this.longPressDetected = true;
+        _this.props.onLongPress == null || _this.props.onLongPress();
+      };
+      // Normally, the parent would execute it's handler first, then forward the
+      // event to listeners. However, here our handler is virtually only forwarding
+      // events to listeners, so we reverse the order to keep the proper order of
+      // the callbacks (from "raw" ones to "processed").
+      _this.onHandlerStateChange = function (e) {
+        _this.props.onHandlerStateChange == null || _this.props.onHandlerStateChange(e);
+        _this.handleEvent(e);
+      };
+      _this.onGestureEvent = function (e) {
+        _this.props.onGestureEvent == null || _this.props.onGestureEvent(e);
+        _this.handleEvent(e); // TODO: maybe it is not correct
+      };
+      _this.lastActive = false;
+      _this.longPressDetected = false;
+      return _this;
+    }
+    (0, _inherits2.default)(InnerBaseButton, _React$Component);
+    return (0, _createClass2.default)(InnerBaseButton, [{
+      key: "render",
+      value: function render() {
+        var _this$props = this.props,
+          unprocessedRippleColor = _this$props.rippleColor,
+          style = _this$props.style,
+          rest = (0, _objectWithoutProperties2.default)(_this$props, _excluded);
+        if (IS_FABRIC === null) {
+          IS_FABRIC = (0, _$$_REQUIRE(_dependencyMap[12], "../utils").isFabric)();
+        }
+        var rippleColor = IS_FABRIC ? unprocessedRippleColor : (0, _reactNative.processColor)(unprocessedRippleColor != null ? unprocessedRippleColor : undefined);
+        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsx)(RawButton, Object.assign({
+          ref: this.props.innerRef,
+          rippleColor: rippleColor,
+          style: [style, _reactNative.Platform.OS === 'ios' && {
+            cursor: undefined
+          }]
+        }, rest, {
+          onGestureEvent: this.onGestureEvent,
+          onHandlerStateChange: this.onHandlerStateChange
+        }));
+      }
+    }]);
+  }(React.Component);
+  InnerBaseButton.defaultProps = {
+    delayLongPress: 600
+  };
+  var AnimatedInnerBaseButton = _reactNative.Animated.createAnimatedComponent(InnerBaseButton);
+  var BaseButton = exports.BaseButton = React.forwardRef(function (props, ref) {
+    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsx)(InnerBaseButton, Object.assign({
+      innerRef: ref
+    }, props));
+  });
+  var AnimatedBaseButton = React.forwardRef(function (props, ref) {
+    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsx)(AnimatedInnerBaseButton, Object.assign({
+      innerRef: ref
+    }, props));
+  });
+  var btnStyles = _reactNative.StyleSheet.create({
+    underlay: {
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      bottom: 0,
+      top: 0
+    }
+  });
+  var InnerRectButton = /*#__PURE__*/function (_React$Component2) {
+    function InnerRectButton(props) {
+      var _this3;
+      (0, _classCallCheck2.default)(this, InnerRectButton);
+      _this3 = _callSuper(this, InnerRectButton, [props]);
+      _this3.onActiveStateChange = function (active) {
+        if (_reactNative.Platform.OS !== 'android') {
+          _this3.opacity.setValue(active ? _this3.props.activeOpacity : 0);
+        }
+        _this3.props.onActiveStateChange == null || _this3.props.onActiveStateChange(active);
+      };
+      _this3.opacity = new _reactNative.Animated.Value(0);
+      return _this3;
+    }
+    (0, _inherits2.default)(InnerRectButton, _React$Component2);
+    return (0, _createClass2.default)(InnerRectButton, [{
+      key: "render",
+      value: function render() {
+        var _this$props2 = this.props,
+          children = _this$props2.children,
+          style = _this$props2.style,
+          rest = (0, _objectWithoutProperties2.default)(_this$props2, _excluded2);
+        var resolvedStyle = _reactNative.StyleSheet.flatten(style != null ? style : {});
+        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsxs)(BaseButton, Object.assign({}, rest, {
+          ref: this.props.innerRef,
+          style: resolvedStyle,
+          onActiveStateChange: this.onActiveStateChange,
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsx)(_reactNative.Animated.View, {
+            style: [btnStyles.underlay, {
+              opacity: this.opacity,
+              backgroundColor: this.props.underlayColor,
+              borderRadius: resolvedStyle.borderRadius,
+              borderTopLeftRadius: resolvedStyle.borderTopLeftRadius,
+              borderTopRightRadius: resolvedStyle.borderTopRightRadius,
+              borderBottomLeftRadius: resolvedStyle.borderBottomLeftRadius,
+              borderBottomRightRadius: resolvedStyle.borderBottomRightRadius
+            }]
+          }), children]
+        }));
+      }
+    }]);
+  }(React.Component);
+  InnerRectButton.defaultProps = {
+    activeOpacity: 0.105,
+    underlayColor: 'black'
+  };
+  var RectButton = exports.RectButton = React.forwardRef(function (props, ref) {
+    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsx)(InnerRectButton, Object.assign({
+      innerRef: ref
+    }, props));
+  });
+  var InnerBorderlessButton = /*#__PURE__*/function (_React$Component3) {
+    function InnerBorderlessButton(props) {
+      var _this4;
+      (0, _classCallCheck2.default)(this, InnerBorderlessButton);
+      _this4 = _callSuper(this, InnerBorderlessButton, [props]);
+      _this4.onActiveStateChange = function (active) {
+        if (_reactNative.Platform.OS !== 'android') {
+          _this4.opacity.setValue(active ? _this4.props.activeOpacity : 1);
+        }
+        _this4.props.onActiveStateChange == null || _this4.props.onActiveStateChange(active);
+      };
+      _this4.opacity = new _reactNative.Animated.Value(1);
+      return _this4;
+    }
+    (0, _inherits2.default)(InnerBorderlessButton, _React$Component3);
+    return (0, _createClass2.default)(InnerBorderlessButton, [{
+      key: "render",
+      value: function render() {
+        var _this$props3 = this.props,
+          children = _this$props3.children,
+          style = _this$props3.style,
+          innerRef = _this$props3.innerRef,
+          rest = (0, _objectWithoutProperties2.default)(_this$props3, _excluded3);
+        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsx)(AnimatedBaseButton, Object.assign({}, rest, {
+          innerRef: innerRef,
+          onActiveStateChange: this.onActiveStateChange,
+          style: [style, _reactNative.Platform.OS === 'ios' && {
+            opacity: this.opacity
+          }],
+          children: children
+        }));
+      }
+    }]);
+  }(React.Component);
+  InnerBorderlessButton.defaultProps = {
+    activeOpacity: 0.3,
+    borderless: true
+  };
+  var BorderlessButton = exports.BorderlessButton = React.forwardRef(function (props, ref) {
+    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsx)(InnerBorderlessButton, Object.assign({
+      innerRef: ref
+    }, props));
+  });
+},632,[8,153,9,10,14,16,17,86,1,633,651,642,641,92],"node_modules/react-native-gesture-handler/src/components/GestureButtons.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = createNativeWrapper;
+  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[2], "react"));
+  var React = _react;
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/createNativeWrapper.tsx";
+  /*
+   * This array should consist of:
+   *   - All keys in propTypes from NativeGestureHandler
+   *     (and all keys in GestureHandlerPropTypes)
+   *   - 'onGestureHandlerEvent'
+   *   - 'onGestureHandlerStateChange'
+   */
+  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
+  var NATIVE_WRAPPER_PROPS_FILTER = [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[3], "./NativeViewGestureHandler").nativeViewProps), ['onGestureHandlerEvent', 'onGestureHandlerStateChange']);
+  function createNativeWrapper(Component) {
+    var _this = this,
+      _Component$render;
+    var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var ComponentWrapper = React.forwardRef(function (props, ref) {
+      // Filter out props that should be passed to gesture handler wrapper
+      var _Object$keys$reduce = Object.keys(props).reduce(function (res, key) {
+          // TS being overly protective with it's types, see https://github.com/microsoft/TypeScript/issues/26255#issuecomment-458013731 for more info
+          var allowedKeys = NATIVE_WRAPPER_PROPS_FILTER;
+          if (allowedKeys.includes(key)) {
+            // @ts-ignore FIXME(TS)
+            res.gestureHandlerProps[key] = props[key];
+          } else {
+            // @ts-ignore FIXME(TS)
+            res.childProps[key] = props[key];
+          }
+          return res;
+        }, {
+          gestureHandlerProps: Object.assign({}, config),
+          // Watch out not to modify config
+          childProps: {
+            enabled: props.enabled,
+            hitSlop: props.hitSlop,
+            testID: props.testID
+          }
+        }),
+        gestureHandlerProps = _Object$keys$reduce.gestureHandlerProps,
+        childProps = _Object$keys$reduce.childProps;
+      var _ref = (0, _react.useRef)(null);
+      var _gestureHandlerRef = (0, _react.useRef)(null);
+      (0, _react.useImperativeHandle)(ref,
+      // @ts-ignore TODO(TS) decide how nulls work in this context
+      function () {
+        var node = _gestureHandlerRef.current;
+        // Add handlerTag for relations config
+        if (_ref.current && node) {
+          // @ts-ignore FIXME(TS) think about createHandler return type
+          _ref.current.handlerTag = node.handlerTag;
+          return _ref.current;
+        }
+        return null;
+      }, [_ref, _gestureHandlerRef]);
+      return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[4], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[3], "./NativeViewGestureHandler").NativeViewGestureHandler, Object.assign({}, gestureHandlerProps, {
+        // @ts-ignore TODO(TS)
+        ref: _gestureHandlerRef,
+        children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[4], "react/jsx-runtime").jsx)(Component, Object.assign({}, childProps, {
+          ref: _ref
+        }))
+      }));
+    });
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    ComponentWrapper.displayName = (Component == null ? void 0 : Component.displayName) || (// @ts-ignore if render doesn't exist it will return undefined and go further
+    Component == null || (_Component$render = Component.render) == null ? void 0 : _Component$render.name) || typeof Component === 'string' && Component || 'ComponentWrapper';
+    return ComponentWrapper;
+  }
+},633,[8,46,86,634,92],"node_modules/react-native-gesture-handler/src/handlers/createNativeWrapper.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.nativeViewProps = exports.nativeViewHandlerName = exports.nativeViewGestureHandlerProps = exports.NativeViewGestureHandler = void 0;
+  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
+  var _createHandler = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./createHandler"));
+  var nativeViewGestureHandlerProps = exports.nativeViewGestureHandlerProps = ['shouldActivateOnStart', 'disallowInterruption'];
+
+  /**
+   * @deprecated NativeViewGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Native()` instead.
+   */
+
+  var nativeViewProps = exports.nativeViewProps = [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[3], "./gestureHandlerCommon").baseGestureHandlerProps), nativeViewGestureHandlerProps);
+  var nativeViewHandlerName = exports.nativeViewHandlerName = 'NativeViewGestureHandler';
+
+  /**
+   * @deprecated NativeViewGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Native()` instead.
+   */
+
+  /**
+   * @deprecated NativeViewGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Native()` instead.
+   */
+  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; see description on the top of gestureHandlerCommon.ts file
+  var NativeViewGestureHandler = exports.NativeViewGestureHandler = (0, _createHandler.default)({
+    name: nativeViewHandlerName,
+    allowedProps: nativeViewProps,
+    config: {}
+  });
+},634,[8,46,635,650],"node_modules/react-native-gesture-handler/src/handlers/NativeViewGestureHandler.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = createHandler;
+  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+  var _defineProperty2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/defineProperty"));
+  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "react"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[9], "react-native");
+  var _RNGestureHandlerModule = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[10], "../RNGestureHandlerModule"));
+  var _findNodeHandle = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[11], "../findNodeHandle"));
+  var _GestureHandlerRootViewContext = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[12], "../GestureHandlerRootViewContext"));
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/createHandler.tsx";
+  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
+  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
+  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+  var UIManagerAny = _reactNative.UIManager;
+  _$$_REQUIRE(_dependencyMap[13], "./customDirectEventTypes").customDirectEventTypes.topGestureHandlerEvent = {
+    registrationName: 'onGestureHandlerEvent'
+  };
+  var customGHEventsConfigFabricAndroid = {
+    topOnGestureHandlerEvent: {
+      registrationName: 'onGestureHandlerEvent'
+    },
+    topOnGestureHandlerStateChange: {
+      registrationName: 'onGestureHandlerStateChange'
+    }
+  };
+  var customGHEventsConfig = Object.assign({
+    onGestureHandlerEvent: {
+      registrationName: 'onGestureHandlerEvent'
+    },
+    onGestureHandlerStateChange: {
+      registrationName: 'onGestureHandlerStateChange'
+    }
+  }, (0, _$$_REQUIRE(_dependencyMap[14], "../utils").isFabric)() && _reactNative.Platform.OS === 'android' && customGHEventsConfigFabricAndroid);
+
+  // Add gesture specific events to genericDirectEventTypes object exported from UIManager
+  // native module.
+  // Once new event types are registered with react it is possible to dispatch these
+  // events to all kind of native views.
+  UIManagerAny.genericDirectEventTypes = Object.assign({}, UIManagerAny.genericDirectEventTypes, customGHEventsConfig);
+  var UIManagerConstants = UIManagerAny.getViewManagerConfig == null ? void 0 : UIManagerAny.getViewManagerConfig('getConstants');
+  if (UIManagerConstants) {
+    UIManagerConstants.genericDirectEventTypes = Object.assign({}, UIManagerConstants.genericDirectEventTypes, customGHEventsConfig);
+  }
+
+  // Wrap JS responder calls and notify gesture handler manager
+  var _UIManagerAny$setJSRe = UIManagerAny.setJSResponder,
+    oldSetJSResponder = _UIManagerAny$setJSRe === void 0 ? function () {
+      // no-op
+    } : _UIManagerAny$setJSRe,
+    _UIManagerAny$clearJS = UIManagerAny.clearJSResponder,
+    oldClearJSResponder = _UIManagerAny$clearJS === void 0 ? function () {
+      // no-op
+    } : _UIManagerAny$clearJS;
+  UIManagerAny.setJSResponder = function (tag, blockNativeResponder) {
+    _RNGestureHandlerModule.default.handleSetJSResponder(tag, blockNativeResponder);
+    oldSetJSResponder(tag, blockNativeResponder);
+  };
+  UIManagerAny.clearJSResponder = function () {
+    _RNGestureHandlerModule.default.handleClearJSResponder();
+    oldClearJSResponder();
+  };
+  var allowTouches = true;
+  var DEV_ON_ANDROID = __DEV__ && _reactNative.Platform.OS === 'android';
+  // Toggled inspector blocks touch events in order to allow inspecting on Android
+  // This needs to be a global variable in order to set initial state for `allowTouches` property in Handler component
+  if (DEV_ON_ANDROID) {
+    _reactNative.DeviceEventEmitter.addListener('toggleElementInspector', function () {
+      allowTouches = !allowTouches;
+    });
+  }
+  function hasUnresolvedRefs(props) {
+    // TODO(TS) - add type for extract arg
+    var extract = function extract(refs) {
+      if (!Array.isArray(refs)) {
+        return refs && refs.current === null;
+      }
+      return refs.some(function (r) {
+        return r && r.current === null;
+      });
+    };
+    return extract(props['simultaneousHandlers']) || extract(props['waitFor']);
+  }
+  var stateToPropMappings = (0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)({}, _$$_REQUIRE(_dependencyMap[15], "../State").State.UNDETERMINED, undefined), _$$_REQUIRE(_dependencyMap[15], "../State").State.BEGAN, 'onBegan'), _$$_REQUIRE(_dependencyMap[15], "../State").State.FAILED, 'onFailed'), _$$_REQUIRE(_dependencyMap[15], "../State").State.CANCELLED, 'onCancelled'), _$$_REQUIRE(_dependencyMap[15], "../State").State.ACTIVE, 'onActivated'), _$$_REQUIRE(_dependencyMap[15], "../State").State.END, 'onEnded');
+
+  // TODO(TS) fix event types
+
+  var UNRESOLVED_REFS_RETRY_LIMIT = 1;
+
+  // TODO(TS) - make sure that BaseGestureHandlerProps doesn't need other generic parameter to work with custom properties.
+  function createHandler(_ref) {
+    var name = _ref.name,
+      _ref$allowedProps = _ref.allowedProps,
+      allowedProps = _ref$allowedProps === void 0 ? [] : _ref$allowedProps,
+      _ref$config = _ref.config,
+      config = _ref$config === void 0 ? {} : _ref$config,
+      transformProps = _ref.transformProps,
+      _ref$customNativeProp = _ref.customNativeProps,
+      customNativeProps = _ref$customNativeProp === void 0 ? [] : _ref$customNativeProp;
+    var Handler = /*#__PURE__*/function (_React$Component) {
+      function Handler(props) {
+        var _this;
+        (0, _classCallCheck2.default)(this, Handler);
+        _this = _callSuper(this, Handler, [props]);
+        _this.handlerTag = -1;
+        _this.onGestureHandlerEvent = function (event) {
+          if (event.nativeEvent.handlerTag === _this.handlerTag) {
+            if (typeof _this.props.onGestureEvent === 'function') {
+              _this.props.onGestureEvent == null || _this.props.onGestureEvent(event);
+            }
+          } else {
+            _this.props.onGestureHandlerEvent == null || _this.props.onGestureHandlerEvent(event);
+          }
+        };
+        // TODO(TS) - make sure this is right type for event
+        _this.onGestureHandlerStateChange = function (event) {
+          if (event.nativeEvent.handlerTag === _this.handlerTag) {
+            if (typeof _this.props.onHandlerStateChange === 'function') {
+              _this.props.onHandlerStateChange == null || _this.props.onHandlerStateChange(event);
+            }
+            var state = event.nativeEvent.state;
+            var stateEventName = stateToPropMappings[state];
+            var eventHandler = stateEventName && _this.props[stateEventName];
+            if (eventHandler && typeof eventHandler === 'function') {
+              eventHandler(event);
+            }
+          } else {
+            _this.props.onGestureHandlerStateChange == null || _this.props.onGestureHandlerStateChange(event);
+          }
+        };
+        _this.refHandler = function (node) {
+          var _props;
+          _this.viewNode = node;
+          var child = React.Children.only(_this.props.children);
+          // @ts-ignore Since React 19 ref is accessible as standard prop
+          // https://react.dev/blog/2024/04/25/react-19-upgrade-guide#deprecated-element-ref
+          var ref = (0, _$$_REQUIRE(_dependencyMap[14], "../utils").isReact19)() ? (_props = child.props) == null ? void 0 : _props.ref : child == null ? void 0 : child.ref;
+          if (!ref) {
+            return;
+          }
+          if (typeof ref === 'function') {
+            ref(node);
+          } else {
+            ref.current = node;
+          }
+        };
+        _this.createGestureHandler = function (newConfig) {
+          _this.handlerTag = (0, _$$_REQUIRE(_dependencyMap[16], "./getNextHandlerTag").getNextHandlerTag)();
+          _this.config = newConfig;
+          _RNGestureHandlerModule.default.createGestureHandler(name, _this.handlerTag, newConfig);
+        };
+        _this.attachGestureHandler = function (newViewTag) {
+          _this.viewTag = newViewTag;
+          if (_reactNative.Platform.OS === 'web') {
+            // Typecast due to dynamic resolution, attachGestureHandler should have web version signature in this branch
+            _RNGestureHandlerModule.default.attachGestureHandler(_this.handlerTag, newViewTag, _$$_REQUIRE(_dependencyMap[17], "../ActionType").ActionType.JS_FUNCTION_OLD_API,
+            // ignored on web
+            _this.propsRef);
+          } else {
+            (0, _$$_REQUIRE(_dependencyMap[18], "./handlersRegistry").registerOldGestureHandler)(_this.handlerTag, {
+              onGestureEvent: _this.onGestureHandlerEvent,
+              onGestureStateChange: _this.onGestureHandlerStateChange
+            });
+            var actionType = function (_this$props, _this$props2) {
+              var onGestureEvent = (_this$props = _this.props) == null ? void 0 : _this$props.onGestureEvent;
+              var isGestureHandlerWorklet = onGestureEvent && ('current' in onGestureEvent || 'workletEventHandler' in onGestureEvent);
+              var onHandlerStateChange = (_this$props2 = _this.props) == null ? void 0 : _this$props2.onHandlerStateChange;
+              var isStateChangeHandlerWorklet = onHandlerStateChange && ('current' in onHandlerStateChange || 'workletEventHandler' in onHandlerStateChange);
+              var isReanimatedHandler = isGestureHandlerWorklet || isStateChangeHandlerWorklet;
+              if (isReanimatedHandler) {
+                // Reanimated worklet
+                return _$$_REQUIRE(_dependencyMap[17], "../ActionType").ActionType.REANIMATED_WORKLET;
+              } else if (onGestureEvent && '__isNative' in onGestureEvent) {
+                // Animated.event with useNativeDriver: true
+                return _$$_REQUIRE(_dependencyMap[17], "../ActionType").ActionType.NATIVE_ANIMATED_EVENT;
+              } else {
+                // JS callback or Animated.event with useNativeDriver: false
+                return _$$_REQUIRE(_dependencyMap[17], "../ActionType").ActionType.JS_FUNCTION_OLD_API;
+              }
+            }();
+            _RNGestureHandlerModule.default.attachGestureHandler(_this.handlerTag, newViewTag, actionType);
+          }
+          (0, _$$_REQUIRE(_dependencyMap[19], "./utils").scheduleFlushOperations)();
+          (0, _$$_REQUIRE(_dependencyMap[20], "../ghQueueMicrotask").ghQueueMicrotask)(function () {
+            _$$_REQUIRE(_dependencyMap[21], "../mountRegistry").MountRegistry.gestureHandlerWillMount(_this);
+          });
+        };
+        _this.updateGestureHandler = function (newConfig) {
+          _this.config = newConfig;
+          _RNGestureHandlerModule.default.updateGestureHandler(_this.handlerTag, newConfig);
+          (0, _$$_REQUIRE(_dependencyMap[19], "./utils").scheduleFlushOperations)();
+        };
+        _this.config = {};
+        _this.propsRef = React.createRef();
+        _this.isMountedRef = React.createRef();
+        _this.state = {
+          allowTouches: allowTouches
+        };
+        if (props.id) {
+          if (_$$_REQUIRE(_dependencyMap[18], "./handlersRegistry").handlerIDToTag[props.id] !== undefined) {
+            throw new Error(`Handler with ID "${props.id}" already registered`);
+          }
+          _$$_REQUIRE(_dependencyMap[18], "./handlersRegistry").handlerIDToTag[props.id] = _this.handlerTag;
+        }
+        return _this;
+      }
+      (0, _inherits2.default)(Handler, _React$Component);
+      return (0, _createClass2.default)(Handler, [{
+        key: "componentDidMount",
+        value: function componentDidMount() {
+          var _this2 = this;
+          var props = this.props;
+          this.isMountedRef.current = true;
+          if (DEV_ON_ANDROID) {
+            this.inspectorToggleListener = _reactNative.DeviceEventEmitter.addListener('toggleElementInspector', function () {
+              _this2.setState(function (_) {
+                return {
+                  allowTouches: allowTouches
+                };
+              });
+              _this2.update(UNRESOLVED_REFS_RETRY_LIMIT);
+            });
+          }
+          if (hasUnresolvedRefs(props)) {
+            // If there are unresolved refs (e.g. ".current" has not yet been set)
+            // passed as `simultaneousHandlers` or `waitFor`, we enqueue a call to
+            // _update method that will try to update native handler props using
+            // queueMicrotask. This makes it so update() function gets called after all
+            // react components are mounted and we expect the missing ref object to
+            // be resolved by then.
+            (0, _$$_REQUIRE(_dependencyMap[20], "../ghQueueMicrotask").ghQueueMicrotask)(function () {
+              _this2.update(UNRESOLVED_REFS_RETRY_LIMIT);
+            });
+          }
+          this.createGestureHandler((0, _$$_REQUIRE(_dependencyMap[19], "./utils").filterConfig)(transformProps ? transformProps(this.props) : this.props, [].concat((0, _toConsumableArray2.default)(allowedProps), (0, _toConsumableArray2.default)(customNativeProps)), config));
+          if (!this.viewNode) {
+            throw new Error(`[Gesture Handler] Failed to obtain view for ${Handler.displayName}. Note that old API doesn't support functional components.`);
+          }
+          this.attachGestureHandler((0, _findNodeHandle.default)(this.viewNode)); // TODO(TS) - check if this can be null
+        }
+      }, {
+        key: "componentDidUpdate",
+        value: function componentDidUpdate() {
+          var viewTag = (0, _findNodeHandle.default)(this.viewNode);
+          if (this.viewTag !== viewTag) {
+            this.attachGestureHandler(viewTag); // TODO(TS) - check interaction between _viewTag & findNodeHandle
+          }
+          this.update(UNRESOLVED_REFS_RETRY_LIMIT);
+        }
+      }, {
+        key: "componentWillUnmount",
+        value: function componentWillUnmount() {
+          var _this$inspectorToggle;
+          (_this$inspectorToggle = this.inspectorToggleListener) == null || _this$inspectorToggle.remove();
+          this.isMountedRef.current = false;
+          if (_reactNative.Platform.OS !== 'web') {
+            (0, _$$_REQUIRE(_dependencyMap[18], "./handlersRegistry").unregisterOldGestureHandler)(this.handlerTag);
+          }
+          _RNGestureHandlerModule.default.dropGestureHandler(this.handlerTag);
+          (0, _$$_REQUIRE(_dependencyMap[19], "./utils").scheduleFlushOperations)();
+          // We can't use this.props.id directly due to TS generic type narrowing bug, see https://github.com/microsoft/TypeScript/issues/13995 for more context
+          var handlerID = this.props.id;
+          if (handlerID) {
+            // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
+            delete _$$_REQUIRE(_dependencyMap[18], "./handlersRegistry").handlerIDToTag[handlerID];
+          }
+          _$$_REQUIRE(_dependencyMap[21], "../mountRegistry").MountRegistry.gestureHandlerWillUnmount(this);
+        }
+      }, {
+        key: "update",
+        value: function update(remainingTries) {
+          var _this3 = this;
+          if (!this.isMountedRef.current) {
+            return;
+          }
+          var props = this.props;
+
+          // When ref is set via a function i.e. `ref={(r) => refObject.current = r}` instead of
+          // `ref={refObject}` it's possible that it won't be resolved in time. Seems like trying
+          // again is easy enough fix.
+          if (hasUnresolvedRefs(props) && remainingTries > 0) {
+            (0, _$$_REQUIRE(_dependencyMap[20], "../ghQueueMicrotask").ghQueueMicrotask)(function () {
+              _this3.update(remainingTries - 1);
+            });
+          } else {
+            var newConfig = (0, _$$_REQUIRE(_dependencyMap[19], "./utils").filterConfig)(transformProps ? transformProps(this.props) : this.props, [].concat((0, _toConsumableArray2.default)(allowedProps), (0, _toConsumableArray2.default)(customNativeProps)), config);
+            if (!(0, _$$_REQUIRE(_dependencyMap[14], "../utils").deepEqual)(this.config, newConfig)) {
+              this.updateGestureHandler(newConfig);
+            }
+          }
+        }
+      }, {
+        key: "setNativeProps",
+        value: function setNativeProps(updates) {
+          var mergedProps = Object.assign({}, this.props, updates);
+          var newConfig = (0, _$$_REQUIRE(_dependencyMap[19], "./utils").filterConfig)(transformProps ? transformProps(mergedProps) : mergedProps, [].concat((0, _toConsumableArray2.default)(allowedProps), (0, _toConsumableArray2.default)(customNativeProps)), config);
+          this.updateGestureHandler(newConfig);
+        }
+      }, {
+        key: "render",
+        value: function render() {
+          var _this$props$testID;
+          if (__DEV__ && !this.context && !(0, _$$_REQUIRE(_dependencyMap[14], "../utils").isTestEnv)() && _reactNative.Platform.OS !== 'web') {
+            throw new Error(name + ' must be used as a descendant of GestureHandlerRootView. Otherwise the gestures will not be recognized. See https://docs.swmansion.com/react-native-gesture-handler/docs/installation for more details.');
+          }
+          var gestureEventHandler = this.onGestureHandlerEvent;
+          // Another instance of https://github.com/microsoft/TypeScript/issues/13995
+
+          var _this$props3 = this.props,
+            onGestureEvent = _this$props3.onGestureEvent,
+            onGestureHandlerEvent = _this$props3.onGestureHandlerEvent;
+          if (onGestureEvent && typeof onGestureEvent !== 'function') {
+            // If it's not a method it should be an native Animated.event
+            // object. We set it directly as the handler for the view
+            // In this case nested handlers are not going to be supported
+            if (onGestureHandlerEvent) {
+              throw new Error('Nesting touch handlers with native animated driver is not supported yet');
+            }
+            gestureEventHandler = onGestureEvent;
+          } else {
+            if (onGestureHandlerEvent && typeof onGestureHandlerEvent !== 'function') {
+              throw new Error('Nesting touch handlers with native animated driver is not supported yet');
+            }
+          }
+          var gestureStateEventHandler = this.onGestureHandlerStateChange;
+          // Another instance of https://github.com/microsoft/TypeScript/issues/13995
+
+          var _this$props4 = this.props,
+            onHandlerStateChange = _this$props4.onHandlerStateChange,
+            onGestureHandlerStateChange = _this$props4.onGestureHandlerStateChange;
+          if (onHandlerStateChange && typeof onHandlerStateChange !== 'function') {
+            // If it's not a method it should be an native Animated.event
+            // object. We set it directly as the handler for the view
+            // In this case nested handlers are not going to be supported
+            if (onGestureHandlerStateChange) {
+              throw new Error('Nesting touch handlers with native animated driver is not supported yet');
+            }
+            gestureStateEventHandler = onHandlerStateChange;
+          } else {
+            if (onGestureHandlerStateChange && typeof onGestureHandlerStateChange !== 'function') {
+              throw new Error('Nesting touch handlers with native animated driver is not supported yet');
+            }
+          }
+          var events = {
+            onGestureHandlerEvent: this.state.allowTouches ? gestureEventHandler : undefined,
+            onGestureHandlerStateChange: this.state.allowTouches ? gestureStateEventHandler : undefined
+          };
+          this.propsRef.current = events;
+          var child = null;
+          try {
+            child = React.Children.only(this.props.children);
+          } catch (e) {
+            throw new Error((0, _$$_REQUIRE(_dependencyMap[14], "../utils").tagMessage)(`${name} got more than one view as a child. If you want the gesture to work on multiple views, wrap them with a common parent and attach the gesture to that view.`));
+          }
+          var grandChildren = child.props.children;
+          if (__DEV__ && child.type && (child.type === 'RNGestureHandlerButton' || child.type.name === 'View' || child.type.displayName === 'View')) {
+            grandChildren = React.Children.toArray(grandChildren);
+            grandChildren.push(/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[22], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[23], "./PressabilityDebugView").PressabilityDebugView, {
+              color: "mediumspringgreen",
+              hitSlop: child.props.hitSlop
+            }, "pressabilityDebugView"));
+          }
+          return React.cloneElement(child, Object.assign({
+            ref: this.refHandler,
+            collapsable: false
+          }, (0, _$$_REQUIRE(_dependencyMap[14], "../utils").isTestEnv)() ? {
+            handlerType: name,
+            handlerTag: this.handlerTag,
+            enabled: this.props.enabled
+          } : {}, {
+            testID: (_this$props$testID = this.props.testID) != null ? _this$props$testID : child.props.testID
+          }, events), grandChildren);
+        }
+      }]);
+    }(React.Component);
+    Handler.displayName = name;
+    Handler.contextType = _GestureHandlerRootViewContext.default;
+    return Handler;
+  }
+},635,[8,46,9,10,14,16,17,224,86,1,636,638,639,640,641,642,643,644,645,646,647,648,92,649],"node_modules/react-native-gesture-handler/src/handlers/createHandler.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+  var _NativeRNGestureHandlerModule = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "./specs/NativeRNGestureHandlerModule"));
+  // Reexport the native module spec used by codegen. The relevant files are inluded on Android
+  // to ensure the compatibility with the old arch, while iOS doesn't require those at all.
+  var _default = exports.default = _NativeRNGestureHandlerModule.default;
+},636,[8,637],"node_modules/react-native-gesture-handler/src/RNGestureHandlerModule.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
+  var _default = exports.default = _reactNative.TurboModuleRegistry.getEnforcing('RNGestureHandlerModule');
+},637,[1],"node_modules/react-native-gesture-handler/src/specs/NativeRNGestureHandlerModule.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
+  var _default = exports.default = _reactNative.findNodeHandle;
+},638,[1],"node_modules/react-native-gesture-handler/src/findNodeHandle.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+  var _react = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "react"));
+  var _default = exports.default = _react.default.createContext(false);
+},639,[8,86],"node_modules/react-native-gesture-handler/src/GestureHandlerRootViewContext.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, "customDirectEventTypes", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Renderer/shims/ReactNativeViewConfigRegistry").customDirectEventTypes;
+    }
+  });
+},640,[240],"node_modules/react-native-gesture-handler/src/handlers/customDirectEventTypes.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.INT32_MAX = void 0;
+  exports.deepEqual = deepEqual;
+  exports.hasProperty = hasProperty;
+  exports.isFabric = isFabric;
+  exports.isReact19 = isReact19;
+  exports.isRemoteDebuggingEnabled = isRemoteDebuggingEnabled;
+  exports.isTestEnv = isTestEnv;
+  exports.tagMessage = tagMessage;
+  exports.toArray = toArray;
+  exports.withPrevAndCurrent = withPrevAndCurrent;
+  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
+  var _react = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "react"));
+  function toArray(object) {
+    if (!Array.isArray(object)) {
+      return [object];
+    }
+    return object;
+  }
+  function withPrevAndCurrent(array, mapFn) {
+    var previousArr = [null];
+    var currentArr = (0, _toConsumableArray2.default)(array);
+    var transformedArr = [];
+    currentArr.forEach(function (current, i) {
+      // This type cast is fine and solves problem mentioned in https://github.com/software-mansion/react-native-gesture-handler/pull/2867 (namely that `previous` can be undefined).
+      // Unfortunately, linter on our CI does not allow this type of casting as it is unnecessary. To bypass that we use eslint-disable.
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
+      var previous = previousArr[i];
+      var transformed = mapFn(previous, current);
+      previousArr.push(transformed);
+      transformedArr.push(transformed);
+    });
+    return transformedArr;
+  }
+
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  function hasProperty(object, key) {
+    return Object.prototype.hasOwnProperty.call(object, key);
+  }
+  function isTestEnv() {
+    // @ts-ignore Do not use `@types/node` because it will prioritise Node types over RN types which breaks the types (ex. setTimeout) in React Native projects.
+    return hasProperty(global, 'process') && process.env.NODE_ENV === 'test';
+  }
+  function tagMessage(msg) {
+    return `[react-native-gesture-handler] ${msg}`;
+  }
+
+  // Helper method to check whether Fabric is enabled, however global.nativeFabricUIManager
+  // may not be initialized before the first render
+  function isFabric() {
+    var _global;
+    // @ts-expect-error nativeFabricUIManager is not yet included in the RN types
+    return !!((_global = global) != null && _global.nativeFabricUIManager);
+  }
+  function isReact19() {
+    return _react.default.version.startsWith('19.');
+  }
+  function isRemoteDebuggingEnabled() {
+    // react-native-reanimated checks if in remote debugging in the same way
+    // @ts-ignore global is available but node types are not included
+    var localGlobal = global;
+    return (!localGlobal.nativeCallSyncHook || !!localGlobal.__REMOTEDEV__) && !localGlobal.RN$Bridgeless;
+  }
+
+  /**
+   * Recursively compares two objects for deep equality.
+   *
+   * **Note:** This function does not support cyclic references.
+   *
+   * @param obj1 - The first object to compare.
+   * @param obj2 - The second object to compare.
+   * @returns `true` if the objects are deeply equal, `false` otherwise.
+   */
+  function deepEqual(obj1, obj2) {
+    if (obj1 === obj2) {
+      return true;
+    }
+    if (typeof obj1 !== 'object' || typeof obj2 !== 'object' || obj1 === null || obj2 === null) {
+      return false;
+    }
+    var keys1 = Object.keys(obj1);
+    var keys2 = Object.keys(obj2);
+    if (keys1.length !== keys2.length) {
+      return false;
+    }
+    for (var key of keys1) {
+      if (!keys2.includes(key) || !deepEqual(obj1[key], obj2[key])) {
+        return false;
+      }
+    }
+    return true;
+  }
+  var INT32_MAX = exports.INT32_MAX = 2 ** 31 - 1;
+},641,[8,46,86],"node_modules/react-native-gesture-handler/src/utils.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.State = void 0;
+  // TODO use State from RNModule
+
+  var State = exports.State = {
+    UNDETERMINED: 0,
+    FAILED: 1,
+    BEGAN: 2,
+    CANCELLED: 3,
+    ACTIVE: 4,
+    END: 5
+  };
+
+  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; it can be used as a type and as a value
+},642,[],"node_modules/react-native-gesture-handler/src/State.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.getNextHandlerTag = getNextHandlerTag;
+  var handlerTag = 1;
+  function getNextHandlerTag() {
+    return handlerTag++;
+  }
+},643,[],"node_modules/react-native-gesture-handler/src/handlers/getNextHandlerTag.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ActionType = void 0;
+  var ActionType = exports.ActionType = {
+    REANIMATED_WORKLET: 1,
+    NATIVE_ANIMATED_EVENT: 2,
+    JS_FUNCTION_OLD_API: 3,
+    JS_FUNCTION_NEW_API: 4
+  };
+
+  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; it can be used as a type and as a value
+},644,[],"node_modules/react-native-gesture-handler/src/ActionType.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.findHandler = findHandler;
+  exports.findHandlerByTestID = findHandlerByTestID;
+  exports.findOldGestureHandler = findOldGestureHandler;
+  exports.handlerIDToTag = void 0;
+  exports.registerHandler = registerHandler;
+  exports.registerOldGestureHandler = registerOldGestureHandler;
+  exports.unregisterHandler = unregisterHandler;
+  exports.unregisterOldGestureHandler = unregisterOldGestureHandler;
+  var handlerIDToTag = exports.handlerIDToTag = {};
+  var gestures = new Map();
+  var oldHandlers = new Map();
+  var testIDs = new Map();
+  function registerHandler(handlerTag, handler, testID) {
+    gestures.set(handlerTag, handler);
+    if ((0, _$$_REQUIRE(_dependencyMap[0], "../utils").isTestEnv)() && testID) {
+      testIDs.set(testID, handlerTag);
+    }
+  }
+  function registerOldGestureHandler(handlerTag, handler) {
+    oldHandlers.set(handlerTag, handler);
+  }
+  function unregisterOldGestureHandler(handlerTag) {
+    oldHandlers.delete(handlerTag);
+  }
+  function unregisterHandler(handlerTag, testID) {
+    gestures.delete(handlerTag);
+    if ((0, _$$_REQUIRE(_dependencyMap[0], "../utils").isTestEnv)() && testID) {
+      testIDs.delete(testID);
+    }
+  }
+  function findHandler(handlerTag) {
+    return gestures.get(handlerTag);
+  }
+  function findOldGestureHandler(handlerTag) {
+    return oldHandlers.get(handlerTag);
+  }
+  function findHandlerByTestID(testID) {
+    var handlerTag = testIDs.get(testID);
+    if (handlerTag !== undefined) {
+      var _findHandler;
+      return (_findHandler = findHandler(handlerTag)) != null ? _findHandler : null;
+    }
+    return null;
+  }
+},645,[641],"node_modules/react-native-gesture-handler/src/handlers/handlersRegistry.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.filterConfig = filterConfig;
+  exports.findNodeHandle = findNodeHandle;
+  exports.scheduleFlushOperations = scheduleFlushOperations;
+  exports.transformIntoHandlerTags = transformIntoHandlerTags;
+  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
+  var _RNGestureHandlerModule = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "../RNGestureHandlerModule"));
+  function isConfigParam(param, name) {
+    // param !== Object(param) returns false if `param` is a function
+    // or an object and returns true if `param` is null
+    return param !== undefined && (param !== Object(param) || !('__isNative' in param)) && name !== 'onHandlerStateChange' && name !== 'onGestureEvent';
+  }
+  function filterConfig(props, validProps) {
+    var defaults = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+    var filteredConfig = Object.assign({}, defaults);
+    for (var key of validProps) {
+      var value = props[key];
+      if (isConfigParam(value, key)) {
+        if (key === 'simultaneousHandlers' || key === 'waitFor') {
+          value = transformIntoHandlerTags(props[key]);
+        } else if (key === 'hitSlop' && typeof value !== 'object') {
+          value = {
+            top: value,
+            left: value,
+            bottom: value,
+            right: value
+          };
+        }
+        filteredConfig[key] = value;
+      }
+    }
+    return filteredConfig;
+  }
+  function transformIntoHandlerTags(handlerIDs) {
+    handlerIDs = (0, _$$_REQUIRE(_dependencyMap[3], "../utils").toArray)(handlerIDs);
+    if (_reactNative.Platform.OS === 'web') {
+      return handlerIDs.map(function (_ref) {
+        var current = _ref.current;
+        return current;
+      }).filter(function (handle) {
+        return handle;
+      });
+    }
+    // converts handler string IDs into their numeric tags
+    return handlerIDs.map(function (handlerID) {
+      var _handlerID$current;
+      return _$$_REQUIRE(_dependencyMap[4], "./handlersRegistry").handlerIDToTag[handlerID] || ((_handlerID$current = handlerID.current) == null ? void 0 : _handlerID$current.handlerTag) || -1;
+    }).filter(function (handlerTag) {
+      return handlerTag > 0;
+    });
+  }
+  function findNodeHandle(node) {
+    if (_reactNative.Platform.OS === 'web') {
+      return node;
+    }
+    return (0, _reactNative.findNodeHandle)(node);
+  }
+  var flushOperationsScheduled = false;
+  function scheduleFlushOperations() {
+    if (!flushOperationsScheduled) {
+      flushOperationsScheduled = true;
+      (0, _$$_REQUIRE(_dependencyMap[5], "../ghQueueMicrotask").ghQueueMicrotask)(function () {
+        _RNGestureHandlerModule.default.flushOperations();
+        flushOperationsScheduled = false;
+      });
+    }
+  }
+},646,[1,8,636,641,645,647],"node_modules/react-native-gesture-handler/src/handlers/utils.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ghQueueMicrotask = void 0;
+  // We check for typeof requestAnimationFrame because of SSR
+  // Functions are bound to null to avoid issues with scope when using Metro inline requires.
+  var ghQueueMicrotask = exports.ghQueueMicrotask = typeof setImmediate === 'function' ? setImmediate.bind(null) : typeof requestAnimationFrame === 'function' ? requestAnimationFrame.bind(null) : queueMicrotask.bind(null);
+},647,[],"node_modules/react-native-gesture-handler/src/ghQueueMicrotask.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.MountRegistry = void 0;
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
+  // eslint-disable-next-line @typescript-eslint/no-extraneous-class
+  var MountRegistry = exports.MountRegistry = /*#__PURE__*/function () {
+    function MountRegistry() {
+      (0, _classCallCheck2.default)(this, MountRegistry);
+    }
+    return (0, _createClass2.default)(MountRegistry, null, [{
+      key: "addMountListener",
+      value: function addMountListener(listener) {
+        var _this = this;
+        this.mountListeners.add(listener);
+        return function () {
+          _this.mountListeners.delete(listener);
+        };
+      }
+    }, {
+      key: "addUnmountListener",
+      value: function addUnmountListener(listener) {
+        var _this2 = this;
+        this.unmountListeners.add(listener);
+        return function () {
+          _this2.unmountListeners.delete(listener);
+        };
+      }
+    }, {
+      key: "gestureHandlerWillMount",
+      value: function gestureHandlerWillMount(handler) {
+        this.mountListeners.forEach(function (listener) {
+          return listener(handler);
+        });
+      }
+    }, {
+      key: "gestureHandlerWillUnmount",
+      value: function gestureHandlerWillUnmount(handler) {
+        this.unmountListeners.forEach(function (listener) {
+          return listener(handler);
+        });
+      }
+    }, {
+      key: "gestureWillMount",
+      value: function gestureWillMount(gesture) {
+        this.mountListeners.forEach(function (listener) {
+          return listener(gesture);
+        });
+      }
+    }, {
+      key: "gestureWillUnmount",
+      value: function gestureWillUnmount(gesture) {
+        this.unmountListeners.forEach(function (listener) {
+          return listener(gesture);
+        });
+      }
+    }]);
+  }();
+  MountRegistry.mountListeners = new Set();
+  MountRegistry.unmountListeners = new Set();
+},648,[8,9,10],"node_modules/react-native-gesture-handler/src/mountRegistry.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, "PressabilityDebugView", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Pressability/PressabilityDebug").PressabilityDebugView;
+    }
+  });
+},649,[369],"node_modules/react-native-gesture-handler/src/handlers/PressabilityDebugView.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.baseGestureHandlerWithDetectorProps = exports.baseGestureHandlerProps = exports.MouseButton = void 0;
+  // Previous types exported gesture handlers as classes which creates an interface and variable, both named the same as class.
+  // Without those types, we'd introduce breaking change, forcing users to prefix every handler type specification with typeof
+  // e.g. React.createRef<TapGestureHandler> -> React.createRef<typeof TapGestureHandler>.
+  // See https://www.typescriptlang.org/docs/handbook/classes.html#constructor-functions for reference.
+
+  var commonProps = ['id', 'enabled', 'shouldCancelWhenOutside', 'hitSlop', 'cancelsTouchesInView', 'userSelect', 'activeCursor', 'mouseButton', 'enableContextMenu', 'touchAction'];
+  var componentInteractionProps = ['waitFor', 'simultaneousHandlers', 'blocksHandlers'];
+  var baseGestureHandlerProps = exports.baseGestureHandlerProps = [].concat(commonProps, componentInteractionProps, ['onBegan', 'onFailed', 'onCancelled', 'onActivated', 'onEnded', 'onGestureEvent', 'onHandlerStateChange']);
+  var baseGestureHandlerWithDetectorProps = exports.baseGestureHandlerWithDetectorProps = [].concat(commonProps, ['needsPointerData', 'manualActivation']);
+  var MouseButton = exports.MouseButton = /*#__PURE__*/function (MouseButton) {
+    MouseButton[MouseButton["LEFT"] = 1] = "LEFT";
+    MouseButton[MouseButton["RIGHT"] = 2] = "RIGHT";
+    MouseButton[MouseButton["MIDDLE"] = 4] = "MIDDLE";
+    MouseButton[MouseButton["BUTTON_4"] = 8] = "BUTTON_4";
+    MouseButton[MouseButton["BUTTON_5"] = 16] = "BUTTON_5";
+    MouseButton[MouseButton["ALL"] = 31] = "ALL";
+    return MouseButton;
+  }({}); // TODO(TS) events in handlers
+  // Events payloads are types instead of interfaces due to TS limitation.
+  // See https://github.com/microsoft/TypeScript/issues/15300 for more info.
+},650,[],"node_modules/react-native-gesture-handler/src/handlers/gestureHandlerCommon.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+  var _RNGestureHandlerButtonNativeComponent = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "../specs/RNGestureHandlerButtonNativeComponent"));
+  var _default = exports.default = _RNGestureHandlerButtonNativeComponent.default;
+},651,[8,652],"node_modules/react-native-gesture-handler/src/components/GestureHandlerButton.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = exports.__INTERNAL_VIEW_CONFIG = void 0;
+  var _codegenNativeComponent = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "react-native/Libraries/Utilities/codegenNativeComponent"));
+  var nativeComponentName = 'RNGestureHandlerButton';
+  var __INTERNAL_VIEW_CONFIG = exports.__INTERNAL_VIEW_CONFIG = {
+    uiViewClassName: 'RNGestureHandlerButton',
+    validAttributes: {
+      exclusive: true,
+      foreground: true,
+      borderless: true,
+      enabled: true,
+      rippleColor: {
+        process: _$$_REQUIRE(_dependencyMap[2], "react-native/Libraries/StyleSheet/processColor").default
+      },
+      rippleRadius: true,
+      touchSoundDisabled: true,
+      borderWidth: true,
+      borderColor: {
+        process: _$$_REQUIRE(_dependencyMap[2], "react-native/Libraries/StyleSheet/processColor").default
+      },
+      borderStyle: true
+    }
+  };
+  var _default = exports.default = _$$_REQUIRE(_dependencyMap[3], "react-native/Libraries/NativeComponent/NativeComponentRegistry").get(nativeComponentName, function () {
+    return __INTERNAL_VIEW_CONFIG;
+  });
+},652,[8,347,185,204],"node_modules/react-native-gesture-handler/src/specs/RNGestureHandlerButtonNativeComponent.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.Directions = exports.DiagonalDirections = void 0;
+  var RIGHT = 1;
+  var LEFT = 2;
+  var UP = 4;
+  var DOWN = 8;
+
+  // Public interface
+  var Directions = exports.Directions = {
+    RIGHT: RIGHT,
+    LEFT: LEFT,
+    UP: UP,
+    DOWN: DOWN
+  };
+
+  // Internal interface
+  var DiagonalDirections = exports.DiagonalDirections = {
+    UP_RIGHT: UP | RIGHT,
+    DOWN_RIGHT: DOWN | RIGHT,
+    UP_LEFT: UP | LEFT,
+    DOWN_LEFT: DOWN | LEFT
+  };
+
+  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; it can be used as a type and as a value
+
+  // eslint-disable-next-line @typescript-eslint/no-redeclare
+},653,[],"node_modules/react-native-gesture-handler/src/Directions.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.TextInput = exports.Switch = exports.ScrollView = exports.RefreshControl = exports.FlatList = exports.DrawerLayoutAndroid = void 0;
+  var _slicedToArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/slicedToArray"));
+  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/toConsumableArray"));
+  var _objectWithoutProperties2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/objectWithoutProperties"));
+  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[4], "react"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[5], "react-native");
+  var _createNativeWrapper = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "../handlers/createNativeWrapper"));
+  var _excluded = ["refreshControl", "waitFor"],
+    _excluded2 = ["waitFor", "refreshControl"];
+  var _this = this,
+    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/GestureComponents.tsx";
+  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
+  var RefreshControl = exports.RefreshControl = (0, _createNativeWrapper.default)(_reactNative.RefreshControl, {
+    disallowInterruption: true,
+    shouldCancelWhenOutside: false
+  });
+  // eslint-disable-next-line @typescript-eslint/no-redeclare
+
+  var GHScrollView = (0, _createNativeWrapper.default)(_reactNative.ScrollView, {
+    disallowInterruption: true,
+    shouldCancelWhenOutside: false
+  });
+  var ScrollView = exports.ScrollView = React.forwardRef(function (props, ref) {
+    var refreshControlGestureRef = React.useRef(null);
+    var refreshControl = props.refreshControl,
+      waitFor = props.waitFor,
+      rest = (0, _objectWithoutProperties2.default)(props, _excluded);
+    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(GHScrollView, Object.assign({}, rest, {
+      // @ts-ignore `ref` exists on `GHScrollView`
+      ref: ref,
+      waitFor: [].concat((0, _toConsumableArray2.default)((0, _$$_REQUIRE(_dependencyMap[8], "../utils").toArray)(waitFor != null ? waitFor : [])), [refreshControlGestureRef])
+      // @ts-ignore we don't pass `refreshing` prop as we only want to override the ref
+      ,
+      refreshControl: refreshControl ? React.cloneElement(refreshControl, {
+        // @ts-ignore for reasons unknown to me, `ref` doesn't exist on the type inferred by TS
+        ref: refreshControlGestureRef
+      }) : undefined
+    }));
+  });
+  // Backward type compatibility with https://github.com/software-mansion/react-native-gesture-handler/blob/db78d3ca7d48e8ba57482d3fe9b0a15aa79d9932/react-native-gesture-handler.d.ts#L440-L457
+  // include methods of wrapped components by creating an intersection type with the RN component instead of duplicating them.
+  // eslint-disable-next-line @typescript-eslint/no-redeclare
+
+  var Switch = exports.Switch = (0, _createNativeWrapper.default)(_reactNative.Switch, {
+    shouldCancelWhenOutside: false,
+    shouldActivateOnStart: true,
+    disallowInterruption: true
+  });
+  // eslint-disable-next-line @typescript-eslint/no-redeclare
+
+  var TextInput = exports.TextInput = (0, _createNativeWrapper.default)(_reactNative.TextInput);
+  // eslint-disable-next-line @typescript-eslint/no-redeclare
+
+  var DrawerLayoutAndroid = exports.DrawerLayoutAndroid = (0, _createNativeWrapper.default)(_reactNative.DrawerLayoutAndroid, {
+    disallowInterruption: true
+  });
+  // eslint-disable-next-line @typescript-eslint/no-redeclare
+
+  var FlatList = exports.FlatList = React.forwardRef(function (props, ref) {
+    var refreshControlGestureRef = React.useRef(null);
+    var waitFor = props.waitFor,
+      refreshControl = props.refreshControl,
+      rest = (0, _objectWithoutProperties2.default)(props, _excluded2);
+    var flatListProps = {};
+    var scrollViewProps = {};
+    for (var _ref of Object.entries(rest)) {
+      var _ref2 = (0, _slicedToArray2.default)(_ref, 2);
+      var propName = _ref2[0];
+      var value = _ref2[1];
+      // https://github.com/microsoft/TypeScript/issues/26255
+      if (_$$_REQUIRE(_dependencyMap[9], "../handlers/NativeViewGestureHandler").nativeViewProps.includes(propName)) {
+        // @ts-ignore - this function cannot have generic type so we have to ignore this error
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        scrollViewProps[propName] = value;
+      } else {
+        // @ts-ignore - this function cannot have generic type so we have to ignore this error
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        flatListProps[propName] = value;
+      }
+    }
+    return (
+      /*#__PURE__*/
+      // @ts-ignore - this function cannot have generic type so we have to ignore this error
+      (0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.FlatList, Object.assign({
+        ref: ref
+      }, flatListProps, {
+        renderScrollComponent: function renderScrollComponent(scrollProps) {
+          return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(ScrollView, Object.assign({}, Object.assign({}, scrollProps, scrollViewProps, {
+            waitFor: [].concat((0, _toConsumableArray2.default)((0, _$$_REQUIRE(_dependencyMap[8], "../utils").toArray)(waitFor != null ? waitFor : [])), [refreshControlGestureRef])
+          })));
+        }
+        // @ts-ignore we don't pass `refreshing` prop as we only want to override the ref
+        ,
+        refreshControl: refreshControl ? React.cloneElement(refreshControl, {
+          // @ts-ignore for reasons unknown to me, `ref` doesn't exist on the type inferred by TS
+          ref: refreshControlGestureRef
+        }) : undefined
+      }))
+    );
+  });
+  // eslint-disable-next-line @typescript-eslint/no-redeclare
+},654,[8,27,46,153,86,1,633,92,641,634],"node_modules/react-native-gesture-handler/src/components/GestureComponents.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.flingHandlerName = exports.flingGestureHandlerProps = exports.FlingGestureHandler = void 0;
+  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
+  var _createHandler = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./createHandler"));
+  var flingGestureHandlerProps = exports.flingGestureHandlerProps = ['numberOfPointers', 'direction'];
+
+  /**
+   * @deprecated FlingGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Fling()` instead.
+   */
+
+  var flingHandlerName = exports.flingHandlerName = 'FlingGestureHandler';
+
+  /**
+   * @deprecated FlingGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Fling()` instead.
+   */
+
+  /**
+   * @deprecated FlingGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Fling()` instead.
+   */
+  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; see description on the top of gestureHandlerCommon.ts file
+  var FlingGestureHandler = exports.FlingGestureHandler = (0, _createHandler.default)({
+    name: flingHandlerName,
+    allowedProps: [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[3], "./gestureHandlerCommon").baseGestureHandlerProps), flingGestureHandlerProps),
+    config: {}
+  });
+},655,[8,46,635,650],"node_modules/react-native-gesture-handler/src/handlers/FlingGestureHandler.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.forceTouchHandlerName = exports.forceTouchGestureHandlerProps = exports.ForceTouchGestureHandler = void 0;
+  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+  var _react = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[7], "react"));
+  var _PlatformConstants = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[8], "../PlatformConstants"));
+  var _createHandler = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[9], "./createHandler"));
+  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
+  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+  var forceTouchGestureHandlerProps = exports.forceTouchGestureHandlerProps = ['minForce', 'maxForce', 'feedbackOnActivation'];
+
+  // implicit `children` prop has been removed in @types/react^18.0.0
+  var ForceTouchFallback = /*#__PURE__*/function (_React$Component) {
+    function ForceTouchFallback() {
+      (0, _classCallCheck2.default)(this, ForceTouchFallback);
+      return _callSuper(this, ForceTouchFallback, arguments);
+    }
+    (0, _inherits2.default)(ForceTouchFallback, _React$Component);
+    return (0, _createClass2.default)(ForceTouchFallback, [{
+      key: "componentDidMount",
+      value: function componentDidMount() {
+        console.warn((0, _$$_REQUIRE(_dependencyMap[10], "../utils").tagMessage)('ForceTouchGestureHandler is not available on this platform. Please use ForceTouchGestureHandler.forceTouchAvailable to conditionally render other components that would provide a fallback behavior specific to your usecase'));
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        return this.props.children;
+      }
+    }]);
+  }(_react.default.Component);
+  ForceTouchFallback.forceTouchAvailable = false;
+  /**
+   * @deprecated ForceTouchGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.ForceTouch()` instead.
+   */
+  /**
+   * @deprecated ForceTouchGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.ForceTouch()` instead.
+   */
+  var forceTouchHandlerName = exports.forceTouchHandlerName = 'ForceTouchGestureHandler';
+
+  /**
+   * @deprecated ForceTouchGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.ForceTouch()` instead.
+   */
+  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; see description on the top of gestureHandlerCommon.ts file
+  var ForceTouchGestureHandler = exports.ForceTouchGestureHandler = _PlatformConstants.default != null && _PlatformConstants.default.forceTouchAvailable ? (0, _createHandler.default)({
+    name: forceTouchHandlerName,
+    allowedProps: [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[11], "./gestureHandlerCommon").baseGestureHandlerProps), forceTouchGestureHandlerProps),
+    config: {}
+  }) : ForceTouchFallback;
+  ForceTouchGestureHandler.forceTouchAvailable = (_PlatformConstants.default == null ? void 0 : _PlatformConstants.default.forceTouchAvailable) || false;
+},656,[8,46,9,10,14,16,17,86,657,635,641,650],"node_modules/react-native-gesture-handler/src/handlers/ForceTouchGestureHandler.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
+  var _NativeModules$Platfo;
+  var _default = exports.default = (_NativeModules$Platfo = _reactNative.NativeModules == null ? void 0 : _reactNative.NativeModules.PlatformConstants) != null ? _NativeModules$Platfo : _reactNative.Platform.constants;
+},657,[1],"node_modules/react-native-gesture-handler/src/PlatformConstants.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.GestureObjects = void 0;
+  var _construct2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/construct"));
+  /**
+   * `Gesture` is the object that allows you to create and compose gestures.
+   *
+   * ### Remarks
+   * - Consider wrapping your gesture configurations with `useMemo`, as it will reduce the amount of work Gesture Handler has to do under the hood when updating gestures.
+   *
+   * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/gesture
+   */
+  var GestureObjects = exports.GestureObjects = {
+    /**
+     * A discrete gesture that recognizes one or many taps.
+     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/tap-gesture
+     */
+    Tap: function Tap() {
+      return new (_$$_REQUIRE(_dependencyMap[2], "./tapGesture").TapGesture)();
+    },
+    /**
+     * A continuous gesture that can recognize a panning (dragging) gesture and track its movement.
+     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture
+     */
+    Pan: function Pan() {
+      return new (_$$_REQUIRE(_dependencyMap[3], "./panGesture").PanGesture)();
+    },
+    /**
+     * A continuous gesture that recognizes pinch gesture. It allows for tracking the distance between two fingers and use that information to scale or zoom your content.
+     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pinch-gesture
+     */
+    Pinch: function Pinch() {
+      return new (_$$_REQUIRE(_dependencyMap[4], "./pinchGesture").PinchGesture)();
+    },
+    /**
+     * A continuous gesture that can recognize rotation and track its movement.
+     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/rotation-gesture
+     */
+    Rotation: function Rotation() {
+      return new (_$$_REQUIRE(_dependencyMap[5], "./rotationGesture").RotationGesture)();
+    },
+    /**
+     * A discrete gesture that activates when the movement is sufficiently fast.
+     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/fling-gesture
+     */
+    Fling: function Fling() {
+      return new (_$$_REQUIRE(_dependencyMap[6], "./flingGesture").FlingGesture)();
+    },
+    /**
+     * A discrete gesture that activates when the corresponding view is pressed for a sufficiently long time.
+     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/long-press-gesture
+     */
+    LongPress: function LongPress() {
+      return new (_$$_REQUIRE(_dependencyMap[7], "./longPressGesture").LongPressGesture)();
+    },
+    /**
+     * #### iOS only
+     * A continuous gesture that recognizes force of a touch. It allows for tracking pressure of touch on some iOS devices.
+     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/force-touch-gesture
+     */
+    ForceTouch: function ForceTouch() {
+      return new (_$$_REQUIRE(_dependencyMap[8], "./forceTouchGesture").ForceTouchGesture)();
+    },
+    /**
+     * A gesture that allows other touch handling components to participate in RNGH's gesture system.
+     * When used, the other component should be the direct child of a `GestureDetector`.
+     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/native-gesture
+     */
+    Native: function Native() {
+      return new (_$$_REQUIRE(_dependencyMap[9], "./nativeGesture").NativeGesture)();
+    },
+    /**
+     * A plain gesture that has no specific activation criteria nor event data set.
+     * Its state has to be controlled manually using a state manager.
+     * It will not fail when all the pointers are lifted from the screen.
+     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/manual-gesture
+     */
+    Manual: function Manual() {
+      return new (_$$_REQUIRE(_dependencyMap[10], "./manualGesture").ManualGesture)();
+    },
+    /**
+     * A continuous gesture that can recognize hovering above the view it's attached to.
+     * The hover effect may be activated by moving a mouse or a stylus over the view.
+     *
+     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/hover-gesture
+     */
+    Hover: function Hover() {
+      return new (_$$_REQUIRE(_dependencyMap[11], "./hoverGesture").HoverGesture)();
+    },
+    /**
+     * Builds a composed gesture consisting of gestures provided as parameters.
+     * The first one that becomes active cancels the rest of gestures.
+     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/gesture-composition/#race
+     */
+    Race: function Race() {
+      for (var _len = arguments.length, gestures = new Array(_len), _key = 0; _key < _len; _key++) {
+        gestures[_key] = arguments[_key];
+      }
+      return (0, _construct2.default)(_$$_REQUIRE(_dependencyMap[12], "./gestureComposition").ComposedGesture, gestures);
+    },
+    /**
+     * Builds a composed gesture that allows all base gestures to run simultaneously.
+     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/gesture-composition/#simultaneous
+     */
+    Simultaneous: function Simultaneous() {
+      for (var _len2 = arguments.length, gestures = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        gestures[_key2] = arguments[_key2];
+      }
+      return (0, _construct2.default)(_$$_REQUIRE(_dependencyMap[12], "./gestureComposition").SimultaneousGesture, gestures);
+    },
+    /**
+     * Builds a composed gesture where only one of the provided gestures can become active.
+     * Priority is decided through the order of gestures: the first one has higher priority
+     * than the second one, second one has higher priority than the third one, and so on.
+     * For example, to make a gesture that recognizes both single and double tap you need
+     * to call Exclusive(doubleTap, singleTap).
+     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/gesture-composition/#exclusive
+     */
+    Exclusive: function Exclusive() {
+      for (var _len3 = arguments.length, gestures = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+        gestures[_key3] = arguments[_key3];
+      }
+      return (0, _construct2.default)(_$$_REQUIRE(_dependencyMap[12], "./gestureComposition").ExclusiveGesture, gestures);
+    }
+  };
+},658,[8,62,659,661,662,663,664,665,666,667,668,669,670],"node_modules/react-native-gesture-handler/src/handlers/gestures/gestureObjects.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.TapGesture = void 0;
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
+  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
+  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+  var TapGesture = exports.TapGesture = /*#__PURE__*/function (_BaseGesture) {
+    function TapGesture() {
+      var _this;
+      (0, _classCallCheck2.default)(this, TapGesture);
+      _this = _callSuper(this, TapGesture);
+      _this.config = {};
+      _this.handlerName = 'TapGestureHandler';
+      _this.shouldCancelWhenOutside(true);
+      return _this;
+    }
+
+    /**
+     * Minimum number of pointers (fingers) required to be placed before the gesture activates.
+     * Should be a positive integer. The default value is 1.
+     * @param minPointers
+     */
+    (0, _inherits2.default)(TapGesture, _BaseGesture);
+    return (0, _createClass2.default)(TapGesture, [{
+      key: "minPointers",
+      value: function minPointers(_minPointers) {
+        this.config.minPointers = _minPointers;
+        return this;
+      }
+
+      /**
+       * Number of tap gestures required to activate the gesture.
+       * The default value is 1.
+       * @param count
+       */
+    }, {
+      key: "numberOfTaps",
+      value: function numberOfTaps(count) {
+        this.config.numberOfTaps = count;
+        return this;
+      }
+
+      /**
+       * Maximum distance, expressed in points, that defines how far the finger is allowed to travel during a tap gesture.
+       * @param maxDist
+       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/tap-gesture#maxdistancevalue-number
+       */
+    }, {
+      key: "maxDistance",
+      value: function maxDistance(maxDist) {
+        this.config.maxDist = maxDist;
+        return this;
+      }
+
+      /**
+       * Maximum time, expressed in milliseconds, that defines how fast a finger must be released after a touch.
+       * The default value is 500.
+       * @param duration
+       */
+    }, {
+      key: "maxDuration",
+      value: function maxDuration(duration) {
+        this.config.maxDurationMs = duration;
+        return this;
+      }
+
+      /**
+       * Maximum time, expressed in milliseconds, that can pass before the next tap — if many taps are required.
+       * The default value is 500.
+       * @param delay
+       */
+    }, {
+      key: "maxDelay",
+      value: function maxDelay(delay) {
+        this.config.maxDelayMs = delay;
+        return this;
+      }
+
+      /**
+       * Maximum distance, expressed in points, that defines how far the finger is allowed to travel along the X axis during a tap gesture.
+       * @param delta
+       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/tap-gesture#maxdeltaxvalue-number
+       */
+    }, {
+      key: "maxDeltaX",
+      value: function maxDeltaX(delta) {
+        this.config.maxDeltaX = delta;
+        return this;
+      }
+
+      /**
+       * Maximum distance, expressed in points, that defines how far the finger is allowed to travel along the Y axis during a tap gesture.
+       * @param delta
+       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/tap-gesture#maxdeltayvalue-number
+       */
+    }, {
+      key: "maxDeltaY",
+      value: function maxDeltaY(delta) {
+        this.config.maxDeltaY = delta;
+        return this;
+      }
+    }]);
+  }(_$$_REQUIRE(_dependencyMap[6], "./gesture").BaseGesture);
+},659,[8,9,10,14,16,17,660],"node_modules/react-native-gesture-handler/src/handlers/gestures/tapGesture.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.Gesture = exports.ContinousBaseGesture = exports.CALLBACK_TYPE = exports.BaseGesture = void 0;
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/possibleConstructorReturn"));
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/getPrototypeOf"));
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/inherits"));
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/createClass"));
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/classCallCheck"));
+  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
+  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+  // Allow adding a ref to a gesture handler
+
+  var CALLBACK_TYPE = exports.CALLBACK_TYPE = {
+    UNDEFINED: 0,
+    BEGAN: 1,
+    START: 2,
+    UPDATE: 3,
+    CHANGE: 4,
+    END: 5,
+    FINALIZE: 6,
+    TOUCHES_DOWN: 7,
+    TOUCHES_MOVE: 8,
+    TOUCHES_UP: 9,
+    TOUCHES_CANCELLED: 10
+  };
+
+  // Allow using CALLBACK_TYPE as object and type
+  // eslint-disable-next-line @typescript-eslint/no-redeclare
+  var Gesture = exports.Gesture = /*#__PURE__*/(0, _createClass2.default)(function Gesture() {
+    (0, _classCallCheck2.default)(this, Gesture);
+  });
+  var nextGestureId = 0;
+  var BaseGesture = exports.BaseGesture = /*#__PURE__*/function (_Gesture) {
+    function BaseGesture() {
+      var _this;
+      (0, _classCallCheck2.default)(this, BaseGesture);
+      _this = _callSuper(this, BaseGesture);
+
+      // Used to check whether the gesture config has been updated when wrapping it
+      // with `useMemo`. Since every config will have a unique id, when the dependencies
+      // don't change, the config won't be recreated and the id will stay the same.
+      // If the id is different, it means that the config has changed and the gesture
+      // needs to be updated.
+      _this.gestureId = -1;
+      _this.handlerTag = -1;
+      _this.handlerName = '';
+      _this.config = {};
+      _this.handlers = {
+        gestureId: -1,
+        handlerTag: -1,
+        isWorklet: []
+      };
+      _this.gestureId = nextGestureId++;
+      _this.handlers.gestureId = _this.gestureId;
+      return _this;
+    }
+    (0, _inherits2.default)(BaseGesture, _Gesture);
+    return (0, _createClass2.default)(BaseGesture, [{
+      key: "addDependency",
+      value: function addDependency(key, gesture) {
+        var value = this.config[key];
+        this.config[key] = value ? Array().concat(value, gesture) : [gesture];
+      }
+
+      /**
+       * Sets a `ref` to the gesture object, allowing for interoperability with the old API.
+       * @param ref
+       */
+    }, {
+      key: "withRef",
+      value: function withRef(ref) {
+        this.config.ref = ref;
+        return this;
+      }
+
+      // eslint-disable-next-line @typescript-eslint/ban-types
+    }, {
+      key: "isWorklet",
+      value: function isWorklet(callback) {
+        // @ts-ignore if callback is a worklet, the property will be available, if not then the check will return false
+        return callback.__workletHash !== undefined;
+      }
+
+      /**
+       * Set the callback that is being called when given gesture handler starts receiving touches.
+       * At the moment of this callback the handler is in `BEGAN` state and we don't know yet if it will recognize the gesture at all.
+       * @param callback
+       */
+    }, {
+      key: "onBegin",
+      value: function onBegin(callback) {
+        this.handlers.onBegin = callback;
+        this.handlers.isWorklet[CALLBACK_TYPE.BEGAN] = this.isWorklet(callback);
+        return this;
+      }
+
+      /**
+       * Set the callback that is being called when the gesture is recognized by the handler and it transitions to the `ACTIVE` state.
+       * @param callback
+       */
+    }, {
+      key: "onStart",
+      value: function onStart(callback) {
+        this.handlers.onStart = callback;
+        this.handlers.isWorklet[CALLBACK_TYPE.START] = this.isWorklet(callback);
+        return this;
+      }
+
+      /**
+       * Set the callback that is being called when the gesture that was recognized by the handler finishes and handler reaches `END` state.
+       * It will be called only if the handler was previously in the `ACTIVE` state.
+       * @param callback
+       */
+    }, {
+      key: "onEnd",
+      value: function onEnd(callback) {
+        this.handlers.onEnd = callback;
+        // @ts-ignore if callback is a worklet, the property will be available, if not then the check will return false
+        this.handlers.isWorklet[CALLBACK_TYPE.END] = this.isWorklet(callback);
+        return this;
+      }
+
+      /**
+       * Set the callback that is being called when the handler finalizes handling gesture - the gesture was recognized and has finished or it failed to recognize.
+       * @param callback
+       */
+    }, {
+      key: "onFinalize",
+      value: function onFinalize(callback) {
+        this.handlers.onFinalize = callback;
+        // @ts-ignore if callback is a worklet, the property will be available, if not then the check will return false
+        this.handlers.isWorklet[CALLBACK_TYPE.FINALIZE] = this.isWorklet(callback);
+        return this;
+      }
+
+      /**
+       * Set the `onTouchesDown` callback which is called every time a pointer is placed on the screen.
+       * @param callback
+       */
+    }, {
+      key: "onTouchesDown",
+      value: function onTouchesDown(callback) {
+        this.config.needsPointerData = true;
+        this.handlers.onTouchesDown = callback;
+        this.handlers.isWorklet[CALLBACK_TYPE.TOUCHES_DOWN] = this.isWorklet(callback);
+        return this;
+      }
+
+      /**
+       * Set the `onTouchesMove` callback which is called every time a pointer is moved on the screen.
+       * @param callback
+       */
+    }, {
+      key: "onTouchesMove",
+      value: function onTouchesMove(callback) {
+        this.config.needsPointerData = true;
+        this.handlers.onTouchesMove = callback;
+        this.handlers.isWorklet[CALLBACK_TYPE.TOUCHES_MOVE] = this.isWorklet(callback);
+        return this;
+      }
+
+      /**
+       * Set the `onTouchesUp` callback which is called every time a pointer is lifted from the screen.
+       * @param callback
+       */
+    }, {
+      key: "onTouchesUp",
+      value: function onTouchesUp(callback) {
+        this.config.needsPointerData = true;
+        this.handlers.onTouchesUp = callback;
+        this.handlers.isWorklet[CALLBACK_TYPE.TOUCHES_UP] = this.isWorklet(callback);
+        return this;
+      }
+
+      /**
+       * Set the `onTouchesCancelled` callback which is called every time a pointer stops being tracked, for example when the gesture finishes.
+       * @param callback
+       */
+    }, {
+      key: "onTouchesCancelled",
+      value: function onTouchesCancelled(callback) {
+        this.config.needsPointerData = true;
+        this.handlers.onTouchesCancelled = callback;
+        this.handlers.isWorklet[CALLBACK_TYPE.TOUCHES_CANCELLED] = this.isWorklet(callback);
+        return this;
+      }
+
+      /**
+       * Indicates whether the given handler should be analyzing stream of touch events or not.
+       * @param enabled
+       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#enabledvalue-boolean
+       */
+    }, {
+      key: "enabled",
+      value: function enabled(_enabled) {
+        this.config.enabled = _enabled;
+        return this;
+      }
+
+      /**
+       * When true the handler will cancel or fail recognition (depending on its current state) whenever the finger leaves the area of the connected view.
+       * @param value
+       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#shouldcancelwhenoutsidevalue-boolean
+       */
+    }, {
+      key: "shouldCancelWhenOutside",
+      value: function shouldCancelWhenOutside(value) {
+        this.config.shouldCancelWhenOutside = value;
+        return this;
+      }
+
+      /**
+       * This parameter enables control over what part of the connected view area can be used to begin recognizing the gesture.
+       * When a negative number is provided the bounds of the view will reduce the area by the given number of points in each of the sides evenly.
+       * @param hitSlop
+       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#hitslopsettings
+       */
+    }, {
+      key: "hitSlop",
+      value: function hitSlop(_hitSlop) {
+        this.config.hitSlop = _hitSlop;
+        return this;
+      }
+
+      /**
+       * #### Web only
+       * This parameter allows to specify which `cursor` should be used when gesture activates.
+       * Supports all CSS cursor values (e.g. `"grab"`, `"zoom-in"`). Default value is set to `"auto"`.
+       * @param activeCursor
+       */
+    }, {
+      key: "activeCursor",
+      value: function activeCursor(_activeCursor) {
+        this.config.activeCursor = _activeCursor;
+        return this;
+      }
+
+      /**
+       * #### Web & Android only
+       * Allows users to choose which mouse button should handler respond to.
+       * Arguments can be combined using `|` operator, e.g. `mouseButton(MouseButton.LEFT | MouseButton.RIGHT)`.
+       * Default value is set to `MouseButton.LEFT`.
+       * @param mouseButton
+       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#mousebuttonvalue-mousebutton-web--android-only
+       */
+    }, {
+      key: "mouseButton",
+      value: function mouseButton(_mouseButton) {
+        this.config.mouseButton = _mouseButton;
+        return this;
+      }
+
+      /**
+       * When `react-native-reanimated` is installed, the callbacks passed to the gestures are automatically workletized and run on the UI thread when called.
+       * This option allows for changing this behavior: when `true`, all the callbacks will be run on the JS thread instead of the UI thread, regardless of whether they are worklets or not.
+       * Defaults to `false`.
+       * @param runOnJS
+       */
+    }, {
+      key: "runOnJS",
+      value: function runOnJS(_runOnJS) {
+        this.config.runOnJS = _runOnJS;
+        return this;
+      }
+
+      /**
+       * Allows gestures across different components to be recognized simultaneously.
+       * @param gestures
+       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/gesture-composition/#simultaneouswithexternalgesture
+       */
+    }, {
+      key: "simultaneousWithExternalGesture",
+      value: function simultaneousWithExternalGesture() {
+        for (var _len = arguments.length, gestures = new Array(_len), _key = 0; _key < _len; _key++) {
+          gestures[_key] = arguments[_key];
+        }
+        for (var gesture of gestures) {
+          this.addDependency('simultaneousWith', gesture);
+        }
+        return this;
+      }
+
+      /**
+       * Allows to delay activation of the handler until all handlers passed as arguments to this method fail (or don't begin at all).
+       * @param gestures
+       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/gesture-composition/#requireexternalgesturetofail
+       */
+    }, {
+      key: "requireExternalGestureToFail",
+      value: function requireExternalGestureToFail() {
+        for (var _len2 = arguments.length, gestures = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+          gestures[_key2] = arguments[_key2];
+        }
+        for (var gesture of gestures) {
+          this.addDependency('requireToFail', gesture);
+        }
+        return this;
+      }
+
+      /**
+       * Works similarily to `requireExternalGestureToFail` but the direction of the relation is reversed - instead of being one-to-many relation, it's many-to-one.
+       * @param gestures
+       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/gesture-composition/#blocksexternalgesture
+       */
+    }, {
+      key: "blocksExternalGesture",
+      value: function blocksExternalGesture() {
+        for (var _len3 = arguments.length, gestures = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+          gestures[_key3] = arguments[_key3];
+        }
+        for (var gesture of gestures) {
+          this.addDependency('blocksHandlers', gesture);
+        }
+        return this;
+      }
+
+      /**
+       * Sets a `testID` property for gesture object, allowing for querying for it in tests.
+       * @param id
+       */
+    }, {
+      key: "withTestId",
+      value: function withTestId(id) {
+        this.config.testId = id;
+        return this;
+      }
+
+      /**
+       * #### iOS only
+       * When `true`, the handler will cancel touches for native UI components (`UIButton`, `UISwitch`, etc) it's attached to when it becomes `ACTIVE`.
+       * Default value is `true`.
+       * @param value
+       */
+    }, {
+      key: "cancelsTouchesInView",
+      value: function cancelsTouchesInView(value) {
+        this.config.cancelsTouchesInView = value;
+        return this;
+      }
+    }, {
+      key: "initialize",
+      value: function initialize() {
+        this.handlerTag = (0, _$$_REQUIRE(_dependencyMap[6], "../getNextHandlerTag").getNextHandlerTag)();
+        this.handlers = Object.assign({}, this.handlers, {
+          handlerTag: this.handlerTag
+        });
+        if (this.config.ref) {
+          this.config.ref.current = this;
+        }
+      }
+    }, {
+      key: "toGestureArray",
+      value: function toGestureArray() {
+        return [this];
+      }
+
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+    }, {
+      key: "prepare",
+      value: function prepare() {}
+    }, {
+      key: "shouldUseReanimated",
+      get: function get() {
+        // Use Reanimated when runOnJS isn't set explicitly,
+        // all defined callbacks are worklets
+        // and remote debugging is disabled
+        return this.config.runOnJS !== true && !this.handlers.isWorklet.includes(false) && !(0, _$$_REQUIRE(_dependencyMap[7], "../../utils").isRemoteDebuggingEnabled)();
+      }
+    }]);
+  }(Gesture);
+  var ContinousBaseGesture = exports.ContinousBaseGesture = /*#__PURE__*/function (_BaseGesture2) {
+    function ContinousBaseGesture() {
+      (0, _classCallCheck2.default)(this, ContinousBaseGesture);
+      return _callSuper(this, ContinousBaseGesture, arguments);
+    }
+    (0, _inherits2.default)(ContinousBaseGesture, _BaseGesture2);
+    return (0, _createClass2.default)(ContinousBaseGesture, [{
+      key: "onUpdate",
+      value:
+      /**
+       * Set the callback that is being called every time the gesture receives an update while it's active.
+       * @param callback
+       */
+      function onUpdate(callback) {
+        this.handlers.onUpdate = callback;
+        this.handlers.isWorklet[CALLBACK_TYPE.UPDATE] = this.isWorklet(callback);
+        return this;
+      }
+
+      /**
+       * Set the callback that is being called every time the gesture receives an update while it's active.
+       * This callback will receive information about change in value in relation to the last received event.
+       * @param callback
+       */
+    }, {
+      key: "onChange",
+      value: function onChange(callback) {
+        this.handlers.onChange = callback;
+        this.handlers.isWorklet[CALLBACK_TYPE.CHANGE] = this.isWorklet(callback);
+        return this;
+      }
+
+      /**
+       * When `true` the handler will not activate by itself even if its activation criteria are met.
+       * Instead you can manipulate its state using state manager.
+       * @param manualActivation
+       */
+    }, {
+      key: "manualActivation",
+      value: function manualActivation(_manualActivation) {
+        this.config.manualActivation = _manualActivation;
+        return this;
+      }
+    }]);
+  }(BaseGesture);
+},660,[8,14,16,17,10,9,643,641],"node_modules/react-native-gesture-handler/src/handlers/gestures/gesture.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.PanGesture = void 0;
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
+  var _get2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/get"));
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
+  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+  function _superPropGet(t, o, e, r) { var p = (0, _get2.default)((0, _getPrototypeOf2.default)(1 & r ? t.prototype : t), o, e); return 2 & r && "function" == typeof p ? function (t) { return p.apply(e, t); } : p; }
+  var _worklet_3643287777059_init_data = {
+    code: "function changeEventCalculator_reactNativeGestureHandler_panGestureTs1(current,previous){let changePayload;if(previous===undefined){changePayload={changeX:current.translationX,changeY:current.translationY};}else{changePayload={changeX:current.translationX-previous.translationX,changeY:current.translationY-previous.translationY};}return{...current,...changePayload};}",
+    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/panGesture.ts",
+    sourceMap: "{\"version\":3,\"names\":[\"changeEventCalculator_reactNativeGestureHandler_panGestureTs1\",\"current\",\"previous\",\"changePayload\",\"undefined\",\"changeX\",\"translationX\",\"changeY\",\"translationY\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/panGesture.ts\"],\"mappings\":\"AAUA,SAAAA,6DAGEA,CAAAC,OAAA,CAAAC,QAAA,EAEA,GAAI,CAAAC,aAA2C,CAC/C,GAAID,QAAQ,GAAKE,SAAS,CAAE,CAC1BD,aAAa,CAAG,CACdE,OAAO,CAAEJ,OAAO,CAACK,YAAY,CAC7BC,OAAO,CAAEN,OAAO,CAACO,YACnB,CAAC,CACH,CAAC,IAAM,CACLL,aAAa,CAAG,CACdE,OAAO,CAAEJ,OAAO,CAACK,YAAY,CAAGJ,QAAQ,CAACI,YAAY,CACrDC,OAAO,CAAEN,OAAO,CAACO,YAAY,CAAGN,QAAQ,CAACM,YAC3C,CAAC,CACH,CAEA,MAAO,CAAE,GAAGP,OAAO,CAAE,GAAGE,aAAc,CAAC,CACzC\",\"ignoreList\":[]}",
+    version: "3.18.0"
+  };
+  var changeEventCalculator = function () {
+    var _e = [new global.Error(), 1, -27];
+    var changeEventCalculator = function changeEventCalculator(current, previous) {
+      var changePayload;
+      if (previous === undefined) {
+        changePayload = {
+          changeX: current.translationX,
+          changeY: current.translationY
+        };
+      } else {
+        changePayload = {
+          changeX: current.translationX - previous.translationX,
+          changeY: current.translationY - previous.translationY
+        };
+      }
+      return Object.assign({}, current, changePayload);
+    };
+    changeEventCalculator.__closure = {};
+    changeEventCalculator.__workletHash = 3643287777059;
+    changeEventCalculator.__initData = _worklet_3643287777059_init_data;
+    changeEventCalculator.__stackDetails = _e;
+    return changeEventCalculator;
+  }();
+  var PanGesture = exports.PanGesture = /*#__PURE__*/function (_ContinousBaseGesture) {
+    function PanGesture() {
+      var _this;
+      (0, _classCallCheck2.default)(this, PanGesture);
+      _this = _callSuper(this, PanGesture);
+      _this.config = {};
+      _this.handlerName = 'PanGestureHandler';
+      return _this;
+    }
+
+    /**
+     * Range along Y axis (in points) where fingers travels without activation of gesture.
+     * @param offset
+     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#activeoffsetyvalue-number--number
+     */
+    (0, _inherits2.default)(PanGesture, _ContinousBaseGesture);
+    return (0, _createClass2.default)(PanGesture, [{
+      key: "activeOffsetY",
+      value: function activeOffsetY(offset) {
+        if (Array.isArray(offset)) {
+          this.config.activeOffsetYStart = offset[0];
+          this.config.activeOffsetYEnd = offset[1];
+        } else if (offset < 0) {
+          this.config.activeOffsetYStart = offset;
+        } else {
+          this.config.activeOffsetYEnd = offset;
+        }
+        return this;
+      }
+
+      /**
+       * Range along X axis (in points) where fingers travels without activation of gesture.
+       * @param offset
+       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#activeoffsetxvalue-number--number
+       */
+    }, {
+      key: "activeOffsetX",
+      value: function activeOffsetX(offset) {
+        if (Array.isArray(offset)) {
+          this.config.activeOffsetXStart = offset[0];
+          this.config.activeOffsetXEnd = offset[1];
+        } else if (offset < 0) {
+          this.config.activeOffsetXStart = offset;
+        } else {
+          this.config.activeOffsetXEnd = offset;
+        }
+        return this;
+      }
+
+      /**
+       * When the finger moves outside this range (in points) along Y axis and gesture hasn't yet activated it will fail recognizing the gesture.
+       * @param offset
+       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#failoffsetyvalue-number--number
+       */
+    }, {
+      key: "failOffsetY",
+      value: function failOffsetY(offset) {
+        if (Array.isArray(offset)) {
+          this.config.failOffsetYStart = offset[0];
+          this.config.failOffsetYEnd = offset[1];
+        } else if (offset < 0) {
+          this.config.failOffsetYStart = offset;
+        } else {
+          this.config.failOffsetYEnd = offset;
+        }
+        return this;
+      }
+
+      /**
+       * When the finger moves outside this range (in points) along X axis and gesture hasn't yet activated it will fail recognizing the gesture.
+       * @param offset
+       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#failoffsetxvalue-number--number
+       */
+    }, {
+      key: "failOffsetX",
+      value: function failOffsetX(offset) {
+        if (Array.isArray(offset)) {
+          this.config.failOffsetXStart = offset[0];
+          this.config.failOffsetXEnd = offset[1];
+        } else if (offset < 0) {
+          this.config.failOffsetXStart = offset;
+        } else {
+          this.config.failOffsetXEnd = offset;
+        }
+        return this;
+      }
+
+      /**
+       * A number of fingers that is required to be placed before gesture can activate. Should be a higher or equal to 0 integer.
+       * @param minPointers
+       */
+    }, {
+      key: "minPointers",
+      value: function minPointers(_minPointers) {
+        this.config.minPointers = _minPointers;
+        return this;
+      }
+
+      /**
+       * When the given number of fingers is placed on the screen and gesture hasn't yet activated it will fail recognizing the gesture.
+       * Should be a higher or equal to 0 integer.
+       * @param maxPointers
+       */
+    }, {
+      key: "maxPointers",
+      value: function maxPointers(_maxPointers) {
+        this.config.maxPointers = _maxPointers;
+        return this;
+      }
+
+      /**
+       * Minimum distance the finger (or multiple finger) need to travel before the gesture activates.
+       * Expressed in points.
+       * @param distance
+       */
+    }, {
+      key: "minDistance",
+      value: function minDistance(distance) {
+        this.config.minDist = distance;
+        return this;
+      }
+
+      /**
+       * Minimum velocity the finger has to reach in order to activate handler.
+       * @param velocity
+       */
+    }, {
+      key: "minVelocity",
+      value: function minVelocity(velocity) {
+        this.config.minVelocity = velocity;
+        return this;
+      }
+
+      /**
+       * Minimum velocity along X axis the finger has to reach in order to activate handler.
+       * @param velocity
+       */
+    }, {
+      key: "minVelocityX",
+      value: function minVelocityX(velocity) {
+        this.config.minVelocityX = velocity;
+        return this;
+      }
+
+      /**
+       * Minimum velocity along Y axis the finger has to reach in order to activate handler.
+       * @param velocity
+       */
+    }, {
+      key: "minVelocityY",
+      value: function minVelocityY(velocity) {
+        this.config.minVelocityY = velocity;
+        return this;
+      }
+
+      /**
+       * #### Android only
+       * Android, by default, will calculate translation values based on the position of the leading pointer (the first one that was placed on the screen).
+       * This modifier allows that behavior to be changed to the one that is default on iOS - the averaged position of all active pointers will be used to calculate the translation values.
+       * @param value
+       */
+    }, {
+      key: "averageTouches",
+      value: function averageTouches(value) {
+        this.config.avgTouches = value;
+        return this;
+      }
+
+      /**
+       * #### iOS only
+       * Enables two-finger gestures on supported devices, for example iPads with trackpads.
+       * @param value
+       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture/#enabletrackpadtwofingergesturevalue-boolean-ios-only
+       */
+    }, {
+      key: "enableTrackpadTwoFingerGesture",
+      value: function enableTrackpadTwoFingerGesture(value) {
+        this.config.enableTrackpadTwoFingerGesture = value;
+        return this;
+      }
+
+      /**
+       * Duration in milliseconds of the LongPress gesture before Pan is allowed to activate.
+       * @param duration
+       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture/#activateafterlongpressduration-number
+       */
+    }, {
+      key: "activateAfterLongPress",
+      value: function activateAfterLongPress(duration) {
+        this.config.activateAfterLongPress = duration;
+        return this;
+      }
+    }, {
+      key: "onChange",
+      value: function onChange(callback) {
+        // @ts-ignore TS being overprotective, PanGestureHandlerEventPayload is Record
+        this.handlers.changeEventCalculator = changeEventCalculator;
+        return _superPropGet(PanGesture, "onChange", this, 3)([callback]);
+      }
+    }]);
+  }(_$$_REQUIRE(_dependencyMap[7], "./gesture").ContinousBaseGesture);
+},661,[8,9,10,14,16,51,17,660],"node_modules/react-native-gesture-handler/src/handlers/gestures/panGesture.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.PinchGesture = void 0;
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
+  var _get2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/get"));
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
+  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+  function _superPropGet(t, o, e, r) { var p = (0, _get2.default)((0, _getPrototypeOf2.default)(1 & r ? t.prototype : t), o, e); return 2 & r && "function" == typeof p ? function (t) { return p.apply(e, t); } : p; }
+  var _worklet_13149109047081_init_data = {
+    code: "function changeEventCalculator_reactNativeGestureHandler_pinchGestureTs1(current,previous){let changePayload;if(previous===undefined){changePayload={scaleChange:current.scale};}else{changePayload={scaleChange:current.scale/previous.scale};}return{...current,...changePayload};}",
+    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/pinchGesture.ts",
+    sourceMap: "{\"version\":3,\"names\":[\"changeEventCalculator_reactNativeGestureHandler_pinchGestureTs1\",\"current\",\"previous\",\"changePayload\",\"undefined\",\"scaleChange\",\"scale\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/pinchGesture.ts\"],\"mappings\":\"AAQA,SAAAA,+DAGEA,CAAAC,OAAA,CAAAC,QAAA,EAEA,GAAI,CAAAC,aAA6C,CACjD,GAAID,QAAQ,GAAKE,SAAS,CAAE,CAC1BD,aAAa,CAAG,CACdE,WAAW,CAAEJ,OAAO,CAACK,KACvB,CAAC,CACH,CAAC,IAAM,CACLH,aAAa,CAAG,CACdE,WAAW,CAAEJ,OAAO,CAACK,KAAK,CAAGJ,QAAQ,CAACI,KACxC,CAAC,CACH,CAEA,MAAO,CAAE,GAAGL,OAAO,CAAE,GAAGE,aAAc,CAAC,CACzC\",\"ignoreList\":[]}",
+    version: "3.18.0"
+  };
+  var changeEventCalculator = function () {
+    var _e = [new global.Error(), 1, -27];
+    var changeEventCalculator = function changeEventCalculator(current, previous) {
+      var changePayload;
+      if (previous === undefined) {
+        changePayload = {
+          scaleChange: current.scale
+        };
+      } else {
+        changePayload = {
+          scaleChange: current.scale / previous.scale
+        };
+      }
+      return Object.assign({}, current, changePayload);
+    };
+    changeEventCalculator.__closure = {};
+    changeEventCalculator.__workletHash = 13149109047081;
+    changeEventCalculator.__initData = _worklet_13149109047081_init_data;
+    changeEventCalculator.__stackDetails = _e;
+    return changeEventCalculator;
+  }();
+  var PinchGesture = exports.PinchGesture = /*#__PURE__*/function (_ContinousBaseGesture) {
+    function PinchGesture() {
+      var _this;
+      (0, _classCallCheck2.default)(this, PinchGesture);
+      _this = _callSuper(this, PinchGesture);
+      _this.handlerName = 'PinchGestureHandler';
+      return _this;
+    }
+    (0, _inherits2.default)(PinchGesture, _ContinousBaseGesture);
+    return (0, _createClass2.default)(PinchGesture, [{
+      key: "onChange",
+      value: function onChange(callback) {
+        // @ts-ignore TS being overprotective, PinchGestureHandlerEventPayload is Record
+        this.handlers.changeEventCalculator = changeEventCalculator;
+        return _superPropGet(PinchGesture, "onChange", this, 3)([callback]);
+      }
+    }]);
+  }(_$$_REQUIRE(_dependencyMap[7], "./gesture").ContinousBaseGesture);
+},662,[8,9,10,14,16,51,17,660],"node_modules/react-native-gesture-handler/src/handlers/gestures/pinchGesture.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.RotationGesture = void 0;
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
+  var _get2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/get"));
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
+  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+  function _superPropGet(t, o, e, r) { var p = (0, _get2.default)((0, _getPrototypeOf2.default)(1 & r ? t.prototype : t), o, e); return 2 & r && "function" == typeof p ? function (t) { return p.apply(e, t); } : p; }
+  var _worklet_364113346799_init_data = {
+    code: "function changeEventCalculator_reactNativeGestureHandler_rotationGestureTs1(current,previous){let changePayload;if(previous===undefined){changePayload={rotationChange:current.rotation};}else{changePayload={rotationChange:current.rotation-previous.rotation};}return{...current,...changePayload};}",
+    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/rotationGesture.ts",
+    sourceMap: "{\"version\":3,\"names\":[\"changeEventCalculator_reactNativeGestureHandler_rotationGestureTs1\",\"current\",\"previous\",\"changePayload\",\"undefined\",\"rotationChange\",\"rotation\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/rotationGesture.ts\"],\"mappings\":\"AAQA,SAAAA,kEAGEA,CAAAC,OAAA,CAAAC,QAAA,EAEA,GAAI,CAAAC,aAAgD,CACpD,GAAID,QAAQ,GAAKE,SAAS,CAAE,CAC1BD,aAAa,CAAG,CACdE,cAAc,CAAEJ,OAAO,CAACK,QAC1B,CAAC,CACH,CAAC,IAAM,CACLH,aAAa,CAAG,CACdE,cAAc,CAAEJ,OAAO,CAACK,QAAQ,CAAGJ,QAAQ,CAACI,QAC9C,CAAC,CACH,CAEA,MAAO,CAAE,GAAGL,OAAO,CAAE,GAAGE,aAAc,CAAC,CACzC\",\"ignoreList\":[]}",
+    version: "3.18.0"
+  };
+  var changeEventCalculator = function () {
+    var _e = [new global.Error(), 1, -27];
+    var changeEventCalculator = function changeEventCalculator(current, previous) {
+      var changePayload;
+      if (previous === undefined) {
+        changePayload = {
+          rotationChange: current.rotation
+        };
+      } else {
+        changePayload = {
+          rotationChange: current.rotation - previous.rotation
+        };
+      }
+      return Object.assign({}, current, changePayload);
+    };
+    changeEventCalculator.__closure = {};
+    changeEventCalculator.__workletHash = 364113346799;
+    changeEventCalculator.__initData = _worklet_364113346799_init_data;
+    changeEventCalculator.__stackDetails = _e;
+    return changeEventCalculator;
+  }();
+  var RotationGesture = exports.RotationGesture = /*#__PURE__*/function (_ContinousBaseGesture) {
+    function RotationGesture() {
+      var _this;
+      (0, _classCallCheck2.default)(this, RotationGesture);
+      _this = _callSuper(this, RotationGesture);
+      _this.handlerName = 'RotationGestureHandler';
+      return _this;
+    }
+    (0, _inherits2.default)(RotationGesture, _ContinousBaseGesture);
+    return (0, _createClass2.default)(RotationGesture, [{
+      key: "onChange",
+      value: function onChange(callback) {
+        // @ts-ignore TS being overprotective, RotationGestureHandlerEventPayload is Record
+        this.handlers.changeEventCalculator = changeEventCalculator;
+        return _superPropGet(RotationGesture, "onChange", this, 3)([callback]);
+      }
+    }]);
+  }(_$$_REQUIRE(_dependencyMap[7], "./gesture").ContinousBaseGesture);
+},663,[8,9,10,14,16,51,17,660],"node_modules/react-native-gesture-handler/src/handlers/gestures/rotationGesture.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.FlingGesture = void 0;
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
+  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
+  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+  var FlingGesture = exports.FlingGesture = /*#__PURE__*/function (_BaseGesture) {
+    function FlingGesture() {
+      var _this;
+      (0, _classCallCheck2.default)(this, FlingGesture);
+      _this = _callSuper(this, FlingGesture);
+      _this.config = {};
+      _this.handlerName = 'FlingGestureHandler';
+      return _this;
+    }
+
+    /**
+     * Determine exact number of points required to handle the fling gesture.
+     * @param pointers
+     */
+    (0, _inherits2.default)(FlingGesture, _BaseGesture);
+    return (0, _createClass2.default)(FlingGesture, [{
+      key: "numberOfPointers",
+      value: function numberOfPointers(pointers) {
+        this.config.numberOfPointers = pointers;
+        return this;
+      }
+
+      /**
+       * Expressed allowed direction of movement.
+       * Expected values are exported as constants in the Directions object.
+       * Arguments can be combined using `|` operator. Default value is set to `MouseButton.LEFT`.
+       * @param direction
+       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/fling-gesture/#directionvalue-directions
+       */
+    }, {
+      key: "direction",
+      value: function direction(_direction) {
+        this.config.direction = _direction;
+        return this;
+      }
+    }]);
+  }(_$$_REQUIRE(_dependencyMap[6], "./gesture").BaseGesture);
+},664,[8,9,10,14,16,17,660],"node_modules/react-native-gesture-handler/src/handlers/gestures/flingGesture.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.LongPressGesture = void 0;
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
+  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
+  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+  var LongPressGesture = exports.LongPressGesture = /*#__PURE__*/function (_BaseGesture) {
+    function LongPressGesture() {
+      var _this;
+      (0, _classCallCheck2.default)(this, LongPressGesture);
+      _this = _callSuper(this, LongPressGesture);
+      _this.config = {};
+      _this.handlerName = 'LongPressGestureHandler';
+      _this.shouldCancelWhenOutside(true);
+      return _this;
+    }
+
+    /**
+     * Minimum time, expressed in milliseconds, that a finger must remain pressed on the corresponding view.
+     * The default value is 500.
+     * @param duration
+     */
+    (0, _inherits2.default)(LongPressGesture, _BaseGesture);
+    return (0, _createClass2.default)(LongPressGesture, [{
+      key: "minDuration",
+      value: function minDuration(duration) {
+        this.config.minDurationMs = duration;
+        return this;
+      }
+
+      /**
+       * Maximum distance, expressed in points, that defines how far the finger is allowed to travel during a long press gesture.
+       * @param distance
+       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/long-press-gesture#maxdistancevalue-number
+       */
+    }, {
+      key: "maxDistance",
+      value: function maxDistance(distance) {
+        this.config.maxDist = distance;
+        return this;
+      }
+
+      /**
+       * Determine exact number of points required to handle the long press gesture.
+       * @param pointers
+       */
+    }, {
+      key: "numberOfPointers",
+      value: function numberOfPointers(pointers) {
+        this.config.numberOfPointers = pointers;
+        return this;
+      }
+    }]);
+  }(_$$_REQUIRE(_dependencyMap[6], "./gesture").BaseGesture);
+},665,[8,9,10,14,16,17,660],"node_modules/react-native-gesture-handler/src/handlers/gestures/longPressGesture.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ForceTouchGesture = void 0;
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
+  var _get2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/get"));
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
+  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+  function _superPropGet(t, o, e, r) { var p = (0, _get2.default)((0, _getPrototypeOf2.default)(1 & r ? t.prototype : t), o, e); return 2 & r && "function" == typeof p ? function (t) { return p.apply(e, t); } : p; }
+  var _worklet_15288835999946_init_data = {
+    code: "function changeEventCalculator_reactNativeGestureHandler_forceTouchGestureTs1(current,previous){let changePayload;if(previous===undefined){changePayload={forceChange:current.force};}else{changePayload={forceChange:current.force-previous.force};}return{...current,...changePayload};}",
+    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/forceTouchGesture.ts",
+    sourceMap: "{\"version\":3,\"names\":[\"changeEventCalculator_reactNativeGestureHandler_forceTouchGestureTs1\",\"current\",\"previous\",\"changePayload\",\"undefined\",\"forceChange\",\"force\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/forceTouchGesture.ts\"],\"mappings\":\"AASA,SAAAA,oEAGEA,CAAAC,OAAA,CAAAC,QAAA,EAEA,GAAI,CAAAC,aAAkD,CACtD,GAAID,QAAQ,GAAKE,SAAS,CAAE,CAC1BD,aAAa,CAAG,CACdE,WAAW,CAAEJ,OAAO,CAACK,KACvB,CAAC,CACH,CAAC,IAAM,CACLH,aAAa,CAAG,CACdE,WAAW,CAAEJ,OAAO,CAACK,KAAK,CAAGJ,QAAQ,CAACI,KACxC,CAAC,CACH,CAEA,MAAO,CAAE,GAAGL,OAAO,CAAE,GAAGE,aAAc,CAAC,CACzC\",\"ignoreList\":[]}",
+    version: "3.18.0"
+  };
+  var changeEventCalculator = function () {
+    var _e = [new global.Error(), 1, -27];
+    var changeEventCalculator = function changeEventCalculator(current, previous) {
+      var changePayload;
+      if (previous === undefined) {
+        changePayload = {
+          forceChange: current.force
+        };
+      } else {
+        changePayload = {
+          forceChange: current.force - previous.force
+        };
+      }
+      return Object.assign({}, current, changePayload);
+    };
+    changeEventCalculator.__closure = {};
+    changeEventCalculator.__workletHash = 15288835999946;
+    changeEventCalculator.__initData = _worklet_15288835999946_init_data;
+    changeEventCalculator.__stackDetails = _e;
+    return changeEventCalculator;
+  }();
+  var ForceTouchGesture = exports.ForceTouchGesture = /*#__PURE__*/function (_ContinousBaseGesture) {
+    function ForceTouchGesture() {
+      var _this;
+      (0, _classCallCheck2.default)(this, ForceTouchGesture);
+      _this = _callSuper(this, ForceTouchGesture);
+      _this.config = {};
+      _this.handlerName = 'ForceTouchGestureHandler';
+      return _this;
+    }
+
+    /**
+     * A minimal pressure that is required before gesture can activate.
+     * Should be a value from range [0.0, 1.0]. Default is 0.2.
+     * @param force
+     */
+    (0, _inherits2.default)(ForceTouchGesture, _ContinousBaseGesture);
+    return (0, _createClass2.default)(ForceTouchGesture, [{
+      key: "minForce",
+      value: function minForce(force) {
+        this.config.minForce = force;
+        return this;
+      }
+
+      /**
+       * A maximal pressure that could be applied for gesture.
+       * If the pressure is greater, gesture fails. Should be a value from range [0.0, 1.0].
+       * @param force
+       */
+    }, {
+      key: "maxForce",
+      value: function maxForce(force) {
+        this.config.maxForce = force;
+        return this;
+      }
+
+      /**
+       * Value defining if haptic feedback has to be performed on activation.
+       * @param value
+       */
+    }, {
+      key: "feedbackOnActivation",
+      value: function feedbackOnActivation(value) {
+        this.config.feedbackOnActivation = value;
+        return this;
+      }
+    }, {
+      key: "onChange",
+      value: function onChange(callback) {
+        // @ts-ignore TS being overprotective, ForceTouchGestureHandlerEventPayload is Record
+        this.handlers.changeEventCalculator = changeEventCalculator;
+        return _superPropGet(ForceTouchGesture, "onChange", this, 3)([callback]);
+      }
+    }]);
+  }(_$$_REQUIRE(_dependencyMap[7], "./gesture").ContinousBaseGesture);
+},666,[8,9,10,14,16,51,17,660],"node_modules/react-native-gesture-handler/src/handlers/gestures/forceTouchGesture.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.NativeGesture = void 0;
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
+  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
+  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+  var NativeGesture = exports.NativeGesture = /*#__PURE__*/function (_BaseGesture) {
+    function NativeGesture() {
+      var _this;
+      (0, _classCallCheck2.default)(this, NativeGesture);
+      _this = _callSuper(this, NativeGesture);
+      _this.config = {};
+      _this.handlerName = 'NativeViewGestureHandler';
+      return _this;
+    }
+
+    /**
+     * When true, underlying handler will activate unconditionally when in `BEGAN` or `UNDETERMINED` state.
+     * @param value
+     */
+    (0, _inherits2.default)(NativeGesture, _BaseGesture);
+    return (0, _createClass2.default)(NativeGesture, [{
+      key: "shouldActivateOnStart",
+      value: function shouldActivateOnStart(value) {
+        this.config.shouldActivateOnStart = value;
+        return this;
+      }
+
+      /**
+       * When true, cancels all other gesture handlers when this `NativeViewGestureHandler` receives an `ACTIVE` state event.
+       * @param value
+       */
+    }, {
+      key: "disallowInterruption",
+      value: function disallowInterruption(value) {
+        this.config.disallowInterruption = value;
+        return this;
+      }
+    }]);
+  }(_$$_REQUIRE(_dependencyMap[6], "./gesture").BaseGesture);
+},667,[8,9,10,14,16,17,660],"node_modules/react-native-gesture-handler/src/handlers/gestures/nativeGesture.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ManualGesture = void 0;
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
+  var _get2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/get"));
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
+  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+  function _superPropGet(t, o, e, r) { var p = (0, _get2.default)((0, _getPrototypeOf2.default)(1 & r ? t.prototype : t), o, e); return 2 & r && "function" == typeof p ? function (t) { return p.apply(e, t); } : p; }
+  var _worklet_10437565787091_init_data = {
+    code: "function changeEventCalculator_reactNativeGestureHandler_manualGestureTs1(current,_previous){return current;}",
+    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/manualGesture.ts",
+    sourceMap: "{\"version\":3,\"names\":[\"changeEventCalculator_reactNativeGestureHandler_manualGestureTs1\",\"current\",\"_previous\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/manualGesture.ts\"],\"mappings\":\"AAGA,SAAAA,gEAGEA,CAAAC,OAAA,CAAAC,SAAA,EAEA,MAAO,CAAAD,OAAO,CAChB\",\"ignoreList\":[]}",
+    version: "3.18.0"
+  };
+  var changeEventCalculator = function () {
+    var _e = [new global.Error(), 1, -27];
+    var changeEventCalculator = function changeEventCalculator(current, _previous) {
+      return current;
+    };
+    changeEventCalculator.__closure = {};
+    changeEventCalculator.__workletHash = 10437565787091;
+    changeEventCalculator.__initData = _worklet_10437565787091_init_data;
+    changeEventCalculator.__stackDetails = _e;
+    return changeEventCalculator;
+  }();
+  var ManualGesture = exports.ManualGesture = /*#__PURE__*/function (_ContinousBaseGesture) {
+    function ManualGesture() {
+      var _this;
+      (0, _classCallCheck2.default)(this, ManualGesture);
+      _this = _callSuper(this, ManualGesture);
+      _this.handlerName = 'ManualGestureHandler';
+      return _this;
+    }
+    (0, _inherits2.default)(ManualGesture, _ContinousBaseGesture);
+    return (0, _createClass2.default)(ManualGesture, [{
+      key: "onChange",
+      value: function onChange(callback) {
+        // @ts-ignore TS being overprotective, Record<string, never> is Record
+        this.handlers.changeEventCalculator = changeEventCalculator;
+        return _superPropGet(ManualGesture, "onChange", this, 3)([callback]);
+      }
+    }]);
+  }(_$$_REQUIRE(_dependencyMap[7], "./gesture").ContinousBaseGesture);
+},668,[8,9,10,14,16,51,17,660],"node_modules/react-native-gesture-handler/src/handlers/gestures/manualGesture.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.hoverGestureHandlerProps = exports.HoverGesture = exports.HoverEffect = void 0;
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
+  var _get2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/get"));
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
+  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+  function _superPropGet(t, o, e, r) { var p = (0, _get2.default)((0, _getPrototypeOf2.default)(1 & r ? t.prototype : t), o, e); return 2 & r && "function" == typeof p ? function (t) { return p.apply(e, t); } : p; }
+  var HoverEffect = exports.HoverEffect = /*#__PURE__*/function (HoverEffect) {
+    HoverEffect[HoverEffect["NONE"] = 0] = "NONE";
+    HoverEffect[HoverEffect["LIFT"] = 1] = "LIFT";
+    HoverEffect[HoverEffect["HIGHLIGHT"] = 2] = "HIGHLIGHT";
+    return HoverEffect;
+  }({});
+  var hoverGestureHandlerProps = exports.hoverGestureHandlerProps = ['hoverEffect'];
+  var _worklet_512113696378_init_data = {
+    code: "function changeEventCalculator_reactNativeGestureHandler_hoverGestureTs1(current,previous){let changePayload;if(previous===undefined){changePayload={changeX:current.x,changeY:current.y};}else{changePayload={changeX:current.x-previous.x,changeY:current.y-previous.y};}return{...current,...changePayload};}",
+    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/hoverGesture.ts",
+    sourceMap: "{\"version\":3,\"names\":[\"changeEventCalculator_reactNativeGestureHandler_hoverGestureTs1\",\"current\",\"previous\",\"changePayload\",\"undefined\",\"changeX\",\"x\",\"changeY\",\"y\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/hoverGesture.ts\"],\"mappings\":\"AAqBA,SAAAA,+DAGEA,CAAAC,OAAA,CAAAC,QAAA,EAEA,GAAI,CAAAC,aAA6C,CACjD,GAAID,QAAQ,GAAKE,SAAS,CAAE,CAC1BD,aAAa,CAAG,CACdE,OAAO,CAAEJ,OAAO,CAACK,CAAC,CAClBC,OAAO,CAAEN,OAAO,CAACO,CACnB,CAAC,CACH,CAAC,IAAM,CACLL,aAAa,CAAG,CACdE,OAAO,CAAEJ,OAAO,CAACK,CAAC,CAAGJ,QAAQ,CAACI,CAAC,CAC/BC,OAAO,CAAEN,OAAO,CAACO,CAAC,CAAGN,QAAQ,CAACM,CAChC,CAAC,CACH,CAEA,MAAO,CAAE,GAAGP,OAAO,CAAE,GAAGE,aAAc,CAAC,CACzC\",\"ignoreList\":[]}",
+    version: "3.18.0"
+  };
+  var changeEventCalculator = function () {
+    var _e = [new global.Error(), 1, -27];
+    var changeEventCalculator = function changeEventCalculator(current, previous) {
+      var changePayload;
+      if (previous === undefined) {
+        changePayload = {
+          changeX: current.x,
+          changeY: current.y
+        };
+      } else {
+        changePayload = {
+          changeX: current.x - previous.x,
+          changeY: current.y - previous.y
+        };
+      }
+      return Object.assign({}, current, changePayload);
+    };
+    changeEventCalculator.__closure = {};
+    changeEventCalculator.__workletHash = 512113696378;
+    changeEventCalculator.__initData = _worklet_512113696378_init_data;
+    changeEventCalculator.__stackDetails = _e;
+    return changeEventCalculator;
+  }();
+  var HoverGesture = exports.HoverGesture = /*#__PURE__*/function (_ContinousBaseGesture) {
+    function HoverGesture() {
+      var _this;
+      (0, _classCallCheck2.default)(this, HoverGesture);
+      _this = _callSuper(this, HoverGesture);
+      _this.config = {};
+      _this.handlerName = 'HoverGestureHandler';
+      return _this;
+    }
+
+    /**
+     * #### iOS only
+     * Sets the visual hover effect.
+     */
+    (0, _inherits2.default)(HoverGesture, _ContinousBaseGesture);
+    return (0, _createClass2.default)(HoverGesture, [{
+      key: "effect",
+      value: function effect(_effect) {
+        this.config.hoverEffect = _effect;
+        return this;
+      }
+    }, {
+      key: "onChange",
+      value: function onChange(callback) {
+        // @ts-ignore TS being overprotective, HoverGestureHandlerEventPayload is Record
+        this.handlers.changeEventCalculator = changeEventCalculator;
+        return _superPropGet(HoverGesture, "onChange", this, 3)([callback]);
+      }
+    }]);
+  }(_$$_REQUIRE(_dependencyMap[7], "./gesture").ContinousBaseGesture);
+},669,[8,9,10,14,16,51,17,660],"node_modules/react-native-gesture-handler/src/handlers/gestures/hoverGesture.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.SimultaneousGesture = exports.ExclusiveGesture = exports.ComposedGesture = void 0;
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
+  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/toConsumableArray"));
+  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
+  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+  function extendRelation(currentRelation, extendWith) {
+    if (currentRelation === undefined) {
+      return (0, _toConsumableArray2.default)(extendWith);
+    } else {
+      return [].concat((0, _toConsumableArray2.default)(currentRelation), (0, _toConsumableArray2.default)(extendWith));
+    }
+  }
+  var ComposedGesture = exports.ComposedGesture = /*#__PURE__*/function (_Gesture) {
+    function ComposedGesture() {
+      var _this;
+      (0, _classCallCheck2.default)(this, ComposedGesture);
+      _this = _callSuper(this, ComposedGesture);
+      _this.gestures = [];
+      _this.simultaneousGestures = [];
+      _this.requireGesturesToFail = [];
+      for (var _len = arguments.length, gestures = new Array(_len), _key = 0; _key < _len; _key++) {
+        gestures[_key] = arguments[_key];
+      }
+      _this.gestures = gestures;
+      return _this;
+    }
+    (0, _inherits2.default)(ComposedGesture, _Gesture);
+    return (0, _createClass2.default)(ComposedGesture, [{
+      key: "prepareSingleGesture",
+      value: function prepareSingleGesture(gesture, simultaneousGestures, requireGesturesToFail) {
+        if (gesture instanceof _$$_REQUIRE(_dependencyMap[7], "./gesture").BaseGesture) {
+          var newConfig = Object.assign({}, gesture.config);
+
+          // No need to extend `blocksHandlers` here, because it's not changed in composition.
+          // The same effect is achieved by reversing the order of 2 gestures in `Exclusive`
+          newConfig.simultaneousWith = extendRelation(newConfig.simultaneousWith, simultaneousGestures);
+          newConfig.requireToFail = extendRelation(newConfig.requireToFail, requireGesturesToFail);
+          gesture.config = newConfig;
+        } else if (gesture instanceof ComposedGesture) {
+          gesture.simultaneousGestures = simultaneousGestures;
+          gesture.requireGesturesToFail = requireGesturesToFail;
+          gesture.prepare();
+        }
+      }
+    }, {
+      key: "prepare",
+      value: function prepare() {
+        for (var gesture of this.gestures) {
+          this.prepareSingleGesture(gesture, this.simultaneousGestures, this.requireGesturesToFail);
+        }
+      }
+    }, {
+      key: "initialize",
+      value: function initialize() {
+        for (var gesture of this.gestures) {
+          gesture.initialize();
+        }
+      }
+    }, {
+      key: "toGestureArray",
+      value: function toGestureArray() {
+        return this.gestures.flatMap(function (gesture) {
+          return gesture.toGestureArray();
+        });
+      }
+    }]);
+  }(_$$_REQUIRE(_dependencyMap[7], "./gesture").Gesture);
+  var SimultaneousGesture = exports.SimultaneousGesture = /*#__PURE__*/function (_ComposedGesture2) {
+    function SimultaneousGesture() {
+      (0, _classCallCheck2.default)(this, SimultaneousGesture);
+      return _callSuper(this, SimultaneousGesture, arguments);
+    }
+    (0, _inherits2.default)(SimultaneousGesture, _ComposedGesture2);
+    return (0, _createClass2.default)(SimultaneousGesture, [{
+      key: "prepare",
+      value: function prepare() {
+        var _this2 = this;
+        // This piece of magic works something like this:
+        // for every gesture in the array
+        var simultaneousArrays = this.gestures.map(function (gesture) {
+          return (
+            // we take the array it's in
+            _this2.gestures
+            // and make a copy without it
+            .filter(function (x) {
+              return x !== gesture;
+            })
+            // then we flatmap the result to get list of raw (not composed) gestures
+            // this way we don't make the gestures simultaneous with themselves, which is
+            // important when the gesture is `ExclusiveGesture` - we don't want to make
+            // exclusive gestures simultaneous
+            .flatMap(function (x) {
+              return x.toGestureArray();
+            })
+          );
+        });
+        for (var i = 0; i < this.gestures.length; i++) {
+          this.prepareSingleGesture(this.gestures[i], simultaneousArrays[i], this.requireGesturesToFail);
+        }
+      }
+    }]);
+  }(ComposedGesture);
+  var ExclusiveGesture = exports.ExclusiveGesture = /*#__PURE__*/function (_ComposedGesture3) {
+    function ExclusiveGesture() {
+      (0, _classCallCheck2.default)(this, ExclusiveGesture);
+      return _callSuper(this, ExclusiveGesture, arguments);
+    }
+    (0, _inherits2.default)(ExclusiveGesture, _ComposedGesture3);
+    return (0, _createClass2.default)(ExclusiveGesture, [{
+      key: "prepare",
+      value: function prepare() {
+        // Transforms the array of gestures into array of grouped raw (not composed) gestures
+        // i.e. [gesture1, gesture2, ComposedGesture(gesture3, gesture4)] -> [[gesture1], [gesture2], [gesture3, gesture4]]
+        var gestureArrays = this.gestures.map(function (gesture) {
+          return gesture.toGestureArray();
+        });
+        var requireToFail = [];
+        for (var i = 0; i < this.gestures.length; i++) {
+          this.prepareSingleGesture(this.gestures[i], this.simultaneousGestures, this.requireGesturesToFail.concat(requireToFail));
+
+          // Every group gets to wait for all groups before it
+          requireToFail = requireToFail.concat(gestureArrays[i]);
+        }
+      }
+    }]);
+  }(ComposedGesture);
+},670,[8,9,10,14,16,17,46,660],"node_modules/react-native-gesture-handler/src/handlers/gestures/gestureComposition.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.GestureDetector = void 0;
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[0], "react"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[1], "react-native");
+  var _findNodeHandle = _$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "../../../findNodeHandle"));
+  var _GestureHandlerRootViewContext = _$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "../../../GestureHandlerRootViewContext"));
+  var _this = this,
+    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/index.tsx";
+  /* eslint-disable react/no-unused-prop-types */
+  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
+  function propagateDetectorConfig(props, gesture) {
+    var keysToPropagate = ['userSelect', 'enableContextMenu', 'touchAction'];
+    for (var key of keysToPropagate) {
+      var value = props[key];
+      if (value === undefined) {
+        continue;
+      }
+      for (var g of gesture.toGestureArray()) {
+        var config = g.config;
+        config[key] = value;
+      }
+    }
+  }
+  /**
+   * `GestureDetector` is responsible for creating and updating native gesture handlers based on the config of provided gesture.
+   *
+   * ### Props
+   * - `gesture`
+   * - `userSelect` (**Web only**)
+   * - `enableContextMenu` (**Web only**)
+   * - `touchAction` (**Web only**)
+   *
+   * ### Remarks
+   * - Gesture Detector will use first native view in its subtree to recognize gestures, however if this view is used only to group its children it may get automatically collapsed.
+   * - Using the same instance of a gesture across multiple Gesture Detectors is not possible.
+   *
+   * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/gesture-detector
+   */
+  var GestureDetector = exports.GestureDetector = function GestureDetector(props) {
+    var rootViewContext = (0, _react.useContext)(_GestureHandlerRootViewContext.default);
+    if (__DEV__ && !rootViewContext && !(0, _$$_REQUIRE(_dependencyMap[5], "../../../utils").isTestEnv)() && _reactNative.Platform.OS !== 'web') {
+      throw new Error('GestureDetector must be used as a descendant of GestureHandlerRootView. Otherwise the gestures will not be recognized. See https://docs.swmansion.com/react-native-gesture-handler/docs/installation for more details.');
+    }
+
+    // Gesture config should be wrapped with useMemo to prevent unnecessary re-renders
+    var gestureConfig = props.gesture;
+    propagateDetectorConfig(props, gestureConfig);
+    var gesturesToAttach = (0, _react.useMemo)(function () {
+      return gestureConfig.toGestureArray();
+    }, [gestureConfig]);
+    var shouldUseReanimated = gesturesToAttach.some(function (g) {
+      return g.shouldUseReanimated;
+    });
+    var webEventHandlersRef = (0, _$$_REQUIRE(_dependencyMap[6], "./utils").useWebEventHandlers)();
+    // Store state in ref to prevent unnecessary renders
+    var state = (0, _react.useRef)({
+      firstRender: true,
+      viewRef: null,
+      previousViewTag: -1,
+      forceRebuildReanimatedEvent: false
+    }).current;
+    var preparedGesture = _react.default.useRef({
+      attachedGestures: [],
+      animatedEventHandler: null,
+      animatedHandlers: null,
+      shouldUseReanimated: shouldUseReanimated,
+      isMounted: false
+    }).current;
+    var updateAttachedGestures = (0, _$$_REQUIRE(_dependencyMap[7], "./useDetectorUpdater").useDetectorUpdater)(state, preparedGesture, gesturesToAttach, gestureConfig, webEventHandlersRef);
+    var refHandler = (0, _$$_REQUIRE(_dependencyMap[8], "./useViewRefHandler").useViewRefHandler)(state, updateAttachedGestures);
+
+    // Reanimated event should be rebuilt only when gestures are reattached, otherwise
+    // config update will be enough as all necessary items are stored in shared values anyway
+    var needsToRebuildReanimatedEvent = state.firstRender || state.forceRebuildReanimatedEvent || (0, _$$_REQUIRE(_dependencyMap[9], "./needsToReattach").needsToReattach)(preparedGesture, gesturesToAttach);
+    state.forceRebuildReanimatedEvent = false;
+    (0, _$$_REQUIRE(_dependencyMap[10], "./useAnimatedGesture").useAnimatedGesture)(preparedGesture, needsToRebuildReanimatedEvent);
+    (0, _react.useLayoutEffect)(function () {
+      var viewTag = (0, _findNodeHandle.default)(state.viewRef);
+      preparedGesture.isMounted = true;
+      (0, _$$_REQUIRE(_dependencyMap[11], "./attachHandlers").attachHandlers)({
+        preparedGesture: preparedGesture,
+        gestureConfig: gestureConfig,
+        gesturesToAttach: gesturesToAttach,
+        webEventHandlersRef: webEventHandlersRef,
+        viewTag: viewTag
+      });
+      return function () {
+        preparedGesture.isMounted = false;
+        (0, _$$_REQUIRE(_dependencyMap[12], "./dropHandlers").dropHandlers)(preparedGesture);
+      };
+    }, []);
+    (0, _react.useEffect)(function () {
+      if (state.firstRender) {
+        state.firstRender = false;
+      } else {
+        updateAttachedGestures();
+      }
+    }, [props]);
+    (0, _$$_REQUIRE(_dependencyMap[13], "./useMountReactions").useMountReactions)(updateAttachedGestures, preparedGesture);
+    if (shouldUseReanimated) {
+      return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[14], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[15], "./Wrap").AnimatedWrap, {
+        ref: refHandler,
+        onGestureHandlerEvent: preparedGesture.animatedEventHandler,
+        children: props.children
+      });
+    } else {
+      return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[14], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[15], "./Wrap").Wrap, {
+        ref: refHandler,
+        children: props.children
+      });
+    }
+  };
+},671,[86,1,8,638,639,641,672,867,872,868,874,870,869,875,92,876],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/index.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ALLOWED_PROPS = void 0;
+  exports.checkGestureCallbacksForWorklets = checkGestureCallbacksForWorklets;
+  exports.extractGestureRelations = extractGestureRelations;
+  exports.useForceRender = useForceRender;
+  exports.useWebEventHandlers = useWebEventHandlers;
+  exports.validateDetectorChildren = validateDetectorChildren;
+  var _slicedToArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/slicedToArray"));
+  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/toConsumableArray"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[3], "react-native");
+  var _react = _$$_REQUIRE(_dependencyMap[4], "react");
+  var ALLOWED_PROPS = exports.ALLOWED_PROPS = [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[5], "../../gestureHandlerCommon").baseGestureHandlerWithDetectorProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[6], "../../TapGestureHandler").tapGestureHandlerProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[7], "../../PanGestureHandler").panGestureHandlerProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[7], "../../PanGestureHandler").panGestureHandlerCustomNativeProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[8], "../../LongPressGestureHandler").longPressGestureHandlerProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[9], "../../ForceTouchGestureHandler").forceTouchGestureHandlerProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[10], "../../FlingGestureHandler").flingGestureHandlerProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[11], "../hoverGesture").hoverGestureHandlerProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[12], "../../NativeViewGestureHandler").nativeViewGestureHandlerProps));
+  function convertToHandlerTag(ref) {
+    if (typeof ref === 'number') {
+      return ref;
+    } else if (ref instanceof _$$_REQUIRE(_dependencyMap[13], "../gesture").BaseGesture) {
+      return ref.handlerTag;
+    } else {
+      var _ref$current$handlerT, _ref$current;
+      // @ts-ignore in this case it should be a ref either to gesture object or
+      // a gesture handler component, in both cases handlerTag property exists
+      return (_ref$current$handlerT = (_ref$current = ref.current) == null ? void 0 : _ref$current.handlerTag) != null ? _ref$current$handlerT : -1;
+    }
+  }
+  function extractValidHandlerTags(interactionGroup) {
+    var _interactionGroup$map, _interactionGroup$map2;
+    return (_interactionGroup$map = interactionGroup == null || (_interactionGroup$map2 = interactionGroup.map(convertToHandlerTag)) == null ? void 0 : _interactionGroup$map2.filter(function (tag) {
+      return tag > 0;
+    })) != null ? _interactionGroup$map : [];
+  }
+  function extractGestureRelations(gesture) {
+    var requireToFail = extractValidHandlerTags(gesture.config.requireToFail);
+    var simultaneousWith = extractValidHandlerTags(gesture.config.simultaneousWith);
+    var blocksHandlers = extractValidHandlerTags(gesture.config.blocksHandlers);
+    return {
+      waitFor: requireToFail,
+      simultaneousHandlers: simultaneousWith,
+      blocksHandlers: blocksHandlers
+    };
+  }
+  function checkGestureCallbacksForWorklets(gesture) {
+    if (!__DEV__) {
+      return;
+    }
+    // If a gesture is explicitly marked to run on the JS thread there is no need to check
+    // if callbacks are worklets as the user is aware they will be ran on the JS thread
+    if (gesture.config.runOnJS) {
+      return;
+    }
+    var areSomeNotWorklets = gesture.handlers.isWorklet.includes(false);
+    var areSomeWorklets = gesture.handlers.isWorklet.includes(true);
+
+    // If some of the callbacks are worklets and some are not, and the gesture is not
+    // explicitly marked with `.runOnJS(true)` show an error
+    if (areSomeNotWorklets && areSomeWorklets) {
+      console.error((0, _$$_REQUIRE(_dependencyMap[14], "../../../utils").tagMessage)(`Some of the callbacks in the gesture are worklets and some are not. Either make sure that all calbacks are marked as 'worklet' if you wish to run them on the UI thread or use '.runOnJS(true)' modifier on the gesture explicitly to run all callbacks on the JS thread.`));
+    }
+    if (_$$_REQUIRE(_dependencyMap[15], "../reanimatedWrapper").Reanimated === undefined) {
+      // If Reanimated is not available, we can't run worklets, so we shouldn't show the warning
+      return;
+    }
+    var areAllNotWorklets = !areSomeWorklets && areSomeNotWorklets;
+    // If none of the callbacks are worklets and the gesture is not explicitly marked with
+    // `.runOnJS(true)` show a warning
+    if (areAllNotWorklets && !(0, _$$_REQUIRE(_dependencyMap[14], "../../../utils").isTestEnv)()) {
+      console.warn((0, _$$_REQUIRE(_dependencyMap[14], "../../../utils").tagMessage)(`None of the callbacks in the gesture are worklets. If you wish to run them on the JS thread use '.runOnJS(true)' modifier on the gesture to make this explicit. Otherwise, mark the callbacks as 'worklet' to run them on the UI thread.`));
+    }
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  function validateDetectorChildren(ref) {
+    // Finds the first native view under the Wrap component and traverses the fiber tree upwards
+    // to check whether there is more than one native view as a pseudo-direct child of GestureDetector
+    // i.e. this is not ok:
+    //            Wrap
+    //             |
+    //            / \
+    //           /   \
+    //          /     \
+    //         /       \
+    //   NativeView  NativeView
+    //
+    // but this is fine:
+    //            Wrap
+    //             |
+    //         NativeView
+    //             |
+    //            / \
+    //           /   \
+    //          /     \
+    //         /       \
+    //   NativeView  NativeView
+    if (__DEV__ && _reactNative.Platform.OS !== 'web') {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      var wrapType =
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      ref._reactInternals.elementType;
+
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      var instance = _$$_REQUIRE(_dependencyMap[16], "../../../RNRenderer").RNRenderer.findHostInstance_DEPRECATED(ref)._internalFiberInstanceHandleDEV;
+
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      while (instance && instance.elementType !== wrapType) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        if (instance.sibling) {
+          throw new Error('GestureDetector has more than one native view as its children. This can happen if you are using a custom component that renders multiple views, like React.Fragment. You should wrap content of GestureDetector with a <View> or <Animated.View>.');
+        }
+
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+        instance = instance.return;
+      }
+    }
+  }
+  function useForceRender() {
+    var _useState = (0, _react.useState)(false),
+      _useState2 = (0, _slicedToArray2.default)(_useState, 2),
+      renderState = _useState2[0],
+      setRenderState = _useState2[1];
+    var forceRender = (0, _react.useCallback)(function () {
+      setRenderState(!renderState);
+    }, [renderState, setRenderState]);
+    return forceRender;
+  }
+  function useWebEventHandlers() {
+    return (0, _react.useRef)({
+      onGestureHandlerEvent: function onGestureHandlerEvent(e) {
+        (0, _$$_REQUIRE(_dependencyMap[17], "../eventReceiver").onGestureHandlerEvent)(e.nativeEvent);
+      },
+      onGestureHandlerStateChange: (0, _$$_REQUIRE(_dependencyMap[18], "../../../EnableNewWebImplementation").isNewWebImplementationEnabled)() ? function (e) {
+        (0, _$$_REQUIRE(_dependencyMap[17], "../eventReceiver").onGestureHandlerEvent)(e.nativeEvent);
+      } : undefined
+    });
+  }
+},672,[8,27,46,1,86,650,673,674,675,656,655,669,634,660,641,676,862,863,866],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/utils.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.tapHandlerName = exports.tapGestureHandlerProps = exports.TapGestureHandler = void 0;
+  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
+  var _createHandler = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./createHandler"));
+  var tapGestureHandlerProps = exports.tapGestureHandlerProps = ['maxDurationMs', 'maxDelayMs', 'numberOfTaps', 'maxDeltaX', 'maxDeltaY', 'maxDist', 'minPointers'];
+
+  /**
+   * @deprecated TapGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Tap()` instead.
+   */
+
+  var tapHandlerName = exports.tapHandlerName = 'TapGestureHandler';
+
+  /**
+   * @deprecated TapGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Tap()` instead.
+   */
+
+  /**
+   * @deprecated TapGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Tap()` instead.
+   */
+  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; see description on the top of gestureHandlerCommon.ts file
+  var TapGestureHandler = exports.TapGestureHandler = (0, _createHandler.default)({
+    name: tapHandlerName,
+    allowedProps: [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[3], "./gestureHandlerCommon").baseGestureHandlerProps), tapGestureHandlerProps),
+    config: {
+      shouldCancelWhenOutside: true
+    }
+  });
+},673,[8,46,635,650],"node_modules/react-native-gesture-handler/src/handlers/TapGestureHandler.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.PanGestureHandler = void 0;
+  exports.managePanProps = managePanProps;
+  exports.panHandlerName = exports.panGestureHandlerProps = exports.panGestureHandlerCustomNativeProps = void 0;
+  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
+  var _createHandler = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./createHandler"));
+  var panGestureHandlerProps = exports.panGestureHandlerProps = ['activeOffsetY', 'activeOffsetX', 'failOffsetY', 'failOffsetX', 'minDist', 'minVelocity', 'minVelocityX', 'minVelocityY', 'minPointers', 'maxPointers', 'avgTouches', 'enableTrackpadTwoFingerGesture', 'activateAfterLongPress'];
+  var panGestureHandlerCustomNativeProps = exports.panGestureHandlerCustomNativeProps = ['activeOffsetYStart', 'activeOffsetYEnd', 'activeOffsetXStart', 'activeOffsetXEnd', 'failOffsetYStart', 'failOffsetYEnd', 'failOffsetXStart', 'failOffsetXEnd'];
+
+  /**
+   * @deprecated PanGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Pan()` instead.
+   */
+
+  var panHandlerName = exports.panHandlerName = 'PanGestureHandler';
+
+  /**
+   * @deprecated PanGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Pan()` instead.
+   */
+
+  /**
+   * @deprecated PanGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Pan()` instead.
+   */
+  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; see description on the top of gestureHandlerCommon.ts file
+  var PanGestureHandler = exports.PanGestureHandler = (0, _createHandler.default)({
+    name: panHandlerName,
+    allowedProps: [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[3], "./gestureHandlerCommon").baseGestureHandlerProps), panGestureHandlerProps),
+    config: {},
+    transformProps: managePanProps,
+    customNativeProps: panGestureHandlerCustomNativeProps
+  });
+  function validatePanGestureHandlerProps(props) {
+    if (Array.isArray(props.activeOffsetX) && (props.activeOffsetX[0] > 0 || props.activeOffsetX[1] < 0)) {
+      throw new Error(`First element of activeOffsetX should be negative, a the second one should be positive`);
+    }
+    if (Array.isArray(props.activeOffsetY) && (props.activeOffsetY[0] > 0 || props.activeOffsetY[1] < 0)) {
+      throw new Error(`First element of activeOffsetY should be negative, a the second one should be positive`);
+    }
+    if (Array.isArray(props.failOffsetX) && (props.failOffsetX[0] > 0 || props.failOffsetX[1] < 0)) {
+      throw new Error(`First element of failOffsetX should be negative, a the second one should be positive`);
+    }
+    if (Array.isArray(props.failOffsetY) && (props.failOffsetY[0] > 0 || props.failOffsetY[1] < 0)) {
+      throw new Error(`First element of failOffsetY should be negative, a the second one should be positive`);
+    }
+    if (props.minDist && (props.failOffsetX || props.failOffsetY)) {
+      throw new Error(`It is not supported to use minDist with failOffsetX or failOffsetY, use activeOffsetX and activeOffsetY instead`);
+    }
+    if (props.minDist && (props.activeOffsetX || props.activeOffsetY)) {
+      throw new Error(`It is not supported to use minDist with activeOffsetX or activeOffsetY`);
+    }
+  }
+  function transformPanGestureHandlerProps(props) {
+    var res = Object.assign({}, props);
+    if (props.activeOffsetX !== undefined) {
+      delete res.activeOffsetX;
+      if (Array.isArray(props.activeOffsetX)) {
+        res.activeOffsetXStart = props.activeOffsetX[0];
+        res.activeOffsetXEnd = props.activeOffsetX[1];
+      } else if (props.activeOffsetX < 0) {
+        res.activeOffsetXStart = props.activeOffsetX;
+      } else {
+        res.activeOffsetXEnd = props.activeOffsetX;
+      }
+    }
+    if (props.activeOffsetY !== undefined) {
+      delete res.activeOffsetY;
+      if (Array.isArray(props.activeOffsetY)) {
+        res.activeOffsetYStart = props.activeOffsetY[0];
+        res.activeOffsetYEnd = props.activeOffsetY[1];
+      } else if (props.activeOffsetY < 0) {
+        res.activeOffsetYStart = props.activeOffsetY;
+      } else {
+        res.activeOffsetYEnd = props.activeOffsetY;
+      }
+    }
+    if (props.failOffsetX !== undefined) {
+      delete res.failOffsetX;
+      if (Array.isArray(props.failOffsetX)) {
+        res.failOffsetXStart = props.failOffsetX[0];
+        res.failOffsetXEnd = props.failOffsetX[1];
+      } else if (props.failOffsetX < 0) {
+        res.failOffsetXStart = props.failOffsetX;
+      } else {
+        res.failOffsetXEnd = props.failOffsetX;
+      }
+    }
+    if (props.failOffsetY !== undefined) {
+      delete res.failOffsetY;
+      if (Array.isArray(props.failOffsetY)) {
+        res.failOffsetYStart = props.failOffsetY[0];
+        res.failOffsetYEnd = props.failOffsetY[1];
+      } else if (props.failOffsetY < 0) {
+        res.failOffsetYStart = props.failOffsetY;
+      } else {
+        res.failOffsetYEnd = props.failOffsetY;
+      }
+    }
+    return res;
+  }
+  function managePanProps(props) {
+    if (__DEV__) {
+      validatePanGestureHandlerProps(props);
+    }
+    return transformPanGestureHandlerProps(props);
+  }
+},674,[8,46,635,650],"node_modules/react-native-gesture-handler/src/handlers/PanGestureHandler.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.longPressHandlerName = exports.longPressGestureHandlerProps = exports.LongPressGestureHandler = void 0;
+  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
+  var _createHandler = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./createHandler"));
+  var longPressGestureHandlerProps = exports.longPressGestureHandlerProps = ['minDurationMs', 'maxDist', 'numberOfPointers'];
+
+  /**
+   * @deprecated LongPressGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.LongPress()` instead.
+   */
+
+  var longPressHandlerName = exports.longPressHandlerName = 'LongPressGestureHandler';
+
+  /**
+   * @deprecated LongPressGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.LongPress()` instead.
+   */
+
+  /**
+   * @deprecated LongPressGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.LongPress()` instead.
+   */
+  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; see description on the top of gestureHandlerCommon.ts file
+  var LongPressGestureHandler = exports.LongPressGestureHandler = (0, _createHandler.default)({
+    name: longPressHandlerName,
+    allowedProps: [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[3], "./gestureHandlerCommon").baseGestureHandlerProps), longPressGestureHandlerProps),
+    config: {
+      shouldCancelWhenOutside: true
+    }
+  });
+},675,[8,46,635,650],"node_modules/react-native-gesture-handler/src/handlers/LongPressGestureHandler.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.Reanimated = void 0;
+  var _Reanimated;
+  var Reanimated;
+  try {
+    exports.Reanimated = Reanimated = _$$_REQUIRE(_dependencyMap[0], "react-native-reanimated");
+  } catch (e) {
+    // When 'react-native-reanimated' is not available we want to quietly continue
+    // @ts-ignore TS demands the variable to be initialized
+    exports.Reanimated = Reanimated = undefined;
+  }
+  if (!((_Reanimated = Reanimated) != null && _Reanimated.useSharedValue)) {
+    // @ts-ignore Make sure the loaded module is actually Reanimated, if it's not
+    // reset the module to undefined so we can fallback to the default implementation
+    exports.Reanimated = Reanimated = undefined;
+  }
+  var _worklet_6487932999118_init_data = {
+    code: "function reactNativeGestureHandler_reanimatedWrapperTs1(){const{tagMessage}=this.__closure;console.warn(tagMessage('Please use newer version of react-native-reanimated in order to control state of the gestures.'));}",
+    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/reanimatedWrapper.ts",
+    sourceMap: "{\"version\":3,\"names\":[\"reactNativeGestureHandler_reanimatedWrapperTs1\",\"tagMessage\",\"__closure\",\"console\",\"warn\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/reanimatedWrapper.ts\"],\"mappings\":\"AA+C+B,SAAAA,8CAAMA,CAAA,QAAAC,UAAA,OAAAC,SAAA,CAEjCC,OAAO,CAACC,IAAI,CACVH,UAAU,CACR,gGACF,CACF,CAAC,CACH\",\"ignoreList\":[]}",
+    version: "3.18.0"
+  };
+  if (Reanimated !== undefined && !Reanimated.setGestureState) {
+    // The loaded module is Reanimated but it doesn't have the setGestureState defined
+    Reanimated.setGestureState = function () {
+      var _e = [new global.Error(), -2, -27];
+      var reactNativeGestureHandler_reanimatedWrapperTs1 = function reactNativeGestureHandler_reanimatedWrapperTs1() {
+        console.warn((0, _$$_REQUIRE(_dependencyMap[1], "../../utils").tagMessage)('Please use newer version of react-native-reanimated in order to control state of the gestures.'));
+      };
+      reactNativeGestureHandler_reanimatedWrapperTs1.__closure = {
+        tagMessage: _$$_REQUIRE(_dependencyMap[1], "../../utils").tagMessage
+      };
+      reactNativeGestureHandler_reanimatedWrapperTs1.__workletHash = 6487932999118;
+      reactNativeGestureHandler_reanimatedWrapperTs1.__initData = _worklet_6487932999118_init_data;
+      reactNativeGestureHandler_reanimatedWrapperTs1.__stackDetails = _e;
+      return reactNativeGestureHandler_reanimatedWrapperTs1;
+    }();
+  }
+},676,[677,641],"node_modules/react-native-gesture-handler/src/handlers/gestures/reanimatedWrapper.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -121890,7 +125421,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var Animated = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[22], "./Animated"));
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   var _default = exports.default = Animated;
-},633,[634,723,683,727,636,729,731,640,794,795,801,687,732,673,802,674,803,810,678,677,773,811,812],"node_modules/react-native-reanimated/src/index.ts");
+},677,[678,767,727,771,680,773,775,684,838,839,845,731,776,717,846,718,847,854,722,721,817,855,856],"node_modules/react-native-reanimated/src/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -121938,7 +125469,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     });
   });
-},634,[635,685,701,712,719],"node_modules/react-native-reanimated/src/layoutReanimation/index.ts");
+},678,[679,729,745,756,763],"node_modules/react-native-reanimated/src/layoutReanimation/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -122082,7 +125613,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_animationsManagerTs4.__stackDetails = _e;
     return reactNativeReanimated_animationsManagerTs4;
   }())();
-},635,[636,637,669,657],"node_modules/react-native-reanimated/src/layoutReanimation/animationsManager.ts");
+},679,[680,681,713,701],"node_modules/react-native-reanimated/src/layoutReanimation/animationsManager.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -122244,7 +125775,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // so many dependencies on it being generic that it's not feasible at the moment.
   /** @deprecated Please use {@link AnimatedStyle} type instead. */
   /** @deprecated This type is no longer relevant. */
-},636,[],"node_modules/react-native-reanimated/src/commonTypes.ts");
+},680,[],"node_modules/react-native-reanimated/src/commonTypes.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -122274,7 +125805,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _worklet_3090637828732_init_data = {
     code: "function addCompilerSafeGetAndSet_reactNativeReanimated_mutablesTs1(mutable){Object.defineProperties(mutable,{get:{value:function(){return mutable.value;},configurable:false,enumerable:false},set:{value:function(newValue){if(typeof newValue==='function'&&!newValue.__isAnimationDefinition){mutable.value=newValue(mutable.value);}else{mutable.value=newValue;}},configurable:false,enumerable:false}});}",
     location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/mutables.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"addCompilerSafeGetAndSet_reactNativeReanimated_mutablesTs1\",\"mutable\",\"Object\",\"defineProperties\",\"get\",\"value\",\"configurable\",\"enumerable\",\"set\",\"newValue\",\"__isAnimationDefinition\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/mutables.ts\"],\"mappings\":\"AAyCA,SAAAA,2DAAAC,OAAA,EAAAC,MAAA,CAAAC,gBAAA,CAAAF,OAAA,EACAG,GAAA,EACAC,KAAA,SAAAA,CAAA,EACA,OAAAJ,OAAA,CAAAI,KAAA,CACA,EACAC,YAAA,OACAC,UAAA,MACA,EACAC,GAAA,EACAH,KAAS,SAAAA,CAAAI,QAAA,CAAwB,CAEzB,GAAC,OAAAA,QAAiB,aAAS,EAE7B,CAAAA,QAAK,CAAAC,uBAAG,EACNT,OAAO,CAAAI,KAAQ,CAAAI,QAAK,CAAAR,OAAA,CAAAI,KAAA,EACrB,MACDJ,OAAA,CAAYI,KAAE,CAAKI,QAAA,CACnB,CACD,EACDH,YAAK,OACHC,UAAK,M\",\"ignoreList\":[]}",
+    sourceMap: "{\"version\":3,\"names\":[\"addCompilerSafeGetAndSet_reactNativeReanimated_mutablesTs1\",\"mutable\",\"Object\",\"defineProperties\",\"get\",\"value\",\"configurable\",\"enumerable\",\"set\",\"addCompilerSafeGetAndSet\",\"newValue\",\"__isAnimationDefinition\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/mutables.ts\"],\"mappings\":\"AAyCA,SAAAA,2DAAAC,OAAA,EAAAC,MAAA,CAAAC,gBAAA,CAAAF,OAAA,EACAG,GAAA,EACAC,KAAA,SAAAA,CAAA,EACA,OAAAJ,OAAA,CAAAI,KAAA,CACA,EACAC,YAAA,OACAC,UAAA,MACA,EACAC,GAAA,EACAH,KAAS,SAAAI,CAAAC,QAAA,CAAwB,CAEzB,GAAC,OAAAA,QAAiB,aAAS,EAE7B,CAAAA,QAAK,CAAAC,uBAAG,EACNV,OAAO,CAAAI,KAAQ,CAAAK,QAAK,CAAAT,OAAA,CAAAI,KAAA,EACrB,MACDJ,OAAA,CAAYI,KAAE,CAAKK,QAAA,CACnB,CACD,EACDJ,YAAK,OACHD,UAAK,M\",\"ignoreList\":[]}",
     version: "3.18.0"
   };
   /**
@@ -122570,7 +126101,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function mutableToJSON(value) {
     return JSON.stringify(value);
   }
-},637,[638,639,640,643,644,657,646,645],"node_modules/react-native-reanimated/src/mutables.ts");
+},681,[682,683,684,687,688,701,690,689],"node_modules/react-native-reanimated/src/mutables.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -122623,7 +126154,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     // @ts-ignore Fallback if `window` is undefined.
     return typeof window !== 'undefined';
   }
-},638,[86,1],"node_modules/react-native-reanimated/src/PlatformChecker.ts");
+},682,[86,1],"node_modules/react-native-reanimated/src/PlatformChecker.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -122669,7 +126200,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
     return (0, _react.forwardRef)(render);
   }
-},639,[8,153,86,638],"node_modules/react-native-reanimated/src/reactUtils.tsx");
+},683,[8,153,86,682],"node_modules/react-native-reanimated/src/reactUtils.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -122696,7 +126227,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     });
   });
-},640,[641,642],"node_modules/react-native-reanimated/src/logger/index.ts");
+},684,[685,686],"node_modules/react-native-reanimated/src/logger/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -122717,7 +126248,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   // Do nothing when addLogBoxLog is called if LogBox is not available
   var addLogBoxLog = exports.addLogBoxLog = (_LogBox$addLog$bind = LogBox == null || (_LogBox$addLog = LogBox.addLog) == null ? void 0 : _LogBox$addLog.bind(LogBox)) != null ? _LogBox$addLog$bind : noop;
-},641,[1],"node_modules/react-native-reanimated/src/logger/LogBox.ts");
+},685,[1],"node_modules/react-native-reanimated/src/logger/LogBox.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -122981,7 +126512,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return error;
     }()
   };
-},642,[641],"node_modules/react-native-reanimated/src/logger/logger.ts");
+},686,[685],"node_modules/react-native-reanimated/src/logger/logger.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -123066,7 +126597,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     valueSetter.__stackDetails = _e;
     return valueSetter;
   }();
-},643,[],"node_modules/react-native-reanimated/src/valueSetter.ts");
+},687,[],"node_modules/react-native-reanimated/src/valueSetter.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -123622,7 +127153,7 @@ for more details.`);
    * value that is read and written only on the UI thread.
    */
   var makeShareable = exports.makeShareable = SHOULD_BE_USE_WEB ? makeShareableJS : makeShareableNative;
-},644,[8,27,638,645,646,636,647,656,640],"node_modules/react-native-reanimated/src/shareables.ts");
+},688,[8,27,682,689,690,680,691,700,684],"node_modules/react-native-reanimated/src/shareables.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -123665,7 +127196,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     },
     get: cache.get.bind(cache)
   };
-},645,[638],"node_modules/react-native-reanimated/src/shareableMappingCache.ts");
+},689,[682],"node_modules/react-native-reanimated/src/shareableMappingCache.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /* eslint-disable reanimated/use-reanimated-error */
   'use strict';
@@ -123784,7 +127315,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     // @ts-ignore the reportFatalError method is an internal method of ErrorUtils not exposed in the type definitions
     global.ErrorUtils.reportFatalError(error);
   }
-},646,[8,27],"node_modules/react-native-reanimated/src/errors.ts");
+},690,[8,27],"node_modules/react-native-reanimated/src/errors.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -123797,7 +127328,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[0], "./WorkletsModule").WorkletsModule;
     }
   });
-},647,[648],"node_modules/react-native-reanimated/src/worklets/index.ts");
+},691,[692],"node_modules/react-native-reanimated/src/worklets/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -123810,7 +127341,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[0], "./workletsModuleInstance").WorkletsModule;
     }
   });
-},648,[649],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/index.ts");
+},692,[693],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -123819,7 +127350,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   exports.WorkletsModule = void 0;
   var WorkletsModule = exports.WorkletsModule = (0, _$$_REQUIRE(_dependencyMap[0], "../../PlatformChecker").shouldBeUseWeb)() ? (0, _$$_REQUIRE(_dependencyMap[1], "./JSWorklets").createJSWorkletsModule)() : (0, _$$_REQUIRE(_dependencyMap[2], "./NativeWorklets").createNativeWorkletsModule)();
-},649,[638,650,651],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/workletsModuleInstance.ts");
+},693,[682,694,695],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/workletsModuleInstance.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -123843,7 +127374,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }();
-},650,[8,9,10,646],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/JSWorklets.ts");
+},694,[8,9,10,690],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/JSWorklets.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -123883,7 +127414,7 @@ See https://docs.swmansion.com/react-native-reanimated/docs/guides/troubleshooti
       }
     }]);
   }();
-},651,[8,9,10,20,21,652,653,646],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/NativeWorklets.ts");
+},695,[8,9,10,20,21,696,697,690],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/NativeWorklets.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /* eslint-disable reanimated/use-reanimated-error */
   'use strict';
@@ -123895,7 +127426,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _worklet_303159334415_init_data = {
     code: "function valueUnpacker_reactNativeReanimated_valueUnpackerTs1(objectToUnpack,category,remoteFunctionName){let workletsCache=global.__workletsCache;let handleCache=global.__handleCache;if(workletsCache===undefined){workletsCache=global.__workletsCache=new Map();handleCache=global.__handleCache=new WeakMap();}const workletHash=objectToUnpack.__workletHash;if(workletHash!==undefined){let workletFun=workletsCache.get(workletHash);if(workletFun===undefined){const initData=objectToUnpack.__initData;if(global.evalWithSourceMap){workletFun=global.evalWithSourceMap('('+initData.code+'\\n)',initData.location,initData.sourceMap);}else if(global.evalWithSourceUrl){workletFun=global.evalWithSourceUrl('('+initData.code+'\\n)',\"worklet_\"+workletHash);}else{workletFun=eval('('+initData.code+'\\n)');}workletsCache.set(workletHash,workletFun);}const functionInstance=workletFun.bind(objectToUnpack);objectToUnpack._recur=functionInstance;return functionInstance;}else if(objectToUnpack.__init!==undefined){let value=handleCache.get(objectToUnpack);if(value===undefined){value=objectToUnpack.__init();handleCache.set(objectToUnpack,value);}return value;}else if(category==='RemoteFunction'){const fun=function(){const label=remoteFunctionName?\"function `\"+remoteFunctionName+\"`\":'anonymous function';throw new Error(\"[Reanimated] Tried to synchronously call a non-worklet \"+label+\" on the UI thread.\\nSee https://docs.swmansion.com/react-native-reanimated/docs/guides/troubleshooting#tried-to-synchronously-call-a-non-worklet-function-on-the-ui-thread for more details.\");};fun.__remoteFunction=objectToUnpack;return fun;}else{throw new Error(\"[Reanimated] Data type in category \\\"\"+category+\"\\\" not recognized by value unpacker: \\\"\"+_toString(objectToUnpack)+\"\\\".\");}}",
     location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/worklets/valueUnpacker.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"valueUnpacker_reactNativeReanimated_valueUnpackerTs1\",\"objectToUnpack\",\"category\",\"remoteFunctionName\",\"workletsCache\",\"global\",\"__workletsCache\",\"handleCache\",\"__handleCache\",\"undefined\",\"Map\",\"WeakMap\",\"workletHash\",\"__workletHash\",\"workletFun\",\"get\",\"initData\",\"__initData\",\"evalWithSourceMap\",\"code\",\"location\",\"sourceMap\",\"evalWithSourceUrl\",\"eval\",\"set\",\"functionInstance\",\"bind\",\"_recur\",\"__init\",\"value\",\"fun\",\"label\",\"Error\",\"__remoteFunction\",\"_toString\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/worklets/valueUnpacker.ts\"],\"mappings\":\"AAMA,SAAAA,oDAGEA,CAAAC,cACK,CAAAC,QAAA,CAAAC,kBAAA,EAEL,GAAI,CAAAC,aAAa,CAAGC,MAAM,CAACC,eAAe,CAC1C,GAAI,CAAAC,WAAW,CAAGF,MAAM,CAACG,aAAa,CACtC,GAAIJ,aAAa,GAAKK,SAAS,CAAE,CAE/BL,aAAa,CAAGC,MAAM,CAACC,eAAe,CAAG,GAAI,CAAAI,GAAG,CAAC,CAAC,CAClDH,WAAW,CAAGF,MAAM,CAACG,aAAa,CAAG,GAAI,CAAAG,OAAO,CAAC,CAAC,CACpD,CACA,KAAM,CAAAC,WAAW,CAAGX,cAAc,CAACY,aAAa,CAChD,GAAID,WAAW,GAAKH,SAAS,CAAE,CAC7B,GAAI,CAAAK,UAAU,CAAGV,aAAa,CAACW,GAAG,CAACH,WAAW,CAAC,CAC/C,GAAIE,UAAU,GAAKL,SAAS,CAAE,CAC5B,KAAM,CAAAO,QAAQ,CAAGf,cAAc,CAACgB,UAAU,CAC1C,GAAIZ,MAAM,CAACa,iBAAiB,CAAE,CAK5BJ,UAAU,CAAGT,MAAM,CAACa,iBAAiB,CACnC,GAAG,CAAGF,QAAQ,CAACG,IAAI,CAAG,KAAK,CAC3BH,QAAQ,CAACI,QAAQ,CACjBJ,QAAQ,CAACK,SACX,CAA4B,CAC9B,CAAC,IAAM,IAAIhB,MAAM,CAACiB,iBAAiB,CAAE,CAKnCR,UAAU,CAAGT,MAAM,CAACiB,iBAAiB,CACnC,GAAG,CAAGN,QAAQ,CAACG,IAAI,CAAG,KAAK,YAChBP,WACb,CAA4B,CAC9B,CAAC,IAAM,CAGLE,UAAU,CAAGS,IAAI,CAAC,GAAG,CAAGP,QAAQ,CAACG,IAAI,CAAG,KAAK,CAErC,CACV,CACAf,aAAa,CAACoB,GAAG,CAACZ,WAAW,CAAEE,UAAU,CAAC,CAC5C,CACA,KAAM,CAAAW,gBAAgB,CAAGX,UAAU,CAACY,IAAI,CAACzB,cAAc,CAAC,CACxDA,cAAc,CAAC0B,MAAM,CAAGF,gBAAgB,CACxC,MAAO,CAAAA,gBAAgB,CACzB,CAAC,IAAM,IAAIxB,cAAc,CAAC2B,MAAM,GAAKnB,SAAS,CAAE,CAC9C,GAAI,CAAAoB,KAAK,CAAGtB,WAAW,CAACQ,GAAG,CAACd,cAAc,CAAC,CAC3C,GAAI4B,KAAK,GAAKpB,SAAS,CAAE,CACvBoB,KAAK,CAAG5B,cAAc,CAAC2B,MAAM,CAAC,CAAC,CAC/BrB,WAAW,CAACiB,GAAG,CAACvB,cAAc,CAAE4B,KAAK,CAAC,CACxC,CACA,MAAO,CAAAA,KAAK,CACd,CAAC,IAAM,IAAI3B,QAAQ,GAAK,gBAAgB,CAAE,CACxC,KAAM,CAAA4B,GAAG,CAAG,QAAAA,CAAA,CAAM,CAChB,KAAM,CAAAC,KAAK,CAAG5B,kBAAkB,cACdA,kBAAkB,KAChC,oBAAoB,CACxB,KAAM,IAAI,CAAA6B,KAAK,2DAA2DD,KAAK,+LACoF,CAAC,CACtK,CAAC,CACDD,GAAG,CAACG,gBAAgB,CAAGhC,cAAc,CACrC,MAAO,CAAA6B,GAAG,CACZ,CAAC,IAAM,CACL,KAAM,IAAI,CAAAE,KAAK,yCAC0B9B,QAAQ,2CAAwCgC,SAAS,CAC9FjC,cACF,CAAC,MACH,CAAC,CACH,CACF\",\"ignoreList\":[]}",
+    sourceMap: "{\"version\":3,\"names\":[\"valueUnpacker_reactNativeReanimated_valueUnpackerTs1\",\"remoteFunctionName\",\"objectToUnpack\",\"category\",\"workletsCache\",\"global\",\"__workletsCache\",\"handleCache\",\"__handleCache\",\"undefined\",\"Map\",\"WeakMap\",\"workletHash\",\"__workletHash\",\"workletFun\",\"get\",\"initData\",\"__initData\",\"evalWithSourceMap\",\"code\",\"location\",\"sourceMap\",\"evalWithSourceUrl\",\"eval\",\"set\",\"functionInstance\",\"bind\",\"_recur\",\"__init\",\"value\",\"fun\",\"label\",\"Error\",\"__remoteFunction\",\"_toString\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/worklets/valueUnpacker.ts\"],\"mappings\":\"AAMA,SAAAA,oDAGEC,CAAAC,cACK,CAAAC,QAAA,CAAAF,kBAAA,EAEL,GAAI,CAAAG,aAAa,CAAGC,MAAM,CAACC,eAAe,CAC1C,GAAI,CAAAC,WAAW,CAAGF,MAAM,CAACG,aAAa,CACtC,GAAIJ,aAAa,GAAKK,SAAS,CAAE,CAE/BL,aAAa,CAAGC,MAAM,CAACC,eAAe,CAAG,GAAI,CAAAI,GAAG,CAAC,CAAC,CAClDH,WAAW,CAAGF,MAAM,CAACG,aAAa,CAAG,GAAI,CAAAG,OAAO,CAAC,CAAC,CACpD,CACA,KAAM,CAAAC,WAAW,CAAGV,cAAc,CAACW,aAAa,CAChD,GAAID,WAAW,GAAKH,SAAS,CAAE,CAC7B,GAAI,CAAAK,UAAU,CAAGV,aAAa,CAACW,GAAG,CAACH,WAAW,CAAC,CAC/C,GAAIE,UAAU,GAAKL,SAAS,CAAE,CAC5B,KAAM,CAAAO,QAAQ,CAAGd,cAAc,CAACe,UAAU,CAC1C,GAAIZ,MAAM,CAACa,iBAAiB,CAAE,CAK5BJ,UAAU,CAAGT,MAAM,CAACa,iBAAiB,CACnC,GAAG,CAAGF,QAAQ,CAACG,IAAI,CAAG,KAAK,CAC3BH,QAAQ,CAACI,QAAQ,CACjBJ,QAAQ,CAACK,SACX,CAA4B,CAC9B,CAAC,IAAM,IAAIhB,MAAM,CAACiB,iBAAiB,CAAE,CAKnCR,UAAU,CAAGT,MAAM,CAACiB,iBAAiB,CACnC,GAAG,CAAGN,QAAQ,CAACG,IAAI,CAAG,KAAK,YAChBP,WACb,CAA4B,CAC9B,CAAC,IAAM,CAGLE,UAAU,CAAGS,IAAI,CAAC,GAAG,CAAGP,QAAQ,CAACG,IAAI,CAAG,KAAK,CAErC,CACV,CACAf,aAAa,CAACoB,GAAG,CAACZ,WAAW,CAAEE,UAAU,CAAC,CAC5C,CACA,KAAM,CAAAW,gBAAgB,CAAGX,UAAU,CAACY,IAAI,CAACxB,cAAc,CAAC,CACxDA,cAAc,CAACyB,MAAM,CAAGF,gBAAgB,CACxC,MAAO,CAAAA,gBAAgB,CACzB,CAAC,IAAM,IAAIvB,cAAc,CAAC0B,MAAM,GAAKnB,SAAS,CAAE,CAC9C,GAAI,CAAAoB,KAAK,CAAGtB,WAAW,CAACQ,GAAG,CAACb,cAAc,CAAC,CAC3C,GAAI2B,KAAK,GAAKpB,SAAS,CAAE,CACvBoB,KAAK,CAAG3B,cAAc,CAAC0B,MAAM,CAAC,CAAC,CAC/BrB,WAAW,CAACiB,GAAG,CAACtB,cAAc,CAAE2B,KAAK,CAAC,CACxC,CACA,MAAO,CAAAA,KAAK,CACd,CAAC,IAAM,IAAI1B,QAAQ,GAAK,gBAAgB,CAAE,CACxC,KAAM,CAAA2B,GAAG,CAAG,QAAAA,CAAA,CAAM,CAChB,KAAM,CAAAC,KAAK,CAAG9B,kBAAkB,cACdA,kBAAkB,KAChC,oBAAoB,CACxB,KAAM,IAAI,CAAA+B,KAAK,2DAA2DD,KAAK,+LACoF,CAAC,CACtK,CAAC,CACDD,GAAG,CAACG,gBAAgB,CAAG/B,cAAc,CACrC,MAAO,CAAA4B,GAAG,CACZ,CAAC,IAAM,CACL,KAAM,IAAI,CAAAE,KAAK,yCAC0B7B,QAAQ,2CAAwC+B,SAAS,CAC9FhC,cACF,CAAC,MACH,CAAC,CACH,CACF\",\"ignoreList\":[]}",
     version: "3.18.0"
   };
   var valueUnpacker = function () {
@@ -123993,7 +127524,7 @@ See https://docs.swmansion.com/react-native-reanimated/docs/guides/troubleshooti
   function getValueUnpackerCode() {
     return valueUnpacker.__initData.code;
   }
-},652,[638,636],"node_modules/react-native-reanimated/src/worklets/valueUnpacker.ts");
+},696,[682,680],"node_modules/react-native-reanimated/src/worklets/valueUnpacker.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -124014,7 +127545,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   var _NativeReanimatedModule = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "./NativeReanimatedModule"));
   var _NativeWorkletsModule = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./NativeWorkletsModule"));
-},653,[8,654,655],"node_modules/react-native-reanimated/src/specs/index.ts");
+},697,[8,698,699],"node_modules/react-native-reanimated/src/specs/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -124024,7 +127555,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   exports.default = void 0;
   var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
   var _default = exports.default = _reactNative.TurboModuleRegistry.get('ReanimatedModule');
-},654,[1],"node_modules/react-native-reanimated/src/specs/NativeReanimatedModule.ts");
+},698,[1],"node_modules/react-native-reanimated/src/specs/NativeReanimatedModule.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -124036,7 +127567,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // This file would ideally be in `worklets/specs` but
   // codegen is pretty stupid and stops looking after first `spec` directory found.
   var _default = exports.default = _reactNative.TurboModuleRegistry.get('WorkletsModule');
-},655,[1],"node_modules/react-native-reanimated/src/specs/NativeWorkletsModule.ts");
+},699,[1],"node_modules/react-native-reanimated/src/specs/NativeWorkletsModule.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -124050,7 +127581,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   exports.jsVersion = void 0;
   var jsVersion = exports.jsVersion = '3.18.0';
-},656,[],"node_modules/react-native-reanimated/src/platform-specific/jsVersion.ts");
+},700,[],"node_modules/react-native-reanimated/src/platform-specific/jsVersion.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -124422,7 +127953,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     _runOnJS.__stackDetails = _e;
     return _runOnJS;
   }();
-},657,[8,46,27,638,646,636,658,644],"node_modules/react-native-reanimated/src/threads.ts");
+},701,[8,46,27,682,690,680,702,688],"node_modules/react-native-reanimated/src/threads.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -124435,7 +127966,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[0], "./reanimatedModuleInstance").ReanimatedModule;
     }
   });
-},658,[659],"node_modules/react-native-reanimated/src/ReanimatedModule/index.ts");
+},702,[703],"node_modules/react-native-reanimated/src/ReanimatedModule/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -124444,7 +127975,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   exports.ReanimatedModule = void 0;
   var ReanimatedModule = exports.ReanimatedModule = (0, _$$_REQUIRE(_dependencyMap[0], "../PlatformChecker").shouldBeUseWeb)() ? (0, _$$_REQUIRE(_dependencyMap[1], "./js-reanimated").createJSReanimatedModule)() : (0, _$$_REQUIRE(_dependencyMap[2], "./NativeReanimated").createNativeReanimatedModule)();
-},659,[638,660,665],"node_modules/react-native-reanimated/src/ReanimatedModule/reanimatedModuleInstance.ts");
+},703,[682,704,709],"node_modules/react-native-reanimated/src/ReanimatedModule/reanimatedModuleInstance.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -124558,7 +128089,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function isNativeProp(propName) {
     return !!_$$_REQUIRE(_dependencyMap[6], "../../propsAllowlists").PropsAllowlists.NATIVE_THREAD_PROPS_WHITELIST[propName];
   }
-},660,[661,8,27,646,663,640,664],"node_modules/react-native-reanimated/src/ReanimatedModule/js-reanimated/index.ts");
+},704,[705,8,27,690,707,684,708],"node_modules/react-native-reanimated/src/ReanimatedModule/js-reanimated/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -124856,7 +128387,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     Platform["UNKNOWN"] = "unknown";
     return Platform;
   }({});
-},661,[8,27,9,10,21,638,662,647,636,646,640],"node_modules/react-native-reanimated/src/ReanimatedModule/js-reanimated/JSReanimated.ts");
+},705,[8,27,9,10,21,682,706,691,680,690,684],"node_modules/react-native-reanimated/src/ReanimatedModule/js-reanimated/JSReanimated.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -124871,7 +128402,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return callback(performance.now());
     }, 0);
   }
-},662,[],"node_modules/react-native-reanimated/src/mockedRequestAnimationFrame.ts");
+},706,[],"node_modules/react-native-reanimated/src/mockedRequestAnimationFrame.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -124885,7 +128416,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var createTransformValue;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   var createTextShadowValue;
-},663,[],"node_modules/react-native-reanimated/src/ReanimatedModule/js-reanimated/webUtils.ts");
+},707,[],"node_modules/react-native-reanimated/src/ReanimatedModule/js-reanimated/webUtils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -125017,7 +128548,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       placeholderTextColor: true
     }
   };
-},664,[],"node_modules/react-native-reanimated/src/propsAllowlists.ts");
+},708,[],"node_modules/react-native-reanimated/src/propsAllowlists.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -125243,7 +128774,7 @@ See https://docs.swmansion.com/react-native-reanimated/docs/guides/troubleshooti
       }
     }]);
   }();
-},665,[8,9,10,20,21,656,646,647,653,666,638,667],"node_modules/react-native-reanimated/src/ReanimatedModule/NativeReanimated.ts");
+},709,[8,9,10,20,21,700,690,691,697,710,682,711],"node_modules/react-native-reanimated/src/ReanimatedModule/NativeReanimated.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -125286,7 +128817,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return version1 === version2;
     }
   }
-},666,[8,27,640,656,646],"node_modules/react-native-reanimated/src/platform-specific/checkCppVersion.ts");
+},710,[8,27,684,700,690],"node_modules/react-native-reanimated/src/platform-specific/checkCppVersion.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -125332,7 +128863,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
     return resolvedRef;
   }
-},667,[322,668],"node_modules/react-native-reanimated/src/fabricUtils.ts");
+},711,[322,712],"node_modules/react-native-reanimated/src/fabricUtils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /* eslint-disable camelcase */
   'use strict';
@@ -125395,7 +128926,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     */
     return findHostInstance_DEPRECATED(!(0, _$$_REQUIRE(_dependencyMap[0], "../PlatformChecker").isFabric)() || component._hasAnimatedRef ? component._componentRef : component);
   }
-},668,[638,303,646,338],"node_modules/react-native-reanimated/src/platform-specific/findHostInstance.ts");
+},712,[682,303,690,338],"node_modules/react-native-reanimated/src/platform-specific/findHostInstance.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -125640,7 +129171,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     withStyleAnimation.__stackDetails = _e;
     return withStyleAnimation;
   }();
-},669,[670,673,640,682],"node_modules/react-native-reanimated/src/animation/styleAnimation.ts");
+},713,[714,717,684,726],"node_modules/react-native-reanimated/src/animation/styleAnimation.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /* eslint-disable @typescript-eslint/no-shadow */
   'use strict';
@@ -126216,7 +129747,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
    * @see https://docs.swmansion.com/react-native-reanimated/docs/core/cancelAnimation
    */
   var cancelAnimation = exports.cancelAnimation = SHOULD_BE_USE_WEB ? cancelAnimationWeb : cancelAnimationNative;
-},670,[8,46,638,671,640,636,646,672,673,657],"node_modules/react-native-reanimated/src/animation/util.ts");
+},714,[8,46,682,715,684,680,690,716,717,701],"node_modules/react-native-reanimated/src/animation/util.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -126239,7 +129770,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       ReducedMotionManager.uiValue.value = value;
     }
   };
-},671,[638,637],"node_modules/react-native-reanimated/src/ReducedMotion.ts");
+},715,[682,681],"node_modules/react-native-reanimated/src/ReducedMotion.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -126746,7 +130277,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     decomposeMatrixIntoMatricesAndAngles.__stackDetails = _e;
     return decomposeMatrixIntoMatricesAndAngles;
   }();
-},672,[8,27,646],"node_modules/react-native-reanimated/src/animation/transformationMatrix/matrixUtils.tsx");
+},716,[8,27,690],"node_modules/react-native-reanimated/src/animation/transformationMatrix/matrixUtils.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -127447,7 +130978,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _worklet_312223461423_init_data = {
     code: "function HSVtoRGB_reactNativeReanimated_ColorsTs16(h,s,v){let r,g,b;const i=Math.floor(h*6);const f=h*6-i;const p=v*(1-s);const q=v*(1-f*s);const t=v*(1-(1-f)*s);switch(i%6){case 0:[r,g,b]=[v,t,p];break;case 1:[r,g,b]=[q,v,p];break;case 2:[r,g,b]=[p,v,t];break;case 3:[r,g,b]=[p,q,v];break;case 4:[r,g,b]=[t,p,v];break;case 5:[r,g,b]=[v,p,q];break;}return{r:Math.round(r*255),g:Math.round(g*255),b:Math.round(b*255)};}",
     location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/Colors.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"HSVtoRGB_reactNativeReanimated_ColorsTs16\",\"h\",\"s\",\"v\",\"r\",\"g\",\"b\",\"i\",\"Math\",\"floor\",\"f\",\"p\",\"q\",\"t\",\"round\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/Colors.ts\"],\"mappings\":\"AAkkBA,SAAAA,0CAAAC,CAAA,CAAAC,CAAA,CAAAC,CAAA,MAAAC,CAAA,CAAAC,CAAA,CAAAC,CAAA,CACA,MAAAC,CAAA,CAAAC,IAAA,CAAAC,KAAA,CAAAR,CAAA,IACA,MAAAS,CAAA,CAAAT,CAAA,GAAAM,CAAA,CACA,MAAAI,CAAA,CAAAR,CAAA,IAAAD,CAAA,EACA,MAAAU,CAAA,CAAAT,CAAA,IAAAO,CAAA,CAAAR,CAAA,EACA,MAAAW,CAAA,CAAAV,CAAA,OAAAO,CAAA,EAAAR,CAAA,EACA,OAASK,CAAA,IAEP,IAAO,EAAC,CAER,CAAAH,CAAM,CAACC,CAAA,CAAGC,CAAA,EAAK,CAAAH,CAAA,CAAKU,CAAC,CAACF,CAAA,CAAG,CACzB,MACA,IAAO,GACP,CAAAP,CAAM,CAACC,CAAA,CAAIC,CAAA,EAAK,CAAAM,CAAA,CAAIT,CAAA,CAAGQ,CAAC,CAAC,CACzB,MACA,MAAS,CACP,CAAAP,CAAA,CAAMC,CAAA,CAAAC,CAAA,GAAAK,CAAA,CAAAR,CAAA,CAAAU,CAAA,EACJ,M,IACA,GACF,CAAAT,CAAA,CAAMC,CAAA,CAAAC,CAAA,GAAAK,CAAA,CAAAC,CAAA,CAAAT,CAAA,EACJ,M,IACA,GACF,CAAAC,CAAA,CAAMC,CAAA,CAAAC,CAAA,GAAAO,CAAA,CAAAF,CAAA,CAAAR,CAAA,EACJ,M,IACA,GACF,CAAAC,CAAA,CAAMC,CAAA,CAAAC,CAAA,GAAAH,CAAA,CAAAQ,CAAA,CAAAC,CAAA,EACJ,M,OAEG,C,EACFJ,IAAI,CAAAM,KAAI,CAAGV,CAAC,CAAG,GAAG,CAAC,C,EACpBI,IAAA,CAAAM,KAAA,CAAAT,CAAA,MACFC,CAAA,CAAAE,IAAM,CAAAM,KAAA,CAAAR,CAAA,K\",\"ignoreList\":[]}",
+    sourceMap: "{\"version\":3,\"names\":[\"HSVtoRGB_reactNativeReanimated_ColorsTs16\",\"h\",\"s\",\"v\",\"r\",\"g\",\"b\",\"i\",\"Math\",\"floor\",\"f\",\"p\",\"q\",\"t\",\"round\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/Colors.ts\"],\"mappings\":\"AAkkBA,SAAAA,0CAAAC,CAAA,CAAAC,CAAA,CAAAC,CAAA,MAAAC,CAAA,CAAAC,CAAA,CAAAC,CAAA,CACA,MAAAC,CAAA,CAAAC,IAAA,CAAAC,KAAA,CAAAR,CAAA,IACA,MAAAS,CAAA,CAAAT,CAAA,GAAAM,CAAA,CACA,MAAAI,CAAA,CAAAR,CAAA,IAAAD,CAAA,EACA,MAAAU,CAAA,CAAAT,CAAA,IAAAO,CAAA,CAAAR,CAAA,EACA,MAAAW,CAAA,CAAAV,CAAA,OAAAO,CAAA,EAAAR,CAAA,EACA,OAASK,CAAA,IAEP,IAAO,EAAC,CAER,CAAAH,CAAM,CAACC,CAAA,CAAGC,CAAA,EAAK,CAAAH,CAAA,CAAKU,CAAC,CAACF,CAAA,CAAG,CACzB,MACA,IAAO,GACP,CAAAP,CAAM,CAACC,CAAA,CAAIC,CAAA,EAAK,CAAAM,CAAA,CAAIT,CAAA,CAAGD,CAAC,CAAC,CACzB,MACA,MAAS,CACP,CAAAE,CAAA,CAAMC,CAAA,CAAAC,CAAA,GAAAK,CAAA,CAAAR,CAAA,CAAAU,CAAA,EACJ,M,IACA,GACF,CAAAT,CAAA,CAAMC,CAAA,CAAAC,CAAA,GAAAK,CAAA,CAAAC,CAAA,CAAAT,CAAA,EACJ,M,IACA,GACF,CAAAC,CAAA,CAAMC,CAAA,CAAAC,CAAA,GAAAO,CAAA,CAAAF,CAAA,CAAAR,CAAA,EACJ,M,IACA,GACF,CAAAC,CAAA,CAAMC,CAAA,CAAAC,CAAA,GAAAH,CAAA,CAAAQ,CAAA,CAAAC,CAAA,EACJ,M,OAEG,C,EACFR,IAAI,CAAAU,KAAI,CAAGV,CAAC,CAAG,GAAG,CAAC,C,EACpBI,IAAA,CAAAM,KAAA,CAAAT,CAAA,MACFC,CAAA,CAAAE,IAAM,CAAAM,KAAA,CAAAR,CAAA,K\",\"ignoreList\":[]}",
     version: "3.18.0"
   };
   var HSVtoRGB = function () {
@@ -127746,7 +131277,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     toGammaSpace.__stackDetails = _e;
     return toGammaSpace;
   }();
-},673,[674,638],"node_modules/react-native-reanimated/src/Colors.ts");
+},717,[718,682],"node_modules/react-native-reanimated/src/Colors.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -127981,7 +131512,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function unmarkNodeAsRemovable(viewTag) {
     _$$_REQUIRE(_dependencyMap[8], "./ReanimatedModule").ReanimatedModule.unmarkNodeAsRemovable(viewTag);
   }
-},674,[675,657,637,644,677,679,638,646,658,680,676],"node_modules/react-native-reanimated/src/core.ts");
+},718,[719,701,681,688,721,723,682,690,702,724,720],"node_modules/react-native-reanimated/src/core.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128119,7 +131650,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     runOnRuntime.__stackDetails = _e;
     return runOnRuntime;
   }();
-},675,[638,658,644,646,640,676,636],"node_modules/react-native-reanimated/src/runtimes.ts");
+},719,[682,702,688,690,684,720,680],"node_modules/react-native-reanimated/src/runtimes.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128424,7 +131955,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return reactNativeReanimated_initializersTs7;
     }())();
   }
-},676,[8,27,638,640,657,646,662],"node_modules/react-native-reanimated/src/initializers.ts");
+},720,[8,27,682,684,701,690,706],"node_modules/react-native-reanimated/src/initializers.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128666,7 +132197,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return reactNativeReanimated_mappersTs3;
     }())();
   }
-},677,[638,678,657],"node_modules/react-native-reanimated/src/mappers.ts");
+},721,[682,722,701],"node_modules/react-native-reanimated/src/mappers.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128692,7 +132223,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     isSharedValue.__stackDetails = _e;
     return isSharedValue;
   }();
-},678,[],"node_modules/react-native-reanimated/src/isSharedValue.ts");
+},722,[],"node_modules/react-native-reanimated/src/isSharedValue.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128703,7 +132234,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var controlEdgeToEdgeValues = function controlEdgeToEdgeValues(values) {};
   exports.controlEdgeToEdgeValues = controlEdgeToEdgeValues;
   exports.isEdgeToEdge = isEdgeToEdge;
-},679,[],"node_modules/react-native-is-edge-to-edge/dist/index.js");
+},723,[],"node_modules/react-native-is-edge-to-edge/dist/index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128764,7 +132295,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }();
-},680,[8,9,10,681],"node_modules/react-native-reanimated/src/SensorContainer.ts");
+},724,[8,9,10,725],"node_modules/react-native-reanimated/src/SensorContainer.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128837,7 +132368,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }();
-},681,[8,9,10,636,637,658],"node_modules/react-native-reanimated/src/Sensor.ts");
+},725,[8,9,10,680,681,702],"node_modules/react-native-reanimated/src/Sensor.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128975,7 +132506,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_timingTs1.__stackDetails = _e;
     return reactNativeReanimated_timingTs1;
   }();
-},682,[670,683],"node_modules/react-native-reanimated/src/animation/timing.ts");
+},726,[714,727],"node_modules/react-native-reanimated/src/animation/timing.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -129428,7 +132959,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _worklet_9473900712954_init_data = {
     code: "function in__reactNativeReanimated_EasingTs18(easing){return easing;}",
     location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/Easing.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"in__reactNativeReanimated_EasingTs18\",\"easing\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/Easing.ts\"],\"mappings\":\"AA2OA,SAAAA,qCAAAC,MAAA,EACA,MAAS,CAAAA,MAAI,C\",\"ignoreList\":[]}",
+    sourceMap: "{\"version\":3,\"names\":[\"in__reactNativeReanimated_EasingTs18\",\"easing\",\"in_\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/Easing.ts\"],\"mappings\":\"AA2OA,SAAAA,qCAAAC,MAAA,EACA,MAAS,CAAAC,MAAI,C\",\"ignoreList\":[]}",
     version: "3.18.0"
   };
   var in_ = function () {
@@ -129601,7 +133132,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     });
   }
   var Easing = exports.Easing = EasingObject;
-},683,[8,27,684],"node_modules/react-native-reanimated/src/Easing.ts");
+},727,[8,27,728],"node_modules/react-native-reanimated/src/Easing.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -129780,7 +133311,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _worklet_4651979895956_init_data = {
     code: "function Bezier_reactNativeReanimated_BezierTs8(mX1,mY1,mX2,mY2){const{kSplineTableSize,calcBezier,kSampleStepSize,getSlope,NEWTON_MIN_SLOPE,newtonRaphsonIterate,binarySubdivide}=this.__closure;function LinearEasing(x){'worklet';return x;}if(!(mX1>=0&&mX1<=1&&mX2>=0&&mX2<=1)){throw new ReanimatedError('Bezier x values must be in [0, 1] range.');}if(mX1===mY1&&mX2===mY2){return LinearEasing;}const sampleValues=new Array(kSplineTableSize);for(let i=0;i<kSplineTableSize;++i){sampleValues[i]=calcBezier(i*kSampleStepSize,mX1,mX2);}function getTForX(aX){'worklet';let intervalStart=0.0;let currentSample=1;const lastSample=kSplineTableSize-1;for(;currentSample!==lastSample&&sampleValues[currentSample]<=aX;++currentSample){intervalStart+=kSampleStepSize;}--currentSample;const dist=(aX-sampleValues[currentSample])/(sampleValues[currentSample+1]-sampleValues[currentSample]);const guessForT=intervalStart+dist*kSampleStepSize;const initialSlope=getSlope(guessForT,mX1,mX2);if(initialSlope>=NEWTON_MIN_SLOPE){return newtonRaphsonIterate(aX,guessForT,mX1,mX2);}else if(initialSlope===0.0){return guessForT;}else{return binarySubdivide(aX,intervalStart,intervalStart+kSampleStepSize,mX1,mX2);}}return function Bezier_reactNativeReanimated_BezierTs8(x){'worklet';if(mX1===mY1&&mX2===mY2){return x;}if(x===0){return 0;}if(x===1){return 1;}return calcBezier(getTForX(x),mY1,mY2);};}",
     location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/Bezier.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"Bezier_reactNativeReanimated_BezierTs8\",\"mX1\",\"mY1\",\"mX2\",\"mY2\",\"kSplineTableSize\",\"calcBezier\",\"kSampleStepSize\",\"getSlope\",\"NEWTON_MIN_SLOPE\",\"newtonRaphsonIterate\",\"binarySubdivide\",\"__closure\",\"LinearEasing\",\"x\",\"ReanimatedError\",\"sampleValues\",\"Array\",\"i\",\"getTForX\",\"aX\",\"intervalStart\",\"currentSample\",\"lastSample\",\"dist\",\"guessForT\",\"initialSlope\",\"BezierEasing\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/Bezier.ts\"],\"mappings\":\"AAwFO,SAAAA,sCAKkBA,CAAAC,GAAA,CAAAC,GAAA,CAAAC,GAAA,CAAAC,GAAA,QAAAC,gBAAA,CAAAC,UAAA,CAAAC,eAAA,CAAAC,QAAA,CAAAC,gBAAA,CAAAC,oBAAA,CAAAC,eAAA,OAAAC,SAAA,CAGvB,QAAS,CAAAC,YAAYA,CAACC,CAAS,CAAU,CACvC,SAAS,CACT,MAAO,CAAAA,CAAC,CACV,CAEA,GAAI,EAAEb,GAAG,EAAI,CAAC,EAAIA,GAAG,EAAI,CAAC,EAAIE,GAAG,EAAI,CAAC,EAAIA,GAAG,EAAI,CAAC,CAAC,CAAE,CACnD,KAAM,IAAI,CAAAY,eAAe,CAAC,0CAA0C,CAAC,CACvE,CAEA,GAAId,GAAG,GAAKC,GAAG,EAAIC,GAAG,GAAKC,GAAG,CAAE,CAC9B,MAAO,CAAAS,YAAY,CACrB,CAEA,KAAM,CAAAG,YAAY,CAAG,GAAI,CAAAC,KAAK,CAACZ,gBAAgB,CAAC,CAGhD,IAAK,GAAI,CAAAa,CAAC,CAAG,CAAC,CAAEA,CAAC,CAAGb,gBAAgB,CAAE,EAAEa,CAAC,CAAE,CACzCF,YAAY,CAACE,CAAC,CAAC,CAAGZ,UAAU,CAACY,CAAC,CAAGX,eAAe,CAAEN,GAAG,CAAEE,GAAG,CAAC,CAC7D,CAEA,QAAS,CAAAgB,QAAQA,CAACC,EAAU,CAAU,CACpC,SAAS,CACT,GAAI,CAAAC,aAAa,CAAG,GAAG,CACvB,GAAI,CAAAC,aAAa,CAAG,CAAC,CACrB,KAAM,CAAAC,UAAU,CAAGlB,gBAAgB,CAAG,CAAC,CAEvC,KAEEiB,aAAa,GAAKC,UAAU,EAAIP,YAAY,CAACM,aAAa,CAAC,EAAIF,EAAE,CACjE,EAAEE,aAAa,CACf,CACAD,aAAa,EAAId,eAAe,CAClC,CACA,EAAEe,aAAa,CAGf,KAAM,CAAAE,IAAI,CACR,CAACJ,EAAE,CAAGJ,YAAY,CAACM,aAAa,CAAC,GAChCN,YAAY,CAACM,aAAa,CAAG,CAAC,CAAC,CAAGN,YAAY,CAACM,aAAa,CAAC,CAAC,CACjE,KAAM,CAAAG,SAAS,CAAGJ,aAAa,CAAGG,IAAI,CAAGjB,eAAe,CAExD,KAAM,CAAAmB,YAAY,CAAGlB,QAAQ,CAACiB,SAAS,CAAExB,GAAG,CAAEE,GAAG,CAAC,CAClD,GAAIuB,YAAY,EAAIjB,gBAAgB,CAAE,CACpC,MAAO,CAAAC,oBAAoB,CAACU,EAAE,CAAEK,SAAS,CAAExB,GAAG,CAAEE,GAAG,CAAC,CACtD,CAAC,IAAM,IAAIuB,YAAY,GAAK,GAAG,CAAE,CAC/B,MAAO,CAAAD,SAAS,CAClB,CAAC,IAAM,CACL,MAAO,CAAAd,eAAe,CACpBS,EAAE,CACFC,aAAa,CACbA,aAAa,CAAGd,eAAe,CAC/BN,GAAG,CACHE,GACF,CAAC,CACH,CACF,CAEA,MAAO,SAAS,CAAAH,sCAAgB2B,CAAAb,CAAA,EAC9B,SAAS,CACT,GAAIb,GAAG,GAAKC,GAAG,EAAIC,GAAG,GAAKC,GAAG,CAAE,CAC9B,MAAO,CAAAU,CAAC,CACV,CAEA,GAAIA,CAAC,GAAK,CAAC,CAAE,CACX,MAAO,EAAC,CACV,CACA,GAAIA,CAAC,GAAK,CAAC,CAAE,CACX,MAAO,EAAC,CACV,CACA,MAAO,CAAAR,UAAU,CAACa,QAAQ,CAACL,CAAC,CAAC,CAAEZ,GAAG,CAAEE,GAAG,CAAC,CAC1C,CAAC,CACH\",\"ignoreList\":[]}",
+    sourceMap: "{\"version\":3,\"names\":[\"Bezier_reactNativeReanimated_BezierTs8\",\"mX1\",\"mY1\",\"mX2\",\"mY2\",\"kSplineTableSize\",\"calcBezier\",\"kSampleStepSize\",\"getSlope\",\"NEWTON_MIN_SLOPE\",\"newtonRaphsonIterate\",\"binarySubdivide\",\"__closure\",\"LinearEasing\",\"x\",\"ReanimatedError\",\"sampleValues\",\"Array\",\"i\",\"getTForX\",\"aX\",\"intervalStart\",\"currentSample\",\"lastSample\",\"dist\",\"guessForT\",\"initialSlope\",\"BezierEasing\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/Bezier.ts\"],\"mappings\":\"AAwFO,SAAAA,sCAKkBA,CAAAC,GAAA,CAAAC,GAAA,CAAAC,GAAA,CAAAC,GAAA,QAAAC,gBAAA,CAAAC,UAAA,CAAAC,eAAA,CAAAC,QAAA,CAAAC,gBAAA,CAAAC,oBAAA,CAAAC,eAAA,OAAAC,SAAA,CAGvB,QAAS,CAAAC,YAAYA,CAACC,CAAS,CAAU,CACvC,SAAS,CACT,MAAO,CAAAA,CAAC,CACV,CAEA,GAAI,EAAEb,GAAG,EAAI,CAAC,EAAIA,GAAG,EAAI,CAAC,EAAIE,GAAG,EAAI,CAAC,EAAIA,GAAG,EAAI,CAAC,CAAC,CAAE,CACnD,KAAM,IAAI,CAAAY,eAAe,CAAC,0CAA0C,CAAC,CACvE,CAEA,GAAId,GAAG,GAAKC,GAAG,EAAIC,GAAG,GAAKC,GAAG,CAAE,CAC9B,MAAO,CAAAS,YAAY,CACrB,CAEA,KAAM,CAAAG,YAAY,CAAG,GAAI,CAAAC,KAAK,CAACZ,gBAAgB,CAAC,CAGhD,IAAK,GAAI,CAAAa,CAAC,CAAG,CAAC,CAAEA,CAAC,CAAGb,gBAAgB,CAAE,EAAEa,CAAC,CAAE,CACzCF,YAAY,CAACE,CAAC,CAAC,CAAGZ,UAAU,CAACY,CAAC,CAAGX,eAAe,CAAEN,GAAG,CAAEE,GAAG,CAAC,CAC7D,CAEA,QAAS,CAAAgB,QAAQA,CAACC,EAAU,CAAU,CACpC,SAAS,CACT,GAAI,CAAAC,aAAa,CAAG,GAAG,CACvB,GAAI,CAAAC,aAAa,CAAG,CAAC,CACrB,KAAM,CAAAC,UAAU,CAAGlB,gBAAgB,CAAG,CAAC,CAEvC,KAEEiB,aAAa,GAAKC,UAAU,EAAIP,YAAY,CAACM,aAAa,CAAC,EAAIF,EAAE,CACjE,EAAEE,aAAa,CACf,CACAD,aAAa,EAAId,eAAe,CAClC,CACA,EAAEe,aAAa,CAGf,KAAM,CAAAE,IAAI,CACR,CAACJ,EAAE,CAAGJ,YAAY,CAACM,aAAa,CAAC,GAChCN,YAAY,CAACM,aAAa,CAAG,CAAC,CAAC,CAAGN,YAAY,CAACM,aAAa,CAAC,CAAC,CACjE,KAAM,CAAAG,SAAS,CAAGJ,aAAa,CAAGG,IAAI,CAAGjB,eAAe,CAExD,KAAM,CAAAmB,YAAY,CAAGlB,QAAQ,CAACiB,SAAS,CAAExB,GAAG,CAAEE,GAAG,CAAC,CAClD,GAAIuB,YAAY,EAAIjB,gBAAgB,CAAE,CACpC,MAAO,CAAAC,oBAAoB,CAACU,EAAE,CAAEK,SAAS,CAAExB,GAAG,CAAEE,GAAG,CAAC,CACtD,CAAC,IAAM,IAAIuB,YAAY,GAAK,GAAG,CAAE,CAC/B,MAAO,CAAAD,SAAS,CAClB,CAAC,IAAM,CACL,MAAO,CAAAd,eAAe,CACpBS,EAAE,CACFC,aAAa,CACbA,aAAa,CAAGd,eAAe,CAC/BN,GAAG,CACHE,GACF,CAAC,CACH,CACF,CAEA,MAAO,SAAS,CAAAwB,sCAAgBA,CAAAb,CAAA,EAC9B,SAAS,CACT,GAAIb,GAAG,GAAKC,GAAG,EAAIC,GAAG,GAAKC,GAAG,CAAE,CAC9B,MAAO,CAAAU,CAAC,CACV,CAEA,GAAIA,CAAC,GAAK,CAAC,CAAE,CACX,MAAO,EAAC,CACV,CACA,GAAIA,CAAC,GAAK,CAAC,CAAE,CACX,MAAO,EAAC,CACV,CACA,MAAO,CAAAR,UAAU,CAACa,QAAQ,CAACL,CAAC,CAAC,CAAEZ,GAAG,CAAEE,GAAG,CAAC,CAC1C,CAAC,CACH\",\"ignoreList\":[]}",
     version: "3.18.0"
   };
   var _worklet_9002002139084_init_data = {
@@ -129909,7 +133440,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     Bezier.__stackDetails = _e;
     return Bezier;
   }();
-},684,[646],"node_modules/react-native-reanimated/src/Bezier.ts");
+},728,[690],"node_modules/react-native-reanimated/src/Bezier.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -129934,7 +133465,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[2], "./Keyframe").Keyframe;
     }
   });
-},685,[686,699,700],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/index.ts");
+},729,[730,743,744],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -130129,7 +133660,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }();
-},686,[8,9,10,636,646,687,670],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/BaseAnimationBuilder.ts");
+},730,[8,9,10,680,690,731,714],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/BaseAnimationBuilder.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -130202,7 +133733,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[8], "./timing").withTiming;
     }
   });
-},687,[670,688,689,694,695,696,697,669,682],"node_modules/react-native-reanimated/src/animation/index.ts");
+},731,[714,732,733,738,739,740,741,713,726],"node_modules/react-native-reanimated/src/animation/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -130306,7 +133837,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_clampTs1.__stackDetails = _e;
     return reactNativeReanimated_clampTs1;
   }();
-},688,[670,640],"node_modules/react-native-reanimated/src/animation/clamp.ts");
+},732,[714,684],"node_modules/react-native-reanimated/src/animation/clamp.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -130319,7 +133850,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[0], "./decay").withDecay;
     }
   });
-},689,[690],"node_modules/react-native-reanimated/src/animation/decay/index.ts");
+},733,[734],"node_modules/react-native-reanimated/src/animation/decay/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -130464,7 +133995,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_decayTs2.__stackDetails = _e;
     return reactNativeReanimated_decayTs2;
   }();
-},690,[646,670,691,692,693],"node_modules/react-native-reanimated/src/animation/decay/decay.ts");
+},734,[690,714,735,736,737],"node_modules/react-native-reanimated/src/animation/decay/decay.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -130513,7 +134044,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     isValidRubberBandConfig.__stackDetails = _e;
     return isValidRubberBandConfig;
   }();
-},691,[638],"node_modules/react-native-reanimated/src/animation/decay/utils.ts");
+},735,[682],"node_modules/react-native-reanimated/src/animation/decay/utils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -130565,7 +134096,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     rubberBandDecay.__stackDetails = _e;
     return rubberBandDecay;
   }();
-},692,[691],"node_modules/react-native-reanimated/src/animation/decay/rubberBandDecay.ts");
+},736,[735],"node_modules/react-native-reanimated/src/animation/decay/rubberBandDecay.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -130612,7 +134143,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     rigidDecay.__stackDetails = _e;
     return rigidDecay;
   }();
-},693,[691],"node_modules/react-native-reanimated/src/animation/decay/rigidDecay.ts");
+},737,[735],"node_modules/react-native-reanimated/src/animation/decay/rigidDecay.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -130624,7 +134155,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _worklet_15976907666864_init_data = {
     code: "function reactNativeReanimated_delayTs1(delayMs,_nextAnimation,reduceMotion){const{defineAnimation,getReduceMotionForAnimation}=this.__closure;return defineAnimation(_nextAnimation,function(){'worklet';const nextAnimation=typeof _nextAnimation==='function'?_nextAnimation():_nextAnimation;function delay(animation,now){const{startTime:startTime,started:started,previousAnimation:previousAnimation}=animation;const current=animation.current;if(now-startTime>=delayMs||animation.reduceMotion){if(!started){nextAnimation.onStart(nextAnimation,current,now,previousAnimation);animation.previousAnimation=null;animation.started=true;}const finished=nextAnimation.onFrame(nextAnimation,now);animation.current=nextAnimation.current;return finished;}else if(previousAnimation){const finished=previousAnimation.finished||previousAnimation.onFrame(previousAnimation,now);animation.current=previousAnimation.current;if(finished){animation.previousAnimation=null;}}return false;}function onStart(animation,value,now,previousAnimation){animation.startTime=now;animation.started=false;animation.current=value;if(previousAnimation===animation){animation.previousAnimation=previousAnimation.previousAnimation;}else{animation.previousAnimation=previousAnimation;}if(nextAnimation.reduceMotion===undefined){nextAnimation.reduceMotion=animation.reduceMotion;}}const callback=function(finished){if(nextAnimation.callback){nextAnimation.callback(finished);}};return{isHigherOrder:true,onFrame:delay,onStart:onStart,current:nextAnimation.current,callback:callback,previousAnimation:null,startTime:0,started:false,reduceMotion:getReduceMotionForAnimation(reduceMotion)};});}",
     location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/animation/delay.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"reactNativeReanimated_delayTs1\",\"delayMs\",\"_nextAnimation\",\"reduceMotion\",\"defineAnimation\",\"getReduceMotionForAnimation\",\"__closure\",\"nextAnimation\",\"delay\",\"animation\",\"now\",\"startTime\",\"started\",\"previousAnimation\",\"current\",\"onStart\",\"finished\",\"onFrame\",\"value\",\"undefined\",\"callback\",\"isHigherOrder\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/animation/delay.ts\"],\"mappings\":\"AA+ByB,SAAAA,8BAGvBA,CAAAC,OAAA,CACDC,cAA4B,CAAAC,YAAA,QAAAC,eAAA,CAAAC,2BAAA,OAAAC,SAAA,CAE3B,MAAO,CAAAF,eAAe,CACpBF,cAAc,CACd,UAAsB,CACpB,SAAS,CACT,KAAM,CAAAK,aAAa,CACjB,MAAO,CAAAL,cAAc,GAAK,UAAU,CAChCA,cAAc,CAAC,CAAC,CAChBA,cAAc,CAEpB,QAAS,CAAAM,KAAKA,CAACC,SAAyB,CAAEC,GAAc,CAAW,CACjE,KAAM,CAAEC,SAAS,CAATA,SAAS,CAAEC,OAAO,CAAPA,OAAO,CAAEC,iBAAA,CAAAA,iBAAkB,CAAC,CAAGJ,SAAS,CAC3D,KAAM,CAAAK,OAAwB,CAAGL,SAAS,CAACK,OAAO,CAClD,GAAIJ,GAAG,CAAGC,SAAS,EAAIV,OAAO,EAAIQ,SAAS,CAACN,YAAY,CAAE,CACxD,GAAI,CAACS,OAAO,CAAE,CACZL,aAAa,CAACQ,OAAO,CACnBR,aAAa,CACbO,OAAO,CACPJ,GAAG,CACHG,iBACF,CAAC,CACDJ,SAAS,CAACI,iBAAiB,CAAG,IAAI,CAClCJ,SAAS,CAACG,OAAO,CAAG,IAAI,CAC1B,CACA,KAAM,CAAAI,QAAQ,CAAGT,aAAa,CAACU,OAAO,CAACV,aAAa,CAAEG,GAAG,CAAC,CAC1DD,SAAS,CAACK,OAAO,CAAGP,aAAa,CAACO,OAAQ,CAC1C,MAAO,CAAAE,QAAQ,CACjB,CAAC,IAAM,IAAIH,iBAAiB,CAAE,CAC5B,KAAM,CAAAG,QAAQ,CACZH,iBAAiB,CAACG,QAAQ,EAC1BH,iBAAiB,CAACI,OAAO,CAACJ,iBAAiB,CAAEH,GAAG,CAAC,CACnDD,SAAS,CAACK,OAAO,CAAGD,iBAAiB,CAACC,OAAO,CAC7C,GAAIE,QAAQ,CAAE,CACZP,SAAS,CAACI,iBAAiB,CAAG,IAAI,CACpC,CACF,CACA,MAAO,MAAK,CACd,CAEA,QAAS,CAAAE,OAAOA,CACdN,SAAyB,CACzBS,KAAsB,CACtBR,GAAc,CACdG,iBAAwC,CAClC,CACNJ,SAAS,CAACE,SAAS,CAAGD,GAAG,CACzBD,SAAS,CAACG,OAAO,CAAG,KAAK,CACzBH,SAAS,CAACK,OAAO,CAAGI,KAAK,CACzB,GAAIL,iBAAiB,GAAKJ,SAAS,CAAE,CACnCA,SAAS,CAACI,iBAAiB,CAAGA,iBAAiB,CAACA,iBAAiB,CACnE,CAAC,IAAM,CACLJ,SAAS,CAACI,iBAAiB,CAAGA,iBAAiB,CACjD,CAIA,GAAIN,aAAa,CAACJ,YAAY,GAAKgB,SAAS,CAAE,CAC5CZ,aAAa,CAACJ,YAAY,CAAGM,SAAS,CAACN,YAAY,CACrD,CACF,CAEA,KAAM,CAAAiB,QAAQ,CAAG,QAAAA,CAACJ,QAAkB,CAAW,CAC7C,GAAIT,aAAa,CAACa,QAAQ,CAAE,CAC1Bb,aAAa,CAACa,QAAQ,CAACJ,QAAQ,CAAC,CAClC,CACF,CAAC,CAED,MAAO,CACLK,aAAa,CAAE,IAAI,CACnBJ,OAAO,CAAET,KAAK,CACdO,OAAO,CAAPA,OAAO,CACPD,OAAO,CAAEP,aAAa,CAACO,OAAQ,CAC/BM,QAAQ,CAARA,QAAQ,CACRP,iBAAiB,CAAE,IAAI,CACvBF,SAAS,CAAE,CAAC,CACZC,OAAO,CAAE,KAAK,CACdT,YAAY,CAAEE,2BAA2B,CAACF,YAAY,CACxD,CAAC,CACH,CACF,CAAC,CACH\",\"ignoreList\":[]}",
+    sourceMap: "{\"version\":3,\"names\":[\"reactNativeReanimated_delayTs1\",\"reduceMotion\",\"delayMs\",\"_nextAnimation\",\"defineAnimation\",\"getReduceMotionForAnimation\",\"__closure\",\"nextAnimation\",\"delay\",\"animation\",\"now\",\"startTime\",\"started\",\"previousAnimation\",\"current\",\"onStart\",\"finished\",\"onFrame\",\"value\",\"undefined\",\"callback\",\"isHigherOrder\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/animation/delay.ts\"],\"mappings\":\"AA+ByB,SAAAA,8BAGvBC,CAAAC,OAAA,CACDC,cAA4B,CAAAF,YAAA,QAAAG,eAAA,CAAAC,2BAAA,OAAAC,SAAA,CAE3B,MAAO,CAAAF,eAAe,CACpBD,cAAc,CACd,UAAsB,CACpB,SAAS,CACT,KAAM,CAAAI,aAAa,CACjB,MAAO,CAAAJ,cAAc,GAAK,UAAU,CAChCA,cAAc,CAAC,CAAC,CAChBA,cAAc,CAEpB,QAAS,CAAAK,KAAKA,CAACC,SAAyB,CAAEC,GAAc,CAAW,CACjE,KAAM,CAAEC,SAAS,CAATA,SAAS,CAAEC,OAAO,CAAPA,OAAO,CAAEC,iBAAA,CAAAA,iBAAkB,CAAC,CAAGJ,SAAS,CAC3D,KAAM,CAAAK,OAAwB,CAAGL,SAAS,CAACK,OAAO,CAClD,GAAIJ,GAAG,CAAGC,SAAS,EAAIT,OAAO,EAAIO,SAAS,CAACR,YAAY,CAAE,CACxD,GAAI,CAACW,OAAO,CAAE,CACZL,aAAa,CAACQ,OAAO,CACnBR,aAAa,CACbO,OAAO,CACPJ,GAAG,CACHG,iBACF,CAAC,CACDJ,SAAS,CAACI,iBAAiB,CAAG,IAAI,CAClCJ,SAAS,CAACG,OAAO,CAAG,IAAI,CAC1B,CACA,KAAM,CAAAI,QAAQ,CAAGT,aAAa,CAACU,OAAO,CAACV,aAAa,CAAEG,GAAG,CAAC,CAC1DD,SAAS,CAACK,OAAO,CAAGP,aAAa,CAACO,OAAQ,CAC1C,MAAO,CAAAE,QAAQ,CACjB,CAAC,IAAM,IAAIH,iBAAiB,CAAE,CAC5B,KAAM,CAAAG,QAAQ,CACZH,iBAAiB,CAACG,QAAQ,EAC1BH,iBAAiB,CAACI,OAAO,CAACJ,iBAAiB,CAAEH,GAAG,CAAC,CACnDD,SAAS,CAACK,OAAO,CAAGD,iBAAiB,CAACC,OAAO,CAC7C,GAAIE,QAAQ,CAAE,CACZP,SAAS,CAACI,iBAAiB,CAAG,IAAI,CACpC,CACF,CACA,MAAO,MAAK,CACd,CAEA,QAAS,CAAAE,OAAOA,CACdN,SAAyB,CACzBS,KAAsB,CACtBR,GAAc,CACdG,iBAAwC,CAClC,CACNJ,SAAS,CAACE,SAAS,CAAGD,GAAG,CACzBD,SAAS,CAACG,OAAO,CAAG,KAAK,CACzBH,SAAS,CAACK,OAAO,CAAGI,KAAK,CACzB,GAAIL,iBAAiB,GAAKJ,SAAS,CAAE,CACnCA,SAAS,CAACI,iBAAiB,CAAGA,iBAAiB,CAACA,iBAAiB,CACnE,CAAC,IAAM,CACLJ,SAAS,CAACI,iBAAiB,CAAGA,iBAAiB,CACjD,CAIA,GAAIN,aAAa,CAACN,YAAY,GAAKkB,SAAS,CAAE,CAC5CZ,aAAa,CAACN,YAAY,CAAGQ,SAAS,CAACR,YAAY,CACrD,CACF,CAEA,KAAM,CAAAmB,QAAQ,CAAG,QAAAA,CAACJ,QAAkB,CAAW,CAC7C,GAAIT,aAAa,CAACa,QAAQ,CAAE,CAC1Bb,aAAa,CAACa,QAAQ,CAACJ,QAAQ,CAAC,CAClC,CACF,CAAC,CAED,MAAO,CACLK,aAAa,CAAE,IAAI,CACnBJ,OAAO,CAAET,KAAK,CACdO,OAAO,CAAPA,OAAO,CACPD,OAAO,CAAEP,aAAa,CAACO,OAAQ,CAC/BM,QAAQ,CAARA,QAAQ,CACRP,iBAAiB,CAAE,IAAI,CACvBF,SAAS,CAAE,CAAC,CACZC,OAAO,CAAE,KAAK,CACdX,YAAY,CAAEI,2BAA2B,CAACJ,YAAY,CACxD,CAAC,CACH,CACF,CAAC,CACH\",\"ignoreList\":[]}",
     version: "3.18.0"
   };
   var _worklet_7709183711075_init_data = {
@@ -130730,7 +134261,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_delayTs1.__stackDetails = _e;
     return reactNativeReanimated_delayTs1;
   }();
-},694,[670],"node_modules/react-native-reanimated/src/animation/delay.ts");
+},738,[714],"node_modules/react-native-reanimated/src/animation/delay.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -130866,7 +134397,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_repeatTs1.__stackDetails = _e;
     return reactNativeReanimated_repeatTs1;
   }();
-},695,[670],"node_modules/react-native-reanimated/src/animation/repeat.ts");
+},739,[714],"node_modules/react-native-reanimated/src/animation/repeat.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -131043,7 +134574,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     withSequence.__stackDetails = _e;
     return withSequence;
   }();
-},696,[640,670],"node_modules/react-native-reanimated/src/animation/sequence.ts");
+},740,[684,714],"node_modules/react-native-reanimated/src/animation/sequence.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -131257,7 +134788,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_springTs1.__stackDetails = _e;
     return reactNativeReanimated_springTs1;
   }();
-},697,[670,698],"node_modules/react-native-reanimated/src/animation/spring.ts");
+},741,[714,742],"node_modules/react-native-reanimated/src/animation/spring.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -131660,7 +135191,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     isAnimationTerminatingCalculation.__stackDetails = _e;
     return isAnimationTerminatingCalculation;
   }();
-},698,[8,46,27,640],"node_modules/react-native-reanimated/src/animation/springUtils.ts");
+},742,[8,46,27,684],"node_modules/react-native-reanimated/src/animation/springUtils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -131971,7 +135502,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }(_$$_REQUIRE(_dependencyMap[8], "./BaseAnimationBuilder").BaseAnimationBuilder);
-},699,[8,9,10,14,16,17,670,687,686],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/ComplexAnimationBuilder.ts");
+},743,[8,9,10,14,16,17,714,731,730],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/ComplexAnimationBuilder.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -132291,7 +135822,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     return makeKeyframeKey;
   }();
   var Keyframe = exports.Keyframe = InnerKeyframe;
-},700,[8,224,46,9,10,636,687,683,646,670],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/Keyframe.ts");
+},744,[8,224,46,9,10,680,731,727,690,714],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/Keyframe.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -132398,7 +135929,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     });
   });
-},701,[702,703,704,705,706,707,708,709,710,711],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/index.ts");
+},745,[746,747,748,749,750,751,752,753,754,755],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -133323,7 +136854,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   BounceOutRight.presetName = 'BounceOutRight';
-},702,[8,9,10,14,16,17,687,685],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Bounce.ts");
+},746,[8,9,10,14,16,17,731,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Bounce.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -134087,7 +137618,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   FadeOutDown.presetName = 'FadeOutDown';
-},703,[8,27,9,10,14,16,17,685],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Fade.ts");
+},747,[8,27,9,10,14,16,17,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Fade.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -135071,7 +138602,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   FlipOutEasyY.presetName = 'FlipOutEasyY';
-},704,[8,27,9,10,14,16,17,685],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Flip.ts");
+},748,[8,27,9,10,14,16,17,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Flip.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -135435,7 +138966,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[8], "../animationBuilder").ComplexAnimationBuilder);
   LightSpeedOutLeft.presetName = 'LightSpeedOutLeft';
-},705,[8,27,9,10,14,16,17,687,685],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Lightspeed.ts");
+},749,[8,27,9,10,14,16,17,731,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Lightspeed.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -135611,7 +139142,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   PinwheelOut.presetName = 'PinwheelOut';
-},706,[8,27,9,10,14,16,17,685],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Pinwheel.ts");
+},750,[8,27,9,10,14,16,17,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Pinwheel.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -135939,7 +139470,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   RollOutRight.presetName = 'RollOutRight';
-},707,[8,27,9,10,14,16,17,685],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Roll.ts");
+},751,[8,27,9,10,14,16,17,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Roll.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -136627,7 +140158,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   RotateOutUpRight.presetName = 'RotateOutUpRight';
-},708,[8,27,9,10,14,16,17,685],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Rotate.ts");
+},752,[8,27,9,10,14,16,17,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Rotate.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -137203,7 +140734,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   SlideOutDown.presetName = 'SlideOutDown';
-},709,[8,27,9,10,14,16,17,685],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Slide.ts");
+},753,[8,27,9,10,14,16,17,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Slide.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -137515,7 +141046,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   StretchOutY.presetName = 'StretchOutY';
-},710,[8,27,9,10,14,16,17,685],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Stretch.ts");
+},754,[8,27,9,10,14,16,17,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Stretch.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -138775,7 +142306,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   ZoomOutEasyDown.presetName = 'ZoomOutEasyDown';
-},711,[8,27,9,10,14,16,17,685],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Zoom.ts");
+},755,[8,27,9,10,14,16,17,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Zoom.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -138842,7 +142373,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     });
   });
-},712,[713,714,715,716,717,718],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/index.ts");
+},756,[757,758,759,760,761,762],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -139012,7 +142543,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[9], "../animationBuilder").BaseAnimationBuilder);
   CurvedTransition.presetName = 'CurvedTransition';
-},713,[8,9,10,14,16,17,683,687,670,685],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/CurvedTransition.ts");
+},757,[8,9,10,14,16,17,727,731,714,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/CurvedTransition.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -139221,7 +142752,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function combineTransition(exiting, entering) {
     return EntryExitTransition.entering(entering).exiting(exiting);
   }
-},714,[8,224,9,10,14,16,17,703,687,640,685],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/EntryExitTransition.ts");
+},758,[8,224,9,10,14,16,17,747,731,684,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/EntryExitTransition.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -139325,7 +142856,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").BaseAnimationBuilder);
   FadingTransition.presetName = 'FadingTransition';
-},715,[8,9,10,14,16,17,687,685],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/FadingTransition.ts");
+},759,[8,9,10,14,16,17,731,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/FadingTransition.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -139426,7 +142957,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[8], "../animationBuilder").BaseAnimationBuilder);
   JumpingTransition.presetName = 'JumpingTransition';
-},716,[8,9,10,14,16,17,687,683,685],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/JumpingTransition.ts");
+},760,[8,9,10,14,16,17,731,727,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/JumpingTransition.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -139518,7 +143049,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   /** @deprecated Please use {@link LinearTransition} instead. */
   LinearTransition.presetName = 'LinearTransition';
   var Layout = exports.Layout = LinearTransition;
-},717,[8,27,9,10,14,16,17,685],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/LinearTransition.ts");
+},761,[8,27,9,10,14,16,17,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/LinearTransition.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -139625,7 +143156,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").BaseAnimationBuilder);
   SequencedTransition.presetName = 'SequencedTransition';
-},718,[8,9,10,14,16,17,687,685],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/SequencedTransition.ts");
+},762,[8,9,10,14,16,17,731,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/SequencedTransition.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -139652,7 +143183,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     });
   });
-},719,[720,721],"node_modules/react-native-reanimated/src/layoutReanimation/sharedTransitions/index.ts");
+},763,[764,765],"node_modules/react-native-reanimated/src/layoutReanimation/sharedTransitions/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -140001,7 +143532,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return reactNativeReanimated_ProgressTransitionManagerTs9;
     }())();
   }
-},720,[8,9,10,1,657,674,638,646],"node_modules/react-native-reanimated/src/layoutReanimation/sharedTransitions/ProgressTransitionManager.ts");
+},764,[8,9,10,1,701,718,682,690],"node_modules/react-native-reanimated/src/layoutReanimation/sharedTransitions/ProgressTransitionManager.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -140331,7 +143862,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }();
   SharedTransition._progressTransitionManager = new (_$$_REQUIRE(_dependencyMap[8], "./ProgressTransitionManager").ProgressTransitionManager)();
-},721,[8,9,10,636,670,722,646,687,720],"node_modules/react-native-reanimated/src/layoutReanimation/sharedTransitions/SharedTransition.ts");
+},765,[8,9,10,680,714,766,690,731,764],"node_modules/react-native-reanimated/src/layoutReanimation/sharedTransitions/SharedTransition.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -140399,7 +143930,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }, isUnmounting);
     };
   }
-},722,[638,674],"node_modules/react-native-reanimated/src/UpdateLayoutAnimations.ts");
+},766,[682,718],"node_modules/react-native-reanimated/src/UpdateLayoutAnimations.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -140765,7 +144296,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _worklet_7877560832453_init_data = {
     code: "function interpolateColor_reactNativeReanimated_interpolateColorTs10(value,inputRange,outputRange,colorSpace='RGB',options={}){const{interpolateColorsHSV,getInterpolateHSV,interpolateColorsRGB,getInterpolateRGB,interpolateColorsLAB,getInterpolateLAB}=this.__closure;if(colorSpace==='HSV'){return interpolateColorsHSV(value,inputRange,getInterpolateHSV(outputRange),options);}else if(colorSpace==='RGB'){return interpolateColorsRGB(value,inputRange,getInterpolateRGB(outputRange),options);}else if(colorSpace==='LAB'){return interpolateColorsLAB(value,inputRange,getInterpolateLAB(outputRange),options);}throw new ReanimatedError(\"Invalid color space provided: \"+colorSpace+\". Supported values are: ['RGB', 'HSV', 'LAB'].\");}",
     location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/interpolateColor.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"interpolateColor_reactNativeReanimated_interpolateColorTs10\",\"value\",\"inputRange\",\"outputRange\",\"colorSpace\",\"options\",\"interpolateColorsHSV\",\"getInterpolateHSV\",\"interpolateColorsRGB\",\"getInterpolateRGB\",\"interpolateColorsLAB\",\"getInterpolateLAB\",\"__closure\",\"ReanimatedError\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/interpolateColor.ts\"],\"mappings\":\"AAyTO,SAAAA,2DAILA,CAAiCC,KAAG,CAAAC,UACP,CAAAC,WACZ,CAAAC,UAAA,OAAAC,OAAA,WAAAC,oBAAA,CAAAC,iBAAA,CAAAC,oBAAA,CAAAC,iBAAA,CAAAC,oBAAA,CAAAC,iBAAA,OAAAC,SAAA,CAEjB,GAAIR,UAAU,GAAK,KAAK,CAAE,CACxB,MAAO,CAAAE,oBAAoB,CACzBL,KAAK,CACLC,UAAU,CACVK,iBAAiB,CAACJ,WAAW,CAAC,CAC9BE,OACF,CAAC,CACH,CAAC,IAAM,IAAID,UAAU,GAAK,KAAK,CAAE,CAC/B,MAAO,CAAAI,oBAAoB,CACzBP,KAAK,CACLC,UAAU,CACVO,iBAAiB,CAACN,WAAW,CAAC,CAC9BE,OACF,CAAC,CACH,CAAC,IAAM,IAAID,UAAU,GAAK,KAAK,CAAE,CAC/B,MAAO,CAAAM,oBAAoB,CACzBT,KAAK,CACLC,UAAU,CACVS,iBAAiB,CAACR,WAAW,CAAC,CAC9BE,OACF,CAAC,CACH,CAEA,KAAM,IAAI,CAAAQ,eAAe,kCAErBT,UAAU,iDAEd,CAAC,CACH\",\"ignoreList\":[]}",
+    sourceMap: "{\"version\":3,\"names\":[\"interpolateColor_reactNativeReanimated_interpolateColorTs10\",\"colorSpace\",\"value\",\"inputRange\",\"outputRange\",\"options\",\"interpolateColorsHSV\",\"getInterpolateHSV\",\"interpolateColorsRGB\",\"getInterpolateRGB\",\"interpolateColorsLAB\",\"getInterpolateLAB\",\"__closure\",\"ReanimatedError\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/interpolateColor.ts\"],\"mappings\":\"AAyTO,SAAAA,2DAILC,CAAiCC,KAAG,CAAAC,UACP,CAAAC,WACZ,CAAAH,UAAA,OAAAI,OAAA,WAAAC,oBAAA,CAAAC,iBAAA,CAAAC,oBAAA,CAAAC,iBAAA,CAAAC,oBAAA,CAAAC,iBAAA,OAAAC,SAAA,CAEjB,GAAIX,UAAU,GAAK,KAAK,CAAE,CACxB,MAAO,CAAAK,oBAAoB,CACzBJ,KAAK,CACLC,UAAU,CACVI,iBAAiB,CAACH,WAAW,CAAC,CAC9BC,OACF,CAAC,CACH,CAAC,IAAM,IAAIJ,UAAU,GAAK,KAAK,CAAE,CAC/B,MAAO,CAAAO,oBAAoB,CACzBN,KAAK,CACLC,UAAU,CACVM,iBAAiB,CAACL,WAAW,CAAC,CAC9BC,OACF,CAAC,CACH,CAAC,IAAM,IAAIJ,UAAU,GAAK,KAAK,CAAE,CAC/B,MAAO,CAAAS,oBAAoB,CACzBR,KAAK,CACLC,UAAU,CACVQ,iBAAiB,CAACP,WAAW,CAAC,CAC9BC,OACF,CAAC,CACH,CAEA,KAAM,IAAI,CAAAQ,eAAe,kCAErBZ,UAAU,iDAEd,CAAC,CACH\",\"ignoreList\":[]}",
     version: "3.18.0"
   };
   var interpolateColor = exports.interpolateColor = function () {
@@ -140812,7 +144343,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       options: options
     });
   }
-},723,[8,724,727,673,646,728,674],"node_modules/react-native-reanimated/src/interpolateColor.ts");
+},767,[8,768,771,717,690,772,718],"node_modules/react-native-reanimated/src/interpolateColor.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -140828,7 +144359,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _default = exports.default = {
     oklab: _oklab.default
   };
-},724,[8,725],"node_modules/react-native-reanimated/src/culori/index.ts");
+},768,[8,769],"node_modules/react-native-reanimated/src/culori/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -140976,7 +144507,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       toRgb: convertOklabToRgb
     }
   };
-},725,[8,726],"node_modules/react-native-reanimated/src/culori/oklab.ts");
+},769,[8,770],"node_modules/react-native-reanimated/src/culori/oklab.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -141098,7 +144629,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       toRgb: convertLrgbToRgb
     }
   };
-},726,[],"node_modules/react-native-reanimated/src/culori/lrgb.ts");
+},770,[],"node_modules/react-native-reanimated/src/culori/lrgb.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -141125,7 +144656,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _worklet_4679268814955_init_data = {
     code: "function getVal_reactNativeReanimated_interpolationTs1(type,coef,val,leftEdgeOutput,rightEdgeOutput,x){const{Extrapolation}=this.__closure;switch(type){case Extrapolation.IDENTITY:return x;case Extrapolation.CLAMP:if(coef*val<coef*leftEdgeOutput){return leftEdgeOutput;}return rightEdgeOutput;case Extrapolation.EXTEND:default:return val;}}",
     location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/interpolation.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"getVal_reactNativeReanimated_interpolationTs1\",\"type\",\"coef\",\"val\",\"leftEdgeOutput\",\"rightEdgeOutput\",\"x\",\"Extrapolation\",\"__closure\",\"IDENTITY\",\"CLAMP\",\"EXTEND\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/interpolation.ts\"],\"mappings\":\"AA6CA,SAAAA,6CAKEA,CAAAC,IAAA,CAAAC,IAAuB,CACtBC,GACO,CAAAC,cAAA,CAAAC,eAAA,CAAAC,CAAA,QAAAC,aAAA,OAAAC,SAAA,CAGR,OAAQP,IAAI,EACV,IAAK,CAAAM,aAAa,CAACE,QAAQ,CACzB,MAAO,CAAAH,CAAC,CACV,IAAK,CAAAC,aAAa,CAACG,KAAK,CACtB,GAAIR,IAAI,CAAGC,GAAG,CAAGD,IAAI,CAAGE,cAAc,CAAE,CACtC,MAAO,CAAAA,cAAc,CACvB,CACA,MAAO,CAAAC,eAAe,CACxB,IAAK,CAAAE,aAAa,CAACI,MAAM,CACzB,QACE,MAAO,CAAAR,GAAG,CACd,CACF\",\"ignoreList\":[]}",
+    sourceMap: "{\"version\":3,\"names\":[\"getVal_reactNativeReanimated_interpolationTs1\",\"rightEdgeOutput\",\"type\",\"coef\",\"val\",\"leftEdgeOutput\",\"x\",\"Extrapolation\",\"__closure\",\"IDENTITY\",\"CLAMP\",\"EXTEND\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/interpolation.ts\"],\"mappings\":\"AA6CA,SAAAA,6CAKEC,CAAAC,IAAA,CAAAC,IAAuB,CACtBC,GACO,CAAAC,cAAA,CAAAJ,eAAA,CAAAK,CAAA,QAAAC,aAAA,OAAAC,SAAA,CAGR,OAAQN,IAAI,EACV,IAAK,CAAAK,aAAa,CAACE,QAAQ,CACzB,MAAO,CAAAH,CAAC,CACV,IAAK,CAAAC,aAAa,CAACG,KAAK,CACtB,GAAIP,IAAI,CAAGC,GAAG,CAAGD,IAAI,CAAGE,cAAc,CAAE,CACtC,MAAO,CAAAA,cAAc,CACvB,CACA,MAAO,CAAAJ,eAAe,CACxB,IAAK,CAAAM,aAAa,CAACI,MAAM,CACzB,QACE,MAAO,CAAAP,GAAG,CACd,CACF\",\"ignoreList\":[]}",
     version: "3.18.0"
   };
   var getVal = function () {
@@ -141176,7 +144707,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _worklet_10282335606444_init_data = {
     code: "function validateType_reactNativeReanimated_interpolationTs3(type){const{Extrapolation,isExtrapolate}=this.__closure;const extrapolationConfig={extrapolateLeft:Extrapolation.EXTEND,extrapolateRight:Extrapolation.EXTEND};if(!type){return extrapolationConfig;}if(typeof type==='string'){if(!isExtrapolate(type)){throw new ReanimatedError(\"Unsupported value for \\\"interpolate\\\" \\nSupported values: [\\\"extend\\\", \\\"clamp\\\", \\\"identity\\\", Extrapolatation.CLAMP, Extrapolatation.EXTEND, Extrapolatation.IDENTITY]\\n Valid example:\\n        interpolate(value, [inputRange], [outputRange], \\\"clamp\\\")\");}extrapolationConfig.extrapolateLeft=type;extrapolationConfig.extrapolateRight=type;return extrapolationConfig;}if(type.extrapolateLeft&&!isExtrapolate(type.extrapolateLeft)||type.extrapolateRight&&!isExtrapolate(type.extrapolateRight)){throw new ReanimatedError(\"Unsupported value for \\\"interpolate\\\" \\nSupported values: [\\\"extend\\\", \\\"clamp\\\", \\\"identity\\\", Extrapolatation.CLAMP, Extrapolatation.EXTEND, Extrapolatation.IDENTITY]\\n Valid example:\\n      interpolate(value, [inputRange], [outputRange], {\\n        extrapolateLeft: Extrapolation.CLAMP,\\n        extrapolateRight: Extrapolation.IDENTITY\\n      }})\");}Object.assign(extrapolationConfig,type);return extrapolationConfig;}",
     location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/interpolation.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"validateType_reactNativeReanimated_interpolationTs3\",\"type\",\"Extrapolation\",\"isExtrapolate\",\"__closure\",\"extrapolationConfig\",\"extrapolateLeft\",\"EXTEND\",\"extrapolateRight\",\"ReanimatedError\",\"Object\",\"assign\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/interpolation.ts\"],\"mappings\":\"AAiFA,SAAAA,oDAAAC,IAAA,QAAAC,aAAA,CAAAC,aAAA,OAAAC,SAAA,CACA,MAAAC,mBAAA,EACAC,eAAS,CAAYJ,aAAuD,CAAAK,MAAA,CAE1EC,gBAAA,CAAAN,aAAA,CAAAK,MACA,E,GACE,CAAAN,IAAA,EACA,OAAAI,mBAAkB,CACpB,CAEA,GAAI,MAAO,CAAAJ,IAAA,aACT,IAAAE,aAAO,CAAAF,IAAA,EAAmB,CAC5B,UAAAQ,eAAA,kQAEA,CACEJ,mBAAmB,CAAAC,eAAO,CAAAL,IAAA,C,mBACd,CAAAO,gBAAe,CAAAP,IAAA,CAI3B,OAAAI,mBAAA,C,CAIF,GAAAJ,IAAA,CAAAK,eAAA,GAAAH,aAAA,CAAAF,IAAA,CAAAK,eAAA,GAAAL,IAAA,CAAAO,gBAAA,GAAAL,aAAA,CAAAF,IAAA,CAAAO,gBAAA,G,4XAEA,CACAE,MACG,CAAAC,MAAK,CAAAN,mBAAoB,CAAAJ,IAAA,E,MAG1B,CAAAI,mBAAU,C\",\"ignoreList\":[]}",
+    sourceMap: "{\"version\":3,\"names\":[\"validateType_reactNativeReanimated_interpolationTs3\",\"type\",\"Extrapolation\",\"isExtrapolate\",\"__closure\",\"extrapolationConfig\",\"extrapolateLeft\",\"validateType\",\"EXTEND\",\"extrapolateRight\",\"ReanimatedError\",\"Object\",\"assign\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/interpolation.ts\"],\"mappings\":\"AAiFA,SAAAA,oDAAAC,IAAA,QAAAC,aAAA,CAAAC,aAAA,OAAAC,SAAA,CACA,MAAAC,mBAAA,EACAC,eAAS,CAAYC,aAAuD,CAAAC,MAAA,CAE1EC,gBAAA,CAAAP,aAAA,CAAAM,MACA,E,GACE,CAAAP,IAAA,EACA,OAAAI,mBAAkB,CACpB,CAEA,GAAI,MAAO,CAAAJ,IAAA,aACT,IAAAE,aAAO,CAAAF,IAAA,EAAmB,CAC5B,UAAAS,eAAA,kQAEA,CACEL,mBAAmB,CAAAC,eAAO,CAAAL,IAAA,C,mBACd,CAAAQ,gBAAe,CAAAR,IAAA,CAI3B,OAAAI,mBAAA,C,CAIF,GAAAJ,IAAA,CAAAK,eAAA,GAAAH,aAAA,CAAAF,IAAA,CAAAK,eAAA,GAAAL,IAAA,CAAAQ,gBAAA,GAAAN,aAAA,CAAAF,IAAA,CAAAQ,gBAAA,G,4XAEA,CACAE,MACG,CAAAC,MAAK,CAAAP,mBAAoB,CAAAJ,IAAA,E,MAG1B,CAAAI,mBAAU,C\",\"ignoreList\":[]}",
     version: "3.18.0"
   };
   var validateType = function () {
@@ -141347,7 +144878,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     clamp.__stackDetails = _e;
     return clamp;
   }();
-},727,[646],"node_modules/react-native-reanimated/src/interpolation.ts");
+},771,[690],"node_modules/react-native-reanimated/src/interpolation.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -141381,7 +144912,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, [mutable]);
     return mutable;
   }
-},728,[8,27,86,674,687],"node_modules/react-native-reanimated/src/hook/useSharedValue.ts");
+},772,[8,27,86,718,731],"node_modules/react-native-reanimated/src/hook/useSharedValue.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -141481,7 +145012,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }(_react.Component);
-},729,[8,9,10,14,16,17,86,638,92,730,674],"node_modules/react-native-reanimated/src/component/LayoutAnimationConfig.tsx");
+},773,[8,9,10,14,16,17,86,682,92,774,718],"node_modules/react-native-reanimated/src/component/LayoutAnimationConfig.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -141495,7 +145026,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   });
   var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-},730,[1],"node_modules/react-native-reanimated/src/platformFunctions/findNodeHandle.ts");
+},774,[1],"node_modules/react-native-reanimated/src/platformFunctions/findNodeHandle.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -141767,7 +145298,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       flexWrap: 'wrap'
     }
   });
-},731,[86,1,732,733,773,92],"node_modules/react-native-reanimated/src/component/PerformanceMonitor.tsx");
+},775,[86,1,776,777,817,92],"node_modules/react-native-reanimated/src/component/PerformanceMonitor.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -141848,7 +145379,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   }
   configureProps();
-},732,[638,664,646,674,640],"node_modules/react-native-reanimated/src/ConfigHelper.ts");
+},776,[682,708,690,718,684],"node_modules/react-native-reanimated/src/ConfigHelper.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -141861,7 +145392,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[0], "./createAnimatedComponent").createAnimatedComponent;
     }
   });
-},733,[734],"node_modules/react-native-reanimated/src/createAnimatedComponent/index.ts");
+},777,[778],"node_modules/react-native-reanimated/src/createAnimatedComponent/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -142392,7 +145923,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return styleElement;
     });
   }
-},734,[8,9,10,14,16,17,635,37,86,1,735,736,638,737,762,768,674,670,722,636,770,771,738,668,646,772,667,763,732,634,92,729,639],"node_modules/react-native-reanimated/src/createAnimatedComponent/createAnimatedComponent.tsx");
+},778,[8,9,10,14,16,17,679,37,86,1,779,780,682,781,806,812,718,714,766,680,814,815,782,712,690,816,711,807,776,678,92,773,683],"node_modules/react-native-reanimated/src/createAnimatedComponent/createAnimatedComponent.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -142517,7 +146048,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     JSPropsUpdater = JSPropsUpdaterPaper;
   }
   var _default = exports.default = JSPropsUpdater;
-},735,[8,9,10,1,654,638,657],"node_modules/react-native-reanimated/src/createAnimatedComponent/JSPropsUpdater.ts");
+},779,[8,9,10,1,698,682,701],"node_modules/react-native-reanimated/src/createAnimatedComponent/JSPropsUpdater.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -142577,7 +146108,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
   }
   var _default = exports.default = setAndForwardRef;
-},736,[],"node_modules/react-native-reanimated/src/createAnimatedComponent/setAndForwardRef.ts");
+},780,[],"node_modules/react-native-reanimated/src/createAnimatedComponent/setAndForwardRef.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -142614,7 +146145,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[2], "./animationsManager").tryActivateLayoutTransition;
     }
   });
-},737,[738,753,761],"node_modules/react-native-reanimated/src/layoutReanimation/web/index.ts");
+},781,[782,797,805],"node_modules/react-native-reanimated/src/layoutReanimation/web/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -142784,7 +146315,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     // There are 4 more fields, but checking these should suffice
     return r1.x === r2.x && r1.y === r2.y && r1.width === r2.width && r1.height === r2.height;
   }
-},738,[638,640,739,646,752],"node_modules/react-native-reanimated/src/layoutReanimation/web/domUtils.ts");
+},782,[682,684,783,690,796],"node_modules/react-native-reanimated/src/layoutReanimation/web/domUtils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -142803,7 +146334,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   }({});
   var AnimationsData = exports.AnimationsData = Object.assign({}, _$$_REQUIRE(_dependencyMap[0], "./animation/Fade.web").FadeInData, _$$_REQUIRE(_dependencyMap[0], "./animation/Fade.web").FadeOutData, _$$_REQUIRE(_dependencyMap[1], "./animation/Bounce.web").BounceInData, _$$_REQUIRE(_dependencyMap[1], "./animation/Bounce.web").BounceOutData, _$$_REQUIRE(_dependencyMap[2], "./animation/Flip.web").FlipInData, _$$_REQUIRE(_dependencyMap[2], "./animation/Flip.web").FlipOutData, _$$_REQUIRE(_dependencyMap[3], "./animation/Stretch.web").StretchInData, _$$_REQUIRE(_dependencyMap[3], "./animation/Stretch.web").StretchOutData, _$$_REQUIRE(_dependencyMap[4], "./animation/Zoom.web").ZoomInData, _$$_REQUIRE(_dependencyMap[4], "./animation/Zoom.web").ZoomOutData, _$$_REQUIRE(_dependencyMap[5], "./animation/Slide.web").SlideInData, _$$_REQUIRE(_dependencyMap[5], "./animation/Slide.web").SlideOutData, _$$_REQUIRE(_dependencyMap[6], "./animation/Lightspeed.web").LightSpeedInData, _$$_REQUIRE(_dependencyMap[6], "./animation/Lightspeed.web").LightSpeedOutData, _$$_REQUIRE(_dependencyMap[7], "./animation/Pinwheel.web").PinwheelData, _$$_REQUIRE(_dependencyMap[8], "./animation/Rotate.web").RotateInData, _$$_REQUIRE(_dependencyMap[8], "./animation/Rotate.web").RotateOutData, _$$_REQUIRE(_dependencyMap[9], "./animation/Roll.web").RollInData, _$$_REQUIRE(_dependencyMap[9], "./animation/Roll.web").RollOutData);
   var Animations = exports.Animations = Object.assign({}, _$$_REQUIRE(_dependencyMap[0], "./animation/Fade.web").FadeIn, _$$_REQUIRE(_dependencyMap[0], "./animation/Fade.web").FadeOut, _$$_REQUIRE(_dependencyMap[1], "./animation/Bounce.web").BounceIn, _$$_REQUIRE(_dependencyMap[1], "./animation/Bounce.web").BounceOut, _$$_REQUIRE(_dependencyMap[2], "./animation/Flip.web").FlipIn, _$$_REQUIRE(_dependencyMap[2], "./animation/Flip.web").FlipOut, _$$_REQUIRE(_dependencyMap[3], "./animation/Stretch.web").StretchIn, _$$_REQUIRE(_dependencyMap[3], "./animation/Stretch.web").StretchOut, _$$_REQUIRE(_dependencyMap[4], "./animation/Zoom.web").ZoomIn, _$$_REQUIRE(_dependencyMap[4], "./animation/Zoom.web").ZoomOut, _$$_REQUIRE(_dependencyMap[5], "./animation/Slide.web").SlideIn, _$$_REQUIRE(_dependencyMap[5], "./animation/Slide.web").SlideOut, _$$_REQUIRE(_dependencyMap[6], "./animation/Lightspeed.web").LightSpeedIn, _$$_REQUIRE(_dependencyMap[6], "./animation/Lightspeed.web").LightSpeedOut, _$$_REQUIRE(_dependencyMap[7], "./animation/Pinwheel.web").Pinwheel, _$$_REQUIRE(_dependencyMap[8], "./animation/Rotate.web").RotateIn, _$$_REQUIRE(_dependencyMap[8], "./animation/Rotate.web").RotateOut, _$$_REQUIRE(_dependencyMap[9], "./animation/Roll.web").RollIn, _$$_REQUIRE(_dependencyMap[9], "./animation/Roll.web").RollOut);
-},739,[740,743,744,745,746,747,748,749,750,751],"node_modules/react-native-reanimated/src/layoutReanimation/web/config.ts");
+},783,[784,787,788,789,790,791,792,793,794,795],"node_modules/react-native-reanimated/src/layoutReanimation/web/config.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -143028,7 +146559,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: FadeOutData.FadeOutDown.duration
     }
   };
-},740,[741],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Fade.web.ts");
+},784,[785],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Fade.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -143088,7 +146619,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
     return keyframe;
   }
-},741,[8,27,742],"node_modules/react-native-reanimated/src/layoutReanimation/web/animationParser.ts");
+},785,[8,27,786],"node_modules/react-native-reanimated/src/layoutReanimation/web/animationParser.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -143111,7 +146642,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function getEasingByName(easingName) {
     return `cubic-bezier(${WebEasings[easingName].toString()})`;
   }
-},742,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/Easing.web.ts");
+},786,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/Easing.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -143478,7 +147009,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: BounceOutData.BounceOutDown.duration
     }
   };
-},743,[741],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Bounce.web.ts");
+},787,[785],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Bounce.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -143775,7 +147306,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: FlipOutData.FlipOutEasyY.duration
     }
   };
-},744,[741],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Flip.web.ts");
+},788,[785],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Flip.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -143872,7 +147403,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: StretchOutData.StretchOutY.duration
     }
   };
-},745,[741],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Stretch.web.ts");
+},789,[785],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Stretch.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -144237,7 +147768,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: ZoomOutData.ZoomOutEasyDown.duration
     }
   };
-},746,[741],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Zoom.web.ts");
+},790,[785],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Zoom.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -144414,7 +147945,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: SlideOutData.SlideOutDown.duration
     }
   };
-},747,[741],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Slide.web.ts");
+},791,[785],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Slide.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -144543,7 +148074,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: LightSpeedOutData.LightSpeedOutLeft.duration
     }
   };
-},748,[741],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Lightspeed.web.ts");
+},792,[785],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Lightspeed.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -144604,7 +148135,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: PinwheelData.PinwheelOut.duration
     }
   };
-},749,[741],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Pinwheel.web.ts");
+},793,[785],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Pinwheel.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -144829,7 +148360,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: RotateOutData.RotateOutUpRight.duration
     }
   };
-},750,[741],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Rotate.web.ts");
+},794,[785],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Rotate.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -144934,7 +148465,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: RollOutData.RollOutRight.duration
     }
   };
-},751,[741],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Roll.web.ts");
+},795,[785],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Roll.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -144986,7 +148517,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       fixElementPosition(element, element.parentElement, snapshot);
     }
   }
-},752,[660],"node_modules/react-native-reanimated/src/layoutReanimation/web/componentStyle.ts");
+},796,[704],"node_modules/react-native-reanimated/src/layoutReanimation/web/componentStyle.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145237,7 +148768,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     (0, _$$_REQUIRE(_dependencyMap[7], "./componentStyle").setElementPosition)(dummy, snapshot);
     setElementAnimation(dummy, animationConfig, false, parent);
   }
-},753,[742,683,640,671,636,739,685,752,660,738,754,759],"node_modules/react-native-reanimated/src/layoutReanimation/web/componentUtils.ts");
+},797,[786,727,684,715,680,783,729,796,704,782,798,803],"node_modules/react-native-reanimated/src/layoutReanimation/web/componentUtils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145407,7 +148938,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       dummyTransitionKeyframeName: dummyTransitionKeyframeName
     };
   }
-},754,[8,224,153,27,741,738,739,755,756,757,758,759,760],"node_modules/react-native-reanimated/src/layoutReanimation/web/createAnimation.ts");
+},798,[8,224,153,27,785,782,783,799,800,801,802,803,804],"node_modules/react-native-reanimated/src/layoutReanimation/web/createAnimation.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145435,7 +148966,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
     return linearTransition;
   }
-},755,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Linear.web.ts");
+},799,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Linear.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145479,7 +149010,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
     return sequencedTransition;
   }
-},756,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Sequenced.web.ts");
+},800,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Sequenced.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145532,7 +149063,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
     return fadingTransition;
   }
-},757,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Fading.web.ts");
+},801,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Fading.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145577,7 +149108,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
     return jumpingTransition;
   }
-},758,[683],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Jumping.web.ts");
+},802,[727],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Jumping.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145689,7 +149220,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       secondKeyframeObj: keyframeYObj
     };
   }
-},759,[742,636],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Curved.web.ts");
+},803,[786,680],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Curved.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145774,7 +149305,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     hideComponentBetweenAnimations(keyframeData.style);
     return keyframeData;
   }
-},760,[8,27,739],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/EntryExit.web.ts");
+},804,[8,27,783],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/EntryExit.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145895,7 +149426,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
     startWebLayoutAnimation(props, element, _$$_REQUIRE(_dependencyMap[0], "../../commonTypes").LayoutAnimationType.LAYOUT, transitionData);
   }
-},761,[636,739,640,753,685,754,752,738,683],"node_modules/react-native-reanimated/src/layoutReanimation/web/animationsManager.ts");
+},805,[680,783,684,797,729,798,796,782,727],"node_modules/react-native-reanimated/src/layoutReanimation/web/animationsManager.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145930,7 +149461,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _worklet_17030171045110_init_data = {
     code: "function getInlinePropsUpdate_reactNativeReanimated_InlinePropManagerTs1(inlineProps){const getInlinePropsUpdate_reactNativeReanimated_InlinePropManagerTs1=this._recur;const{isSharedValue}=this.__closure;const update={};for(const[key,styleValue]of Object.entries(inlineProps)){if(isSharedValue(styleValue)){update[key]=styleValue.value;}else if(Array.isArray(styleValue)){update[key]=styleValue.map(function(item){return getInlinePropsUpdate_reactNativeReanimated_InlinePropManagerTs1(item);});}else if(typeof styleValue==='object'){update[key]=getInlinePropsUpdate_reactNativeReanimated_InlinePropManagerTs1(styleValue);}else{update[key]=styleValue;}}return update;}",
     location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/createAnimatedComponent/InlinePropManager.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"getInlinePropsUpdate_reactNativeReanimated_InlinePropManagerTs1\",\"inlineProps\",\"_recur\",\"isSharedValue\",\"__closure\",\"update\",\"key\",\"styleValue\",\"Object\",\"entries\",\"value\",\"Array\",\"isArray\",\"map\",\"item\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/createAnimatedComponent/InlinePropManager.ts\"],\"mappings\":\"AAyCA,SAAAA,+DAAoEA,CAAAC,WAAA,QAAAD,+DAAA,MAAAE,MAAA,OAAAC,aAAA,OAAAC,SAAA,CAElE,KAAM,CAAAC,MAA+B,CAAG,CAAC,CAAC,CAC1C,IAAK,KAAM,CAACC,GAAG,CAAEC,UAAU,CAAC,EAAI,CAAAC,MAAM,CAACC,OAAO,CAACR,WAAW,CAAC,CAAE,CAC3D,GAAIE,aAAa,CAACI,UAAU,CAAC,CAAE,CAC7BF,MAAM,CAACC,GAAG,CAAC,CAAGC,UAAU,CAACG,KAAK,CAChC,CAAC,IAAM,IAAIC,KAAK,CAACC,OAAO,CAACL,UAAU,CAAC,CAAE,CACpCF,MAAM,CAACC,GAAG,CAAC,CAAGC,UAAU,CAACM,GAAG,CAAE,SAAAC,IAAI,CAAK,CACrC,MAAO,CAAAd,+DAA0B,CAAAc,IAAA,EACnC,CAAC,CAAC,CACJ,CAAC,IAAM,IAAI,MAAO,CAAAP,UAAU,GAAK,QAAQ,CAAE,CACzCF,MAAM,CAACC,GAAG,CAAC,CAAGN,+DAA2D,CAAAO,UAAA,EAC3E,CAAC,IAAM,CACLF,MAAM,CAACC,GAAG,CAAC,CAAGC,UAAU,CAC1B,CACF,CACA,MAAO,CAAAF,MAAM,CACf\",\"ignoreList\":[]}",
+    sourceMap: "{\"version\":3,\"names\":[\"getInlinePropsUpdate_reactNativeReanimated_InlinePropManagerTs1\",\"inlineProps\",\"_recur\",\"isSharedValue\",\"__closure\",\"update\",\"key\",\"styleValue\",\"Object\",\"entries\",\"value\",\"Array\",\"isArray\",\"map\",\"item\",\"getInlinePropsUpdate\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/createAnimatedComponent/InlinePropManager.ts\"],\"mappings\":\"AAyCA,SAAAA,+DAAoEA,CAAAC,WAAA,QAAAD,+DAAA,MAAAE,MAAA,OAAAC,aAAA,OAAAC,SAAA,CAElE,KAAM,CAAAC,MAA+B,CAAG,CAAC,CAAC,CAC1C,IAAK,KAAM,CAACC,GAAG,CAAEC,UAAU,CAAC,EAAI,CAAAC,MAAM,CAACC,OAAO,CAACR,WAAW,CAAC,CAAE,CAC3D,GAAIE,aAAa,CAACI,UAAU,CAAC,CAAE,CAC7BF,MAAM,CAACC,GAAG,CAAC,CAAGC,UAAU,CAACG,KAAK,CAChC,CAAC,IAAM,IAAIC,KAAK,CAACC,OAAO,CAACL,UAAU,CAAC,CAAE,CACpCF,MAAM,CAACC,GAAG,CAAC,CAAGC,UAAU,CAACM,GAAG,CAAE,SAAAC,IAAI,CAAK,CACrC,MAAO,CAAAC,+DAA0B,CAAAD,IAAA,EACnC,CAAC,CAAC,CACJ,CAAC,IAAM,IAAI,MAAO,CAAAP,UAAU,GAAK,QAAQ,CAAE,CACzCF,MAAM,CAACC,GAAG,CAAC,CAAGS,+DAA2D,CAAAR,UAAA,EAC3E,CAAC,IAAM,CACLF,MAAM,CAACC,GAAG,CAAC,CAAGC,UAAU,CAC1B,CACF,CACA,MAAO,CAAAF,MAAM,CACf\",\"ignoreList\":[]}",
     version: "3.18.0"
   };
   var getInlinePropsUpdate = function () {
@@ -146086,7 +149617,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }();
-},762,[8,9,10,27,678,763,764,732,765,677],"node_modules/react-native-reanimated/src/createAnimatedComponent/InlinePropManager.ts");
+},806,[8,9,10,27,722,807,808,776,809,721],"node_modules/react-native-reanimated/src/createAnimatedComponent/InlinePropManager.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -146122,7 +149653,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
     return false;
   };
-},763,[],"node_modules/react-native-reanimated/src/createAnimatedComponent/utils.ts");
+},807,[],"node_modules/react-native-reanimated/src/createAnimatedComponent/utils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -146193,7 +149724,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
     return data;
   }
-},764,[674],"node_modules/react-native-reanimated/src/ViewDescriptorsSet.ts");
+},808,[718],"node_modules/react-native-reanimated/src/ViewDescriptorsSet.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -146214,7 +149745,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   var _updateProps = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[0], "./updateProps"));
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-},765,[766],"node_modules/react-native-reanimated/src/updateProps/index.ts");
+},809,[810],"node_modules/react-native-reanimated/src/updateProps/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /* eslint-disable @typescript-eslint/no-redundant-type-constituents, @typescript-eslint/no-explicit-any */
   'use strict';
@@ -146227,7 +149758,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _worklet_957321359128_init_data = {
     code: "function reactNativeReanimated_updatePropsTs1(viewDescriptors,updates,isAnimatedProps){const{_updatePropsJS}=this.__closure;var _viewDescriptors$valu;(_viewDescriptors$valu=viewDescriptors.value)===null||_viewDescriptors$valu===void 0||_viewDescriptors$valu.forEach(function(viewDescriptor){const component=viewDescriptor.tag;_updatePropsJS(updates,component,isAnimatedProps);});}",
     location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/updateProps/updateProps.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"reactNativeReanimated_updatePropsTs1\",\"viewDescriptors\",\"updates\",\"isAnimatedProps\",\"_updatePropsJS\",\"__closure\",\"_viewDescriptors$valu\",\"value\",\"forEach\",\"viewDescriptor\",\"component\",\"tag\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/updateProps/updateProps.ts\"],\"mappings\":\"AA0BgB,QAAC,CAAAA,oCAA0BA,CAAAC,eAAoB,CAAAC,OAAA,CAAAC,eAAA,QAAAC,cAAA,OAAAC,SAAA,KAAAC,qBAAA,CAE3D,CAAAA,qBAAA,CAAAL,eAAe,CAACM,KAAK,UAAAD,qBAAA,WAArBA,qBAAA,CAAuBE,OAAO,CAAE,SAAAC,cAAc,CAAK,CACjD,KAAM,CAAAC,SAAS,CAAGD,cAAc,CAACE,GAA4B,CAC7DP,cAAc,CAACF,OAAO,CAAEQ,SAAS,CAAEP,eAAe,CAAC,CACrD,CAAC,CAAC,CACJ\",\"ignoreList\":[]}",
+    sourceMap: "{\"version\":3,\"names\":[\"reactNativeReanimated_updatePropsTs1\",\"isAnimatedProps\",\"viewDescriptors\",\"updates\",\"_updatePropsJS\",\"__closure\",\"_viewDescriptors$valu\",\"value\",\"forEach\",\"viewDescriptor\",\"component\",\"tag\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/updateProps/updateProps.ts\"],\"mappings\":\"AA0BgB,QAAC,CAAAA,oCAA0BC,CAAAC,eAAoB,CAAAC,OAAA,CAAAF,eAAA,QAAAG,cAAA,OAAAC,SAAA,KAAAC,qBAAA,CAE3D,CAAAA,qBAAA,CAAAJ,eAAe,CAACK,KAAK,UAAAD,qBAAA,WAArBA,qBAAA,CAAuBE,OAAO,CAAE,SAAAC,cAAc,CAAK,CACjD,KAAM,CAAAC,SAAS,CAAGD,cAAc,CAACE,GAA4B,CAC7DP,cAAc,CAACD,OAAO,CAAEO,SAAS,CAAET,eAAe,CAAC,CACrD,CAAC,CAAC,CACJ\",\"ignoreList\":[]}",
     version: "3.18.0"
   };
   var _worklet_389933193673_init_data = {
@@ -146395,7 +149926,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
    * This used to be `SharedValue<Descriptors[]>` but objects holding just a
    * single `value` prop are fine too.
    */
-},766,[638,660,673,767,646,657],"node_modules/react-native-reanimated/src/updateProps/updateProps.ts");
+},810,[682,704,717,811,690,701],"node_modules/react-native-reanimated/src/updateProps/updateProps.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -146548,7 +150079,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     processTransformOrigin.__stackDetails = _e;
     return processTransformOrigin;
   }();
-},767,[8,27,646],"node_modules/react-native-reanimated/src/updateProps/processTransformOrigin.ts");
+},811,[8,27,690],"node_modules/react-native-reanimated/src/updateProps/processTransformOrigin.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -146626,7 +150157,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }();
-},768,[8,9,10,763,687,762,769,678,638],"node_modules/react-native-reanimated/src/createAnimatedComponent/PropsFilter.tsx");
+},812,[8,9,10,807,731,806,813,722,682],"node_modules/react-native-reanimated/src/createAnimatedComponent/PropsFilter.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -146757,7 +150288,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }();
   var WorkletEventHandler = exports.WorkletEventHandler = SHOULD_BE_USE_WEB ? WorkletEventHandlerWeb : WorkletEventHandlerNative;
-},769,[8,9,10,20,21,638,674],"node_modules/react-native-reanimated/src/WorkletEventHandler.ts");
+},813,[8,9,10,20,21,682,718],"node_modules/react-native-reanimated/src/WorkletEventHandler.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -146819,7 +150350,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return layoutAnimationOrBuilder;
     }
   }
-},770,[640],"node_modules/react-native-reanimated/src/animationBuilder.tsx");
+},814,[684],"node_modules/react-native-reanimated/src/animationBuilder.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -146964,7 +150495,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }
   }
-},771,[8,9,10,20,21,730,763,769],"node_modules/react-native-reanimated/src/createAnimatedComponent/NativeEventsManager.ts");
+},815,[8,9,10,20,21,774,807,813],"node_modules/react-native-reanimated/src/createAnimatedComponent/NativeEventsManager.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147009,7 +150540,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       viewConfig: element == null ? void 0 : element._viewConfig
     };
   }
-},772,[],"node_modules/react-native-reanimated/src/createAnimatedComponent/getViewInfo.ts");
+},816,[],"node_modules/react-native-reanimated/src/createAnimatedComponent/getViewInfo.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147118,7 +150649,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[16], "./useWorkletCallback").useWorkletCallback;
     }
   });
-},773,[774,778,779,782,783,784,785,780,786,787,777,788,775,791,792,728,793],"node_modules/react-native-reanimated/src/hook/index.ts");
+},817,[818,822,823,826,827,828,829,824,830,831,821,832,819,835,836,772,837],"node_modules/react-native-reanimated/src/hook/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147203,7 +150734,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     // This is not correct but we want to make GH think it receives a function.
     );
   }
-},774,[775,777],"node_modules/react-native-reanimated/src/hook/useAnimatedGestureHandler.ts");
+},818,[819,821],"node_modules/react-native-reanimated/src/hook/useAnimatedGestureHandler.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147251,7 +150782,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       useWeb: useWeb
     };
   }
-},775,[86,644,776,638],"node_modules/react-native-reanimated/src/hook/useHandler.ts");
+},819,[86,688,820,682],"node_modules/react-native-reanimated/src/hook/useHandler.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147310,7 +150841,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _worklet_15635057953056_init_data = {
     code: "function isAnimated_reactNativeReanimated_utilsTs1(prop){const isAnimated_reactNativeReanimated_utilsTs1=this._recur;if(Array.isArray(prop)){return prop.some(isAnimated_reactNativeReanimated_utilsTs1);}else if(typeof prop==='object'&&prop!==null){if(prop.onFrame!==undefined){return true;}else{return Object.values(prop).some(isAnimated_reactNativeReanimated_utilsTs1);}}return false;}",
     location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/hook/utils.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"isAnimated_reactNativeReanimated_utilsTs1\",\"prop\",\"_recur\",\"Array\",\"isArray\",\"some\",\"onFrame\",\"undefined\",\"Object\",\"values\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/hook/utils.ts\"],\"mappings\":\"AA0EO,SAAAA,yCAAmCA,CAAAC,IAAA,QAAAD,yCAAA,MAAAE,MAAA,CAExC,GAAIC,KAAK,CAACC,OAAO,CAACH,IAAI,CAAC,CAAE,CACvB,MAAO,CAAAA,IAAI,CAACI,IAAI,CAACL,yCAAW,EAC9B,CAAC,IAAM,IAAI,MAAO,CAAAC,IAAI,GAAK,QAAQ,EAAIA,IAAI,GAAK,IAAI,CAAE,CACpD,GAAKA,IAAI,CAA6BK,OAAO,GAAKC,SAAS,CAAE,CAC3D,MAAO,KAAI,CACb,CAAC,IAAM,CACL,MAAO,CAAAC,MAAM,CAACC,MAAM,CAACR,IAAI,CAAC,CAACI,IAAI,CAACL,yCAAW,EAC7C,CACF,CACA,MAAO,MAAK,CACd\",\"ignoreList\":[]}",
+    sourceMap: "{\"version\":3,\"names\":[\"isAnimated_reactNativeReanimated_utilsTs1\",\"prop\",\"_recur\",\"Array\",\"isArray\",\"some\",\"isAnimated\",\"onFrame\",\"undefined\",\"Object\",\"values\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/hook/utils.ts\"],\"mappings\":\"AA0EO,SAAAA,yCAAmCA,CAAAC,IAAA,QAAAD,yCAAA,MAAAE,MAAA,CAExC,GAAIC,KAAK,CAACC,OAAO,CAACH,IAAI,CAAC,CAAE,CACvB,MAAO,CAAAA,IAAI,CAACI,IAAI,CAACC,yCAAW,EAC9B,CAAC,IAAM,IAAI,MAAO,CAAAL,IAAI,GAAK,QAAQ,EAAIA,IAAI,GAAK,IAAI,CAAE,CACpD,GAAKA,IAAI,CAA6BM,OAAO,GAAKC,SAAS,CAAE,CAC3D,MAAO,KAAI,CACb,CAAC,IAAM,CACL,MAAO,CAAAC,MAAM,CAACC,MAAM,CAACT,IAAI,CAAC,CAACI,IAAI,CAACC,yCAAW,EAC7C,CACF,CACA,MAAO,MAAK,CACd\",\"ignoreList\":[]}",
     version: "3.18.0"
   };
   var isAnimated = exports.isAnimated = function () {
@@ -147383,7 +150914,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     validateAnimatedStyles.__stackDetails = _e;
     return validateAnimatedStyles;
   }();
-},776,[646],"node_modules/react-native-reanimated/src/hook/utils.ts");
+},820,[690],"node_modules/react-native-reanimated/src/hook/utils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147431,7 +150962,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
     return initRef.current;
   }
-},777,[86,769],"node_modules/react-native-reanimated/src/hook/useEvent.ts");
+},821,[86,813],"node_modules/react-native-reanimated/src/hook/useEvent.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147517,7 +151048,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, []);
     return ref.current;
   }
-},778,[86,674,636],"node_modules/react-native-reanimated/src/hook/useAnimatedKeyboard.ts");
+},822,[86,718,680],"node_modules/react-native-reanimated/src/hook/useAnimatedKeyboard.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147545,7 +151076,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
    * @see https://docs.swmansion.com/react-native-reanimated/docs/core/useAnimatedProps
    */
   var useAnimatedProps = exports.useAnimatedProps = (0, _$$_REQUIRE(_dependencyMap[1], "../PlatformChecker").shouldBeUseWeb)() ? useAnimatedPropsJS : _$$_REQUIRE(_dependencyMap[0], "./useAnimatedStyle").useAnimatedStyle;
-},779,[780,638],"node_modules/react-native-reanimated/src/hook/useAnimatedProps.ts");
+},823,[824,682],"node_modules/react-native-reanimated/src/hook/useAnimatedProps.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147559,7 +151090,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _worklet_6358524786384_init_data = {
     code: "function prepareAnimation_reactNativeReanimated_useAnimatedStyleTs1(frameTimestamp,animatedProp,lastAnimation,lastValue){const prepareAnimation_reactNativeReanimated_useAnimatedStyleTs1=this._recur;if(Array.isArray(animatedProp)){animatedProp.forEach(function(prop,index){prepareAnimation_reactNativeReanimated_useAnimatedStyleTs1(frameTimestamp,prop,lastAnimation&&lastAnimation[index],lastValue&&lastValue[index]);});}if(typeof animatedProp==='object'&&animatedProp.onFrame){const animation=animatedProp;let value=animation.current;if(lastValue!==undefined&&lastValue!==null){if(typeof lastValue==='object'){if(lastValue.value!==undefined){value=lastValue.value;}else if(lastValue.onFrame!==undefined){if((lastAnimation===null||lastAnimation===void 0?void 0:lastAnimation.current)!==undefined){value=lastAnimation.current;}else if((lastValue===null||lastValue===void 0?void 0:lastValue.current)!==undefined){value=lastValue.current;}}}else{value=lastValue;}}animation.callStart=function(timestamp){animation.onStart(animation,value,timestamp,lastAnimation);};animation.callStart(frameTimestamp);animation.callStart=null;}else if(typeof animatedProp==='object'){Object.keys(animatedProp).forEach(function(key){return prepareAnimation_reactNativeReanimated_useAnimatedStyleTs1(frameTimestamp,animatedProp[key],lastAnimation&&lastAnimation[key],lastValue&&lastValue[key]);});}}",
     location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/hook/useAnimatedStyle.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"prepareAnimation_reactNativeReanimated_useAnimatedStyleTs1\",\"frameTimestamp\",\"animatedProp\",\"lastAnimation\",\"lastValue\",\"_recur\",\"Array\",\"isArray\",\"forEach\",\"prop\",\"index\",\"onFrame\",\"animation\",\"value\",\"current\",\"undefined\",\"callStart\",\"timestamp\",\"onStart\",\"Object\",\"keys\",\"key\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/hook/useAnimatedStyle.ts\"],\"mappings\":\"AA0DA,SAAAA,0DAGEA,CAAAC,cAED,CAAOC,YAAA,CAAAC,aAAA,CAAAC,SAAA,QAAAJ,0DAAA,MAAAK,MAAA,CAEN,GAAIC,KAAK,CAACC,OAAO,CAACL,YAAY,CAAC,CAAE,CAC/BA,YAAY,CAACM,OAAO,CAAC,SAACC,IAAI,CAAEC,KAAK,CAAK,CACpCV,0DAGmB,CAAAC,cAAc,CAAKQ,IACpC,CAAAN,aAAa,EAAAA,aACd,CAAAO,KAAA,EAAAN,SAAA,EAAAA,SAAA,CAAAM,KAAA,GACH,CAAC,CAAC,CAEJ,CACA,GAAI,MAAO,CAAAR,YAAY,GAAK,QAAQ,EAAIA,YAAY,CAACS,OAAO,CAAE,CAC5D,KAAM,CAAAC,SAAS,CAAGV,YAAY,CAE9B,GAAI,CAAAW,KAAK,CAAGD,SAAS,CAACE,OAAO,CAC7B,GAAIV,SAAS,GAAKW,SAAS,EAAIX,SAAS,GAAK,IAAI,CAAE,CACjD,GAAI,MAAO,CAAAA,SAAS,GAAK,QAAQ,CAAE,CACjC,GAAIA,SAAS,CAACS,KAAK,GAAKE,SAAS,CAAE,CAEjCF,KAAK,CAAGT,SAAS,CAACS,KAAK,CACzB,CAAC,IAAM,IAAIT,SAAS,CAACO,OAAO,GAAKI,SAAS,CAAE,CAC1C,GAAI,CAAAZ,aAAa,SAAbA,aAAa,iBAAbA,aAAa,CAAEW,OAAO,IAAKC,SAAS,CAAE,CAExCF,KAAK,CAAGV,aAAa,CAACW,OAAO,CAC/B,CAAC,IAAM,IAAI,CAAAV,SAAS,SAATA,SAAS,iBAATA,SAAS,CAAEU,OAAO,IAAKC,SAAS,CAAE,CAE3CF,KAAK,CAAGT,SAAS,CAACU,OAAO,CAC3B,CACF,CACF,CAAC,IAAM,CAELD,KAAK,CAAGT,SAAS,CACnB,CACF,CAEAQ,SAAS,CAACI,SAAS,CAAG,SAACC,SAAoB,CAAK,CAC9CL,SAAS,CAACM,OAAO,CAACN,SAAS,CAAEC,KAAK,CAAEI,SAAS,CAAEd,aAAa,CAAC,CAC/D,CAAC,CACDS,SAAS,CAACI,SAAS,CAACf,cAAc,CAAC,CACnCW,SAAS,CAACI,SAAS,CAAG,IAAI,CAC5B,CAAC,IAAM,IAAI,MAAO,CAAAd,YAAY,GAAK,QAAQ,CAAE,CAE3CiB,MAAM,CAACC,IAAI,CAAClB,YAAY,CAAC,CAACM,OAAO,CAAE,SAAAa,GAAG,QACpC,CAAArB,0DAGE,CAAAC,cAAiB,CAAAC,YAAkB,CAAAmB,GACnC,EAAAlB,aAAa,EAASA,aAE1B,CAAAkB,GAAA,EAAAjB,SAAA,EAAAA,SAAA,CAAAiB,GAAA,KAAC,CACH,CACF\",\"ignoreList\":[]}",
+    sourceMap: "{\"version\":3,\"names\":[\"prepareAnimation_reactNativeReanimated_useAnimatedStyleTs1\",\"lastAnimation\",\"frameTimestamp\",\"animatedProp\",\"lastValue\",\"_recur\",\"Array\",\"isArray\",\"forEach\",\"prop\",\"index\",\"prepareAnimation\",\"onFrame\",\"animation\",\"value\",\"current\",\"undefined\",\"callStart\",\"timestamp\",\"onStart\",\"Object\",\"keys\",\"key\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/hook/useAnimatedStyle.ts\"],\"mappings\":\"AA0DA,SAAAA,0DAGEC,CAAAC,cAED,CAAOC,YAAA,CAAAF,aAAA,CAAAG,SAAA,QAAAJ,0DAAA,MAAAK,MAAA,CAEN,GAAIC,KAAK,CAACC,OAAO,CAACJ,YAAY,CAAC,CAAE,CAC/BA,YAAY,CAACK,OAAO,CAAC,SAACC,IAAI,CAAEC,KAAK,CAAK,CACpCC,0DAGmB,CAAAT,cAAc,CAAKO,IACpC,CAAAR,aAAa,EAAAA,aACd,CAAAS,KAAA,EAAAN,SAAA,EAAAA,SAAA,CAAAM,KAAA,GACH,CAAC,CAAC,CAEJ,CACA,GAAI,MAAO,CAAAP,YAAY,GAAK,QAAQ,EAAIA,YAAY,CAACS,OAAO,CAAE,CAC5D,KAAM,CAAAC,SAAS,CAAGV,YAAY,CAE9B,GAAI,CAAAW,KAAK,CAAGD,SAAS,CAACE,OAAO,CAC7B,GAAIX,SAAS,GAAKY,SAAS,EAAIZ,SAAS,GAAK,IAAI,CAAE,CACjD,GAAI,MAAO,CAAAA,SAAS,GAAK,QAAQ,CAAE,CACjC,GAAIA,SAAS,CAACU,KAAK,GAAKE,SAAS,CAAE,CAEjCF,KAAK,CAAGV,SAAS,CAACU,KAAK,CACzB,CAAC,IAAM,IAAIV,SAAS,CAACQ,OAAO,GAAKI,SAAS,CAAE,CAC1C,GAAI,CAAAf,aAAa,SAAbA,aAAa,iBAAbA,aAAa,CAAEc,OAAO,IAAKC,SAAS,CAAE,CAExCF,KAAK,CAAGb,aAAa,CAACc,OAAO,CAC/B,CAAC,IAAM,IAAI,CAAAX,SAAS,SAATA,SAAS,iBAATA,SAAS,CAAEW,OAAO,IAAKC,SAAS,CAAE,CAE3CF,KAAK,CAAGV,SAAS,CAACW,OAAO,CAC3B,CACF,CACF,CAAC,IAAM,CAELD,KAAK,CAAGV,SAAS,CACnB,CACF,CAEAS,SAAS,CAACI,SAAS,CAAG,SAACC,SAAoB,CAAK,CAC9CL,SAAS,CAACM,OAAO,CAACN,SAAS,CAAEC,KAAK,CAAEI,SAAS,CAAEjB,aAAa,CAAC,CAC/D,CAAC,CACDY,SAAS,CAACI,SAAS,CAACf,cAAc,CAAC,CACnCW,SAAS,CAACI,SAAS,CAAG,IAAI,CAC5B,CAAC,IAAM,IAAI,MAAO,CAAAd,YAAY,GAAK,QAAQ,CAAE,CAE3CiB,MAAM,CAACC,IAAI,CAAClB,YAAY,CAAC,CAACK,OAAO,CAAE,SAAAc,GAAG,QACpC,CAAAtB,0DAGE,CAAAE,cAAiB,CAAAC,YAAkB,CAAAmB,GACnC,EAAArB,aAAa,EAASA,aAE1B,CAAAqB,GAAA,EAAAlB,SAAA,EAAAA,SAAA,CAAAkB,GAAA,KAAC,CACH,CACF\",\"ignoreList\":[]}",
     version: "3.18.0"
   };
   var prepareAnimation = function () {
@@ -147614,7 +151145,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _worklet_11724700371151_init_data = {
     code: "function runAnimations_reactNativeReanimated_useAnimatedStyleTs2(animation,timestamp,key,result,animationsActive,forceCopyAnimation){const runAnimations_reactNativeReanimated_useAnimatedStyleTs2=this._recur;if(!animationsActive.value){return true;}if(Array.isArray(animation)){result[key]=[];let allFinished=true;forceCopyAnimation=key==='boxShadow';animation.forEach(function(entry,index){if(!runAnimations_reactNativeReanimated_useAnimatedStyleTs2(entry,timestamp,index,result[key],animationsActive,forceCopyAnimation)){allFinished=false;}});return allFinished;}else if(typeof animation==='object'&&animation.onFrame){let finished=true;if(!animation.finished){if(animation.callStart){animation.callStart(timestamp);animation.callStart=null;}finished=animation.onFrame(animation,timestamp);animation.timestamp=timestamp;if(finished){animation.finished=true;animation.callback&&animation.callback(true);}}if(forceCopyAnimation){result[key]={...animation.current};}else{result[key]=animation.current;}return finished;}else if(typeof animation==='object'){result[key]={};let allFinished=true;Object.keys(animation).forEach(function(k){if(!runAnimations_reactNativeReanimated_useAnimatedStyleTs2(animation[k],timestamp,k,result[key],animationsActive,forceCopyAnimation)){allFinished=false;}});return allFinished;}else{result[key]=animation;return true;}}",
     location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/hook/useAnimatedStyle.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"runAnimations_reactNativeReanimated_useAnimatedStyleTs2\",\"animation\",\"timestamp\",\"key\",\"result\",\"animationsActive\",\"forceCopyAnimation\",\"_recur\",\"value\",\"Array\",\"isArray\",\"allFinished\",\"forEach\",\"entry\",\"index\",\"onFrame\",\"finished\",\"callStart\",\"callback\",\"current\",\"Object\",\"keys\",\"k\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/hook/useAnimatedStyle.ts\"],\"mappings\":\"AAsHA,SAAAA,uDAKEA,CAAAC,SAAA,CAAsCC,SACtC,CAAAC,GAAA,CAAAC,MACS,CAAAC,gBAAA,CAAAC,kBAAA,QAAAN,uDAAA,MAAAO,MAAA,CAET,GAAI,CAACF,gBAAgB,CAACG,KAAK,CAAE,CAC3B,MAAO,KAAI,CACb,CACA,GAAIC,KAAK,CAACC,OAAO,CAACT,SAAS,CAAC,CAAE,CAC5BG,MAAM,CAACD,GAAG,CAAC,CAAG,EAAE,CAChB,GAAI,CAAAQ,WAAW,CAAG,IAAI,CACtBL,kBAAkB,CAAGH,GAAG,GAAK,WAAW,CACxCF,SAAS,CAACW,OAAO,CAAC,SAACC,KAAK,CAAEC,KAAK,CAAK,CAClC,GACE,CAACd,uDAKC,CAAAa,KAAA,CAAAX,SACA,CAAAY,KAAA,CAAAV,MAAA,CACFD,GACA,EAAAE,gBAAA,CAAAC,kBAAA,GACAK,WAAW,CAAG,KAAK,CACrB,CACF,CAAC,CAAC,CACF,MAAO,CAAAA,WAAW,CACpB,CAAC,IAAM,IAAI,MAAO,CAAAV,SAAS,GAAK,QAAQ,EAAIA,SAAS,CAACc,OAAO,CAAE,CAC7D,GAAI,CAAAC,QAAQ,CAAG,IAAI,CACnB,GAAI,CAACf,SAAS,CAACe,QAAQ,CAAE,CACvB,GAAIf,SAAS,CAACgB,SAAS,CAAE,CACvBhB,SAAS,CAACgB,SAAS,CAACf,SAAS,CAAC,CAC9BD,SAAS,CAACgB,SAAS,CAAG,IAAI,CAC5B,CACAD,QAAQ,CAAGf,SAAS,CAACc,OAAO,CAACd,SAAS,CAAEC,SAAS,CAAC,CAClDD,SAAS,CAACC,SAAS,CAAGA,SAAS,CAC/B,GAAIc,QAAQ,CAAE,CACZf,SAAS,CAACe,QAAQ,CAAG,IAAI,CACzBf,SAAS,CAACiB,QAAQ,EAAIjB,SAAS,CAACiB,QAAQ,CAAC,IAAmB,CAAC,CAC/D,CACF,CAMA,GAAIZ,kBAAkB,CAAE,CACtBF,MAAM,CAACD,GAAG,CAAC,CAAG,CAAE,GAAGF,SAAS,CAACkB,OAAQ,CAAC,CACxC,CAAC,IAAM,CACLf,MAAM,CAACD,GAAG,CAAC,CAAGF,SAAS,CAACkB,OAAO,CACjC,CACA,MAAO,CAAAH,QAAQ,CACjB,CAAC,IAAM,IAAI,MAAO,CAAAf,SAAS,GAAK,QAAQ,CAAE,CACxCG,MAAM,CAACD,GAAG,CAAC,CAAG,CAAC,CAAC,CAChB,GAAI,CAAAQ,WAAW,CAAG,IAAI,CACtBS,MAAM,CAACC,IAAI,CAACpB,SAAS,CAAC,CAACW,OAAO,CAAE,SAAAU,CAAC,CAAK,CACpC,GACE,CAACtB,uDAKC,CAAAC,SAAA,CAAAqB,CAAA,EAAApB,SACA,CAAAoB,CAAA,CAAAlB,MAAA,CACFD,GACA,EAAAE,gBAAA,CAAAC,kBAAA,GACAK,WAAW,CAAG,KAAK,CACrB,CACF,CAAC,CAAC,CACF,MAAO,CAAAA,WAAW,CACpB,CAAC,IAAM,CACLP,MAAM,CAACD,GAAG,CAAC,CAAGF,SAAS,CACvB,MAAO,KAAI,CACb,CACF\",\"ignoreList\":[]}",
+    sourceMap: "{\"version\":3,\"names\":[\"runAnimations_reactNativeReanimated_useAnimatedStyleTs2\",\"animationsActive\",\"animation\",\"timestamp\",\"key\",\"result\",\"forceCopyAnimation\",\"_recur\",\"value\",\"Array\",\"isArray\",\"allFinished\",\"forEach\",\"entry\",\"index\",\"onFrame\",\"finished\",\"callStart\",\"callback\",\"current\",\"Object\",\"keys\",\"k\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/hook/useAnimatedStyle.ts\"],\"mappings\":\"AAsHA,SAAAA,uDAKEC,CAAAC,SAAA,CAAsCC,SACtC,CAAAC,GAAA,CAAAC,MACS,CAAAJ,gBAAA,CAAAK,kBAAA,QAAAN,uDAAA,MAAAO,MAAA,CAET,GAAI,CAACN,gBAAgB,CAACO,KAAK,CAAE,CAC3B,MAAO,KAAI,CACb,CACA,GAAIC,KAAK,CAACC,OAAO,CAACR,SAAS,CAAC,CAAE,CAC5BG,MAAM,CAACD,GAAG,CAAC,CAAG,EAAE,CAChB,GAAI,CAAAO,WAAW,CAAG,IAAI,CACtBL,kBAAkB,CAAGF,GAAG,GAAK,WAAW,CACxCF,SAAS,CAACU,OAAO,CAAC,SAACC,KAAK,CAAEC,KAAK,CAAK,CAClC,GACE,CAACd,uDAKC,CAAAa,KAAA,CAAAV,SACA,CAAAW,KAAA,CAAAT,MAAA,CACFD,GACA,EAAAH,gBAAA,CAAAK,kBAAA,GACAK,WAAW,CAAG,KAAK,CACrB,CACF,CAAC,CAAC,CACF,MAAO,CAAAA,WAAW,CACpB,CAAC,IAAM,IAAI,MAAO,CAAAT,SAAS,GAAK,QAAQ,EAAIA,SAAS,CAACa,OAAO,CAAE,CAC7D,GAAI,CAAAC,QAAQ,CAAG,IAAI,CACnB,GAAI,CAACd,SAAS,CAACc,QAAQ,CAAE,CACvB,GAAId,SAAS,CAACe,SAAS,CAAE,CACvBf,SAAS,CAACe,SAAS,CAACd,SAAS,CAAC,CAC9BD,SAAS,CAACe,SAAS,CAAG,IAAI,CAC5B,CACAD,QAAQ,CAAGd,SAAS,CAACa,OAAO,CAACb,SAAS,CAAEC,SAAS,CAAC,CAClDD,SAAS,CAACC,SAAS,CAAGA,SAAS,CAC/B,GAAIa,QAAQ,CAAE,CACZd,SAAS,CAACc,QAAQ,CAAG,IAAI,CACzBd,SAAS,CAACgB,QAAQ,EAAIhB,SAAS,CAACgB,QAAQ,CAAC,IAAmB,CAAC,CAC/D,CACF,CAMA,GAAIZ,kBAAkB,CAAE,CACtBD,MAAM,CAACD,GAAG,CAAC,CAAG,CAAE,GAAGF,SAAS,CAACiB,OAAQ,CAAC,CACxC,CAAC,IAAM,CACLd,MAAM,CAACD,GAAG,CAAC,CAAGF,SAAS,CAACiB,OAAO,CACjC,CACA,MAAO,CAAAH,QAAQ,CACjB,CAAC,IAAM,IAAI,MAAO,CAAAd,SAAS,GAAK,QAAQ,CAAE,CACxCG,MAAM,CAACD,GAAG,CAAC,CAAG,CAAC,CAAC,CAChB,GAAI,CAAAO,WAAW,CAAG,IAAI,CACtBS,MAAM,CAACC,IAAI,CAACnB,SAAS,CAAC,CAACU,OAAO,CAAE,SAAAU,CAAC,CAAK,CACpC,GACE,CAACtB,uDAKC,CAAAE,SAAA,CAAAoB,CAAA,EAAAnB,SACA,CAAAmB,CAAA,CAAAjB,MAAA,CACFD,GACA,EAAAH,gBAAA,CAAAK,kBAAA,GACAK,WAAW,CAAG,KAAK,CACrB,CACF,CAAC,CAAC,CACF,MAAO,CAAAA,WAAW,CACpB,CAAC,IAAM,CACLN,MAAM,CAACD,GAAG,CAAC,CAAGF,SAAS,CACvB,MAAO,KAAI,CACb,CACF\",\"ignoreList\":[]}",
     version: "3.18.0"
   };
   var runAnimations = function () {
@@ -147681,7 +151212,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _worklet_8970042574265_init_data = {
     code: "function styleUpdater_reactNativeReanimated_useAnimatedStyleTs3(viewDescriptors,updater,state,animationsActive,isAnimatedProps=false){const{SHOULD_BE_USE_WEB,processBoxShadow,isAnimated,prepareAnimation,runAnimations,updateProps,shallowEqual}=this.__closure;var _state$animations,_updater;const animations=(_state$animations=state.animations)!==null&&_state$animations!==void 0?_state$animations:{};const newValues=(_updater=updater())!==null&&_updater!==void 0?_updater:{};const oldValues=state.last;const nonAnimatedNewValues={};let hasAnimations=false;let frameTimestamp;let hasNonAnimatedValues=false;if(!SHOULD_BE_USE_WEB&&newValues.boxShadow){processBoxShadow(newValues);}for(const key in newValues){const value=newValues[key];if(isAnimated(value)){frameTimestamp=global.__frameTimestamp||global._getAnimationTimestamp();prepareAnimation(frameTimestamp,value,animations[key],oldValues[key]);animations[key]=value;hasAnimations=true;}else{hasNonAnimatedValues=true;nonAnimatedNewValues[key]=value;delete animations[key];}}if(hasAnimations){const frame=function(timestamp){const{animations:animations,last:last,isAnimationCancelled:isAnimationCancelled}=state;if(isAnimationCancelled){state.isAnimationRunning=false;return;}const updates={};let allFinished=true;for(const propName in animations){const finished=runAnimations(animations[propName],timestamp,propName,updates,animationsActive);if(finished){if(Array.isArray(updates[propName])){updates[propName].forEach(function(obj){for(const prop in obj){if(!last[propName]||typeof last[propName]!=='object'){last[propName]={};}last[propName][prop]=obj[prop];}});}else{last[propName]=updates[propName];}delete animations[propName];}else{allFinished=false;}}if(updates){updateProps(viewDescriptors,updates);}if(!allFinished){requestAnimationFrame(frame);}else{state.isAnimationRunning=false;}};state.animations=animations;if(!state.isAnimationRunning){state.isAnimationCancelled=false;state.isAnimationRunning=true;frame(frameTimestamp);}if(hasNonAnimatedValues){updateProps(viewDescriptors,nonAnimatedNewValues);}}else{state.isAnimationCancelled=true;state.animations=[];if(!shallowEqual(oldValues,newValues)){updateProps(viewDescriptors,newValues,isAnimatedProps);}}state.last=newValues;}",
     location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/hook/useAnimatedStyle.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"styleUpdater_reactNativeReanimated_useAnimatedStyleTs3\",\"viewDescriptors\",\"updater\",\"state\",\"animationsActive\",\"isAnimatedProps\",\"SHOULD_BE_USE_WEB\",\"processBoxShadow\",\"isAnimated\",\"prepareAnimation\",\"runAnimations\",\"updateProps\",\"shallowEqual\",\"__closure\",\"_state$animations\",\"_updater\",\"animations\",\"newValues\",\"oldValues\",\"last\",\"nonAnimatedNewValues\",\"hasAnimations\",\"frameTimestamp\",\"hasNonAnimatedValues\",\"boxShadow\",\"key\",\"value\",\"global\",\"__frameTimestamp\",\"_getAnimationTimestamp\",\"frame\",\"timestamp\",\"isAnimationCancelled\",\"isAnimationRunning\",\"updates\",\"allFinished\",\"propName\",\"finished\",\"Array\",\"isArray\",\"forEach\",\"obj\",\"prop\",\"requestAnimationFrame\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/hook/useAnimatedStyle.ts\"],\"mappings\":\"AAsMA,SAAAA,sDAIEA,CAAAC,eACA,CAAAC,OAAA,CAAeC,KAAG,CACnBC,gBAAO,CAAAC,eAAA,cAAAC,iBAAA,CAAAC,gBAAA,CAAAC,UAAA,CAAAC,gBAAA,CAAAC,aAAA,CAAAC,WAAA,CAAAC,YAAA,OAAAC,SAAA,KAAAC,iBAAA,CAAAC,QAAA,CAEN,KAAM,CAAAC,UAAU,EAAAF,iBAAA,CAAGX,KAAK,CAACa,UAAU,UAAAF,iBAAA,UAAAA,iBAAA,CAAI,CAAC,CAAC,CACzC,KAAM,CAAAG,SAAS,EAAAF,QAAA,CAAGb,OAAO,CAAC,CAAC,UAAAa,QAAA,UAAAA,QAAA,CAAI,CAAC,CAAC,CACjC,KAAM,CAAAG,SAAS,CAAGf,KAAK,CAACgB,IAAI,CAC5B,KAAM,CAAAC,oBAAgC,CAAG,CAAC,CAAC,CAE3C,GAAI,CAAAC,aAAa,CAAG,KAAK,CACzB,GAAI,CAAAC,cAAkC,CACtC,GAAI,CAAAC,oBAAoB,CAAG,KAAK,CAChC,GAAI,CAACjB,iBAAiB,EAAIW,SAAS,CAACO,SAAS,CAAE,CAC7CjB,gBAAgB,CAACU,SAAS,CAAC,CAC7B,CACA,IAAK,KAAM,CAAAQ,GAAG,GAAI,CAAAR,SAAS,CAAE,CAC3B,KAAM,CAAAS,KAAK,CAAGT,SAAS,CAACQ,GAAG,CAAC,CAC5B,GAAIjB,UAAU,CAACkB,KAAK,CAAC,CAAE,CACrBJ,cAAc,CACZK,MAAM,CAACC,gBAAgB,EAAID,MAAM,CAACE,sBAAsB,CAAC,CAAC,CAC5DpB,gBAAgB,CAACa,cAAc,CAAEI,KAAK,CAAEV,UAAU,CAACS,GAAG,CAAC,CAAEP,SAAS,CAACO,GAAG,CAAC,CAAC,CACxET,UAAU,CAACS,GAAG,CAAC,CAAGC,KAAK,CACvBL,aAAa,CAAG,IAAI,CACtB,CAAC,IAAM,CACLE,oBAAoB,CAAG,IAAI,CAC3BH,oBAAoB,CAACK,GAAG,CAAC,CAAGC,KAAK,CACjC,MAAO,CAAAV,UAAU,CAACS,GAAG,CAAC,CACxB,CACF,CAEA,GAAIJ,aAAa,CAAE,CACjB,KAAM,CAAAS,KAAK,CAAG,QAAAA,CAACC,SAAoB,CAAK,CAEtC,KAAM,CAAEf,UAAU,CAAVA,UAAU,CAAEG,IAAI,CAAJA,IAAI,CAAEa,oBAAA,CAAAA,oBAAqB,CAAC,CAAG7B,KAAK,CACxD,GAAI6B,oBAAoB,CAAE,CACxB7B,KAAK,CAAC8B,kBAAkB,CAAG,KAAK,CAChC,OACF,CAEA,KAAM,CAAAC,OAA2B,CAAG,CAAC,CAAC,CACtC,GAAI,CAAAC,WAAW,CAAG,IAAI,CACtB,IAAK,KAAM,CAAAC,QAAQ,GAAI,CAAApB,UAAU,CAAE,CACjC,KAAM,CAAAqB,QAAQ,CAAG3B,aAAa,CAC5BM,UAAU,CAACoB,QAAQ,CAAC,CACpBL,SAAS,CACTK,QAAQ,CACRF,OAAO,CACP9B,gBACF,CAAC,CACD,GAAIiC,QAAQ,CAAE,CAOZ,GAAIC,KAAK,CAACC,OAAO,CAACL,OAAO,CAACE,QAAQ,CAAC,CAAC,CAAE,CACpCF,OAAO,CAACE,QAAQ,CAAC,CAACI,OAAO,CAAC,SAACC,GAAe,CAAK,CAC7C,IAAK,KAAM,CAAAC,IAAI,GAAI,CAAAD,GAAG,CAAE,CACtB,GAAI,CAACtB,IAAI,CAACiB,QAAQ,CAAC,EAAI,MAAO,CAAAjB,IAAI,CAACiB,QAAQ,CAAC,GAAK,QAAQ,CAAE,CACzDjB,IAAI,CAACiB,QAAQ,CAAC,CAAG,CAAC,CAAC,CACrB,CACAjB,IAAI,CAACiB,QAAQ,CAAC,CAACM,IAAI,CAAC,CAAGD,GAAG,CAACC,IAAI,CAAC,CAClC,CACF,CAAC,CAAC,CACJ,CAAC,IAAM,CACLvB,IAAI,CAACiB,QAAQ,CAAC,CAAGF,OAAO,CAACE,QAAQ,CAAC,CACpC,CACA,MAAO,CAAApB,UAAU,CAACoB,QAAQ,CAAC,CAC7B,CAAC,IAAM,CACLD,WAAW,CAAG,KAAK,CACrB,CACF,CAEA,GAAID,OAAO,CAAE,CACXvB,WAAW,CAACV,eAAe,CAAEiC,OAAO,CAAC,CACvC,CAEA,GAAI,CAACC,WAAW,CAAE,CAChBQ,qBAAqB,CAACb,KAAK,CAAC,CAC9B,CAAC,IAAM,CACL3B,KAAK,CAAC8B,kBAAkB,CAAG,KAAK,CAClC,CACF,CAAC,CAED9B,KAAK,CAACa,UAAU,CAAGA,UAAU,CAC7B,GAAI,CAACb,KAAK,CAAC8B,kBAAkB,CAAE,CAC7B9B,KAAK,CAAC6B,oBAAoB,CAAG,KAAK,CAClC7B,KAAK,CAAC8B,kBAAkB,CAAG,IAAI,CAC/BH,KAAK,CAACR,cAAe,CAAC,CACxB,CAEA,GAAIC,oBAAoB,CAAE,CACxBZ,WAAW,CAACV,eAAe,CAAEmB,oBAAoB,CAAC,CACpD,CACF,CAAC,IAAM,CACLjB,KAAK,CAAC6B,oBAAoB,CAAG,IAAI,CACjC7B,KAAK,CAACa,UAAU,CAAG,EAAE,CAErB,GAAI,CAACJ,YAAY,CAACM,SAAS,CAAED,SAAS,CAAC,CAAE,CACvCN,WAAW,CAACV,eAAe,CAAEgB,SAAS,CAAEZ,eAAe,CAAC,CAC1D,CACF,CACAF,KAAK,CAACgB,IAAI,CAAGF,SAAS,CACxB\",\"ignoreList\":[]}",
+    sourceMap: "{\"version\":3,\"names\":[\"styleUpdater_reactNativeReanimated_useAnimatedStyleTs3\",\"animationsActive\",\"viewDescriptors\",\"updater\",\"state\",\"isAnimatedProps\",\"SHOULD_BE_USE_WEB\",\"processBoxShadow\",\"isAnimated\",\"prepareAnimation\",\"runAnimations\",\"updateProps\",\"shallowEqual\",\"__closure\",\"_state$animations\",\"_updater\",\"animations\",\"newValues\",\"oldValues\",\"last\",\"nonAnimatedNewValues\",\"hasAnimations\",\"frameTimestamp\",\"hasNonAnimatedValues\",\"boxShadow\",\"key\",\"value\",\"global\",\"__frameTimestamp\",\"_getAnimationTimestamp\",\"frame\",\"timestamp\",\"isAnimationCancelled\",\"isAnimationRunning\",\"updates\",\"allFinished\",\"propName\",\"finished\",\"Array\",\"isArray\",\"forEach\",\"obj\",\"prop\",\"requestAnimationFrame\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/hook/useAnimatedStyle.ts\"],\"mappings\":\"AAsMA,SAAAA,sDAIEC,CAAAC,eACA,CAAAC,OAAA,CAAeC,KAAG,CACnBH,gBAAO,CAAAI,eAAA,cAAAC,iBAAA,CAAAC,gBAAA,CAAAC,UAAA,CAAAC,gBAAA,CAAAC,aAAA,CAAAC,WAAA,CAAAC,YAAA,OAAAC,SAAA,KAAAC,iBAAA,CAAAC,QAAA,CAEN,KAAM,CAAAC,UAAU,EAAAF,iBAAA,CAAGV,KAAK,CAACY,UAAU,UAAAF,iBAAA,UAAAA,iBAAA,CAAI,CAAC,CAAC,CACzC,KAAM,CAAAG,SAAS,EAAAF,QAAA,CAAGZ,OAAO,CAAC,CAAC,UAAAY,QAAA,UAAAA,QAAA,CAAI,CAAC,CAAC,CACjC,KAAM,CAAAG,SAAS,CAAGd,KAAK,CAACe,IAAI,CAC5B,KAAM,CAAAC,oBAAgC,CAAG,CAAC,CAAC,CAE3C,GAAI,CAAAC,aAAa,CAAG,KAAK,CACzB,GAAI,CAAAC,cAAkC,CACtC,GAAI,CAAAC,oBAAoB,CAAG,KAAK,CAChC,GAAI,CAACjB,iBAAiB,EAAIW,SAAS,CAACO,SAAS,CAAE,CAC7CjB,gBAAgB,CAACU,SAAS,CAAC,CAC7B,CACA,IAAK,KAAM,CAAAQ,GAAG,GAAI,CAAAR,SAAS,CAAE,CAC3B,KAAM,CAAAS,KAAK,CAAGT,SAAS,CAACQ,GAAG,CAAC,CAC5B,GAAIjB,UAAU,CAACkB,KAAK,CAAC,CAAE,CACrBJ,cAAc,CACZK,MAAM,CAACC,gBAAgB,EAAID,MAAM,CAACE,sBAAsB,CAAC,CAAC,CAC5DpB,gBAAgB,CAACa,cAAc,CAAEI,KAAK,CAAEV,UAAU,CAACS,GAAG,CAAC,CAAEP,SAAS,CAACO,GAAG,CAAC,CAAC,CACxET,UAAU,CAACS,GAAG,CAAC,CAAGC,KAAK,CACvBL,aAAa,CAAG,IAAI,CACtB,CAAC,IAAM,CACLE,oBAAoB,CAAG,IAAI,CAC3BH,oBAAoB,CAACK,GAAG,CAAC,CAAGC,KAAK,CACjC,MAAO,CAAAV,UAAU,CAACS,GAAG,CAAC,CACxB,CACF,CAEA,GAAIJ,aAAa,CAAE,CACjB,KAAM,CAAAS,KAAK,CAAG,QAAAA,CAACC,SAAoB,CAAK,CAEtC,KAAM,CAAEf,UAAU,CAAVA,UAAU,CAAEG,IAAI,CAAJA,IAAI,CAAEa,oBAAA,CAAAA,oBAAqB,CAAC,CAAG5B,KAAK,CACxD,GAAI4B,oBAAoB,CAAE,CACxB5B,KAAK,CAAC6B,kBAAkB,CAAG,KAAK,CAChC,OACF,CAEA,KAAM,CAAAC,OAA2B,CAAG,CAAC,CAAC,CACtC,GAAI,CAAAC,WAAW,CAAG,IAAI,CACtB,IAAK,KAAM,CAAAC,QAAQ,GAAI,CAAApB,UAAU,CAAE,CACjC,KAAM,CAAAqB,QAAQ,CAAG3B,aAAa,CAC5BM,UAAU,CAACoB,QAAQ,CAAC,CACpBL,SAAS,CACTK,QAAQ,CACRF,OAAO,CACPjC,gBACF,CAAC,CACD,GAAIoC,QAAQ,CAAE,CAOZ,GAAIC,KAAK,CAACC,OAAO,CAACL,OAAO,CAACE,QAAQ,CAAC,CAAC,CAAE,CACpCF,OAAO,CAACE,QAAQ,CAAC,CAACI,OAAO,CAAC,SAACC,GAAe,CAAK,CAC7C,IAAK,KAAM,CAAAC,IAAI,GAAI,CAAAD,GAAG,CAAE,CACtB,GAAI,CAACtB,IAAI,CAACiB,QAAQ,CAAC,EAAI,MAAO,CAAAjB,IAAI,CAACiB,QAAQ,CAAC,GAAK,QAAQ,CAAE,CACzDjB,IAAI,CAACiB,QAAQ,CAAC,CAAG,CAAC,CAAC,CACrB,CACAjB,IAAI,CAACiB,QAAQ,CAAC,CAACM,IAAI,CAAC,CAAGD,GAAG,CAACC,IAAI,CAAC,CAClC,CACF,CAAC,CAAC,CACJ,CAAC,IAAM,CACLvB,IAAI,CAACiB,QAAQ,CAAC,CAAGF,OAAO,CAACE,QAAQ,CAAC,CACpC,CACA,MAAO,CAAApB,UAAU,CAACoB,QAAQ,CAAC,CAC7B,CAAC,IAAM,CACLD,WAAW,CAAG,KAAK,CACrB,CACF,CAEA,GAAID,OAAO,CAAE,CACXvB,WAAW,CAACT,eAAe,CAAEgC,OAAO,CAAC,CACvC,CAEA,GAAI,CAACC,WAAW,CAAE,CAChBQ,qBAAqB,CAACb,KAAK,CAAC,CAC9B,CAAC,IAAM,CACL1B,KAAK,CAAC6B,kBAAkB,CAAG,KAAK,CAClC,CACF,CAAC,CAED7B,KAAK,CAACY,UAAU,CAAGA,UAAU,CAC7B,GAAI,CAACZ,KAAK,CAAC6B,kBAAkB,CAAE,CAC7B7B,KAAK,CAAC4B,oBAAoB,CAAG,KAAK,CAClC5B,KAAK,CAAC6B,kBAAkB,CAAG,IAAI,CAC/BH,KAAK,CAACR,cAAe,CAAC,CACxB,CAEA,GAAIC,oBAAoB,CAAE,CACxBZ,WAAW,CAACT,eAAe,CAAEkB,oBAAoB,CAAC,CACpD,CACF,CAAC,IAAM,CACLhB,KAAK,CAAC4B,oBAAoB,CAAG,IAAI,CACjC5B,KAAK,CAACY,UAAU,CAAG,EAAE,CAErB,GAAI,CAACJ,YAAY,CAACM,SAAS,CAAED,SAAS,CAAC,CAAE,CACvCN,WAAW,CAACT,eAAe,CAAEe,SAAS,CAAEZ,eAAe,CAAC,CAC1D,CACF,CACAD,KAAK,CAACe,IAAI,CAAGF,SAAS,CACxB\",\"ignoreList\":[]}",
     version: "3.18.0"
   };
   var styleUpdater = function () {
@@ -147797,7 +151328,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _worklet_4651568536366_init_data = {
     code: "function jestStyleUpdater_reactNativeReanimated_useAnimatedStyleTs4(viewDescriptors,updater,state,animationsActive,animatedValues,adapters){const{isAnimated,prepareAnimation,runAnimations,updatePropsJestWrapper,shallowEqual}=this.__closure;var _state$animations,_updater;const animations=(_state$animations=state.animations)!==null&&_state$animations!==void 0?_state$animations:{};const newValues=(_updater=updater())!==null&&_updater!==void 0?_updater:{};const oldValues=state.last;let hasAnimations=false;let frameTimestamp;Object.keys(animations).forEach(function(key){const value=newValues[key];if(!isAnimated(value)){delete animations[key];}});Object.keys(newValues).forEach(function(key){const value=newValues[key];if(isAnimated(value)){frameTimestamp=global.__frameTimestamp||global._getAnimationTimestamp();prepareAnimation(frameTimestamp,value,animations[key],oldValues[key]);animations[key]=value;hasAnimations=true;}});function frame(timestamp){const{animations:animations,last:last,isAnimationCancelled:isAnimationCancelled}=state;if(isAnimationCancelled){state.isAnimationRunning=false;return;}const updates={};let allFinished=true;Object.keys(animations).forEach(function(propName){const finished=runAnimations(animations[propName],timestamp,propName,updates,animationsActive);if(finished){last[propName]=updates[propName];delete animations[propName];}else{allFinished=false;}});if(Object.keys(updates).length){updatePropsJestWrapper(viewDescriptors,updates,animatedValues,adapters);}if(!allFinished){requestAnimationFrame(frame);}else{state.isAnimationRunning=false;}}if(hasAnimations){state.animations=animations;if(!state.isAnimationRunning){state.isAnimationCancelled=false;state.isAnimationRunning=true;frame(frameTimestamp);}}else{state.isAnimationCancelled=true;state.animations=[];}state.last=newValues;if(!shallowEqual(oldValues,newValues)){updatePropsJestWrapper(viewDescriptors,newValues,animatedValues,adapters);}}",
     location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/hook/useAnimatedStyle.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"jestStyleUpdater_reactNativeReanimated_useAnimatedStyleTs4\",\"viewDescriptors\",\"updater\",\"state\",\"animationsActive\",\"animatedValues\",\"adapters\",\"isAnimated\",\"prepareAnimation\",\"runAnimations\",\"updatePropsJestWrapper\",\"shallowEqual\",\"__closure\",\"_state$animations\",\"_updater\",\"animations\",\"newValues\",\"oldValues\",\"last\",\"hasAnimations\",\"frameTimestamp\",\"Object\",\"keys\",\"forEach\",\"key\",\"value\",\"global\",\"__frameTimestamp\",\"_getAnimationTimestamp\",\"frame\",\"timestamp\",\"isAnimationCancelled\",\"isAnimationRunning\",\"updates\",\"allFinished\",\"propName\",\"finished\",\"length\",\"requestAnimationFrame\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/hook/useAnimatedStyle.ts\"],\"mappings\":\"AAoTA,SAAAA,0DAIEA,CAAAC,eACA,CAAAC,OAAoD,CACpDC,KAAA,CAAAC,gBACM,CAAAC,cAAA,CAAAC,QAAA,QAAAC,UAAA,CAAAC,gBAAA,CAAAC,aAAA,CAAAC,sBAAA,CAAAC,YAAA,OAAAC,SAAA,KAAAC,iBAAA,CAAAC,QAAA,CAEN,KAAM,CAAAC,UAA8B,EAAAF,iBAAA,CAAGV,KAAK,CAACY,UAAU,UAAAF,iBAAA,UAAAA,iBAAA,CAAI,CAAC,CAAC,CAC7D,KAAM,CAAAG,SAAS,EAAAF,QAAA,CAAGZ,OAAO,CAAC,CAAC,UAAAY,QAAA,UAAAA,QAAA,CAAI,CAAC,CAAC,CACjC,KAAM,CAAAG,SAAS,CAAGd,KAAK,CAACe,IAAI,CAG5B,GAAI,CAAAC,aAAa,CAAG,KAAK,CACzB,GAAI,CAAAC,cAAkC,CACtCC,MAAM,CAACC,IAAI,CAACP,UAAU,CAAC,CAACQ,OAAO,CAAE,SAAAC,GAAG,CAAK,CACvC,KAAM,CAAAC,KAAK,CAAGT,SAAS,CAACQ,GAAG,CAAC,CAC5B,GAAI,CAACjB,UAAU,CAACkB,KAAK,CAAC,CAAE,CACtB,MAAO,CAAAV,UAAU,CAACS,GAAG,CAAC,CACxB,CACF,CAAC,CAAC,CACFH,MAAM,CAACC,IAAI,CAACN,SAAS,CAAC,CAACO,OAAO,CAAE,SAAAC,GAAG,CAAK,CACtC,KAAM,CAAAC,KAAK,CAAGT,SAAS,CAACQ,GAAG,CAAC,CAC5B,GAAIjB,UAAU,CAACkB,KAAK,CAAC,CAAE,CACrBL,cAAc,CACZM,MAAM,CAACC,gBAAgB,EAAID,MAAM,CAACE,sBAAsB,CAAC,CAAC,CAC5DpB,gBAAgB,CAACY,cAAc,CAAEK,KAAK,CAAEV,UAAU,CAACS,GAAG,CAAC,CAAEP,SAAS,CAACO,GAAG,CAAC,CAAC,CACxET,UAAU,CAACS,GAAG,CAAC,CAAGC,KAAK,CACvBN,aAAa,CAAG,IAAI,CACtB,CACF,CAAC,CAAC,CAEF,QAAS,CAAAU,KAAKA,CAACC,SAAoB,CAAE,CAEnC,KAAM,CAAEf,UAAU,CAAVA,UAAU,CAAEG,IAAI,CAAJA,IAAI,CAAEa,oBAAA,CAAAA,oBAAqB,CAAC,CAAG5B,KAAK,CACxD,GAAI4B,oBAAoB,CAAE,CACxB5B,KAAK,CAAC6B,kBAAkB,CAAG,KAAK,CAChC,OACF,CAEA,KAAM,CAAAC,OAA2B,CAAG,CAAC,CAAC,CACtC,GAAI,CAAAC,WAAW,CAAG,IAAI,CACtBb,MAAM,CAACC,IAAI,CAACP,UAAU,CAAC,CAACQ,OAAO,CAAE,SAAAY,QAAQ,CAAK,CAC5C,KAAM,CAAAC,QAAQ,CAAG3B,aAAa,CAC5BM,UAAU,CAACoB,QAAQ,CAAC,CACpBL,SAAS,CACTK,QAAQ,CACRF,OAAO,CACP7B,gBACF,CAAC,CACD,GAAIgC,QAAQ,CAAE,CACZlB,IAAI,CAACiB,QAAQ,CAAC,CAAGF,OAAO,CAACE,QAAQ,CAAC,CAClC,MAAO,CAAApB,UAAU,CAACoB,QAAQ,CAAC,CAC7B,CAAC,IAAM,CACLD,WAAW,CAAG,KAAK,CACrB,CACF,CAAC,CAAC,CAEF,GAAIb,MAAM,CAACC,IAAI,CAACW,OAAO,CAAC,CAACI,MAAM,CAAE,CAC/B3B,sBAAsB,CACpBT,eAAe,CACfgC,OAAO,CACP5B,cAAc,CACdC,QACF,CAAC,CACH,CAEA,GAAI,CAAC4B,WAAW,CAAE,CAChBI,qBAAqB,CAACT,KAAK,CAAC,CAC9B,CAAC,IAAM,CACL1B,KAAK,CAAC6B,kBAAkB,CAAG,KAAK,CAClC,CACF,CAEA,GAAIb,aAAa,CAAE,CACjBhB,KAAK,CAACY,UAAU,CAAGA,UAAU,CAC7B,GAAI,CAACZ,KAAK,CAAC6B,kBAAkB,CAAE,CAC7B7B,KAAK,CAAC4B,oBAAoB,CAAG,KAAK,CAClC5B,KAAK,CAAC6B,kBAAkB,CAAG,IAAI,CAC/BH,KAAK,CAACT,cAAe,CAAC,CACxB,CACF,CAAC,IAAM,CACLjB,KAAK,CAAC4B,oBAAoB,CAAG,IAAI,CACjC5B,KAAK,CAACY,UAAU,CAAG,EAAE,CACvB,CAGAZ,KAAK,CAACe,IAAI,CAAGF,SAAS,CAEtB,GAAI,CAACL,YAAY,CAACM,SAAS,CAAED,SAAS,CAAC,CAAE,CACvCN,sBAAsB,CACpBT,eAAe,CACfe,SAAS,CACTX,cAAc,CACdC,QACF,CAAC,CACH,CACF\",\"ignoreList\":[]}",
+    sourceMap: "{\"version\":3,\"names\":[\"jestStyleUpdater_reactNativeReanimated_useAnimatedStyleTs4\",\"animationsActive\",\"viewDescriptors\",\"updater\",\"state\",\"animatedValues\",\"adapters\",\"isAnimated\",\"prepareAnimation\",\"runAnimations\",\"updatePropsJestWrapper\",\"shallowEqual\",\"__closure\",\"_state$animations\",\"_updater\",\"animations\",\"newValues\",\"oldValues\",\"last\",\"hasAnimations\",\"frameTimestamp\",\"Object\",\"keys\",\"forEach\",\"key\",\"value\",\"global\",\"__frameTimestamp\",\"_getAnimationTimestamp\",\"frame\",\"timestamp\",\"isAnimationCancelled\",\"isAnimationRunning\",\"updates\",\"allFinished\",\"propName\",\"finished\",\"length\",\"requestAnimationFrame\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/hook/useAnimatedStyle.ts\"],\"mappings\":\"AAoTA,SAAAA,0DAIEC,CAAAC,eACA,CAAAC,OAAoD,CACpDC,KAAA,CAAAH,gBACM,CAAAI,cAAA,CAAAC,QAAA,QAAAC,UAAA,CAAAC,gBAAA,CAAAC,aAAA,CAAAC,sBAAA,CAAAC,YAAA,OAAAC,SAAA,KAAAC,iBAAA,CAAAC,QAAA,CAEN,KAAM,CAAAC,UAA8B,EAAAF,iBAAA,CAAGT,KAAK,CAACW,UAAU,UAAAF,iBAAA,UAAAA,iBAAA,CAAI,CAAC,CAAC,CAC7D,KAAM,CAAAG,SAAS,EAAAF,QAAA,CAAGX,OAAO,CAAC,CAAC,UAAAW,QAAA,UAAAA,QAAA,CAAI,CAAC,CAAC,CACjC,KAAM,CAAAG,SAAS,CAAGb,KAAK,CAACc,IAAI,CAG5B,GAAI,CAAAC,aAAa,CAAG,KAAK,CACzB,GAAI,CAAAC,cAAkC,CACtCC,MAAM,CAACC,IAAI,CAACP,UAAU,CAAC,CAACQ,OAAO,CAAE,SAAAC,GAAG,CAAK,CACvC,KAAM,CAAAC,KAAK,CAAGT,SAAS,CAACQ,GAAG,CAAC,CAC5B,GAAI,CAACjB,UAAU,CAACkB,KAAK,CAAC,CAAE,CACtB,MAAO,CAAAV,UAAU,CAACS,GAAG,CAAC,CACxB,CACF,CAAC,CAAC,CACFH,MAAM,CAACC,IAAI,CAACN,SAAS,CAAC,CAACO,OAAO,CAAE,SAAAC,GAAG,CAAK,CACtC,KAAM,CAAAC,KAAK,CAAGT,SAAS,CAACQ,GAAG,CAAC,CAC5B,GAAIjB,UAAU,CAACkB,KAAK,CAAC,CAAE,CACrBL,cAAc,CACZM,MAAM,CAACC,gBAAgB,EAAID,MAAM,CAACE,sBAAsB,CAAC,CAAC,CAC5DpB,gBAAgB,CAACY,cAAc,CAAEK,KAAK,CAAEV,UAAU,CAACS,GAAG,CAAC,CAAEP,SAAS,CAACO,GAAG,CAAC,CAAC,CACxET,UAAU,CAACS,GAAG,CAAC,CAAGC,KAAK,CACvBN,aAAa,CAAG,IAAI,CACtB,CACF,CAAC,CAAC,CAEF,QAAS,CAAAU,KAAKA,CAACC,SAAoB,CAAE,CAEnC,KAAM,CAAEf,UAAU,CAAVA,UAAU,CAAEG,IAAI,CAAJA,IAAI,CAAEa,oBAAA,CAAAA,oBAAqB,CAAC,CAAG3B,KAAK,CACxD,GAAI2B,oBAAoB,CAAE,CACxB3B,KAAK,CAAC4B,kBAAkB,CAAG,KAAK,CAChC,OACF,CAEA,KAAM,CAAAC,OAA2B,CAAG,CAAC,CAAC,CACtC,GAAI,CAAAC,WAAW,CAAG,IAAI,CACtBb,MAAM,CAACC,IAAI,CAACP,UAAU,CAAC,CAACQ,OAAO,CAAE,SAAAY,QAAQ,CAAK,CAC5C,KAAM,CAAAC,QAAQ,CAAG3B,aAAa,CAC5BM,UAAU,CAACoB,QAAQ,CAAC,CACpBL,SAAS,CACTK,QAAQ,CACRF,OAAO,CACPhC,gBACF,CAAC,CACD,GAAImC,QAAQ,CAAE,CACZlB,IAAI,CAACiB,QAAQ,CAAC,CAAGF,OAAO,CAACE,QAAQ,CAAC,CAClC,MAAO,CAAApB,UAAU,CAACoB,QAAQ,CAAC,CAC7B,CAAC,IAAM,CACLD,WAAW,CAAG,KAAK,CACrB,CACF,CAAC,CAAC,CAEF,GAAIb,MAAM,CAACC,IAAI,CAACW,OAAO,CAAC,CAACI,MAAM,CAAE,CAC/B3B,sBAAsB,CACpBR,eAAe,CACf+B,OAAO,CACP5B,cAAc,CACdC,QACF,CAAC,CACH,CAEA,GAAI,CAAC4B,WAAW,CAAE,CAChBI,qBAAqB,CAACT,KAAK,CAAC,CAC9B,CAAC,IAAM,CACLzB,KAAK,CAAC4B,kBAAkB,CAAG,KAAK,CAClC,CACF,CAEA,GAAIb,aAAa,CAAE,CACjBf,KAAK,CAACW,UAAU,CAAGA,UAAU,CAC7B,GAAI,CAACX,KAAK,CAAC4B,kBAAkB,CAAE,CAC7B5B,KAAK,CAAC2B,oBAAoB,CAAG,KAAK,CAClC3B,KAAK,CAAC4B,kBAAkB,CAAG,IAAI,CAC/BH,KAAK,CAACT,cAAe,CAAC,CACxB,CACF,CAAC,IAAM,CACLhB,KAAK,CAAC2B,oBAAoB,CAAG,IAAI,CACjC3B,KAAK,CAACW,UAAU,CAAG,EAAE,CACvB,CAGAX,KAAK,CAACc,IAAI,CAAGF,SAAS,CAEtB,GAAI,CAACL,YAAY,CAACM,SAAS,CAAED,SAAS,CAAC,CAAE,CACvCN,sBAAsB,CACpBR,eAAe,CACfc,SAAS,CACTX,cAAc,CACdC,QACF,CAAC,CACH,CACF\",\"ignoreList\":[]}",
     version: "3.18.0"
   };
   var jestStyleUpdater = function () {
@@ -148080,7 +151611,7 @@ For more, see the docs: \`https://docs.swmansion.com/react-native-reanimated/doc
   function animatedStyleHandleToJSON() {
     return '{}';
   }
-},780,[8,46,86,638,781,776,765,646,636,728,687,674,764],"node_modules/react-native-reanimated/src/hook/useAnimatedStyle.ts");
+},824,[8,46,86,682,825,820,809,690,680,772,731,718,808],"node_modules/react-native-reanimated/src/hook/useAnimatedStyle.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /* based on:
    * https://github.com/facebook/react-native/blob/main/packages/react-native/Libraries/StyleSheet/processBoxShadow.js
@@ -148307,7 +151838,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     processBoxShadow.__stackDetails = _e;
     return processBoxShadow;
   }();
-},781,[646],"node_modules/react-native-reanimated/src/processBoxShadow.ts");
+},825,[690],"node_modules/react-native-reanimated/src/processBoxShadow.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -148379,7 +151910,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       };
     }, dependencies);
   }
-},782,[8,46,86,728,638,674],"node_modules/react-native-reanimated/src/hook/useAnimatedReaction.ts");
+},826,[8,46,86,772,682,718],"node_modules/react-native-reanimated/src/hook/useAnimatedReaction.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -148465,7 +151996,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
     return ref.current;
   }
-},783,[86,1,638,728,667,730,644,645],"node_modules/react-native-reanimated/src/hook/useAnimatedRef.ts");
+},827,[86,1,682,772,711,774,688,689],"node_modules/react-native-reanimated/src/hook/useAnimatedRef.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -148549,7 +152080,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     // for more information about this cast.
     );
   }
-},784,[775,777],"node_modules/react-native-reanimated/src/hook/useAnimatedScrollHandler.ts");
+},828,[819,821],"node_modules/react-native-reanimated/src/hook/useAnimatedScrollHandler.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -148563,7 +152094,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _worklet_763515177202_init_data = {
     code: "function eulerToQuaternion_reactNativeReanimated_useAnimatedSensorTs1(pitch,roll,yaw){const c1=Math.cos(pitch/2);const s1=Math.sin(pitch/2);const c2=Math.cos(roll/2);const s2=Math.sin(roll/2);const c3=Math.cos(yaw/2);const s3=Math.sin(yaw/2);return[s1*c2*c3-c1*s2*s3,c1*s2*c3+s1*c2*s3,c1*c2*s3+s1*s2*c3,c1*c2*c3-s1*s2*s3];}",
     location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/hook/useAnimatedSensor.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"eulerToQuaternion_reactNativeReanimated_useAnimatedSensorTs1\",\"pitch\",\"roll\",\"yaw\",\"c1\",\"Math\",\"cos\",\"s1\",\"sin\",\"c2\",\"s2\",\"c3\",\"s3\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/hook/useAnimatedSensor.ts\"],\"mappings\":\"AAiBA,SAAAA,6DAAAC,KAAA,CAAAC,IAAA,CAAAC,GAAA,QAAAC,EAAA,CAAAC,IAAA,CAAAC,GAAA,CAAAL,KAAA,IACA,MAAAM,EAAA,CAAAF,IAAA,CAAAG,GAAA,CAAAP,KAAA,IACA,MAAAQ,EAAS,CAAAJ,IAAA,CAAAC,GAAA,CAAAJ,IAAiB,CAAC,GAEzB,KAAM,CAAAQ,EAAE,CAAGL,IAAI,CAACG,GAAG,CAACN,IAAA,CAAK,CAAG,CAAC,CAC7B,KAAM,CAAAS,EAAE,CAAGN,IAAI,CAACC,GAAG,CAACH,GAAA,CAAK,EAAG,CAC5B,KAAM,CAAAS,EAAE,CAAGP,IAAI,CAACG,GAAG,CAACL,GAAA,CAAI,CAAG,CAAC,CAC5B,MAAM,CAAEI,EAAA,CAAGE,EAAI,CAACE,EAAI,CAAAP,EAAI,CAAIM,EAAC,CAAAE,EAAA,CAAAR,EAAA,CAAAM,EAAA,CAAAC,EAAA,CAAAJ,EAAA,CAAAE,EAAA,CAAAG,EAAA,CAAAR,EAAA,CAAAK,EAAA,CAAAG,EAAA,CAAAL,EAAA,CAAAG,EAAA,CAAAC,EAAA,CAAAP,EAAA,CAAAK,EAAA,CAAAE,EAAA,CAAAJ,EAAA,CAAAG,EAAA,CAAAE,EAAA,E\",\"ignoreList\":[]}",
+    sourceMap: "{\"version\":3,\"names\":[\"eulerToQuaternion_reactNativeReanimated_useAnimatedSensorTs1\",\"pitch\",\"roll\",\"yaw\",\"c1\",\"Math\",\"cos\",\"s1\",\"sin\",\"c2\",\"c3\",\"s2\",\"s3\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/hook/useAnimatedSensor.ts\"],\"mappings\":\"AAiBA,SAAAA,6DAAAC,KAAA,CAAAC,IAAA,CAAAC,GAAA,QAAAC,EAAA,CAAAC,IAAA,CAAAC,GAAA,CAAAL,KAAA,IACA,MAAAM,EAAA,CAAAF,IAAA,CAAAG,GAAA,CAAAP,KAAA,IACA,MAAAQ,EAAS,CAAAJ,IAAA,CAAAC,GAAA,CAAAJ,IAAiB,CAAC,GAEzB,KAAM,CAAAE,EAAE,CAAGC,IAAI,CAACC,GAAG,CAACL,IAAA,CAAK,CAAG,CAAC,CAC7B,KAAM,CAAAM,EAAE,CAAGF,IAAI,CAACG,GAAG,CAACP,GAAA,CAAK,EAAG,CAC5B,KAAM,CAAAQ,EAAE,CAAGJ,IAAI,CAACC,GAAG,CAACJ,GAAA,CAAI,CAAG,CAAC,CAC5B,MAAM,CAAEK,EAAA,CAAGE,EAAI,CAACC,EAAI,CAAAN,EAAI,CAAIO,EAAC,CAAAC,EAAA,CAAAR,EAAA,CAAAO,EAAA,CAAAD,EAAA,CAAAH,EAAA,CAAAE,EAAA,CAAAG,EAAA,CAAAR,EAAA,CAAAK,EAAA,CAAAG,EAAA,CAAAL,EAAA,CAAAI,EAAA,CAAAD,EAAA,CAAAN,EAAA,CAAAK,EAAA,CAAAC,EAAA,CAAAH,EAAA,CAAAI,EAAA,CAAAC,EAAA,E\",\"ignoreList\":[]}",
     version: "3.18.0"
   };
   var eulerToQuaternion = function () {
@@ -148753,7 +152284,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, [sensorType, config]);
     return ref.current;
   }
-},785,[86,636,674,657],"node_modules/react-native-reanimated/src/hook/useAnimatedSensor.ts");
+},829,[86,680,718,701],"node_modules/react-native-reanimated/src/hook/useAnimatedSensor.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -148827,7 +152358,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return reactNativeReanimated_useComposedEventHandlerTs1;
     }(), Array.from(composedEventNames), doDependenciesDiffer);
   }
-},786,[769,775,777],"node_modules/react-native-reanimated/src/hook/useComposedEventHandler.ts");
+},830,[813,819,821],"node_modules/react-native-reanimated/src/hook/useComposedEventHandler.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -148900,7 +152431,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, dependencies);
     return sharedValue;
   }
-},787,[8,46,86,638,674,687],"node_modules/react-native-reanimated/src/hook/useDerivedValue.ts");
+},831,[8,46,86,682,718,731],"node_modules/react-native-reanimated/src/hook/useDerivedValue.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -148951,7 +152482,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, [callback, autostart]);
     return ref.current;
   }
-},788,[86,8,789],"node_modules/react-native-reanimated/src/hook/useFrameCallback.ts");
+},832,[86,8,833],"node_modules/react-native-reanimated/src/hook/useFrameCallback.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149046,7 +152577,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }();
-},789,[8,9,10,790,674],"node_modules/react-native-reanimated/src/frameCallback/FrameCallbackRegistryJS.ts");
+},833,[8,9,10,834,718],"node_modules/react-native-reanimated/src/frameCallback/FrameCallbackRegistryJS.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149148,7 +152679,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_FrameCallbackRegistryUITs1.__stackDetails = _e;
     return reactNativeReanimated_FrameCallbackRegistryUITs1;
   }());
-},790,[657],"node_modules/react-native-reanimated/src/frameCallback/FrameCallbackRegistryUI.ts");
+},834,[701],"node_modules/react-native-reanimated/src/frameCallback/FrameCallbackRegistryUI.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149171,7 +152702,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function useReducedMotion() {
     return IS_REDUCED_MOTION_ENABLED_IN_SYSTEM;
   }
-},791,[671],"node_modules/react-native-reanimated/src/hook/useReducedMotion.ts");
+},835,[715],"node_modules/react-native-reanimated/src/hook/useReducedMotion.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149286,7 +152817,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     return (_ref = scrollComponent == null ? void 0 : scrollComponent.getScrollableNode()) != null ? _ref : scrollComponent;
   }
   var scrollNativeEventNames = ['onScroll', 'onScrollBeginDrag', 'onScrollEndDrag', 'onMomentumScrollBegin', 'onMomentumScrollEnd'];
-},792,[86,638,728,777],"node_modules/react-native-reanimated/src/hook/useScrollViewOffset.ts");
+},836,[86,682,772,821],"node_modules/react-native-reanimated/src/hook/useScrollViewOffset.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149299,7 +152830,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function useWorkletCallback(worklet, deps) {
     return (0, _react.useCallback)(worklet, deps != null ? deps : []);
   }
-},793,[86],"node_modules/react-native-reanimated/src/hook/useWorkletCallback.ts");
+},837,[86],"node_modules/react-native-reanimated/src/hook/useWorkletCallback.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149343,7 +152874,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, [mode]);
     return null;
   }
-},794,[86,640,671,636],"node_modules/react-native-reanimated/src/component/ReducedMotionConfig.tsx");
+},838,[86,684,715,680],"node_modules/react-native-reanimated/src/component/ReducedMotionConfig.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149368,7 +152899,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[1], "./animationManager").startScreenTransition;
     }
   });
-},795,[796,797],"node_modules/react-native-reanimated/src/screenTransition/index.ts");
+},839,[840,841],"node_modules/react-native-reanimated/src/screenTransition/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149722,7 +153253,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     TwoDimensional: TwoDimensional,
     SwipeRightFade: SwipeRightFade
   };
-},796,[],"node_modules/react-native-reanimated/src/screenTransition/presets.ts");
+},840,[],"node_modules/react-native-reanimated/src/screenTransition/presets.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149802,7 +153333,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     finishScreenTransition.__stackDetails = _e;
     return finishScreenTransition;
   }();
-},797,[732,798,799],"node_modules/react-native-reanimated/src/screenTransition/animationManager.ts");
+},841,[776,842,843],"node_modules/react-native-reanimated/src/screenTransition/animationManager.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149928,7 +153459,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     applyStyle.__stackDetails = _e;
     return applyStyle;
   }();
-},798,[638,765],"node_modules/react-native-reanimated/src/screenTransition/styleUpdater.ts");
+},842,[682,809],"node_modules/react-native-reanimated/src/screenTransition/styleUpdater.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149984,7 +153515,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _worklet_3885245770806_init_data = {
     code: "function computeProgress_reactNativeReanimated_swipeSimulatorTs3(screenTransitionConfig,event,isTransitionCanceled){const screenDimensions=screenTransitionConfig.screenDimensions;const progressX=Math.abs(event.translationX/screenDimensions.width);const progressY=Math.abs(event.translationY/screenDimensions.height);const maxProgress=Math.max(progressX,progressY);const progress=isTransitionCanceled?maxProgress/2:maxProgress;return progress;}",
     location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/screenTransition/swipeSimulator.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"computeProgress_reactNativeReanimated_swipeSimulatorTs3\",\"screenTransitionConfig\",\"event\",\"isTransitionCanceled\",\"screenDimensions\",\"progressX\",\"Math\",\"abs\",\"translationX\",\"width\",\"progressY\",\"translationY\",\"height\",\"maxProgress\",\"max\",\"progress\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/screenTransition/swipeSimulator.ts\"],\"mappings\":\"AAmCA,SAAAA,uDAGEA,CAAAC,sBACA,CAAAC,KAAA,CAAAC,oBAAA,EAEA,KAAM,CAAAC,gBAAgB,CAAGH,sBAAsB,CAACG,gBAAgB,CAChE,KAAM,CAAAC,SAAS,CAAGC,IAAI,CAACC,GAAG,CAACL,KAAK,CAACM,YAAY,CAAGJ,gBAAgB,CAACK,KAAK,CAAC,CACvE,KAAM,CAAAC,SAAS,CAAGJ,IAAI,CAACC,GAAG,CAACL,KAAK,CAACS,YAAY,CAAGP,gBAAgB,CAACQ,MAAM,CAAC,CACxE,KAAM,CAAAC,WAAW,CAAGP,IAAI,CAACQ,GAAG,CAACT,SAAS,CAAEK,SAAS,CAAC,CAClD,KAAM,CAAAK,QAAQ,CAAGZ,oBAAoB,CAAGU,WAAW,CAAG,CAAC,CAAGA,WAAW,CACrE,MAAO,CAAAE,QAAQ,CACjB\",\"ignoreList\":[]}",
+    sourceMap: "{\"version\":3,\"names\":[\"computeProgress_reactNativeReanimated_swipeSimulatorTs3\",\"isTransitionCanceled\",\"screenTransitionConfig\",\"event\",\"screenDimensions\",\"progressX\",\"Math\",\"abs\",\"translationX\",\"width\",\"progressY\",\"translationY\",\"height\",\"maxProgress\",\"max\",\"progress\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/screenTransition/swipeSimulator.ts\"],\"mappings\":\"AAmCA,SAAAA,uDAGEC,CAAAC,sBACA,CAAAC,KAAA,CAAAF,oBAAA,EAEA,KAAM,CAAAG,gBAAgB,CAAGF,sBAAsB,CAACE,gBAAgB,CAChE,KAAM,CAAAC,SAAS,CAAGC,IAAI,CAACC,GAAG,CAACJ,KAAK,CAACK,YAAY,CAAGJ,gBAAgB,CAACK,KAAK,CAAC,CACvE,KAAM,CAAAC,SAAS,CAAGJ,IAAI,CAACC,GAAG,CAACJ,KAAK,CAACQ,YAAY,CAAGP,gBAAgB,CAACQ,MAAM,CAAC,CACxE,KAAM,CAAAC,WAAW,CAAGP,IAAI,CAACQ,GAAG,CAACT,SAAS,CAAEK,SAAS,CAAC,CAClD,KAAM,CAAAK,QAAQ,CAAGd,oBAAoB,CAAGY,WAAW,CAAG,CAAC,CAAGA,WAAW,CACrE,MAAO,CAAAE,QAAQ,CACjB\",\"ignoreList\":[]}",
     version: "3.18.0"
   };
   var computeProgress = function () {
@@ -150006,7 +153537,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _worklet_126376714935_init_data = {
     code: "function maybeScheduleNextFrame_reactNativeReanimated_swipeSimulatorTs4(step,didScreenReachDestination,screenTransitionConfig,event,isTransitionCanceled){const{computeProgress,RNScreensTurboModule}=this.__closure;if(!didScreenReachDestination){const stackTag=screenTransitionConfig.stackTag;const progress=computeProgress(screenTransitionConfig,event,isTransitionCanceled);RNScreensTurboModule.updateTransition(stackTag,progress);requestAnimationFrame(step);}else{var _screenTransitionConf;(_screenTransitionConf=screenTransitionConfig.onFinishAnimation)===null||_screenTransitionConf===void 0||_screenTransitionConf.call(screenTransitionConfig);}}",
     location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/screenTransition/swipeSimulator.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"maybeScheduleNextFrame_reactNativeReanimated_swipeSimulatorTs4\",\"step\",\"didScreenReachDestination\",\"screenTransitionConfig\",\"event\",\"isTransitionCanceled\",\"computeProgress\",\"RNScreensTurboModule\",\"__closure\",\"stackTag\",\"progress\",\"updateTransition\",\"requestAnimationFrame\",\"_screenTransitionConf\",\"onFinishAnimation\",\"call\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/screenTransition/swipeSimulator.ts\"],\"mappings\":\"AAiDA,SAAAA,8DAGEA,CAAAC,IAAA,CAAAC,yBAEA,CAAAC,sBACA,CAAAC,KAAA,CAAAC,oBAAA,QAAAC,eAAA,CAAAC,oBAAA,OAAAC,SAAA,CAEA,GAAI,CAACN,yBAAyB,CAAE,CAC9B,KAAM,CAAAO,QAAQ,CAAGN,sBAAsB,CAACM,QAAQ,CAChD,KAAM,CAAAC,QAAQ,CAAGJ,eAAe,CAC9BH,sBAAsB,CACtBC,KAAK,CACLC,oBACF,CAAC,CACDE,oBAAoB,CAACI,gBAAgB,CAACF,QAAQ,CAAEC,QAAQ,CAAC,CACzDE,qBAAqB,CAACX,IAAI,CAAC,CAC7B,CAAC,IAAM,KAAAY,qBAAA,CACL,CAAAA,qBAAA,CAAAV,sBAAsB,CAACW,iBAAiB,UAAAD,qBAAA,WAAxCA,qBAAA,CAAAE,IAAA,CAAAZ,sBAA2C,CAAC,CAC9C,CACF\",\"ignoreList\":[]}",
+    sourceMap: "{\"version\":3,\"names\":[\"maybeScheduleNextFrame_reactNativeReanimated_swipeSimulatorTs4\",\"screenTransitionConfig\",\"step\",\"didScreenReachDestination\",\"event\",\"isTransitionCanceled\",\"computeProgress\",\"RNScreensTurboModule\",\"__closure\",\"stackTag\",\"progress\",\"updateTransition\",\"requestAnimationFrame\",\"_screenTransitionConf\",\"onFinishAnimation\",\"call\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/screenTransition/swipeSimulator.ts\"],\"mappings\":\"AAiDA,SAAAA,8DAGEC,CAAAC,IAAA,CAAAC,yBAEA,CAAAF,sBACA,CAAAG,KAAA,CAAAC,oBAAA,QAAAC,eAAA,CAAAC,oBAAA,OAAAC,SAAA,CAEA,GAAI,CAACL,yBAAyB,CAAE,CAC9B,KAAM,CAAAM,QAAQ,CAAGR,sBAAsB,CAACQ,QAAQ,CAChD,KAAM,CAAAC,QAAQ,CAAGJ,eAAe,CAC9BL,sBAAsB,CACtBG,KAAK,CACLC,oBACF,CAAC,CACDE,oBAAoB,CAACI,gBAAgB,CAACF,QAAQ,CAAEC,QAAQ,CAAC,CACzDE,qBAAqB,CAACV,IAAI,CAAC,CAC7B,CAAC,IAAM,KAAAW,qBAAA,CACL,CAAAA,qBAAA,CAAAZ,sBAAsB,CAACa,iBAAiB,UAAAD,qBAAA,WAAxCA,qBAAA,CAAAE,IAAA,CAAAd,sBAA2C,CAAC,CAC9C,CACF\",\"ignoreList\":[]}",
     version: "3.18.0"
   };
   var maybeScheduleNextFrame = function () {
@@ -150033,7 +153564,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _worklet_12048065021793_init_data = {
     code: "function getSwipeSimulator_reactNativeReanimated_swipeSimulatorTs5(event,screenTransitionConfig,lockAxis){const{BASE_VELOCITY,ADDITIONAL_VELOCITY_FACTOR_X,ADDITIONAL_VELOCITY_FACTOR_Y,ADDITIONAL_VELOCITY_FACTOR_XY,applyStyleForBelowTopScreen,computeEasingProgress,easing,applyStyle,maybeScheduleNextFrame}=this.__closure;const screenDimensions=screenTransitionConfig.screenDimensions;const startTimestamp=_getAnimationTimestamp();const{isTransitionCanceled:isTransitionCanceled}=screenTransitionConfig;const startingPosition={x:event.translationX,y:event.translationY};const direction={x:Math.sign(event.translationX),y:Math.sign(event.translationY)};const finalPosition=isTransitionCanceled?{x:0,y:0}:{x:direction.x*screenDimensions.width,y:direction.y*screenDimensions.height};const distance={x:Math.abs(finalPosition.x-startingPosition.x),y:Math.abs(finalPosition.y-startingPosition.y)};const didScreenReachDestination={x:false,y:false};const velocity={x:BASE_VELOCITY,y:BASE_VELOCITY};if(lockAxis==='x'){velocity.y=0;velocity.x+=ADDITIONAL_VELOCITY_FACTOR_X*distance.x/screenDimensions.width;}else if(lockAxis==='y'){velocity.x=0;velocity.y+=ADDITIONAL_VELOCITY_FACTOR_Y*distance.y/screenDimensions.height;}else{const euclideanDistance=Math.sqrt(distance.x**2+distance.y**2);const screenDiagonal=Math.sqrt(screenDimensions.width**2+screenDimensions.height**2);const velocityVectorLength=BASE_VELOCITY+ADDITIONAL_VELOCITY_FACTOR_XY*euclideanDistance/screenDiagonal;if(Math.abs(startingPosition.x)>Math.abs(startingPosition.y)){velocity.x=velocityVectorLength;velocity.y=velocityVectorLength*Math.abs(startingPosition.y/startingPosition.x);}else{velocity.x=velocityVectorLength*Math.abs(startingPosition.x/startingPosition.y);velocity.y=velocityVectorLength;}}if(isTransitionCanceled){function didScreenReachDestinationCheck(){if(lockAxis==='x'){return didScreenReachDestination.x;}else if(lockAxis==='y'){return didScreenReachDestination.y;}else{return didScreenReachDestination.x&&didScreenReachDestination.y;}}function restoreOriginalStyleForBelowTopScreen(){event.translationX=direction.x*screenDimensions.width;event.translationY=direction.y*screenDimensions.height;applyStyleForBelowTopScreen(screenTransitionConfig,event);}const computeFrame=function(){const progress={x:computeEasingProgress(startTimestamp,distance.x,velocity.x),y:computeEasingProgress(startTimestamp,distance.y,velocity.y)};event.translationX=startingPosition.x-direction.x*distance.x*easing(progress.x);event.translationY=startingPosition.y-direction.y*distance.y*easing(progress.y);if(direction.x>0){if(event.translationX<=0){didScreenReachDestination.x=true;event.translationX=0;}}else{if(event.translationX>=0){didScreenReachDestination.x=true;event.translationX=0;}}if(direction.y>0){if(event.translationY<=0){didScreenReachDestination.y=true;event.translationY=0;}}else{if(event.translationY>=0){didScreenReachDestination.y=true;event.translationY=0;}}applyStyle(screenTransitionConfig,event);const finished=didScreenReachDestinationCheck();if(finished){restoreOriginalStyleForBelowTopScreen();}maybeScheduleNextFrame(computeFrame,finished,screenTransitionConfig,event,isTransitionCanceled);};return computeFrame;}else{const computeFrame=function(){const progress={x:computeEasingProgress(startTimestamp,distance.x,velocity.x),y:computeEasingProgress(startTimestamp,distance.y,velocity.y)};event.translationX=startingPosition.x+direction.x*distance.x*easing(progress.x);event.translationY=startingPosition.y+direction.y*distance.y*easing(progress.y);if(direction.x>0){if(event.translationX>=screenDimensions.width){didScreenReachDestination.x=true;event.translationX=screenDimensions.width;}}else{if(event.translationX<=-screenDimensions.width){didScreenReachDestination.x=true;event.translationX=-screenDimensions.width;}}if(direction.y>0){if(event.translationY>=screenDimensions.height){didScreenReachDestination.y=true;event.translationY=screenDimensions.height;}}else{if(event.translationY<=-screenDimensions.height){didScreenReachDestination.y=true;event.translationY=-screenDimensions.height;}}applyStyle(screenTransitionConfig,event);maybeScheduleNextFrame(computeFrame,didScreenReachDestination.x||didScreenReachDestination.y,screenTransitionConfig,event,isTransitionCanceled);};return computeFrame;}}",
     location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/screenTransition/swipeSimulator.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"getSwipeSimulator_reactNativeReanimated_swipeSimulatorTs5\",\"event\",\"screenTransitionConfig\",\"lockAxis\",\"BASE_VELOCITY\",\"ADDITIONAL_VELOCITY_FACTOR_X\",\"ADDITIONAL_VELOCITY_FACTOR_Y\",\"ADDITIONAL_VELOCITY_FACTOR_XY\",\"applyStyleForBelowTopScreen\",\"computeEasingProgress\",\"easing\",\"applyStyle\",\"maybeScheduleNextFrame\",\"__closure\",\"screenDimensions\",\"startTimestamp\",\"_getAnimationTimestamp\",\"isTransitionCanceled\",\"startingPosition\",\"x\",\"translationX\",\"y\",\"translationY\",\"direction\",\"Math\",\"sign\",\"finalPosition\",\"width\",\"height\",\"distance\",\"abs\",\"didScreenReachDestination\",\"velocity\",\"euclideanDistance\",\"sqrt\",\"screenDiagonal\",\"velocityVectorLength\",\"didScreenReachDestinationCheck\",\"restoreOriginalStyleForBelowTopScreen\",\"computeFrame\",\"progress\",\"finished\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/screenTransition/swipeSimulator.ts\"],\"mappings\":\"AAuEO,SAAAA,yDAGLA,CAAmBC,KACnB,CAAAC,sBAAA,CAAAC,QAAA,QAAAC,aAAA,CAAAC,4BAAA,CAAAC,4BAAA,CAAAC,6BAAA,CAAAC,2BAAA,CAAAC,qBAAA,CAAAC,MAAA,CAAAC,UAAA,CAAAC,sBAAA,OAAAC,SAAA,CAEA,KAAM,CAAAC,gBAAgB,CAAGZ,sBAAsB,CAACY,gBAAgB,CAChE,KAAM,CAAAC,cAAc,CAAGC,sBAAsB,CAAC,CAAC,CAC/C,KAAM,CAAEC,oBAAA,CAAAA,oBAAqB,CAAC,CAAGf,sBAAsB,CACvD,KAAM,CAAAgB,gBAAgB,CAAG,CACvBC,CAAC,CAAElB,KAAK,CAACmB,YAAY,CACrBC,CAAC,CAAEpB,KAAK,CAACqB,YACX,CAAC,CACD,KAAM,CAAAC,SAAS,CAAG,CAChBJ,CAAC,CAAEK,IAAI,CAACC,IAAI,CAACxB,KAAK,CAACmB,YAAY,CAAC,CAChCC,CAAC,CAAEG,IAAI,CAACC,IAAI,CAACxB,KAAK,CAACqB,YAAY,CACjC,CAAC,CACD,KAAM,CAAAI,aAAa,CAAGT,oBAAoB,CACtC,CAAEE,CAAC,CAAE,CAAC,CAAEE,CAAC,CAAE,CAAE,CAAC,CACd,CACEF,CAAC,CAAEI,SAAS,CAACJ,CAAC,CAAGL,gBAAgB,CAACa,KAAK,CACvCN,CAAC,CAAEE,SAAS,CAACF,CAAC,CAAGP,gBAAgB,CAACc,MACpC,CAAC,CACL,KAAM,CAAAC,QAAQ,CAAG,CACfV,CAAC,CAAEK,IAAI,CAACM,GAAG,CAACJ,aAAa,CAACP,CAAC,CAAGD,gBAAgB,CAACC,CAAC,CAAC,CACjDE,CAAC,CAAEG,IAAI,CAACM,GAAG,CAACJ,aAAa,CAACL,CAAC,CAAGH,gBAAgB,CAACG,CAAC,CAClD,CAAC,CACD,KAAM,CAAAU,yBAAyB,CAAG,CAChCZ,CAAC,CAAE,KAAK,CACRE,CAAC,CAAE,KACL,CAAC,CACD,KAAM,CAAAW,QAAQ,CAAG,CAAEb,CAAC,CAAEf,aAAa,CAAEiB,CAAC,CAAEjB,aAAc,CAAC,CACvD,GAAID,QAAQ,GAAK,GAAG,CAAE,CACpB6B,QAAQ,CAACX,CAAC,CAAG,CAAC,CACdW,QAAQ,CAACb,CAAC,EACPd,4BAA4B,CAAGwB,QAAQ,CAACV,CAAC,CAAIL,gBAAgB,CAACa,KAAK,CACxE,CAAC,IAAM,IAAIxB,QAAQ,GAAK,GAAG,CAAE,CAC3B6B,QAAQ,CAACb,CAAC,CAAG,CAAC,CACda,QAAQ,CAACX,CAAC,EACPf,4BAA4B,CAAGuB,QAAQ,CAACR,CAAC,CAAIP,gBAAgB,CAACc,MAAM,CACzE,CAAC,IAAM,CACL,KAAM,CAAAK,iBAAiB,CAAGT,IAAI,CAACU,IAAI,CAACL,QAAQ,CAACV,CAAC,EAAI,CAAC,CAAGU,QAAQ,CAACR,CAAC,EAAI,CAAC,CAAC,CACtE,KAAM,CAAAc,cAAc,CAAGX,IAAI,CAACU,IAAI,CAC9BpB,gBAAgB,CAACa,KAAK,EAAI,CAAC,CAAGb,gBAAgB,CAACc,MAAM,EAAI,CAC3D,CAAC,CACD,KAAM,CAAAQ,oBAAoB,CACxBhC,aAAa,CACZG,6BAA6B,CAAG0B,iBAAiB,CAAIE,cAAc,CACtE,GAAIX,IAAI,CAACM,GAAG,CAACZ,gBAAgB,CAACC,CAAC,CAAC,CAAGK,IAAI,CAACM,GAAG,CAACZ,gBAAgB,CAACG,CAAC,CAAC,CAAE,CAC/DW,QAAQ,CAACb,CAAC,CAAGiB,oBAAoB,CACjCJ,QAAQ,CAACX,CAAC,CACRe,oBAAoB,CACpBZ,IAAI,CAACM,GAAG,CAACZ,gBAAgB,CAACG,CAAC,CAAGH,gBAAgB,CAACC,CAAC,CAAC,CACrD,CAAC,IAAM,CACLa,QAAQ,CAACb,CAAC,CACRiB,oBAAoB,CACpBZ,IAAI,CAACM,GAAG,CAACZ,gBAAgB,CAACC,CAAC,CAAGD,gBAAgB,CAACG,CAAC,CAAC,CACnDW,QAAQ,CAACX,CAAC,CAAGe,oBAAoB,CACnC,CACF,CAEA,GAAInB,oBAAoB,CAAE,CACxB,QAAS,CAAAoB,8BAA8BA,CAAA,CAAG,CACxC,GAAIlC,QAAQ,GAAK,GAAG,CAAE,CACpB,MAAO,CAAA4B,yBAAyB,CAACZ,CAAC,CACpC,CAAC,IAAM,IAAIhB,QAAQ,GAAK,GAAG,CAAE,CAC3B,MAAO,CAAA4B,yBAAyB,CAACV,CAAC,CACpC,CAAC,IAAM,CACL,MAAO,CAAAU,yBAAyB,CAACZ,CAAC,EAAIY,yBAAyB,CAACV,CAAC,CACnE,CACF,CAEA,QAAS,CAAAiB,qCAAqCA,CAAA,CAAG,CAC/CrC,KAAK,CAACmB,YAAY,CAAGG,SAAS,CAACJ,CAAC,CAAGL,gBAAgB,CAACa,KAAK,CACzD1B,KAAK,CAACqB,YAAY,CAAGC,SAAS,CAACF,CAAC,CAAGP,gBAAgB,CAACc,MAAM,CAC1DpB,2BAA2B,CAACN,sBAAsB,CAAED,KAAK,CAAC,CAC5D,CAEA,KAAM,CAAAsC,YAAY,CAAG,QAAAA,CAAA,CAAM,CACzB,KAAM,CAAAC,QAAQ,CAAG,CACfrB,CAAC,CAAEV,qBAAqB,CAACM,cAAc,CAAEc,QAAQ,CAACV,CAAC,CAAEa,QAAQ,CAACb,CAAC,CAAC,CAChEE,CAAC,CAAEZ,qBAAqB,CAACM,cAAc,CAAEc,QAAQ,CAACR,CAAC,CAAEW,QAAQ,CAACX,CAAC,CACjE,CAAC,CACDpB,KAAK,CAACmB,YAAY,CAChBF,gBAAgB,CAACC,CAAC,CAAGI,SAAS,CAACJ,CAAC,CAAGU,QAAQ,CAACV,CAAC,CAAGT,MAAM,CAAC8B,QAAQ,CAACrB,CAAC,CAAC,CACpElB,KAAK,CAACqB,YAAY,CAChBJ,gBAAgB,CAACG,CAAC,CAAGE,SAAS,CAACF,CAAC,CAAGQ,QAAQ,CAACR,CAAC,CAAGX,MAAM,CAAC8B,QAAQ,CAACnB,CAAC,CAAC,CACpE,GAAIE,SAAS,CAACJ,CAAC,CAAG,CAAC,CAAE,CACnB,GAAIlB,KAAK,CAACmB,YAAY,EAAI,CAAC,CAAE,CAC3BW,yBAAyB,CAACZ,CAAC,CAAG,IAAI,CAClClB,KAAK,CAACmB,YAAY,CAAG,CAAC,CACxB,CACF,CAAC,IAAM,CACL,GAAInB,KAAK,CAACmB,YAAY,EAAI,CAAC,CAAE,CAC3BW,yBAAyB,CAACZ,CAAC,CAAG,IAAI,CAClClB,KAAK,CAACmB,YAAY,CAAG,CAAC,CACxB,CACF,CACA,GAAIG,SAAS,CAACF,CAAC,CAAG,CAAC,CAAE,CACnB,GAAIpB,KAAK,CAACqB,YAAY,EAAI,CAAC,CAAE,CAC3BS,yBAAyB,CAACV,CAAC,CAAG,IAAI,CAClCpB,KAAK,CAACqB,YAAY,CAAG,CAAC,CACxB,CACF,CAAC,IAAM,CACL,GAAIrB,KAAK,CAACqB,YAAY,EAAI,CAAC,CAAE,CAC3BS,yBAAyB,CAACV,CAAC,CAAG,IAAI,CAClCpB,KAAK,CAACqB,YAAY,CAAG,CAAC,CACxB,CACF,CACAX,UAAU,CAACT,sBAAsB,CAAED,KAAK,CAAC,CACzC,KAAM,CAAAwC,QAAQ,CAAGJ,8BAA8B,CAAC,CAAC,CACjD,GAAII,QAAQ,CAAE,CACZH,qCAAqC,CAAC,CAAC,CACzC,CACA1B,sBAAsB,CACpB2B,YAAY,CACZE,QAAQ,CACRvC,sBAAsB,CACtBD,KAAK,CACLgB,oBACF,CAAC,CACH,CAAC,CACD,MAAO,CAAAsB,YAAY,CACrB,CAAC,IAAM,CACL,KAAM,CAAAA,YAAY,CAAG,QAAAA,CAAA,CAAM,CACzB,KAAM,CAAAC,QAAQ,CAAG,CACfrB,CAAC,CAAEV,qBAAqB,CAACM,cAAc,CAAEc,QAAQ,CAACV,CAAC,CAAEa,QAAQ,CAACb,CAAC,CAAC,CAChEE,CAAC,CAAEZ,qBAAqB,CAACM,cAAc,CAAEc,QAAQ,CAACR,CAAC,CAAEW,QAAQ,CAACX,CAAC,CACjE,CAAC,CACDpB,KAAK,CAACmB,YAAY,CAChBF,gBAAgB,CAACC,CAAC,CAAGI,SAAS,CAACJ,CAAC,CAAGU,QAAQ,CAACV,CAAC,CAAGT,MAAM,CAAC8B,QAAQ,CAACrB,CAAC,CAAC,CACpElB,KAAK,CAACqB,YAAY,CAChBJ,gBAAgB,CAACG,CAAC,CAAGE,SAAS,CAACF,CAAC,CAAGQ,QAAQ,CAACR,CAAC,CAAGX,MAAM,CAAC8B,QAAQ,CAACnB,CAAC,CAAC,CACpE,GAAIE,SAAS,CAACJ,CAAC,CAAG,CAAC,CAAE,CACnB,GAAIlB,KAAK,CAACmB,YAAY,EAAIN,gBAAgB,CAACa,KAAK,CAAE,CAChDI,yBAAyB,CAACZ,CAAC,CAAG,IAAI,CAClClB,KAAK,CAACmB,YAAY,CAAGN,gBAAgB,CAACa,KAAK,CAC7C,CACF,CAAC,IAAM,CACL,GAAI1B,KAAK,CAACmB,YAAY,EAAI,CAACN,gBAAgB,CAACa,KAAK,CAAE,CACjDI,yBAAyB,CAACZ,CAAC,CAAG,IAAI,CAClClB,KAAK,CAACmB,YAAY,CAAG,CAACN,gBAAgB,CAACa,KAAK,CAC9C,CACF,CACA,GAAIJ,SAAS,CAACF,CAAC,CAAG,CAAC,CAAE,CACnB,GAAIpB,KAAK,CAACqB,YAAY,EAAIR,gBAAgB,CAACc,MAAM,CAAE,CACjDG,yBAAyB,CAACV,CAAC,CAAG,IAAI,CAClCpB,KAAK,CAACqB,YAAY,CAAGR,gBAAgB,CAACc,MAAM,CAC9C,CACF,CAAC,IAAM,CACL,GAAI3B,KAAK,CAACqB,YAAY,EAAI,CAACR,gBAAgB,CAACc,MAAM,CAAE,CAClDG,yBAAyB,CAACV,CAAC,CAAG,IAAI,CAClCpB,KAAK,CAACqB,YAAY,CAAG,CAACR,gBAAgB,CAACc,MAAM,CAC/C,CACF,CACAjB,UAAU,CAACT,sBAAsB,CAAED,KAAK,CAAC,CACzCW,sBAAsB,CACpB2B,YAAY,CACZR,yBAAyB,CAACZ,CAAC,EAAIY,yBAAyB,CAACV,CAAC,CAC1DnB,sBAAsB,CACtBD,KAAK,CACLgB,oBACF,CAAC,CACH,CAAC,CACD,MAAO,CAAAsB,YAAY,CACrB,CACF\",\"ignoreList\":[]}",
+    sourceMap: "{\"version\":3,\"names\":[\"getSwipeSimulator_reactNativeReanimated_swipeSimulatorTs5\",\"lockAxis\",\"event\",\"screenTransitionConfig\",\"BASE_VELOCITY\",\"ADDITIONAL_VELOCITY_FACTOR_X\",\"ADDITIONAL_VELOCITY_FACTOR_Y\",\"ADDITIONAL_VELOCITY_FACTOR_XY\",\"applyStyleForBelowTopScreen\",\"computeEasingProgress\",\"easing\",\"applyStyle\",\"maybeScheduleNextFrame\",\"__closure\",\"screenDimensions\",\"startTimestamp\",\"_getAnimationTimestamp\",\"isTransitionCanceled\",\"startingPosition\",\"x\",\"translationX\",\"y\",\"translationY\",\"direction\",\"Math\",\"sign\",\"finalPosition\",\"width\",\"height\",\"distance\",\"abs\",\"didScreenReachDestination\",\"velocity\",\"euclideanDistance\",\"sqrt\",\"screenDiagonal\",\"velocityVectorLength\",\"didScreenReachDestinationCheck\",\"restoreOriginalStyleForBelowTopScreen\",\"computeFrame\",\"progress\",\"finished\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-reanimated/src/screenTransition/swipeSimulator.ts\"],\"mappings\":\"AAuEO,SAAAA,yDAGLC,CAAmBC,KACnB,CAAAC,sBAAA,CAAAF,QAAA,QAAAG,aAAA,CAAAC,4BAAA,CAAAC,4BAAA,CAAAC,6BAAA,CAAAC,2BAAA,CAAAC,qBAAA,CAAAC,MAAA,CAAAC,UAAA,CAAAC,sBAAA,OAAAC,SAAA,CAEA,KAAM,CAAAC,gBAAgB,CAAGX,sBAAsB,CAACW,gBAAgB,CAChE,KAAM,CAAAC,cAAc,CAAGC,sBAAsB,CAAC,CAAC,CAC/C,KAAM,CAAEC,oBAAA,CAAAA,oBAAqB,CAAC,CAAGd,sBAAsB,CACvD,KAAM,CAAAe,gBAAgB,CAAG,CACvBC,CAAC,CAAEjB,KAAK,CAACkB,YAAY,CACrBC,CAAC,CAAEnB,KAAK,CAACoB,YACX,CAAC,CACD,KAAM,CAAAC,SAAS,CAAG,CAChBJ,CAAC,CAAEK,IAAI,CAACC,IAAI,CAACvB,KAAK,CAACkB,YAAY,CAAC,CAChCC,CAAC,CAAEG,IAAI,CAACC,IAAI,CAACvB,KAAK,CAACoB,YAAY,CACjC,CAAC,CACD,KAAM,CAAAI,aAAa,CAAGT,oBAAoB,CACtC,CAAEE,CAAC,CAAE,CAAC,CAAEE,CAAC,CAAE,CAAE,CAAC,CACd,CACEF,CAAC,CAAEI,SAAS,CAACJ,CAAC,CAAGL,gBAAgB,CAACa,KAAK,CACvCN,CAAC,CAAEE,SAAS,CAACF,CAAC,CAAGP,gBAAgB,CAACc,MACpC,CAAC,CACL,KAAM,CAAAC,QAAQ,CAAG,CACfV,CAAC,CAAEK,IAAI,CAACM,GAAG,CAACJ,aAAa,CAACP,CAAC,CAAGD,gBAAgB,CAACC,CAAC,CAAC,CACjDE,CAAC,CAAEG,IAAI,CAACM,GAAG,CAACJ,aAAa,CAACL,CAAC,CAAGH,gBAAgB,CAACG,CAAC,CAClD,CAAC,CACD,KAAM,CAAAU,yBAAyB,CAAG,CAChCZ,CAAC,CAAE,KAAK,CACRE,CAAC,CAAE,KACL,CAAC,CACD,KAAM,CAAAW,QAAQ,CAAG,CAAEb,CAAC,CAAEf,aAAa,CAAEiB,CAAC,CAAEjB,aAAc,CAAC,CACvD,GAAIH,QAAQ,GAAK,GAAG,CAAE,CACpB+B,QAAQ,CAACX,CAAC,CAAG,CAAC,CACdW,QAAQ,CAACb,CAAC,EACPd,4BAA4B,CAAGwB,QAAQ,CAACV,CAAC,CAAIL,gBAAgB,CAACa,KAAK,CACxE,CAAC,IAAM,IAAI1B,QAAQ,GAAK,GAAG,CAAE,CAC3B+B,QAAQ,CAACb,CAAC,CAAG,CAAC,CACda,QAAQ,CAACX,CAAC,EACPf,4BAA4B,CAAGuB,QAAQ,CAACR,CAAC,CAAIP,gBAAgB,CAACc,MAAM,CACzE,CAAC,IAAM,CACL,KAAM,CAAAK,iBAAiB,CAAGT,IAAI,CAACU,IAAI,CAACL,QAAQ,CAACV,CAAC,EAAI,CAAC,CAAGU,QAAQ,CAACR,CAAC,EAAI,CAAC,CAAC,CACtE,KAAM,CAAAc,cAAc,CAAGX,IAAI,CAACU,IAAI,CAC9BpB,gBAAgB,CAACa,KAAK,EAAI,CAAC,CAAGb,gBAAgB,CAACc,MAAM,EAAI,CAC3D,CAAC,CACD,KAAM,CAAAQ,oBAAoB,CACxBhC,aAAa,CACZG,6BAA6B,CAAG0B,iBAAiB,CAAIE,cAAc,CACtE,GAAIX,IAAI,CAACM,GAAG,CAACZ,gBAAgB,CAACC,CAAC,CAAC,CAAGK,IAAI,CAACM,GAAG,CAACZ,gBAAgB,CAACG,CAAC,CAAC,CAAE,CAC/DW,QAAQ,CAACb,CAAC,CAAGiB,oBAAoB,CACjCJ,QAAQ,CAACX,CAAC,CACRe,oBAAoB,CACpBZ,IAAI,CAACM,GAAG,CAACZ,gBAAgB,CAACG,CAAC,CAAGH,gBAAgB,CAACC,CAAC,CAAC,CACrD,CAAC,IAAM,CACLa,QAAQ,CAACb,CAAC,CACRiB,oBAAoB,CACpBZ,IAAI,CAACM,GAAG,CAACZ,gBAAgB,CAACC,CAAC,CAAGD,gBAAgB,CAACG,CAAC,CAAC,CACnDW,QAAQ,CAACX,CAAC,CAAGe,oBAAoB,CACnC,CACF,CAEA,GAAInB,oBAAoB,CAAE,CACxB,QAAS,CAAAoB,8BAA8BA,CAAA,CAAG,CACxC,GAAIpC,QAAQ,GAAK,GAAG,CAAE,CACpB,MAAO,CAAA8B,yBAAyB,CAACZ,CAAC,CACpC,CAAC,IAAM,IAAIlB,QAAQ,GAAK,GAAG,CAAE,CAC3B,MAAO,CAAA8B,yBAAyB,CAACV,CAAC,CACpC,CAAC,IAAM,CACL,MAAO,CAAAU,yBAAyB,CAACZ,CAAC,EAAIY,yBAAyB,CAACV,CAAC,CACnE,CACF,CAEA,QAAS,CAAAiB,qCAAqCA,CAAA,CAAG,CAC/CpC,KAAK,CAACkB,YAAY,CAAGG,SAAS,CAACJ,CAAC,CAAGL,gBAAgB,CAACa,KAAK,CACzDzB,KAAK,CAACoB,YAAY,CAAGC,SAAS,CAACF,CAAC,CAAGP,gBAAgB,CAACc,MAAM,CAC1DpB,2BAA2B,CAACL,sBAAsB,CAAED,KAAK,CAAC,CAC5D,CAEA,KAAM,CAAAqC,YAAY,CAAG,QAAAA,CAAA,CAAM,CACzB,KAAM,CAAAC,QAAQ,CAAG,CACfrB,CAAC,CAAEV,qBAAqB,CAACM,cAAc,CAAEc,QAAQ,CAACV,CAAC,CAAEa,QAAQ,CAACb,CAAC,CAAC,CAChEE,CAAC,CAAEZ,qBAAqB,CAACM,cAAc,CAAEc,QAAQ,CAACR,CAAC,CAAEW,QAAQ,CAACX,CAAC,CACjE,CAAC,CACDnB,KAAK,CAACkB,YAAY,CAChBF,gBAAgB,CAACC,CAAC,CAAGI,SAAS,CAACJ,CAAC,CAAGU,QAAQ,CAACV,CAAC,CAAGT,MAAM,CAAC8B,QAAQ,CAACrB,CAAC,CAAC,CACpEjB,KAAK,CAACoB,YAAY,CAChBJ,gBAAgB,CAACG,CAAC,CAAGE,SAAS,CAACF,CAAC,CAAGQ,QAAQ,CAACR,CAAC,CAAGX,MAAM,CAAC8B,QAAQ,CAACnB,CAAC,CAAC,CACpE,GAAIE,SAAS,CAACJ,CAAC,CAAG,CAAC,CAAE,CACnB,GAAIjB,KAAK,CAACkB,YAAY,EAAI,CAAC,CAAE,CAC3BW,yBAAyB,CAACZ,CAAC,CAAG,IAAI,CAClCjB,KAAK,CAACkB,YAAY,CAAG,CAAC,CACxB,CACF,CAAC,IAAM,CACL,GAAIlB,KAAK,CAACkB,YAAY,EAAI,CAAC,CAAE,CAC3BW,yBAAyB,CAACZ,CAAC,CAAG,IAAI,CAClCjB,KAAK,CAACkB,YAAY,CAAG,CAAC,CACxB,CACF,CACA,GAAIG,SAAS,CAACF,CAAC,CAAG,CAAC,CAAE,CACnB,GAAInB,KAAK,CAACoB,YAAY,EAAI,CAAC,CAAE,CAC3BS,yBAAyB,CAACV,CAAC,CAAG,IAAI,CAClCnB,KAAK,CAACoB,YAAY,CAAG,CAAC,CACxB,CACF,CAAC,IAAM,CACL,GAAIpB,KAAK,CAACoB,YAAY,EAAI,CAAC,CAAE,CAC3BS,yBAAyB,CAACV,CAAC,CAAG,IAAI,CAClCnB,KAAK,CAACoB,YAAY,CAAG,CAAC,CACxB,CACF,CACAX,UAAU,CAACR,sBAAsB,CAAED,KAAK,CAAC,CACzC,KAAM,CAAAuC,QAAQ,CAAGJ,8BAA8B,CAAC,CAAC,CACjD,GAAII,QAAQ,CAAE,CACZH,qCAAqC,CAAC,CAAC,CACzC,CACA1B,sBAAsB,CACpB2B,YAAY,CACZE,QAAQ,CACRtC,sBAAsB,CACtBD,KAAK,CACLe,oBACF,CAAC,CACH,CAAC,CACD,MAAO,CAAAsB,YAAY,CACrB,CAAC,IAAM,CACL,KAAM,CAAAA,YAAY,CAAG,QAAAA,CAAA,CAAM,CACzB,KAAM,CAAAC,QAAQ,CAAG,CACfrB,CAAC,CAAEV,qBAAqB,CAACM,cAAc,CAAEc,QAAQ,CAACV,CAAC,CAAEa,QAAQ,CAACb,CAAC,CAAC,CAChEE,CAAC,CAAEZ,qBAAqB,CAACM,cAAc,CAAEc,QAAQ,CAACR,CAAC,CAAEW,QAAQ,CAACX,CAAC,CACjE,CAAC,CACDnB,KAAK,CAACkB,YAAY,CAChBF,gBAAgB,CAACC,CAAC,CAAGI,SAAS,CAACJ,CAAC,CAAGU,QAAQ,CAACV,CAAC,CAAGT,MAAM,CAAC8B,QAAQ,CAACrB,CAAC,CAAC,CACpEjB,KAAK,CAACoB,YAAY,CAChBJ,gBAAgB,CAACG,CAAC,CAAGE,SAAS,CAACF,CAAC,CAAGQ,QAAQ,CAACR,CAAC,CAAGX,MAAM,CAAC8B,QAAQ,CAACnB,CAAC,CAAC,CACpE,GAAIE,SAAS,CAACJ,CAAC,CAAG,CAAC,CAAE,CACnB,GAAIjB,KAAK,CAACkB,YAAY,EAAIN,gBAAgB,CAACa,KAAK,CAAE,CAChDI,yBAAyB,CAACZ,CAAC,CAAG,IAAI,CAClCjB,KAAK,CAACkB,YAAY,CAAGN,gBAAgB,CAACa,KAAK,CAC7C,CACF,CAAC,IAAM,CACL,GAAIzB,KAAK,CAACkB,YAAY,EAAI,CAACN,gBAAgB,CAACa,KAAK,CAAE,CACjDI,yBAAyB,CAACZ,CAAC,CAAG,IAAI,CAClCjB,KAAK,CAACkB,YAAY,CAAG,CAACN,gBAAgB,CAACa,KAAK,CAC9C,CACF,CACA,GAAIJ,SAAS,CAACF,CAAC,CAAG,CAAC,CAAE,CACnB,GAAInB,KAAK,CAACoB,YAAY,EAAIR,gBAAgB,CAACc,MAAM,CAAE,CACjDG,yBAAyB,CAACV,CAAC,CAAG,IAAI,CAClCnB,KAAK,CAACoB,YAAY,CAAGR,gBAAgB,CAACc,MAAM,CAC9C,CACF,CAAC,IAAM,CACL,GAAI1B,KAAK,CAACoB,YAAY,EAAI,CAACR,gBAAgB,CAACc,MAAM,CAAE,CAClDG,yBAAyB,CAACV,CAAC,CAAG,IAAI,CAClCnB,KAAK,CAACoB,YAAY,CAAG,CAACR,gBAAgB,CAACc,MAAM,CAC/C,CACF,CACAjB,UAAU,CAACR,sBAAsB,CAAED,KAAK,CAAC,CACzCU,sBAAsB,CACpB2B,YAAY,CACZR,yBAAyB,CAACZ,CAAC,EAAIY,yBAAyB,CAACV,CAAC,CAC1DlB,sBAAsB,CACtBD,KAAK,CACLe,oBACF,CAAC,CACH,CAAC,CACD,MAAO,CAAAsB,YAAY,CACrB,CACF\",\"ignoreList\":[]}",
     version: "3.18.0"
   };
   var getSwipeSimulator = exports.getSwipeSimulator = function () {
@@ -150191,7 +153722,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     getSwipeSimulator.__stackDetails = _e;
     return getSwipeSimulator;
   }();
-},799,[800,798],"node_modules/react-native-reanimated/src/screenTransition/swipeSimulator.ts");
+},843,[844,842],"node_modules/react-native-reanimated/src/screenTransition/swipeSimulator.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150231,7 +153762,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     updateTransition: noopFactory(),
     finishTransition: noopFactory()
   };
-},800,[640],"node_modules/react-native-reanimated/src/screenTransition/RNScreensTurboModule.ts");
+},844,[684],"node_modules/react-native-reanimated/src/screenTransition/RNScreensTurboModule.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /* eslint-disable @typescript-eslint/no-namespace */
   'use strict';
@@ -150461,7 +153992,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     // functions since `ReactTestInstance` has its `props` defined as `any`.
     component);
   };
-},801,[8,27,638,646],"node_modules/react-native-reanimated/src/jestUtils.ts");
+},845,[8,27,682,690],"node_modules/react-native-reanimated/src/jestUtils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150479,7 +154010,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     (0, _$$_REQUIRE(_dependencyMap[0], "./ConfigHelper").addWhitelistedNativeProps)(nativePropsToAdd);
     return adapter;
   }
-},802,[732],"node_modules/react-native-reanimated/src/PropAdapters.ts");
+},846,[776],"node_modules/react-native-reanimated/src/PropAdapters.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150522,7 +154053,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[5], "./setNativeProps").setNativeProps;
     }
   });
-},803,[804,805,806,807,808,809],"node_modules/react-native-reanimated/src/platformFunctions/index.ts");
+},847,[848,849,850,851,852,853],"node_modules/react-native-reanimated/src/platformFunctions/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150611,7 +154142,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   } else {
     exports.dispatchCommand = dispatchCommand = dispatchCommandDefault;
   }
-},804,[640,638],"node_modules/react-native-reanimated/src/platformFunctions/dispatchCommand.ts");
+},848,[684,682],"node_modules/react-native-reanimated/src/platformFunctions/dispatchCommand.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150658,7 +154189,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     getRelativeCoords.__stackDetails = _e;
     return getRelativeCoords;
   }();
-},805,[806],"node_modules/react-native-reanimated/src/platformFunctions/getRelativeCoords.ts");
+},849,[850],"node_modules/react-native-reanimated/src/platformFunctions/getRelativeCoords.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150784,7 +154315,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   } else {
     exports.measure = measure = measureDefault;
   }
-},806,[640,638],"node_modules/react-native-reanimated/src/platformFunctions/measure.ts");
+},850,[684,682],"node_modules/react-native-reanimated/src/platformFunctions/measure.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150871,7 +154402,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   } else {
     exports.scrollTo = scrollTo = scrollToDefault;
   }
-},807,[804,640,638],"node_modules/react-native-reanimated/src/platformFunctions/scrollTo.ts");
+},851,[848,684,682],"node_modules/react-native-reanimated/src/platformFunctions/scrollTo.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150921,7 +154452,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   } else {
     exports.setGestureState = setGestureState = setGestureStateDefault;
   }
-},808,[640,638],"node_modules/react-native-reanimated/src/platformFunctions/setGestureState.ts");
+},852,[684,682],"node_modules/react-native-reanimated/src/platformFunctions/setGestureState.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151029,7 +154560,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   } else {
     exports.setNativeProps = setNativeProps = setNativePropsDefault;
   }
-},809,[640,673,638],"node_modules/react-native-reanimated/src/platformFunctions/setNativeProps.ts");
+},853,[684,717,682],"node_modules/react-native-reanimated/src/platformFunctions/setNativeProps.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151040,7 +154571,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function getUseOfValueInStyleWarning() {
     return "It looks like you might be using shared value's .value inside reanimated inline style. " + 'If you want a component to update when shared value changes you should use the shared value' + ' directly instead of its current state represented by `.value`. See documentation here: ' + 'https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/glossary/#animations-in-inline-styling';
   }
-},810,[],"node_modules/react-native-reanimated/src/pluginUtils.ts");
+},854,[],"node_modules/react-native-reanimated/src/pluginUtils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151048,7 +154579,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-},811,[],"node_modules/react-native-reanimated/src/publicGlobals.ts");
+},855,[],"node_modules/react-native-reanimated/src/publicGlobals.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151103,7 +154634,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[6], "./createAnimatedComponent").createAnimatedComponent;
     }
   });
-},812,[813,815,816,817,814,732,733],"node_modules/react-native-reanimated/src/Animated.ts");
+},856,[857,859,860,861,858,776,777],"node_modules/react-native-reanimated/src/Animated.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151174,7 +154705,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     });
   };
   var ReanimatedFlatList = exports.ReanimatedFlatList = (0, _$$_REQUIRE(_dependencyMap[8], "../reactUtils").componentWithRef)(FlatListForwardRefRender);
-},813,[8,153,86,1,733,92,814,729,639],"node_modules/react-native-reanimated/src/component/FlatList.tsx");
+},857,[8,153,86,1,777,92,858,773,683],"node_modules/react-native-reanimated/src/component/FlatList.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151187,7 +154718,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // but not things like NativeMethods, etc. we need to add them manually by extending the type.
 
   var AnimatedView = exports.AnimatedView = (0, _$$_REQUIRE(_dependencyMap[1], "../createAnimatedComponent").createAnimatedComponent)(_reactNative.View);
-},814,[1,733],"node_modules/react-native-reanimated/src/component/View.ts");
+},858,[1,777],"node_modules/react-native-reanimated/src/component/View.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151200,7 +154731,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // but not things like NativeMethods, etc. we need to add them manually by extending the type.
 
   var AnimatedImage = exports.AnimatedImage = (0, _$$_REQUIRE(_dependencyMap[1], "../createAnimatedComponent").createAnimatedComponent)(_reactNative.Image);
-},815,[1,733],"node_modules/react-native-reanimated/src/component/Image.ts");
+},859,[1,777],"node_modules/react-native-reanimated/src/component/Image.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151238,7 +154769,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       ref: animatedRef
     }, restProps));
   });
-},816,[8,153,86,1,733,639,773,92],"node_modules/react-native-reanimated/src/component/ScrollView.tsx");
+},860,[8,153,86,1,777,683,817,92],"node_modules/react-native-reanimated/src/component/ScrollView.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151251,3704 +154782,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // but not things like NativeMethods, etc. we need to add them manually by extending the type.
 
   var AnimatedText = exports.AnimatedText = (0, _$$_REQUIRE(_dependencyMap[1], "../createAnimatedComponent").createAnimatedComponent)(_reactNative.Text);
-},817,[1,733],"node_modules/react-native-reanimated/src/component/Text.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(exports, "BaseButton", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[0], "react-native-gesture-handler/src/components/GestureButtons").BaseButton;
-    }
-  });
-  Object.defineProperty(exports, "BorderlessButton", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[0], "react-native-gesture-handler/src/components/GestureButtons").BorderlessButton;
-    }
-  });
-  Object.defineProperty(exports, "Directions", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[1], "react-native-gesture-handler/src/Directions").Directions;
-    }
-  });
-  Object.defineProperty(exports, "DrawerLayout", {
-    enumerable: true,
-    get: function get() {
-      return _DrawerLayout.default;
-    }
-  });
-  Object.defineProperty(exports, "DrawerLayoutAndroid", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[2], "react-native-gesture-handler/src/components/GestureComponents").DrawerLayoutAndroid;
-    }
-  });
-  Object.defineProperty(exports, "FlatList", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[2], "react-native-gesture-handler/src/components/GestureComponents").FlatList;
-    }
-  });
-  Object.defineProperty(exports, "FlingGestureHandler", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[3], "react-native-gesture-handler/src/handlers/FlingGestureHandler").FlingGestureHandler;
-    }
-  });
-  Object.defineProperty(exports, "ForceTouchGestureHandler", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[4], "react-native-gesture-handler/src/handlers/ForceTouchGestureHandler").ForceTouchGestureHandler;
-    }
-  });
-  Object.defineProperty(exports, "Gesture", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[5], "react-native-gesture-handler/src/handlers/gestures/gestureObjects").GestureObjects;
-    }
-  });
-  Object.defineProperty(exports, "GestureDetector", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[6], "react-native-gesture-handler/src/handlers/gestures/GestureDetector").GestureDetector;
-    }
-  });
-  Object.defineProperty(exports, "GestureHandlerRootView", {
-    enumerable: true,
-    get: function get() {
-      return _GestureHandlerRootView.default;
-    }
-  });
-  Object.defineProperty(exports, "HoverEffect", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[7], "react-native-gesture-handler/src/handlers/gestures/hoverGesture").HoverEffect;
-    }
-  });
-  Object.defineProperty(exports, "LongPressGestureHandler", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[8], "react-native-gesture-handler/src/handlers/LongPressGestureHandler").LongPressGestureHandler;
-    }
-  });
-  Object.defineProperty(exports, "MouseButton", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler/src/handlers/gestureHandlerCommon").MouseButton;
-    }
-  });
-  Object.defineProperty(exports, "NativeViewGestureHandler", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[10], "react-native-gesture-handler/src/handlers/NativeViewGestureHandler").NativeViewGestureHandler;
-    }
-  });
-  Object.defineProperty(exports, "PanGestureHandler", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[11], "react-native-gesture-handler/src/handlers/PanGestureHandler").PanGestureHandler;
-    }
-  });
-  Object.defineProperty(exports, "PinchGestureHandler", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[12], "react-native-gesture-handler/src/handlers/PinchGestureHandler").PinchGestureHandler;
-    }
-  });
-  Object.defineProperty(exports, "PointerType", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[13], "react-native-gesture-handler/src/PointerType").PointerType;
-    }
-  });
-  Object.defineProperty(exports, "Pressable", {
-    enumerable: true,
-    get: function get() {
-      return _Pressable.default;
-    }
-  });
-  Object.defineProperty(exports, "PureNativeButton", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[0], "react-native-gesture-handler/src/components/GestureButtons").PureNativeButton;
-    }
-  });
-  Object.defineProperty(exports, "RawButton", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[0], "react-native-gesture-handler/src/components/GestureButtons").RawButton;
-    }
-  });
-  Object.defineProperty(exports, "RectButton", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[0], "react-native-gesture-handler/src/components/GestureButtons").RectButton;
-    }
-  });
-  Object.defineProperty(exports, "RefreshControl", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[2], "react-native-gesture-handler/src/components/GestureComponents").RefreshControl;
-    }
-  });
-  Object.defineProperty(exports, "RotationGestureHandler", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[14], "react-native-gesture-handler/src/handlers/RotationGestureHandler").RotationGestureHandler;
-    }
-  });
-  Object.defineProperty(exports, "ScrollView", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[2], "react-native-gesture-handler/src/components/GestureComponents").ScrollView;
-    }
-  });
-  Object.defineProperty(exports, "State", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[15], "react-native-gesture-handler/src/State").State;
-    }
-  });
-  Object.defineProperty(exports, "Swipeable", {
-    enumerable: true,
-    get: function get() {
-      return _Swipeable.default;
-    }
-  });
-  Object.defineProperty(exports, "Switch", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[2], "react-native-gesture-handler/src/components/GestureComponents").Switch;
-    }
-  });
-  Object.defineProperty(exports, "TapGestureHandler", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[16], "react-native-gesture-handler/src/handlers/TapGestureHandler").TapGestureHandler;
-    }
-  });
-  Object.defineProperty(exports, "Text", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[17], "react-native-gesture-handler/src/components/Text").Text;
-    }
-  });
-  Object.defineProperty(exports, "TextInput", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[2], "react-native-gesture-handler/src/components/GestureComponents").TextInput;
-    }
-  });
-  Object.defineProperty(exports, "TouchableHighlight", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/components/touchables").TouchableHighlight;
-    }
-  });
-  Object.defineProperty(exports, "TouchableNativeFeedback", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/components/touchables").TouchableNativeFeedback;
-    }
-  });
-  Object.defineProperty(exports, "TouchableOpacity", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/components/touchables").TouchableOpacity;
-    }
-  });
-  Object.defineProperty(exports, "TouchableWithoutFeedback", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/components/touchables").TouchableWithoutFeedback;
-    }
-  });
-  Object.defineProperty(exports, "createNativeWrapper", {
-    enumerable: true,
-    get: function get() {
-      return _createNativeWrapper.default;
-    }
-  });
-  Object.defineProperty(exports, "enableExperimentalWebImplementation", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[19], "react-native-gesture-handler/src/EnableNewWebImplementation").enableExperimentalWebImplementation;
-    }
-  });
-  Object.defineProperty(exports, "enableLegacyWebImplementation", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[19], "react-native-gesture-handler/src/EnableNewWebImplementation").enableLegacyWebImplementation;
-    }
-  });
-  Object.defineProperty(exports, "gestureHandlerRootHOC", {
-    enumerable: true,
-    get: function get() {
-      return _gestureHandlerRootHOC.default;
-    }
-  });
-  var _gestureHandlerRootHOC = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[21], "react-native-gesture-handler/src/components/gestureHandlerRootHOC"));
-  var _GestureHandlerRootView = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[22], "./components/GestureHandlerRootView"));
-  var _createNativeWrapper = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[23], "react-native-gesture-handler/src/handlers/createNativeWrapper"));
-  var _Swipeable = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[24], "react-native-gesture-handler/src/components/Swipeable"));
-  var _Pressable = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[25], "react-native-gesture-handler/src/components/Pressable"));
-  var _DrawerLayout = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[26], "react-native-gesture-handler/src/components/DrawerLayout"));
-  /*
-   * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
-   * Use of this source code is governed by a MIT license that can be
-   * found in the LICENSE file.
-   */
-
-  global.isFormsStackingContext = function () {
-    return true;
-  }; // TODO: add using JSI
-
-  // RNGH: patch
-
-  (0, _$$_REQUIRE(_dependencyMap[27], "react-native-gesture-handler/src/init").initialize)();
-},818,[819,840,841,842,843,845,858,856,862,837,821,861,879,880,881,829,860,882,883,868,8,889,894,820,897,898,901,896],"node_modules/@react-native-ohos/react-native-gesture-handler/src/index.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.BorderlessButton = exports.BaseButton = void 0;
-  Object.defineProperty(exports, "PureNativeButton", {
-    enumerable: true,
-    get: function get() {
-      return _GestureHandlerButton.default;
-    }
-  });
-  exports.RectButton = exports.RawButton = void 0;
-  var _objectWithoutProperties2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/objectWithoutProperties"));
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[8], "react-native");
-  var _createNativeWrapper = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[9], "../handlers/createNativeWrapper"));
-  var _GestureHandlerButton = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[10], "./GestureHandlerButton"));
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/GestureButtons.tsx",
-    _this2 = this;
-  var _excluded = ["rippleColor", "style"],
-    _excluded2 = ["children", "style"],
-    _excluded3 = ["children", "style", "innerRef"];
-  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  var RawButton = exports.RawButton = (0, _createNativeWrapper.default)(_GestureHandlerButton.default, {
-    shouldCancelWhenOutside: false,
-    shouldActivateOnStart: false
-  });
-  var IS_FABRIC = null;
-  var InnerBaseButton = /*#__PURE__*/function (_React$Component) {
-    function InnerBaseButton(props) {
-      var _this;
-      (0, _classCallCheck2.default)(this, InnerBaseButton);
-      _this = _callSuper(this, InnerBaseButton, [props]);
-      _this.handleEvent = function (_ref) {
-        var nativeEvent = _ref.nativeEvent;
-        var state = nativeEvent.state,
-          oldState = nativeEvent.oldState,
-          pointerInside = nativeEvent.pointerInside;
-        var active = pointerInside && state === _$$_REQUIRE(_dependencyMap[11], "../State").State.ACTIVE;
-        if (active !== _this.lastActive && _this.props.onActiveStateChange) {
-          _this.props.onActiveStateChange(active);
-        }
-        if (!_this.longPressDetected && oldState === _$$_REQUIRE(_dependencyMap[11], "../State").State.ACTIVE && state !== _$$_REQUIRE(_dependencyMap[11], "../State").State.CANCELLED && _this.lastActive && _this.props.onPress) {
-          _this.props.onPress(pointerInside);
-        }
-        if (!_this.lastActive &&
-        // NativeViewGestureHandler sends different events based on platform
-        state === (_reactNative.Platform.OS !== 'android' ? _$$_REQUIRE(_dependencyMap[11], "../State").State.ACTIVE : _$$_REQUIRE(_dependencyMap[11], "../State").State.BEGAN) && pointerInside) {
-          _this.longPressDetected = false;
-          if (_this.props.onLongPress) {
-            _this.longPressTimeout = setTimeout(_this.onLongPress, _this.props.delayLongPress);
-          }
-        } else if (
-        // Cancel longpress timeout if it's set and the finger moved out of the view
-        state === _$$_REQUIRE(_dependencyMap[11], "../State").State.ACTIVE && !pointerInside && _this.longPressTimeout !== undefined) {
-          clearTimeout(_this.longPressTimeout);
-          _this.longPressTimeout = undefined;
-        } else if (
-        // Cancel longpress timeout if it's set and the gesture has finished
-        _this.longPressTimeout !== undefined && (state === _$$_REQUIRE(_dependencyMap[11], "../State").State.END || state === _$$_REQUIRE(_dependencyMap[11], "../State").State.CANCELLED || state === _$$_REQUIRE(_dependencyMap[11], "../State").State.FAILED)) {
-          clearTimeout(_this.longPressTimeout);
-          _this.longPressTimeout = undefined;
-        }
-        _this.lastActive = active;
-      };
-      _this.onLongPress = function () {
-        _this.longPressDetected = true;
-        _this.props.onLongPress == null || _this.props.onLongPress();
-      };
-      // Normally, the parent would execute it's handler first, then forward the
-      // event to listeners. However, here our handler is virtually only forwarding
-      // events to listeners, so we reverse the order to keep the proper order of
-      // the callbacks (from "raw" ones to "processed").
-      _this.onHandlerStateChange = function (e) {
-        _this.props.onHandlerStateChange == null || _this.props.onHandlerStateChange(e);
-        _this.handleEvent(e);
-      };
-      _this.onGestureEvent = function (e) {
-        _this.props.onGestureEvent == null || _this.props.onGestureEvent(e);
-        _this.handleEvent(e); // TODO: maybe it is not correct
-      };
-      _this.lastActive = false;
-      _this.longPressDetected = false;
-      return _this;
-    }
-    (0, _inherits2.default)(InnerBaseButton, _React$Component);
-    return (0, _createClass2.default)(InnerBaseButton, [{
-      key: "render",
-      value: function render() {
-        var _this$props = this.props,
-          unprocessedRippleColor = _this$props.rippleColor,
-          style = _this$props.style,
-          rest = (0, _objectWithoutProperties2.default)(_this$props, _excluded);
-        if (IS_FABRIC === null) {
-          IS_FABRIC = (0, _$$_REQUIRE(_dependencyMap[12], "../utils").isFabric)();
-        }
-        var rippleColor = IS_FABRIC ? unprocessedRippleColor : (0, _reactNative.processColor)(unprocessedRippleColor != null ? unprocessedRippleColor : undefined);
-        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsx)(RawButton, Object.assign({
-          ref: this.props.innerRef,
-          rippleColor: rippleColor,
-          style: [style, _reactNative.Platform.OS === 'ios' && {
-            cursor: undefined
-          }]
-        }, rest, {
-          onGestureEvent: this.onGestureEvent,
-          onHandlerStateChange: this.onHandlerStateChange
-        }));
-      }
-    }]);
-  }(React.Component);
-  InnerBaseButton.defaultProps = {
-    delayLongPress: 600
-  };
-  var AnimatedInnerBaseButton = _reactNative.Animated.createAnimatedComponent(InnerBaseButton);
-  var BaseButton = exports.BaseButton = React.forwardRef(function (props, ref) {
-    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsx)(InnerBaseButton, Object.assign({
-      innerRef: ref
-    }, props));
-  });
-  var AnimatedBaseButton = React.forwardRef(function (props, ref) {
-    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsx)(AnimatedInnerBaseButton, Object.assign({
-      innerRef: ref
-    }, props));
-  });
-  var btnStyles = _reactNative.StyleSheet.create({
-    underlay: {
-      position: 'absolute',
-      left: 0,
-      right: 0,
-      bottom: 0,
-      top: 0
-    }
-  });
-  var InnerRectButton = /*#__PURE__*/function (_React$Component2) {
-    function InnerRectButton(props) {
-      var _this3;
-      (0, _classCallCheck2.default)(this, InnerRectButton);
-      _this3 = _callSuper(this, InnerRectButton, [props]);
-      _this3.onActiveStateChange = function (active) {
-        if (_reactNative.Platform.OS !== 'android') {
-          _this3.opacity.setValue(active ? _this3.props.activeOpacity : 0);
-        }
-        _this3.props.onActiveStateChange == null || _this3.props.onActiveStateChange(active);
-      };
-      _this3.opacity = new _reactNative.Animated.Value(0);
-      return _this3;
-    }
-    (0, _inherits2.default)(InnerRectButton, _React$Component2);
-    return (0, _createClass2.default)(InnerRectButton, [{
-      key: "render",
-      value: function render() {
-        var _this$props2 = this.props,
-          children = _this$props2.children,
-          style = _this$props2.style,
-          rest = (0, _objectWithoutProperties2.default)(_this$props2, _excluded2);
-        var resolvedStyle = _reactNative.StyleSheet.flatten(style != null ? style : {});
-        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsxs)(BaseButton, Object.assign({}, rest, {
-          ref: this.props.innerRef,
-          style: resolvedStyle,
-          onActiveStateChange: this.onActiveStateChange,
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsx)(_reactNative.Animated.View, {
-            style: [btnStyles.underlay, {
-              opacity: this.opacity,
-              backgroundColor: this.props.underlayColor,
-              borderRadius: resolvedStyle.borderRadius,
-              borderTopLeftRadius: resolvedStyle.borderTopLeftRadius,
-              borderTopRightRadius: resolvedStyle.borderTopRightRadius,
-              borderBottomLeftRadius: resolvedStyle.borderBottomLeftRadius,
-              borderBottomRightRadius: resolvedStyle.borderBottomRightRadius
-            }]
-          }), children]
-        }));
-      }
-    }]);
-  }(React.Component);
-  InnerRectButton.defaultProps = {
-    activeOpacity: 0.105,
-    underlayColor: 'black'
-  };
-  var RectButton = exports.RectButton = React.forwardRef(function (props, ref) {
-    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsx)(InnerRectButton, Object.assign({
-      innerRef: ref
-    }, props));
-  });
-  var InnerBorderlessButton = /*#__PURE__*/function (_React$Component3) {
-    function InnerBorderlessButton(props) {
-      var _this4;
-      (0, _classCallCheck2.default)(this, InnerBorderlessButton);
-      _this4 = _callSuper(this, InnerBorderlessButton, [props]);
-      _this4.onActiveStateChange = function (active) {
-        if (_reactNative.Platform.OS !== 'android') {
-          _this4.opacity.setValue(active ? _this4.props.activeOpacity : 1);
-        }
-        _this4.props.onActiveStateChange == null || _this4.props.onActiveStateChange(active);
-      };
-      _this4.opacity = new _reactNative.Animated.Value(1);
-      return _this4;
-    }
-    (0, _inherits2.default)(InnerBorderlessButton, _React$Component3);
-    return (0, _createClass2.default)(InnerBorderlessButton, [{
-      key: "render",
-      value: function render() {
-        var _this$props3 = this.props,
-          children = _this$props3.children,
-          style = _this$props3.style,
-          innerRef = _this$props3.innerRef,
-          rest = (0, _objectWithoutProperties2.default)(_this$props3, _excluded3);
-        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsx)(AnimatedBaseButton, Object.assign({}, rest, {
-          innerRef: innerRef,
-          onActiveStateChange: this.onActiveStateChange,
-          style: [style, _reactNative.Platform.OS === 'ios' && {
-            opacity: this.opacity
-          }],
-          children: children
-        }));
-      }
-    }]);
-  }(React.Component);
-  InnerBorderlessButton.defaultProps = {
-    activeOpacity: 0.3,
-    borderless: true
-  };
-  var BorderlessButton = exports.BorderlessButton = React.forwardRef(function (props, ref) {
-    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsx)(InnerBorderlessButton, Object.assign({
-      innerRef: ref
-    }, props));
-  });
-},819,[8,153,9,10,14,16,17,86,1,820,838,829,828,92],"node_modules/react-native-gesture-handler/src/components/GestureButtons.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = createNativeWrapper;
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[2], "react"));
-  var React = _react;
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/createNativeWrapper.tsx";
-  /*
-   * This array should consist of:
-   *   - All keys in propTypes from NativeGestureHandler
-   *     (and all keys in GestureHandlerPropTypes)
-   *   - 'onGestureHandlerEvent'
-   *   - 'onGestureHandlerStateChange'
-   */
-  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  var NATIVE_WRAPPER_PROPS_FILTER = [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[3], "./NativeViewGestureHandler").nativeViewProps), ['onGestureHandlerEvent', 'onGestureHandlerStateChange']);
-  function createNativeWrapper(Component) {
-    var _this = this,
-      _Component$render;
-    var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-    var ComponentWrapper = React.forwardRef(function (props, ref) {
-      // Filter out props that should be passed to gesture handler wrapper
-      var _Object$keys$reduce = Object.keys(props).reduce(function (res, key) {
-          // TS being overly protective with it's types, see https://github.com/microsoft/TypeScript/issues/26255#issuecomment-458013731 for more info
-          var allowedKeys = NATIVE_WRAPPER_PROPS_FILTER;
-          if (allowedKeys.includes(key)) {
-            // @ts-ignore FIXME(TS)
-            res.gestureHandlerProps[key] = props[key];
-          } else {
-            // @ts-ignore FIXME(TS)
-            res.childProps[key] = props[key];
-          }
-          return res;
-        }, {
-          gestureHandlerProps: Object.assign({}, config),
-          // Watch out not to modify config
-          childProps: {
-            enabled: props.enabled,
-            hitSlop: props.hitSlop,
-            testID: props.testID
-          }
-        }),
-        gestureHandlerProps = _Object$keys$reduce.gestureHandlerProps,
-        childProps = _Object$keys$reduce.childProps;
-      var _ref = (0, _react.useRef)(null);
-      var _gestureHandlerRef = (0, _react.useRef)(null);
-      (0, _react.useImperativeHandle)(ref,
-      // @ts-ignore TODO(TS) decide how nulls work in this context
-      function () {
-        var node = _gestureHandlerRef.current;
-        // Add handlerTag for relations config
-        if (_ref.current && node) {
-          // @ts-ignore FIXME(TS) think about createHandler return type
-          _ref.current.handlerTag = node.handlerTag;
-          return _ref.current;
-        }
-        return null;
-      }, [_ref, _gestureHandlerRef]);
-      return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[4], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[3], "./NativeViewGestureHandler").NativeViewGestureHandler, Object.assign({}, gestureHandlerProps, {
-        // @ts-ignore TODO(TS)
-        ref: _gestureHandlerRef,
-        children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[4], "react/jsx-runtime").jsx)(Component, Object.assign({}, childProps, {
-          ref: _ref
-        }))
-      }));
-    });
-
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    ComponentWrapper.displayName = (Component == null ? void 0 : Component.displayName) || (// @ts-ignore if render doesn't exist it will return undefined and go further
-    Component == null || (_Component$render = Component.render) == null ? void 0 : _Component$render.name) || typeof Component === 'string' && Component || 'ComponentWrapper';
-    return ComponentWrapper;
-  }
-},820,[8,46,86,821,92],"node_modules/react-native-gesture-handler/src/handlers/createNativeWrapper.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.nativeViewProps = exports.nativeViewHandlerName = exports.nativeViewGestureHandlerProps = exports.NativeViewGestureHandler = void 0;
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
-  var _createHandler = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./createHandler"));
-  var nativeViewGestureHandlerProps = exports.nativeViewGestureHandlerProps = ['shouldActivateOnStart', 'disallowInterruption'];
-
-  /**
-   * @deprecated NativeViewGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Native()` instead.
-   */
-
-  var nativeViewProps = exports.nativeViewProps = [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[3], "./gestureHandlerCommon").baseGestureHandlerProps), nativeViewGestureHandlerProps);
-  var nativeViewHandlerName = exports.nativeViewHandlerName = 'NativeViewGestureHandler';
-
-  /**
-   * @deprecated NativeViewGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Native()` instead.
-   */
-
-  /**
-   * @deprecated NativeViewGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Native()` instead.
-   */
-  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; see description on the top of gestureHandlerCommon.ts file
-  var NativeViewGestureHandler = exports.NativeViewGestureHandler = (0, _createHandler.default)({
-    name: nativeViewHandlerName,
-    allowedProps: nativeViewProps,
-    config: {}
-  });
-},821,[8,46,822,837],"node_modules/react-native-gesture-handler/src/handlers/NativeViewGestureHandler.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = createHandler;
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-  var _defineProperty2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/defineProperty"));
-  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "react"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[9], "react-native");
-  var _RNGestureHandlerModule = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[10], "../RNGestureHandlerModule"));
-  var _findNodeHandle = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[11], "react-native-gesture-handler/src/findNodeHandle"));
-  var _GestureHandlerRootViewContext = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[12], "react-native-gesture-handler/src/GestureHandlerRootViewContext"));
-  var _UIManagerAny$getView,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/@react-native-ohos/react-native-gesture-handler/src/handlers/createHandler.tsx";
-  /*
-   * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
-   * Use of this source code is governed by a MIT license that can be
-   * found in the LICENSE file.
-   */
-  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  var UIManagerAny = _reactNative.UIManager;
-  _$$_REQUIRE(_dependencyMap[13], "react-native-gesture-handler/src/handlers/customDirectEventTypes").customDirectEventTypes.topGestureHandlerEvent = {
-    registrationName: 'onGestureHandlerEvent'
-  };
-  _$$_REQUIRE(_dependencyMap[13], "react-native-gesture-handler/src/handlers/customDirectEventTypes").customDirectEventTypes.topGestureHandlerStateChange = {
-    registrationName: 'onGestureHandlerStateChange'
-  };
-  var customGHEventsConfigFabricAndroid = {
-    topOnGestureHandlerEvent: {
-      registrationName: 'onGestureHandlerEvent'
-    },
-    topOnGestureHandlerStateChange: {
-      registrationName: 'onGestureHandlerStateChange'
-    }
-  };
-  var customGHEventsConfig = Object.assign({
-    onGestureHandlerEvent: {
-      registrationName: 'onGestureHandlerEvent'
-    },
-    onGestureHandlerStateChange: {
-      registrationName: 'onGestureHandlerStateChange'
-    }
-  }, (0, _$$_REQUIRE(_dependencyMap[14], "react-native-gesture-handler/src/utils").isFabric)() && _reactNative.Platform.OS === 'harmony' && customGHEventsConfigFabricAndroid);
-
-  // Add gesture specific events to genericDirectEventTypes object exported from UIManager
-  // native module.
-  // Once new event types are registered with react it is possible to dispatch these
-  // events to all kind of native views.
-  UIManagerAny.genericDirectEventTypes = Object.assign({}, UIManagerAny.genericDirectEventTypes, customGHEventsConfig);
-  // In newer versions of RN the `genericDirectEventTypes` is located in the object
-  // returned by UIManager.getViewManagerConfig('getConstants') or in older RN UIManager.getConstants(), we need to add it there as well to make
-  // it compatible with RN 61+
-  var UIManagerConstants = (_UIManagerAny$getView = UIManagerAny.getViewManagerConfig == null ? void 0 : UIManagerAny.getViewManagerConfig('getConstants')) != null ? _UIManagerAny$getView : UIManagerAny.getConstants == null ? void 0 : UIManagerAny.getConstants();
-  if (UIManagerConstants) {
-    UIManagerConstants.genericDirectEventTypes = Object.assign({}, UIManagerConstants.genericDirectEventTypes, customGHEventsConfig);
-  }
-
-  // Wrap JS responder calls and notify gesture handler manager
-  var _UIManagerAny$setJSRe = UIManagerAny.setJSResponder,
-    oldSetJSResponder = _UIManagerAny$setJSRe === void 0 ? function () {
-      // no-op
-    } : _UIManagerAny$setJSRe,
-    _UIManagerAny$clearJS = UIManagerAny.clearJSResponder,
-    oldClearJSResponder = _UIManagerAny$clearJS === void 0 ? function () {
-      // no-op
-    } : _UIManagerAny$clearJS;
-  UIManagerAny.setJSResponder = function (tag, blockNativeResponder) {
-    _RNGestureHandlerModule.default.handleSetJSResponder(tag, blockNativeResponder);
-    oldSetJSResponder(tag, blockNativeResponder);
-  };
-  UIManagerAny.clearJSResponder = function () {
-    _RNGestureHandlerModule.default.handleClearJSResponder();
-    oldClearJSResponder();
-  };
-  var allowTouches = true;
-  var DEV_ON_ANDROID = __DEV__ && _reactNative.Platform.OS === 'android';
-  // Toggled inspector blocks touch events in order to allow inspecting on Android
-  // This needs to be a global variable in order to set initial state for `allowTouches` property in Handler component
-  if (DEV_ON_ANDROID) {
-    _reactNative.DeviceEventEmitter.addListener('toggleElementInspector', function () {
-      allowTouches = !allowTouches;
-    });
-  }
-  function hasUnresolvedRefs(props) {
-    // TODO(TS) - add type for extract arg
-    var extract = function extract(refs) {
-      if (!Array.isArray(refs)) {
-        return refs && refs.current === null;
-      }
-      return refs.some(function (r) {
-        return r && r.current === null;
-      });
-    };
-    return extract(props['simultaneousHandlers']) || extract(props['waitFor']);
-  }
-  var stateToPropMappings = (0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)({}, _$$_REQUIRE(_dependencyMap[15], "react-native-gesture-handler/src/State").State.UNDETERMINED, undefined), _$$_REQUIRE(_dependencyMap[15], "react-native-gesture-handler/src/State").State.BEGAN, 'onBegan'), _$$_REQUIRE(_dependencyMap[15], "react-native-gesture-handler/src/State").State.FAILED, 'onFailed'), _$$_REQUIRE(_dependencyMap[15], "react-native-gesture-handler/src/State").State.CANCELLED, 'onCancelled'), _$$_REQUIRE(_dependencyMap[15], "react-native-gesture-handler/src/State").State.ACTIVE, 'onActivated'), _$$_REQUIRE(_dependencyMap[15], "react-native-gesture-handler/src/State").State.END, 'onEnded');
-
-  // TODO(TS) fix event types
-
-  var UNRESOLVED_REFS_RETRY_LIMIT = 1;
-
-  // TODO(TS) - make sure that BaseGestureHandlerProps doesn't need other generic parameter to work with custom properties.
-  function createHandler(_ref) {
-    var name = _ref.name,
-      _ref$allowedProps = _ref.allowedProps,
-      allowedProps = _ref$allowedProps === void 0 ? [] : _ref$allowedProps,
-      _ref$config = _ref.config,
-      config = _ref$config === void 0 ? {} : _ref$config,
-      transformProps = _ref.transformProps,
-      _ref$customNativeProp = _ref.customNativeProps,
-      customNativeProps = _ref$customNativeProp === void 0 ? [] : _ref$customNativeProp;
-    var Handler = /*#__PURE__*/function (_React$Component) {
-      function Handler(props) {
-        var _this;
-        (0, _classCallCheck2.default)(this, Handler);
-        _this = _callSuper(this, Handler, [props]);
-        _this.onGestureHandlerEvent = function (event) {
-          if (event.nativeEvent.handlerTag === _this.handlerTag) {
-            if (typeof _this.props.onGestureEvent === 'function') {
-              _this.props.onGestureEvent == null || _this.props.onGestureEvent(event);
-            }
-          } else {
-            _this.props.onGestureHandlerEvent == null || _this.props.onGestureHandlerEvent(event);
-          }
-        };
-        // TODO(TS) - make sure this is right type for event
-        _this.onGestureHandlerStateChange = function (event) {
-          if (event.nativeEvent.handlerTag === _this.handlerTag) {
-            if (typeof _this.props.onHandlerStateChange === 'function') {
-              _this.props.onHandlerStateChange == null || _this.props.onHandlerStateChange(event);
-            }
-            var state = event.nativeEvent.state;
-            var stateEventName = stateToPropMappings[state];
-            var eventHandler = stateEventName && _this.props[stateEventName];
-            if (eventHandler && typeof eventHandler === 'function') {
-              eventHandler(event);
-            }
-          } else {
-            _this.props.onGestureHandlerStateChange == null || _this.props.onGestureHandlerStateChange(event);
-          }
-        };
-        _this.refHandler = function (node) {
-          _this.viewNode = node;
-          var child = React.Children.only(_this.props.children);
-          // TODO(TS) fix ref type
-          var ref = child.ref;
-          if (ref !== null) {
-            if (typeof ref === 'function') {
-              ref(node);
-            } else {
-              ref.current = node;
-            }
-          }
-        };
-        _this.createGestureHandler = function (newConfig) {
-          _this.config = newConfig;
-          _RNGestureHandlerModule.default.createGestureHandler(name, _this.handlerTag, newConfig);
-        };
-        _this.attachGestureHandler = function (newViewTag) {
-          _this.viewTag = newViewTag;
-          if (_reactNative.Platform.OS === 'web') {
-            // Typecast due to dynamic resolution, attachGestureHandler should have web version signature in this branch
-            _RNGestureHandlerModule.default.attachGestureHandler(_this.handlerTag, newViewTag, _$$_REQUIRE(_dependencyMap[16], "react-native-gesture-handler/src/ActionType").ActionType.JS_FUNCTION_OLD_API,
-            // ignored on web
-            _this.propsRef);
-          } else {
-            (0, _$$_REQUIRE(_dependencyMap[17], "react-native-gesture-handler/src/handlers/handlersRegistry").registerOldGestureHandler)(_this.handlerTag, {
-              onGestureEvent: _this.onGestureHandlerEvent,
-              onGestureStateChange: _this.onGestureHandlerStateChange
-            });
-            var actionType = function (_this$props, _this$props2) {
-              var onGestureEvent = (_this$props = _this.props) == null ? void 0 : _this$props.onGestureEvent;
-              var isGestureHandlerWorklet = onGestureEvent && ('current' in onGestureEvent || 'workletEventHandler' in onGestureEvent);
-              var onHandlerStateChange = (_this$props2 = _this.props) == null ? void 0 : _this$props2.onHandlerStateChange;
-              var isStateChangeHandlerWorklet = onHandlerStateChange && ('current' in onHandlerStateChange || 'workletEventHandler' in onHandlerStateChange);
-              var isReanimatedHandler = isGestureHandlerWorklet || isStateChangeHandlerWorklet;
-              if (isReanimatedHandler) {
-                // Reanimated worklet
-                return _$$_REQUIRE(_dependencyMap[16], "react-native-gesture-handler/src/ActionType").ActionType.REANIMATED_WORKLET;
-              } else if (onGestureEvent && '__isNative' in onGestureEvent) {
-                // Animated.event with useNativeDriver: true
-                return _$$_REQUIRE(_dependencyMap[16], "react-native-gesture-handler/src/ActionType").ActionType.NATIVE_ANIMATED_EVENT;
-              } else {
-                // JS callback or Animated.event with useNativeDriver: false
-                return _$$_REQUIRE(_dependencyMap[16], "react-native-gesture-handler/src/ActionType").ActionType.JS_FUNCTION_OLD_API;
-              }
-            }();
-            _RNGestureHandlerModule.default.attachGestureHandler(_this.handlerTag, newViewTag, actionType);
-          }
-          (0, _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/handlers/utils").scheduleFlushOperations)();
-          (0, _$$_REQUIRE(_dependencyMap[19], "react-native-gesture-handler/src/ghQueueMicrotask").ghQueueMicrotask)(function () {
-            _$$_REQUIRE(_dependencyMap[20], "react-native-gesture-handler/src/mountRegistry").MountRegistry.gestureHandlerWillMount(_this);
-          });
-        };
-        _this.updateGestureHandler = function (newConfig) {
-          _this.config = newConfig;
-          _RNGestureHandlerModule.default.updateGestureHandler(_this.handlerTag, newConfig);
-          (0, _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/handlers/utils").scheduleFlushOperations)();
-        };
-        _this.handlerTag = (0, _$$_REQUIRE(_dependencyMap[21], "react-native-gesture-handler/src/handlers/getNextHandlerTag").getNextHandlerTag)();
-        _this.config = {};
-        _this.propsRef = React.createRef();
-        _this.isMountedRef = React.createRef();
-        _this.state = {
-          allowTouches: allowTouches
-        };
-        if (props.id) {
-          if (_$$_REQUIRE(_dependencyMap[17], "react-native-gesture-handler/src/handlers/handlersRegistry").handlerIDToTag[props.id] !== undefined) {
-            throw new Error(`Handler with ID "${props.id}" already registered`);
-          }
-          _$$_REQUIRE(_dependencyMap[17], "react-native-gesture-handler/src/handlers/handlersRegistry").handlerIDToTag[props.id] = _this.handlerTag;
-        }
-        return _this;
-      }
-      (0, _inherits2.default)(Handler, _React$Component);
-      return (0, _createClass2.default)(Handler, [{
-        key: "componentDidMount",
-        value: function componentDidMount() {
-          var _this2 = this;
-          var props = this.props;
-          this.isMountedRef.current = true;
-          if (DEV_ON_ANDROID) {
-            this.inspectorToggleListener = _reactNative.DeviceEventEmitter.addListener('toggleElementInspector', function () {
-              _this2.setState(function (_) {
-                return {
-                  allowTouches: allowTouches
-                };
-              });
-              _this2.update(UNRESOLVED_REFS_RETRY_LIMIT);
-            });
-          }
-          if (hasUnresolvedRefs(props)) {
-            // If there are unresolved refs (e.g. ".current" has not yet been set)
-            // passed as `simultaneousHandlers` or `waitFor`, we enqueue a call to
-            // _update method that will try to update native handler props using
-            // queueMicrotask. This makes it so update() function gets called after all
-            // react components are mounted and we expect the missing ref object to
-            // be resolved by then.
-            (0, _$$_REQUIRE(_dependencyMap[19], "react-native-gesture-handler/src/ghQueueMicrotask").ghQueueMicrotask)(function () {
-              _this2.update(UNRESOLVED_REFS_RETRY_LIMIT);
-            });
-          }
-          this.createGestureHandler((0, _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/handlers/utils").filterConfig)(transformProps ? transformProps(this.props) : this.props, [].concat((0, _toConsumableArray2.default)(allowedProps), (0, _toConsumableArray2.default)(customNativeProps)), config));
-          if (!this.viewNode) {
-            throw new Error(`[Gesture Handler] Failed to obtain view for ${Handler.displayName}. Note that old API doesn't support functional components.`);
-          }
-          this.attachGestureHandler((0, _findNodeHandle.default)(this.viewNode)); // TODO(TS) - check if this can be null
-        }
-      }, {
-        key: "componentDidUpdate",
-        value: function componentDidUpdate() {
-          var viewTag = (0, _findNodeHandle.default)(this.viewNode);
-          if (this.viewTag !== viewTag) {
-            this.attachGestureHandler(viewTag); // TODO(TS) - check interaction between _viewTag & findNodeHandle
-          }
-          this.update(UNRESOLVED_REFS_RETRY_LIMIT);
-        }
-      }, {
-        key: "componentWillUnmount",
-        value: function componentWillUnmount() {
-          var _this$inspectorToggle;
-          (_this$inspectorToggle = this.inspectorToggleListener) == null || _this$inspectorToggle.remove();
-          this.isMountedRef.current = false;
-          if (_reactNative.Platform.OS !== 'web') {
-            (0, _$$_REQUIRE(_dependencyMap[17], "react-native-gesture-handler/src/handlers/handlersRegistry").unregisterOldGestureHandler)(this.handlerTag);
-          }
-          _RNGestureHandlerModule.default.dropGestureHandler(this.handlerTag);
-          (0, _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/handlers/utils").scheduleFlushOperations)();
-          // We can't use this.props.id directly due to TS generic type narrowing bug, see https://github.com/microsoft/TypeScript/issues/13995 for more context
-          var handlerID = this.props.id;
-          if (handlerID) {
-            // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
-            delete _$$_REQUIRE(_dependencyMap[17], "react-native-gesture-handler/src/handlers/handlersRegistry").handlerIDToTag[handlerID];
-          }
-          _$$_REQUIRE(_dependencyMap[20], "react-native-gesture-handler/src/mountRegistry").MountRegistry.gestureHandlerWillUnmount(this);
-        }
-      }, {
-        key: "update",
-        value: function update(remainingTries) {
-          var _this3 = this;
-          if (!this.isMountedRef.current) {
-            return;
-          }
-          var props = this.props;
-
-          // When ref is set via a function i.e. `ref={(r) => refObject.current = r}` instead of
-          // `ref={refObject}` it's possible that it won't be resolved in time. Seems like trying
-          // again is easy enough fix.
-          if (hasUnresolvedRefs(props) && remainingTries > 0) {
-            (0, _$$_REQUIRE(_dependencyMap[19], "react-native-gesture-handler/src/ghQueueMicrotask").ghQueueMicrotask)(function () {
-              _this3.update(remainingTries - 1);
-            });
-          } else {
-            var newConfig = (0, _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/handlers/utils").filterConfig)(transformProps ? transformProps(this.props) : this.props, [].concat((0, _toConsumableArray2.default)(allowedProps), (0, _toConsumableArray2.default)(customNativeProps)), config);
-            if (!(0, _$$_REQUIRE(_dependencyMap[14], "react-native-gesture-handler/src/utils").deepEqual)(this.config, newConfig)) {
-              this.updateGestureHandler(newConfig);
-            }
-          }
-        }
-      }, {
-        key: "setNativeProps",
-        value: function setNativeProps(updates) {
-          var mergedProps = Object.assign({}, this.props, updates);
-          var newConfig = (0, _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/handlers/utils").filterConfig)(transformProps ? transformProps(mergedProps) : mergedProps, [].concat((0, _toConsumableArray2.default)(allowedProps), (0, _toConsumableArray2.default)(customNativeProps)), config);
-          this.updateGestureHandler(newConfig);
-        }
-      }, {
-        key: "render",
-        value: function render() {
-          var _this$props$testID;
-          if (__DEV__ && !this.context && !(0, _$$_REQUIRE(_dependencyMap[14], "react-native-gesture-handler/src/utils").isTestEnv)() && _reactNative.Platform.OS !== 'web' && _reactNative.Platform.OS !== "harmony") {
-            // RNOH: patch
-            throw new Error(name + ' must be used as a descendant of GestureHandlerRootView. Otherwise the gestures will not be recognized. See https://docs.swmansion.com/react-native-gesture-handler/docs/installation for more details.');
-          }
-          var gestureEventHandler = this.onGestureHandlerEvent;
-          // Another instance of https://github.com/microsoft/TypeScript/issues/13995
-
-          var _this$props3 = this.props,
-            onGestureEvent = _this$props3.onGestureEvent,
-            onGestureHandlerEvent = _this$props3.onGestureHandlerEvent;
-          if (onGestureEvent && typeof onGestureEvent !== 'function') {
-            // If it's not a method it should be an native Animated.event
-            // object. We set it directly as the handler for the view
-            // In this case nested handlers are not going to be supported
-            if (onGestureHandlerEvent) {
-              throw new Error('Nesting touch handlers with native animated driver is not supported yet');
-            }
-            gestureEventHandler = onGestureEvent;
-          } else {
-            if (onGestureHandlerEvent && typeof onGestureHandlerEvent !== 'function') {
-              throw new Error('Nesting touch handlers with native animated driver is not supported yet');
-            }
-          }
-          var gestureStateEventHandler = this.onGestureHandlerStateChange;
-          // Another instance of https://github.com/microsoft/TypeScript/issues/13995
-
-          var _this$props4 = this.props,
-            onHandlerStateChange = _this$props4.onHandlerStateChange,
-            onGestureHandlerStateChange = _this$props4.onGestureHandlerStateChange;
-          if (onHandlerStateChange && typeof onHandlerStateChange !== 'function') {
-            // If it's not a method it should be an native Animated.event
-            // object. We set it directly as the handler for the view
-            // In this case nested handlers are not going to be supported
-            if (onGestureHandlerStateChange) {
-              throw new Error('Nesting touch handlers with native animated driver is not supported yet');
-            }
-            gestureStateEventHandler = onHandlerStateChange;
-          } else {
-            if (onGestureHandlerStateChange && typeof onGestureHandlerStateChange !== 'function') {
-              throw new Error('Nesting touch handlers with native animated driver is not supported yet');
-            }
-          }
-          var events = {
-            onGestureHandlerEvent: this.state.allowTouches ? gestureEventHandler : undefined,
-            onGestureHandlerStateChange: this.state.allowTouches ? gestureStateEventHandler : undefined
-          };
-          this.propsRef.current = events;
-          var child = null;
-          try {
-            child = React.Children.only(this.props.children);
-          } catch (e) {
-            throw new Error((0, _$$_REQUIRE(_dependencyMap[14], "react-native-gesture-handler/src/utils").tagMessage)(`${name} got more than one view as a child. If you want the gesture to work on multiple views, wrap them with a common parent and attach the gesture to that view.`));
-          }
-          var grandChildren = child.props.children;
-          if (__DEV__ && child.type && (child.type === 'RNGestureHandlerButton' || child.type.name === 'View' || child.type.displayName === 'View')) {
-            grandChildren = React.Children.toArray(grandChildren);
-            grandChildren.push(/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[22], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[23], "react-native-gesture-handler/src/handlers/PressabilityDebugView").PressabilityDebugView, {
-              color: "mediumspringgreen",
-              hitSlop: child.props.hitSlop
-            }, "pressabilityDebugView"));
-          }
-          return React.cloneElement(child, Object.assign({
-            ref: this.refHandler,
-            collapsable: false
-          }, (0, _$$_REQUIRE(_dependencyMap[14], "react-native-gesture-handler/src/utils").isTestEnv)() ? {
-            handlerType: name,
-            handlerTag: this.handlerTag,
-            enabled: this.props.enabled
-          } : {}, {
-            testID: (_this$props$testID = this.props.testID) != null ? _this$props$testID : child.props.testID
-          }, events), grandChildren);
-        }
-      }]);
-    }(React.Component);
-    Handler.displayName = name;
-    Handler.contextType = _GestureHandlerRootViewContext.default;
-    return Handler;
-  }
-},822,[8,46,9,10,14,16,17,224,86,1,823,825,826,827,828,829,830,831,832,833,834,835,92,836],"node_modules/@react-native-ohos/react-native-gesture-handler/src/handlers/createHandler.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var _NativeRNGestureHandlerModule = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "../src/specs/NativeRNGestureHandlerModule"));
-  /*
-   * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
-   * Use of this source code is governed by a MIT license that can be
-   * found in the LICENSE file.
-   */
-
-  var RNGestureHandlerModule = _NativeRNGestureHandlerModule.default;
-  var _default = exports.default = RNGestureHandlerModule;
-},823,[8,824],"node_modules/@react-native-ohos/react-native-gesture-handler/src/RNGestureHandlerModule.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-  /*
-   * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
-   * Use of this source code is governed by a MIT license that can be
-   * found in the LICENSE file.
-   */
-  var _default = exports.default = _reactNative.TurboModuleRegistry.getEnforcing('RNGestureHandlerModule');
-},824,[1],"node_modules/@react-native-ohos/react-native-gesture-handler/src/specs/NativeRNGestureHandlerModule.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-  var _default = exports.default = _reactNative.findNodeHandle;
-},825,[1],"node_modules/react-native-gesture-handler/src/findNodeHandle.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var _react = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "react"));
-  var _default = exports.default = _react.default.createContext(false);
-},826,[8,86],"node_modules/react-native-gesture-handler/src/GestureHandlerRootViewContext.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(exports, "customDirectEventTypes", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Renderer/shims/ReactNativeViewConfigRegistry").customDirectEventTypes;
-    }
-  });
-},827,[240],"node_modules/react-native-gesture-handler/src/handlers/customDirectEventTypes.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.INT32_MAX = void 0;
-  exports.deepEqual = deepEqual;
-  exports.hasProperty = hasProperty;
-  exports.isFabric = isFabric;
-  exports.isReact19 = isReact19;
-  exports.isRemoteDebuggingEnabled = isRemoteDebuggingEnabled;
-  exports.isTestEnv = isTestEnv;
-  exports.tagMessage = tagMessage;
-  exports.toArray = toArray;
-  exports.withPrevAndCurrent = withPrevAndCurrent;
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
-  var _react = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "react"));
-  function toArray(object) {
-    if (!Array.isArray(object)) {
-      return [object];
-    }
-    return object;
-  }
-  function withPrevAndCurrent(array, mapFn) {
-    var previousArr = [null];
-    var currentArr = (0, _toConsumableArray2.default)(array);
-    var transformedArr = [];
-    currentArr.forEach(function (current, i) {
-      // This type cast is fine and solves problem mentioned in https://github.com/software-mansion/react-native-gesture-handler/pull/2867 (namely that `previous` can be undefined).
-      // Unfortunately, linter on our CI does not allow this type of casting as it is unnecessary. To bypass that we use eslint-disable.
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
-      var previous = previousArr[i];
-      var transformed = mapFn(previous, current);
-      previousArr.push(transformed);
-      transformedArr.push(transformed);
-    });
-    return transformedArr;
-  }
-
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  function hasProperty(object, key) {
-    return Object.prototype.hasOwnProperty.call(object, key);
-  }
-  function isTestEnv() {
-    // @ts-ignore Do not use `@types/node` because it will prioritise Node types over RN types which breaks the types (ex. setTimeout) in React Native projects.
-    return hasProperty(global, 'process') && process.env.NODE_ENV === 'test';
-  }
-  function tagMessage(msg) {
-    return `[react-native-gesture-handler] ${msg}`;
-  }
-
-  // Helper method to check whether Fabric is enabled, however global.nativeFabricUIManager
-  // may not be initialized before the first render
-  function isFabric() {
-    var _global;
-    // @ts-expect-error nativeFabricUIManager is not yet included in the RN types
-    return !!((_global = global) != null && _global.nativeFabricUIManager);
-  }
-  function isReact19() {
-    return _react.default.version.startsWith('19.');
-  }
-  function isRemoteDebuggingEnabled() {
-    // react-native-reanimated checks if in remote debugging in the same way
-    // @ts-ignore global is available but node types are not included
-    var localGlobal = global;
-    return (!localGlobal.nativeCallSyncHook || !!localGlobal.__REMOTEDEV__) && !localGlobal.RN$Bridgeless;
-  }
-
-  /**
-   * Recursively compares two objects for deep equality.
-   *
-   * **Note:** This function does not support cyclic references.
-   *
-   * @param obj1 - The first object to compare.
-   * @param obj2 - The second object to compare.
-   * @returns `true` if the objects are deeply equal, `false` otherwise.
-   */
-  function deepEqual(obj1, obj2) {
-    if (obj1 === obj2) {
-      return true;
-    }
-    if (typeof obj1 !== 'object' || typeof obj2 !== 'object' || obj1 === null || obj2 === null) {
-      return false;
-    }
-    var keys1 = Object.keys(obj1);
-    var keys2 = Object.keys(obj2);
-    if (keys1.length !== keys2.length) {
-      return false;
-    }
-    for (var key of keys1) {
-      if (!keys2.includes(key) || !deepEqual(obj1[key], obj2[key])) {
-        return false;
-      }
-    }
-    return true;
-  }
-  var INT32_MAX = exports.INT32_MAX = 2 ** 31 - 1;
-},828,[8,46,86],"node_modules/react-native-gesture-handler/src/utils.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.State = void 0;
-  // TODO use State from RNModule
-
-  var State = exports.State = {
-    UNDETERMINED: 0,
-    FAILED: 1,
-    BEGAN: 2,
-    CANCELLED: 3,
-    ACTIVE: 4,
-    END: 5
-  };
-
-  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; it can be used as a type and as a value
-},829,[],"node_modules/react-native-gesture-handler/src/State.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ActionType = void 0;
-  var ActionType = exports.ActionType = {
-    REANIMATED_WORKLET: 1,
-    NATIVE_ANIMATED_EVENT: 2,
-    JS_FUNCTION_OLD_API: 3,
-    JS_FUNCTION_NEW_API: 4
-  };
-
-  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; it can be used as a type and as a value
-},830,[],"node_modules/react-native-gesture-handler/src/ActionType.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.findHandler = findHandler;
-  exports.findHandlerByTestID = findHandlerByTestID;
-  exports.findOldGestureHandler = findOldGestureHandler;
-  exports.handlerIDToTag = void 0;
-  exports.registerHandler = registerHandler;
-  exports.registerOldGestureHandler = registerOldGestureHandler;
-  exports.unregisterHandler = unregisterHandler;
-  exports.unregisterOldGestureHandler = unregisterOldGestureHandler;
-  var handlerIDToTag = exports.handlerIDToTag = {};
-  var gestures = new Map();
-  var oldHandlers = new Map();
-  var testIDs = new Map();
-  function registerHandler(handlerTag, handler, testID) {
-    gestures.set(handlerTag, handler);
-    if ((0, _$$_REQUIRE(_dependencyMap[0], "../utils").isTestEnv)() && testID) {
-      testIDs.set(testID, handlerTag);
-    }
-  }
-  function registerOldGestureHandler(handlerTag, handler) {
-    oldHandlers.set(handlerTag, handler);
-  }
-  function unregisterOldGestureHandler(handlerTag) {
-    oldHandlers.delete(handlerTag);
-  }
-  function unregisterHandler(handlerTag, testID) {
-    gestures.delete(handlerTag);
-    if ((0, _$$_REQUIRE(_dependencyMap[0], "../utils").isTestEnv)() && testID) {
-      testIDs.delete(testID);
-    }
-  }
-  function findHandler(handlerTag) {
-    return gestures.get(handlerTag);
-  }
-  function findOldGestureHandler(handlerTag) {
-    return oldHandlers.get(handlerTag);
-  }
-  function findHandlerByTestID(testID) {
-    var handlerTag = testIDs.get(testID);
-    if (handlerTag !== undefined) {
-      var _findHandler;
-      return (_findHandler = findHandler(handlerTag)) != null ? _findHandler : null;
-    }
-    return null;
-  }
-},831,[828],"node_modules/react-native-gesture-handler/src/handlers/handlersRegistry.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.filterConfig = filterConfig;
-  exports.findNodeHandle = findNodeHandle;
-  exports.scheduleFlushOperations = scheduleFlushOperations;
-  exports.transformIntoHandlerTags = transformIntoHandlerTags;
-  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-  var _RNGestureHandlerModule = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "../RNGestureHandlerModule"));
-  function isConfigParam(param, name) {
-    // param !== Object(param) returns false if `param` is a function
-    // or an object and returns true if `param` is null
-    return param !== undefined && (param !== Object(param) || !('__isNative' in param)) && name !== 'onHandlerStateChange' && name !== 'onGestureEvent';
-  }
-  function filterConfig(props, validProps) {
-    var defaults = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-    var filteredConfig = Object.assign({}, defaults);
-    for (var key of validProps) {
-      var value = props[key];
-      if (isConfigParam(value, key)) {
-        if (key === 'simultaneousHandlers' || key === 'waitFor') {
-          value = transformIntoHandlerTags(props[key]);
-        } else if (key === 'hitSlop' && typeof value !== 'object') {
-          value = {
-            top: value,
-            left: value,
-            bottom: value,
-            right: value
-          };
-        }
-        filteredConfig[key] = value;
-      }
-    }
-    return filteredConfig;
-  }
-  function transformIntoHandlerTags(handlerIDs) {
-    handlerIDs = (0, _$$_REQUIRE(_dependencyMap[3], "../utils").toArray)(handlerIDs);
-    if (_reactNative.Platform.OS === 'web') {
-      return handlerIDs.map(function (_ref) {
-        var current = _ref.current;
-        return current;
-      }).filter(function (handle) {
-        return handle;
-      });
-    }
-    // converts handler string IDs into their numeric tags
-    return handlerIDs.map(function (handlerID) {
-      var _handlerID$current;
-      return _$$_REQUIRE(_dependencyMap[4], "./handlersRegistry").handlerIDToTag[handlerID] || ((_handlerID$current = handlerID.current) == null ? void 0 : _handlerID$current.handlerTag) || -1;
-    }).filter(function (handlerTag) {
-      return handlerTag > 0;
-    });
-  }
-  function findNodeHandle(node) {
-    if (_reactNative.Platform.OS === 'web') {
-      return node;
-    }
-    return (0, _reactNative.findNodeHandle)(node);
-  }
-  var flushOperationsScheduled = false;
-  function scheduleFlushOperations() {
-    if (!flushOperationsScheduled) {
-      flushOperationsScheduled = true;
-      (0, _$$_REQUIRE(_dependencyMap[5], "../ghQueueMicrotask").ghQueueMicrotask)(function () {
-        _RNGestureHandlerModule.default.flushOperations();
-        flushOperationsScheduled = false;
-      });
-    }
-  }
-},832,[1,8,823,828,831,833],"node_modules/react-native-gesture-handler/src/handlers/utils.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ghQueueMicrotask = void 0;
-  // We check for typeof requestAnimationFrame because of SSR
-  // Functions are bound to null to avoid issues with scope when using Metro inline requires.
-  var ghQueueMicrotask = exports.ghQueueMicrotask = typeof setImmediate === 'function' ? setImmediate.bind(null) : typeof requestAnimationFrame === 'function' ? requestAnimationFrame.bind(null) : queueMicrotask.bind(null);
-},833,[],"node_modules/react-native-gesture-handler/src/ghQueueMicrotask.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.MountRegistry = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  // eslint-disable-next-line @typescript-eslint/no-extraneous-class
-  var MountRegistry = exports.MountRegistry = /*#__PURE__*/function () {
-    function MountRegistry() {
-      (0, _classCallCheck2.default)(this, MountRegistry);
-    }
-    return (0, _createClass2.default)(MountRegistry, null, [{
-      key: "addMountListener",
-      value: function addMountListener(listener) {
-        var _this = this;
-        this.mountListeners.add(listener);
-        return function () {
-          _this.mountListeners.delete(listener);
-        };
-      }
-    }, {
-      key: "addUnmountListener",
-      value: function addUnmountListener(listener) {
-        var _this2 = this;
-        this.unmountListeners.add(listener);
-        return function () {
-          _this2.unmountListeners.delete(listener);
-        };
-      }
-    }, {
-      key: "gestureHandlerWillMount",
-      value: function gestureHandlerWillMount(handler) {
-        this.mountListeners.forEach(function (listener) {
-          return listener(handler);
-        });
-      }
-    }, {
-      key: "gestureHandlerWillUnmount",
-      value: function gestureHandlerWillUnmount(handler) {
-        this.unmountListeners.forEach(function (listener) {
-          return listener(handler);
-        });
-      }
-    }, {
-      key: "gestureWillMount",
-      value: function gestureWillMount(gesture) {
-        this.mountListeners.forEach(function (listener) {
-          return listener(gesture);
-        });
-      }
-    }, {
-      key: "gestureWillUnmount",
-      value: function gestureWillUnmount(gesture) {
-        this.unmountListeners.forEach(function (listener) {
-          return listener(gesture);
-        });
-      }
-    }]);
-  }();
-  MountRegistry.mountListeners = new Set();
-  MountRegistry.unmountListeners = new Set();
-},834,[8,9,10],"node_modules/react-native-gesture-handler/src/mountRegistry.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.getNextHandlerTag = getNextHandlerTag;
-  var handlerTag = 1;
-  function getNextHandlerTag() {
-    return handlerTag++;
-  }
-},835,[],"node_modules/react-native-gesture-handler/src/handlers/getNextHandlerTag.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(exports, "PressabilityDebugView", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Pressability/PressabilityDebug").PressabilityDebugView;
-    }
-  });
-},836,[369],"node_modules/react-native-gesture-handler/src/handlers/PressabilityDebugView.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.baseGestureHandlerWithDetectorProps = exports.baseGestureHandlerProps = exports.MouseButton = void 0;
-  // Previous types exported gesture handlers as classes which creates an interface and variable, both named the same as class.
-  // Without those types, we'd introduce breaking change, forcing users to prefix every handler type specification with typeof
-  // e.g. React.createRef<TapGestureHandler> -> React.createRef<typeof TapGestureHandler>.
-  // See https://www.typescriptlang.org/docs/handbook/classes.html#constructor-functions for reference.
-
-  var commonProps = ['id', 'enabled', 'shouldCancelWhenOutside', 'hitSlop', 'cancelsTouchesInView', 'userSelect', 'activeCursor', 'mouseButton', 'enableContextMenu', 'touchAction'];
-  var componentInteractionProps = ['waitFor', 'simultaneousHandlers', 'blocksHandlers'];
-  var baseGestureHandlerProps = exports.baseGestureHandlerProps = [].concat(commonProps, componentInteractionProps, ['onBegan', 'onFailed', 'onCancelled', 'onActivated', 'onEnded', 'onGestureEvent', 'onHandlerStateChange']);
-  var baseGestureHandlerWithDetectorProps = exports.baseGestureHandlerWithDetectorProps = [].concat(commonProps, ['needsPointerData', 'manualActivation']);
-  var MouseButton = exports.MouseButton = /*#__PURE__*/function (MouseButton) {
-    MouseButton[MouseButton["LEFT"] = 1] = "LEFT";
-    MouseButton[MouseButton["RIGHT"] = 2] = "RIGHT";
-    MouseButton[MouseButton["MIDDLE"] = 4] = "MIDDLE";
-    MouseButton[MouseButton["BUTTON_4"] = 8] = "BUTTON_4";
-    MouseButton[MouseButton["BUTTON_5"] = 16] = "BUTTON_5";
-    MouseButton[MouseButton["ALL"] = 31] = "ALL";
-    return MouseButton;
-  }({}); // TODO(TS) events in handlers
-  // Events payloads are types instead of interfaces due to TS limitation.
-  // See https://github.com/microsoft/TypeScript/issues/15300 for more info.
-},837,[],"node_modules/react-native-gesture-handler/src/handlers/gestureHandlerCommon.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var _RNGestureHandlerButtonNativeComponent = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "../specs/RNGestureHandlerButtonNativeComponent"));
-  var _default = exports.default = _RNGestureHandlerButtonNativeComponent.default;
-},838,[8,839],"node_modules/react-native-gesture-handler/src/components/GestureHandlerButton.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = exports.__INTERNAL_VIEW_CONFIG = void 0;
-  var _codegenNativeComponent = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "react-native/Libraries/Utilities/codegenNativeComponent")); /*
-                                                                                                                                                                                                            * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
-                                                                                                                                                                                                            * Use of this source code is governed by a MIT license that can be
-                                                                                                                                                                                                            * found in the LICENSE file.
-                                                                                                                                                                                                            */
-
-  var nativeComponentName = 'RNGestureHandlerButton';
-  var __INTERNAL_VIEW_CONFIG = exports.__INTERNAL_VIEW_CONFIG = {
-    uiViewClassName: 'RNGestureHandlerButton',
-    validAttributes: {
-      exclusive: true,
-      foreground: true,
-      borderless: true,
-      enabled: true,
-      rippleColor: {
-        process: _$$_REQUIRE(_dependencyMap[2], "react-native/Libraries/StyleSheet/processColor").default
-      },
-      rippleRadius: true,
-      touchSoundDisabled: true,
-      borderWidth: true,
-      borderColor: {
-        process: _$$_REQUIRE(_dependencyMap[2], "react-native/Libraries/StyleSheet/processColor").default
-      },
-      borderStyle: true
-    }
-  };
-  var _default = exports.default = _$$_REQUIRE(_dependencyMap[3], "react-native/Libraries/NativeComponent/NativeComponentRegistry").get(nativeComponentName, function () {
-    return __INTERNAL_VIEW_CONFIG;
-  });
-},839,[8,347,185,204],"node_modules/@react-native-ohos/react-native-gesture-handler/src/specs/RNGestureHandlerButtonNativeComponent.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.Directions = exports.DiagonalDirections = void 0;
-  var RIGHT = 1;
-  var LEFT = 2;
-  var UP = 4;
-  var DOWN = 8;
-
-  // Public interface
-  var Directions = exports.Directions = {
-    RIGHT: RIGHT,
-    LEFT: LEFT,
-    UP: UP,
-    DOWN: DOWN
-  };
-
-  // Internal interface
-  var DiagonalDirections = exports.DiagonalDirections = {
-    UP_RIGHT: UP | RIGHT,
-    DOWN_RIGHT: DOWN | RIGHT,
-    UP_LEFT: UP | LEFT,
-    DOWN_LEFT: DOWN | LEFT
-  };
-
-  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; it can be used as a type and as a value
-
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
-},840,[],"node_modules/react-native-gesture-handler/src/Directions.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.TextInput = exports.Switch = exports.ScrollView = exports.RefreshControl = exports.FlatList = exports.DrawerLayoutAndroid = void 0;
-  var _slicedToArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/slicedToArray"));
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/toConsumableArray"));
-  var _objectWithoutProperties2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/objectWithoutProperties"));
-  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[4], "react"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[5], "react-native");
-  var _createNativeWrapper = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "../handlers/createNativeWrapper"));
-  var _excluded = ["refreshControl", "waitFor"],
-    _excluded2 = ["waitFor", "refreshControl"];
-  var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/GestureComponents.tsx";
-  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  var RefreshControl = exports.RefreshControl = (0, _createNativeWrapper.default)(_reactNative.RefreshControl, {
-    disallowInterruption: true,
-    shouldCancelWhenOutside: false
-  });
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
-
-  var GHScrollView = (0, _createNativeWrapper.default)(_reactNative.ScrollView, {
-    disallowInterruption: true,
-    shouldCancelWhenOutside: false
-  });
-  var ScrollView = exports.ScrollView = React.forwardRef(function (props, ref) {
-    var refreshControlGestureRef = React.useRef(null);
-    var refreshControl = props.refreshControl,
-      waitFor = props.waitFor,
-      rest = (0, _objectWithoutProperties2.default)(props, _excluded);
-    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(GHScrollView, Object.assign({}, rest, {
-      // @ts-ignore `ref` exists on `GHScrollView`
-      ref: ref,
-      waitFor: [].concat((0, _toConsumableArray2.default)((0, _$$_REQUIRE(_dependencyMap[8], "../utils").toArray)(waitFor != null ? waitFor : [])), [refreshControlGestureRef])
-      // @ts-ignore we don't pass `refreshing` prop as we only want to override the ref
-      ,
-      refreshControl: refreshControl ? React.cloneElement(refreshControl, {
-        // @ts-ignore for reasons unknown to me, `ref` doesn't exist on the type inferred by TS
-        ref: refreshControlGestureRef
-      }) : undefined
-    }));
-  });
-  // Backward type compatibility with https://github.com/software-mansion/react-native-gesture-handler/blob/db78d3ca7d48e8ba57482d3fe9b0a15aa79d9932/react-native-gesture-handler.d.ts#L440-L457
-  // include methods of wrapped components by creating an intersection type with the RN component instead of duplicating them.
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
-
-  var Switch = exports.Switch = (0, _createNativeWrapper.default)(_reactNative.Switch, {
-    shouldCancelWhenOutside: false,
-    shouldActivateOnStart: true,
-    disallowInterruption: true
-  });
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
-
-  var TextInput = exports.TextInput = (0, _createNativeWrapper.default)(_reactNative.TextInput);
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
-
-  var DrawerLayoutAndroid = exports.DrawerLayoutAndroid = (0, _createNativeWrapper.default)(_reactNative.DrawerLayoutAndroid, {
-    disallowInterruption: true
-  });
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
-
-  var FlatList = exports.FlatList = React.forwardRef(function (props, ref) {
-    var refreshControlGestureRef = React.useRef(null);
-    var waitFor = props.waitFor,
-      refreshControl = props.refreshControl,
-      rest = (0, _objectWithoutProperties2.default)(props, _excluded2);
-    var flatListProps = {};
-    var scrollViewProps = {};
-    for (var _ref of Object.entries(rest)) {
-      var _ref2 = (0, _slicedToArray2.default)(_ref, 2);
-      var propName = _ref2[0];
-      var value = _ref2[1];
-      // https://github.com/microsoft/TypeScript/issues/26255
-      if (_$$_REQUIRE(_dependencyMap[9], "../handlers/NativeViewGestureHandler").nativeViewProps.includes(propName)) {
-        // @ts-ignore - this function cannot have generic type so we have to ignore this error
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        scrollViewProps[propName] = value;
-      } else {
-        // @ts-ignore - this function cannot have generic type so we have to ignore this error
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        flatListProps[propName] = value;
-      }
-    }
-    return (
-      /*#__PURE__*/
-      // @ts-ignore - this function cannot have generic type so we have to ignore this error
-      (0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.FlatList, Object.assign({
-        ref: ref
-      }, flatListProps, {
-        renderScrollComponent: function renderScrollComponent(scrollProps) {
-          return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(ScrollView, Object.assign({}, Object.assign({}, scrollProps, scrollViewProps, {
-            waitFor: [].concat((0, _toConsumableArray2.default)((0, _$$_REQUIRE(_dependencyMap[8], "../utils").toArray)(waitFor != null ? waitFor : [])), [refreshControlGestureRef])
-          })));
-        }
-        // @ts-ignore we don't pass `refreshing` prop as we only want to override the ref
-        ,
-        refreshControl: refreshControl ? React.cloneElement(refreshControl, {
-          // @ts-ignore for reasons unknown to me, `ref` doesn't exist on the type inferred by TS
-          ref: refreshControlGestureRef
-        }) : undefined
-      }))
-    );
-  });
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
-},841,[8,27,46,153,86,1,820,92,828,821],"node_modules/react-native-gesture-handler/src/components/GestureComponents.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.flingHandlerName = exports.flingGestureHandlerProps = exports.FlingGestureHandler = void 0;
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
-  var _createHandler = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./createHandler"));
-  var flingGestureHandlerProps = exports.flingGestureHandlerProps = ['numberOfPointers', 'direction'];
-
-  /**
-   * @deprecated FlingGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Fling()` instead.
-   */
-
-  var flingHandlerName = exports.flingHandlerName = 'FlingGestureHandler';
-
-  /**
-   * @deprecated FlingGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Fling()` instead.
-   */
-
-  /**
-   * @deprecated FlingGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Fling()` instead.
-   */
-  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; see description on the top of gestureHandlerCommon.ts file
-  var FlingGestureHandler = exports.FlingGestureHandler = (0, _createHandler.default)({
-    name: flingHandlerName,
-    allowedProps: [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[3], "./gestureHandlerCommon").baseGestureHandlerProps), flingGestureHandlerProps),
-    config: {}
-  });
-},842,[8,46,822,837],"node_modules/react-native-gesture-handler/src/handlers/FlingGestureHandler.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.forceTouchHandlerName = exports.forceTouchGestureHandlerProps = exports.ForceTouchGestureHandler = void 0;
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-  var _react = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[7], "react"));
-  var _PlatformConstants = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[8], "../PlatformConstants"));
-  var _createHandler = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[9], "./createHandler"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  var forceTouchGestureHandlerProps = exports.forceTouchGestureHandlerProps = ['minForce', 'maxForce', 'feedbackOnActivation'];
-
-  // implicit `children` prop has been removed in @types/react^18.0.0
-  var ForceTouchFallback = /*#__PURE__*/function (_React$Component) {
-    function ForceTouchFallback() {
-      (0, _classCallCheck2.default)(this, ForceTouchFallback);
-      return _callSuper(this, ForceTouchFallback, arguments);
-    }
-    (0, _inherits2.default)(ForceTouchFallback, _React$Component);
-    return (0, _createClass2.default)(ForceTouchFallback, [{
-      key: "componentDidMount",
-      value: function componentDidMount() {
-        console.warn((0, _$$_REQUIRE(_dependencyMap[10], "../utils").tagMessage)('ForceTouchGestureHandler is not available on this platform. Please use ForceTouchGestureHandler.forceTouchAvailable to conditionally render other components that would provide a fallback behavior specific to your usecase'));
-      }
-    }, {
-      key: "render",
-      value: function render() {
-        return this.props.children;
-      }
-    }]);
-  }(_react.default.Component);
-  ForceTouchFallback.forceTouchAvailable = false;
-  /**
-   * @deprecated ForceTouchGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.ForceTouch()` instead.
-   */
-  /**
-   * @deprecated ForceTouchGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.ForceTouch()` instead.
-   */
-  var forceTouchHandlerName = exports.forceTouchHandlerName = 'ForceTouchGestureHandler';
-
-  /**
-   * @deprecated ForceTouchGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.ForceTouch()` instead.
-   */
-  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; see description on the top of gestureHandlerCommon.ts file
-  var ForceTouchGestureHandler = exports.ForceTouchGestureHandler = _PlatformConstants.default != null && _PlatformConstants.default.forceTouchAvailable ? (0, _createHandler.default)({
-    name: forceTouchHandlerName,
-    allowedProps: [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[11], "./gestureHandlerCommon").baseGestureHandlerProps), forceTouchGestureHandlerProps),
-    config: {}
-  }) : ForceTouchFallback;
-  ForceTouchGestureHandler.forceTouchAvailable = (_PlatformConstants.default == null ? void 0 : _PlatformConstants.default.forceTouchAvailable) || false;
-},843,[8,46,9,10,14,16,17,86,844,822,828,837],"node_modules/react-native-gesture-handler/src/handlers/ForceTouchGestureHandler.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-  // Patched this line because original failed in bridgeless
-  var _default = exports.default = _reactNative.Platform.constants;
-},844,[1],"node_modules/@react-native-ohos/react-native-gesture-handler/src/PlatformConstants.harmony.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.GestureObjects = void 0;
-  var _construct2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/construct"));
-  /**
-   * `Gesture` is the object that allows you to create and compose gestures.
-   *
-   * ### Remarks
-   * - Consider wrapping your gesture configurations with `useMemo`, as it will reduce the amount of work Gesture Handler has to do under the hood when updating gestures.
-   *
-   * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/gesture
-   */
-  var GestureObjects = exports.GestureObjects = {
-    /**
-     * A discrete gesture that recognizes one or many taps.
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/tap-gesture
-     */
-    Tap: function Tap() {
-      return new (_$$_REQUIRE(_dependencyMap[2], "./tapGesture").TapGesture)();
-    },
-    /**
-     * A continuous gesture that can recognize a panning (dragging) gesture and track its movement.
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture
-     */
-    Pan: function Pan() {
-      return new (_$$_REQUIRE(_dependencyMap[3], "./panGesture").PanGesture)();
-    },
-    /**
-     * A continuous gesture that recognizes pinch gesture. It allows for tracking the distance between two fingers and use that information to scale or zoom your content.
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pinch-gesture
-     */
-    Pinch: function Pinch() {
-      return new (_$$_REQUIRE(_dependencyMap[4], "./pinchGesture").PinchGesture)();
-    },
-    /**
-     * A continuous gesture that can recognize rotation and track its movement.
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/rotation-gesture
-     */
-    Rotation: function Rotation() {
-      return new (_$$_REQUIRE(_dependencyMap[5], "./rotationGesture").RotationGesture)();
-    },
-    /**
-     * A discrete gesture that activates when the movement is sufficiently fast.
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/fling-gesture
-     */
-    Fling: function Fling() {
-      return new (_$$_REQUIRE(_dependencyMap[6], "./flingGesture").FlingGesture)();
-    },
-    /**
-     * A discrete gesture that activates when the corresponding view is pressed for a sufficiently long time.
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/long-press-gesture
-     */
-    LongPress: function LongPress() {
-      return new (_$$_REQUIRE(_dependencyMap[7], "./longPressGesture").LongPressGesture)();
-    },
-    /**
-     * #### iOS only
-     * A continuous gesture that recognizes force of a touch. It allows for tracking pressure of touch on some iOS devices.
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/force-touch-gesture
-     */
-    ForceTouch: function ForceTouch() {
-      return new (_$$_REQUIRE(_dependencyMap[8], "./forceTouchGesture").ForceTouchGesture)();
-    },
-    /**
-     * A gesture that allows other touch handling components to participate in RNGH's gesture system.
-     * When used, the other component should be the direct child of a `GestureDetector`.
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/native-gesture
-     */
-    Native: function Native() {
-      return new (_$$_REQUIRE(_dependencyMap[9], "./nativeGesture").NativeGesture)();
-    },
-    /**
-     * A plain gesture that has no specific activation criteria nor event data set.
-     * Its state has to be controlled manually using a state manager.
-     * It will not fail when all the pointers are lifted from the screen.
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/manual-gesture
-     */
-    Manual: function Manual() {
-      return new (_$$_REQUIRE(_dependencyMap[10], "./manualGesture").ManualGesture)();
-    },
-    /**
-     * A continuous gesture that can recognize hovering above the view it's attached to.
-     * The hover effect may be activated by moving a mouse or a stylus over the view.
-     *
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/hover-gesture
-     */
-    Hover: function Hover() {
-      return new (_$$_REQUIRE(_dependencyMap[11], "./hoverGesture").HoverGesture)();
-    },
-    /**
-     * Builds a composed gesture consisting of gestures provided as parameters.
-     * The first one that becomes active cancels the rest of gestures.
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/gesture-composition/#race
-     */
-    Race: function Race() {
-      for (var _len = arguments.length, gestures = new Array(_len), _key = 0; _key < _len; _key++) {
-        gestures[_key] = arguments[_key];
-      }
-      return (0, _construct2.default)(_$$_REQUIRE(_dependencyMap[12], "./gestureComposition").ComposedGesture, gestures);
-    },
-    /**
-     * Builds a composed gesture that allows all base gestures to run simultaneously.
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/gesture-composition/#simultaneous
-     */
-    Simultaneous: function Simultaneous() {
-      for (var _len2 = arguments.length, gestures = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-        gestures[_key2] = arguments[_key2];
-      }
-      return (0, _construct2.default)(_$$_REQUIRE(_dependencyMap[12], "./gestureComposition").SimultaneousGesture, gestures);
-    },
-    /**
-     * Builds a composed gesture where only one of the provided gestures can become active.
-     * Priority is decided through the order of gestures: the first one has higher priority
-     * than the second one, second one has higher priority than the third one, and so on.
-     * For example, to make a gesture that recognizes both single and double tap you need
-     * to call Exclusive(doubleTap, singleTap).
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/gesture-composition/#exclusive
-     */
-    Exclusive: function Exclusive() {
-      for (var _len3 = arguments.length, gestures = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-        gestures[_key3] = arguments[_key3];
-      }
-      return (0, _construct2.default)(_$$_REQUIRE(_dependencyMap[12], "./gestureComposition").ExclusiveGesture, gestures);
-    }
-  };
-},845,[8,62,846,848,849,850,851,852,853,854,855,856,857],"node_modules/react-native-gesture-handler/src/handlers/gestures/gestureObjects.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.TapGesture = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  var TapGesture = exports.TapGesture = /*#__PURE__*/function (_BaseGesture) {
-    function TapGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, TapGesture);
-      _this = _callSuper(this, TapGesture);
-      _this.config = {};
-      _this.handlerName = 'TapGestureHandler';
-      _this.shouldCancelWhenOutside(true);
-      return _this;
-    }
-
-    /**
-     * Minimum number of pointers (fingers) required to be placed before the gesture activates.
-     * Should be a positive integer. The default value is 1.
-     * @param minPointers
-     */
-    (0, _inherits2.default)(TapGesture, _BaseGesture);
-    return (0, _createClass2.default)(TapGesture, [{
-      key: "minPointers",
-      value: function minPointers(_minPointers) {
-        this.config.minPointers = _minPointers;
-        return this;
-      }
-
-      /**
-       * Number of tap gestures required to activate the gesture.
-       * The default value is 1.
-       * @param count
-       */
-    }, {
-      key: "numberOfTaps",
-      value: function numberOfTaps(count) {
-        this.config.numberOfTaps = count;
-        return this;
-      }
-
-      /**
-       * Maximum distance, expressed in points, that defines how far the finger is allowed to travel during a tap gesture.
-       * @param maxDist
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/tap-gesture#maxdistancevalue-number
-       */
-    }, {
-      key: "maxDistance",
-      value: function maxDistance(maxDist) {
-        this.config.maxDist = maxDist;
-        return this;
-      }
-
-      /**
-       * Maximum time, expressed in milliseconds, that defines how fast a finger must be released after a touch.
-       * The default value is 500.
-       * @param duration
-       */
-    }, {
-      key: "maxDuration",
-      value: function maxDuration(duration) {
-        this.config.maxDurationMs = duration;
-        return this;
-      }
-
-      /**
-       * Maximum time, expressed in milliseconds, that can pass before the next tap — if many taps are required.
-       * The default value is 500.
-       * @param delay
-       */
-    }, {
-      key: "maxDelay",
-      value: function maxDelay(delay) {
-        this.config.maxDelayMs = delay;
-        return this;
-      }
-
-      /**
-       * Maximum distance, expressed in points, that defines how far the finger is allowed to travel along the X axis during a tap gesture.
-       * @param delta
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/tap-gesture#maxdeltaxvalue-number
-       */
-    }, {
-      key: "maxDeltaX",
-      value: function maxDeltaX(delta) {
-        this.config.maxDeltaX = delta;
-        return this;
-      }
-
-      /**
-       * Maximum distance, expressed in points, that defines how far the finger is allowed to travel along the Y axis during a tap gesture.
-       * @param delta
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/tap-gesture#maxdeltayvalue-number
-       */
-    }, {
-      key: "maxDeltaY",
-      value: function maxDeltaY(delta) {
-        this.config.maxDeltaY = delta;
-        return this;
-      }
-    }]);
-  }(_$$_REQUIRE(_dependencyMap[6], "./gesture").BaseGesture);
-},846,[8,9,10,14,16,17,847],"node_modules/react-native-gesture-handler/src/handlers/gestures/tapGesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.Gesture = exports.ContinousBaseGesture = exports.CALLBACK_TYPE = exports.BaseGesture = void 0;
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/inherits"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/createClass"));
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/classCallCheck"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  // Allow adding a ref to a gesture handler
-
-  var CALLBACK_TYPE = exports.CALLBACK_TYPE = {
-    UNDEFINED: 0,
-    BEGAN: 1,
-    START: 2,
-    UPDATE: 3,
-    CHANGE: 4,
-    END: 5,
-    FINALIZE: 6,
-    TOUCHES_DOWN: 7,
-    TOUCHES_MOVE: 8,
-    TOUCHES_UP: 9,
-    TOUCHES_CANCELLED: 10
-  };
-
-  // Allow using CALLBACK_TYPE as object and type
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
-  var Gesture = exports.Gesture = /*#__PURE__*/(0, _createClass2.default)(function Gesture() {
-    (0, _classCallCheck2.default)(this, Gesture);
-  });
-  var nextGestureId = 0;
-  var BaseGesture = exports.BaseGesture = /*#__PURE__*/function (_Gesture) {
-    function BaseGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, BaseGesture);
-      _this = _callSuper(this, BaseGesture);
-
-      // Used to check whether the gesture config has been updated when wrapping it
-      // with `useMemo`. Since every config will have a unique id, when the dependencies
-      // don't change, the config won't be recreated and the id will stay the same.
-      // If the id is different, it means that the config has changed and the gesture
-      // needs to be updated.
-      _this.gestureId = -1;
-      _this.handlerTag = -1;
-      _this.handlerName = '';
-      _this.config = {};
-      _this.handlers = {
-        gestureId: -1,
-        handlerTag: -1,
-        isWorklet: []
-      };
-      _this.gestureId = nextGestureId++;
-      _this.handlers.gestureId = _this.gestureId;
-      return _this;
-    }
-    (0, _inherits2.default)(BaseGesture, _Gesture);
-    return (0, _createClass2.default)(BaseGesture, [{
-      key: "addDependency",
-      value: function addDependency(key, gesture) {
-        var value = this.config[key];
-        this.config[key] = value ? Array().concat(value, gesture) : [gesture];
-      }
-
-      /**
-       * Sets a `ref` to the gesture object, allowing for interoperability with the old API.
-       * @param ref
-       */
-    }, {
-      key: "withRef",
-      value: function withRef(ref) {
-        this.config.ref = ref;
-        return this;
-      }
-
-      // eslint-disable-next-line @typescript-eslint/ban-types
-    }, {
-      key: "isWorklet",
-      value: function isWorklet(callback) {
-        // @ts-ignore if callback is a worklet, the property will be available, if not then the check will return false
-        return callback.__workletHash !== undefined;
-      }
-
-      /**
-       * Set the callback that is being called when given gesture handler starts receiving touches.
-       * At the moment of this callback the handler is in `BEGAN` state and we don't know yet if it will recognize the gesture at all.
-       * @param callback
-       */
-    }, {
-      key: "onBegin",
-      value: function onBegin(callback) {
-        this.handlers.onBegin = callback;
-        this.handlers.isWorklet[CALLBACK_TYPE.BEGAN] = this.isWorklet(callback);
-        return this;
-      }
-
-      /**
-       * Set the callback that is being called when the gesture is recognized by the handler and it transitions to the `ACTIVE` state.
-       * @param callback
-       */
-    }, {
-      key: "onStart",
-      value: function onStart(callback) {
-        this.handlers.onStart = callback;
-        this.handlers.isWorklet[CALLBACK_TYPE.START] = this.isWorklet(callback);
-        return this;
-      }
-
-      /**
-       * Set the callback that is being called when the gesture that was recognized by the handler finishes and handler reaches `END` state.
-       * It will be called only if the handler was previously in the `ACTIVE` state.
-       * @param callback
-       */
-    }, {
-      key: "onEnd",
-      value: function onEnd(callback) {
-        this.handlers.onEnd = callback;
-        // @ts-ignore if callback is a worklet, the property will be available, if not then the check will return false
-        this.handlers.isWorklet[CALLBACK_TYPE.END] = this.isWorklet(callback);
-        return this;
-      }
-
-      /**
-       * Set the callback that is being called when the handler finalizes handling gesture - the gesture was recognized and has finished or it failed to recognize.
-       * @param callback
-       */
-    }, {
-      key: "onFinalize",
-      value: function onFinalize(callback) {
-        this.handlers.onFinalize = callback;
-        // @ts-ignore if callback is a worklet, the property will be available, if not then the check will return false
-        this.handlers.isWorklet[CALLBACK_TYPE.FINALIZE] = this.isWorklet(callback);
-        return this;
-      }
-
-      /**
-       * Set the `onTouchesDown` callback which is called every time a pointer is placed on the screen.
-       * @param callback
-       */
-    }, {
-      key: "onTouchesDown",
-      value: function onTouchesDown(callback) {
-        this.config.needsPointerData = true;
-        this.handlers.onTouchesDown = callback;
-        this.handlers.isWorklet[CALLBACK_TYPE.TOUCHES_DOWN] = this.isWorklet(callback);
-        return this;
-      }
-
-      /**
-       * Set the `onTouchesMove` callback which is called every time a pointer is moved on the screen.
-       * @param callback
-       */
-    }, {
-      key: "onTouchesMove",
-      value: function onTouchesMove(callback) {
-        this.config.needsPointerData = true;
-        this.handlers.onTouchesMove = callback;
-        this.handlers.isWorklet[CALLBACK_TYPE.TOUCHES_MOVE] = this.isWorklet(callback);
-        return this;
-      }
-
-      /**
-       * Set the `onTouchesUp` callback which is called every time a pointer is lifted from the screen.
-       * @param callback
-       */
-    }, {
-      key: "onTouchesUp",
-      value: function onTouchesUp(callback) {
-        this.config.needsPointerData = true;
-        this.handlers.onTouchesUp = callback;
-        this.handlers.isWorklet[CALLBACK_TYPE.TOUCHES_UP] = this.isWorklet(callback);
-        return this;
-      }
-
-      /**
-       * Set the `onTouchesCancelled` callback which is called every time a pointer stops being tracked, for example when the gesture finishes.
-       * @param callback
-       */
-    }, {
-      key: "onTouchesCancelled",
-      value: function onTouchesCancelled(callback) {
-        this.config.needsPointerData = true;
-        this.handlers.onTouchesCancelled = callback;
-        this.handlers.isWorklet[CALLBACK_TYPE.TOUCHES_CANCELLED] = this.isWorklet(callback);
-        return this;
-      }
-
-      /**
-       * Indicates whether the given handler should be analyzing stream of touch events or not.
-       * @param enabled
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#enabledvalue-boolean
-       */
-    }, {
-      key: "enabled",
-      value: function enabled(_enabled) {
-        this.config.enabled = _enabled;
-        return this;
-      }
-
-      /**
-       * When true the handler will cancel or fail recognition (depending on its current state) whenever the finger leaves the area of the connected view.
-       * @param value
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#shouldcancelwhenoutsidevalue-boolean
-       */
-    }, {
-      key: "shouldCancelWhenOutside",
-      value: function shouldCancelWhenOutside(value) {
-        this.config.shouldCancelWhenOutside = value;
-        return this;
-      }
-
-      /**
-       * This parameter enables control over what part of the connected view area can be used to begin recognizing the gesture.
-       * When a negative number is provided the bounds of the view will reduce the area by the given number of points in each of the sides evenly.
-       * @param hitSlop
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#hitslopsettings
-       */
-    }, {
-      key: "hitSlop",
-      value: function hitSlop(_hitSlop) {
-        this.config.hitSlop = _hitSlop;
-        return this;
-      }
-
-      /**
-       * #### Web only
-       * This parameter allows to specify which `cursor` should be used when gesture activates.
-       * Supports all CSS cursor values (e.g. `"grab"`, `"zoom-in"`). Default value is set to `"auto"`.
-       * @param activeCursor
-       */
-    }, {
-      key: "activeCursor",
-      value: function activeCursor(_activeCursor) {
-        this.config.activeCursor = _activeCursor;
-        return this;
-      }
-
-      /**
-       * #### Web & Android only
-       * Allows users to choose which mouse button should handler respond to.
-       * Arguments can be combined using `|` operator, e.g. `mouseButton(MouseButton.LEFT | MouseButton.RIGHT)`.
-       * Default value is set to `MouseButton.LEFT`.
-       * @param mouseButton
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#mousebuttonvalue-mousebutton-web--android-only
-       */
-    }, {
-      key: "mouseButton",
-      value: function mouseButton(_mouseButton) {
-        this.config.mouseButton = _mouseButton;
-        return this;
-      }
-
-      /**
-       * When `react-native-reanimated` is installed, the callbacks passed to the gestures are automatically workletized and run on the UI thread when called.
-       * This option allows for changing this behavior: when `true`, all the callbacks will be run on the JS thread instead of the UI thread, regardless of whether they are worklets or not.
-       * Defaults to `false`.
-       * @param runOnJS
-       */
-    }, {
-      key: "runOnJS",
-      value: function runOnJS(_runOnJS) {
-        this.config.runOnJS = _runOnJS;
-        return this;
-      }
-
-      /**
-       * Allows gestures across different components to be recognized simultaneously.
-       * @param gestures
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/gesture-composition/#simultaneouswithexternalgesture
-       */
-    }, {
-      key: "simultaneousWithExternalGesture",
-      value: function simultaneousWithExternalGesture() {
-        for (var _len = arguments.length, gestures = new Array(_len), _key = 0; _key < _len; _key++) {
-          gestures[_key] = arguments[_key];
-        }
-        for (var gesture of gestures) {
-          this.addDependency('simultaneousWith', gesture);
-        }
-        return this;
-      }
-
-      /**
-       * Allows to delay activation of the handler until all handlers passed as arguments to this method fail (or don't begin at all).
-       * @param gestures
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/gesture-composition/#requireexternalgesturetofail
-       */
-    }, {
-      key: "requireExternalGestureToFail",
-      value: function requireExternalGestureToFail() {
-        for (var _len2 = arguments.length, gestures = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-          gestures[_key2] = arguments[_key2];
-        }
-        for (var gesture of gestures) {
-          this.addDependency('requireToFail', gesture);
-        }
-        return this;
-      }
-
-      /**
-       * Works similarily to `requireExternalGestureToFail` but the direction of the relation is reversed - instead of being one-to-many relation, it's many-to-one.
-       * @param gestures
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/gesture-composition/#blocksexternalgesture
-       */
-    }, {
-      key: "blocksExternalGesture",
-      value: function blocksExternalGesture() {
-        for (var _len3 = arguments.length, gestures = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-          gestures[_key3] = arguments[_key3];
-        }
-        for (var gesture of gestures) {
-          this.addDependency('blocksHandlers', gesture);
-        }
-        return this;
-      }
-
-      /**
-       * Sets a `testID` property for gesture object, allowing for querying for it in tests.
-       * @param id
-       */
-    }, {
-      key: "withTestId",
-      value: function withTestId(id) {
-        this.config.testId = id;
-        return this;
-      }
-
-      /**
-       * #### iOS only
-       * When `true`, the handler will cancel touches for native UI components (`UIButton`, `UISwitch`, etc) it's attached to when it becomes `ACTIVE`.
-       * Default value is `true`.
-       * @param value
-       */
-    }, {
-      key: "cancelsTouchesInView",
-      value: function cancelsTouchesInView(value) {
-        this.config.cancelsTouchesInView = value;
-        return this;
-      }
-    }, {
-      key: "initialize",
-      value: function initialize() {
-        this.handlerTag = (0, _$$_REQUIRE(_dependencyMap[6], "../getNextHandlerTag").getNextHandlerTag)();
-        this.handlers = Object.assign({}, this.handlers, {
-          handlerTag: this.handlerTag
-        });
-        if (this.config.ref) {
-          this.config.ref.current = this;
-        }
-      }
-    }, {
-      key: "toGestureArray",
-      value: function toGestureArray() {
-        return [this];
-      }
-
-      // eslint-disable-next-line @typescript-eslint/no-empty-function
-    }, {
-      key: "prepare",
-      value: function prepare() {}
-    }, {
-      key: "shouldUseReanimated",
-      get: function get() {
-        // Use Reanimated when runOnJS isn't set explicitly,
-        // all defined callbacks are worklets
-        // and remote debugging is disabled
-        return this.config.runOnJS !== true && !this.handlers.isWorklet.includes(false) && !(0, _$$_REQUIRE(_dependencyMap[7], "../../utils").isRemoteDebuggingEnabled)();
-      }
-    }]);
-  }(Gesture);
-  var ContinousBaseGesture = exports.ContinousBaseGesture = /*#__PURE__*/function (_BaseGesture2) {
-    function ContinousBaseGesture() {
-      (0, _classCallCheck2.default)(this, ContinousBaseGesture);
-      return _callSuper(this, ContinousBaseGesture, arguments);
-    }
-    (0, _inherits2.default)(ContinousBaseGesture, _BaseGesture2);
-    return (0, _createClass2.default)(ContinousBaseGesture, [{
-      key: "onUpdate",
-      value:
-      /**
-       * Set the callback that is being called every time the gesture receives an update while it's active.
-       * @param callback
-       */
-      function onUpdate(callback) {
-        this.handlers.onUpdate = callback;
-        this.handlers.isWorklet[CALLBACK_TYPE.UPDATE] = this.isWorklet(callback);
-        return this;
-      }
-
-      /**
-       * Set the callback that is being called every time the gesture receives an update while it's active.
-       * This callback will receive information about change in value in relation to the last received event.
-       * @param callback
-       */
-    }, {
-      key: "onChange",
-      value: function onChange(callback) {
-        this.handlers.onChange = callback;
-        this.handlers.isWorklet[CALLBACK_TYPE.CHANGE] = this.isWorklet(callback);
-        return this;
-      }
-
-      /**
-       * When `true` the handler will not activate by itself even if its activation criteria are met.
-       * Instead you can manipulate its state using state manager.
-       * @param manualActivation
-       */
-    }, {
-      key: "manualActivation",
-      value: function manualActivation(_manualActivation) {
-        this.config.manualActivation = _manualActivation;
-        return this;
-      }
-    }]);
-  }(BaseGesture);
-},847,[8,14,16,17,10,9,835,828],"node_modules/react-native-gesture-handler/src/handlers/gestures/gesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.PanGesture = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _get2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/get"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  function _superPropGet(t, o, e, r) { var p = (0, _get2.default)((0, _getPrototypeOf2.default)(1 & r ? t.prototype : t), o, e); return 2 & r && "function" == typeof p ? function (t) { return p.apply(e, t); } : p; }
-  var _worklet_3643287777059_init_data = {
-    code: "function changeEventCalculator_reactNativeGestureHandler_panGestureTs1(current,previous){let changePayload;if(previous===undefined){changePayload={changeX:current.translationX,changeY:current.translationY};}else{changePayload={changeX:current.translationX-previous.translationX,changeY:current.translationY-previous.translationY};}return{...current,...changePayload};}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/panGesture.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"changeEventCalculator_reactNativeGestureHandler_panGestureTs1\",\"current\",\"previous\",\"changePayload\",\"undefined\",\"changeX\",\"translationX\",\"changeY\",\"translationY\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/panGesture.ts\"],\"mappings\":\"AAUA,SAAAA,6DAGEA,CAAAC,OAAA,CAAAC,QAAA,EAEA,GAAI,CAAAC,aAA2C,CAC/C,GAAID,QAAQ,GAAKE,SAAS,CAAE,CAC1BD,aAAa,CAAG,CACdE,OAAO,CAAEJ,OAAO,CAACK,YAAY,CAC7BC,OAAO,CAAEN,OAAO,CAACO,YACnB,CAAC,CACH,CAAC,IAAM,CACLL,aAAa,CAAG,CACdE,OAAO,CAAEJ,OAAO,CAACK,YAAY,CAAGJ,QAAQ,CAACI,YAAY,CACrDC,OAAO,CAAEN,OAAO,CAACO,YAAY,CAAGN,QAAQ,CAACM,YAC3C,CAAC,CACH,CAEA,MAAO,CAAE,GAAGP,OAAO,CAAE,GAAGE,aAAc,CAAC,CACzC\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var changeEventCalculator = function () {
-    var _e = [new global.Error(), 1, -27];
-    var changeEventCalculator = function changeEventCalculator(current, previous) {
-      var changePayload;
-      if (previous === undefined) {
-        changePayload = {
-          changeX: current.translationX,
-          changeY: current.translationY
-        };
-      } else {
-        changePayload = {
-          changeX: current.translationX - previous.translationX,
-          changeY: current.translationY - previous.translationY
-        };
-      }
-      return Object.assign({}, current, changePayload);
-    };
-    changeEventCalculator.__closure = {};
-    changeEventCalculator.__workletHash = 3643287777059;
-    changeEventCalculator.__initData = _worklet_3643287777059_init_data;
-    changeEventCalculator.__stackDetails = _e;
-    return changeEventCalculator;
-  }();
-  var PanGesture = exports.PanGesture = /*#__PURE__*/function (_ContinousBaseGesture) {
-    function PanGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, PanGesture);
-      _this = _callSuper(this, PanGesture);
-      _this.config = {};
-      _this.handlerName = 'PanGestureHandler';
-      return _this;
-    }
-
-    /**
-     * Range along Y axis (in points) where fingers travels without activation of gesture.
-     * @param offset
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#activeoffsetyvalue-number--number
-     */
-    (0, _inherits2.default)(PanGesture, _ContinousBaseGesture);
-    return (0, _createClass2.default)(PanGesture, [{
-      key: "activeOffsetY",
-      value: function activeOffsetY(offset) {
-        if (Array.isArray(offset)) {
-          this.config.activeOffsetYStart = offset[0];
-          this.config.activeOffsetYEnd = offset[1];
-        } else if (offset < 0) {
-          this.config.activeOffsetYStart = offset;
-        } else {
-          this.config.activeOffsetYEnd = offset;
-        }
-        return this;
-      }
-
-      /**
-       * Range along X axis (in points) where fingers travels without activation of gesture.
-       * @param offset
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#activeoffsetxvalue-number--number
-       */
-    }, {
-      key: "activeOffsetX",
-      value: function activeOffsetX(offset) {
-        if (Array.isArray(offset)) {
-          this.config.activeOffsetXStart = offset[0];
-          this.config.activeOffsetXEnd = offset[1];
-        } else if (offset < 0) {
-          this.config.activeOffsetXStart = offset;
-        } else {
-          this.config.activeOffsetXEnd = offset;
-        }
-        return this;
-      }
-
-      /**
-       * When the finger moves outside this range (in points) along Y axis and gesture hasn't yet activated it will fail recognizing the gesture.
-       * @param offset
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#failoffsetyvalue-number--number
-       */
-    }, {
-      key: "failOffsetY",
-      value: function failOffsetY(offset) {
-        if (Array.isArray(offset)) {
-          this.config.failOffsetYStart = offset[0];
-          this.config.failOffsetYEnd = offset[1];
-        } else if (offset < 0) {
-          this.config.failOffsetYStart = offset;
-        } else {
-          this.config.failOffsetYEnd = offset;
-        }
-        return this;
-      }
-
-      /**
-       * When the finger moves outside this range (in points) along X axis and gesture hasn't yet activated it will fail recognizing the gesture.
-       * @param offset
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#failoffsetxvalue-number--number
-       */
-    }, {
-      key: "failOffsetX",
-      value: function failOffsetX(offset) {
-        if (Array.isArray(offset)) {
-          this.config.failOffsetXStart = offset[0];
-          this.config.failOffsetXEnd = offset[1];
-        } else if (offset < 0) {
-          this.config.failOffsetXStart = offset;
-        } else {
-          this.config.failOffsetXEnd = offset;
-        }
-        return this;
-      }
-
-      /**
-       * A number of fingers that is required to be placed before gesture can activate. Should be a higher or equal to 0 integer.
-       * @param minPointers
-       */
-    }, {
-      key: "minPointers",
-      value: function minPointers(_minPointers) {
-        this.config.minPointers = _minPointers;
-        return this;
-      }
-
-      /**
-       * When the given number of fingers is placed on the screen and gesture hasn't yet activated it will fail recognizing the gesture.
-       * Should be a higher or equal to 0 integer.
-       * @param maxPointers
-       */
-    }, {
-      key: "maxPointers",
-      value: function maxPointers(_maxPointers) {
-        this.config.maxPointers = _maxPointers;
-        return this;
-      }
-
-      /**
-       * Minimum distance the finger (or multiple finger) need to travel before the gesture activates.
-       * Expressed in points.
-       * @param distance
-       */
-    }, {
-      key: "minDistance",
-      value: function minDistance(distance) {
-        this.config.minDist = distance;
-        return this;
-      }
-
-      /**
-       * Minimum velocity the finger has to reach in order to activate handler.
-       * @param velocity
-       */
-    }, {
-      key: "minVelocity",
-      value: function minVelocity(velocity) {
-        this.config.minVelocity = velocity;
-        return this;
-      }
-
-      /**
-       * Minimum velocity along X axis the finger has to reach in order to activate handler.
-       * @param velocity
-       */
-    }, {
-      key: "minVelocityX",
-      value: function minVelocityX(velocity) {
-        this.config.minVelocityX = velocity;
-        return this;
-      }
-
-      /**
-       * Minimum velocity along Y axis the finger has to reach in order to activate handler.
-       * @param velocity
-       */
-    }, {
-      key: "minVelocityY",
-      value: function minVelocityY(velocity) {
-        this.config.minVelocityY = velocity;
-        return this;
-      }
-
-      /**
-       * #### Android only
-       * Android, by default, will calculate translation values based on the position of the leading pointer (the first one that was placed on the screen).
-       * This modifier allows that behavior to be changed to the one that is default on iOS - the averaged position of all active pointers will be used to calculate the translation values.
-       * @param value
-       */
-    }, {
-      key: "averageTouches",
-      value: function averageTouches(value) {
-        this.config.avgTouches = value;
-        return this;
-      }
-
-      /**
-       * #### iOS only
-       * Enables two-finger gestures on supported devices, for example iPads with trackpads.
-       * @param value
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture/#enabletrackpadtwofingergesturevalue-boolean-ios-only
-       */
-    }, {
-      key: "enableTrackpadTwoFingerGesture",
-      value: function enableTrackpadTwoFingerGesture(value) {
-        this.config.enableTrackpadTwoFingerGesture = value;
-        return this;
-      }
-
-      /**
-       * Duration in milliseconds of the LongPress gesture before Pan is allowed to activate.
-       * @param duration
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture/#activateafterlongpressduration-number
-       */
-    }, {
-      key: "activateAfterLongPress",
-      value: function activateAfterLongPress(duration) {
-        this.config.activateAfterLongPress = duration;
-        return this;
-      }
-    }, {
-      key: "onChange",
-      value: function onChange(callback) {
-        // @ts-ignore TS being overprotective, PanGestureHandlerEventPayload is Record
-        this.handlers.changeEventCalculator = changeEventCalculator;
-        return _superPropGet(PanGesture, "onChange", this, 3)([callback]);
-      }
-    }]);
-  }(_$$_REQUIRE(_dependencyMap[7], "./gesture").ContinousBaseGesture);
-},848,[8,9,10,14,16,51,17,847],"node_modules/react-native-gesture-handler/src/handlers/gestures/panGesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.PinchGesture = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _get2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/get"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  function _superPropGet(t, o, e, r) { var p = (0, _get2.default)((0, _getPrototypeOf2.default)(1 & r ? t.prototype : t), o, e); return 2 & r && "function" == typeof p ? function (t) { return p.apply(e, t); } : p; }
-  var _worklet_13149109047081_init_data = {
-    code: "function changeEventCalculator_reactNativeGestureHandler_pinchGestureTs1(current,previous){let changePayload;if(previous===undefined){changePayload={scaleChange:current.scale};}else{changePayload={scaleChange:current.scale/previous.scale};}return{...current,...changePayload};}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/pinchGesture.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"changeEventCalculator_reactNativeGestureHandler_pinchGestureTs1\",\"current\",\"previous\",\"changePayload\",\"undefined\",\"scaleChange\",\"scale\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/pinchGesture.ts\"],\"mappings\":\"AAQA,SAAAA,+DAGEA,CAAAC,OAAA,CAAAC,QAAA,EAEA,GAAI,CAAAC,aAA6C,CACjD,GAAID,QAAQ,GAAKE,SAAS,CAAE,CAC1BD,aAAa,CAAG,CACdE,WAAW,CAAEJ,OAAO,CAACK,KACvB,CAAC,CACH,CAAC,IAAM,CACLH,aAAa,CAAG,CACdE,WAAW,CAAEJ,OAAO,CAACK,KAAK,CAAGJ,QAAQ,CAACI,KACxC,CAAC,CACH,CAEA,MAAO,CAAE,GAAGL,OAAO,CAAE,GAAGE,aAAc,CAAC,CACzC\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var changeEventCalculator = function () {
-    var _e = [new global.Error(), 1, -27];
-    var changeEventCalculator = function changeEventCalculator(current, previous) {
-      var changePayload;
-      if (previous === undefined) {
-        changePayload = {
-          scaleChange: current.scale
-        };
-      } else {
-        changePayload = {
-          scaleChange: current.scale / previous.scale
-        };
-      }
-      return Object.assign({}, current, changePayload);
-    };
-    changeEventCalculator.__closure = {};
-    changeEventCalculator.__workletHash = 13149109047081;
-    changeEventCalculator.__initData = _worklet_13149109047081_init_data;
-    changeEventCalculator.__stackDetails = _e;
-    return changeEventCalculator;
-  }();
-  var PinchGesture = exports.PinchGesture = /*#__PURE__*/function (_ContinousBaseGesture) {
-    function PinchGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, PinchGesture);
-      _this = _callSuper(this, PinchGesture);
-      _this.handlerName = 'PinchGestureHandler';
-      return _this;
-    }
-    (0, _inherits2.default)(PinchGesture, _ContinousBaseGesture);
-    return (0, _createClass2.default)(PinchGesture, [{
-      key: "onChange",
-      value: function onChange(callback) {
-        // @ts-ignore TS being overprotective, PinchGestureHandlerEventPayload is Record
-        this.handlers.changeEventCalculator = changeEventCalculator;
-        return _superPropGet(PinchGesture, "onChange", this, 3)([callback]);
-      }
-    }]);
-  }(_$$_REQUIRE(_dependencyMap[7], "./gesture").ContinousBaseGesture);
-},849,[8,9,10,14,16,51,17,847],"node_modules/react-native-gesture-handler/src/handlers/gestures/pinchGesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.RotationGesture = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _get2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/get"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  function _superPropGet(t, o, e, r) { var p = (0, _get2.default)((0, _getPrototypeOf2.default)(1 & r ? t.prototype : t), o, e); return 2 & r && "function" == typeof p ? function (t) { return p.apply(e, t); } : p; }
-  var _worklet_364113346799_init_data = {
-    code: "function changeEventCalculator_reactNativeGestureHandler_rotationGestureTs1(current,previous){let changePayload;if(previous===undefined){changePayload={rotationChange:current.rotation};}else{changePayload={rotationChange:current.rotation-previous.rotation};}return{...current,...changePayload};}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/rotationGesture.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"changeEventCalculator_reactNativeGestureHandler_rotationGestureTs1\",\"current\",\"previous\",\"changePayload\",\"undefined\",\"rotationChange\",\"rotation\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/rotationGesture.ts\"],\"mappings\":\"AAQA,SAAAA,kEAGEA,CAAAC,OAAA,CAAAC,QAAA,EAEA,GAAI,CAAAC,aAAgD,CACpD,GAAID,QAAQ,GAAKE,SAAS,CAAE,CAC1BD,aAAa,CAAG,CACdE,cAAc,CAAEJ,OAAO,CAACK,QAC1B,CAAC,CACH,CAAC,IAAM,CACLH,aAAa,CAAG,CACdE,cAAc,CAAEJ,OAAO,CAACK,QAAQ,CAAGJ,QAAQ,CAACI,QAC9C,CAAC,CACH,CAEA,MAAO,CAAE,GAAGL,OAAO,CAAE,GAAGE,aAAc,CAAC,CACzC\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var changeEventCalculator = function () {
-    var _e = [new global.Error(), 1, -27];
-    var changeEventCalculator = function changeEventCalculator(current, previous) {
-      var changePayload;
-      if (previous === undefined) {
-        changePayload = {
-          rotationChange: current.rotation
-        };
-      } else {
-        changePayload = {
-          rotationChange: current.rotation - previous.rotation
-        };
-      }
-      return Object.assign({}, current, changePayload);
-    };
-    changeEventCalculator.__closure = {};
-    changeEventCalculator.__workletHash = 364113346799;
-    changeEventCalculator.__initData = _worklet_364113346799_init_data;
-    changeEventCalculator.__stackDetails = _e;
-    return changeEventCalculator;
-  }();
-  var RotationGesture = exports.RotationGesture = /*#__PURE__*/function (_ContinousBaseGesture) {
-    function RotationGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, RotationGesture);
-      _this = _callSuper(this, RotationGesture);
-      _this.handlerName = 'RotationGestureHandler';
-      return _this;
-    }
-    (0, _inherits2.default)(RotationGesture, _ContinousBaseGesture);
-    return (0, _createClass2.default)(RotationGesture, [{
-      key: "onChange",
-      value: function onChange(callback) {
-        // @ts-ignore TS being overprotective, RotationGestureHandlerEventPayload is Record
-        this.handlers.changeEventCalculator = changeEventCalculator;
-        return _superPropGet(RotationGesture, "onChange", this, 3)([callback]);
-      }
-    }]);
-  }(_$$_REQUIRE(_dependencyMap[7], "./gesture").ContinousBaseGesture);
-},850,[8,9,10,14,16,51,17,847],"node_modules/react-native-gesture-handler/src/handlers/gestures/rotationGesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.FlingGesture = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  var FlingGesture = exports.FlingGesture = /*#__PURE__*/function (_BaseGesture) {
-    function FlingGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, FlingGesture);
-      _this = _callSuper(this, FlingGesture);
-      _this.config = {};
-      _this.handlerName = 'FlingGestureHandler';
-      return _this;
-    }
-
-    /**
-     * Determine exact number of points required to handle the fling gesture.
-     * @param pointers
-     */
-    (0, _inherits2.default)(FlingGesture, _BaseGesture);
-    return (0, _createClass2.default)(FlingGesture, [{
-      key: "numberOfPointers",
-      value: function numberOfPointers(pointers) {
-        this.config.numberOfPointers = pointers;
-        return this;
-      }
-
-      /**
-       * Expressed allowed direction of movement.
-       * Expected values are exported as constants in the Directions object.
-       * Arguments can be combined using `|` operator. Default value is set to `MouseButton.LEFT`.
-       * @param direction
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/fling-gesture/#directionvalue-directions
-       */
-    }, {
-      key: "direction",
-      value: function direction(_direction) {
-        this.config.direction = _direction;
-        return this;
-      }
-    }]);
-  }(_$$_REQUIRE(_dependencyMap[6], "./gesture").BaseGesture);
-},851,[8,9,10,14,16,17,847],"node_modules/react-native-gesture-handler/src/handlers/gestures/flingGesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.LongPressGesture = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  var LongPressGesture = exports.LongPressGesture = /*#__PURE__*/function (_BaseGesture) {
-    function LongPressGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, LongPressGesture);
-      _this = _callSuper(this, LongPressGesture);
-      _this.config = {};
-      _this.handlerName = 'LongPressGestureHandler';
-      _this.shouldCancelWhenOutside(true);
-      return _this;
-    }
-
-    /**
-     * Minimum time, expressed in milliseconds, that a finger must remain pressed on the corresponding view.
-     * The default value is 500.
-     * @param duration
-     */
-    (0, _inherits2.default)(LongPressGesture, _BaseGesture);
-    return (0, _createClass2.default)(LongPressGesture, [{
-      key: "minDuration",
-      value: function minDuration(duration) {
-        this.config.minDurationMs = duration;
-        return this;
-      }
-
-      /**
-       * Maximum distance, expressed in points, that defines how far the finger is allowed to travel during a long press gesture.
-       * @param distance
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/long-press-gesture#maxdistancevalue-number
-       */
-    }, {
-      key: "maxDistance",
-      value: function maxDistance(distance) {
-        this.config.maxDist = distance;
-        return this;
-      }
-
-      /**
-       * Determine exact number of points required to handle the long press gesture.
-       * @param pointers
-       */
-    }, {
-      key: "numberOfPointers",
-      value: function numberOfPointers(pointers) {
-        this.config.numberOfPointers = pointers;
-        return this;
-      }
-    }]);
-  }(_$$_REQUIRE(_dependencyMap[6], "./gesture").BaseGesture);
-},852,[8,9,10,14,16,17,847],"node_modules/react-native-gesture-handler/src/handlers/gestures/longPressGesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ForceTouchGesture = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _get2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/get"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  function _superPropGet(t, o, e, r) { var p = (0, _get2.default)((0, _getPrototypeOf2.default)(1 & r ? t.prototype : t), o, e); return 2 & r && "function" == typeof p ? function (t) { return p.apply(e, t); } : p; }
-  var _worklet_15288835999946_init_data = {
-    code: "function changeEventCalculator_reactNativeGestureHandler_forceTouchGestureTs1(current,previous){let changePayload;if(previous===undefined){changePayload={forceChange:current.force};}else{changePayload={forceChange:current.force-previous.force};}return{...current,...changePayload};}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/forceTouchGesture.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"changeEventCalculator_reactNativeGestureHandler_forceTouchGestureTs1\",\"current\",\"previous\",\"changePayload\",\"undefined\",\"forceChange\",\"force\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/forceTouchGesture.ts\"],\"mappings\":\"AASA,SAAAA,oEAGEA,CAAAC,OAAA,CAAAC,QAAA,EAEA,GAAI,CAAAC,aAAkD,CACtD,GAAID,QAAQ,GAAKE,SAAS,CAAE,CAC1BD,aAAa,CAAG,CACdE,WAAW,CAAEJ,OAAO,CAACK,KACvB,CAAC,CACH,CAAC,IAAM,CACLH,aAAa,CAAG,CACdE,WAAW,CAAEJ,OAAO,CAACK,KAAK,CAAGJ,QAAQ,CAACI,KACxC,CAAC,CACH,CAEA,MAAO,CAAE,GAAGL,OAAO,CAAE,GAAGE,aAAc,CAAC,CACzC\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var changeEventCalculator = function () {
-    var _e = [new global.Error(), 1, -27];
-    var changeEventCalculator = function changeEventCalculator(current, previous) {
-      var changePayload;
-      if (previous === undefined) {
-        changePayload = {
-          forceChange: current.force
-        };
-      } else {
-        changePayload = {
-          forceChange: current.force - previous.force
-        };
-      }
-      return Object.assign({}, current, changePayload);
-    };
-    changeEventCalculator.__closure = {};
-    changeEventCalculator.__workletHash = 15288835999946;
-    changeEventCalculator.__initData = _worklet_15288835999946_init_data;
-    changeEventCalculator.__stackDetails = _e;
-    return changeEventCalculator;
-  }();
-  var ForceTouchGesture = exports.ForceTouchGesture = /*#__PURE__*/function (_ContinousBaseGesture) {
-    function ForceTouchGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, ForceTouchGesture);
-      _this = _callSuper(this, ForceTouchGesture);
-      _this.config = {};
-      _this.handlerName = 'ForceTouchGestureHandler';
-      return _this;
-    }
-
-    /**
-     * A minimal pressure that is required before gesture can activate.
-     * Should be a value from range [0.0, 1.0]. Default is 0.2.
-     * @param force
-     */
-    (0, _inherits2.default)(ForceTouchGesture, _ContinousBaseGesture);
-    return (0, _createClass2.default)(ForceTouchGesture, [{
-      key: "minForce",
-      value: function minForce(force) {
-        this.config.minForce = force;
-        return this;
-      }
-
-      /**
-       * A maximal pressure that could be applied for gesture.
-       * If the pressure is greater, gesture fails. Should be a value from range [0.0, 1.0].
-       * @param force
-       */
-    }, {
-      key: "maxForce",
-      value: function maxForce(force) {
-        this.config.maxForce = force;
-        return this;
-      }
-
-      /**
-       * Value defining if haptic feedback has to be performed on activation.
-       * @param value
-       */
-    }, {
-      key: "feedbackOnActivation",
-      value: function feedbackOnActivation(value) {
-        this.config.feedbackOnActivation = value;
-        return this;
-      }
-    }, {
-      key: "onChange",
-      value: function onChange(callback) {
-        // @ts-ignore TS being overprotective, ForceTouchGestureHandlerEventPayload is Record
-        this.handlers.changeEventCalculator = changeEventCalculator;
-        return _superPropGet(ForceTouchGesture, "onChange", this, 3)([callback]);
-      }
-    }]);
-  }(_$$_REQUIRE(_dependencyMap[7], "./gesture").ContinousBaseGesture);
-},853,[8,9,10,14,16,51,17,847],"node_modules/react-native-gesture-handler/src/handlers/gestures/forceTouchGesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.NativeGesture = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  var NativeGesture = exports.NativeGesture = /*#__PURE__*/function (_BaseGesture) {
-    function NativeGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, NativeGesture);
-      _this = _callSuper(this, NativeGesture);
-      _this.config = {};
-      _this.handlerName = 'NativeViewGestureHandler';
-      return _this;
-    }
-
-    /**
-     * When true, underlying handler will activate unconditionally when in `BEGAN` or `UNDETERMINED` state.
-     * @param value
-     */
-    (0, _inherits2.default)(NativeGesture, _BaseGesture);
-    return (0, _createClass2.default)(NativeGesture, [{
-      key: "shouldActivateOnStart",
-      value: function shouldActivateOnStart(value) {
-        this.config.shouldActivateOnStart = value;
-        return this;
-      }
-
-      /**
-       * When true, cancels all other gesture handlers when this `NativeViewGestureHandler` receives an `ACTIVE` state event.
-       * @param value
-       */
-    }, {
-      key: "disallowInterruption",
-      value: function disallowInterruption(value) {
-        this.config.disallowInterruption = value;
-        return this;
-      }
-    }]);
-  }(_$$_REQUIRE(_dependencyMap[6], "./gesture").BaseGesture);
-},854,[8,9,10,14,16,17,847],"node_modules/react-native-gesture-handler/src/handlers/gestures/nativeGesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ManualGesture = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _get2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/get"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  function _superPropGet(t, o, e, r) { var p = (0, _get2.default)((0, _getPrototypeOf2.default)(1 & r ? t.prototype : t), o, e); return 2 & r && "function" == typeof p ? function (t) { return p.apply(e, t); } : p; }
-  var _worklet_10437565787091_init_data = {
-    code: "function changeEventCalculator_reactNativeGestureHandler_manualGestureTs1(current,_previous){return current;}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/manualGesture.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"changeEventCalculator_reactNativeGestureHandler_manualGestureTs1\",\"current\",\"_previous\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/manualGesture.ts\"],\"mappings\":\"AAGA,SAAAA,gEAGEA,CAAAC,OAAA,CAAAC,SAAA,EAEA,MAAO,CAAAD,OAAO,CAChB\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var changeEventCalculator = function () {
-    var _e = [new global.Error(), 1, -27];
-    var changeEventCalculator = function changeEventCalculator(current, _previous) {
-      return current;
-    };
-    changeEventCalculator.__closure = {};
-    changeEventCalculator.__workletHash = 10437565787091;
-    changeEventCalculator.__initData = _worklet_10437565787091_init_data;
-    changeEventCalculator.__stackDetails = _e;
-    return changeEventCalculator;
-  }();
-  var ManualGesture = exports.ManualGesture = /*#__PURE__*/function (_ContinousBaseGesture) {
-    function ManualGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, ManualGesture);
-      _this = _callSuper(this, ManualGesture);
-      _this.handlerName = 'ManualGestureHandler';
-      return _this;
-    }
-    (0, _inherits2.default)(ManualGesture, _ContinousBaseGesture);
-    return (0, _createClass2.default)(ManualGesture, [{
-      key: "onChange",
-      value: function onChange(callback) {
-        // @ts-ignore TS being overprotective, Record<string, never> is Record
-        this.handlers.changeEventCalculator = changeEventCalculator;
-        return _superPropGet(ManualGesture, "onChange", this, 3)([callback]);
-      }
-    }]);
-  }(_$$_REQUIRE(_dependencyMap[7], "./gesture").ContinousBaseGesture);
-},855,[8,9,10,14,16,51,17,847],"node_modules/react-native-gesture-handler/src/handlers/gestures/manualGesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.hoverGestureHandlerProps = exports.HoverGesture = exports.HoverEffect = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _get2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/get"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  function _superPropGet(t, o, e, r) { var p = (0, _get2.default)((0, _getPrototypeOf2.default)(1 & r ? t.prototype : t), o, e); return 2 & r && "function" == typeof p ? function (t) { return p.apply(e, t); } : p; }
-  var HoverEffect = exports.HoverEffect = /*#__PURE__*/function (HoverEffect) {
-    HoverEffect[HoverEffect["NONE"] = 0] = "NONE";
-    HoverEffect[HoverEffect["LIFT"] = 1] = "LIFT";
-    HoverEffect[HoverEffect["HIGHLIGHT"] = 2] = "HIGHLIGHT";
-    return HoverEffect;
-  }({});
-  var hoverGestureHandlerProps = exports.hoverGestureHandlerProps = ['hoverEffect'];
-  var _worklet_512113696378_init_data = {
-    code: "function changeEventCalculator_reactNativeGestureHandler_hoverGestureTs1(current,previous){let changePayload;if(previous===undefined){changePayload={changeX:current.x,changeY:current.y};}else{changePayload={changeX:current.x-previous.x,changeY:current.y-previous.y};}return{...current,...changePayload};}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/hoverGesture.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"changeEventCalculator_reactNativeGestureHandler_hoverGestureTs1\",\"current\",\"previous\",\"changePayload\",\"undefined\",\"changeX\",\"x\",\"changeY\",\"y\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/hoverGesture.ts\"],\"mappings\":\"AAqBA,SAAAA,+DAGEA,CAAAC,OAAA,CAAAC,QAAA,EAEA,GAAI,CAAAC,aAA6C,CACjD,GAAID,QAAQ,GAAKE,SAAS,CAAE,CAC1BD,aAAa,CAAG,CACdE,OAAO,CAAEJ,OAAO,CAACK,CAAC,CAClBC,OAAO,CAAEN,OAAO,CAACO,CACnB,CAAC,CACH,CAAC,IAAM,CACLL,aAAa,CAAG,CACdE,OAAO,CAAEJ,OAAO,CAACK,CAAC,CAAGJ,QAAQ,CAACI,CAAC,CAC/BC,OAAO,CAAEN,OAAO,CAACO,CAAC,CAAGN,QAAQ,CAACM,CAChC,CAAC,CACH,CAEA,MAAO,CAAE,GAAGP,OAAO,CAAE,GAAGE,aAAc,CAAC,CACzC\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var changeEventCalculator = function () {
-    var _e = [new global.Error(), 1, -27];
-    var changeEventCalculator = function changeEventCalculator(current, previous) {
-      var changePayload;
-      if (previous === undefined) {
-        changePayload = {
-          changeX: current.x,
-          changeY: current.y
-        };
-      } else {
-        changePayload = {
-          changeX: current.x - previous.x,
-          changeY: current.y - previous.y
-        };
-      }
-      return Object.assign({}, current, changePayload);
-    };
-    changeEventCalculator.__closure = {};
-    changeEventCalculator.__workletHash = 512113696378;
-    changeEventCalculator.__initData = _worklet_512113696378_init_data;
-    changeEventCalculator.__stackDetails = _e;
-    return changeEventCalculator;
-  }();
-  var HoverGesture = exports.HoverGesture = /*#__PURE__*/function (_ContinousBaseGesture) {
-    function HoverGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, HoverGesture);
-      _this = _callSuper(this, HoverGesture);
-      _this.config = {};
-      _this.handlerName = 'HoverGestureHandler';
-      return _this;
-    }
-
-    /**
-     * #### iOS only
-     * Sets the visual hover effect.
-     */
-    (0, _inherits2.default)(HoverGesture, _ContinousBaseGesture);
-    return (0, _createClass2.default)(HoverGesture, [{
-      key: "effect",
-      value: function effect(_effect) {
-        this.config.hoverEffect = _effect;
-        return this;
-      }
-    }, {
-      key: "onChange",
-      value: function onChange(callback) {
-        // @ts-ignore TS being overprotective, HoverGestureHandlerEventPayload is Record
-        this.handlers.changeEventCalculator = changeEventCalculator;
-        return _superPropGet(HoverGesture, "onChange", this, 3)([callback]);
-      }
-    }]);
-  }(_$$_REQUIRE(_dependencyMap[7], "./gesture").ContinousBaseGesture);
-},856,[8,9,10,14,16,51,17,847],"node_modules/react-native-gesture-handler/src/handlers/gestures/hoverGesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.SimultaneousGesture = exports.ExclusiveGesture = exports.ComposedGesture = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/toConsumableArray"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  function extendRelation(currentRelation, extendWith) {
-    if (currentRelation === undefined) {
-      return (0, _toConsumableArray2.default)(extendWith);
-    } else {
-      return [].concat((0, _toConsumableArray2.default)(currentRelation), (0, _toConsumableArray2.default)(extendWith));
-    }
-  }
-  var ComposedGesture = exports.ComposedGesture = /*#__PURE__*/function (_Gesture) {
-    function ComposedGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, ComposedGesture);
-      _this = _callSuper(this, ComposedGesture);
-      _this.gestures = [];
-      _this.simultaneousGestures = [];
-      _this.requireGesturesToFail = [];
-      for (var _len = arguments.length, gestures = new Array(_len), _key = 0; _key < _len; _key++) {
-        gestures[_key] = arguments[_key];
-      }
-      _this.gestures = gestures;
-      return _this;
-    }
-    (0, _inherits2.default)(ComposedGesture, _Gesture);
-    return (0, _createClass2.default)(ComposedGesture, [{
-      key: "prepareSingleGesture",
-      value: function prepareSingleGesture(gesture, simultaneousGestures, requireGesturesToFail) {
-        if (gesture instanceof _$$_REQUIRE(_dependencyMap[7], "./gesture").BaseGesture) {
-          var newConfig = Object.assign({}, gesture.config);
-
-          // No need to extend `blocksHandlers` here, because it's not changed in composition.
-          // The same effect is achieved by reversing the order of 2 gestures in `Exclusive`
-          newConfig.simultaneousWith = extendRelation(newConfig.simultaneousWith, simultaneousGestures);
-          newConfig.requireToFail = extendRelation(newConfig.requireToFail, requireGesturesToFail);
-          gesture.config = newConfig;
-        } else if (gesture instanceof ComposedGesture) {
-          gesture.simultaneousGestures = simultaneousGestures;
-          gesture.requireGesturesToFail = requireGesturesToFail;
-          gesture.prepare();
-        }
-      }
-    }, {
-      key: "prepare",
-      value: function prepare() {
-        for (var gesture of this.gestures) {
-          this.prepareSingleGesture(gesture, this.simultaneousGestures, this.requireGesturesToFail);
-        }
-      }
-    }, {
-      key: "initialize",
-      value: function initialize() {
-        for (var gesture of this.gestures) {
-          gesture.initialize();
-        }
-      }
-    }, {
-      key: "toGestureArray",
-      value: function toGestureArray() {
-        return this.gestures.flatMap(function (gesture) {
-          return gesture.toGestureArray();
-        });
-      }
-    }]);
-  }(_$$_REQUIRE(_dependencyMap[7], "./gesture").Gesture);
-  var SimultaneousGesture = exports.SimultaneousGesture = /*#__PURE__*/function (_ComposedGesture2) {
-    function SimultaneousGesture() {
-      (0, _classCallCheck2.default)(this, SimultaneousGesture);
-      return _callSuper(this, SimultaneousGesture, arguments);
-    }
-    (0, _inherits2.default)(SimultaneousGesture, _ComposedGesture2);
-    return (0, _createClass2.default)(SimultaneousGesture, [{
-      key: "prepare",
-      value: function prepare() {
-        var _this2 = this;
-        // This piece of magic works something like this:
-        // for every gesture in the array
-        var simultaneousArrays = this.gestures.map(function (gesture) {
-          return (
-            // we take the array it's in
-            _this2.gestures
-            // and make a copy without it
-            .filter(function (x) {
-              return x !== gesture;
-            })
-            // then we flatmap the result to get list of raw (not composed) gestures
-            // this way we don't make the gestures simultaneous with themselves, which is
-            // important when the gesture is `ExclusiveGesture` - we don't want to make
-            // exclusive gestures simultaneous
-            .flatMap(function (x) {
-              return x.toGestureArray();
-            })
-          );
-        });
-        for (var i = 0; i < this.gestures.length; i++) {
-          this.prepareSingleGesture(this.gestures[i], simultaneousArrays[i], this.requireGesturesToFail);
-        }
-      }
-    }]);
-  }(ComposedGesture);
-  var ExclusiveGesture = exports.ExclusiveGesture = /*#__PURE__*/function (_ComposedGesture3) {
-    function ExclusiveGesture() {
-      (0, _classCallCheck2.default)(this, ExclusiveGesture);
-      return _callSuper(this, ExclusiveGesture, arguments);
-    }
-    (0, _inherits2.default)(ExclusiveGesture, _ComposedGesture3);
-    return (0, _createClass2.default)(ExclusiveGesture, [{
-      key: "prepare",
-      value: function prepare() {
-        // Transforms the array of gestures into array of grouped raw (not composed) gestures
-        // i.e. [gesture1, gesture2, ComposedGesture(gesture3, gesture4)] -> [[gesture1], [gesture2], [gesture3, gesture4]]
-        var gestureArrays = this.gestures.map(function (gesture) {
-          return gesture.toGestureArray();
-        });
-        var requireToFail = [];
-        for (var i = 0; i < this.gestures.length; i++) {
-          this.prepareSingleGesture(this.gestures[i], this.simultaneousGestures, this.requireGesturesToFail.concat(requireToFail));
-
-          // Every group gets to wait for all groups before it
-          requireToFail = requireToFail.concat(gestureArrays[i]);
-        }
-      }
-    }]);
-  }(ComposedGesture);
-},857,[8,9,10,14,16,17,46,847],"node_modules/react-native-gesture-handler/src/handlers/gestures/gestureComposition.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.GestureDetector = void 0;
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[0], "react"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[1], "react-native");
-  var _findNodeHandle = _$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "../../../findNodeHandle"));
-  var _GestureHandlerRootViewContext = _$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "../../../GestureHandlerRootViewContext"));
-  var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/index.tsx";
-  /* eslint-disable react/no-unused-prop-types */
-  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  function propagateDetectorConfig(props, gesture) {
-    var keysToPropagate = ['userSelect', 'enableContextMenu', 'touchAction'];
-    for (var key of keysToPropagate) {
-      var value = props[key];
-      if (value === undefined) {
-        continue;
-      }
-      for (var g of gesture.toGestureArray()) {
-        var config = g.config;
-        config[key] = value;
-      }
-    }
-  }
-  /**
-   * `GestureDetector` is responsible for creating and updating native gesture handlers based on the config of provided gesture.
-   *
-   * ### Props
-   * - `gesture`
-   * - `userSelect` (**Web only**)
-   * - `enableContextMenu` (**Web only**)
-   * - `touchAction` (**Web only**)
-   *
-   * ### Remarks
-   * - Gesture Detector will use first native view in its subtree to recognize gestures, however if this view is used only to group its children it may get automatically collapsed.
-   * - Using the same instance of a gesture across multiple Gesture Detectors is not possible.
-   *
-   * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/gesture-detector
-   */
-  var GestureDetector = exports.GestureDetector = function GestureDetector(props) {
-    var rootViewContext = (0, _react.useContext)(_GestureHandlerRootViewContext.default);
-    if (__DEV__ && !rootViewContext && !(0, _$$_REQUIRE(_dependencyMap[5], "../../../utils").isTestEnv)() && _reactNative.Platform.OS !== 'web') {
-      throw new Error('GestureDetector must be used as a descendant of GestureHandlerRootView. Otherwise the gestures will not be recognized. See https://docs.swmansion.com/react-native-gesture-handler/docs/installation for more details.');
-    }
-
-    // Gesture config should be wrapped with useMemo to prevent unnecessary re-renders
-    var gestureConfig = props.gesture;
-    propagateDetectorConfig(props, gestureConfig);
-    var gesturesToAttach = (0, _react.useMemo)(function () {
-      return gestureConfig.toGestureArray();
-    }, [gestureConfig]);
-    var shouldUseReanimated = gesturesToAttach.some(function (g) {
-      return g.shouldUseReanimated;
-    });
-    var webEventHandlersRef = (0, _$$_REQUIRE(_dependencyMap[6], "./utils").useWebEventHandlers)();
-    // Store state in ref to prevent unnecessary renders
-    var state = (0, _react.useRef)({
-      firstRender: true,
-      viewRef: null,
-      previousViewTag: -1,
-      forceRebuildReanimatedEvent: false
-    }).current;
-    var preparedGesture = _react.default.useRef({
-      attachedGestures: [],
-      animatedEventHandler: null,
-      animatedHandlers: null,
-      shouldUseReanimated: shouldUseReanimated,
-      isMounted: false
-    }).current;
-    var updateAttachedGestures = (0, _$$_REQUIRE(_dependencyMap[7], "./useDetectorUpdater").useDetectorUpdater)(state, preparedGesture, gesturesToAttach, gestureConfig, webEventHandlersRef);
-    var refHandler = (0, _$$_REQUIRE(_dependencyMap[8], "./useViewRefHandler").useViewRefHandler)(state, updateAttachedGestures);
-
-    // Reanimated event should be rebuilt only when gestures are reattached, otherwise
-    // config update will be enough as all necessary items are stored in shared values anyway
-    var needsToRebuildReanimatedEvent = state.firstRender || state.forceRebuildReanimatedEvent || (0, _$$_REQUIRE(_dependencyMap[9], "./needsToReattach").needsToReattach)(preparedGesture, gesturesToAttach);
-    state.forceRebuildReanimatedEvent = false;
-    (0, _$$_REQUIRE(_dependencyMap[10], "./useAnimatedGesture").useAnimatedGesture)(preparedGesture, needsToRebuildReanimatedEvent);
-    (0, _react.useLayoutEffect)(function () {
-      var viewTag = (0, _findNodeHandle.default)(state.viewRef);
-      preparedGesture.isMounted = true;
-      (0, _$$_REQUIRE(_dependencyMap[11], "./attachHandlers").attachHandlers)({
-        preparedGesture: preparedGesture,
-        gestureConfig: gestureConfig,
-        gesturesToAttach: gesturesToAttach,
-        webEventHandlersRef: webEventHandlersRef,
-        viewTag: viewTag
-      });
-      return function () {
-        preparedGesture.isMounted = false;
-        (0, _$$_REQUIRE(_dependencyMap[12], "./dropHandlers").dropHandlers)(preparedGesture);
-      };
-    }, []);
-    (0, _react.useEffect)(function () {
-      if (state.firstRender) {
-        state.firstRender = false;
-      } else {
-        updateAttachedGestures();
-      }
-    }, [props]);
-    (0, _$$_REQUIRE(_dependencyMap[13], "./useMountReactions").useMountReactions)(updateAttachedGestures, preparedGesture);
-    if (shouldUseReanimated) {
-      return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[14], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[15], "./Wrap").AnimatedWrap, {
-        ref: refHandler,
-        onGestureHandlerEvent: preparedGesture.animatedEventHandler,
-        children: props.children
-      });
-    } else {
-      return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[14], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[15], "./Wrap").Wrap, {
-        ref: refHandler,
-        children: props.children
-      });
-    }
-  };
-},858,[86,1,8,825,826,828,859,869,874,870,876,872,871,877,92,878],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/index.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ALLOWED_PROPS = void 0;
-  exports.checkGestureCallbacksForWorklets = checkGestureCallbacksForWorklets;
-  exports.extractGestureRelations = extractGestureRelations;
-  exports.useForceRender = useForceRender;
-  exports.useWebEventHandlers = useWebEventHandlers;
-  exports.validateDetectorChildren = validateDetectorChildren;
-  var _slicedToArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/slicedToArray"));
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/toConsumableArray"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[3], "react-native");
-  var _react = _$$_REQUIRE(_dependencyMap[4], "react");
-  var ALLOWED_PROPS = exports.ALLOWED_PROPS = [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[5], "../../gestureHandlerCommon").baseGestureHandlerWithDetectorProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[6], "../../TapGestureHandler").tapGestureHandlerProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[7], "../../PanGestureHandler").panGestureHandlerProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[7], "../../PanGestureHandler").panGestureHandlerCustomNativeProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[8], "../../LongPressGestureHandler").longPressGestureHandlerProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[9], "../../ForceTouchGestureHandler").forceTouchGestureHandlerProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[10], "../../FlingGestureHandler").flingGestureHandlerProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[11], "../hoverGesture").hoverGestureHandlerProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[12], "../../NativeViewGestureHandler").nativeViewGestureHandlerProps));
-  function convertToHandlerTag(ref) {
-    if (typeof ref === 'number') {
-      return ref;
-    } else if (ref instanceof _$$_REQUIRE(_dependencyMap[13], "../gesture").BaseGesture) {
-      return ref.handlerTag;
-    } else {
-      var _ref$current$handlerT, _ref$current;
-      // @ts-ignore in this case it should be a ref either to gesture object or
-      // a gesture handler component, in both cases handlerTag property exists
-      return (_ref$current$handlerT = (_ref$current = ref.current) == null ? void 0 : _ref$current.handlerTag) != null ? _ref$current$handlerT : -1;
-    }
-  }
-  function extractValidHandlerTags(interactionGroup) {
-    var _interactionGroup$map, _interactionGroup$map2;
-    return (_interactionGroup$map = interactionGroup == null || (_interactionGroup$map2 = interactionGroup.map(convertToHandlerTag)) == null ? void 0 : _interactionGroup$map2.filter(function (tag) {
-      return tag > 0;
-    })) != null ? _interactionGroup$map : [];
-  }
-  function extractGestureRelations(gesture) {
-    var requireToFail = extractValidHandlerTags(gesture.config.requireToFail);
-    var simultaneousWith = extractValidHandlerTags(gesture.config.simultaneousWith);
-    var blocksHandlers = extractValidHandlerTags(gesture.config.blocksHandlers);
-    return {
-      waitFor: requireToFail,
-      simultaneousHandlers: simultaneousWith,
-      blocksHandlers: blocksHandlers
-    };
-  }
-  function checkGestureCallbacksForWorklets(gesture) {
-    if (!__DEV__) {
-      return;
-    }
-    // If a gesture is explicitly marked to run on the JS thread there is no need to check
-    // if callbacks are worklets as the user is aware they will be ran on the JS thread
-    if (gesture.config.runOnJS) {
-      return;
-    }
-    var areSomeNotWorklets = gesture.handlers.isWorklet.includes(false);
-    var areSomeWorklets = gesture.handlers.isWorklet.includes(true);
-
-    // If some of the callbacks are worklets and some are not, and the gesture is not
-    // explicitly marked with `.runOnJS(true)` show an error
-    if (areSomeNotWorklets && areSomeWorklets) {
-      console.error((0, _$$_REQUIRE(_dependencyMap[14], "../../../utils").tagMessage)(`Some of the callbacks in the gesture are worklets and some are not. Either make sure that all calbacks are marked as 'worklet' if you wish to run them on the UI thread or use '.runOnJS(true)' modifier on the gesture explicitly to run all callbacks on the JS thread.`));
-    }
-    if (_$$_REQUIRE(_dependencyMap[15], "../reanimatedWrapper").Reanimated === undefined) {
-      // If Reanimated is not available, we can't run worklets, so we shouldn't show the warning
-      return;
-    }
-    var areAllNotWorklets = !areSomeWorklets && areSomeNotWorklets;
-    // If none of the callbacks are worklets and the gesture is not explicitly marked with
-    // `.runOnJS(true)` show a warning
-    if (areAllNotWorklets && !(0, _$$_REQUIRE(_dependencyMap[14], "../../../utils").isTestEnv)()) {
-      console.warn((0, _$$_REQUIRE(_dependencyMap[14], "../../../utils").tagMessage)(`None of the callbacks in the gesture are worklets. If you wish to run them on the JS thread use '.runOnJS(true)' modifier on the gesture to make this explicit. Otherwise, mark the callbacks as 'worklet' to run them on the UI thread.`));
-    }
-  }
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  function validateDetectorChildren(ref) {
-    // Finds the first native view under the Wrap component and traverses the fiber tree upwards
-    // to check whether there is more than one native view as a pseudo-direct child of GestureDetector
-    // i.e. this is not ok:
-    //            Wrap
-    //             |
-    //            / \
-    //           /   \
-    //          /     \
-    //         /       \
-    //   NativeView  NativeView
-    //
-    // but this is fine:
-    //            Wrap
-    //             |
-    //         NativeView
-    //             |
-    //            / \
-    //           /   \
-    //          /     \
-    //         /       \
-    //   NativeView  NativeView
-    if (__DEV__ && _reactNative.Platform.OS !== 'web') {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      var wrapType =
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      ref._reactInternals.elementType;
-
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      var instance = _$$_REQUIRE(_dependencyMap[16], "../../../RNRenderer").RNRenderer.findHostInstance_DEPRECATED(ref)._internalFiberInstanceHandleDEV;
-
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      while (instance && instance.elementType !== wrapType) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        if (instance.sibling) {
-          throw new Error('GestureDetector has more than one native view as its children. This can happen if you are using a custom component that renders multiple views, like React.Fragment. You should wrap content of GestureDetector with a <View> or <Animated.View>.');
-        }
-
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
-        instance = instance.return;
-      }
-    }
-  }
-  function useForceRender() {
-    var _useState = (0, _react.useState)(false),
-      _useState2 = (0, _slicedToArray2.default)(_useState, 2),
-      renderState = _useState2[0],
-      setRenderState = _useState2[1];
-    var forceRender = (0, _react.useCallback)(function () {
-      setRenderState(!renderState);
-    }, [renderState, setRenderState]);
-    return forceRender;
-  }
-  function useWebEventHandlers() {
-    return (0, _react.useRef)({
-      onGestureHandlerEvent: function onGestureHandlerEvent(e) {
-        (0, _$$_REQUIRE(_dependencyMap[17], "../eventReceiver").onGestureHandlerEvent)(e.nativeEvent);
-      },
-      onGestureHandlerStateChange: (0, _$$_REQUIRE(_dependencyMap[18], "../../../EnableNewWebImplementation").isNewWebImplementationEnabled)() ? function (e) {
-        (0, _$$_REQUIRE(_dependencyMap[17], "../eventReceiver").onGestureHandlerEvent)(e.nativeEvent);
-      } : undefined
-    });
-  }
-},859,[8,27,46,1,86,837,860,861,862,843,842,856,821,847,828,863,864,865,868],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/utils.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.tapHandlerName = exports.tapGestureHandlerProps = exports.TapGestureHandler = void 0;
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
-  var _createHandler = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./createHandler"));
-  var tapGestureHandlerProps = exports.tapGestureHandlerProps = ['maxDurationMs', 'maxDelayMs', 'numberOfTaps', 'maxDeltaX', 'maxDeltaY', 'maxDist', 'minPointers'];
-
-  /**
-   * @deprecated TapGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Tap()` instead.
-   */
-
-  var tapHandlerName = exports.tapHandlerName = 'TapGestureHandler';
-
-  /**
-   * @deprecated TapGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Tap()` instead.
-   */
-
-  /**
-   * @deprecated TapGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Tap()` instead.
-   */
-  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; see description on the top of gestureHandlerCommon.ts file
-  var TapGestureHandler = exports.TapGestureHandler = (0, _createHandler.default)({
-    name: tapHandlerName,
-    allowedProps: [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[3], "./gestureHandlerCommon").baseGestureHandlerProps), tapGestureHandlerProps),
-    config: {
-      shouldCancelWhenOutside: true
-    }
-  });
-},860,[8,46,822,837],"node_modules/react-native-gesture-handler/src/handlers/TapGestureHandler.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.PanGestureHandler = void 0;
-  exports.managePanProps = managePanProps;
-  exports.panHandlerName = exports.panGestureHandlerProps = exports.panGestureHandlerCustomNativeProps = void 0;
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
-  var _createHandler = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./createHandler"));
-  var panGestureHandlerProps = exports.panGestureHandlerProps = ['activeOffsetY', 'activeOffsetX', 'failOffsetY', 'failOffsetX', 'minDist', 'minVelocity', 'minVelocityX', 'minVelocityY', 'minPointers', 'maxPointers', 'avgTouches', 'enableTrackpadTwoFingerGesture', 'activateAfterLongPress'];
-  var panGestureHandlerCustomNativeProps = exports.panGestureHandlerCustomNativeProps = ['activeOffsetYStart', 'activeOffsetYEnd', 'activeOffsetXStart', 'activeOffsetXEnd', 'failOffsetYStart', 'failOffsetYEnd', 'failOffsetXStart', 'failOffsetXEnd'];
-
-  /**
-   * @deprecated PanGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Pan()` instead.
-   */
-
-  var panHandlerName = exports.panHandlerName = 'PanGestureHandler';
-
-  /**
-   * @deprecated PanGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Pan()` instead.
-   */
-
-  /**
-   * @deprecated PanGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Pan()` instead.
-   */
-  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; see description on the top of gestureHandlerCommon.ts file
-  var PanGestureHandler = exports.PanGestureHandler = (0, _createHandler.default)({
-    name: panHandlerName,
-    allowedProps: [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[3], "./gestureHandlerCommon").baseGestureHandlerProps), panGestureHandlerProps),
-    config: {},
-    transformProps: managePanProps,
-    customNativeProps: panGestureHandlerCustomNativeProps
-  });
-  function validatePanGestureHandlerProps(props) {
-    if (Array.isArray(props.activeOffsetX) && (props.activeOffsetX[0] > 0 || props.activeOffsetX[1] < 0)) {
-      throw new Error(`First element of activeOffsetX should be negative, a the second one should be positive`);
-    }
-    if (Array.isArray(props.activeOffsetY) && (props.activeOffsetY[0] > 0 || props.activeOffsetY[1] < 0)) {
-      throw new Error(`First element of activeOffsetY should be negative, a the second one should be positive`);
-    }
-    if (Array.isArray(props.failOffsetX) && (props.failOffsetX[0] > 0 || props.failOffsetX[1] < 0)) {
-      throw new Error(`First element of failOffsetX should be negative, a the second one should be positive`);
-    }
-    if (Array.isArray(props.failOffsetY) && (props.failOffsetY[0] > 0 || props.failOffsetY[1] < 0)) {
-      throw new Error(`First element of failOffsetY should be negative, a the second one should be positive`);
-    }
-    if (props.minDist && (props.failOffsetX || props.failOffsetY)) {
-      throw new Error(`It is not supported to use minDist with failOffsetX or failOffsetY, use activeOffsetX and activeOffsetY instead`);
-    }
-    if (props.minDist && (props.activeOffsetX || props.activeOffsetY)) {
-      throw new Error(`It is not supported to use minDist with activeOffsetX or activeOffsetY`);
-    }
-  }
-  function transformPanGestureHandlerProps(props) {
-    var res = Object.assign({}, props);
-    if (props.activeOffsetX !== undefined) {
-      delete res.activeOffsetX;
-      if (Array.isArray(props.activeOffsetX)) {
-        res.activeOffsetXStart = props.activeOffsetX[0];
-        res.activeOffsetXEnd = props.activeOffsetX[1];
-      } else if (props.activeOffsetX < 0) {
-        res.activeOffsetXStart = props.activeOffsetX;
-      } else {
-        res.activeOffsetXEnd = props.activeOffsetX;
-      }
-    }
-    if (props.activeOffsetY !== undefined) {
-      delete res.activeOffsetY;
-      if (Array.isArray(props.activeOffsetY)) {
-        res.activeOffsetYStart = props.activeOffsetY[0];
-        res.activeOffsetYEnd = props.activeOffsetY[1];
-      } else if (props.activeOffsetY < 0) {
-        res.activeOffsetYStart = props.activeOffsetY;
-      } else {
-        res.activeOffsetYEnd = props.activeOffsetY;
-      }
-    }
-    if (props.failOffsetX !== undefined) {
-      delete res.failOffsetX;
-      if (Array.isArray(props.failOffsetX)) {
-        res.failOffsetXStart = props.failOffsetX[0];
-        res.failOffsetXEnd = props.failOffsetX[1];
-      } else if (props.failOffsetX < 0) {
-        res.failOffsetXStart = props.failOffsetX;
-      } else {
-        res.failOffsetXEnd = props.failOffsetX;
-      }
-    }
-    if (props.failOffsetY !== undefined) {
-      delete res.failOffsetY;
-      if (Array.isArray(props.failOffsetY)) {
-        res.failOffsetYStart = props.failOffsetY[0];
-        res.failOffsetYEnd = props.failOffsetY[1];
-      } else if (props.failOffsetY < 0) {
-        res.failOffsetYStart = props.failOffsetY;
-      } else {
-        res.failOffsetYEnd = props.failOffsetY;
-      }
-    }
-    return res;
-  }
-  function managePanProps(props) {
-    if (__DEV__) {
-      validatePanGestureHandlerProps(props);
-    }
-    return transformPanGestureHandlerProps(props);
-  }
-},861,[8,46,822,837],"node_modules/react-native-gesture-handler/src/handlers/PanGestureHandler.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.longPressHandlerName = exports.longPressGestureHandlerProps = exports.LongPressGestureHandler = void 0;
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
-  var _createHandler = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./createHandler"));
-  var longPressGestureHandlerProps = exports.longPressGestureHandlerProps = ['minDurationMs', 'maxDist', 'numberOfPointers'];
-
-  /**
-   * @deprecated LongPressGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.LongPress()` instead.
-   */
-
-  var longPressHandlerName = exports.longPressHandlerName = 'LongPressGestureHandler';
-
-  /**
-   * @deprecated LongPressGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.LongPress()` instead.
-   */
-
-  /**
-   * @deprecated LongPressGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.LongPress()` instead.
-   */
-  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; see description on the top of gestureHandlerCommon.ts file
-  var LongPressGestureHandler = exports.LongPressGestureHandler = (0, _createHandler.default)({
-    name: longPressHandlerName,
-    allowedProps: [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[3], "./gestureHandlerCommon").baseGestureHandlerProps), longPressGestureHandlerProps),
-    config: {
-      shouldCancelWhenOutside: true
-    }
-  });
-},862,[8,46,822,837],"node_modules/react-native-gesture-handler/src/handlers/LongPressGestureHandler.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.Reanimated = void 0;
-  var _Reanimated;
-  var Reanimated;
-  try {
-    exports.Reanimated = Reanimated = _$$_REQUIRE(_dependencyMap[0], "react-native-reanimated");
-  } catch (e) {
-    // When 'react-native-reanimated' is not available we want to quietly continue
-    // @ts-ignore TS demands the variable to be initialized
-    exports.Reanimated = Reanimated = undefined;
-  }
-  if (!((_Reanimated = Reanimated) != null && _Reanimated.useSharedValue)) {
-    // @ts-ignore Make sure the loaded module is actually Reanimated, if it's not
-    // reset the module to undefined so we can fallback to the default implementation
-    exports.Reanimated = Reanimated = undefined;
-  }
-  var _worklet_6487932999118_init_data = {
-    code: "function reactNativeGestureHandler_reanimatedWrapperTs1(){const{tagMessage}=this.__closure;console.warn(tagMessage('Please use newer version of react-native-reanimated in order to control state of the gestures.'));}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/reanimatedWrapper.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"reactNativeGestureHandler_reanimatedWrapperTs1\",\"tagMessage\",\"__closure\",\"console\",\"warn\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/reanimatedWrapper.ts\"],\"mappings\":\"AA+C+B,SAAAA,8CAAMA,CAAA,QAAAC,UAAA,OAAAC,SAAA,CAEjCC,OAAO,CAACC,IAAI,CACVH,UAAU,CACR,gGACF,CACF,CAAC,CACH\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  if (Reanimated !== undefined && !Reanimated.setGestureState) {
-    // The loaded module is Reanimated but it doesn't have the setGestureState defined
-    Reanimated.setGestureState = function () {
-      var _e = [new global.Error(), -2, -27];
-      var reactNativeGestureHandler_reanimatedWrapperTs1 = function reactNativeGestureHandler_reanimatedWrapperTs1() {
-        console.warn((0, _$$_REQUIRE(_dependencyMap[1], "../../utils").tagMessage)('Please use newer version of react-native-reanimated in order to control state of the gestures.'));
-      };
-      reactNativeGestureHandler_reanimatedWrapperTs1.__closure = {
-        tagMessage: _$$_REQUIRE(_dependencyMap[1], "../../utils").tagMessage
-      };
-      reactNativeGestureHandler_reanimatedWrapperTs1.__workletHash = 6487932999118;
-      reactNativeGestureHandler_reanimatedWrapperTs1.__initData = _worklet_6487932999118_init_data;
-      reactNativeGestureHandler_reanimatedWrapperTs1.__stackDetails = _e;
-      return reactNativeGestureHandler_reanimatedWrapperTs1;
-    }();
-  }
-},863,[632,828],"node_modules/react-native-gesture-handler/src/handlers/gestures/reanimatedWrapper.ts");
+},861,[1,777],"node_modules/react-native-reanimated/src/component/Text.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -154960,7 +154794,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   });
   var _ReactNative = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "react-native/Libraries/Renderer/shims/ReactNative"));
-},864,[8,338],"node_modules/react-native-gesture-handler/src/RNRenderer.ts");
+},862,[8,338],"node_modules/react-native-gesture-handler/src/RNRenderer.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155062,7 +154896,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       gestureHandlerStateChangeEventSubscription = null;
     }
   }
-},865,[1,831,829,866,867],"node_modules/react-native-gesture-handler/src/handlers/gestures/eventReceiver.ts");
+},863,[1,645,642,864,865],"node_modules/react-native-gesture-handler/src/handlers/gestures/eventReceiver.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155216,7 +155050,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var GestureStateManager = exports.GestureStateManager = {
     create: create
   };
-},866,[828,863,829],"node_modules/react-native-gesture-handler/src/handlers/gestures/gestureStateManager.ts");
+},864,[641,676,642],"node_modules/react-native-gesture-handler/src/handlers/gestures/gestureStateManager.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155231,7 +155065,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   };
 
   // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; it can be used as a type and as a value
-},867,[],"node_modules/react-native-gesture-handler/src/TouchEventType.ts");
+},865,[],"node_modules/react-native-gesture-handler/src/TouchEventType.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155271,7 +155105,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     getWasCalled = true;
     return useNewWebImplementation;
   }
-},868,[1,828],"node_modules/react-native-gesture-handler/src/EnableNewWebImplementation.ts");
+},866,[1,641],"node_modules/react-native-gesture-handler/src/EnableNewWebImplementation.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155311,7 +155145,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, [forceRender, gestureConfig, gesturesToAttach, preparedGesture, state, webEventHandlersRef]);
     return updateAttachedGestures;
   }
-},869,[86,8,825,859,870,871,872,873],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useDetectorUpdater.ts");
+},867,[86,8,638,672,868,869,870,871],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useDetectorUpdater.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155332,7 +155166,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
     return false;
   }
-},870,[],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/needsToReattach.ts");
+},868,[],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/needsToReattach.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155347,7 +155181,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
     (0, _$$_REQUIRE(_dependencyMap[4], "../../utils").scheduleFlushOperations)();
   }
-},871,[8,823,831,834,832],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/dropHandlers.ts");
+},869,[8,636,645,648,646],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/dropHandlers.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155409,7 +155243,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       });
     }
   }
-},872,[8,823,1,833,859,832,831,830,834],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/attachHandlers.ts");
+},870,[8,636,1,647,672,646,645,644,648],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/attachHandlers.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155473,7 +155307,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       (0, _$$_REQUIRE(_dependencyMap[4], "../../utils").scheduleFlushOperations)();
     });
   }
-},873,[8,823,859,833,832,831],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/updateHandlers.ts");
+},871,[8,636,672,647,646,645],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/updateHandlers.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155510,17 +155344,12 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, [state, updateAttachedGestures]);
     return refHandler;
   }
-},874,[86,8,825,828,875],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useViewRefHandler.ts");
+},872,[86,8,638,641,873],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useViewRefHandler.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.getShadowNodeFromRef = getShadowNodeFromRef;
-  /*
-   * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
-   * Use of this source code is governed by a MIT license that can be
-   * found in the LICENSE file.
-   */
   // Used by GestureDetector (unsupported on web at the moment) to check whether the
   // attached view may get flattened on Fabric. This implementation causes errors
   // on web due to the static resolution of `require` statements by webpack breaking
@@ -155572,7 +155401,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     // @ts-ignore Fabric
     return getInternalInstanceHandleFromPublicInstance(findHostInstance_DEPRECATED(ref)).stateNode.node;
   }
-},875,[303,322],"node_modules/@react-native-ohos/react-native-gesture-handler/src/getShadowNodeFromRef.ts");
+},873,[303,322],"node_modules/react-native-gesture-handler/src/getShadowNodeFromRef.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155803,7 +155632,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     preparedGesture.animatedEventHandler = event;
     preparedGesture.animatedHandlers = sharedHandlersCallbacks;
   }
-},876,[847,867,828,863,829,866],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useAnimatedGesture.ts");
+},874,[660,865,641,676,642,864],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useAnimatedGesture.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155841,7 +155670,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       });
     }, [updateDetector, state]);
   }
-},877,[86,832,834],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useMountReactions.ts");
+},875,[86,646,648],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useMountReactions.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155884,7 +155713,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_react.default.Component);
   var AnimatedWrap = exports.AnimatedWrap = (_Reanimated$default$c = _$$_REQUIRE(_dependencyMap[8], "../reanimatedWrapper").Reanimated == null || (_Reanimated$default = _$$_REQUIRE(_dependencyMap[8], "../reanimatedWrapper").Reanimated.default) == null ? void 0 : _Reanimated$default.createAnimatedComponent(Wrap)) != null ? _Reanimated$default$c : Wrap;
-},878,[8,9,10,14,16,17,86,828,863],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/Wrap.tsx");
+},876,[8,9,10,14,16,17,86,641,676],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/Wrap.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155910,7 +155739,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     allowedProps: _$$_REQUIRE(_dependencyMap[2], "./gestureHandlerCommon").baseGestureHandlerProps,
     config: {}
   });
-},879,[8,822,837],"node_modules/react-native-gesture-handler/src/handlers/PinchGestureHandler.ts");
+},877,[8,635,650],"node_modules/react-native-gesture-handler/src/handlers/PinchGestureHandler.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155924,7 +155753,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     PointerType[PointerType["OTHER"] = 4] = "OTHER";
     return PointerType;
   }({});
-},880,[],"node_modules/react-native-gesture-handler/src/PointerType.ts");
+},878,[],"node_modules/react-native-gesture-handler/src/PointerType.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155950,7 +155779,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     allowedProps: _$$_REQUIRE(_dependencyMap[2], "./gestureHandlerCommon").baseGestureHandlerProps,
     config: {}
   });
-},881,[8,822,837],"node_modules/react-native-gesture-handler/src/handlers/RotationGestureHandler.ts");
+},879,[8,635,650],"node_modules/react-native-gesture-handler/src/handlers/RotationGestureHandler.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -156006,7 +155835,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, rest));
   });
   // eslint-disable-next-line @typescript-eslint/no-redeclare
-},882,[8,153,86,1,845,92,858],"node_modules/react-native-gesture-handler/src/components/Text.tsx");
+},880,[8,153,86,1,658,92,671],"node_modules/react-native-gesture-handler/src/components/Text.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -156039,7 +155868,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _TouchableWithoutFeedback = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./TouchableWithoutFeedback"));
   var _TouchableOpacity = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "./TouchableOpacity"));
   var _TouchableHighlight = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "./TouchableHighlight"));
-},883,[8,884,885,887,888],"node_modules/react-native-gesture-handler/src/components/touchables/index.ts");
+},881,[8,882,883,885,886],"node_modules/react-native-gesture-handler/src/components/touchables/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -156051,7 +155880,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
    */
   var TouchableNativeFeedback = _reactNative.TouchableNativeFeedback;
   var _default = exports.default = TouchableNativeFeedback;
-},884,[1],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableNativeFeedback.tsx");
+},882,[1],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableNativeFeedback.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -156086,7 +155915,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, rest));
   });
   var _default = exports.default = TouchableWithoutFeedback;
-},885,[8,153,86,886,92],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableWithoutFeedback.tsx");
+},883,[8,153,86,884,92],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableWithoutFeedback.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -156360,7 +156189,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       exclusive: true
     }
   };
-},886,[8,9,10,14,16,17,86,1,829,92,819],"node_modules/react-native-gesture-handler/src/components/touchables/GenericTouchable.tsx");
+},884,[8,9,10,14,16,17,86,1,642,92,632],"node_modules/react-native-gesture-handler/src/components/touchables/GenericTouchable.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -156441,7 +156270,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   TouchableOpacity.defaultProps = Object.assign({}, _GenericTouchable.default.defaultProps, {
     activeOpacity: 0.2
   });
-},887,[8,153,9,10,14,16,17,1,886,86,92],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableOpacity.tsx");
+},885,[8,153,9,10,14,16,17,1,884,86,92],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableOpacity.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -156545,7 +156374,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     delayPressOut: 100,
     underlayColor: 'black'
   });
-},888,[8,153,9,10,14,16,17,86,886,1,92],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableHighlight.tsx");
+},886,[8,153,9,10,14,16,17,86,884,1,92],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableHighlight.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -156575,7 +156404,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       flex: 1
     }
   });
-},889,[86,1,8,890,894,92],"node_modules/react-native-gesture-handler/src/components/gestureHandlerRootHOC.tsx");
+},887,[86,1,8,888,892,92],"node_modules/react-native-gesture-handler/src/components/gestureHandlerRootHOC.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -156666,7 +156495,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     return targetComponent;
   }
   module.exports = hoistNonReactStatics;
-},890,[891],"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
+},888,[889],"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -156675,7 +156504,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   } else {
     module.exports = _$$_REQUIRE(_dependencyMap[1], "./cjs/react-is.development.js");
   }
-},891,[892,893],"node_modules/hoist-non-react-statics/node_modules/react-is/index.js");
+},889,[890,891],"node_modules/hoist-non-react-statics/node_modules/react-is/index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /** @license React v16.13.1
    * react-is.production.min.js
@@ -156794,7 +156623,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     return "string" === typeof a || "function" === typeof a || a === e || a === m || a === g || a === f || a === p || a === q || "object" === typeof a && null !== a && (a.$$typeof === t || a.$$typeof === r || a.$$typeof === h || a.$$typeof === k || a.$$typeof === n || a.$$typeof === w || a.$$typeof === x || a.$$typeof === y || a.$$typeof === v);
   };
   exports.typeOf = z;
-},892,[],"node_modules/hoist-non-react-statics/node_modules/react-is/cjs/react-is.production.min.js");
+},890,[],"node_modules/hoist-non-react-statics/node_modules/react-is/cjs/react-is.production.min.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /** @license React v16.13.1
    * react-is.development.js
@@ -156964,53 +156793,39 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       exports.typeOf = typeOf;
     })();
   }
-},893,[],"node_modules/hoist-non-react-statics/node_modules/react-is/cjs/react-is.development.js");
+},891,[],"node_modules/hoist-non-react-statics/node_modules/react-is/cjs/react-is.development.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.default = GestureHandlerRootView;
-  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[0], "react"));
-  var _GestureHandlerRootViewContext = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "react-native-gesture-handler/src/GestureHandlerRootViewContext"));
-  var _RNGestureHandlerRootViewNativeComponent = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "../specs/RNGestureHandlerRootViewNativeComponent"));
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/@react-native-ohos/react-native-gesture-handler/src/components/GestureHandlerRootView.tsx";
-  /*
-   * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
-   * Use of this source code is governed by a MIT license that can be
-   * found in the LICENSE file.
-   */
+  var _objectWithoutProperties2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/objectWithoutProperties"));
+  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[2], "react"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[3], "react-native");
+  var _GestureHandlerRootViewContext = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "../GestureHandlerRootViewContext"));
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/GestureHandlerRootView.tsx";
+  var _excluded = ["style"];
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  function GestureHandlerRootView(props) {
-    // try initialize fabric on the first render, at this point we can
+  function GestureHandlerRootView(_ref) {
+    var style = _ref.style,
+      rest = (0, _objectWithoutProperties2.default)(_ref, _excluded);
+    // Try initialize fabric on the first render, at this point we can
     // reliably check if fabric is enabled (the function contains a flag
     // to make sure it's called only once)
-    (0, _$$_REQUIRE(_dependencyMap[4], "react-native-gesture-handler/src/init").maybeInitializeFabric)();
-    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[5], "react/jsx-runtime").jsx)(_GestureHandlerRootViewContext.default.Provider, {
+    (0, _$$_REQUIRE(_dependencyMap[5], "../init").maybeInitializeFabric)();
+    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[6], "react/jsx-runtime").jsx)(_GestureHandlerRootViewContext.default.Provider, {
       value: true,
-      children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[5], "react/jsx-runtime").jsx)(_RNGestureHandlerRootViewNativeComponent.default, Object.assign({}, props))
+      children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[6], "react/jsx-runtime").jsx)(_reactNative.View, Object.assign({
+        style: style != null ? style : styles.container
+      }, rest))
     });
   }
-},894,[86,8,826,895,896,92],"node_modules/@react-native-ohos/react-native-gesture-handler/src/components/GestureHandlerRootView.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
+  var styles = _reactNative.StyleSheet.create({
+    container: {
+      flex: 1
+    }
   });
-  exports.default = exports.__INTERNAL_VIEW_CONFIG = void 0;
-  var _codegenNativeComponent = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "react-native/Libraries/Utilities/codegenNativeComponent")); /*
-                                                                                                                                                                                                            * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
-                                                                                                                                                                                                            * Use of this source code is governed by a MIT license that can be
-                                                                                                                                                                                                            * found in the LICENSE file.
-                                                                                                                                                                                                            */
-
-  var nativeComponentName = 'RNGestureHandlerRootView';
-  var __INTERNAL_VIEW_CONFIG = exports.__INTERNAL_VIEW_CONFIG = {
-    uiViewClassName: 'RNGestureHandlerRootView',
-    validAttributes: {}
-  };
-  var _default = exports.default = _$$_REQUIRE(_dependencyMap[2], "react-native/Libraries/NativeComponent/NativeComponentRegistry").get(nativeComponentName, function () {
-    return __INTERNAL_VIEW_CONFIG;
-  });
-},895,[8,347,204],"node_modules/@react-native-ohos/react-native-gesture-handler/src/specs/RNGestureHandlerRootViewNativeComponent.ts");
+},892,[8,153,86,1,639,893,92],"node_modules/react-native-gesture-handler/src/components/GestureHandlerRootView.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -157031,7 +156846,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       fabricInitialized = true;
     }
   }
-},896,[8,823,865,828],"node_modules/react-native-gesture-handler/src/init.ts");
+},893,[8,636,863,641],"node_modules/react-native-gesture-handler/src/init.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -157385,7 +157200,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       flexDirection: _reactNative.I18nManager.isRTL ? 'row' : 'row-reverse'
     })
   });
-},897,[8,9,10,14,16,17,86,1,829,92,861,860],"node_modules/react-native-gesture-handler/src/components/Swipeable.tsx");
+},894,[8,9,10,14,16,17,86,1,642,92,674,673],"node_modules/react-native-gesture-handler/src/components/Swipeable.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -157397,7 +157212,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   });
   var _Pressable = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "./Pressable"));
-},898,[8,899],"node_modules/react-native-gesture-handler/src/components/Pressable/index.ts");
+},895,[8,896],"node_modules/react-native-gesture-handler/src/components/Pressable/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -157876,7 +157691,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     });
   });
   var _default = exports.default = Pressable;
-},899,[8,27,153,86,1,838,828,900,845,92,858,836],"node_modules/react-native-gesture-handler/src/components/Pressable/Pressable.tsx");
+},896,[8,27,153,86,1,651,641,897,658,92,671,649],"node_modules/react-native-gesture-handler/src/components/Pressable/Pressable.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -157979,7 +157794,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     };
   };
-},900,[],"node_modules/react-native-gesture-handler/src/components/Pressable/utils.ts");
+},897,[],"node_modules/react-native-gesture-handler/src/components/Pressable/utils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -158513,18 +158328,6 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       zIndex: 1000
     })
   });
-},901,[8,9,10,14,16,17,86,37,1,829,92,860,861],"node_modules/react-native-gesture-handler/src/components/DrawerLayout.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
-    "__packager_asset": true,
-    "httpServerLocation": "/assets/assets",
-    "width": 133,
-    "height": 200,
-    "scales": [1, 2, 3],
-    "hash": "3452d9c92be0bb119e1b254ed28d86b2",
-    "name": "fig-without-poppy",
-    "type": "jpeg"
-  });
-},902,[392],"assets/fig-without-poppy.jpeg");
+},898,[8,9,10,14,16,17,86,37,1,642,92,673,674],"node_modules/react-native-gesture-handler/src/components/DrawerLayout.tsx");
 __r(2);
 __r(0);

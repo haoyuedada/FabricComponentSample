@@ -166,7 +166,9 @@ import { AppRegistry } from 'react-native';
 // import App from './tests/react-native-gesture-handler/App.tsx'
 // import App from './tests/react-native-gesture-handler/RNPanBasicDemo.tsx'
 // import App from './tests/react-native-gesture-handler/RNGestureHandlerDemo.tsx'
-import App from './tests/react-native-gesture-handler/PinchWithRotationDemo.tsx'
+// import App from './tests/react-native-gesture-handler/PinchWithRotationDemo.tsx'
+import App from './tests/judgeFabric.tsx'
+
 
 // 在导航或 App 中注册该组件
 AppRegistry.registerComponent("app_name", () => App);
