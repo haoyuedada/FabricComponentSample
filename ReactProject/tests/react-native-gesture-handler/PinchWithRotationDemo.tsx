@@ -122,7 +122,7 @@ class PinchWithRotationDemo extends Component<any, DemoState> {
 
   renderCaseLayout = (title: string, caseId: string, operationArea: React.ReactNode, controlPanel?: React.ReactNode) => (
     <View style={styles.flex1}>
-      {/* <ScrollView style={styles.flex1} contentContainerStyle={styles.caseContainer}> */}
+      <ScrollView style={styles.flex1} contentContainerStyle={styles.caseContainer}>
         <Text style={styles.caseTitle}>{title}</Text>
         <Text style={styles.caseId}>EC用例: {caseId}</Text>
         {/* 上方：操作区域 */}
@@ -131,7 +131,7 @@ class PinchWithRotationDemo extends Component<any, DemoState> {
         {controlPanel && <View style={styles.controlPanel}>{controlPanel}</View>}
         {/* 底部：日志区 */}
         {this.renderLogArea()}
-      {/* </ScrollView> */}
+      </ScrollView>
     </View>
   )
 
@@ -156,7 +156,7 @@ class PinchWithRotationDemo extends Component<any, DemoState> {
           }}
         >
           <Animated.View>
-            <RotationGestureHandler
+            {/* <RotationGestureHandler
               ref={this.rotateRef479}
               simultaneousHandlers={this.pinchRef479}
               onGestureEvent={this.onCombo479RotateEvent}
@@ -165,7 +165,7 @@ class PinchWithRotationDemo extends Component<any, DemoState> {
                   this.addLog('[Combo479Rotate] ended')
                 }
               }}
-            >
+            > */}
               <Animated.View style={[styles.comboBox, {
                 transform: [
                   { scale: this.combo479ScaleAnim },
@@ -176,7 +176,7 @@ class PinchWithRotationDemo extends Component<any, DemoState> {
                 <Text style={styles.boxSubText}>scale: {this.state.comboScale479.toFixed(2)}</Text>
                 <Text style={styles.boxSubText}>angle: {(this.state.comboRotation479 * 180 / Math.PI).toFixed(1)}°</Text>
               </Animated.View>
-            </RotationGestureHandler>
+            {/* </RotationGestureHandler> */}
           </Animated.View>
         </PinchGestureHandler>
       </GestureHandlerRootView>,
