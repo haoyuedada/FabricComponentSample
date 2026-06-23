@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^cd /Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample && python3 - <<'PY'\nimport os\npath='ReactProject77/harmony/library/oh_modules/@react-native-ohos/react-native-gesture-handler'\nprint\\('orig', os\\.readlink\\(path\\)\\)\ntry:\n    print\\('abs', os\\.path\\.abspath\\(os\\.path\\.join\\(os\\.path\\.dirname\\(path\\), os\\.readlink\\(path\\)\\)\\)\\)\nexcept Exception as e:\n    print\\('err', e\\)\nPY$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

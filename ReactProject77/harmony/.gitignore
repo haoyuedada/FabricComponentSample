@@ -13,5 +13,4 @@
 /libs/react_native_openharmony**
 log.txt
 package-lock.json
-build-profile.json5
 oh-package-lock.json5
