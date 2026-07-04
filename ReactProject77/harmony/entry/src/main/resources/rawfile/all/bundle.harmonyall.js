@@ -1420,7 +1420,7 @@ var __BUNDLE_START_TIME__=this.nativePerformanceNow?nativePerformanceNow():Date.
 })(typeof globalThis !== 'undefined' ? globalThis : typeof global !== 'undefined' ? global : typeof window !== 'undefined' ? window : this);
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-  var _RNPanBasicDemo = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./tests/react-native-gesture/meituan/RNPanBasicDemo.tsx"));
+  var _RNGestureHandlerDemo = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./tests/react-native-gesture/meituan/RNGestureHandlerDemo.tsx"));
   /**
    * Copyright (c) 2024 Huawei Technologies Co., Ltd.
    *
@@ -1511,13 +1511,17 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // import App from "./tests/react-native-reanimated/AI/obtainPropFromShadowNodeCrash.tsx"
   // import App from './tests/react-native-gesture/App.tsx'
   // import App from './tests/react-native-gesture/App1.tsx'
+  // import App from './tests/react-native-gesture/meituan/RNPanBasicDemo.tsx'
 
-  // import App from './tests/react-native-gesture/meituan/RNGestureHandlerDemo.tsx'
   // import App from './tests/react-native-gesture/meituan/PanGestureHandlerBasicDemo.tsx'
   // import App from './tests/react-native-gesture-handler/App.tsx'
+  // import App from './tests/smartrefersh/App.tsx'
+  // import App from './tests/toolbar-android/App.tsx'
+  // import App from './tests/toolbar-android/Index.tsx'
+  // import App from './tests/react-native-gesture-handler/hongquanyun/App.tsx';
 
   _reactNative.AppRegistry.registerComponent("app_name", function () {
-    return _RNPanBasicDemo.default;
+    return _RNGestureHandlerDemo.default;
   });
   // import { transform } from "./testTurboModule/buautify_executor.js"
 },0,[1,8,630],"index.js");
@@ -120515,226 +120519,2668 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     value: true
   });
   exports.default = void 0;
-  var _defineProperty2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/defineProperty"));
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/toConsumableArray"));
-  var _slicedToArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/slicedToArray"));
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[4], "react"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[5], "react-native");
-  var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/react-native-gesture/meituan/RNPanBasicDemo.tsx";
-  /**
-   * 复现 "手势回弹动画未结束立即重新拖拽导致闪动" 问题。
-   * 
-   * 为什么必须用 PanGestureHandler：
-   * 这个 bug 出在 C++ EventAnimationDriver::updateWithEvent() 直接调用 valueNode.setValue()
-   * 而不停掉正在运行的 spring 动画，导致两个 C++ 驱动同时写同一个 ValueAnimatedNode。
-   * 
-   * 在 OpenHarmony 上，只有 PanGestureHandler 的事件确定走 C++ EventAnimationDriver 路径：
-   *   PanGestureHandler 事件 → NativeAnimatedTurboModule::handleEvent()
-   *     → AnimatedNodesManager::handleEvent() → EventAnimationDriver::updateWithEvent()
-   *       → valueNode.setValue()  ← 不停动画！与 spring 冲突 → 闪动
-   * 
-   * 其他方式（Responder + setValue / Animated.ScrollView）都走不到这条路径：
-   *   - Responder + Animated.setValue() → JS 桥 → AnimatedNodesManager::setValue()
-   *     → 先 stopAnimationsForNode() 再设值 ✅ 不冲突
-   *   - Animated.ScrollView onScroll → 未走 EventAnimationDriver（或回退 JS 驱动）✅ 不冲突
-   */
+  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[8], "react-native");
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/react-native-gesture/meituan/RNGestureHandlerDemo.tsx";
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  var RNPanBasicDemo = function RNPanBasicDemo() {
-    var panX = (0, _react.useRef)(new _reactNative.Animated.Value(0)).current;
-    var panY = (0, _react.useRef)(new _reactNative.Animated.Value(0)).current;
-    var _useState = (0, _react.useState)([]),
-      _useState2 = (0, _slicedToArray2.default)(_useState, 2),
-      logs = _useState2[0],
-      setLogs = _useState2[1];
-    var addLog = (0, _react.useCallback)(function (msg) {
-      console.log(msg);
-      setLogs(function (prev) {
-        return [].concat((0, _toConsumableArray2.default)(prev.slice(-19)), [msg]);
-      });
-    }, []);
+  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
+  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); } /**
+ * RNGestureHandlerDemo.tsx
+ * GestureHandler 组件综合测试页面
+ *
+ * EC 用例映射关系（31条，caseId 2276467~2276497）：
+ * ─────────────────────────────────────────────────────────
+ * Case2276467_NoProps              | GestureHandler组件测试 - 无属性
+ * Case2276468_InvalidProps         | GestureHandler组件测试 - 无效属性
+ * Case2276469_SingleChild          | GestureHandler组件测试 - 单一子组件
+ * Case2276470_MultiChild           | GestureHandler组件测试 - 多个子组件
+ * Case2276471_NoChild              | GestureHandler组件测试 - 无子组件
+ * Case2276472_TapBasic             | TapGestureHandler测试 - 基本点击
+ * Case2276473_TapDouble            | TapGestureHandler测试 - 双击
+ * Case2276474_TapLongPressDistinguish | TapGestureHandler与LongPressGestureHandler区分测试
+ * Case2276475_PanBasic             | PanGestureHandler测试 - 基本拖拽
+ * Case2276476_PanDirectionLock     | PanGestureHandler测试 - 方向锁定
+ * Case2276477_PanMinDist           | PanGestureHandler测试 - 最小距离
+ * Case2276478_PinchBasic           | PinchGestureHandler测试 - 基本捏合
+ * Case2276479_PinchWithRotation    | PinchGestureHandler测试 - 带旋转
+ * Case2276480_RotationBasic        | RotationGestureHandler测试 - 基本旋转
+ * Case2276481_LongPressBasic       | LongPressGestureHandler测试 - 基本长按
+ * Case2276482_LongPressCustomDuration | LongPressGestureHandler测试 - 自定义时长
+ * Case2276483_FlingBasic           | FlingGestureHandler测试 - 基本快扫
+ * Case2276484_FlingDirectional     | FlingGestureHandler测试 - 方向性快扫
+ * Case2276485_NativeButton         | NativeButtonGestureHandler测试 - 基本按钮
+ * Case2276486_PinchRotationCombo   | 手势组合测试 - 捏合与旋转
+ * Case2276487_PanPinchCombo        | 手势组合测试 - 拖拽与捏合
+ * Case2276488_TapWaitDoubleTap     | 等待手势测试 - 单击等待双击
+ * Case2276489_TapWaitLongPress     | 等待手势测试 - 点击等待长按
+ * Case2276490_HorizontalVerticalMutex | 互斥手势测试 - 水平与垂直拖拽
+ * Case2276491_PanTapMutex          | 互斥手势测试 - 拖拽与点击
+ * Case2276492_NestedTap            | 嵌套手势处理器测试 - 嵌套点击处理器
+ * Case2276493_NestedPan            | 嵌套手势处理器测试 - 嵌套拖拽处理器
+ * Case2276494_NestedScrollView     | 嵌套可滚动组件测试 - 嵌套ScrollView
+ * Case2276495_ScrollViewDrag       | 嵌套可滚动组件测试 - ScrollView中的拖拽元素
+ * Case2276496_TouchableCombo       | 与原生组件结合测试 - Touchable组件
+ * Case2276497_TextInputCombo       | 与原生组件结合测试 - TextInput组件
+ * ─────────────────────────────────────────────────────────
+ */ // ── State 常量定义 ──
+  var FallbackState = {
+    UNDETERMINED: 0,
+    FAILED: 1,
+    BEGAN: 2,
+    CANCELLED: 3,
+    ACTIVE: 4,
+    END: 5
+  };
+  var GestureState = _$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").State || FallbackState;
+  var getStateName = function getStateName(state) {
+    switch (state) {
+      case GestureState.UNDETERMINED:
+        return 'UNDETERMINED';
+      case GestureState.FAILED:
+        return 'FAILED';
+      case GestureState.BEGAN:
+        return 'BEGAN';
+      case GestureState.CANCELLED:
+        return 'CANCELLED';
+      case GestureState.ACTIVE:
+        return 'ACTIVE';
+      case GestureState.END:
+        return 'END';
+      default:
+        return 'UNKNOWN';
+    }
+  };
 
-    // 核心：Animated.event + useNativeDriver:true
-    // PanGestureHandler 事件走 C++ EventAnimationDriver，直接写 ValueAnimatedNode
-    var onPanEvent = (0, _react.useRef)(_reactNative.Animated.event([{
-      nativeEvent: {
-        translationX: panX,
-        translationY: panY
-      }
-    }], {
-      useNativeDriver: true // ← 关键！走 C++ EventAnimationDriver 路径
-    })).current;
-    var onHandlerStateChange = (0, _react.useCallback)(function (e) {
-      var state = e.nativeEvent.state;
-      addLog(`[State] ${stateName(state)}`);
-      if (state === _$$_REQUIRE(_dependencyMap[6], "react-native-gesture-handler").State.END) {
-        // 松手 → spring 回弹 (C++ SpringAnimationDriver)
-        // 如果用户在回弹未结束前再次拖拽，C++ EventAnimationDriver 写值不停 spring → 闪动
-        addLog('[State] spring back → 0');
-        _reactNative.Animated.spring(panX, {
-          toValue: 0,
+  // ── testCase 列表 ──
+  var TEST_CASES = [{
+    key: 'Case2276467_NoProps',
+    id: '2276467',
+    title: 'GestureHandler组件测试 - 无属性'
+  }, {
+    key: 'Case2276468_InvalidProps',
+    id: '2276468',
+    title: 'GestureHandler组件测试 - 无效属性'
+  }, {
+    key: 'Case2276469_SingleChild',
+    id: '2276469',
+    title: 'GestureHandler组件测试 - 单一子组件'
+  }, {
+    key: 'Case2276470_MultiChild',
+    id: '2276470',
+    title: 'GestureHandler组件测试 - 多个子组件'
+  }, {
+    key: 'Case2276471_NoChild',
+    id: '2276471',
+    title: 'GestureHandler组件测试 - 无子组件'
+  }, {
+    key: 'Case2276472_TapBasic',
+    id: '2276472',
+    title: 'TapGestureHandler测试 - 基本点击'
+  }, {
+    key: 'Case2276473_TapDouble',
+    id: '2276473',
+    title: 'TapGestureHandler测试 - 双击'
+  }, {
+    key: 'Case2276474_TapLongPressDistinguish',
+    id: '2276474',
+    title: 'TapGestureHandler与LongPressGestureHandler区分测试'
+  }, {
+    key: 'Case2276475_PanBasic',
+    id: '2276475',
+    title: 'PanGestureHandler测试 - 基本拖拽'
+  }, {
+    key: 'Case2276476_PanDirectionLock',
+    id: '2276476',
+    title: 'PanGestureHandler测试 - 方向锁定'
+  }, {
+    key: 'Case2276477_PanMinDist',
+    id: '2276477',
+    title: 'PanGestureHandler测试 - 最小距离'
+  }, {
+    key: 'Case2276478_PinchBasic',
+    id: '2276478',
+    title: 'PinchGestureHandler测试 - 基本捏合'
+  }, {
+    key: 'Case2276479_PinchWithRotation',
+    id: '2276479',
+    title: 'PinchGestureHandler测试 - 带旋转'
+  }, {
+    key: 'Case2276480_RotationBasic',
+    id: '2276480',
+    title: 'RotationGestureHandler测试 - 基本旋转'
+  }, {
+    key: 'Case2276481_LongPressBasic',
+    id: '2276481',
+    title: 'LongPressGestureHandler测试 - 基本长按'
+  }, {
+    key: 'Case2276482_LongPressCustomDuration',
+    id: '2276482',
+    title: 'LongPressGestureHandler测试 - 自定义时长'
+  }, {
+    key: 'Case2276483_FlingBasic',
+    id: '2276483',
+    title: 'FlingGestureHandler测试 - 基本快扫'
+  }, {
+    key: 'Case2276484_FlingDirectional',
+    id: '2276484',
+    title: 'FlingGestureHandler测试 - 方向性快扫'
+  }, {
+    key: 'Case2276485_NativeButton',
+    id: '2276485',
+    title: 'NativeButtonGestureHandler测试 - 基本按钮'
+  }, {
+    key: 'Case2276486_PinchRotationCombo',
+    id: '2276486',
+    title: '手势组合测试 - 捏合与旋转'
+  }, {
+    key: 'Case2276487_PanPinchCombo',
+    id: '2276487',
+    title: '手势组合测试 - 拖拽与捏合'
+  }, {
+    key: 'Case2276488_TapWaitDoubleTap',
+    id: '2276488',
+    title: '等待手势测试 - 单击等待双击'
+  }, {
+    key: 'Case2276489_TapWaitLongPress',
+    id: '2276489',
+    title: '等待手势测试 - 点击等待长按'
+  }, {
+    key: 'Case2276490_HorizontalVerticalMutex',
+    id: '2276490',
+    title: '互斥手势测试 - 水平与垂直拖拽'
+  }, {
+    key: 'Case2276491_PanTapMutex',
+    id: '2276491',
+    title: '互斥手势测试 - 拖拽与点击'
+  }, {
+    key: 'Case2276492_NestedTap',
+    id: '2276492',
+    title: '嵌套手势处理器测试 - 嵌套点击处理器'
+  }, {
+    key: 'Case2276493_NestedPan',
+    id: '2276493',
+    title: '嵌套手势处理器测试 - 嵌套拖拽处理器'
+  }, {
+    key: 'Case2276494_NestedScrollView',
+    id: '2276494',
+    title: '嵌套可滚动组件测试 - 嵌套ScrollView'
+  }, {
+    key: 'Case2276495_ScrollViewDrag',
+    id: '2276495',
+    title: '嵌套可滚动组件测试 - ScrollView中的拖拽元素'
+  }, {
+    key: 'Case2276496_TouchableCombo',
+    id: '2276496',
+    title: '与原生组件结合测试 - Touchable组件'
+  }, {
+    key: 'Case2276497_TextInputCombo',
+    id: '2276497',
+    title: '与原生组件结合测试 - TextInput组件'
+  }];
+  var RNGestureHandlerDemo = /*#__PURE__*/function (_Component) {
+    function RNGestureHandlerDemo(props) {
+      var _this;
+      (0, _classCallCheck2.default)(this, RNGestureHandlerDemo);
+      _this = _callSuper(this, RNGestureHandlerDemo, [props]);
+      // ── Animated Values (initialized in constructor) ──
+      // ── Animated Event Handlers ──
+      // ── Refs ──
+      _this.longPressRef474 = _react.default.createRef();
+      _this.tapRef474 = _react.default.createRef();
+      _this.pinchRef479 = _react.default.createRef();
+      _this.rotateRef479 = _react.default.createRef();
+      _this.pinchRef486 = _react.default.createRef();
+      _this.rotateRef486 = _react.default.createRef();
+      _this.panRef487 = _react.default.createRef();
+      _this.pinchRef487 = _react.default.createRef();
+      _this.tapRef488Single = _react.default.createRef();
+      _this.tapRef488Double = _react.default.createRef();
+      _this.tapRef489 = _react.default.createRef();
+      _this.longPressRef489 = _react.default.createRef();
+      // ═══════════════════════════════════════════════════════
+      // UTILITY METHODS
+      // ═══════════════════════════════════════════════════════
+      _this.runTestCase = function (testCase) {
+        // Reset all animated values
+        var animValues = [_this.panBasicX, _this.panBasicY, _this.panHorizontalX, _this.panVerticalY, _this.panMinDistX, _this.mutex490HX, _this.mutex490VY, _this.mutex491PanX, _this.mutex491PanY, _this.combo487PanX, _this.combo487PanY, _this.nestedOuterPanX, _this.nestedOuterPanY, _this.nestedInnerPanX, _this.nestedInnerPanY, _this.scrollDragX, _this.scrollDragY, _this.rotateAngleAnim, _this.combo479RotateAnim, _this.combo486RotateAnim];
+        animValues.forEach(function (v) {
+          return v.setValue(0);
+        });
+        var scaleValues = [_this.pinchScaleAnim, _this.combo479ScaleAnim, _this.combo486ScaleAnim, _this.combo487ScaleAnim];
+        scaleValues.forEach(function (v) {
+          return v.setValue(1);
+        });
+        _this.setState({
+          currentTestCase: testCase,
+          logs: [],
+          tapCount: 0,
+          doubleTapCount: 0,
+          distinguishTapCount: 0,
+          distinguishLongPressCount: 0,
+          minDist: 100,
+          minDistActive: false,
+          pinchScale: 1,
+          comboScale479: 1,
+          comboRotation479: 0,
+          rotationAngle: 0,
+          longPressCount: 0,
+          customLongPressCount: 0,
+          customMinDuration: 1500,
+          flingCount: 0,
+          leftFlingCount: 0,
+          nativeButtonCount: 0,
+          combo486Scale: 1,
+          combo486Rotation: 0,
+          combo487Scale: 1,
+          singleTap488Count: 0,
+          doubleTap488Count: 0,
+          tap489Count: 0,
+          longPress489Count: 0,
+          horizontalInfo: 'idle',
+          verticalInfo: 'idle',
+          pan491Info: 'idle',
+          tap491Count: 0,
+          outerTapCount: 0,
+          innerTapCount: 0,
+          outerPanInfo: 'idle',
+          innerPanInfo: 'idle',
+          touchableCount: 0,
+          textInputValue: '',
+          textInputTapCount: 0
+        });
+      };
+      _this.addLog = function (msg) {
+        console.log(msg);
+        _this.setState(function (prev) {
+          return {
+            logs: [].concat((0, _toConsumableArray2.default)(prev.logs.slice(-19)), [msg])
+          };
+        });
+      };
+      _this.springReset = function (v) {
+        var toValue = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+        _reactNative.Animated.spring(v, {
+          toValue: toValue,
           useNativeDriver: true
         }).start();
-        _reactNative.Animated.spring(panY, {
-          toValue: 0,
-          useNativeDriver: true
-        }).start();
-      }
-    }, [panX, panY, addLog]);
-    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[6], "react-native-gesture-handler").GestureHandlerRootView, {
-      style: styles.flex1,
-      children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsxs)(_reactNative.View, {
-        style: styles.header,
-        children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.Text, {
-          style: styles.title,
-          children: "PanGestureHandler \u95EA\u52A8\u590D\u73B0"
-        }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.Text, {
-          style: styles.subtitle,
-          children: "Animated.event + useNativeDriver:true"
-        })]
-      }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.View, {
-        style: styles.guideArea,
-        children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-          style: styles.guideText,
-          children: ["1. \u62D6\u62FD\u65B9\u5757\u5411\u53F3\u79FB\u52A8", '\n', "2. \u677E\u624B\uFF0C\u65B9\u5757\u5F00\u59CB spring \u56DE\u5F39", '\n', "3. \u56DE\u5F39\u672A\u7ED3\u675F\u524D\u7ACB\u5373\u518D\u6B21\u62D6\u62FD", '\n', "4. \u65B9\u5757\u51FA\u73B0\u95EA\u70C1/\u8DF3\u52A8 = \u590D\u73B0\u6210\u529F"]
-        })
-      }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.View, {
-        style: styles.operationArea,
-        children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[6], "react-native-gesture-handler").PanGestureHandler, {
-          onGestureEvent: onPanEvent,
-          onHandlerStateChange: onHandlerStateChange,
-          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.Animated.View, {
-            style: [styles.dragBox, {
-              transform: [{
-                translateX: panX
-              }, {
-                translateY: panY
-              }]
-            }],
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.Text, {
-              style: styles.boxText,
-              children: "\u62D6\u62FD\u6211"
-            })
+      };
+      // ═══════════════════════════════════════════════════════
+      // SHARED UI COMPONENTS
+      // ═══════════════════════════════════════════════════════
+      _this.renderBackButton = function () {
+        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.TouchableOpacity, {
+          style: styles.backBtn,
+          onPress: function onPress() {
+            return _this.runTestCase('');
+          },
+          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.backBtnText,
+            children: "\u2190 \u8FD4\u56DE\u4E3B\u9875"
           })
-        })
-      }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsxs)(_reactNative.View, {
-        style: styles.logArea,
-        children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.Text, {
-          style: styles.logTitle,
-          children: "\u4E8B\u4EF6\u65E5\u5FD7"
-        }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.ScrollView, {
-          style: styles.logScroll,
-          children: logs.length === 0 ? /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.Text, {
+        });
+      };
+      _this.renderLogArea = function () {
+        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
+          style: styles.logArea,
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.logTitle,
+            children: "\u4E8B\u4EF6\u65E5\u5FD7"
+          }), _this.state.logs.length === 0 ? /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
             style: styles.logEmpty,
-            children: "\u8BF7\u6309\u4E0A\u65B9\u6B65\u9AA4\u64CD\u4F5C"
-          }) : logs.map(function (log, i) {
-            return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            children: "\u6682\u65E0\u65E5\u5FD7"
+          }) : _this.state.logs.map(function (log, i) {
+            return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
               style: styles.logItem,
               children: log
             }, i);
+          })]
+        });
+      };
+      _this.renderCaseLayout = function (title, caseId, operationArea, controlPanel) {
+        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
+          style: styles.flex1,
+          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.ScrollView, {
+            style: styles.flex1,
+            contentContainerStyle: styles.caseContainer,
+            children: [_this.renderBackButton(), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+              style: styles.caseTitle,
+              children: title
+            }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+              style: styles.caseId,
+              children: ["EC\u7528\u4F8B: ", caseId]
+            }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
+              style: styles.operationArea,
+              children: operationArea
+            }), controlPanel && /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
+              style: styles.controlPanel,
+              children: controlPanel
+            }), _this.renderLogArea()]
           })
-        })]
-      })]
-    });
-  };
-  var stateName = function stateName(s) {
-    var map = (0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)({}, _$$_REQUIRE(_dependencyMap[6], "react-native-gesture-handler").State.UNDETERMINED, 'UNDETERMINED'), _$$_REQUIRE(_dependencyMap[6], "react-native-gesture-handler").State.FAILED, 'FAILED'), _$$_REQUIRE(_dependencyMap[6], "react-native-gesture-handler").State.BEGAN, 'BEGAN'), _$$_REQUIRE(_dependencyMap[6], "react-native-gesture-handler").State.CANCELLED, 'CANCELLED'), _$$_REQUIRE(_dependencyMap[6], "react-native-gesture-handler").State.ACTIVE, 'ACTIVE'), _$$_REQUIRE(_dependencyMap[6], "react-native-gesture-handler").State.END, 'END');
-    return map[s] || `UNKNOWN(${s})`;
-  };
+        });
+      };
+      // ═══════════════════════════════════════════════════════
+      // HOME PAGE
+      // ═══════════════════════════════════════════════════════
+      _this.renderHomePage = function () {
+        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          style: styles.flex1,
+          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.ScrollView, {
+            style: styles.flex1,
+            contentContainerStyle: styles.homeContainer,
+            children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+              style: styles.homeTitle,
+              children: "GestureHandler \u6D4B\u8BD5\u7528\u4F8B"
+            }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+              style: styles.homeSubtitle,
+              children: ["\u5171 ", TEST_CASES.length, " \u6761 EC \u7528\u4F8B"]
+            }), TEST_CASES.map(function (tc) {
+              return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.TouchableOpacity, {
+                style: styles.homeBtn,
+                onPress: function onPress() {
+                  return _this.runTestCase(tc.key);
+                },
+                children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                  style: styles.homeBtnId,
+                  children: tc.id
+                }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                  style: styles.homeBtnTitle,
+                  children: tc.title
+                })]
+              }, tc.key);
+            }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
+              style: {
+                height: 40
+              }
+            })]
+          })
+        });
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276467 — 无属性
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276467 = function () {
+        // componentDidMount 等效：在渲染时记录日志
+        setTimeout(function () {
+          if (_this.state.logs.length === 0 && _this.state.currentTestCase === 'Case2276467_NoProps') {
+            _this.addLog('[NoProps] 页面正常渲染');
+          }
+        }, 100);
+        return _this.renderCaseLayout('GestureHandler组件测试 - 无属性', '2276467', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
+          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+            children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+              style: styles.guideText,
+              children: "GestureHandlerRootView \u65E0\u4EFB\u4F55\u989D\u5916\u5C5E\u6027"
+            }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+              style: styles.guideText,
+              children: "\u6B63\u5E38\u6E32\u67D3\u4E0D\u5D29\u6E83\u5373\u901A\u8FC7"
+            })]
+          })
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276468 — 无效属性
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276468 = function () {
+        setTimeout(function () {
+          if (_this.state.logs.length === 0 && _this.state.currentTestCase === 'Case2276468_InvalidProps') {
+            _this.addLog('[InvalidProps] 页面正常渲染');
+          }
+        }, 100);
+        return _this.renderCaseLayout('GestureHandler组件测试 - 无效属性', '2276468', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
+          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+            invalidProp: "test",
+            fakeAttr: 123,
+            children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+              style: styles.guideText,
+              children: "\u4F20\u5165\u4E86 invalidProp \u548C fakeAttr"
+            }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+              style: styles.guideText,
+              children: "\u4E0D\u5D29\u6E83\u5373\u901A\u8FC7"
+            })]
+          })
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276469 — 单一子组件
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276469 = function () {
+        return _this.renderCaseLayout('GestureHandler组件测试 - 单一子组件', '2276469', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "\u70B9\u51FB\u4E0B\u65B9\u533A\u57DF\u89E6\u53D1 Tap"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.ACTIVE) {
+                _this.addLog('[SingleChild] Tap triggered');
+              }
+            },
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
+              style: styles.tapBox,
+              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                style: styles.boxText,
+                children: "\u70B9\u51FB\u6B64\u5904"
+              })
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276470 — 多个子组件
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276470 = function () {
+        return _this.renderCaseLayout('GestureHandler组件测试 - 多个子组件', '2276470', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "TapGestureHandler + LongPressGestureHandler \u5404\u81EA\u72EC\u7ACB\u54CD\u5E94"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.ACTIVE) {
+                _this.addLog('[MultiChild] Tap triggered');
+              }
+            },
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
+              style: styles.tapBox,
+              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                style: styles.boxText,
+                children: "\u70B9\u51FB\u6B64\u5904 (Tap)"
+              })
+            })
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").LongPressGestureHandler, {
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.ACTIVE) {
+                _this.addLog('[MultiChild] LongPress triggered');
+              }
+            },
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
+              style: styles.longPressBox,
+              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                style: styles.boxText,
+                children: "\u957F\u6309\u6B64\u5904 (LongPress)"
+              })
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276471 — 无子组件
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276471 = function () {
+        setTimeout(function () {
+          if (_this.state.logs.length === 0 && _this.state.currentTestCase === 'Case2276471_NoChild') {
+            _this.addLog('[NoChild] 页面正常渲染');
+          }
+        }, 100);
+        return _this.renderCaseLayout('GestureHandler组件测试 - 无子组件', '2276471', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+            style: {
+              height: 100,
+              backgroundColor: '#eee',
+              borderRadius: 8
+            }
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "GestureHandlerRootView \u5185\u65E0\u5B50\u7EC4\u4EF6"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "\u4E0D\u5D29\u6E83\u5373\u901A\u8FC7"
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276472 — TapBasic
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276472 = function () {
+        return _this.renderCaseLayout('TapGestureHandler测试 - 基本点击', '2276472', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "\u70B9\u51FB\u4E0B\u65B9\u533A\u57DF"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.ACTIVE) {
+                var count = _this.state.tapCount + 1;
+                _this.setState({
+                  tapCount: count
+                });
+                _this.addLog(`[Tap] Tap triggered count:${count}`);
+              }
+            },
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
+              style: styles.tapBox,
+              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                style: styles.boxText,
+                children: "\u70B9\u51FB\u6B64\u5904"
+              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                style: styles.boxSubText,
+                children: ["\u6B21\u6570: ", _this.state.tapCount]
+              })]
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276473 — TapDouble
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276473 = function () {
+        return _this.renderCaseLayout('TapGestureHandler测试 - 双击', '2276473', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "\u53CC\u51FB\u4E0B\u65B9\u533A\u57DF"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
+            numberOfTaps: 2,
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.ACTIVE) {
+                var count = _this.state.doubleTapCount + 1;
+                _this.setState({
+                  doubleTapCount: count
+                });
+                _this.addLog(`[DoubleTap] DoubleTap triggered count:${count}`);
+              }
+            },
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
+              style: styles.tapBox,
+              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                style: styles.boxText,
+                children: "\u53CC\u51FB\u6B64\u5904"
+              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                style: styles.boxSubText,
+                children: ["\u6B21\u6570: ", _this.state.doubleTapCount]
+              })]
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276474 — TapLongPressDistinguish
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276474 = function () {
+        return _this.renderCaseLayout('TapGestureHandler与LongPressGestureHandler区分测试', '2276474', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "\u77ED\u6309\u89E6\u53D1 Tap\uFF0C\u957F\u6309\u89E6\u53D1 LongPress"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").LongPressGestureHandler, {
+            ref: _this.longPressRef474,
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.ACTIVE) {
+                var count = _this.state.distinguishLongPressCount + 1;
+                _this.setState({
+                  distinguishLongPressCount: count
+                });
+                _this.addLog(`[Distinguish] LongPress triggered count:${count}`);
+              }
+            },
+            minDurationMs: 800,
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
+              ref: _this.tapRef474,
+              onHandlerStateChange: function onHandlerStateChange(e) {
+                if (e.nativeEvent.state === GestureState.ACTIVE) {
+                  var count = _this.state.distinguishTapCount + 1;
+                  _this.setState({
+                    distinguishTapCount: count
+                  });
+                  _this.addLog(`[Distinguish] Tap triggered count:${count}`);
+                }
+              },
+              waitFor: _this.longPressRef474,
+              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
+                style: styles.combinedBox,
+                children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                  style: styles.boxText,
+                  children: "\u70B9\u51FB\u6216\u957F\u6309\u6B64\u5904"
+                }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                  style: styles.boxSubText,
+                  children: ["Tap: ", _this.state.distinguishTapCount, " | LongPress: ", _this.state.distinguishLongPressCount]
+                })]
+              })
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276475 — PanBasic
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276475 = function () {
+        return _this.renderCaseLayout('PanGestureHandler测试 - 基本拖拽', '2276475', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "\u62D6\u62FD\u4E0B\u65B9\u65B9\u5757\uFF0C\u677E\u624B\u540E\u5F39\u56DE"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PanGestureHandler, {
+            onGestureEvent: _this.onPanBasicEvent,
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.END) {
+                _this.addLog('[Pan] gesture ended, springing back');
+                _this.springReset(_this.panBasicX);
+                _this.springReset(_this.panBasicY);
+              }
+            },
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Animated.View, {
+              style: [styles.dragBox, {
+                transform: [{
+                  translateX: _this.panBasicX
+                }, {
+                  translateY: _this.panBasicY
+                }]
+              }],
+              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                style: styles.boxText,
+                children: "\u62D6\u62FD\u6211"
+              })
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276476 — PanDirectionLock
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276476 = function () {
+        return _this.renderCaseLayout('PanGestureHandler测试 - 方向锁定', '2276476', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "\u7EA2\u8272\u5757\u4EC5\u6C34\u5E73\u62D6\u52A8\uFF0C\u7EFF\u8272\u5757\u4EC5\u5782\u76F4\u62D6\u52A8"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
+            style: styles.dirRow,
+            children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PanGestureHandler, {
+              onGestureEvent: _this.onPanHorizontalEvent,
+              onHandlerStateChange: function onHandlerStateChange(e) {
+                if (e.nativeEvent.state === GestureState.END) {
+                  _this.addLog('[HorizontalPan] ended');
+                  _this.springReset(_this.panHorizontalX);
+                }
+              },
+              activeOffsetX: [-10, 10],
+              failOffsetY: [-10, 10],
+              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Animated.View, {
+                style: [styles.dirBox, {
+                  backgroundColor: '#e74c3c',
+                  transform: [{
+                    translateX: _this.panHorizontalX
+                  }]
+                }],
+                children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                  style: styles.boxText,
+                  children: "\u4EC5\u6C34\u5E73"
+                })
+              })
+            }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PanGestureHandler, {
+              onGestureEvent: _this.onPanVerticalEvent,
+              onHandlerStateChange: function onHandlerStateChange(e) {
+                if (e.nativeEvent.state === GestureState.END) {
+                  _this.addLog('[VerticalPan] ended');
+                  _this.springReset(_this.panVerticalY);
+                }
+              },
+              activeOffsetY: [-10, 10],
+              failOffsetX: [-10, 10],
+              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Animated.View, {
+                style: [styles.dirBox, {
+                  backgroundColor: '#27ae60',
+                  transform: [{
+                    translateY: _this.panVerticalY
+                  }]
+                }],
+                children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                  style: styles.boxText,
+                  children: "\u4EC5\u5782\u76F4"
+                })
+              })
+            })]
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276477 — PanMinDist
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276477 = function () {
+        return _this.renderCaseLayout('PanGestureHandler测试 - 最小距离', '2276477', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+            style: styles.guideText,
+            children: ["\u62D6\u52A8\u8D85\u8FC7 ", _this.state.minDist, "px \u624D\u6FC0\u6D3B"]
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PanGestureHandler, {
+            onGestureEvent: _this.onPanMinDistEvent,
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              var state = e.nativeEvent.state;
+              _this.addLog(`[PanMinDist] stateChange: ${getStateName(state)}`);
+              if (state === GestureState.END) {
+                _this.springReset(_this.panMinDistX);
+                _this.setState({
+                  minDistActive: false
+                });
+              }
+            },
+            minDist: _this.state.minDist,
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
+              style: [styles.minDistBox, {
+                backgroundColor: _this.state.minDistActive ? '#ff9500' : '#666',
+                transform: [{
+                  translateX: _this.panMinDistX
+                }]
+              }],
+              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                style: styles.boxText,
+                children: ["\u6700\u5C0F\u8DDD\u79BB: ", _this.state.minDist, "px"]
+              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                style: styles.boxSubText,
+                children: _this.state.minDistActive ? 'ACTIVE' : 'INACTIVE'
+              })]
+            })
+          })]
+        }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
+          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
+            style: styles.controlRow,
+            children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+              style: styles.controlLabel,
+              children: ["minDist: ", _this.state.minDist]
+            }), [0, 50, 100, 200].map(function (v) {
+              return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.TouchableOpacity, {
+                style: styles.controlBtn,
+                onPress: function onPress() {
+                  return _this.setState({
+                    minDist: v
+                  });
+                },
+                children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                  style: styles.controlBtnText,
+                  children: v
+                })
+              }, v);
+            })]
+          })
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276478 — PinchBasic
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276478 = function () {
+        return _this.renderCaseLayout('PinchGestureHandler测试 - 基本捏合', '2276478', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          style: styles.gestureArea,
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "\u53CC\u6307\u7F29\u653E\u4E0B\u65B9\u65B9\u5757"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PinchGestureHandler, {
+            onGestureEvent: _this.onPinchBasicEvent,
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.END) {
+                _this.addLog('[Pinch] ended');
+                _this.springReset(_this.pinchScaleAnim, 1);
+              }
+            },
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
+              style: [styles.pinchBox, {
+                transform: [{
+                  scale: _this.pinchScaleAnim
+                }]
+              }],
+              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                style: styles.boxText,
+                children: "\u634F\u5408\u7F29\u653E"
+              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                style: styles.boxSubText,
+                children: ["scale: ", _this.state.pinchScale.toFixed(2)]
+              })]
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276479 — PinchWithRotation
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276479 = function () {
+        return _this.renderCaseLayout('PinchGestureHandler测试 - 带旋转', '2276479', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          style: styles.gestureArea,
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "\u53CC\u6307\u540C\u65F6\u634F\u5408\u548C\u65CB\u8F6C (simultaneousHandlers)"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PinchGestureHandler, {
+            ref: _this.pinchRef479,
+            simultaneousHandlers: _this.rotateRef479,
+            onGestureEvent: _this.onCombo479PinchEvent,
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.END) {
+                _this.addLog('[Combo479Pinch] ended');
+                _this.springReset(_this.combo479ScaleAnim, 1);
+              }
+            },
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Animated.View, {
+              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").RotationGestureHandler, {
+                ref: _this.rotateRef479,
+                simultaneousHandlers: _this.pinchRef479,
+                onGestureEvent: _this.onCombo479RotateEvent,
+                onHandlerStateChange: function onHandlerStateChange(e) {
+                  if (e.nativeEvent.state === GestureState.END) {
+                    _this.addLog('[Combo479Rotate] ended');
+                    // this.springReset(this.combo479RotateAnim)
+                  }
+                },
+                children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
+                  style: [styles.comboBox, {
+                    transform: [{
+                      scale: _this.combo479ScaleAnim
+                    }, {
+                      rotate: _this.combo479RotateAnim.interpolate({
+                        inputRange: [-Math.PI, Math.PI],
+                        outputRange: ['-180deg', '180deg']
+                      })
+                    }]
+                  }],
+                  children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                    style: styles.boxText,
+                    children: "\u634F\u5408+\u65CB\u8F6C"
+                  }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                    style: styles.boxSubText,
+                    children: ["scale: ", _this.state.comboScale479.toFixed(2)]
+                  }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                    style: styles.boxSubText,
+                    children: ["angle: ", (_this.state.comboRotation479 * 180 / Math.PI).toFixed(1), "\xB0"]
+                  })]
+                })
+              })
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276480 — RotationBasic
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276480 = function () {
+        return _this.renderCaseLayout('RotationGestureHandler测试 - 基本旋转', '2276480', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          style: styles.gestureArea,
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "\u53CC\u6307\u65CB\u8F6C\u4E0B\u65B9\u65B9\u5757"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").RotationGestureHandler, {
+            onGestureEvent: _this.onRotateBasicEvent,
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.END) {
+                _this.addLog('[Rotation] ended');
+                _this.springReset(_this.rotateAngleAnim);
+              }
+            },
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
+              style: [styles.rotateBox, {
+                transform: [{
+                  rotate: _this.rotateAngleAnim.interpolate({
+                    inputRange: [-Math.PI, Math.PI],
+                    outputRange: ['-180deg', '180deg']
+                  })
+                }]
+              }],
+              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                style: styles.boxText,
+                children: "\u65CB\u8F6C\u6211"
+              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                style: styles.boxSubText,
+                children: [(_this.state.rotationAngle * 180 / Math.PI).toFixed(1), "\xB0"]
+              })]
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276481 — LongPressBasic
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276481 = function () {
+        return _this.renderCaseLayout('LongPressGestureHandler测试 - 基本长按', '2276481', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "\u957F\u6309\u4E0B\u65B9\u533A\u57DF\uFF08\u9ED8\u8BA4\u65F6\u957F\u7EA6500ms\uFF09"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").LongPressGestureHandler, {
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.ACTIVE) {
+                var count = _this.state.longPressCount + 1;
+                _this.setState({
+                  longPressCount: count
+                });
+                _this.addLog(`[LongPress] LongPress triggered count:${count}`);
+              }
+            },
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
+              style: styles.longPressBox,
+              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                style: styles.boxText,
+                children: "\u957F\u6309\u6B64\u5904"
+              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                style: styles.boxSubText,
+                children: ["\u6B21\u6570: ", _this.state.longPressCount]
+              })]
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276482 — LongPressCustomDuration
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276482 = function () {
+        return _this.renderCaseLayout('LongPressGestureHandler测试 - 自定义时长', '2276482', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+            style: styles.guideText,
+            children: ["\u957F\u6309 ", _this.state.customMinDuration, "ms \u540E\u89E6\u53D1"]
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").LongPressGestureHandler, {
+            minDurationMs: _this.state.customMinDuration,
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.ACTIVE) {
+                var count = _this.state.customLongPressCount + 1;
+                _this.setState({
+                  customLongPressCount: count
+                });
+                _this.addLog(`[LongPressCustom] triggered after ${_this.state.customMinDuration}ms count:${count}`);
+              }
+            },
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
+              style: styles.longPressBox,
+              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                style: styles.boxText,
+                children: "\u957F\u6309\u6B64\u5904"
+              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                style: styles.boxSubText,
+                children: ["\u6B21\u6570: ", _this.state.customLongPressCount]
+              })]
+            })
+          })]
+        }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
+          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
+            style: styles.controlRow,
+            children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+              style: styles.controlLabel,
+              children: ["minDurationMs: ", _this.state.customMinDuration]
+            }), [500, 1000, 1500, 2000].map(function (v) {
+              return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.TouchableOpacity, {
+                style: styles.controlBtn,
+                onPress: function onPress() {
+                  return _this.setState({
+                    customMinDuration: v
+                  });
+                },
+                children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                  style: styles.controlBtnText,
+                  children: v
+                })
+              }, v);
+            })]
+          })
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276483 — FlingBasic
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276483 = function () {
+        return _this.renderCaseLayout('FlingGestureHandler测试 - 基本快扫', '2276483', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "\u5728\u4E0B\u65B9\u533A\u57DF\u4EFB\u610F\u65B9\u5411\u5FEB\u626B"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").FlingGestureHandler, {
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.ACTIVE) {
+                var count = _this.state.flingCount + 1;
+                _this.setState({
+                  flingCount: count
+                });
+                _this.addLog(`[Fling] Fling triggered count:${count}`);
+              }
+            },
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
+              style: styles.flingBox,
+              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                style: styles.boxText,
+                children: "\u4EFB\u610F\u65B9\u5411\u5FEB\u626B"
+              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                style: styles.boxSubText,
+                children: ["\u6B21\u6570: ", _this.state.flingCount]
+              })]
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276484 — FlingDirectional
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276484 = function () {
+        return _this.renderCaseLayout('FlingGestureHandler测试 - 方向性快扫', '2276484', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "\u4EC5\u54CD\u5E94\u5411\u5DE6\u5FEB\u626B"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").FlingGestureHandler, {
+            direction: _$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").Directions.LEFT,
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.ACTIVE) {
+                var count = _this.state.leftFlingCount + 1;
+                _this.setState({
+                  leftFlingCount: count
+                });
+                _this.addLog(`[FlingLeft] Left fling triggered count:${count}`);
+              }
+            },
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
+              style: styles.flingBox,
+              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                style: styles.boxText,
+                children: "\u2190 \u5411\u5DE6\u5FEB\u626B"
+              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                style: styles.boxSubText,
+                children: ["\u6B21\u6570: ", _this.state.leftFlingCount]
+              })]
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276485 — NativeButton
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276485 = function () {
+        return _this.renderCaseLayout('NativeButtonGestureHandler测试 - 基本按钮', '2276485', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "\u70B9\u51FB\u4E0B\u65B9\u539F\u751F\u6309\u94AE"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").NativeViewGestureHandler, {
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.ACTIVE) {
+                var count = _this.state.nativeButtonCount + 1;
+                _this.setState({
+                  nativeButtonCount: count
+                });
+                _this.addLog(`[NativeButton] pressed count:${count}`);
+              }
+            },
+            shouldActivateOnStart: true,
+            disallowInterruption: true,
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
+              style: styles.nativeBtn,
+              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                style: styles.boxText,
+                children: "\u539F\u751F\u6309\u94AE"
+              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                style: styles.boxSubText,
+                children: ["\u6B21\u6570: ", _this.state.nativeButtonCount]
+              })]
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276486 — PinchRotationCombo
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276486 = function () {
+        return _this.renderCaseLayout('手势组合测试 - 捏合与旋转', '2276486', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          style: styles.gestureArea,
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "\u53CC\u6307\u540C\u65F6\u634F\u5408 + \u65CB\u8F6C (simultaneousHandlers)"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PinchGestureHandler, {
+            ref: _this.pinchRef486,
+            simultaneousHandlers: _this.rotateRef486,
+            onGestureEvent: _this.onCombo486PinchEvent,
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.END) {
+                _this.addLog('[Combo486] pinch ended');
+                _this.springReset(_this.combo486ScaleAnim, 1);
+              }
+            },
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").RotationGestureHandler, {
+              ref: _this.rotateRef486,
+              simultaneousHandlers: _this.pinchRef486,
+              onGestureEvent: _this.onCombo486RotateEvent,
+              onHandlerStateChange: function onHandlerStateChange(e) {
+                if (e.nativeEvent.state === GestureState.END) {
+                  _this.addLog('[Combo486] rotation ended');
+                  _this.springReset(_this.combo486RotateAnim);
+                }
+              },
+              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
+                style: [styles.comboBox, {
+                  transform: [{
+                    scale: _this.combo486ScaleAnim
+                  }, {
+                    rotate: _this.combo486RotateAnim.interpolate({
+                      inputRange: [-Math.PI, Math.PI],
+                      outputRange: ['-180deg', '180deg']
+                    })
+                  }]
+                }],
+                children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                  style: styles.boxText,
+                  children: "\u634F\u5408+\u65CB\u8F6C"
+                }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                  style: styles.boxSubText,
+                  children: ["scale: ", _this.state.combo486Scale.toFixed(2)]
+                }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                  style: styles.boxSubText,
+                  children: ["angle: ", (_this.state.combo486Rotation * 180 / Math.PI).toFixed(1), "\xB0"]
+                })]
+              })
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276487 — PanPinchCombo
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276487 = function () {
+        return _this.renderCaseLayout('手势组合测试 - 拖拽与捏合', '2276487', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          style: styles.gestureArea,
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "\u540C\u65F6\u62D6\u62FD + \u53CC\u6307\u634F\u5408 (simultaneousHandlers)"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PanGestureHandler, {
+            ref: _this.panRef487,
+            simultaneousHandlers: _this.pinchRef487,
+            onGestureEvent: _this.onCombo487PanEvent,
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.END) {
+                _this.addLog('[Combo487] pan ended');
+                _this.springReset(_this.combo487PanX);
+                _this.springReset(_this.combo487PanY);
+              }
+            },
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PinchGestureHandler, {
+              ref: _this.pinchRef487,
+              simultaneousHandlers: _this.panRef487,
+              onGestureEvent: _this.onCombo487PinchEvent,
+              onHandlerStateChange: function onHandlerStateChange(e) {
+                if (e.nativeEvent.state === GestureState.END) {
+                  _this.addLog('[Combo487] pinch ended');
+                  _this.springReset(_this.combo487ScaleAnim, 1);
+                }
+              },
+              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
+                style: [styles.comboBox, {
+                  transform: [{
+                    translateX: _this.combo487PanX
+                  }, {
+                    translateY: _this.combo487PanY
+                  }, {
+                    scale: _this.combo487ScaleAnim
+                  }]
+                }],
+                children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                  style: styles.boxText,
+                  children: "\u62D6\u62FD+\u634F\u5408"
+                }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                  style: styles.boxSubText,
+                  children: ["scale: ", _this.state.combo487Scale.toFixed(2)]
+                })]
+              })
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276488 — TapWaitDoubleTap
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276488 = function () {
+        return _this.renderCaseLayout('等待手势测试 - 单击等待双击', '2276488', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "\u5355\u51FB waitFor \u53CC\u51FB\uFF1A\u53CC\u51FB\u65F6\u53EA\u89E6\u53D1\u53CC\u51FB\uFF0C\u5355\u51FB\u65F6\u5EF6\u8FDF\u89E6\u53D1\u5355\u51FB"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
+            ref: _this.tapRef488Double,
+            numberOfTaps: 2,
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.ACTIVE) {
+                var count = _this.state.doubleTap488Count + 1;
+                _this.setState({
+                  doubleTap488Count: count
+                });
+                _this.addLog(`[WaitDoubleTap] DoubleTap triggered count:${count}`);
+              }
+            },
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
+              ref: _this.tapRef488Single,
+              waitFor: _this.tapRef488Double,
+              onHandlerStateChange: function onHandlerStateChange(e) {
+                if (e.nativeEvent.state === GestureState.ACTIVE) {
+                  var count = _this.state.singleTap488Count + 1;
+                  _this.setState({
+                    singleTap488Count: count
+                  });
+                  _this.addLog(`[WaitDoubleTap] SingleTap triggered count:${count}`);
+                }
+              },
+              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
+                style: styles.combinedBox,
+                children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                  style: styles.boxText,
+                  children: "\u5355\u51FB\u6216\u53CC\u51FB\u6B64\u5904"
+                }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                  style: styles.boxSubText,
+                  children: ["Single: ", _this.state.singleTap488Count, " | Double: ", _this.state.doubleTap488Count]
+                })]
+              })
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276489 — TapWaitLongPress
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276489 = function () {
+        return _this.renderCaseLayout('等待手势测试 - 点击等待长按', '2276489', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "Tap waitFor LongPress\uFF1A\u957F\u6309\u89E6\u53D1 LongPress\uFF0C\u77ED\u6309\u89E6\u53D1 Tap"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").LongPressGestureHandler, {
+            ref: _this.longPressRef489,
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.ACTIVE) {
+                var count = _this.state.longPress489Count + 1;
+                _this.setState({
+                  longPress489Count: count
+                });
+                _this.addLog(`[WaitLongPress] LongPress triggered count:${count}`);
+              }
+            },
+            minDurationMs: 800,
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
+              ref: _this.tapRef489,
+              waitFor: _this.longPressRef489,
+              onHandlerStateChange: function onHandlerStateChange(e) {
+                if (e.nativeEvent.state === GestureState.ACTIVE) {
+                  var count = _this.state.tap489Count + 1;
+                  _this.setState({
+                    tap489Count: count
+                  });
+                  _this.addLog(`[WaitLongPress] Tap triggered count:${count}`);
+                }
+              },
+              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
+                style: styles.combinedBox,
+                children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                  style: styles.boxText,
+                  children: "\u70B9\u51FB\u6216\u957F\u6309\u6B64\u5904"
+                }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                  style: styles.boxSubText,
+                  children: ["Tap: ", _this.state.tap489Count, " | LongPress: ", _this.state.longPress489Count]
+                })]
+              })
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276490 — HorizontalVerticalMutex
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276490 = function () {
+        return _this.renderCaseLayout('互斥手势测试 - 水平与垂直拖拽', '2276490', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "\u540C\u4E00\u533A\u57DF\u5185\u6C34\u5E73Pan\u548C\u5782\u76F4Pan\u4E92\u65A5\uFF1A\u521D\u59CB\u65B9\u5411\u51B3\u5B9A\u54EA\u4E2A\u6FC0\u6D3B"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "\u6C34\u5E73\u6ED1\u52A8 \u2192 \u4EC5\u6C34\u5E73\u79FB\u52A8\uFF1B\u5782\u76F4\u6ED1\u52A8 \u2192 \u4EC5\u5782\u76F4\u79FB\u52A8"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PanGestureHandler, {
+            onGestureEvent: _this.onMutex490HEvent,
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.END) {
+                _this.addLog('[Mutex490H] ended');
+                _this.springReset(_this.mutex490HX);
+              }
+            },
+            activeOffsetX: [-10, 10],
+            failOffsetY: [-10, 10],
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PanGestureHandler, {
+              onGestureEvent: _this.onMutex490VEvent,
+              onHandlerStateChange: function onHandlerStateChange(e) {
+                if (e.nativeEvent.state === GestureState.END) {
+                  _this.addLog('[Mutex490V] ended');
+                  _this.springReset(_this.mutex490VY);
+                }
+              },
+              activeOffsetY: [-10, 10],
+              failOffsetX: [-10, 10],
+              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
+                style: [styles.mutexBox, {
+                  transform: [{
+                    translateX: _this.mutex490HX
+                  }, {
+                    translateY: _this.mutex490VY
+                  }]
+                }],
+                children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                  style: styles.boxText,
+                  children: "\u62D6\u62FD\u6B64\u533A\u57DF"
+                }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                  style: styles.boxSubText,
+                  children: ["\u6C34\u5E73: ", _this.state.horizontalInfo]
+                }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                  style: styles.boxSubText,
+                  children: ["\u5782\u76F4: ", _this.state.verticalInfo]
+                })]
+              })
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276491 — PanTapMutex
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276491 = function () {
+        return _this.renderCaseLayout('互斥手势测试 - 拖拽与点击', '2276491', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "Pan\u548CTap\u4E0D\u52A0simultaneousHandlers\uFF0C\u81EA\u7136\u4E92\u65A5"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PanGestureHandler, {
+            onGestureEvent: _this.onMutex491PanEvent,
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.END) {
+                _this.addLog('[Mutex491Pan] ended');
+                _this.springReset(_this.mutex491PanX);
+                _this.springReset(_this.mutex491PanY);
+              }
+            },
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Animated.View, {
+              style: [styles.dragBox, {
+                transform: [{
+                  translateX: _this.mutex491PanX
+                }, {
+                  translateY: _this.mutex491PanY
+                }]
+              }],
+              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
+                onHandlerStateChange: function onHandlerStateChange(e) {
+                  if (e.nativeEvent.state === GestureState.ACTIVE) {
+                    var count = _this.state.tap491Count + 1;
+                    _this.setState({
+                      tap491Count: count
+                    });
+                    _this.addLog(`[Mutex491Tap] Tap triggered count:${count}`);
+                  }
+                },
+                children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
+                  style: styles.innerTapArea,
+                  children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                    style: styles.boxText,
+                    children: "\u62D6\u62FD\u6216\u70B9\u51FB"
+                  }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                    style: styles.boxSubText,
+                    children: ["Pan: ", _this.state.pan491Info]
+                  }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                    style: styles.boxSubText,
+                    children: ["Tap: ", _this.state.tap491Count]
+                  })]
+                })
+              })
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276492 — NestedTap
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276492 = function () {
+        return _this.renderCaseLayout('嵌套手势处理器测试 - 嵌套点击处理器', '2276492', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "\u5916\u5C42Tap + \u5185\u5C42Tap\uFF0C\u5404\u81EA\u72EC\u7ACB\u54CD\u5E94"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.ACTIVE) {
+                var count = _this.state.outerTapCount + 1;
+                _this.setState({
+                  outerTapCount: count
+                });
+                _this.addLog(`[NestedTap] OuterTap triggered count:${count}`);
+              }
+            },
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
+              style: styles.outerBox,
+              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                style: styles.boxText,
+                children: "\u5916\u5C42 Tap \u533A\u57DF"
+              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                style: styles.boxSubText,
+                children: ["\u5916\u5C42: ", _this.state.outerTapCount]
+              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
+                onHandlerStateChange: function onHandlerStateChange(e) {
+                  if (e.nativeEvent.state === GestureState.ACTIVE) {
+                    var count = _this.state.innerTapCount + 1;
+                    _this.setState({
+                      innerTapCount: count
+                    });
+                    _this.addLog(`[NestedTap] InnerTap triggered count:${count}`);
+                  }
+                },
+                children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
+                  style: styles.innerBox,
+                  children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                    style: styles.boxTextDark,
+                    children: "\u5185\u5C42 Tap \u533A\u57DF"
+                  }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                    style: styles.boxSubTextDark,
+                    children: ["\u5185\u5C42: ", _this.state.innerTapCount]
+                  })]
+                })
+              })]
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276493 — NestedPan
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276493 = function () {
+        return _this.renderCaseLayout('嵌套手势处理器测试 - 嵌套拖拽处理器', '2276493', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "\u5916\u5C42Pan + \u5185\u5C42Pan\uFF0C\u62D6\u62FD\u5185\u5C42\u65F6\u5185\u5C42\u54CD\u5E94"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PanGestureHandler, {
+            onGestureEvent: _this.onNestedOuterPanEvent,
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.END) {
+                _this.addLog('[NestedPan] outer ended');
+                _this.springReset(_this.nestedOuterPanX);
+                _this.springReset(_this.nestedOuterPanY);
+              }
+            },
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
+              style: [styles.outerDragBox, {
+                transform: [{
+                  translateX: _this.nestedOuterPanX
+                }, {
+                  translateY: _this.nestedOuterPanY
+                }]
+              }],
+              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                style: styles.boxText,
+                children: "\u5916\u5C42 Pan"
+              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                style: styles.boxSubText,
+                children: _this.state.outerPanInfo
+              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PanGestureHandler, {
+                onGestureEvent: _this.onNestedInnerPanEvent,
+                onHandlerStateChange: function onHandlerStateChange(e) {
+                  if (e.nativeEvent.state === GestureState.END) {
+                    _this.addLog('[NestedPan] inner ended');
+                    _this.springReset(_this.nestedInnerPanX);
+                    _this.springReset(_this.nestedInnerPanY);
+                  }
+                },
+                children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
+                  style: [styles.innerDragBox, {
+                    transform: [{
+                      translateX: _this.nestedInnerPanX
+                    }, {
+                      translateY: _this.nestedInnerPanY
+                    }]
+                  }],
+                  children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                    style: styles.boxTextDark,
+                    children: "\u5185\u5C42 Pan"
+                  }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                    style: styles.boxSubTextDark,
+                    children: _this.state.innerPanInfo
+                  })]
+                })
+              })]
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276494 — NestedScrollView
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276494 = function () {
+        return _this.renderCaseLayout('嵌套可滚动组件测试 - 嵌套ScrollView', '2276494', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "GestureHandler \u5185\u5D4C\u5957\u591A\u5C42 ScrollView\uFF0C\u9A8C\u8BC1\u5185\u5916\u5C42\u6EDA\u52A8\u4E0D\u51B2\u7A81"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "\u5916\u5C42\u5782\u76F4\u6EDA\u52A8 | \u5185\u5C42\u6C34\u5E73\u6EDA\u52A8 | \u70B9\u51FB\u53EF\u89E6\u53D1 Tap"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.ACTIVE) {
+                _this.addLog('[NestedScrollView] Tap on scrollable area');
+              }
+            },
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
+              style: styles.nestedScrollOuter,
+              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.ScrollView, {
+                style: styles.innerScroll,
+                nestedScrollEnabled: true,
+                children: Array.from({
+                  length: 5
+                }, function (_, i) {
+                  return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
+                    children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                      style: styles.scrollSectionTitle,
+                      children: ["\u533A\u57DF ", i + 1]
+                    }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.ScrollView, {
+                      horizontal: true,
+                      style: styles.horizontalScroll,
+                      nestedScrollEnabled: true,
+                      showsHorizontalScrollIndicator: true,
+                      children: Array.from({
+                        length: 10
+                      }, function (_, j) {
+                        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
+                          style: styles.horizontalScrollItem,
+                          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                            style: styles.horizontalScrollText,
+                            children: ["\u9879 ", j + 1]
+                          })
+                        }, `item-${i}-${j}`);
+                      })
+                    }), Array.from({
+                      length: 3
+                    }, function (_, k) {
+                      return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                        style: styles.scrollItem,
+                        children: ["\u5782\u76F4\u5185\u5BB9 ", i * 3 + k + 1]
+                      }, `text-${i}-${k}`);
+                    })]
+                  }, `section-${i}`);
+                })
+              })
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276495 — ScrollViewDrag
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276495 = function () {
+        return _this.renderCaseLayout('嵌套可滚动组件测试 - ScrollView中的拖拽元素', '2276495', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "ScrollView \u5185\u5305\u542B\u53EF\u62D6\u62FD\u5143\u7D20"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.ScrollView, {
+            style: styles.scrollContainer,
+            nestedScrollEnabled: true,
+            children: [Array.from({
+              length: 5
+            }, function (_, i) {
+              return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                style: styles.scrollItem,
+                children: ["ScrollView \u5185\u5BB9 ", i + 1]
+              }, `pre-${i}`);
+            }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PanGestureHandler, {
+              onGestureEvent: _this.onScrollDragEvent,
+              onHandlerStateChange: function onHandlerStateChange(e) {
+                if (e.nativeEvent.state === GestureState.END) {
+                  _this.addLog('[ScrollDrag] drag ended');
+                  _this.springReset(_this.scrollDragX);
+                  _this.springReset(_this.scrollDragY);
+                }
+              },
+              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Animated.View, {
+                style: [styles.scrollDragBox, {
+                  transform: [{
+                    translateX: _this.scrollDragX
+                  }, {
+                    translateY: _this.scrollDragY
+                  }]
+                }],
+                children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                  style: styles.boxText,
+                  children: "\u62D6\u62FD\u6211 (\u5728ScrollView\u5185)"
+                })
+              })
+            }), Array.from({
+              length: 10
+            }, function (_, i) {
+              return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                style: styles.scrollItem,
+                children: ["ScrollView \u5185\u5BB9 ", i + 6]
+              }, `post-${i}`);
+            })]
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276496 — TouchableCombo
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276496 = function () {
+        return _this.renderCaseLayout('与原生组件结合测试 - Touchable组件', '2276496', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "GestureHandler \u5185\u5305\u542B TouchableOpacity"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.ACTIVE) {
+                _this.addLog('[TouchableCombo] GestureHandler Tap triggered');
+              }
+            },
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
+              style: styles.touchableContainer,
+              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                style: styles.guideText,
+                children: "GestureHandler \u533A\u57DF"
+              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.TouchableOpacity, {
+                style: styles.touchableBtn,
+                onPress: function onPress() {
+                  var count = _this.state.touchableCount + 1;
+                  _this.setState({
+                    touchableCount: count
+                  });
+                  _this.addLog(`[TouchableCombo] TouchableOpacity pressed count:${count}`);
+                },
+                children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+                  style: styles.boxText,
+                  children: "TouchableOpacity \u6309\u94AE"
+                }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                  style: styles.boxSubText,
+                  children: ["\u6B21\u6570: ", _this.state.touchableCount]
+                })]
+              })]
+            })
+          })]
+        }));
+      };
+      // ═══════════════════════════════════════════════════════
+      // CASE 2276497 — TextInputCombo
+      // ═══════════════════════════════════════════════════════
+      _this.renderCase2276497 = function () {
+        return _this.renderCaseLayout('与原生组件结合测试 - TextInput组件', '2276497', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
+          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
+            style: styles.guideText,
+            children: "GestureHandler \u5185\u5305\u542B TextInput"
+          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
+            onHandlerStateChange: function onHandlerStateChange(e) {
+              if (e.nativeEvent.state === GestureState.ACTIVE) {
+                var count = _this.state.textInputTapCount + 1;
+                _this.setState({
+                  textInputTapCount: count
+                });
+                _this.addLog(`[TextInputCombo] GestureHandler Tap count:${count}`);
+              }
+            },
+            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
+              style: styles.textInputContainer,
+              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                style: styles.guideText,
+                children: ["GestureHandler \u533A\u57DF (Tap: ", _this.state.textInputTapCount, ")"]
+              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.TextInput, {
+                style: styles.textInput,
+                placeholder: "\u5728\u6B64\u8F93\u5165\u6587\u5B57...",
+                value: _this.state.textInputValue,
+                onChangeText: function onChangeText(text) {
+                  _this.setState({
+                    textInputValue: text
+                  });
+                  _this.addLog(`[TextInputCombo] text changed: ${text}`);
+                },
+                onFocus: function onFocus() {
+                  return _this.addLog('[TextInputCombo] TextInput focused');
+                },
+                onBlur: function onBlur() {
+                  return _this.addLog('[TextInputCombo] TextInput blurred');
+                }
+              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+                style: styles.textInputDisplay,
+                children: ["\u5F53\u524D\u503C: ", _this.state.textInputValue || '(空)']
+              })]
+            })
+          })]
+        }));
+      };
+      _this.state = {
+        currentTestCase: '',
+        logs: [],
+        tapCount: 0,
+        doubleTapCount: 0,
+        distinguishTapCount: 0,
+        distinguishLongPressCount: 0,
+        minDist: 100,
+        minDistActive: false,
+        pinchScale: 1,
+        comboScale479: 1,
+        comboRotation479: 0,
+        rotationAngle: 0,
+        longPressCount: 0,
+        customLongPressCount: 0,
+        customMinDuration: 1500,
+        flingCount: 0,
+        leftFlingCount: 0,
+        nativeButtonCount: 0,
+        combo486Scale: 1,
+        combo486Rotation: 0,
+        combo487Scale: 1,
+        singleTap488Count: 0,
+        doubleTap488Count: 0,
+        tap489Count: 0,
+        longPress489Count: 0,
+        horizontalInfo: 'idle',
+        verticalInfo: 'idle',
+        pan491Info: 'idle',
+        tap491Count: 0,
+        outerTapCount: 0,
+        innerTapCount: 0,
+        outerPanInfo: 'idle',
+        innerPanInfo: 'idle',
+        touchableCount: 0,
+        textInputValue: '',
+        textInputTapCount: 0
+      };
+
+      // ── Initialize Animated Values ──
+      _this.panBasicX = new _reactNative.Animated.Value(0);
+      _this.panBasicY = new _reactNative.Animated.Value(0);
+      _this.panHorizontalX = new _reactNative.Animated.Value(0);
+      _this.panVerticalY = new _reactNative.Animated.Value(0);
+      _this.panMinDistX = new _reactNative.Animated.Value(0);
+      _this.pinchScaleAnim = new _reactNative.Animated.Value(1);
+      _this.rotateAngleAnim = new _reactNative.Animated.Value(0);
+      _this.combo479ScaleAnim = new _reactNative.Animated.Value(1);
+      _this.combo479RotateAnim = new _reactNative.Animated.Value(0);
+      _this.combo486ScaleAnim = new _reactNative.Animated.Value(1);
+      _this.combo486RotateAnim = new _reactNative.Animated.Value(0);
+      _this.combo487PanX = new _reactNative.Animated.Value(0);
+      _this.combo487PanY = new _reactNative.Animated.Value(0);
+      _this.combo487ScaleAnim = new _reactNative.Animated.Value(1);
+      _this.mutex490HX = new _reactNative.Animated.Value(0);
+      _this.mutex490VY = new _reactNative.Animated.Value(0);
+      _this.mutex491PanX = new _reactNative.Animated.Value(0);
+      _this.mutex491PanY = new _reactNative.Animated.Value(0);
+      _this.nestedOuterPanX = new _reactNative.Animated.Value(0);
+      _this.nestedOuterPanY = new _reactNative.Animated.Value(0);
+      _this.nestedInnerPanX = new _reactNative.Animated.Value(0);
+      _this.nestedInnerPanY = new _reactNative.Animated.Value(0);
+      _this.scrollDragX = new _reactNative.Animated.Value(0);
+      _this.scrollDragY = new _reactNative.Animated.Value(0);
+
+      // ── Animated Event Handlers ──
+
+      _this.onPanBasicEvent = _reactNative.Animated.event([{
+        nativeEvent: {
+          translationX: _this.panBasicX,
+          translationY: _this.panBasicY
+        }
+      }], {
+        useNativeDriver: true,
+        listener: function listener(e) {
+          var _e$nativeEvent = e.nativeEvent,
+            translationX = _e$nativeEvent.translationX,
+            translationY = _e$nativeEvent.translationY,
+            state = _e$nativeEvent.state;
+          if (state === GestureState.ACTIVE) {
+            _this.addLog(`[Pan] active tx:${translationX.toFixed(1)} ty:${translationY.toFixed(1)}`);
+          }
+        }
+      });
+      _this.onPanHorizontalEvent = _reactNative.Animated.event([{
+        nativeEvent: {
+          translationX: _this.panHorizontalX
+        }
+      }], {
+        useNativeDriver: true,
+        listener: function listener(e) {
+          var _e$nativeEvent2 = e.nativeEvent,
+            translationX = _e$nativeEvent2.translationX,
+            state = _e$nativeEvent2.state;
+          if (state === GestureState.ACTIVE) {
+            _this.addLog(`[HorizontalPan] tx:${translationX.toFixed(1)}`);
+          }
+        }
+      });
+      _this.onPanVerticalEvent = _reactNative.Animated.event([{
+        nativeEvent: {
+          translationY: _this.panVerticalY
+        }
+      }], {
+        useNativeDriver: true,
+        listener: function listener(e) {
+          var _e$nativeEvent3 = e.nativeEvent,
+            translationY = _e$nativeEvent3.translationY,
+            state = _e$nativeEvent3.state;
+          if (state === GestureState.ACTIVE) {
+            _this.addLog(`[VerticalPan] ty:${translationY.toFixed(1)}`);
+          }
+        }
+      });
+      _this.onPanMinDistEvent = _reactNative.Animated.event([{
+        nativeEvent: {
+          translationX: _this.panMinDistX
+        }
+      }], {
+        useNativeDriver: true,
+        listener: function listener(e) {
+          var _e$nativeEvent4 = e.nativeEvent,
+            translationX = _e$nativeEvent4.translationX,
+            translationY = _e$nativeEvent4.translationY,
+            state = _e$nativeEvent4.state;
+          var active = state === GestureState.ACTIVE;
+          if (active && !_this.state.minDistActive) {
+            _this.addLog(`[PanMinDist] ACTIVE tx:${translationX.toFixed(1)} ty:${translationY.toFixed(1)}`);
+          }
+          _this.setState({
+            minDistActive: active
+          });
+        }
+      });
+      _this.onPinchBasicEvent = _reactNative.Animated.event([{
+        nativeEvent: {
+          scale: _this.pinchScaleAnim
+        }
+      }], {
+        useNativeDriver: true,
+        listener: function listener(e) {
+          var _e$nativeEvent5 = e.nativeEvent,
+            scale = _e$nativeEvent5.scale,
+            state = _e$nativeEvent5.state;
+          if (state === GestureState.ACTIVE) {
+            _this.addLog(`[Pinch] scale:${scale.toFixed(2)}`);
+            _this.setState({
+              pinchScale: scale
+            });
+          }
+        }
+      });
+      _this.onRotateBasicEvent = _reactNative.Animated.event([{
+        nativeEvent: {
+          rotation: _this.rotateAngleAnim
+        }
+      }], {
+        useNativeDriver: true,
+        listener: function listener(e) {
+          var _e$nativeEvent6 = e.nativeEvent,
+            rotation = _e$nativeEvent6.rotation,
+            state = _e$nativeEvent6.state;
+          if (state === GestureState.ACTIVE) {
+            var deg = (rotation * 180 / Math.PI).toFixed(1);
+            _this.addLog(`[Rotation] angle:${deg}deg`);
+            _this.setState({
+              rotationAngle: rotation
+            });
+          }
+        }
+      });
+      _this.onCombo479PinchEvent = _reactNative.Animated.event([{
+        nativeEvent: {
+          scale: _this.combo479ScaleAnim
+        }
+      }], {
+        useNativeDriver: true,
+        listener: function listener(e) {
+          var _e$nativeEvent7 = e.nativeEvent,
+            scale = _e$nativeEvent7.scale,
+            state = _e$nativeEvent7.state;
+          if (state === GestureState.ACTIVE) {
+            _this.addLog(`[Combo479Pinch] scale:${scale.toFixed(2)}`);
+            _this.setState({
+              comboScale479: scale
+            });
+          }
+        }
+      });
+      _this.onCombo479RotateEvent = _reactNative.Animated.event([{
+        nativeEvent: {
+          rotation: _this.combo479RotateAnim
+        }
+      }], {
+        useNativeDriver: true,
+        listener: function listener(e) {
+          var _e$nativeEvent8 = e.nativeEvent,
+            rotation = _e$nativeEvent8.rotation,
+            state = _e$nativeEvent8.state;
+          if (state === GestureState.ACTIVE) {
+            var deg = (rotation * 180 / Math.PI).toFixed(1);
+            _this.addLog(`[Combo479Rotate] angle:${deg}deg`);
+            _this.setState({
+              comboRotation479: rotation
+            });
+          }
+        }
+      });
+      _this.onCombo486PinchEvent = _reactNative.Animated.event([{
+        nativeEvent: {
+          scale: _this.combo486ScaleAnim
+        }
+      }], {
+        useNativeDriver: true,
+        listener: function listener(e) {
+          var _e$nativeEvent9 = e.nativeEvent,
+            scale = _e$nativeEvent9.scale,
+            state = _e$nativeEvent9.state;
+          if (state === GestureState.ACTIVE) {
+            _this.addLog(`[Combo486Pinch] scale:${scale.toFixed(2)}`);
+            _this.setState({
+              combo486Scale: scale
+            });
+          }
+        }
+      });
+      _this.onCombo486RotateEvent = _reactNative.Animated.event([{
+        nativeEvent: {
+          rotation: _this.combo486RotateAnim
+        }
+      }], {
+        useNativeDriver: true,
+        listener: function listener(e) {
+          var _e$nativeEvent0 = e.nativeEvent,
+            rotation = _e$nativeEvent0.rotation,
+            state = _e$nativeEvent0.state;
+          if (state === GestureState.ACTIVE) {
+            var deg = (rotation * 180 / Math.PI).toFixed(1);
+            _this.addLog(`[Combo486Rotate] angle:${deg}deg`);
+            _this.setState({
+              combo486Rotation: rotation
+            });
+          }
+        }
+      });
+      _this.onCombo487PanEvent = _reactNative.Animated.event([{
+        nativeEvent: {
+          translationX: _this.combo487PanX,
+          translationY: _this.combo487PanY
+        }
+      }], {
+        useNativeDriver: true,
+        listener: function listener(e) {
+          var _e$nativeEvent1 = e.nativeEvent,
+            translationX = _e$nativeEvent1.translationX,
+            translationY = _e$nativeEvent1.translationY,
+            state = _e$nativeEvent1.state;
+          if (state === GestureState.ACTIVE) {
+            _this.addLog(`[Combo487Pan] tx:${translationX.toFixed(1)} ty:${translationY.toFixed(1)}`);
+          }
+        }
+      });
+      _this.onCombo487PinchEvent = _reactNative.Animated.event([{
+        nativeEvent: {
+          scale: _this.combo487ScaleAnim
+        }
+      }], {
+        useNativeDriver: true,
+        listener: function listener(e) {
+          var _e$nativeEvent10 = e.nativeEvent,
+            scale = _e$nativeEvent10.scale,
+            state = _e$nativeEvent10.state;
+          if (state === GestureState.ACTIVE) {
+            _this.addLog(`[Combo487Pinch] scale:${scale.toFixed(2)}`);
+            _this.setState({
+              combo487Scale: scale
+            });
+          }
+        }
+      });
+      _this.onMutex490HEvent = _reactNative.Animated.event([{
+        nativeEvent: {
+          translationX: _this.mutex490HX
+        }
+      }], {
+        useNativeDriver: true,
+        listener: function listener(e) {
+          var _e$nativeEvent11 = e.nativeEvent,
+            translationX = _e$nativeEvent11.translationX,
+            state = _e$nativeEvent11.state;
+          if (state === GestureState.ACTIVE) {
+            _this.addLog(`[Mutex490H] tx:${translationX.toFixed(1)}`);
+            _this.setState({
+              horizontalInfo: `tx:${translationX.toFixed(1)}`
+            });
+          }
+        }
+      });
+      _this.onMutex490VEvent = _reactNative.Animated.event([{
+        nativeEvent: {
+          translationY: _this.mutex490VY
+        }
+      }], {
+        useNativeDriver: true,
+        listener: function listener(e) {
+          var _e$nativeEvent12 = e.nativeEvent,
+            translationY = _e$nativeEvent12.translationY,
+            state = _e$nativeEvent12.state;
+          if (state === GestureState.ACTIVE) {
+            _this.addLog(`[Mutex490V] ty:${translationY.toFixed(1)}`);
+            _this.setState({
+              verticalInfo: `ty:${translationY.toFixed(1)}`
+            });
+          }
+        }
+      });
+      _this.onMutex491PanEvent = _reactNative.Animated.event([{
+        nativeEvent: {
+          translationX: _this.mutex491PanX,
+          translationY: _this.mutex491PanY
+        }
+      }], {
+        useNativeDriver: true,
+        listener: function listener(e) {
+          var _e$nativeEvent13 = e.nativeEvent,
+            translationX = _e$nativeEvent13.translationX,
+            translationY = _e$nativeEvent13.translationY,
+            state = _e$nativeEvent13.state;
+          if (state === GestureState.ACTIVE) {
+            _this.addLog(`[Mutex491Pan] tx:${translationX.toFixed(1)} ty:${translationY.toFixed(1)}`);
+            _this.setState({
+              pan491Info: `tx:${translationX.toFixed(1)} ty:${translationY.toFixed(1)}`
+            });
+          }
+        }
+      });
+      _this.onNestedOuterPanEvent = _reactNative.Animated.event([{
+        nativeEvent: {
+          translationX: _this.nestedOuterPanX,
+          translationY: _this.nestedOuterPanY
+        }
+      }], {
+        useNativeDriver: true,
+        listener: function listener(e) {
+          var _e$nativeEvent14 = e.nativeEvent,
+            translationX = _e$nativeEvent14.translationX,
+            translationY = _e$nativeEvent14.translationY,
+            state = _e$nativeEvent14.state;
+          if (state === GestureState.ACTIVE) {
+            _this.addLog(`[OuterPan] tx:${translationX.toFixed(1)} ty:${translationY.toFixed(1)}`);
+            _this.setState({
+              outerPanInfo: `tx:${translationX.toFixed(1)} ty:${translationY.toFixed(1)}`
+            });
+          }
+        }
+      });
+      _this.onNestedInnerPanEvent = _reactNative.Animated.event([{
+        nativeEvent: {
+          translationX: _this.nestedInnerPanX,
+          translationY: _this.nestedInnerPanY
+        }
+      }], {
+        useNativeDriver: true,
+        listener: function listener(e) {
+          var _e$nativeEvent15 = e.nativeEvent,
+            translationX = _e$nativeEvent15.translationX,
+            translationY = _e$nativeEvent15.translationY,
+            state = _e$nativeEvent15.state;
+          if (state === GestureState.ACTIVE) {
+            _this.addLog(`[InnerPan] tx:${translationX.toFixed(1)} ty:${translationY.toFixed(1)}`);
+            _this.setState({
+              innerPanInfo: `tx:${translationX.toFixed(1)} ty:${translationY.toFixed(1)}`
+            });
+          }
+        }
+      });
+      _this.onScrollDragEvent = _reactNative.Animated.event([{
+        nativeEvent: {
+          translationX: _this.scrollDragX,
+          translationY: _this.scrollDragY
+        }
+      }], {
+        useNativeDriver: true,
+        listener: function listener(e) {
+          var _e$nativeEvent16 = e.nativeEvent,
+            translationX = _e$nativeEvent16.translationX,
+            translationY = _e$nativeEvent16.translationY,
+            state = _e$nativeEvent16.state;
+          if (state === GestureState.ACTIVE) {
+            _this.addLog(`[ScrollDrag] tx:${translationX.toFixed(1)} ty:${translationY.toFixed(1)}`);
+          }
+        }
+      });
+      return _this;
+    }
+    (0, _inherits2.default)(RNGestureHandlerDemo, _Component);
+    return (0, _createClass2.default)(RNGestureHandlerDemo, [{
+      key: "render",
+      value:
+      // ═══════════════════════════════════════════════════════
+      // MAIN RENDER
+      // ═══════════════════════════════════════════════════════
+
+      function render() {
+        var currentTestCase = this.state.currentTestCase;
+        switch (currentTestCase) {
+          case 'Case2276467_NoProps':
+            return this.renderCase2276467();
+          case 'Case2276468_InvalidProps':
+            return this.renderCase2276468();
+          case 'Case2276469_SingleChild':
+            return this.renderCase2276469();
+          case 'Case2276470_MultiChild':
+            return this.renderCase2276470();
+          case 'Case2276471_NoChild':
+            return this.renderCase2276471();
+          case 'Case2276472_TapBasic':
+            return this.renderCase2276472();
+          case 'Case2276473_TapDouble':
+            return this.renderCase2276473();
+          case 'Case2276474_TapLongPressDistinguish':
+            return this.renderCase2276474();
+          case 'Case2276475_PanBasic':
+            return this.renderCase2276475();
+          case 'Case2276476_PanDirectionLock':
+            return this.renderCase2276476();
+          case 'Case2276477_PanMinDist':
+            return this.renderCase2276477();
+          case 'Case2276478_PinchBasic':
+            return this.renderCase2276478();
+          case 'Case2276479_PinchWithRotation':
+            return this.renderCase2276479();
+          case 'Case2276480_RotationBasic':
+            return this.renderCase2276480();
+          case 'Case2276481_LongPressBasic':
+            return this.renderCase2276481();
+          case 'Case2276482_LongPressCustomDuration':
+            return this.renderCase2276482();
+          case 'Case2276483_FlingBasic':
+            return this.renderCase2276483();
+          case 'Case2276484_FlingDirectional':
+            return this.renderCase2276484();
+          case 'Case2276485_NativeButton':
+            return this.renderCase2276485();
+          case 'Case2276486_PinchRotationCombo':
+            return this.renderCase2276486();
+          case 'Case2276487_PanPinchCombo':
+            return this.renderCase2276487();
+          case 'Case2276488_TapWaitDoubleTap':
+            return this.renderCase2276488();
+          case 'Case2276489_TapWaitLongPress':
+            return this.renderCase2276489();
+          case 'Case2276490_HorizontalVerticalMutex':
+            return this.renderCase2276490();
+          case 'Case2276491_PanTapMutex':
+            return this.renderCase2276491();
+          case 'Case2276492_NestedTap':
+            return this.renderCase2276492();
+          case 'Case2276493_NestedPan':
+            return this.renderCase2276493();
+          case 'Case2276494_NestedScrollView':
+            return this.renderCase2276494();
+          case 'Case2276495_ScrollViewDrag':
+            return this.renderCase2276495();
+          case 'Case2276496_TouchableCombo':
+            return this.renderCase2276496();
+          case 'Case2276497_TextInputCombo':
+            return this.renderCase2276497();
+          default:
+            return this.renderHomePage();
+        }
+      }
+    }]);
+  }(_react.Component); // ═══════════════════════════════════════════════════════
+  // STYLES
+  // ═══════════════════════════════════════════════════════
   var styles = _reactNative.StyleSheet.create({
     flex1: {
       flex: 1
     },
-    header: {
+    // ── Home Page ──
+    homeContainer: {
       padding: 16,
-      backgroundColor: '#fff',
-      borderBottomWidth: 1,
-      borderBottomColor: '#eee'
+      paddingBottom: 40
     },
-    title: {
+    homeTitle: {
+      fontSize: 22,
+      fontWeight: 'bold',
+      color: '#333',
+      textAlign: 'center',
+      marginBottom: 4
+    },
+    homeSubtitle: {
+      fontSize: 14,
+      color: '#888',
+      textAlign: 'center',
+      marginBottom: 16
+    },
+    homeBtn: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: '#fff',
+      padding: 12,
+      marginBottom: 8,
+      borderRadius: 8,
+      elevation: 2,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 1
+      },
+      shadowOpacity: 0.1,
+      shadowRadius: 2
+    },
+    homeBtnId: {
+      fontSize: 12,
+      color: '#3498db',
+      fontWeight: 'bold',
+      width: 70
+    },
+    homeBtnTitle: {
+      fontSize: 14,
+      color: '#333',
+      flex: 1
+    },
+    // ── Case Layout ──
+    caseContainer: {
+      padding: 16,
+      paddingBottom: 40
+    },
+    backBtn: {
+      paddingVertical: 8,
+      marginBottom: 8,
+      marginTop: 50
+    },
+    backBtnText: {
+      fontSize: 16,
+      color: '#3498db'
+    },
+    caseTitle: {
       fontSize: 18,
       fontWeight: 'bold',
       color: '#333',
       marginBottom: 4
     },
-    subtitle: {
-      fontSize: 13,
-      color: '#e74c3c',
-      fontWeight: '600'
-    },
-    guideArea: {
-      margin: 16,
-      marginBottom: 0,
-      padding: 12,
-      backgroundColor: '#fff3cd',
-      borderRadius: 8,
-      borderWidth: 1,
-      borderColor: '#ffc107'
-    },
-    guideText: {
-      fontSize: 13,
-      color: '#856404',
-      lineHeight: 22
+    caseId: {
+      fontSize: 12,
+      color: '#888',
+      marginBottom: 16
     },
     operationArea: {
-      height: 280,
-      margin: 16,
-      backgroundColor: '#fff',
+      marginBottom: 16
+    },
+    controlPanel: {
+      backgroundColor: '#f0f0f0',
+      borderRadius: 8,
+      padding: 12,
+      marginBottom: 16
+    },
+    controlRow: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      flexWrap: 'wrap',
+      marginBottom: 8
+    },
+    controlLabel: {
+      fontSize: 13,
+      color: '#555',
+      marginRight: 8
+    },
+    controlBtn: {
+      backgroundColor: '#3498db',
+      paddingHorizontal: 12,
+      paddingVertical: 6,
+      borderRadius: 4,
+      marginRight: 6,
+      marginBottom: 4
+    },
+    controlBtnText: {
+      color: '#fff',
+      fontSize: 12,
+      fontWeight: 'bold'
+    },
+    // ── Log Area ──
+    logArea: {
+      backgroundColor: '#1e1e1e',
+      borderRadius: 8,
+      padding: 12,
+      minHeight: 100
+    },
+    logTitle: {
+      fontSize: 14,
+      fontWeight: 'bold',
+      color: '#4ec9b0',
+      marginBottom: 8
+    },
+    logItem: {
+      fontSize: 11,
+      color: '#d4d4d4',
+      fontFamily: 'monospace',
+      lineHeight: 18
+    },
+    logEmpty: {
+      fontSize: 12,
+      color: '#666',
+      fontStyle: 'italic'
+    },
+    // ── Guide Text ──
+    guideText: {
+      fontSize: 14,
+      color: '#555',
+      marginBottom: 8
+    },
+    // ── Boxes ──
+    tapBox: {
+      backgroundColor: '#27ae60',
+      paddingVertical: 20,
+      paddingHorizontal: 16,
+      borderRadius: 8,
+      alignItems: 'center',
+      marginBottom: 8
+    },
+    longPressBox: {
+      backgroundColor: '#8e44ad',
+      paddingVertical: 20,
+      paddingHorizontal: 16,
+      borderRadius: 8,
+      alignItems: 'center',
+      marginBottom: 8
+    },
+    combinedBox: {
+      backgroundColor: '#e67e22',
+      paddingVertical: 24,
+      paddingHorizontal: 16,
+      borderRadius: 8,
+      alignItems: 'center',
+      marginBottom: 8
+    },
+    dragBox: {
+      width: 120,
+      height: 120,
+      backgroundColor: '#3498db',
       borderRadius: 12,
       justifyContent: 'center',
       alignItems: 'center',
+      alignSelf: 'center',
+      elevation: 4,
       shadowColor: '#000',
       shadowOffset: {
         width: 0,
         height: 2
       },
-      shadowOpacity: 0.1,
-      shadowRadius: 4,
-      elevation: 3
+      shadowOpacity: 0.25,
+      shadowRadius: 4
     },
-    dragBox: {
+    dirRow: {
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+      marginBottom: 8
+    },
+    dirBox: {
       width: 100,
       height: 100,
+      borderRadius: 8,
+      justifyContent: 'center',
+      alignItems: 'center',
+      elevation: 3,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2
+      },
+      shadowOpacity: 0.2,
+      shadowRadius: 2
+    },
+    minDistBox: {
+      width: 160,
+      height: 80,
+      borderRadius: 8,
+      justifyContent: 'center',
+      alignItems: 'center',
+      alignSelf: 'center',
+      elevation: 3,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2
+      },
+      shadowOpacity: 0.2,
+      shadowRadius: 2
+    },
+    gestureArea: {
+      alignItems: 'center',
+      minHeight: 200
+    },
+    pinchBox: {
+      width: 120,
+      height: 120,
+      backgroundColor: '#2980b9',
       borderRadius: 12,
-      backgroundColor: '#e74c3c',
+      justifyContent: 'center',
+      alignItems: 'center',
+      elevation: 3,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2
+      },
+      shadowOpacity: 0.2,
+      shadowRadius: 2
+    },
+    rotateBox: {
+      width: 120,
+      height: 120,
+      backgroundColor: '#16a085',
+      borderRadius: 12,
+      justifyContent: 'center',
+      alignItems: 'center',
+      elevation: 3,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2
+      },
+      shadowOpacity: 0.2,
+      shadowRadius: 2
+    },
+    comboBox: {
+      width: 140,
+      height: 140,
+      backgroundColor: '#8e44ad',
+      borderRadius: 16,
+      justifyContent: 'center',
+      alignItems: 'center',
+      elevation: 4,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2
+      },
+      shadowOpacity: 0.3,
+      shadowRadius: 4
+    },
+    flingBox: {
+      backgroundColor: '#9b59b6',
+      paddingVertical: 30,
+      paddingHorizontal: 16,
+      borderRadius: 8,
+      alignItems: 'center',
+      marginBottom: 8
+    },
+    nativeBtn: {
+      backgroundColor: '#2ecc71',
+      paddingVertical: 20,
+      paddingHorizontal: 18,
+      borderRadius: 8,
+      alignItems: 'center',
+      elevation: 3,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2
+      },
+      shadowOpacity: 0.3,
+      shadowRadius: 2
+    },
+    mutexContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+      marginBottom: 8
+    },
+    mutexBox: {
+      width: 200,
+      height: 200,
+      backgroundColor: '#9b59b6',
+      borderRadius: 16,
+      justifyContent: 'center',
+      alignItems: 'center',
+      alignSelf: 'center',
+      elevation: 4,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 4
+    },
+    innerTapArea: {
+      flex: 1,
       justifyContent: 'center',
       alignItems: 'center'
     },
+    outerBox: {
+      backgroundColor: '#2c3e50',
+      padding: 20,
+      borderRadius: 12,
+      alignItems: 'center',
+      marginBottom: 8
+    },
+    innerBox: {
+      backgroundColor: '#ecf0f1',
+      padding: 16,
+      borderRadius: 8,
+      alignItems: 'center',
+      marginTop: 12
+    },
+    outerDragBox: {
+      width: 200,
+      height: 200,
+      backgroundColor: '#2c3e50',
+      borderRadius: 16,
+      justifyContent: 'center',
+      alignItems: 'center',
+      alignSelf: 'center',
+      elevation: 4,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2
+      },
+      shadowOpacity: 0.3,
+      shadowRadius: 4
+    },
+    innerDragBox: {
+      width: 80,
+      height: 80,
+      backgroundColor: '#ecf0f1',
+      borderRadius: 8,
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: 8
+    },
+    scrollContainer: {
+      height: 200,
+      borderWidth: 1,
+      borderColor: '#ddd',
+      borderRadius: 8,
+      overflow: 'hidden'
+    },
+    nestedScrollOuter: {
+      height: 300,
+      borderWidth: 1,
+      borderColor: '#ddd',
+      borderRadius: 8,
+      overflow: 'hidden'
+    },
+    horizontalScroll: {
+      height: 60,
+      marginVertical: 4
+    },
+    horizontalScrollItem: {
+      width: 80,
+      height: 50,
+      backgroundColor: '#3498db',
+      borderRadius: 8,
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginHorizontal: 4
+    },
+    horizontalScrollText: {
+      color: '#fff',
+      fontSize: 13,
+      fontWeight: 'bold'
+    },
+    scrollSectionTitle: {
+      fontSize: 15,
+      fontWeight: 'bold',
+      color: '#333',
+      paddingHorizontal: 12,
+      paddingTop: 8
+    },
+    innerScroll: {
+      flex: 1
+    },
+    scrollItem: {
+      padding: 12,
+      borderBottomWidth: 1,
+      borderBottomColor: '#eee',
+      fontSize: 14,
+      color: '#333'
+    },
+    scrollDragBox: {
+      width: 160,
+      height: 60,
+      backgroundColor: '#e74c3c',
+      borderRadius: 8,
+      justifyContent: 'center',
+      alignItems: 'center',
+      alignSelf: 'center',
+      marginVertical: 8,
+      elevation: 3,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2
+      },
+      shadowOpacity: 0.2,
+      shadowRadius: 2
+    },
+    touchableContainer: {
+      backgroundColor: '#f5f5f5',
+      padding: 16,
+      borderRadius: 12,
+      alignItems: 'center',
+      borderWidth: 1,
+      borderColor: '#ddd'
+    },
+    touchableBtn: {
+      backgroundColor: '#e67e22',
+      paddingVertical: 14,
+      paddingHorizontal: 24,
+      borderRadius: 8,
+      alignItems: 'center',
+      marginTop: 8
+    },
+    textInputContainer: {
+      backgroundColor: '#f5f5f5',
+      padding: 16,
+      borderRadius: 12,
+      borderWidth: 1,
+      borderColor: '#ddd'
+    },
+    textInput: {
+      backgroundColor: '#fff',
+      borderWidth: 1,
+      borderColor: '#ccc',
+      borderRadius: 8,
+      padding: 12,
+      fontSize: 16,
+      marginVertical: 8
+    },
+    textInputDisplay: {
+      fontSize: 13,
+      color: '#666',
+      marginTop: 4
+    },
+    // ── Text Colors ──
     boxText: {
       color: '#fff',
       fontWeight: 'bold',
-      fontSize: 16
+      fontSize: 14,
+      textAlign: 'center'
     },
-    logArea: {
-      flex: 1,
-      marginHorizontal: 16,
-      marginBottom: 16,
-      backgroundColor: '#1a1a2e',
-      borderRadius: 8,
-      padding: 8
-    },
-    logTitle: {
-      fontSize: 12,
-      fontWeight: 'bold',
-      color: '#aaa',
-      marginBottom: 4
-    },
-    logScroll: {
-      flex: 1
-    },
-    logEmpty: {
-      color: '#666',
-      fontSize: 12
-    },
-    logItem: {
-      color: '#0f0',
+    boxSubText: {
+      color: 'rgba(255,255,255,0.8)',
       fontSize: 11,
-      fontFamily: 'monospace',
-      lineHeight: 16
+      marginTop: 4,
+      textAlign: 'center'
+    },
+    boxTextDark: {
+      color: '#333',
+      fontWeight: 'bold',
+      fontSize: 14,
+      textAlign: 'center'
+    },
+    boxSubTextDark: {
+      color: '#666',
+      fontSize: 11,
+      marginTop: 4,
+      textAlign: 'center'
     }
   });
-  var _default = exports.default = RNPanBasicDemo;
-},630,[8,224,46,27,86,1,631,92],"tests/react-native-gesture/meituan/RNPanBasicDemo.tsx");
+  var _default = exports.default = RNGestureHandlerDemo;
+},630,[8,46,9,10,14,16,17,86,1,631,92],"tests/react-native-gesture/meituan/RNGestureHandlerDemo.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -120742,19 +123188,19 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   Object.defineProperty(exports, "BaseButton", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[0], "./components/GestureButtons").BaseButton;
+      return _$$_REQUIRE(_dependencyMap[0], "react-native-gesture-handler/src/components/GestureButtons").BaseButton;
     }
   });
   Object.defineProperty(exports, "BorderlessButton", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[0], "./components/GestureButtons").BorderlessButton;
+      return _$$_REQUIRE(_dependencyMap[0], "react-native-gesture-handler/src/components/GestureButtons").BorderlessButton;
     }
   });
   Object.defineProperty(exports, "Directions", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[1], "./Directions").Directions;
+      return _$$_REQUIRE(_dependencyMap[1], "react-native-gesture-handler/src/Directions").Directions;
     }
   });
   Object.defineProperty(exports, "DrawerLayout", {
@@ -120766,37 +123212,37 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   Object.defineProperty(exports, "DrawerLayoutAndroid", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[2], "./components/GestureComponents").DrawerLayoutAndroid;
+      return _$$_REQUIRE(_dependencyMap[2], "react-native-gesture-handler/src/components/GestureComponents").DrawerLayoutAndroid;
     }
   });
   Object.defineProperty(exports, "FlatList", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[2], "./components/GestureComponents").FlatList;
+      return _$$_REQUIRE(_dependencyMap[2], "react-native-gesture-handler/src/components/GestureComponents").FlatList;
     }
   });
   Object.defineProperty(exports, "FlingGestureHandler", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[3], "./handlers/FlingGestureHandler").FlingGestureHandler;
+      return _$$_REQUIRE(_dependencyMap[3], "react-native-gesture-handler/src/handlers/FlingGestureHandler").FlingGestureHandler;
     }
   });
   Object.defineProperty(exports, "ForceTouchGestureHandler", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[4], "./handlers/ForceTouchGestureHandler").ForceTouchGestureHandler;
+      return _$$_REQUIRE(_dependencyMap[4], "react-native-gesture-handler/src/handlers/ForceTouchGestureHandler").ForceTouchGestureHandler;
     }
   });
   Object.defineProperty(exports, "Gesture", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[5], "./handlers/gestures/gestureObjects").GestureObjects;
+      return _$$_REQUIRE(_dependencyMap[5], "react-native-gesture-handler/src/handlers/gestures/gestureObjects").GestureObjects;
     }
   });
   Object.defineProperty(exports, "GestureDetector", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[6], "./handlers/gestures/GestureDetector").GestureDetector;
+      return _$$_REQUIRE(_dependencyMap[6], "react-native-gesture-handler/src/handlers/gestures/GestureDetector").GestureDetector;
     }
   });
   Object.defineProperty(exports, "GestureHandlerRootView", {
@@ -120808,43 +123254,43 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   Object.defineProperty(exports, "HoverEffect", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[7], "./handlers/gestures/hoverGesture").HoverEffect;
+      return _$$_REQUIRE(_dependencyMap[7], "react-native-gesture-handler/src/handlers/gestures/hoverGesture").HoverEffect;
     }
   });
   Object.defineProperty(exports, "LongPressGestureHandler", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[8], "./handlers/LongPressGestureHandler").LongPressGestureHandler;
+      return _$$_REQUIRE(_dependencyMap[8], "react-native-gesture-handler/src/handlers/LongPressGestureHandler").LongPressGestureHandler;
     }
   });
   Object.defineProperty(exports, "MouseButton", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[9], "./handlers/gestureHandlerCommon").MouseButton;
+      return _$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler/src/handlers/gestureHandlerCommon").MouseButton;
     }
   });
   Object.defineProperty(exports, "NativeViewGestureHandler", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[10], "./handlers/NativeViewGestureHandler").NativeViewGestureHandler;
+      return _$$_REQUIRE(_dependencyMap[10], "react-native-gesture-handler/src/handlers/NativeViewGestureHandler").NativeViewGestureHandler;
     }
   });
   Object.defineProperty(exports, "PanGestureHandler", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[11], "./handlers/PanGestureHandler").PanGestureHandler;
+      return _$$_REQUIRE(_dependencyMap[11], "react-native-gesture-handler/src/handlers/PanGestureHandler").PanGestureHandler;
     }
   });
   Object.defineProperty(exports, "PinchGestureHandler", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[12], "./handlers/PinchGestureHandler").PinchGestureHandler;
+      return _$$_REQUIRE(_dependencyMap[12], "react-native-gesture-handler/src/handlers/PinchGestureHandler").PinchGestureHandler;
     }
   });
   Object.defineProperty(exports, "PointerType", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[13], "./PointerType").PointerType;
+      return _$$_REQUIRE(_dependencyMap[13], "react-native-gesture-handler/src/PointerType").PointerType;
     }
   });
   Object.defineProperty(exports, "Pressable", {
@@ -120856,43 +123302,43 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   Object.defineProperty(exports, "PureNativeButton", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[0], "./components/GestureButtons").PureNativeButton;
+      return _$$_REQUIRE(_dependencyMap[0], "react-native-gesture-handler/src/components/GestureButtons").PureNativeButton;
     }
   });
   Object.defineProperty(exports, "RawButton", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[0], "./components/GestureButtons").RawButton;
+      return _$$_REQUIRE(_dependencyMap[0], "react-native-gesture-handler/src/components/GestureButtons").RawButton;
     }
   });
   Object.defineProperty(exports, "RectButton", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[0], "./components/GestureButtons").RectButton;
+      return _$$_REQUIRE(_dependencyMap[0], "react-native-gesture-handler/src/components/GestureButtons").RectButton;
     }
   });
   Object.defineProperty(exports, "RefreshControl", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[2], "./components/GestureComponents").RefreshControl;
+      return _$$_REQUIRE(_dependencyMap[2], "react-native-gesture-handler/src/components/GestureComponents").RefreshControl;
     }
   });
   Object.defineProperty(exports, "RotationGestureHandler", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[14], "./handlers/RotationGestureHandler").RotationGestureHandler;
+      return _$$_REQUIRE(_dependencyMap[14], "react-native-gesture-handler/src/handlers/RotationGestureHandler").RotationGestureHandler;
     }
   });
   Object.defineProperty(exports, "ScrollView", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[2], "./components/GestureComponents").ScrollView;
+      return _$$_REQUIRE(_dependencyMap[2], "react-native-gesture-handler/src/components/GestureComponents").ScrollView;
     }
   });
   Object.defineProperty(exports, "State", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[15], "./State").State;
+      return _$$_REQUIRE(_dependencyMap[15], "react-native-gesture-handler/src/State").State;
     }
   });
   Object.defineProperty(exports, "Swipeable", {
@@ -120904,49 +123350,49 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   Object.defineProperty(exports, "Switch", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[2], "./components/GestureComponents").Switch;
+      return _$$_REQUIRE(_dependencyMap[2], "react-native-gesture-handler/src/components/GestureComponents").Switch;
     }
   });
   Object.defineProperty(exports, "TapGestureHandler", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[16], "./handlers/TapGestureHandler").TapGestureHandler;
+      return _$$_REQUIRE(_dependencyMap[16], "react-native-gesture-handler/src/handlers/TapGestureHandler").TapGestureHandler;
     }
   });
   Object.defineProperty(exports, "Text", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[17], "./components/Text").Text;
+      return _$$_REQUIRE(_dependencyMap[17], "react-native-gesture-handler/src/components/Text").Text;
     }
   });
   Object.defineProperty(exports, "TextInput", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[2], "./components/GestureComponents").TextInput;
+      return _$$_REQUIRE(_dependencyMap[2], "react-native-gesture-handler/src/components/GestureComponents").TextInput;
     }
   });
   Object.defineProperty(exports, "TouchableHighlight", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[18], "./components/touchables").TouchableHighlight;
+      return _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/components/touchables").TouchableHighlight;
     }
   });
   Object.defineProperty(exports, "TouchableNativeFeedback", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[18], "./components/touchables").TouchableNativeFeedback;
+      return _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/components/touchables").TouchableNativeFeedback;
     }
   });
   Object.defineProperty(exports, "TouchableOpacity", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[18], "./components/touchables").TouchableOpacity;
+      return _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/components/touchables").TouchableOpacity;
     }
   });
   Object.defineProperty(exports, "TouchableWithoutFeedback", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[18], "./components/touchables").TouchableWithoutFeedback;
+      return _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/components/touchables").TouchableWithoutFeedback;
     }
   });
   Object.defineProperty(exports, "createNativeWrapper", {
@@ -120958,13 +123404,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   Object.defineProperty(exports, "enableExperimentalWebImplementation", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[19], "./EnableNewWebImplementation").enableExperimentalWebImplementation;
+      return _$$_REQUIRE(_dependencyMap[19], "react-native-gesture-handler/src/EnableNewWebImplementation").enableExperimentalWebImplementation;
     }
   });
   Object.defineProperty(exports, "enableLegacyWebImplementation", {
     enumerable: true,
     get: function get() {
-      return _$$_REQUIRE(_dependencyMap[19], "./EnableNewWebImplementation").enableLegacyWebImplementation;
+      return _$$_REQUIRE(_dependencyMap[19], "react-native-gesture-handler/src/EnableNewWebImplementation").enableLegacyWebImplementation;
     }
   });
   Object.defineProperty(exports, "gestureHandlerRootHOC", {
@@ -120973,14 +123419,26 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _gestureHandlerRootHOC.default;
     }
   });
-  var _gestureHandlerRootHOC = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[21], "./components/gestureHandlerRootHOC"));
+  var _gestureHandlerRootHOC = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[21], "react-native-gesture-handler/src/components/gestureHandlerRootHOC"));
   var _GestureHandlerRootView = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[22], "./components/GestureHandlerRootView"));
-  var _createNativeWrapper = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[23], "./handlers/createNativeWrapper"));
-  var _Swipeable = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[24], "./components/Swipeable"));
-  var _Pressable = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[25], "./components/Pressable"));
-  var _DrawerLayout = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[26], "./components/DrawerLayout"));
-  (0, _$$_REQUIRE(_dependencyMap[27], "./init").initialize)();
-},631,[632,653,654,655,656,658,671,669,675,650,634,674,877,878,879,642,673,880,881,866,8,887,892,633,894,895,898,893],"node_modules/react-native-gesture-handler/src/index.ts");
+  var _createNativeWrapper = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[23], "react-native-gesture-handler/src/handlers/createNativeWrapper"));
+  var _Swipeable = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[24], "react-native-gesture-handler/src/components/Swipeable"));
+  var _Pressable = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[25], "react-native-gesture-handler/src/components/Pressable"));
+  var _DrawerLayout = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[26], "react-native-gesture-handler/src/components/DrawerLayout"));
+  /*
+   * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
+   * Use of this source code is governed by a MIT license that can be
+   * found in the LICENSE file.
+   */
+
+  global.isFormsStackingContext = function () {
+    return true;
+  }; // TODO: add using JSI
+
+  // RNGH: patch
+
+  (0, _$$_REQUIRE(_dependencyMap[27], "react-native-gesture-handler/src/init").initialize)();
+},631,[632,653,654,655,656,658,671,669,675,650,634,674,878,879,880,642,673,881,882,867,8,888,893,633,896,897,900,895],"node_modules/@react-native-ohos/react-native-gesture-handler/src/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -121336,15 +123794,24 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "react"));
   var _reactNative = _$$_REQUIRE(_dependencyMap[9], "react-native");
   var _RNGestureHandlerModule = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[10], "../RNGestureHandlerModule"));
-  var _findNodeHandle = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[11], "../findNodeHandle"));
-  var _GestureHandlerRootViewContext = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[12], "../GestureHandlerRootViewContext"));
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/createHandler.tsx";
+  var _findNodeHandle = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[11], "react-native-gesture-handler/src/findNodeHandle"));
+  var _GestureHandlerRootViewContext = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[12], "react-native-gesture-handler/src/GestureHandlerRootViewContext"));
+  var _UIManagerAny$getView,
+    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/@react-native-ohos/react-native-gesture-handler/src/handlers/createHandler.tsx";
+  /*
+   * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
+   * Use of this source code is governed by a MIT license that can be
+   * found in the LICENSE file.
+   */
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
   function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
   var UIManagerAny = _reactNative.UIManager;
-  _$$_REQUIRE(_dependencyMap[13], "./customDirectEventTypes").customDirectEventTypes.topGestureHandlerEvent = {
+  _$$_REQUIRE(_dependencyMap[13], "react-native-gesture-handler/src/handlers/customDirectEventTypes").customDirectEventTypes.topGestureHandlerEvent = {
     registrationName: 'onGestureHandlerEvent'
+  };
+  _$$_REQUIRE(_dependencyMap[13], "react-native-gesture-handler/src/handlers/customDirectEventTypes").customDirectEventTypes.topGestureHandlerStateChange = {
+    registrationName: 'onGestureHandlerStateChange'
   };
   var customGHEventsConfigFabricAndroid = {
     topOnGestureHandlerEvent: {
@@ -121361,14 +123828,17 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     onGestureHandlerStateChange: {
       registrationName: 'onGestureHandlerStateChange'
     }
-  }, (0, _$$_REQUIRE(_dependencyMap[14], "../utils").isFabric)() && _reactNative.Platform.OS === 'android' && customGHEventsConfigFabricAndroid);
+  }, (0, _$$_REQUIRE(_dependencyMap[14], "react-native-gesture-handler/src/utils").isFabric)() && _reactNative.Platform.OS === 'harmony' && customGHEventsConfigFabricAndroid);
 
   // Add gesture specific events to genericDirectEventTypes object exported from UIManager
   // native module.
   // Once new event types are registered with react it is possible to dispatch these
   // events to all kind of native views.
   UIManagerAny.genericDirectEventTypes = Object.assign({}, UIManagerAny.genericDirectEventTypes, customGHEventsConfig);
-  var UIManagerConstants = UIManagerAny.getViewManagerConfig == null ? void 0 : UIManagerAny.getViewManagerConfig('getConstants');
+  // In newer versions of RN the `genericDirectEventTypes` is located in the object
+  // returned by UIManager.getViewManagerConfig('getConstants') or in older RN UIManager.getConstants(), we need to add it there as well to make
+  // it compatible with RN 61+
+  var UIManagerConstants = (_UIManagerAny$getView = UIManagerAny.getViewManagerConfig == null ? void 0 : UIManagerAny.getViewManagerConfig('getConstants')) != null ? _UIManagerAny$getView : UIManagerAny.getConstants == null ? void 0 : UIManagerAny.getConstants();
   if (UIManagerConstants) {
     UIManagerConstants.genericDirectEventTypes = Object.assign({}, UIManagerConstants.genericDirectEventTypes, customGHEventsConfig);
   }
@@ -121411,7 +123881,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
     return extract(props['simultaneousHandlers']) || extract(props['waitFor']);
   }
-  var stateToPropMappings = (0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)({}, _$$_REQUIRE(_dependencyMap[15], "../State").State.UNDETERMINED, undefined), _$$_REQUIRE(_dependencyMap[15], "../State").State.BEGAN, 'onBegan'), _$$_REQUIRE(_dependencyMap[15], "../State").State.FAILED, 'onFailed'), _$$_REQUIRE(_dependencyMap[15], "../State").State.CANCELLED, 'onCancelled'), _$$_REQUIRE(_dependencyMap[15], "../State").State.ACTIVE, 'onActivated'), _$$_REQUIRE(_dependencyMap[15], "../State").State.END, 'onEnded');
+  var stateToPropMappings = (0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)({}, _$$_REQUIRE(_dependencyMap[15], "react-native-gesture-handler/src/State").State.UNDETERMINED, undefined), _$$_REQUIRE(_dependencyMap[15], "react-native-gesture-handler/src/State").State.BEGAN, 'onBegan'), _$$_REQUIRE(_dependencyMap[15], "react-native-gesture-handler/src/State").State.FAILED, 'onFailed'), _$$_REQUIRE(_dependencyMap[15], "react-native-gesture-handler/src/State").State.CANCELLED, 'onCancelled'), _$$_REQUIRE(_dependencyMap[15], "react-native-gesture-handler/src/State").State.ACTIVE, 'onActivated'), _$$_REQUIRE(_dependencyMap[15], "react-native-gesture-handler/src/State").State.END, 'onEnded');
 
   // TODO(TS) fix event types
 
@@ -121432,7 +123902,6 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         var _this;
         (0, _classCallCheck2.default)(this, Handler);
         _this = _callSuper(this, Handler, [props]);
-        _this.handlerTag = -1;
         _this.onGestureHandlerEvent = function (event) {
           if (event.nativeEvent.handlerTag === _this.handlerTag) {
             if (typeof _this.props.onGestureEvent === 'function') {
@@ -121459,23 +123928,19 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           }
         };
         _this.refHandler = function (node) {
-          var _props;
           _this.viewNode = node;
           var child = React.Children.only(_this.props.children);
-          // @ts-ignore Since React 19 ref is accessible as standard prop
-          // https://react.dev/blog/2024/04/25/react-19-upgrade-guide#deprecated-element-ref
-          var ref = (0, _$$_REQUIRE(_dependencyMap[14], "../utils").isReact19)() ? (_props = child.props) == null ? void 0 : _props.ref : child == null ? void 0 : child.ref;
-          if (!ref) {
-            return;
-          }
-          if (typeof ref === 'function') {
-            ref(node);
-          } else {
-            ref.current = node;
+          // TODO(TS) fix ref type
+          var ref = child.ref;
+          if (ref !== null) {
+            if (typeof ref === 'function') {
+              ref(node);
+            } else {
+              ref.current = node;
+            }
           }
         };
         _this.createGestureHandler = function (newConfig) {
-          _this.handlerTag = (0, _$$_REQUIRE(_dependencyMap[16], "./getNextHandlerTag").getNextHandlerTag)();
           _this.config = newConfig;
           _RNGestureHandlerModule.default.createGestureHandler(name, _this.handlerTag, newConfig);
         };
@@ -121483,11 +123948,11 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           _this.viewTag = newViewTag;
           if (_reactNative.Platform.OS === 'web') {
             // Typecast due to dynamic resolution, attachGestureHandler should have web version signature in this branch
-            _RNGestureHandlerModule.default.attachGestureHandler(_this.handlerTag, newViewTag, _$$_REQUIRE(_dependencyMap[17], "../ActionType").ActionType.JS_FUNCTION_OLD_API,
+            _RNGestureHandlerModule.default.attachGestureHandler(_this.handlerTag, newViewTag, _$$_REQUIRE(_dependencyMap[16], "react-native-gesture-handler/src/ActionType").ActionType.JS_FUNCTION_OLD_API,
             // ignored on web
             _this.propsRef);
           } else {
-            (0, _$$_REQUIRE(_dependencyMap[18], "./handlersRegistry").registerOldGestureHandler)(_this.handlerTag, {
+            (0, _$$_REQUIRE(_dependencyMap[17], "react-native-gesture-handler/src/handlers/handlersRegistry").registerOldGestureHandler)(_this.handlerTag, {
               onGestureEvent: _this.onGestureHandlerEvent,
               onGestureStateChange: _this.onGestureHandlerStateChange
             });
@@ -121499,27 +123964,28 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
               var isReanimatedHandler = isGestureHandlerWorklet || isStateChangeHandlerWorklet;
               if (isReanimatedHandler) {
                 // Reanimated worklet
-                return _$$_REQUIRE(_dependencyMap[17], "../ActionType").ActionType.REANIMATED_WORKLET;
+                return _$$_REQUIRE(_dependencyMap[16], "react-native-gesture-handler/src/ActionType").ActionType.REANIMATED_WORKLET;
               } else if (onGestureEvent && '__isNative' in onGestureEvent) {
                 // Animated.event with useNativeDriver: true
-                return _$$_REQUIRE(_dependencyMap[17], "../ActionType").ActionType.NATIVE_ANIMATED_EVENT;
+                return _$$_REQUIRE(_dependencyMap[16], "react-native-gesture-handler/src/ActionType").ActionType.NATIVE_ANIMATED_EVENT;
               } else {
                 // JS callback or Animated.event with useNativeDriver: false
-                return _$$_REQUIRE(_dependencyMap[17], "../ActionType").ActionType.JS_FUNCTION_OLD_API;
+                return _$$_REQUIRE(_dependencyMap[16], "react-native-gesture-handler/src/ActionType").ActionType.JS_FUNCTION_OLD_API;
               }
             }();
             _RNGestureHandlerModule.default.attachGestureHandler(_this.handlerTag, newViewTag, actionType);
           }
-          (0, _$$_REQUIRE(_dependencyMap[19], "./utils").scheduleFlushOperations)();
-          (0, _$$_REQUIRE(_dependencyMap[20], "../ghQueueMicrotask").ghQueueMicrotask)(function () {
-            _$$_REQUIRE(_dependencyMap[21], "../mountRegistry").MountRegistry.gestureHandlerWillMount(_this);
+          (0, _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/handlers/utils").scheduleFlushOperations)();
+          (0, _$$_REQUIRE(_dependencyMap[19], "react-native-gesture-handler/src/ghQueueMicrotask").ghQueueMicrotask)(function () {
+            _$$_REQUIRE(_dependencyMap[20], "react-native-gesture-handler/src/mountRegistry").MountRegistry.gestureHandlerWillMount(_this);
           });
         };
         _this.updateGestureHandler = function (newConfig) {
           _this.config = newConfig;
           _RNGestureHandlerModule.default.updateGestureHandler(_this.handlerTag, newConfig);
-          (0, _$$_REQUIRE(_dependencyMap[19], "./utils").scheduleFlushOperations)();
+          (0, _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/handlers/utils").scheduleFlushOperations)();
         };
+        _this.handlerTag = (0, _$$_REQUIRE(_dependencyMap[21], "react-native-gesture-handler/src/handlers/getNextHandlerTag").getNextHandlerTag)();
         _this.config = {};
         _this.propsRef = React.createRef();
         _this.isMountedRef = React.createRef();
@@ -121527,10 +123993,10 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           allowTouches: allowTouches
         };
         if (props.id) {
-          if (_$$_REQUIRE(_dependencyMap[18], "./handlersRegistry").handlerIDToTag[props.id] !== undefined) {
+          if (_$$_REQUIRE(_dependencyMap[17], "react-native-gesture-handler/src/handlers/handlersRegistry").handlerIDToTag[props.id] !== undefined) {
             throw new Error(`Handler with ID "${props.id}" already registered`);
           }
-          _$$_REQUIRE(_dependencyMap[18], "./handlersRegistry").handlerIDToTag[props.id] = _this.handlerTag;
+          _$$_REQUIRE(_dependencyMap[17], "react-native-gesture-handler/src/handlers/handlersRegistry").handlerIDToTag[props.id] = _this.handlerTag;
         }
         return _this;
       }
@@ -121558,11 +124024,11 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
             // queueMicrotask. This makes it so update() function gets called after all
             // react components are mounted and we expect the missing ref object to
             // be resolved by then.
-            (0, _$$_REQUIRE(_dependencyMap[20], "../ghQueueMicrotask").ghQueueMicrotask)(function () {
+            (0, _$$_REQUIRE(_dependencyMap[19], "react-native-gesture-handler/src/ghQueueMicrotask").ghQueueMicrotask)(function () {
               _this2.update(UNRESOLVED_REFS_RETRY_LIMIT);
             });
           }
-          this.createGestureHandler((0, _$$_REQUIRE(_dependencyMap[19], "./utils").filterConfig)(transformProps ? transformProps(this.props) : this.props, [].concat((0, _toConsumableArray2.default)(allowedProps), (0, _toConsumableArray2.default)(customNativeProps)), config));
+          this.createGestureHandler((0, _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/handlers/utils").filterConfig)(transformProps ? transformProps(this.props) : this.props, [].concat((0, _toConsumableArray2.default)(allowedProps), (0, _toConsumableArray2.default)(customNativeProps)), config));
           if (!this.viewNode) {
             throw new Error(`[Gesture Handler] Failed to obtain view for ${Handler.displayName}. Note that old API doesn't support functional components.`);
           }
@@ -121584,17 +124050,17 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           (_this$inspectorToggle = this.inspectorToggleListener) == null || _this$inspectorToggle.remove();
           this.isMountedRef.current = false;
           if (_reactNative.Platform.OS !== 'web') {
-            (0, _$$_REQUIRE(_dependencyMap[18], "./handlersRegistry").unregisterOldGestureHandler)(this.handlerTag);
+            (0, _$$_REQUIRE(_dependencyMap[17], "react-native-gesture-handler/src/handlers/handlersRegistry").unregisterOldGestureHandler)(this.handlerTag);
           }
           _RNGestureHandlerModule.default.dropGestureHandler(this.handlerTag);
-          (0, _$$_REQUIRE(_dependencyMap[19], "./utils").scheduleFlushOperations)();
+          (0, _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/handlers/utils").scheduleFlushOperations)();
           // We can't use this.props.id directly due to TS generic type narrowing bug, see https://github.com/microsoft/TypeScript/issues/13995 for more context
           var handlerID = this.props.id;
           if (handlerID) {
             // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
-            delete _$$_REQUIRE(_dependencyMap[18], "./handlersRegistry").handlerIDToTag[handlerID];
+            delete _$$_REQUIRE(_dependencyMap[17], "react-native-gesture-handler/src/handlers/handlersRegistry").handlerIDToTag[handlerID];
           }
-          _$$_REQUIRE(_dependencyMap[21], "../mountRegistry").MountRegistry.gestureHandlerWillUnmount(this);
+          _$$_REQUIRE(_dependencyMap[20], "react-native-gesture-handler/src/mountRegistry").MountRegistry.gestureHandlerWillUnmount(this);
         }
       }, {
         key: "update",
@@ -121609,12 +124075,12 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           // `ref={refObject}` it's possible that it won't be resolved in time. Seems like trying
           // again is easy enough fix.
           if (hasUnresolvedRefs(props) && remainingTries > 0) {
-            (0, _$$_REQUIRE(_dependencyMap[20], "../ghQueueMicrotask").ghQueueMicrotask)(function () {
+            (0, _$$_REQUIRE(_dependencyMap[19], "react-native-gesture-handler/src/ghQueueMicrotask").ghQueueMicrotask)(function () {
               _this3.update(remainingTries - 1);
             });
           } else {
-            var newConfig = (0, _$$_REQUIRE(_dependencyMap[19], "./utils").filterConfig)(transformProps ? transformProps(this.props) : this.props, [].concat((0, _toConsumableArray2.default)(allowedProps), (0, _toConsumableArray2.default)(customNativeProps)), config);
-            if (!(0, _$$_REQUIRE(_dependencyMap[14], "../utils").deepEqual)(this.config, newConfig)) {
+            var newConfig = (0, _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/handlers/utils").filterConfig)(transformProps ? transformProps(this.props) : this.props, [].concat((0, _toConsumableArray2.default)(allowedProps), (0, _toConsumableArray2.default)(customNativeProps)), config);
+            if (!(0, _$$_REQUIRE(_dependencyMap[14], "react-native-gesture-handler/src/utils").deepEqual)(this.config, newConfig)) {
               this.updateGestureHandler(newConfig);
             }
           }
@@ -121623,14 +124089,15 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         key: "setNativeProps",
         value: function setNativeProps(updates) {
           var mergedProps = Object.assign({}, this.props, updates);
-          var newConfig = (0, _$$_REQUIRE(_dependencyMap[19], "./utils").filterConfig)(transformProps ? transformProps(mergedProps) : mergedProps, [].concat((0, _toConsumableArray2.default)(allowedProps), (0, _toConsumableArray2.default)(customNativeProps)), config);
+          var newConfig = (0, _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/handlers/utils").filterConfig)(transformProps ? transformProps(mergedProps) : mergedProps, [].concat((0, _toConsumableArray2.default)(allowedProps), (0, _toConsumableArray2.default)(customNativeProps)), config);
           this.updateGestureHandler(newConfig);
         }
       }, {
         key: "render",
         value: function render() {
           var _this$props$testID;
-          if (__DEV__ && !this.context && !(0, _$$_REQUIRE(_dependencyMap[14], "../utils").isTestEnv)() && _reactNative.Platform.OS !== 'web') {
+          if (__DEV__ && !this.context && !(0, _$$_REQUIRE(_dependencyMap[14], "react-native-gesture-handler/src/utils").isTestEnv)() && _reactNative.Platform.OS !== 'web' && _reactNative.Platform.OS !== "harmony") {
+            // RNOH: patch
             throw new Error(name + ' must be used as a descendant of GestureHandlerRootView. Otherwise the gestures will not be recognized. See https://docs.swmansion.com/react-native-gesture-handler/docs/installation for more details.');
           }
           var gestureEventHandler = this.onGestureHandlerEvent;
@@ -121680,12 +124147,12 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           try {
             child = React.Children.only(this.props.children);
           } catch (e) {
-            throw new Error((0, _$$_REQUIRE(_dependencyMap[14], "../utils").tagMessage)(`${name} got more than one view as a child. If you want the gesture to work on multiple views, wrap them with a common parent and attach the gesture to that view.`));
+            throw new Error((0, _$$_REQUIRE(_dependencyMap[14], "react-native-gesture-handler/src/utils").tagMessage)(`${name} got more than one view as a child. If you want the gesture to work on multiple views, wrap them with a common parent and attach the gesture to that view.`));
           }
           var grandChildren = child.props.children;
           if (__DEV__ && child.type && (child.type === 'RNGestureHandlerButton' || child.type.name === 'View' || child.type.displayName === 'View')) {
             grandChildren = React.Children.toArray(grandChildren);
-            grandChildren.push(/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[22], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[23], "./PressabilityDebugView").PressabilityDebugView, {
+            grandChildren.push(/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[22], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[23], "react-native-gesture-handler/src/handlers/PressabilityDebugView").PressabilityDebugView, {
               color: "mediumspringgreen",
               hitSlop: child.props.hitSlop
             }, "pressabilityDebugView"));
@@ -121693,7 +124160,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           return React.cloneElement(child, Object.assign({
             ref: this.refHandler,
             collapsable: false
-          }, (0, _$$_REQUIRE(_dependencyMap[14], "../utils").isTestEnv)() ? {
+          }, (0, _$$_REQUIRE(_dependencyMap[14], "react-native-gesture-handler/src/utils").isTestEnv)() ? {
             handlerType: name,
             handlerTag: this.handlerTag,
             enabled: this.props.enabled
@@ -121707,25 +124174,35 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     Handler.contextType = _GestureHandlerRootViewContext.default;
     return Handler;
   }
-},635,[8,46,9,10,14,16,17,224,86,1,636,638,639,640,641,642,643,644,645,646,647,648,92,649],"node_modules/react-native-gesture-handler/src/handlers/createHandler.tsx");
+},635,[8,46,9,10,14,16,17,224,86,1,636,638,639,640,641,642,643,644,645,646,647,648,92,649],"node_modules/@react-native-ohos/react-native-gesture-handler/src/handlers/createHandler.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.default = void 0;
-  var _NativeRNGestureHandlerModule = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "./specs/NativeRNGestureHandlerModule"));
-  // Reexport the native module spec used by codegen. The relevant files are inluded on Android
-  // to ensure the compatibility with the old arch, while iOS doesn't require those at all.
-  var _default = exports.default = _NativeRNGestureHandlerModule.default;
-},636,[8,637],"node_modules/react-native-gesture-handler/src/RNGestureHandlerModule.ts");
+  var _NativeRNGestureHandlerModule = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "../src/specs/NativeRNGestureHandlerModule"));
+  /*
+   * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
+   * Use of this source code is governed by a MIT license that can be
+   * found in the LICENSE file.
+   */
+
+  var RNGestureHandlerModule = _NativeRNGestureHandlerModule.default;
+  var _default = exports.default = RNGestureHandlerModule;
+},636,[8,637],"node_modules/@react-native-ohos/react-native-gesture-handler/src/RNGestureHandlerModule.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.default = void 0;
   var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
+  /*
+   * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
+   * Use of this source code is governed by a MIT license that can be
+   * found in the LICENSE file.
+   */
   var _default = exports.default = _reactNative.TurboModuleRegistry.getEnforcing('RNGestureHandlerModule');
-},637,[1],"node_modules/react-native-gesture-handler/src/specs/NativeRNGestureHandlerModule.ts");
+},637,[1],"node_modules/@react-native-ohos/react-native-gesture-handler/src/specs/NativeRNGestureHandlerModule.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -121872,16 +124349,6 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.getNextHandlerTag = getNextHandlerTag;
-  var handlerTag = 1;
-  function getNextHandlerTag() {
-    return handlerTag++;
-  }
-},643,[],"node_modules/react-native-gesture-handler/src/handlers/getNextHandlerTag.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
   exports.ActionType = void 0;
   var ActionType = exports.ActionType = {
     REANIMATED_WORKLET: 1,
@@ -121891,7 +124358,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   };
 
   // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; it can be used as a type and as a value
-},644,[],"node_modules/react-native-gesture-handler/src/ActionType.ts");
+},643,[],"node_modules/react-native-gesture-handler/src/ActionType.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -121940,7 +124407,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
     return null;
   }
-},645,[641],"node_modules/react-native-gesture-handler/src/handlers/handlersRegistry.ts");
+},644,[641],"node_modules/react-native-gesture-handler/src/handlers/handlersRegistry.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -122011,7 +124478,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       });
     }
   }
-},646,[1,8,636,641,645,647],"node_modules/react-native-gesture-handler/src/handlers/utils.ts");
+},645,[1,8,636,641,644,646],"node_modules/react-native-gesture-handler/src/handlers/utils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -122020,7 +124487,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // We check for typeof requestAnimationFrame because of SSR
   // Functions are bound to null to avoid issues with scope when using Metro inline requires.
   var ghQueueMicrotask = exports.ghQueueMicrotask = typeof setImmediate === 'function' ? setImmediate.bind(null) : typeof requestAnimationFrame === 'function' ? requestAnimationFrame.bind(null) : queueMicrotask.bind(null);
-},647,[],"node_modules/react-native-gesture-handler/src/ghQueueMicrotask.ts");
+},646,[],"node_modules/react-native-gesture-handler/src/ghQueueMicrotask.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -122083,7 +124550,17 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   }();
   MountRegistry.mountListeners = new Set();
   MountRegistry.unmountListeners = new Set();
-},648,[8,9,10],"node_modules/react-native-gesture-handler/src/mountRegistry.ts");
+},647,[8,9,10],"node_modules/react-native-gesture-handler/src/mountRegistry.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.getNextHandlerTag = getNextHandlerTag;
+  var handlerTag = 1;
+  function getNextHandlerTag() {
+    return handlerTag++;
+  }
+},648,[],"node_modules/react-native-gesture-handler/src/handlers/getNextHandlerTag.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -122134,7 +124611,12 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     value: true
   });
   exports.default = exports.__INTERNAL_VIEW_CONFIG = void 0;
-  var _codegenNativeComponent = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "react-native/Libraries/Utilities/codegenNativeComponent"));
+  var _codegenNativeComponent = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "react-native/Libraries/Utilities/codegenNativeComponent")); /*
+                                                                                                                                                                                                            * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
+                                                                                                                                                                                                            * Use of this source code is governed by a MIT license that can be
+                                                                                                                                                                                                            * found in the LICENSE file.
+                                                                                                                                                                                                            */
+
   var nativeComponentName = 'RNGestureHandlerButton';
   var __INTERNAL_VIEW_CONFIG = exports.__INTERNAL_VIEW_CONFIG = {
     uiViewClassName: 'RNGestureHandlerButton',
@@ -122158,7 +124640,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _default = exports.default = _$$_REQUIRE(_dependencyMap[3], "react-native/Libraries/NativeComponent/NativeComponentRegistry").get(nativeComponentName, function () {
     return __INTERNAL_VIEW_CONFIG;
   });
-},652,[8,347,185,204],"node_modules/react-native-gesture-handler/src/specs/RNGestureHandlerButtonNativeComponent.ts");
+},652,[8,347,185,204],"node_modules/@react-native-ohos/react-native-gesture-handler/src/specs/RNGestureHandlerButtonNativeComponent.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -122387,9 +124869,9 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   exports.default = void 0;
   var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-  var _NativeModules$Platfo;
-  var _default = exports.default = (_NativeModules$Platfo = _reactNative.NativeModules == null ? void 0 : _reactNative.NativeModules.PlatformConstants) != null ? _NativeModules$Platfo : _reactNative.Platform.constants;
-},657,[1],"node_modules/react-native-gesture-handler/src/PlatformConstants.ts");
+  // Patched this line because original failed in bridgeless
+  var _default = exports.default = _reactNative.Platform.constants;
+},657,[1],"node_modules/@react-native-ohos/react-native-gesture-handler/src/PlatformConstants.harmony.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -123045,7 +125527,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }(BaseGesture);
-},660,[8,14,16,17,10,9,643,641],"node_modules/react-native-gesture-handler/src/handlers/gestures/gesture.ts");
+},660,[8,14,16,17,10,9,648,641],"node_modules/react-native-gesture-handler/src/handlers/gestures/gesture.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -124046,7 +126528,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       });
     }
   };
-},671,[86,1,8,638,639,641,672,867,872,868,874,870,869,875,92,876],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/index.tsx");
+},671,[86,1,8,638,639,641,672,868,873,869,875,871,870,876,92,877],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/index.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -124183,7 +126665,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       } : undefined
     });
   }
-},672,[8,27,46,1,86,650,673,674,675,656,655,669,634,660,641,676,862,863,866],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/utils.ts");
+},672,[8,27,46,1,86,650,673,674,675,656,655,669,634,660,641,676,863,864,867],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/utils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -124396,6 +126878,32 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }();
   }
 },676,[677,641],"node_modules/react-native-gesture-handler/src/handlers/gestures/reanimatedWrapper.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  // Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
+  // Use of this source code is governed by a MIT license that can be
+  // found in the LICENSE file.
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var _exportNames = {};
+  exports.default = void 0;
+  var _reactNativeReanimated = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[0], "react-native-reanimated"));
+  Object.keys(_reactNativeReanimated).forEach(function (key) {
+    if (key === "default" || key === "__esModule") return;
+    if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+    if (key in exports && exports[key] === _reactNativeReanimated[key]) return;
+    Object.defineProperty(exports, key, {
+      enumerable: true,
+      get: function get() {
+        return _reactNativeReanimated[key];
+      }
+    });
+  });
+  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
+  var _default = exports.default = _reactNativeReanimated.default;
+},677,[678],"node_modules/@react-native-ohos/react-native-reanimated/lib/index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -125421,7 +127929,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var Animated = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[22], "./Animated"));
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   var _default = exports.default = Animated;
-},677,[678,767,727,771,680,773,775,684,838,839,845,731,776,717,846,718,847,854,722,721,817,855,856],"node_modules/react-native-reanimated/src/index.ts");
+},678,[679,768,728,772,681,774,776,685,839,840,846,732,777,718,847,719,848,855,723,722,818,856,857],"node_modules/react-native-reanimated/src/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -125469,7 +127977,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     });
   });
-},678,[679,729,745,756,763],"node_modules/react-native-reanimated/src/layoutReanimation/index.ts");
+},679,[680,730,746,757,764],"node_modules/react-native-reanimated/src/layoutReanimation/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -125613,7 +128121,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_animationsManagerTs4.__stackDetails = _e;
     return reactNativeReanimated_animationsManagerTs4;
   }())();
-},679,[680,681,713,701],"node_modules/react-native-reanimated/src/layoutReanimation/animationsManager.ts");
+},680,[681,682,714,702],"node_modules/react-native-reanimated/src/layoutReanimation/animationsManager.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -125775,7 +128283,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // so many dependencies on it being generic that it's not feasible at the moment.
   /** @deprecated Please use {@link AnimatedStyle} type instead. */
   /** @deprecated This type is no longer relevant. */
-},680,[],"node_modules/react-native-reanimated/src/commonTypes.ts");
+},681,[],"node_modules/react-native-reanimated/src/commonTypes.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -126101,7 +128609,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function mutableToJSON(value) {
     return JSON.stringify(value);
   }
-},681,[682,683,684,687,688,701,690,689],"node_modules/react-native-reanimated/src/mutables.ts");
+},682,[683,684,685,688,689,702,691,690],"node_modules/react-native-reanimated/src/mutables.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -126154,7 +128662,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     // @ts-ignore Fallback if `window` is undefined.
     return typeof window !== 'undefined';
   }
-},682,[86,1],"node_modules/react-native-reanimated/src/PlatformChecker.ts");
+},683,[86,1],"node_modules/react-native-reanimated/src/PlatformChecker.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -126200,7 +128708,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
     return (0, _react.forwardRef)(render);
   }
-},683,[8,153,86,682],"node_modules/react-native-reanimated/src/reactUtils.tsx");
+},684,[8,153,86,683],"node_modules/react-native-reanimated/src/reactUtils.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -126227,7 +128735,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     });
   });
-},684,[685,686],"node_modules/react-native-reanimated/src/logger/index.ts");
+},685,[686,687],"node_modules/react-native-reanimated/src/logger/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -126248,7 +128756,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   // Do nothing when addLogBoxLog is called if LogBox is not available
   var addLogBoxLog = exports.addLogBoxLog = (_LogBox$addLog$bind = LogBox == null || (_LogBox$addLog = LogBox.addLog) == null ? void 0 : _LogBox$addLog.bind(LogBox)) != null ? _LogBox$addLog$bind : noop;
-},685,[1],"node_modules/react-native-reanimated/src/logger/LogBox.ts");
+},686,[1],"node_modules/react-native-reanimated/src/logger/LogBox.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -126512,7 +129020,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return error;
     }()
   };
-},686,[685],"node_modules/react-native-reanimated/src/logger/logger.ts");
+},687,[686],"node_modules/react-native-reanimated/src/logger/logger.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -126597,7 +129105,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     valueSetter.__stackDetails = _e;
     return valueSetter;
   }();
-},687,[],"node_modules/react-native-reanimated/src/valueSetter.ts");
+},688,[],"node_modules/react-native-reanimated/src/valueSetter.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -127153,7 +129661,7 @@ for more details.`);
    * value that is read and written only on the UI thread.
    */
   var makeShareable = exports.makeShareable = SHOULD_BE_USE_WEB ? makeShareableJS : makeShareableNative;
-},688,[8,27,682,689,690,680,691,700,684],"node_modules/react-native-reanimated/src/shareables.ts");
+},689,[8,27,683,690,691,681,692,701,685],"node_modules/react-native-reanimated/src/shareables.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -127196,7 +129704,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     },
     get: cache.get.bind(cache)
   };
-},689,[682],"node_modules/react-native-reanimated/src/shareableMappingCache.ts");
+},690,[683],"node_modules/react-native-reanimated/src/shareableMappingCache.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /* eslint-disable reanimated/use-reanimated-error */
   'use strict';
@@ -127315,7 +129823,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     // @ts-ignore the reportFatalError method is an internal method of ErrorUtils not exposed in the type definitions
     global.ErrorUtils.reportFatalError(error);
   }
-},690,[8,27],"node_modules/react-native-reanimated/src/errors.ts");
+},691,[8,27],"node_modules/react-native-reanimated/src/errors.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -127328,7 +129836,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[0], "./WorkletsModule").WorkletsModule;
     }
   });
-},691,[692],"node_modules/react-native-reanimated/src/worklets/index.ts");
+},692,[693],"node_modules/react-native-reanimated/src/worklets/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -127341,7 +129849,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[0], "./workletsModuleInstance").WorkletsModule;
     }
   });
-},692,[693],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/index.ts");
+},693,[694],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -127350,7 +129858,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   exports.WorkletsModule = void 0;
   var WorkletsModule = exports.WorkletsModule = (0, _$$_REQUIRE(_dependencyMap[0], "../../PlatformChecker").shouldBeUseWeb)() ? (0, _$$_REQUIRE(_dependencyMap[1], "./JSWorklets").createJSWorkletsModule)() : (0, _$$_REQUIRE(_dependencyMap[2], "./NativeWorklets").createNativeWorkletsModule)();
-},693,[682,694,695],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/workletsModuleInstance.ts");
+},694,[683,695,696],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/workletsModuleInstance.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -127374,7 +129882,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }();
-},694,[8,9,10,690],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/JSWorklets.ts");
+},695,[8,9,10,691],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/JSWorklets.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -127414,7 +129922,7 @@ See https://docs.swmansion.com/react-native-reanimated/docs/guides/troubleshooti
       }
     }]);
   }();
-},695,[8,9,10,20,21,696,697,690],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/NativeWorklets.ts");
+},696,[8,9,10,20,21,697,698,691],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/NativeWorklets.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /* eslint-disable reanimated/use-reanimated-error */
   'use strict';
@@ -127524,7 +130032,7 @@ See https://docs.swmansion.com/react-native-reanimated/docs/guides/troubleshooti
   function getValueUnpackerCode() {
     return valueUnpacker.__initData.code;
   }
-},696,[682,680],"node_modules/react-native-reanimated/src/worklets/valueUnpacker.ts");
+},697,[683,681],"node_modules/react-native-reanimated/src/worklets/valueUnpacker.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -127545,7 +130053,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   var _NativeReanimatedModule = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "./NativeReanimatedModule"));
   var _NativeWorkletsModule = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./NativeWorkletsModule"));
-},697,[8,698,699],"node_modules/react-native-reanimated/src/specs/index.ts");
+},698,[8,699,700],"node_modules/react-native-reanimated/src/specs/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -127555,7 +130063,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   exports.default = void 0;
   var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
   var _default = exports.default = _reactNative.TurboModuleRegistry.get('ReanimatedModule');
-},698,[1],"node_modules/react-native-reanimated/src/specs/NativeReanimatedModule.ts");
+},699,[1],"node_modules/react-native-reanimated/src/specs/NativeReanimatedModule.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -127567,7 +130075,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // This file would ideally be in `worklets/specs` but
   // codegen is pretty stupid and stops looking after first `spec` directory found.
   var _default = exports.default = _reactNative.TurboModuleRegistry.get('WorkletsModule');
-},699,[1],"node_modules/react-native-reanimated/src/specs/NativeWorkletsModule.ts");
+},700,[1],"node_modules/react-native-reanimated/src/specs/NativeWorkletsModule.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -127581,7 +130089,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   exports.jsVersion = void 0;
   var jsVersion = exports.jsVersion = '3.18.0';
-},700,[],"node_modules/react-native-reanimated/src/platform-specific/jsVersion.ts");
+},701,[],"node_modules/react-native-reanimated/src/platform-specific/jsVersion.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -127953,7 +130461,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     _runOnJS.__stackDetails = _e;
     return _runOnJS;
   }();
-},701,[8,46,27,682,690,680,702,688],"node_modules/react-native-reanimated/src/threads.ts");
+},702,[8,46,27,683,691,681,703,689],"node_modules/react-native-reanimated/src/threads.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -127966,7 +130474,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[0], "./reanimatedModuleInstance").ReanimatedModule;
     }
   });
-},702,[703],"node_modules/react-native-reanimated/src/ReanimatedModule/index.ts");
+},703,[704],"node_modules/react-native-reanimated/src/ReanimatedModule/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -127975,7 +130483,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   exports.ReanimatedModule = void 0;
   var ReanimatedModule = exports.ReanimatedModule = (0, _$$_REQUIRE(_dependencyMap[0], "../PlatformChecker").shouldBeUseWeb)() ? (0, _$$_REQUIRE(_dependencyMap[1], "./js-reanimated").createJSReanimatedModule)() : (0, _$$_REQUIRE(_dependencyMap[2], "./NativeReanimated").createNativeReanimatedModule)();
-},703,[682,704,709],"node_modules/react-native-reanimated/src/ReanimatedModule/reanimatedModuleInstance.ts");
+},704,[683,705,710],"node_modules/react-native-reanimated/src/ReanimatedModule/reanimatedModuleInstance.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128089,7 +130597,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function isNativeProp(propName) {
     return !!_$$_REQUIRE(_dependencyMap[6], "../../propsAllowlists").PropsAllowlists.NATIVE_THREAD_PROPS_WHITELIST[propName];
   }
-},704,[705,8,27,690,707,684,708],"node_modules/react-native-reanimated/src/ReanimatedModule/js-reanimated/index.ts");
+},705,[706,8,27,691,708,685,709],"node_modules/react-native-reanimated/src/ReanimatedModule/js-reanimated/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128387,7 +130895,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     Platform["UNKNOWN"] = "unknown";
     return Platform;
   }({});
-},705,[8,27,9,10,21,682,706,691,680,690,684],"node_modules/react-native-reanimated/src/ReanimatedModule/js-reanimated/JSReanimated.ts");
+},706,[8,27,9,10,21,683,707,692,681,691,685],"node_modules/react-native-reanimated/src/ReanimatedModule/js-reanimated/JSReanimated.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128402,7 +130910,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return callback(performance.now());
     }, 0);
   }
-},706,[],"node_modules/react-native-reanimated/src/mockedRequestAnimationFrame.ts");
+},707,[],"node_modules/react-native-reanimated/src/mockedRequestAnimationFrame.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128416,7 +130924,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var createTransformValue;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   var createTextShadowValue;
-},707,[],"node_modules/react-native-reanimated/src/ReanimatedModule/js-reanimated/webUtils.ts");
+},708,[],"node_modules/react-native-reanimated/src/ReanimatedModule/js-reanimated/webUtils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128548,7 +131056,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       placeholderTextColor: true
     }
   };
-},708,[],"node_modules/react-native-reanimated/src/propsAllowlists.ts");
+},709,[],"node_modules/react-native-reanimated/src/propsAllowlists.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128774,7 +131282,7 @@ See https://docs.swmansion.com/react-native-reanimated/docs/guides/troubleshooti
       }
     }]);
   }();
-},709,[8,9,10,20,21,700,690,691,697,710,682,711],"node_modules/react-native-reanimated/src/ReanimatedModule/NativeReanimated.ts");
+},710,[8,9,10,20,21,701,691,692,698,711,683,712],"node_modules/react-native-reanimated/src/ReanimatedModule/NativeReanimated.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128817,7 +131325,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return version1 === version2;
     }
   }
-},710,[8,27,684,700,690],"node_modules/react-native-reanimated/src/platform-specific/checkCppVersion.ts");
+},711,[8,27,685,701,691],"node_modules/react-native-reanimated/src/platform-specific/checkCppVersion.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128863,7 +131371,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
     return resolvedRef;
   }
-},711,[322,712],"node_modules/react-native-reanimated/src/fabricUtils.ts");
+},712,[322,713],"node_modules/react-native-reanimated/src/fabricUtils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /* eslint-disable camelcase */
   'use strict';
@@ -128926,7 +131434,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     */
     return findHostInstance_DEPRECATED(!(0, _$$_REQUIRE(_dependencyMap[0], "../PlatformChecker").isFabric)() || component._hasAnimatedRef ? component._componentRef : component);
   }
-},712,[682,303,690,338],"node_modules/react-native-reanimated/src/platform-specific/findHostInstance.ts");
+},713,[683,303,691,338],"node_modules/react-native-reanimated/src/platform-specific/findHostInstance.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -129171,7 +131679,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     withStyleAnimation.__stackDetails = _e;
     return withStyleAnimation;
   }();
-},713,[714,717,684,726],"node_modules/react-native-reanimated/src/animation/styleAnimation.ts");
+},714,[715,718,685,727],"node_modules/react-native-reanimated/src/animation/styleAnimation.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /* eslint-disable @typescript-eslint/no-shadow */
   'use strict';
@@ -129747,7 +132255,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
    * @see https://docs.swmansion.com/react-native-reanimated/docs/core/cancelAnimation
    */
   var cancelAnimation = exports.cancelAnimation = SHOULD_BE_USE_WEB ? cancelAnimationWeb : cancelAnimationNative;
-},714,[8,46,682,715,684,680,690,716,717,701],"node_modules/react-native-reanimated/src/animation/util.ts");
+},715,[8,46,683,716,685,681,691,717,718,702],"node_modules/react-native-reanimated/src/animation/util.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -129770,7 +132278,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       ReducedMotionManager.uiValue.value = value;
     }
   };
-},715,[682,681],"node_modules/react-native-reanimated/src/ReducedMotion.ts");
+},716,[683,682],"node_modules/react-native-reanimated/src/ReducedMotion.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -130277,7 +132785,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     decomposeMatrixIntoMatricesAndAngles.__stackDetails = _e;
     return decomposeMatrixIntoMatricesAndAngles;
   }();
-},716,[8,27,690],"node_modules/react-native-reanimated/src/animation/transformationMatrix/matrixUtils.tsx");
+},717,[8,27,691],"node_modules/react-native-reanimated/src/animation/transformationMatrix/matrixUtils.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -131277,7 +133785,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     toGammaSpace.__stackDetails = _e;
     return toGammaSpace;
   }();
-},717,[718,682],"node_modules/react-native-reanimated/src/Colors.ts");
+},718,[719,683],"node_modules/react-native-reanimated/src/Colors.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -131512,7 +134020,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function unmarkNodeAsRemovable(viewTag) {
     _$$_REQUIRE(_dependencyMap[8], "./ReanimatedModule").ReanimatedModule.unmarkNodeAsRemovable(viewTag);
   }
-},718,[719,701,681,688,721,723,682,690,702,724,720],"node_modules/react-native-reanimated/src/core.ts");
+},719,[720,702,682,689,722,724,683,691,703,725,721],"node_modules/react-native-reanimated/src/core.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -131650,7 +134158,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     runOnRuntime.__stackDetails = _e;
     return runOnRuntime;
   }();
-},719,[682,702,688,690,684,720,680],"node_modules/react-native-reanimated/src/runtimes.ts");
+},720,[683,703,689,691,685,721,681],"node_modules/react-native-reanimated/src/runtimes.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -131955,7 +134463,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return reactNativeReanimated_initializersTs7;
     }())();
   }
-},720,[8,27,682,684,701,690,706],"node_modules/react-native-reanimated/src/initializers.ts");
+},721,[8,27,683,685,702,691,707],"node_modules/react-native-reanimated/src/initializers.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -132197,7 +134705,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return reactNativeReanimated_mappersTs3;
     }())();
   }
-},721,[682,722,701],"node_modules/react-native-reanimated/src/mappers.ts");
+},722,[683,723,702],"node_modules/react-native-reanimated/src/mappers.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -132223,7 +134731,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     isSharedValue.__stackDetails = _e;
     return isSharedValue;
   }();
-},722,[],"node_modules/react-native-reanimated/src/isSharedValue.ts");
+},723,[],"node_modules/react-native-reanimated/src/isSharedValue.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -132234,7 +134742,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var controlEdgeToEdgeValues = function controlEdgeToEdgeValues(values) {};
   exports.controlEdgeToEdgeValues = controlEdgeToEdgeValues;
   exports.isEdgeToEdge = isEdgeToEdge;
-},723,[],"node_modules/react-native-is-edge-to-edge/dist/index.js");
+},724,[],"node_modules/react-native-is-edge-to-edge/dist/index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -132295,7 +134803,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }();
-},724,[8,9,10,725],"node_modules/react-native-reanimated/src/SensorContainer.ts");
+},725,[8,9,10,726],"node_modules/react-native-reanimated/src/SensorContainer.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -132368,7 +134876,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }();
-},725,[8,9,10,680,681,702],"node_modules/react-native-reanimated/src/Sensor.ts");
+},726,[8,9,10,681,682,703],"node_modules/react-native-reanimated/src/Sensor.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -132506,7 +135014,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_timingTs1.__stackDetails = _e;
     return reactNativeReanimated_timingTs1;
   }();
-},726,[714,727],"node_modules/react-native-reanimated/src/animation/timing.ts");
+},727,[715,728],"node_modules/react-native-reanimated/src/animation/timing.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -133132,7 +135640,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     });
   }
   var Easing = exports.Easing = EasingObject;
-},727,[8,27,728],"node_modules/react-native-reanimated/src/Easing.ts");
+},728,[8,27,729],"node_modules/react-native-reanimated/src/Easing.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -133440,7 +135948,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     Bezier.__stackDetails = _e;
     return Bezier;
   }();
-},728,[690],"node_modules/react-native-reanimated/src/Bezier.ts");
+},729,[691],"node_modules/react-native-reanimated/src/Bezier.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -133465,7 +135973,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[2], "./Keyframe").Keyframe;
     }
   });
-},729,[730,743,744],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/index.ts");
+},730,[731,744,745],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -133660,7 +136168,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }();
-},730,[8,9,10,680,690,731,714],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/BaseAnimationBuilder.ts");
+},731,[8,9,10,681,691,732,715],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/BaseAnimationBuilder.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -133733,7 +136241,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[8], "./timing").withTiming;
     }
   });
-},731,[714,732,733,738,739,740,741,713,726],"node_modules/react-native-reanimated/src/animation/index.ts");
+},732,[715,733,734,739,740,741,742,714,727],"node_modules/react-native-reanimated/src/animation/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -133837,7 +136345,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_clampTs1.__stackDetails = _e;
     return reactNativeReanimated_clampTs1;
   }();
-},732,[714,684],"node_modules/react-native-reanimated/src/animation/clamp.ts");
+},733,[715,685],"node_modules/react-native-reanimated/src/animation/clamp.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -133850,7 +136358,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[0], "./decay").withDecay;
     }
   });
-},733,[734],"node_modules/react-native-reanimated/src/animation/decay/index.ts");
+},734,[735],"node_modules/react-native-reanimated/src/animation/decay/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -133995,7 +136503,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_decayTs2.__stackDetails = _e;
     return reactNativeReanimated_decayTs2;
   }();
-},734,[690,714,735,736,737],"node_modules/react-native-reanimated/src/animation/decay/decay.ts");
+},735,[691,715,736,737,738],"node_modules/react-native-reanimated/src/animation/decay/decay.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -134044,7 +136552,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     isValidRubberBandConfig.__stackDetails = _e;
     return isValidRubberBandConfig;
   }();
-},735,[682],"node_modules/react-native-reanimated/src/animation/decay/utils.ts");
+},736,[683],"node_modules/react-native-reanimated/src/animation/decay/utils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -134096,7 +136604,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     rubberBandDecay.__stackDetails = _e;
     return rubberBandDecay;
   }();
-},736,[735],"node_modules/react-native-reanimated/src/animation/decay/rubberBandDecay.ts");
+},737,[736],"node_modules/react-native-reanimated/src/animation/decay/rubberBandDecay.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -134143,7 +136651,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     rigidDecay.__stackDetails = _e;
     return rigidDecay;
   }();
-},737,[735],"node_modules/react-native-reanimated/src/animation/decay/rigidDecay.ts");
+},738,[736],"node_modules/react-native-reanimated/src/animation/decay/rigidDecay.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -134261,7 +136769,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_delayTs1.__stackDetails = _e;
     return reactNativeReanimated_delayTs1;
   }();
-},738,[714],"node_modules/react-native-reanimated/src/animation/delay.ts");
+},739,[715],"node_modules/react-native-reanimated/src/animation/delay.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -134397,7 +136905,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_repeatTs1.__stackDetails = _e;
     return reactNativeReanimated_repeatTs1;
   }();
-},739,[714],"node_modules/react-native-reanimated/src/animation/repeat.ts");
+},740,[715],"node_modules/react-native-reanimated/src/animation/repeat.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -134574,7 +137082,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     withSequence.__stackDetails = _e;
     return withSequence;
   }();
-},740,[684,714],"node_modules/react-native-reanimated/src/animation/sequence.ts");
+},741,[685,715],"node_modules/react-native-reanimated/src/animation/sequence.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -134788,7 +137296,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_springTs1.__stackDetails = _e;
     return reactNativeReanimated_springTs1;
   }();
-},741,[714,742],"node_modules/react-native-reanimated/src/animation/spring.ts");
+},742,[715,743],"node_modules/react-native-reanimated/src/animation/spring.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -135191,7 +137699,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     isAnimationTerminatingCalculation.__stackDetails = _e;
     return isAnimationTerminatingCalculation;
   }();
-},742,[8,46,27,684],"node_modules/react-native-reanimated/src/animation/springUtils.ts");
+},743,[8,46,27,685],"node_modules/react-native-reanimated/src/animation/springUtils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -135502,7 +138010,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }(_$$_REQUIRE(_dependencyMap[8], "./BaseAnimationBuilder").BaseAnimationBuilder);
-},743,[8,9,10,14,16,17,714,731,730],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/ComplexAnimationBuilder.ts");
+},744,[8,9,10,14,16,17,715,732,731],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/ComplexAnimationBuilder.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -135822,7 +138330,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     return makeKeyframeKey;
   }();
   var Keyframe = exports.Keyframe = InnerKeyframe;
-},744,[8,224,46,9,10,680,731,727,690,714],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/Keyframe.ts");
+},745,[8,224,46,9,10,681,732,728,691,715],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/Keyframe.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -135929,7 +138437,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     });
   });
-},745,[746,747,748,749,750,751,752,753,754,755],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/index.ts");
+},746,[747,748,749,750,751,752,753,754,755,756],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -136854,7 +139362,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   BounceOutRight.presetName = 'BounceOutRight';
-},746,[8,9,10,14,16,17,731,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Bounce.ts");
+},747,[8,9,10,14,16,17,732,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Bounce.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -137618,7 +140126,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   FadeOutDown.presetName = 'FadeOutDown';
-},747,[8,27,9,10,14,16,17,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Fade.ts");
+},748,[8,27,9,10,14,16,17,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Fade.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -138602,7 +141110,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   FlipOutEasyY.presetName = 'FlipOutEasyY';
-},748,[8,27,9,10,14,16,17,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Flip.ts");
+},749,[8,27,9,10,14,16,17,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Flip.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -138966,7 +141474,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[8], "../animationBuilder").ComplexAnimationBuilder);
   LightSpeedOutLeft.presetName = 'LightSpeedOutLeft';
-},749,[8,27,9,10,14,16,17,731,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Lightspeed.ts");
+},750,[8,27,9,10,14,16,17,732,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Lightspeed.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -139142,7 +141650,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   PinwheelOut.presetName = 'PinwheelOut';
-},750,[8,27,9,10,14,16,17,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Pinwheel.ts");
+},751,[8,27,9,10,14,16,17,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Pinwheel.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -139470,7 +141978,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   RollOutRight.presetName = 'RollOutRight';
-},751,[8,27,9,10,14,16,17,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Roll.ts");
+},752,[8,27,9,10,14,16,17,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Roll.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -140158,7 +142666,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   RotateOutUpRight.presetName = 'RotateOutUpRight';
-},752,[8,27,9,10,14,16,17,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Rotate.ts");
+},753,[8,27,9,10,14,16,17,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Rotate.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -140734,7 +143242,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   SlideOutDown.presetName = 'SlideOutDown';
-},753,[8,27,9,10,14,16,17,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Slide.ts");
+},754,[8,27,9,10,14,16,17,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Slide.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -141046,7 +143554,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   StretchOutY.presetName = 'StretchOutY';
-},754,[8,27,9,10,14,16,17,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Stretch.ts");
+},755,[8,27,9,10,14,16,17,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Stretch.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -142306,7 +144814,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   ZoomOutEasyDown.presetName = 'ZoomOutEasyDown';
-},755,[8,27,9,10,14,16,17,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Zoom.ts");
+},756,[8,27,9,10,14,16,17,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Zoom.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -142373,7 +144881,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     });
   });
-},756,[757,758,759,760,761,762],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/index.ts");
+},757,[758,759,760,761,762,763],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -142543,7 +145051,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[9], "../animationBuilder").BaseAnimationBuilder);
   CurvedTransition.presetName = 'CurvedTransition';
-},757,[8,9,10,14,16,17,727,731,714,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/CurvedTransition.ts");
+},758,[8,9,10,14,16,17,728,732,715,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/CurvedTransition.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -142752,7 +145260,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function combineTransition(exiting, entering) {
     return EntryExitTransition.entering(entering).exiting(exiting);
   }
-},758,[8,224,9,10,14,16,17,747,731,684,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/EntryExitTransition.ts");
+},759,[8,224,9,10,14,16,17,748,732,685,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/EntryExitTransition.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -142856,7 +145364,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").BaseAnimationBuilder);
   FadingTransition.presetName = 'FadingTransition';
-},759,[8,9,10,14,16,17,731,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/FadingTransition.ts");
+},760,[8,9,10,14,16,17,732,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/FadingTransition.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -142957,7 +145465,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[8], "../animationBuilder").BaseAnimationBuilder);
   JumpingTransition.presetName = 'JumpingTransition';
-},760,[8,9,10,14,16,17,731,727,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/JumpingTransition.ts");
+},761,[8,9,10,14,16,17,732,728,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/JumpingTransition.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -143049,7 +145557,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   /** @deprecated Please use {@link LinearTransition} instead. */
   LinearTransition.presetName = 'LinearTransition';
   var Layout = exports.Layout = LinearTransition;
-},761,[8,27,9,10,14,16,17,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/LinearTransition.ts");
+},762,[8,27,9,10,14,16,17,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/LinearTransition.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -143156,7 +145664,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").BaseAnimationBuilder);
   SequencedTransition.presetName = 'SequencedTransition';
-},762,[8,9,10,14,16,17,731,729],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/SequencedTransition.ts");
+},763,[8,9,10,14,16,17,732,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/SequencedTransition.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -143183,7 +145691,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     });
   });
-},763,[764,765],"node_modules/react-native-reanimated/src/layoutReanimation/sharedTransitions/index.ts");
+},764,[765,766],"node_modules/react-native-reanimated/src/layoutReanimation/sharedTransitions/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -143532,7 +146040,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return reactNativeReanimated_ProgressTransitionManagerTs9;
     }())();
   }
-},764,[8,9,10,1,701,718,682,690],"node_modules/react-native-reanimated/src/layoutReanimation/sharedTransitions/ProgressTransitionManager.ts");
+},765,[8,9,10,1,702,719,683,691],"node_modules/react-native-reanimated/src/layoutReanimation/sharedTransitions/ProgressTransitionManager.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -143862,7 +146370,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }();
   SharedTransition._progressTransitionManager = new (_$$_REQUIRE(_dependencyMap[8], "./ProgressTransitionManager").ProgressTransitionManager)();
-},765,[8,9,10,680,714,766,690,731,764],"node_modules/react-native-reanimated/src/layoutReanimation/sharedTransitions/SharedTransition.ts");
+},766,[8,9,10,681,715,767,691,732,765],"node_modules/react-native-reanimated/src/layoutReanimation/sharedTransitions/SharedTransition.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -143930,7 +146438,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }, isUnmounting);
     };
   }
-},766,[682,718],"node_modules/react-native-reanimated/src/UpdateLayoutAnimations.ts");
+},767,[683,719],"node_modules/react-native-reanimated/src/UpdateLayoutAnimations.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -144343,7 +146851,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       options: options
     });
   }
-},767,[8,768,771,717,690,772,718],"node_modules/react-native-reanimated/src/interpolateColor.ts");
+},768,[8,769,772,718,691,773,719],"node_modules/react-native-reanimated/src/interpolateColor.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -144359,7 +146867,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _default = exports.default = {
     oklab: _oklab.default
   };
-},768,[8,769],"node_modules/react-native-reanimated/src/culori/index.ts");
+},769,[8,770],"node_modules/react-native-reanimated/src/culori/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -144507,7 +147015,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       toRgb: convertOklabToRgb
     }
   };
-},769,[8,770],"node_modules/react-native-reanimated/src/culori/oklab.ts");
+},770,[8,771],"node_modules/react-native-reanimated/src/culori/oklab.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -144629,7 +147137,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       toRgb: convertLrgbToRgb
     }
   };
-},770,[],"node_modules/react-native-reanimated/src/culori/lrgb.ts");
+},771,[],"node_modules/react-native-reanimated/src/culori/lrgb.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -144878,7 +147386,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     clamp.__stackDetails = _e;
     return clamp;
   }();
-},771,[690],"node_modules/react-native-reanimated/src/interpolation.ts");
+},772,[691],"node_modules/react-native-reanimated/src/interpolation.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -144912,7 +147420,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, [mutable]);
     return mutable;
   }
-},772,[8,27,86,718,731],"node_modules/react-native-reanimated/src/hook/useSharedValue.ts");
+},773,[8,27,86,719,732],"node_modules/react-native-reanimated/src/hook/useSharedValue.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145012,7 +147520,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }(_react.Component);
-},773,[8,9,10,14,16,17,86,682,92,774,718],"node_modules/react-native-reanimated/src/component/LayoutAnimationConfig.tsx");
+},774,[8,9,10,14,16,17,86,683,92,775,719],"node_modules/react-native-reanimated/src/component/LayoutAnimationConfig.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145026,7 +147534,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   });
   var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-},774,[1],"node_modules/react-native-reanimated/src/platformFunctions/findNodeHandle.ts");
+},775,[1],"node_modules/react-native-reanimated/src/platformFunctions/findNodeHandle.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145298,7 +147806,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       flexWrap: 'wrap'
     }
   });
-},775,[86,1,776,777,817,92],"node_modules/react-native-reanimated/src/component/PerformanceMonitor.tsx");
+},776,[86,1,777,778,818,92],"node_modules/react-native-reanimated/src/component/PerformanceMonitor.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145379,7 +147887,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   }
   configureProps();
-},776,[682,708,690,718,684],"node_modules/react-native-reanimated/src/ConfigHelper.ts");
+},777,[683,709,691,719,685],"node_modules/react-native-reanimated/src/ConfigHelper.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145392,7 +147900,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[0], "./createAnimatedComponent").createAnimatedComponent;
     }
   });
-},777,[778],"node_modules/react-native-reanimated/src/createAnimatedComponent/index.ts");
+},778,[779],"node_modules/react-native-reanimated/src/createAnimatedComponent/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145923,7 +148431,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return styleElement;
     });
   }
-},778,[8,9,10,14,16,17,679,37,86,1,779,780,682,781,806,812,718,714,766,680,814,815,782,712,690,816,711,807,776,678,92,773,683],"node_modules/react-native-reanimated/src/createAnimatedComponent/createAnimatedComponent.tsx");
+},779,[8,9,10,14,16,17,680,37,86,1,780,781,683,782,807,813,719,715,767,681,815,816,783,713,691,817,712,808,777,679,92,774,684],"node_modules/react-native-reanimated/src/createAnimatedComponent/createAnimatedComponent.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -146048,7 +148556,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     JSPropsUpdater = JSPropsUpdaterPaper;
   }
   var _default = exports.default = JSPropsUpdater;
-},779,[8,9,10,1,698,682,701],"node_modules/react-native-reanimated/src/createAnimatedComponent/JSPropsUpdater.ts");
+},780,[8,9,10,1,699,683,702],"node_modules/react-native-reanimated/src/createAnimatedComponent/JSPropsUpdater.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -146108,7 +148616,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
   }
   var _default = exports.default = setAndForwardRef;
-},780,[],"node_modules/react-native-reanimated/src/createAnimatedComponent/setAndForwardRef.ts");
+},781,[],"node_modules/react-native-reanimated/src/createAnimatedComponent/setAndForwardRef.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -146145,7 +148653,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[2], "./animationsManager").tryActivateLayoutTransition;
     }
   });
-},781,[782,797,805],"node_modules/react-native-reanimated/src/layoutReanimation/web/index.ts");
+},782,[783,798,806],"node_modules/react-native-reanimated/src/layoutReanimation/web/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -146315,7 +148823,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     // There are 4 more fields, but checking these should suffice
     return r1.x === r2.x && r1.y === r2.y && r1.width === r2.width && r1.height === r2.height;
   }
-},782,[682,684,783,690,796],"node_modules/react-native-reanimated/src/layoutReanimation/web/domUtils.ts");
+},783,[683,685,784,691,797],"node_modules/react-native-reanimated/src/layoutReanimation/web/domUtils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -146334,7 +148842,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   }({});
   var AnimationsData = exports.AnimationsData = Object.assign({}, _$$_REQUIRE(_dependencyMap[0], "./animation/Fade.web").FadeInData, _$$_REQUIRE(_dependencyMap[0], "./animation/Fade.web").FadeOutData, _$$_REQUIRE(_dependencyMap[1], "./animation/Bounce.web").BounceInData, _$$_REQUIRE(_dependencyMap[1], "./animation/Bounce.web").BounceOutData, _$$_REQUIRE(_dependencyMap[2], "./animation/Flip.web").FlipInData, _$$_REQUIRE(_dependencyMap[2], "./animation/Flip.web").FlipOutData, _$$_REQUIRE(_dependencyMap[3], "./animation/Stretch.web").StretchInData, _$$_REQUIRE(_dependencyMap[3], "./animation/Stretch.web").StretchOutData, _$$_REQUIRE(_dependencyMap[4], "./animation/Zoom.web").ZoomInData, _$$_REQUIRE(_dependencyMap[4], "./animation/Zoom.web").ZoomOutData, _$$_REQUIRE(_dependencyMap[5], "./animation/Slide.web").SlideInData, _$$_REQUIRE(_dependencyMap[5], "./animation/Slide.web").SlideOutData, _$$_REQUIRE(_dependencyMap[6], "./animation/Lightspeed.web").LightSpeedInData, _$$_REQUIRE(_dependencyMap[6], "./animation/Lightspeed.web").LightSpeedOutData, _$$_REQUIRE(_dependencyMap[7], "./animation/Pinwheel.web").PinwheelData, _$$_REQUIRE(_dependencyMap[8], "./animation/Rotate.web").RotateInData, _$$_REQUIRE(_dependencyMap[8], "./animation/Rotate.web").RotateOutData, _$$_REQUIRE(_dependencyMap[9], "./animation/Roll.web").RollInData, _$$_REQUIRE(_dependencyMap[9], "./animation/Roll.web").RollOutData);
   var Animations = exports.Animations = Object.assign({}, _$$_REQUIRE(_dependencyMap[0], "./animation/Fade.web").FadeIn, _$$_REQUIRE(_dependencyMap[0], "./animation/Fade.web").FadeOut, _$$_REQUIRE(_dependencyMap[1], "./animation/Bounce.web").BounceIn, _$$_REQUIRE(_dependencyMap[1], "./animation/Bounce.web").BounceOut, _$$_REQUIRE(_dependencyMap[2], "./animation/Flip.web").FlipIn, _$$_REQUIRE(_dependencyMap[2], "./animation/Flip.web").FlipOut, _$$_REQUIRE(_dependencyMap[3], "./animation/Stretch.web").StretchIn, _$$_REQUIRE(_dependencyMap[3], "./animation/Stretch.web").StretchOut, _$$_REQUIRE(_dependencyMap[4], "./animation/Zoom.web").ZoomIn, _$$_REQUIRE(_dependencyMap[4], "./animation/Zoom.web").ZoomOut, _$$_REQUIRE(_dependencyMap[5], "./animation/Slide.web").SlideIn, _$$_REQUIRE(_dependencyMap[5], "./animation/Slide.web").SlideOut, _$$_REQUIRE(_dependencyMap[6], "./animation/Lightspeed.web").LightSpeedIn, _$$_REQUIRE(_dependencyMap[6], "./animation/Lightspeed.web").LightSpeedOut, _$$_REQUIRE(_dependencyMap[7], "./animation/Pinwheel.web").Pinwheel, _$$_REQUIRE(_dependencyMap[8], "./animation/Rotate.web").RotateIn, _$$_REQUIRE(_dependencyMap[8], "./animation/Rotate.web").RotateOut, _$$_REQUIRE(_dependencyMap[9], "./animation/Roll.web").RollIn, _$$_REQUIRE(_dependencyMap[9], "./animation/Roll.web").RollOut);
-},783,[784,787,788,789,790,791,792,793,794,795],"node_modules/react-native-reanimated/src/layoutReanimation/web/config.ts");
+},784,[785,788,789,790,791,792,793,794,795,796],"node_modules/react-native-reanimated/src/layoutReanimation/web/config.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -146559,7 +149067,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: FadeOutData.FadeOutDown.duration
     }
   };
-},784,[785],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Fade.web.ts");
+},785,[786],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Fade.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -146619,7 +149127,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
     return keyframe;
   }
-},785,[8,27,786],"node_modules/react-native-reanimated/src/layoutReanimation/web/animationParser.ts");
+},786,[8,27,787],"node_modules/react-native-reanimated/src/layoutReanimation/web/animationParser.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -146642,7 +149150,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function getEasingByName(easingName) {
     return `cubic-bezier(${WebEasings[easingName].toString()})`;
   }
-},786,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/Easing.web.ts");
+},787,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/Easing.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147009,7 +149517,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: BounceOutData.BounceOutDown.duration
     }
   };
-},787,[785],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Bounce.web.ts");
+},788,[786],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Bounce.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147306,7 +149814,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: FlipOutData.FlipOutEasyY.duration
     }
   };
-},788,[785],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Flip.web.ts");
+},789,[786],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Flip.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147403,7 +149911,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: StretchOutData.StretchOutY.duration
     }
   };
-},789,[785],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Stretch.web.ts");
+},790,[786],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Stretch.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147768,7 +150276,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: ZoomOutData.ZoomOutEasyDown.duration
     }
   };
-},790,[785],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Zoom.web.ts");
+},791,[786],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Zoom.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147945,7 +150453,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: SlideOutData.SlideOutDown.duration
     }
   };
-},791,[785],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Slide.web.ts");
+},792,[786],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Slide.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -148074,7 +150582,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: LightSpeedOutData.LightSpeedOutLeft.duration
     }
   };
-},792,[785],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Lightspeed.web.ts");
+},793,[786],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Lightspeed.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -148135,7 +150643,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: PinwheelData.PinwheelOut.duration
     }
   };
-},793,[785],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Pinwheel.web.ts");
+},794,[786],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Pinwheel.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -148360,7 +150868,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: RotateOutData.RotateOutUpRight.duration
     }
   };
-},794,[785],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Rotate.web.ts");
+},795,[786],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Rotate.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -148465,7 +150973,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: RollOutData.RollOutRight.duration
     }
   };
-},795,[785],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Roll.web.ts");
+},796,[786],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Roll.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -148517,7 +151025,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       fixElementPosition(element, element.parentElement, snapshot);
     }
   }
-},796,[704],"node_modules/react-native-reanimated/src/layoutReanimation/web/componentStyle.ts");
+},797,[705],"node_modules/react-native-reanimated/src/layoutReanimation/web/componentStyle.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -148768,7 +151276,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     (0, _$$_REQUIRE(_dependencyMap[7], "./componentStyle").setElementPosition)(dummy, snapshot);
     setElementAnimation(dummy, animationConfig, false, parent);
   }
-},797,[786,727,684,715,680,783,729,796,704,782,798,803],"node_modules/react-native-reanimated/src/layoutReanimation/web/componentUtils.ts");
+},798,[787,728,685,716,681,784,730,797,705,783,799,804],"node_modules/react-native-reanimated/src/layoutReanimation/web/componentUtils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -148938,7 +151446,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       dummyTransitionKeyframeName: dummyTransitionKeyframeName
     };
   }
-},798,[8,224,153,27,785,782,783,799,800,801,802,803,804],"node_modules/react-native-reanimated/src/layoutReanimation/web/createAnimation.ts");
+},799,[8,224,153,27,786,783,784,800,801,802,803,804,805],"node_modules/react-native-reanimated/src/layoutReanimation/web/createAnimation.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -148966,7 +151474,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
     return linearTransition;
   }
-},799,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Linear.web.ts");
+},800,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Linear.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149010,7 +151518,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
     return sequencedTransition;
   }
-},800,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Sequenced.web.ts");
+},801,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Sequenced.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149063,7 +151571,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
     return fadingTransition;
   }
-},801,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Fading.web.ts");
+},802,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Fading.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149108,7 +151616,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
     return jumpingTransition;
   }
-},802,[727],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Jumping.web.ts");
+},803,[728],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Jumping.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149220,7 +151728,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       secondKeyframeObj: keyframeYObj
     };
   }
-},803,[786,680],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Curved.web.ts");
+},804,[787,681],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Curved.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149305,7 +151813,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     hideComponentBetweenAnimations(keyframeData.style);
     return keyframeData;
   }
-},804,[8,27,783],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/EntryExit.web.ts");
+},805,[8,27,784],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/EntryExit.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149426,7 +151934,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
     startWebLayoutAnimation(props, element, _$$_REQUIRE(_dependencyMap[0], "../../commonTypes").LayoutAnimationType.LAYOUT, transitionData);
   }
-},805,[680,783,684,797,729,798,796,782,727],"node_modules/react-native-reanimated/src/layoutReanimation/web/animationsManager.ts");
+},806,[681,784,685,798,730,799,797,783,728],"node_modules/react-native-reanimated/src/layoutReanimation/web/animationsManager.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149617,7 +152125,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }();
-},806,[8,9,10,27,722,807,808,776,809,721],"node_modules/react-native-reanimated/src/createAnimatedComponent/InlinePropManager.ts");
+},807,[8,9,10,27,723,808,809,777,810,722],"node_modules/react-native-reanimated/src/createAnimatedComponent/InlinePropManager.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149653,7 +152161,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
     return false;
   };
-},807,[],"node_modules/react-native-reanimated/src/createAnimatedComponent/utils.ts");
+},808,[],"node_modules/react-native-reanimated/src/createAnimatedComponent/utils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149724,7 +152232,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
     return data;
   }
-},808,[718],"node_modules/react-native-reanimated/src/ViewDescriptorsSet.ts");
+},809,[719],"node_modules/react-native-reanimated/src/ViewDescriptorsSet.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149745,7 +152253,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   var _updateProps = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[0], "./updateProps"));
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-},809,[810],"node_modules/react-native-reanimated/src/updateProps/index.ts");
+},810,[811],"node_modules/react-native-reanimated/src/updateProps/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /* eslint-disable @typescript-eslint/no-redundant-type-constituents, @typescript-eslint/no-explicit-any */
   'use strict';
@@ -149926,7 +152434,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
    * This used to be `SharedValue<Descriptors[]>` but objects holding just a
    * single `value` prop are fine too.
    */
-},810,[682,704,717,811,690,701],"node_modules/react-native-reanimated/src/updateProps/updateProps.ts");
+},811,[683,705,718,812,691,702],"node_modules/react-native-reanimated/src/updateProps/updateProps.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150079,7 +152587,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     processTransformOrigin.__stackDetails = _e;
     return processTransformOrigin;
   }();
-},811,[8,27,690],"node_modules/react-native-reanimated/src/updateProps/processTransformOrigin.ts");
+},812,[8,27,691],"node_modules/react-native-reanimated/src/updateProps/processTransformOrigin.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150157,7 +152665,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }();
-},812,[8,9,10,807,731,806,813,722,682],"node_modules/react-native-reanimated/src/createAnimatedComponent/PropsFilter.tsx");
+},813,[8,9,10,808,732,807,814,723,683],"node_modules/react-native-reanimated/src/createAnimatedComponent/PropsFilter.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150288,7 +152796,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }();
   var WorkletEventHandler = exports.WorkletEventHandler = SHOULD_BE_USE_WEB ? WorkletEventHandlerWeb : WorkletEventHandlerNative;
-},813,[8,9,10,20,21,682,718],"node_modules/react-native-reanimated/src/WorkletEventHandler.ts");
+},814,[8,9,10,20,21,683,719],"node_modules/react-native-reanimated/src/WorkletEventHandler.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150350,7 +152858,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return layoutAnimationOrBuilder;
     }
   }
-},814,[684],"node_modules/react-native-reanimated/src/animationBuilder.tsx");
+},815,[685],"node_modules/react-native-reanimated/src/animationBuilder.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150495,7 +153003,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }
   }
-},815,[8,9,10,20,21,774,807,813],"node_modules/react-native-reanimated/src/createAnimatedComponent/NativeEventsManager.ts");
+},816,[8,9,10,20,21,775,808,814],"node_modules/react-native-reanimated/src/createAnimatedComponent/NativeEventsManager.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150540,7 +153048,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       viewConfig: element == null ? void 0 : element._viewConfig
     };
   }
-},816,[],"node_modules/react-native-reanimated/src/createAnimatedComponent/getViewInfo.ts");
+},817,[],"node_modules/react-native-reanimated/src/createAnimatedComponent/getViewInfo.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150649,7 +153157,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[16], "./useWorkletCallback").useWorkletCallback;
     }
   });
-},817,[818,822,823,826,827,828,829,824,830,831,821,832,819,835,836,772,837],"node_modules/react-native-reanimated/src/hook/index.ts");
+},818,[819,823,824,827,828,829,830,825,831,832,822,833,820,836,837,773,838],"node_modules/react-native-reanimated/src/hook/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150734,7 +153242,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     // This is not correct but we want to make GH think it receives a function.
     );
   }
-},818,[819,821],"node_modules/react-native-reanimated/src/hook/useAnimatedGestureHandler.ts");
+},819,[820,822],"node_modules/react-native-reanimated/src/hook/useAnimatedGestureHandler.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150782,7 +153290,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       useWeb: useWeb
     };
   }
-},819,[86,688,820,682],"node_modules/react-native-reanimated/src/hook/useHandler.ts");
+},820,[86,689,821,683],"node_modules/react-native-reanimated/src/hook/useHandler.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150914,7 +153422,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     validateAnimatedStyles.__stackDetails = _e;
     return validateAnimatedStyles;
   }();
-},820,[690],"node_modules/react-native-reanimated/src/hook/utils.ts");
+},821,[691],"node_modules/react-native-reanimated/src/hook/utils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150962,7 +153470,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
     return initRef.current;
   }
-},821,[86,813],"node_modules/react-native-reanimated/src/hook/useEvent.ts");
+},822,[86,814],"node_modules/react-native-reanimated/src/hook/useEvent.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151048,7 +153556,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, []);
     return ref.current;
   }
-},822,[86,718,680],"node_modules/react-native-reanimated/src/hook/useAnimatedKeyboard.ts");
+},823,[86,719,681],"node_modules/react-native-reanimated/src/hook/useAnimatedKeyboard.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151076,7 +153584,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
    * @see https://docs.swmansion.com/react-native-reanimated/docs/core/useAnimatedProps
    */
   var useAnimatedProps = exports.useAnimatedProps = (0, _$$_REQUIRE(_dependencyMap[1], "../PlatformChecker").shouldBeUseWeb)() ? useAnimatedPropsJS : _$$_REQUIRE(_dependencyMap[0], "./useAnimatedStyle").useAnimatedStyle;
-},823,[824,682],"node_modules/react-native-reanimated/src/hook/useAnimatedProps.ts");
+},824,[825,683],"node_modules/react-native-reanimated/src/hook/useAnimatedProps.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151611,7 +154119,7 @@ For more, see the docs: \`https://docs.swmansion.com/react-native-reanimated/doc
   function animatedStyleHandleToJSON() {
     return '{}';
   }
-},824,[8,46,86,682,825,820,809,690,680,772,731,718,808],"node_modules/react-native-reanimated/src/hook/useAnimatedStyle.ts");
+},825,[8,46,86,683,826,821,810,691,681,773,732,719,809],"node_modules/react-native-reanimated/src/hook/useAnimatedStyle.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /* based on:
    * https://github.com/facebook/react-native/blob/main/packages/react-native/Libraries/StyleSheet/processBoxShadow.js
@@ -151838,7 +154346,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     processBoxShadow.__stackDetails = _e;
     return processBoxShadow;
   }();
-},825,[690],"node_modules/react-native-reanimated/src/processBoxShadow.ts");
+},826,[691],"node_modules/react-native-reanimated/src/processBoxShadow.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151910,7 +154418,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       };
     }, dependencies);
   }
-},826,[8,46,86,772,682,718],"node_modules/react-native-reanimated/src/hook/useAnimatedReaction.ts");
+},827,[8,46,86,773,683,719],"node_modules/react-native-reanimated/src/hook/useAnimatedReaction.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151996,7 +154504,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
     return ref.current;
   }
-},827,[86,1,682,772,711,774,688,689],"node_modules/react-native-reanimated/src/hook/useAnimatedRef.ts");
+},828,[86,1,683,773,712,775,689,690],"node_modules/react-native-reanimated/src/hook/useAnimatedRef.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -152080,7 +154588,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     // for more information about this cast.
     );
   }
-},828,[819,821],"node_modules/react-native-reanimated/src/hook/useAnimatedScrollHandler.ts");
+},829,[820,822],"node_modules/react-native-reanimated/src/hook/useAnimatedScrollHandler.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -152284,7 +154792,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, [sensorType, config]);
     return ref.current;
   }
-},829,[86,680,718,701],"node_modules/react-native-reanimated/src/hook/useAnimatedSensor.ts");
+},830,[86,681,719,702],"node_modules/react-native-reanimated/src/hook/useAnimatedSensor.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -152358,7 +154866,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return reactNativeReanimated_useComposedEventHandlerTs1;
     }(), Array.from(composedEventNames), doDependenciesDiffer);
   }
-},830,[813,819,821],"node_modules/react-native-reanimated/src/hook/useComposedEventHandler.ts");
+},831,[814,820,822],"node_modules/react-native-reanimated/src/hook/useComposedEventHandler.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -152431,7 +154939,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, dependencies);
     return sharedValue;
   }
-},831,[8,46,86,682,718,731],"node_modules/react-native-reanimated/src/hook/useDerivedValue.ts");
+},832,[8,46,86,683,719,732],"node_modules/react-native-reanimated/src/hook/useDerivedValue.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -152482,7 +154990,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, [callback, autostart]);
     return ref.current;
   }
-},832,[86,8,833],"node_modules/react-native-reanimated/src/hook/useFrameCallback.ts");
+},833,[86,8,834],"node_modules/react-native-reanimated/src/hook/useFrameCallback.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -152577,7 +155085,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }();
-},833,[8,9,10,834,718],"node_modules/react-native-reanimated/src/frameCallback/FrameCallbackRegistryJS.ts");
+},834,[8,9,10,835,719],"node_modules/react-native-reanimated/src/frameCallback/FrameCallbackRegistryJS.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -152679,7 +155187,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_FrameCallbackRegistryUITs1.__stackDetails = _e;
     return reactNativeReanimated_FrameCallbackRegistryUITs1;
   }());
-},834,[701],"node_modules/react-native-reanimated/src/frameCallback/FrameCallbackRegistryUI.ts");
+},835,[702],"node_modules/react-native-reanimated/src/frameCallback/FrameCallbackRegistryUI.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -152702,7 +155210,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function useReducedMotion() {
     return IS_REDUCED_MOTION_ENABLED_IN_SYSTEM;
   }
-},835,[715],"node_modules/react-native-reanimated/src/hook/useReducedMotion.ts");
+},836,[716],"node_modules/react-native-reanimated/src/hook/useReducedMotion.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -152817,7 +155325,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     return (_ref = scrollComponent == null ? void 0 : scrollComponent.getScrollableNode()) != null ? _ref : scrollComponent;
   }
   var scrollNativeEventNames = ['onScroll', 'onScrollBeginDrag', 'onScrollEndDrag', 'onMomentumScrollBegin', 'onMomentumScrollEnd'];
-},836,[86,682,772,821],"node_modules/react-native-reanimated/src/hook/useScrollViewOffset.ts");
+},837,[86,683,773,822],"node_modules/react-native-reanimated/src/hook/useScrollViewOffset.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -152830,7 +155338,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function useWorkletCallback(worklet, deps) {
     return (0, _react.useCallback)(worklet, deps != null ? deps : []);
   }
-},837,[86],"node_modules/react-native-reanimated/src/hook/useWorkletCallback.ts");
+},838,[86],"node_modules/react-native-reanimated/src/hook/useWorkletCallback.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -152874,7 +155382,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, [mode]);
     return null;
   }
-},838,[86,684,715,680],"node_modules/react-native-reanimated/src/component/ReducedMotionConfig.tsx");
+},839,[86,685,716,681],"node_modules/react-native-reanimated/src/component/ReducedMotionConfig.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -152899,7 +155407,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[1], "./animationManager").startScreenTransition;
     }
   });
-},839,[840,841],"node_modules/react-native-reanimated/src/screenTransition/index.ts");
+},840,[841,842],"node_modules/react-native-reanimated/src/screenTransition/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -153253,7 +155761,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     TwoDimensional: TwoDimensional,
     SwipeRightFade: SwipeRightFade
   };
-},840,[],"node_modules/react-native-reanimated/src/screenTransition/presets.ts");
+},841,[],"node_modules/react-native-reanimated/src/screenTransition/presets.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -153333,7 +155841,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     finishScreenTransition.__stackDetails = _e;
     return finishScreenTransition;
   }();
-},841,[776,842,843],"node_modules/react-native-reanimated/src/screenTransition/animationManager.ts");
+},842,[777,843,844],"node_modules/react-native-reanimated/src/screenTransition/animationManager.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -153459,7 +155967,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     applyStyle.__stackDetails = _e;
     return applyStyle;
   }();
-},842,[682,809],"node_modules/react-native-reanimated/src/screenTransition/styleUpdater.ts");
+},843,[683,810],"node_modules/react-native-reanimated/src/screenTransition/styleUpdater.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -153722,7 +156230,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     getSwipeSimulator.__stackDetails = _e;
     return getSwipeSimulator;
   }();
-},843,[844,842],"node_modules/react-native-reanimated/src/screenTransition/swipeSimulator.ts");
+},844,[845,843],"node_modules/react-native-reanimated/src/screenTransition/swipeSimulator.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -153762,7 +156270,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     updateTransition: noopFactory(),
     finishTransition: noopFactory()
   };
-},844,[684],"node_modules/react-native-reanimated/src/screenTransition/RNScreensTurboModule.ts");
+},845,[685],"node_modules/react-native-reanimated/src/screenTransition/RNScreensTurboModule.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /* eslint-disable @typescript-eslint/no-namespace */
   'use strict';
@@ -153992,7 +156500,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     // functions since `ReactTestInstance` has its `props` defined as `any`.
     component);
   };
-},845,[8,27,682,690],"node_modules/react-native-reanimated/src/jestUtils.ts");
+},846,[8,27,683,691],"node_modules/react-native-reanimated/src/jestUtils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154010,7 +156518,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     (0, _$$_REQUIRE(_dependencyMap[0], "./ConfigHelper").addWhitelistedNativeProps)(nativePropsToAdd);
     return adapter;
   }
-},846,[776],"node_modules/react-native-reanimated/src/PropAdapters.ts");
+},847,[777],"node_modules/react-native-reanimated/src/PropAdapters.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154053,7 +156561,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[5], "./setNativeProps").setNativeProps;
     }
   });
-},847,[848,849,850,851,852,853],"node_modules/react-native-reanimated/src/platformFunctions/index.ts");
+},848,[849,850,851,852,853,854],"node_modules/react-native-reanimated/src/platformFunctions/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154142,7 +156650,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   } else {
     exports.dispatchCommand = dispatchCommand = dispatchCommandDefault;
   }
-},848,[684,682],"node_modules/react-native-reanimated/src/platformFunctions/dispatchCommand.ts");
+},849,[685,683],"node_modules/react-native-reanimated/src/platformFunctions/dispatchCommand.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154189,7 +156697,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     getRelativeCoords.__stackDetails = _e;
     return getRelativeCoords;
   }();
-},849,[850],"node_modules/react-native-reanimated/src/platformFunctions/getRelativeCoords.ts");
+},850,[851],"node_modules/react-native-reanimated/src/platformFunctions/getRelativeCoords.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154315,7 +156823,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   } else {
     exports.measure = measure = measureDefault;
   }
-},850,[684,682],"node_modules/react-native-reanimated/src/platformFunctions/measure.ts");
+},851,[685,683],"node_modules/react-native-reanimated/src/platformFunctions/measure.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154402,7 +156910,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   } else {
     exports.scrollTo = scrollTo = scrollToDefault;
   }
-},851,[848,684,682],"node_modules/react-native-reanimated/src/platformFunctions/scrollTo.ts");
+},852,[849,685,683],"node_modules/react-native-reanimated/src/platformFunctions/scrollTo.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154452,7 +156960,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   } else {
     exports.setGestureState = setGestureState = setGestureStateDefault;
   }
-},852,[684,682],"node_modules/react-native-reanimated/src/platformFunctions/setGestureState.ts");
+},853,[685,683],"node_modules/react-native-reanimated/src/platformFunctions/setGestureState.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154560,7 +157068,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   } else {
     exports.setNativeProps = setNativeProps = setNativePropsDefault;
   }
-},853,[684,717,682],"node_modules/react-native-reanimated/src/platformFunctions/setNativeProps.ts");
+},854,[685,718,683],"node_modules/react-native-reanimated/src/platformFunctions/setNativeProps.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154571,7 +157079,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function getUseOfValueInStyleWarning() {
     return "It looks like you might be using shared value's .value inside reanimated inline style. " + 'If you want a component to update when shared value changes you should use the shared value' + ' directly instead of its current state represented by `.value`. See documentation here: ' + 'https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/glossary/#animations-in-inline-styling';
   }
-},854,[],"node_modules/react-native-reanimated/src/pluginUtils.ts");
+},855,[],"node_modules/react-native-reanimated/src/pluginUtils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154579,7 +157087,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-},855,[],"node_modules/react-native-reanimated/src/publicGlobals.ts");
+},856,[],"node_modules/react-native-reanimated/src/publicGlobals.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154634,7 +157142,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[6], "./createAnimatedComponent").createAnimatedComponent;
     }
   });
-},856,[857,859,860,861,858,776,777],"node_modules/react-native-reanimated/src/Animated.ts");
+},857,[858,860,861,862,859,777,778],"node_modules/react-native-reanimated/src/Animated.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154705,7 +157213,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     });
   };
   var ReanimatedFlatList = exports.ReanimatedFlatList = (0, _$$_REQUIRE(_dependencyMap[8], "../reactUtils").componentWithRef)(FlatListForwardRefRender);
-},857,[8,153,86,1,777,92,858,773,683],"node_modules/react-native-reanimated/src/component/FlatList.tsx");
+},858,[8,153,86,1,778,92,859,774,684],"node_modules/react-native-reanimated/src/component/FlatList.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154718,7 +157226,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // but not things like NativeMethods, etc. we need to add them manually by extending the type.
 
   var AnimatedView = exports.AnimatedView = (0, _$$_REQUIRE(_dependencyMap[1], "../createAnimatedComponent").createAnimatedComponent)(_reactNative.View);
-},858,[1,777],"node_modules/react-native-reanimated/src/component/View.ts");
+},859,[1,778],"node_modules/react-native-reanimated/src/component/View.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154731,7 +157239,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // but not things like NativeMethods, etc. we need to add them manually by extending the type.
 
   var AnimatedImage = exports.AnimatedImage = (0, _$$_REQUIRE(_dependencyMap[1], "../createAnimatedComponent").createAnimatedComponent)(_reactNative.Image);
-},859,[1,777],"node_modules/react-native-reanimated/src/component/Image.ts");
+},860,[1,778],"node_modules/react-native-reanimated/src/component/Image.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154769,7 +157277,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       ref: animatedRef
     }, restProps));
   });
-},860,[8,153,86,1,777,683,817,92],"node_modules/react-native-reanimated/src/component/ScrollView.tsx");
+},861,[8,153,86,1,778,684,818,92],"node_modules/react-native-reanimated/src/component/ScrollView.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154782,7 +157290,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // but not things like NativeMethods, etc. we need to add them manually by extending the type.
 
   var AnimatedText = exports.AnimatedText = (0, _$$_REQUIRE(_dependencyMap[1], "../createAnimatedComponent").createAnimatedComponent)(_reactNative.Text);
-},861,[1,777],"node_modules/react-native-reanimated/src/component/Text.ts");
+},862,[1,778],"node_modules/react-native-reanimated/src/component/Text.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -154794,7 +157302,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   });
   var _ReactNative = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "react-native/Libraries/Renderer/shims/ReactNative"));
-},862,[8,338],"node_modules/react-native-gesture-handler/src/RNRenderer.ts");
+},863,[8,338],"node_modules/react-native-gesture-handler/src/RNRenderer.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -154896,7 +157404,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       gestureHandlerStateChangeEventSubscription = null;
     }
   }
-},863,[1,645,642,864,865],"node_modules/react-native-gesture-handler/src/handlers/gestures/eventReceiver.ts");
+},864,[1,644,642,865,866],"node_modules/react-native-gesture-handler/src/handlers/gestures/eventReceiver.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155050,7 +157558,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var GestureStateManager = exports.GestureStateManager = {
     create: create
   };
-},864,[641,676,642],"node_modules/react-native-gesture-handler/src/handlers/gestures/gestureStateManager.ts");
+},865,[641,676,642],"node_modules/react-native-gesture-handler/src/handlers/gestures/gestureStateManager.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155065,7 +157573,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   };
 
   // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; it can be used as a type and as a value
-},865,[],"node_modules/react-native-gesture-handler/src/TouchEventType.ts");
+},866,[],"node_modules/react-native-gesture-handler/src/TouchEventType.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155105,7 +157613,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     getWasCalled = true;
     return useNewWebImplementation;
   }
-},866,[1,641],"node_modules/react-native-gesture-handler/src/EnableNewWebImplementation.ts");
+},867,[1,641],"node_modules/react-native-gesture-handler/src/EnableNewWebImplementation.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155145,7 +157653,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, [forceRender, gestureConfig, gesturesToAttach, preparedGesture, state, webEventHandlersRef]);
     return updateAttachedGestures;
   }
-},867,[86,8,638,672,868,869,870,871],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useDetectorUpdater.ts");
+},868,[86,8,638,672,869,870,871,872],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useDetectorUpdater.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155166,7 +157674,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
     return false;
   }
-},868,[],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/needsToReattach.ts");
+},869,[],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/needsToReattach.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155181,7 +157689,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
     (0, _$$_REQUIRE(_dependencyMap[4], "../../utils").scheduleFlushOperations)();
   }
-},869,[8,636,645,648,646],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/dropHandlers.ts");
+},870,[8,636,644,647,645],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/dropHandlers.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155243,7 +157751,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       });
     }
   }
-},870,[8,636,1,647,672,646,645,644,648],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/attachHandlers.ts");
+},871,[8,636,1,646,672,645,644,643,647],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/attachHandlers.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155307,7 +157815,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       (0, _$$_REQUIRE(_dependencyMap[4], "../../utils").scheduleFlushOperations)();
     });
   }
-},871,[8,636,672,647,646,645],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/updateHandlers.ts");
+},872,[8,636,672,646,645,644],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/updateHandlers.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155344,12 +157852,17 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, [state, updateAttachedGestures]);
     return refHandler;
   }
-},872,[86,8,638,641,873],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useViewRefHandler.ts");
+},873,[86,8,638,641,874],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useViewRefHandler.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.getShadowNodeFromRef = getShadowNodeFromRef;
+  /*
+   * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
+   * Use of this source code is governed by a MIT license that can be
+   * found in the LICENSE file.
+   */
   // Used by GestureDetector (unsupported on web at the moment) to check whether the
   // attached view may get flattened on Fabric. This implementation causes errors
   // on web due to the static resolution of `require` statements by webpack breaking
@@ -155401,7 +157914,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     // @ts-ignore Fabric
     return getInternalInstanceHandleFromPublicInstance(findHostInstance_DEPRECATED(ref)).stateNode.node;
   }
-},873,[303,322],"node_modules/react-native-gesture-handler/src/getShadowNodeFromRef.ts");
+},874,[303,322],"node_modules/@react-native-ohos/react-native-gesture-handler/src/getShadowNodeFromRef.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155632,7 +158145,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     preparedGesture.animatedEventHandler = event;
     preparedGesture.animatedHandlers = sharedHandlersCallbacks;
   }
-},874,[660,865,641,676,642,864],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useAnimatedGesture.ts");
+},875,[660,866,641,676,642,865],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useAnimatedGesture.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155670,7 +158183,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       });
     }, [updateDetector, state]);
   }
-},875,[86,646,648],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useMountReactions.ts");
+},876,[86,645,647],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useMountReactions.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155713,7 +158226,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_react.default.Component);
   var AnimatedWrap = exports.AnimatedWrap = (_Reanimated$default$c = _$$_REQUIRE(_dependencyMap[8], "../reanimatedWrapper").Reanimated == null || (_Reanimated$default = _$$_REQUIRE(_dependencyMap[8], "../reanimatedWrapper").Reanimated.default) == null ? void 0 : _Reanimated$default.createAnimatedComponent(Wrap)) != null ? _Reanimated$default$c : Wrap;
-},876,[8,9,10,14,16,17,86,641,676],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/Wrap.tsx");
+},877,[8,9,10,14,16,17,86,641,676],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/Wrap.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155739,7 +158252,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     allowedProps: _$$_REQUIRE(_dependencyMap[2], "./gestureHandlerCommon").baseGestureHandlerProps,
     config: {}
   });
-},877,[8,635,650],"node_modules/react-native-gesture-handler/src/handlers/PinchGestureHandler.ts");
+},878,[8,635,650],"node_modules/react-native-gesture-handler/src/handlers/PinchGestureHandler.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155753,7 +158266,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     PointerType[PointerType["OTHER"] = 4] = "OTHER";
     return PointerType;
   }({});
-},878,[],"node_modules/react-native-gesture-handler/src/PointerType.ts");
+},879,[],"node_modules/react-native-gesture-handler/src/PointerType.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155779,7 +158292,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     allowedProps: _$$_REQUIRE(_dependencyMap[2], "./gestureHandlerCommon").baseGestureHandlerProps,
     config: {}
   });
-},879,[8,635,650],"node_modules/react-native-gesture-handler/src/handlers/RotationGestureHandler.ts");
+},880,[8,635,650],"node_modules/react-native-gesture-handler/src/handlers/RotationGestureHandler.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155835,7 +158348,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, rest));
   });
   // eslint-disable-next-line @typescript-eslint/no-redeclare
-},880,[8,153,86,1,658,92,671],"node_modules/react-native-gesture-handler/src/components/Text.tsx");
+},881,[8,153,86,1,658,92,671],"node_modules/react-native-gesture-handler/src/components/Text.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155868,7 +158381,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _TouchableWithoutFeedback = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./TouchableWithoutFeedback"));
   var _TouchableOpacity = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "./TouchableOpacity"));
   var _TouchableHighlight = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "./TouchableHighlight"));
-},881,[8,882,883,885,886],"node_modules/react-native-gesture-handler/src/components/touchables/index.ts");
+},882,[8,883,884,886,887],"node_modules/react-native-gesture-handler/src/components/touchables/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155880,7 +158393,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
    */
   var TouchableNativeFeedback = _reactNative.TouchableNativeFeedback;
   var _default = exports.default = TouchableNativeFeedback;
-},882,[1],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableNativeFeedback.tsx");
+},883,[1],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableNativeFeedback.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -155915,7 +158428,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, rest));
   });
   var _default = exports.default = TouchableWithoutFeedback;
-},883,[8,153,86,884,92],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableWithoutFeedback.tsx");
+},884,[8,153,86,885,92],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableWithoutFeedback.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -156189,7 +158702,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       exclusive: true
     }
   };
-},884,[8,9,10,14,16,17,86,1,642,92,632],"node_modules/react-native-gesture-handler/src/components/touchables/GenericTouchable.tsx");
+},885,[8,9,10,14,16,17,86,1,642,92,632],"node_modules/react-native-gesture-handler/src/components/touchables/GenericTouchable.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -156270,7 +158783,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   TouchableOpacity.defaultProps = Object.assign({}, _GenericTouchable.default.defaultProps, {
     activeOpacity: 0.2
   });
-},885,[8,153,9,10,14,16,17,1,884,86,92],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableOpacity.tsx");
+},886,[8,153,9,10,14,16,17,1,885,86,92],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableOpacity.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -156374,7 +158887,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     delayPressOut: 100,
     underlayColor: 'black'
   });
-},886,[8,153,9,10,14,16,17,86,884,1,92],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableHighlight.tsx");
+},887,[8,153,9,10,14,16,17,86,885,1,92],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableHighlight.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -156404,7 +158917,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       flex: 1
     }
   });
-},887,[86,1,8,888,892,92],"node_modules/react-native-gesture-handler/src/components/gestureHandlerRootHOC.tsx");
+},888,[86,1,8,889,893,92],"node_modules/react-native-gesture-handler/src/components/gestureHandlerRootHOC.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -156495,7 +159008,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     return targetComponent;
   }
   module.exports = hoistNonReactStatics;
-},888,[889],"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
+},889,[890],"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -156504,7 +159017,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   } else {
     module.exports = _$$_REQUIRE(_dependencyMap[1], "./cjs/react-is.development.js");
   }
-},889,[890,891],"node_modules/hoist-non-react-statics/node_modules/react-is/index.js");
+},890,[891,892],"node_modules/hoist-non-react-statics/node_modules/react-is/index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /** @license React v16.13.1
    * react-is.production.min.js
@@ -156623,7 +159136,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     return "string" === typeof a || "function" === typeof a || a === e || a === m || a === g || a === f || a === p || a === q || "object" === typeof a && null !== a && (a.$$typeof === t || a.$$typeof === r || a.$$typeof === h || a.$$typeof === k || a.$$typeof === n || a.$$typeof === w || a.$$typeof === x || a.$$typeof === y || a.$$typeof === v);
   };
   exports.typeOf = z;
-},890,[],"node_modules/hoist-non-react-statics/node_modules/react-is/cjs/react-is.production.min.js");
+},891,[],"node_modules/hoist-non-react-statics/node_modules/react-is/cjs/react-is.production.min.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /** @license React v16.13.1
    * react-is.development.js
@@ -156793,39 +159306,53 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       exports.typeOf = typeOf;
     })();
   }
-},891,[],"node_modules/hoist-non-react-statics/node_modules/react-is/cjs/react-is.development.js");
+},892,[],"node_modules/hoist-non-react-statics/node_modules/react-is/cjs/react-is.development.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.default = GestureHandlerRootView;
-  var _objectWithoutProperties2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/objectWithoutProperties"));
-  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[2], "react"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[3], "react-native");
-  var _GestureHandlerRootViewContext = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "../GestureHandlerRootViewContext"));
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/GestureHandlerRootView.tsx";
-  var _excluded = ["style"];
+  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[0], "react"));
+  var _GestureHandlerRootViewContext = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "react-native-gesture-handler/src/GestureHandlerRootViewContext"));
+  var _RNGestureHandlerRootViewNativeComponent = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "../specs/RNGestureHandlerRootViewNativeComponent"));
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/@react-native-ohos/react-native-gesture-handler/src/components/GestureHandlerRootView.tsx";
+  /*
+   * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
+   * Use of this source code is governed by a MIT license that can be
+   * found in the LICENSE file.
+   */
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  function GestureHandlerRootView(_ref) {
-    var style = _ref.style,
-      rest = (0, _objectWithoutProperties2.default)(_ref, _excluded);
-    // Try initialize fabric on the first render, at this point we can
+  function GestureHandlerRootView(props) {
+    // try initialize fabric on the first render, at this point we can
     // reliably check if fabric is enabled (the function contains a flag
     // to make sure it's called only once)
-    (0, _$$_REQUIRE(_dependencyMap[5], "../init").maybeInitializeFabric)();
-    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[6], "react/jsx-runtime").jsx)(_GestureHandlerRootViewContext.default.Provider, {
+    (0, _$$_REQUIRE(_dependencyMap[4], "react-native-gesture-handler/src/init").maybeInitializeFabric)();
+    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[5], "react/jsx-runtime").jsx)(_GestureHandlerRootViewContext.default.Provider, {
       value: true,
-      children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[6], "react/jsx-runtime").jsx)(_reactNative.View, Object.assign({
-        style: style != null ? style : styles.container
-      }, rest))
+      children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[5], "react/jsx-runtime").jsx)(_RNGestureHandlerRootViewNativeComponent.default, Object.assign({}, props))
     });
   }
-  var styles = _reactNative.StyleSheet.create({
-    container: {
-      flex: 1
-    }
+},893,[86,8,639,894,895,92],"node_modules/@react-native-ohos/react-native-gesture-handler/src/components/GestureHandlerRootView.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
   });
-},892,[8,153,86,1,639,893,92],"node_modules/react-native-gesture-handler/src/components/GestureHandlerRootView.tsx");
+  exports.default = exports.__INTERNAL_VIEW_CONFIG = void 0;
+  var _codegenNativeComponent = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "react-native/Libraries/Utilities/codegenNativeComponent")); /*
+                                                                                                                                                                                                            * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
+                                                                                                                                                                                                            * Use of this source code is governed by a MIT license that can be
+                                                                                                                                                                                                            * found in the LICENSE file.
+                                                                                                                                                                                                            */
+
+  var nativeComponentName = 'RNGestureHandlerRootView';
+  var __INTERNAL_VIEW_CONFIG = exports.__INTERNAL_VIEW_CONFIG = {
+    uiViewClassName: 'RNGestureHandlerRootView',
+    validAttributes: {}
+  };
+  var _default = exports.default = _$$_REQUIRE(_dependencyMap[2], "react-native/Libraries/NativeComponent/NativeComponentRegistry").get(nativeComponentName, function () {
+    return __INTERNAL_VIEW_CONFIG;
+  });
+},894,[8,347,204],"node_modules/@react-native-ohos/react-native-gesture-handler/src/specs/RNGestureHandlerRootViewNativeComponent.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -156846,7 +159373,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       fabricInitialized = true;
     }
   }
-},893,[8,636,863,641],"node_modules/react-native-gesture-handler/src/init.ts");
+},895,[8,636,864,641],"node_modules/react-native-gesture-handler/src/init.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -157200,7 +159727,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       flexDirection: _reactNative.I18nManager.isRTL ? 'row' : 'row-reverse'
     })
   });
-},894,[8,9,10,14,16,17,86,1,642,92,674,673],"node_modules/react-native-gesture-handler/src/components/Swipeable.tsx");
+},896,[8,9,10,14,16,17,86,1,642,92,674,673],"node_modules/react-native-gesture-handler/src/components/Swipeable.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -157212,7 +159739,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   });
   var _Pressable = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "./Pressable"));
-},895,[8,896],"node_modules/react-native-gesture-handler/src/components/Pressable/index.ts");
+},897,[8,898],"node_modules/react-native-gesture-handler/src/components/Pressable/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -157691,7 +160218,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     });
   });
   var _default = exports.default = Pressable;
-},896,[8,27,153,86,1,651,641,897,658,92,671,649],"node_modules/react-native-gesture-handler/src/components/Pressable/Pressable.tsx");
+},898,[8,27,153,86,1,651,641,899,658,92,671,649],"node_modules/react-native-gesture-handler/src/components/Pressable/Pressable.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -157794,7 +160321,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     };
   };
-},897,[],"node_modules/react-native-gesture-handler/src/components/Pressable/utils.ts");
+},899,[],"node_modules/react-native-gesture-handler/src/components/Pressable/utils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -158328,6 +160855,6 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       zIndex: 1000
     })
   });
-},898,[8,9,10,14,16,17,86,37,1,642,92,673,674],"node_modules/react-native-gesture-handler/src/components/DrawerLayout.tsx");
+},900,[8,9,10,14,16,17,86,37,1,642,92,673,674],"node_modules/react-native-gesture-handler/src/components/DrawerLayout.tsx");
 __r(2);
 __r(0);

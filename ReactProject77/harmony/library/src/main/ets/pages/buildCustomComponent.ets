@@ -12,6 +12,7 @@ import {
   RN_SMART_REFRESH_HEADER,
   RNSmartRefreshHeader,
 } from '@react-native-ohos/react-native-smart-refresh'
+import { RNCToolbarAndroid} from '@react-native-ohos/toolbar-android/src/main/ets/RNCToolbarAndroid'
 
 @Builder
 export function buildCustomComponent(ctx: ComponentBuilderContext) {
@@ -44,12 +45,19 @@ export function buildCustomComponent(ctx: ComponentBuilderContext) {
       tag:ctx.tag,
     })
   }
+  else if (ctx.componentName === RNCToolbarAndroid.NAME) {
+         RNCToolbarAndroid({
+            ctx: ctx.rnComponentContext,
+            tag: ctx.tag
+             })
+         }
 }
 
 export const arkTsComponentNames: Array<string> = [
   SelectBox.NAME,
   RCTSelectBox.NAME,
   RCTMessageDialog.NAME,
+  RNCToolbarAndroid.NAME,
   "RNSScreen",
   "RNSFullWindowOverlay",
   "RNSModalScreen",

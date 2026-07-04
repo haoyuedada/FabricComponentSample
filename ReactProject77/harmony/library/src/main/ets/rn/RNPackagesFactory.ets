@@ -13,6 +13,7 @@ import { SafeAreaViewPackage } from '@react-native-ohos/react-native-safe-area-c
 import RNOHScreensPackage from "@react-native-ohos/react-native-screens"
 import { ViewPagerPackage } from '@react-native-ohos/react-native-pager-view/ts';
 import { SmartRefreshPackage } from '@react-native-ohos/react-native-smartrefreshlayout/ts';
+import {ToolbarAndroidPackage} from '@react-native-ohos/toolbar-android/src/main/ets/ToolbarAndroidPackage';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
@@ -22,6 +23,7 @@ export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
     new SafeAreaViewPackage(ctx),
     new RNOHScreensPackage(ctx),
     new ViewPagerPackage(ctx),
-    new SmartRefreshPackage(ctx)
+    new SmartRefreshPackage(ctx),
+    new ToolbarAndroidPackage(ctx)
   ];
 }

@@ -14,6 +14,7 @@
 #include "ScreensPackage.h"
 #include "ViewPagerPackage.h"
 #include "SmartRefreshLayoutPackage.h"
+#include "ToolbarAndroidPackage.h"
 using namespace rnoh;
 
 std::vector<std::shared_ptr<Package>> PackageProvider::getPackages(Package::Context ctx) {
@@ -25,6 +26,7 @@ std::vector<std::shared_ptr<Package>> PackageProvider::getPackages(Package::Cont
     std::make_shared<MJRefreshPackage>(ctx),
     std::make_shared<ScreensPackage>(ctx),
     std::make_shared<ViewPagerPackage>(ctx),
-    std::make_shared<SmartRefreshLayoutPackage>(ctx)
+    std::make_shared<SmartRefreshLayoutPackage>(ctx),
+    std::make_shared<ToolbarAndroidPackage>(ctx)
   };
 }

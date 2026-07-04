@@ -31,6 +31,7 @@ add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-mjrefresh/src/ma
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-screens/src/main/cpp" ./screens)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-pager-view/src/main/cpp" ./pager_view)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-smartrefreshlayout/src/main/cpp" ./smart-refresh-layout)
+add_subdirectory("${OH_MODULES}/@react-native-ohos/toolbar-android/src/main/cpp" ./toolbar-android)
 # RNOH_END: manual_package_linking_1
 
 file(GLOB GENERATED_CPP_FILES "./generated/*.cpp")
@@ -52,4 +53,5 @@ target_link_libraries(rnoh_app PUBLIC rnoh_mjrefresh)
 target_link_libraries(rnoh_app PUBLIC rnoh_screens)
 target_link_libraries(rnoh_app PUBLIC rnoh_pager_view)
 target_link_libraries(rnoh_app PUBLIC rnoh_smart_refresh_layout)
+target_link_libraries(rnoh_app PUBLIC rnoh_toolbar_android)
 # RNOH_END: manual_package_linking_2
