@@ -12,7 +12,7 @@ import { AppRegistry } from 'react-native';
 // import App from './App'
 // import App from './tests/260116160802092/react-native-clipboard/index.tsx'
 // import App from './tests/DTS2026011907680/GestureHandlerDemo'
-import App from './tests/DTS2025121743837/GestureHandlerDemo.tsx'
+// import App from './tests/DTS2025121743837/GestureHandlerDemo.tsx'
 // import App from './tests/DTS2025121743837/GesturePreventScrollDemo.tsx'
 // import App from './tests/ReanimatedDemo'
 // import App from './tests/didi/demo.tsx'
@@ -89,9 +89,13 @@ import App from './tests/DTS2025121743837/GestureHandlerDemo.tsx'
 // import App from './tests/react-native-gesture/App.tsx'
 // import App from './tests/react-native-gesture/App1.tsx'
 // import App from './tests/react-native-gesture/meituan/RNPanBasicDemo.tsx'
-// import App from './tests/react-native-gesture/meituan/RNGestureHandlerDemo.tsx'
+import App from './tests/react-native-gesture/meituan/RNGestureHandlerDemo.tsx'
 // import App from './tests/react-native-gesture/meituan/PanGestureHandlerBasicDemo.tsx'
 // import App from './tests/react-native-gesture-handler/App.tsx'
+// import App from './tests/smartrefersh/App.tsx'
+// import App from './tests/toolbar-android/App.tsx'
+// import App from './tests/toolbar-android/Index.tsx'
+// import App from './tests/react-native-gesture-handler/hongquanyun/App.tsx';
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"
