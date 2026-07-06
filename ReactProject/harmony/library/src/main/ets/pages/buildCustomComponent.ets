@@ -5,12 +5,13 @@ import {
 import { SelectBox } from "../FabricComponent/SelectBox"
 import { RCTSelectBox } from "../FabricComponent/RCTSelectBox"
 import { RCTMessageDialog } from "../FabricComponent/RCTMessageDialog"
-import { WebView, WEB_VIEW } from "@react-native-ohos/react-native-webview"
+import { WebView, WEB_VIEW } from "@react-native-oh-tpl/react-native-webview"
 import { RNCVideo, RNC_VIDEO_TYPE } from "@react-native-oh-tpl/react-native-video"
 import { RNCSkiaDomView, SKIA_DOM_VIEW_TYPE } from '@react-native-ohos/react-native-skia';
 import { componentBuilder } from "@react-native-ohos/react-native-screens"
 import { LottieAnimationView, LOTTIE_TYPE } from "@react-native-ohos/lottie-react-native"
 import { VisionCameraView } from "@react-native-ohos/react-native-vision-camera";
+import { RNCSlider, SLIDER_TYPE } from "@react-native-ohos/slider"
 
 @Builder
 export function buildCustomComponent(ctx: ComponentBuilderContext) {
@@ -56,11 +57,16 @@ export function buildCustomComponent(ctx: ComponentBuilderContext) {
       tag: ctx.tag
     })
   } else if (ctx.componentName === VisionCameraView.NAME) {
-      VisionCameraView({
-        ctx: ctx.rnComponentContext,
-        tag: ctx.tag,
-      })
-    }
+    VisionCameraView({
+      ctx: ctx.rnComponentContext,
+      tag: ctx.tag,
+    })
+  } else if (ctx.componentName === SLIDER_TYPE) {
+    RNCSlider({
+      ctx: ctx.rnComponentContext,
+      tag: ctx.tag,
+    })
+   }
 }
 
 export const arkTsComponentNames: Array<string> = [
@@ -80,5 +86,6 @@ export const arkTsComponentNames: Array<string> = [
   "RNSSearchBar",
   "RNSScreenStackHeaderConfig",
   LOTTIE_TYPE,
-  VisionCameraView.NAME
+  VisionCameraView.NAME,
+  SLIDER_TYPE
 ];

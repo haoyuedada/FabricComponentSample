@@ -14,7 +14,7 @@ import { ViewShotPackage } from '@react-native-oh-tpl/react-native-view-shot/ts'
 import { SvgPackage } from '@react-native-oh-tpl/react-native-svg/ts';
 import { ViewPagerPackage } from '@react-native-ohos/react-native-pager-view/ts';
 import { RNCVideoPackage } from '@react-native-oh-tpl/react-native-video/ts';
-import { WebViewPackage } from '@react-native-ohos/react-native-webview/ts';
+import { WebViewPackage } from '@react-native-oh-tpl/react-native-webview/ts';
 // import { RNOrientationPackage } from '@ohmi/react-native-orientation/ts';
 import { ReanimatedPackage } from '@react-native-ohos/react-native-reanimated/ts';
 import { RNSkiaPackage } from '@react-native-ohos/react-native-skia/ts';

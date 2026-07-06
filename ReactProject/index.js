@@ -176,7 +176,8 @@ import { AppRegistry } from 'react-native';
 // import App from './tests/crash/pingan/ReanimatedCrashRepro3.tsx'
 // import App from './tests/crash/pingan/ReanimatedCrashRepro4.tsx'
 // import App from './tests/crash/pingan/ReanimatedCrashRepro5.tsx'
-import App from './src/GestureWebView/GestureWebViewDemo.tsx'
+// import App from './src/GestureWebView/GestureWebViewDemo.tsx'
+import App from './tests/react-native-gesture-handler/upstreamDemo/App.tsx'
 
 
 // 在导航或 App 中注册该组件
