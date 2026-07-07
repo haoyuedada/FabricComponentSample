@@ -12,6 +12,9 @@
     "@react-native-ohos/react-native-gesture-handler": "file:../libs/gesture_handler0617.har",
     "@react-native-ohos/react-native-worklets": "file:../../node_modules/@react-native-ohos/react-native-worklets/harmony/worklets.har",
     "@react-native-ohos/react-native-reanimated": "file:../../node_modules/@react-native-ohos/react-native-reanimated/harmony/reanimated.har",
-    "@react-native-ohos/react-native-spring-scrollview": "file:../../node_modules/@react-native-ohos/react-native-spring-scrollview/harmony/spring_scrollview.har"
+    "@react-native-ohos/react-native-spring-scrollview": "file:../../node_modules/@react-native-ohos/react-native-spring-scrollview/harmony/spring_scrollview.har",
+    "@react-native-ohos/react-native-svg": "file:../../node_modules/@react-native-ohos/react-native-svg/harmony/svg.har",
+    "@react-native-ohos/react-native-safe-area-context": "file:../../node_modules/@react-native-ohos/react-native-safe-area-context/harmony/safe_area.har",
+    "@react-native-ohos/react-native-pager-view": "file:../../node_modules/@react-native-ohos/react-native-pager-view/harmony/pager_view.har"
   }
 }
