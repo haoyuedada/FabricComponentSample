@@ -11,6 +11,9 @@ import GestureHandlerPackage from '@react-native-ohos/react-native-gesture-handl
 import { ReanimatedWorkletPackage } from '@react-native-ohos/react-native-worklets'
 import { ReanimatedPackage} from '@react-native-ohos/react-native-reanimated/ts';
 import {SpringScrollViewPackage} from '@react-native-ohos/react-native-spring-scrollview/ts';
+import { SvgPackage } from '@react-native-ohos/react-native-svg/ts';
+import {SafeAreaViewPackage} from '@react-native-ohos/react-native-safe-area-context/ts';
+import { ViewPagerPackage } from '@react-native-ohos/react-native-pager-view/ts';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
@@ -19,5 +22,8 @@ export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
     new ReanimatedWorkletPackage(ctx),
     new ReanimatedPackage(ctx),
     new SpringScrollViewPackage(ctx),
+    new SvgPackage(ctx),
+    new SafeAreaViewPackage(ctx),
+    new ViewPagerPackage(ctx)
   ];
 }

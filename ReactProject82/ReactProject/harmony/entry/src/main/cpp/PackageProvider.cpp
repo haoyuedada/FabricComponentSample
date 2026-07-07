@@ -12,6 +12,9 @@
 #include "ReanimatedWorkletPackage.h"
 #include "ReanimatedPackage.h"
 #include "SpringScrollViewPackage.h"
+#include "SVGPackage.h"
+#include "SafeAreaViewPackage.h"
+#include "ViewPagerPackage.h"
 
 using namespace rnoh;
 
@@ -23,5 +26,8 @@ std::vector<std::shared_ptr<Package>> PackageProvider::getPackages(Package::Cont
     std::make_shared<ReanimatedWorkletPackage>(ctx),
     std::make_shared<ReanimatedPackage>(ctx),
     std::make_shared<SpringScrollViewPackage>(ctx),
+    std::make_shared<SVGPackage>(ctx),
+    std::make_shared<SafeAreaViewPackage>(ctx),
+    std::make_shared<ViewPagerPackage>(ctx)
   };
 }
