@@ -35,7 +35,7 @@ import { AppRegistry } from 'react-native';
 // import MeasureTest from './src/Measure'
 // import MeasureTest from './src/Measure1'
 // import LottieTest from './tests/LottieTabIcon'
-// import PageViewTest from './tests/PageView'
+import PageViewTest from './tests/PageView'
 // import ModalTest from './tests/ModalTest'
 // import ModalTestClass from './tests/ModalTestClass'
 // import TextInputTest from './tests/TextInputTest'
@@ -177,9 +177,9 @@ import { AppRegistry } from 'react-native';
 // import App from './tests/crash/pingan/ReanimatedCrashRepro4.tsx'
 // import App from './tests/crash/pingan/ReanimatedCrashRepro5.tsx'
 // import App from './src/GestureWebView/GestureWebViewDemo.tsx'
-import App from './tests/react-native-gesture-handler/upstreamDemo/App.tsx'
+// import App from './tests/react-native-gesture-handler/upstreamDemo/App.tsx'
 
 
 // 在导航或 App 中注册该组件
-AppRegistry.registerComponent("app_name", () => App);
+AppRegistry.registerComponent("app_name", () => PageViewTest);
 // import { transform } from "./testTurboModule/buautify_executor.js"
