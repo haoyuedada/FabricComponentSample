@@ -16,6 +16,11 @@ set(CMAKE_ASM_FLAGS "-Wno-error=unused-command-line-argument -Qunused-arguments"
 set(WITH_HITRACE_SYSTRACE 1) # for other CMakeLists.txt files to use
 set(OH_MODULES "${CMAKE_CURRENT_SOURCE_DIR}/../../../oh_modules")
 set(USE_HERMES 0)
+set(CMAKE_C_USE_RESPONSE_FILE_FOR_OBJECTS 1)
+set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_OBJECTS 1)
+set(CMAKE_C_RESPONSE_FILE_FLAG "@")
+set(CMAKE_CXX_RESPONSE_FILE_FLAG "@")
+set(CMAKE_NINJA_FORCE_RESPONSE_FILE 1 CACHE INTERNAL "")
 add_compile_definitions(WITH_HITRACE_SYSTRACE)
 
 add_subdirectory("${RNOH_CPP_DIR}" ./rn)
