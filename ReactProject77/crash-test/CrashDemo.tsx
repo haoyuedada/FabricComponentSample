@@ -3,6 +3,7 @@ import {StyleSheet, Text, View, Button, SafeAreaView} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import AnimatedComponent from './AnimatedComponent';
+import ToJSValueDemo from './ToJSValueDemo';
 
 const Stack = createNativeStackNavigator();
 
@@ -39,6 +40,14 @@ function HomeScreen({navigation}: any) {
           color="#6366f1"
         />
 
+        <View style={{height: 12}} />
+
+        <Button
+          title="toJSValue Demo"
+          onPress={() => navigation.navigate('ToJSValue')}
+          color="#8b5cf6"
+        />
+
         <Text style={styles.warning}>
           ⚠️ 未修复版本会导致应用崩溃，请确保在安全环境测试
         </Text>
@@ -51,6 +60,14 @@ function AnimationScreen({navigation}: any) {
   return (
     <SafeAreaView style={styles.animationContainer}>
       <AnimatedComponent onGoBack={() => navigation.goBack()} />
+    </SafeAreaView>
+  );
+}
+
+function ToJSValueScreen({navigation}: any) {
+  return (
+    <SafeAreaView style={styles.animationContainer}>
+      <ToJSValueDemo onGoBack={() => navigation.goBack()} />
     </SafeAreaView>
   );
 }
@@ -74,6 +91,15 @@ export default function CrashDemo() {
           options={{
             title: '动画页面',
             headerStyle: {backgroundColor: '#e53e3e'},
+            headerTintColor: '#fff',
+          }}
+        />
+        <Stack.Screen
+          name="ToJSValue"
+          component={ToJSValueScreen}
+          options={{
+            title: 'toJSValue Demo',
+            headerStyle: {backgroundColor: '#8b5cf6'},
             headerTintColor: '#fff',
           }}
         />
