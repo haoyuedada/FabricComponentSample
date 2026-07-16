@@ -129,23 +129,26 @@ if("$ENV{RNOH_C_API_ARCH}" STREQUAL "1")
 endif()
 
 # RNOH_BEGIN: add_package_subdirectories
-add_subdirectory("${OH_MODULE_DIR}/@react-native-oh-tpl/react-native-reanimated/src/main/cpp" ./reanimated)
-add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-svg/src/main/cpp" ./svg)
-add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-safe-area-context/src/main/cpp" ./safe-area)
-add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/flash-list/src/main/cpp" ./flash-list)
-add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-gesture-handler/src/main/cpp" ./gesture-handler)
-add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-mmkv/src/main/cpp" ./reactNativeMMKV)
-add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-pager-view/src/main/cpp" ./pager_view)
+#add_subdirectory("${OH_MODULE_DIR}/@react-native-oh-tpl/react-native-reanimated/src/main/cpp" ./reanimated)
+#add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-svg/src/main/cpp" ./svg)
+#add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-safe-area-context/src/main/cpp" ./safe-area)
+#add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/flash-list/src/main/cpp" ./flash-list)
+#add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-gesture-handler/src/main/cpp" ./gesture-handler)
+#add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-mmkv/src/main/cpp" ./reactNativeMMKV)
+#add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-pager-view/src/main/cpp" ./pager_view)
+add_subdirectory("${OH_MODULE_DIR}/@react-native-oh-tpl/react-native-webview/src/main/cpp" ./webview)
 # RNOH_BEGIN: manual_package_linking_1
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/rnc" ./fabric_component)
 # 三方包得加上folly编译配置
-target_compile_options(rnoh_reanimated PUBLIC ${folly_compile_options})
-target_compile_options(rnoh_svg PUBLIC ${folly_compile_options})
-target_compile_options(rnoh_safe_area PUBLIC ${folly_compile_options})
-target_compile_options(rnoh_flash_list PUBLIC ${folly_compile_options})
-target_compile_options(rnoh_gesture_handler PUBLIC ${folly_compile_options})
-target_compile_options(rnoh_native_mmkv PUBLIC ${folly_compile_options})
-target_compile_options(rnoh_pager_view PUBLIC ${folly_compile_options})
+#target_compile_options(rnoh_reanimated PUBLIC ${folly_compile_options})
+#target_compile_options(rnoh_svg PUBLIC ${folly_compile_options})
+#target_compile_options(rnoh_safe_area PUBLIC ${folly_compile_options})
+#target_compile_options(rnoh_flash_list PUBLIC ${folly_compile_options})
+#target_compile_options(rnoh_gesture_handler PUBLIC ${folly_compile_options})
+#target_compile_options(rnoh_native_mmkv PUBLIC ${folly_compile_options})
+#target_compile_options(rnoh_pager_view PUBLIC ${folly_compile_options})
+target_compile_options(fabric_component PUBLIC ${folly_compile_options})
+target_compile_options(rnoh_webview PUBLIC ${folly_compile_options})
 # RNOH_END: add_package_subdirectories
 
 # 添加rnoh_app共享包
@@ -159,14 +162,15 @@ add_library(rnoh_app SHARED
 target_link_libraries(rnoh_app PUBLIC rnoh)
 
 # RNOH_BEGIN: link_packages
-target_link_libraries(rnoh_app PUBLIC rnoh_reanimated)
-target_link_libraries(rnoh_app PUBLIC rnoh_svg)
-target_link_libraries(rnoh_app PUBLIC rnoh_safe_area)
-target_link_libraries(rnoh_app PUBLIC rnoh_flash_list)
-target_link_libraries(rnoh_app PUBLIC rnoh_gesture_handler)
-target_link_libraries(rnoh_app PUBLIC rnoh_native_mmkv)
-target_link_libraries(rnoh_app PUBLIC rnoh_pager_view)
+#target_link_libraries(rnoh_app PUBLIC rnoh_reanimated)
+#target_link_libraries(rnoh_app PUBLIC rnoh_svg)
+#target_link_libraries(rnoh_app PUBLIC rnoh_safe_area)
+#target_link_libraries(rnoh_app PUBLIC rnoh_flash_list)
+#target_link_libraries(rnoh_app PUBLIC rnoh_gesture_handler)
+#target_link_libraries(rnoh_app PUBLIC rnoh_native_mmkv)
+#target_link_libraries(rnoh_app PUBLIC rnoh_pager_view)
 target_link_libraries(rnoh_app PUBLIC fabric_component)
+target_link_libraries(rnoh_app PUBLIC rnoh_webview)
 # RNOH_END: link_packages
 
 target_compile_options(rnoh_app PUBLIC ${folly_compile_options} -DRAW_PROPS_ENABLED -std=c++17)
