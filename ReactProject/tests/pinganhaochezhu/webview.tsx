@@ -12,6 +12,38 @@ const LONG_HTML_CONTENT = `
 </head>
 <body>
 <h3>HarmonyOS RN WebView postMessage 重复触发测试</h3>
+<h3>HarmonyOS RN WebView postMessage 重复触发测试</h3>
+
+<h3>HarmonyOS RN WebView postMessage 重复触发测试</h3>
+
+<h3>HarmonyOS RN WebView postMessage 重复触发测试</h3>
+
+<h3>HarmonyOS RN WebView postMessage 重复触发测试</h3>
+
+<h3>HarmonyOS RN WebView postMessage 重复触发测试</h3>
+
+<h3>HarmonyOS RN WebView postMessage 重复触发测试</h3>
+
+<h3>HarmonyOS RN WebView postMessage 重复触发测试</h3>
+
+<h3>HarmonyOS RN WebView postMessage 重复触发测试</h3>
+
+<h3>HarmonyOS RN WebView postMessage 重复触发测试</h3>
+
+<h3>HarmonyOS RN WebView postMessage 重复触发测试</h3>
+<h3>HarmonyOS RN WebView postMessage 重复触发测试</h3>
+
+<h3>HarmonyOS RN WebView postMessage 重复触发测试</h3>
+
+<h3>HarmonyOS RN WebView postMessage 重复触发测试</h3>
+
+<h3>HarmonyOS RN WebView postMessage 重复触发测试</h3>
+
+
+<h3>HarmonyOS RN WebView postMessage 重复触发测试</h3>
+
+
+
 <p id="counter">点击次数: 0</p>
 <button onclick="send()">触发 postMessage</button>
 <br/><br/>
@@ -47,14 +79,34 @@ class DisplayAnImage extends Component {
         // this.progress = new Animated.Value(1); // 创建动画值
     }
 
+    handleMessage = (event) => {
+        console.log('[RN] handleMessage received:', event.nativeEvent.data);
+        // ❌ 实际表现：一次 postMessage 会触发两次 onMessage
+    }   
     render() {
+        console.log("chy render")
         return (
             <WebView
-                source={{ html: LONG_HTML_CONTENT }}
-                onMessage={(event) => {
-                    console.log('[RN] onMessage received:', event.nativeEvent.data);
-                    // ❌ 实际表现：一次 postMessage 会触发两次 onMessage
+                originWhiteList={['*']}
+                useWebKit
+                javaScriptEnabled
+                domStorageEnabled
+                mixedContentMode
+                // source={{ html: LONG_HTML_CONTENT }}
+                source={{ uri: 'https://autoservice-sit.pingan.com.cn/web/capp/static/test.html' }}
+                // onMessage={(event) => {
+                //     console.log('[RN] onMessage received:', event.nativeEvent.data);
+                //     // ❌ 实际表现：一次 postMessage 会触发两次 onMessage
+                // }}
+                onMessage1={this.handleMessage}
+                onScroll={(event) => {
+                    console.log('[RN] onScroll event:', event.nativeEvent.contentOffset.y.toFixed(1));
                 }}
+                onLoadStart={() => {
+                    console.log('[RN] onLoadStart called');
+                }}
+                onLoadf
+                // style={{ flex: 1 }}
             />
         );
     }
