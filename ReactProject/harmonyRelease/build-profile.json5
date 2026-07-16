@@ -5,13 +5,13 @@
         "name": "default",
         "type": "HarmonyOS",
         "material": {
-          "certpath": "/Users/chenhaoyue/.ohos/config/default_harmony_gT5_z_gGryR2tTsK29HSU5EcNXjM0zRwwWqb0xCFbGI=.cer",
+          "certpath": "/Users/chenhaoyue/.ohos/config/default_harmony_Y3jVKlPvOzMKjd5wjvW5SI9-6-RIVqNUmWUncrWDQ4o=.cer",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001BB1F1B805D4B8B1ADAFB08585505D26A0A2FDDC11D0A7C5F667570894302318ED9DDBFA2BB2CD5D",
-          "profile": "/Users/chenhaoyue/.ohos/config/default_harmony_gT5_z_gGryR2tTsK29HSU5EcNXjM0zRwwWqb0xCFbGI=.p7b",
+          "keyPassword": "0000001B1E3E8D64441FFB3ED5BCF651D8688C724F1F8811A3E0D7C307B326B620CDEE4B77E0CC0717961C",
+          "profile": "/Users/chenhaoyue/.ohos/config/default_harmony_Y3jVKlPvOzMKjd5wjvW5SI9-6-RIVqNUmWUncrWDQ4o=.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "/Users/chenhaoyue/.ohos/config/default_harmony_gT5_z_gGryR2tTsK29HSU5EcNXjM0zRwwWqb0xCFbGI=.p12",
-          "storePassword": "0000001B4E9E341747492A2D26E6A04334B01E8EF91CB3EA6D66F29EA312EFA9E0E5FD015C062542445601"
+          "storeFile": "/Users/chenhaoyue/.ohos/config/default_harmony_Y3jVKlPvOzMKjd5wjvW5SI9-6-RIVqNUmWUncrWDQ4o=.p12",
+          "storePassword": "0000001B9E7743CF5B60CD5DC0B8B50437567DD569213F419D8DDEC510CF14C86AAB4471FBA88337013156"
         }
       }
     ],
@@ -19,13 +19,8 @@
       {
         "name": "default",
         "signingConfig": "default",
-        "compatibleSdkVersion": "5.0.0(12)",
+        "compatibleSdkVersion": "5.0.1(13)",
         "runtimeOS": "HarmonyOS",
-        "buildOption": {
-          "strictMode": {
-            "useNormalizedOHMUrl": true
-          }
-        }
       }
     ],
     "buildModeSet": [
@@ -49,10 +44,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "library",
-      "srcPath": "./library",
     }
   ]
 }

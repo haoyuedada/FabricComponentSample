@@ -6,12 +6,10 @@
  */
 
 import { RNPackageContext, RNPackage } from '@rnoh/react-native-openharmony/ts';
-import { GeneratedPackage } from './GeneratedPackage'
-// import {SafeAreaViewPackage} from '@react-native-ohos/react-native-safe-area-context/ts';
+import { GeneratedPackage } from './GeneratedPackage';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
-    new GeneratedPackage(ctx),
-    // new SafeAreaViewPackage(ctx)
+    new GeneratedPackage(ctx)
   ];
 }

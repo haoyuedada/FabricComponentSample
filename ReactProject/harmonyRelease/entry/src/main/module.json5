@@ -23,39 +23,12 @@
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:main_pages",
-    "requestPermissions": [
-      {
-        "name": "ohos.permission.WRITE_IMAGEVIDEO",
-        "usedScene": {abilities: []},
-        "reason": "$string:app_name"
-      },
-      {
-        "name": "ohos.permission.READ_IMAGEVIDEO",
-        "usedScene": {abilities: []},
-        "reason": "$string:app_name"
-      },
-      {
-        "name": "ohos.permission.READ_AUDIO",
-        "usedScene": {abilities: []},
-        "reason": "$string:app_name"
-      },
-      {
-        "name": "ohos.permission.READ_MEDIA",
-        "usedScene": {abilities: []},
-        "reason": "$string:app_name"
-      },
-      {
-        "name": "ohos.permission.WRITE_MEDIA",
-        "usedScene": {abilities: []},
-        "reason": "$string:app_name"
-      }
-    ],
     "abilities": [
       {
         "name": "EntryAbility",
         "srcEntry": "./ets/entryability/EntryAbility.ets",
         "description": "$string:EntryAbility_desc",
-        "icon": "$media:72",
+        "icon": "$media:layered_image",
         "label": "$string:EntryAbility_label",
         // "orientation": "auto_rotation",
         "startWindowIcon": "$media:startIcon",
@@ -70,8 +43,7 @@
               "action.system.home"
             ]
           }
-        ],
-        "orientation": "auto_rotation"
+        ]
       },
     ]
   }
