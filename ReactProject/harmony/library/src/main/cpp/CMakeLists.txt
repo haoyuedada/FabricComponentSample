@@ -35,7 +35,7 @@ add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-view-shot/src/
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-svg/src/main/cpp" ./svg)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-pager-view/src/main/cpp" ./pager_view)
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-video/src/main/cpp" ./video)
-add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/react-native-webview/src/main/cpp" ./webview)
+add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-webview/src/main/cpp" ./webview)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-reanimated/src/main/cpp" ./reanimated)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-skia/src/main/cpp" ./skia)
 add_subdirectory("${OH_MODULES}/@react-native-oh-tpl/netinfo/src/main/cpp" ./netinfo)
