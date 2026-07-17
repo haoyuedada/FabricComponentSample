@@ -27,20 +27,13 @@ class BaseFabricComponentSamplePackagePackageEventEmitRequestHandler : public Ev
   public:
     void handleEvent(Context const &ctx) override {
         auto eventEmitter = ctx.shadowViewRegistry->getEventEmitter<facebook::react::EventEmitter>(ctx.tag);
-        auto componentName = ctx.shadowViewRegistry->getComponentName(ctx.tag);
-
         if (eventEmitter == nullptr) {
             return;
         }
 
-        std::vector<std::string> supportedComponentNames = {
-        };
-
         std::vector<std::string> supportedEventNames = {
         };
-
-        if (std::find(supportedComponentNames.begin(), supportedComponentNames.end(), componentName) != supportedComponentNames.end() &&
-            std::find(supportedEventNames.begin(), supportedEventNames.end(), ctx.eventName) != supportedEventNames.end()) {
+        if (std::find(supportedEventNames.begin(), supportedEventNames.end(), ctx.eventName) != supportedEventNames.end()) {
             eventEmitter->dispatchEvent(ctx.eventName, ArkJS(ctx.env).getDynamic(ctx.payload));
         }    
     }

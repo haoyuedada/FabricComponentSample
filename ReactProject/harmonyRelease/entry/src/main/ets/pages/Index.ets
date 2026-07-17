@@ -19,7 +19,7 @@ import {
 } from '@rnoh/react-native-openharmony';
 import { createRNPackages } from '../RNPackagesFactory';
 import { SelectBox } from "../RNComponent/SelectBox";
-import { WebView, WEB_VIEW } from "@react-native-oh-tpl/react-native-webview"
+import { WebView, WEB_VIEW } from "@react-native-ohos/react-native-webview"
 
 const arkTsComponentNames: Array<string> = [SelectBox.NAME, WEB_VIEW];
 
