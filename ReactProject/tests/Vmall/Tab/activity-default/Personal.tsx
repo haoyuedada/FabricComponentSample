@@ -70,6 +70,14 @@ class Personal extends React.PureComponent<any, any> {
   // 渲染首页内容
   render() {
     const { userInfo, quickActions, services, recentActivity } = this.state.profileData;
+    
+    return (
+      <View style={{ flex: 1 }}>
+        {Array.from({ length: 2000 }).map((_, index) => (
+          <View key={index} style={{ height: 30, backgroundColor: 'blue', marginBottom: 3 }}></View>
+        ))}
+      </View>
+    )
     return (
       <ScrollView style={styles.contentContainer}>
         {/* 用户信息 */}
