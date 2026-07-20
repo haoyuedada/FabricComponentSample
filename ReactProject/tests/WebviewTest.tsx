@@ -338,7 +338,7 @@ const htmlContent =
 const htmlContentt = require("./html/faq_99.html");
 const htmlContentwx = require("./html/wordcloud.html");
 
-
+// https://enetdemo.rj.link/s2b2c/#/pages/instructions/instructions?userFlag=7397c4330cf458df506cffee491835ce_20524&companyCode=&accountId=15080062459&accessKey=mini_profile__native_app_0ae49d9f-cb90-4e50-a5f1-aff257e0fac7&staId=1780379126295-2d081c0f&appVersion=9.7.0&continent=&tz=-480&imControl=true&lang=zh&barHeight=37.84615384615385&platform=harmony
 export default function WebViewScreen() {
     return (
         <WebView
