@@ -1,0 +1,112 @@
+开源库名称	链接地址	是否需要升级	77社区版本号	82基线版本	npm最新版本0720
+react-native-svg	https://github.com/software-mansion/react-native-svg	是	15.12.0	15.15.0	15.15.5
+react-native-webview	https://github.com/react-native-webview/react-native-webview	是	13.15.0	13.16.0	14.0.1
+react-native-gesture-handler	https://github.com/software-mansion/react-native-gesture-handler	是	2.23.1	2.30.0	3.1.0
+react-native-amap3d	https://github.com/qiuxiang/react-native-amap3d	否	v3.2.4	3.2.4	3.2.4
+react-native-reanimated	https://github.com/software-mansion/react-native-reanimated	是	3.18.0	4.2.1	4.5.2
+react-native-image-crop-picker	https://github.com/ivpusic/react-native-image-crop-picker	否	0.50.0	0.51.1	0.51.1
+@d11/react-native-fast-image	https://github.com/dream-horizon-org/react-native-fast-image#readme	否		8.13.0	8.13.0
+react-native-linear-gradient	https://github.com/react-native-linear-gradient/react-native-linear-gradient	否		3.0.0-alpha.1	3.0.0-alpha.1
+lottie-react-native	https://github.com/lottie-react-native/lottie-react-native	是	7.2.2	7.3.4	7.3.8
+react-native-document-picker	https://github.com/rnmods/react-native-document-picker	否		9.3.1	9.3.1
+react-native-keyboard-controller	https://github.com/kirillzyusko/react-native-keyboard-controller	是	1.16.5	1.21.8	1.22.1
+react-native-fs	https://github.com/itinance/react-native-fs	否		2.20.0	2.20.0
+@react-native-async-storage/async-storage	https://github.com/react-native-async-storage/async-storage	是		2.2.0	3.1.1
+react-native-video	https://github.com/TheWidlarzGroup/react-native-video	否	6.13.0	6.19.2	6.19.2
+react-native-camera-roll/camera-roll	https://github.com/react-native-cameraroll/react-native-cameraroll	否	7.10.0	7.10.2	7.10.2
+react-native-blob-util	https://github.com/RonRadtke/react-native-blob-util	是	0.22.1	0.22.2	0.24.10
+react-native-audio-recorder-player	https://github.com/dooboolab/react-native-audio-recorder-player	否	3.6.13	4.5.0	4.5.0
+@shopify/react-native-skia	https://github.com/Shopify/react-native-skia	是	2.0.5	2.4.14	2.9.0
+react-native-safe-area-context	https://github.com/callstack/react-native-pager-view	是	5.1.0	5.6.2	5.8.0
+react-native-permissions	https://github.com/zoontek/react-native-permissions	是	5.3.0	5.4.2	5.6.0
+react-native-device-info	https://github.com/react-native-device-info/react-native-device-info	是	14.0.4	14.1.1	15.0.2
+react-native-view-shot	https://github.com/gre/react-native-view-shot	是	3.8.0	4.0.3	5.1.1
+flash-list	https://github.com/Shopify/flash-list	是	1.8.2	2.1.0	2.3.2
+react-native-screens	https://github.com/software-mansion/react-native-screens	是	4.13.1	4.17.1	4.26.2
+react-native-community/blur	https://github.com/Kureev/react-native-blur	否		4.4.1	4.4.1
+@react-native-picker/picker	https://github.com/react-native-picker/picker	否	2.11.1	2.11.4	2.11.4
+react-native-localize	https://github.com/zoontek/react-native-localize	是	3.4.1	3.6.1	3.7.0
+react-native-amap-geolocation	https://github.com/qiuxiang/react-native-amap-geolocation	否		1.2.3	1.2.3
+react-native-image-picker	https://github.com/react-native-image-picker/react-native-image-picker	否		8.2.1	8.2.1
+react-native-sqlite-storage	https://github.com/andpor/react-native-sqlite-storage	否		6.0.1	6.0.1
+jpush-react-native	https://github.com/jpush/jpush-react-native	是	3.1.8	3.2.1	3.2.7
+react-native-zip-archive	https://github.com/mockingbot/react-native-zip-archive	是		8.0.0	9.0.0
+react-native-text-size	https://github.com/aMarCruz/react-native-text-size	否		4.0.0-rc.1	4.0.0-rc.1
+react-native-doc-viewer	https://github.com/philipphecht/react-native-doc-viewer	否		2.7.8	2.7.8
+react-native-mmkv-storage	https://github.com/ammarahm-ed/react-native-mmkv-storage	否	0.11.2	12.0.1	12.0.1
+react-native-bottom-sheet	https://github.com/gorhom/react-native-bottom-sheet	是	5.1.6	5.2.8	1.0.3
+react-native-orientation	https://github.com/yamill/react-native-orientation	否		3.1.3	3.1.3
+react-native-modal	https://github.com/react-native-modal/react-native-modal	是	14.0.0-rc.0	14.0.0-rc.0	14.0.0-rc.1
+react-native-ble-manager	https://github.com/innoveit/react-native-ble-manager	是	12.1.5	12.2.2	12.5.1
+react-native-wechat-lib	https://github.com/LinusU/react-native-get-random-values	是		3.0.4	3.0.7
+@react-native-community/push-notification-ios	https://github.com/react-native-push-notification/ios	是		1.11.0	1.12.0
+react-native-pager-view	https://github.com/callstack/react-native-pager-view	是	6.7.1	7.0.2	8.0.4
+react-native-haptic-feedback	https://github.com/mkuczera/react-native-haptic-feedback	是		2.3.3	3.0.0
+@react-native-community/geolocation	https://github.com/michalchudziak/react-native-geolocation	否		3.4.0	3.4.0
+@react-native-cookies/cookies	https://github.com/react-native-cookies/cookies	否		6.2.1	6.2.1
+react-native-vision-camera	https://github.com/mrousavy/react-native-vision-camera	是	4.7.0	4.7.3	5.1.1
+react-native-audio	https://github.com/jsierles/react-native-audio	是	4.2.2	4.2.2	4.3.0
+@react-native-community/image-editor	https://github.com/callstack/react-native-image-editor	否		4.3.0	4.3.0
+react-native-get-random-values	https://github.com/LinusU/react-native-get-random-values	是	1.11.0	1.11.0	2.0.0
+react-native-datetimepicker	https://github.com/react-native-datetimepicker/datetimepicker	是	8.4.2	8.6.0	9.1.0
+react-native-pdf	https://github.com/wonday/react-native-pdf	是	6.7.6	7.0.3	7.0.4
+react-native-bootsplash	https://github.com/zoontek/react-native-bootsplash	是	6.3.4	6.3.11	7.3.2
+react-native-code-push	https://github.com/microsoft/react-native-code-push	否	9.0.1	9.0.1	9.0.1
+react-native-community/progress-view	https://github.com/react-native-progress-view/progress-view	否	1.4.2	1.5.0	1.5.0
+react-native-mjrefresh	https://github.com/react-native-studio/react-native-MJRefresh	否	0.7.0	0.7.0	0.7.0
+react-native-share	https://github.com/react-native-share/react-native-share	是	12.1.0	12.2.0	12.3.1
+react-native-maps	https://github.com/react-native-maps/react-native-maps	是	1.24.3	1.27.2	1.29.0
+react-native-keep-awake	https://github.com/corbt/react-native-keep-awake	否	4.0.0	4.0.0	4.0.0
+react-native-photo-manipulator	https://github.com/guhungry/react-native-photo-manipulator	否	1.9.2	1.9.2	1.9.2
+stack	https://github.com/react-navigation/react-navigation/tree/main/packages/stack	是	7.2.10	7.2.10	7.10.14
+react-native-exception-handler	https://github.com/a7ul/react-native-exception-handler	否	2.10.10	2.10.10	2.10.10
+@react-native-community/checkbox	https://github.com/react-native-checkbox/react-native-checkbox	否	0.5.17	0.5.20	0.5.20
+react-native-background-timer	https://github.com/ocetnik/react-native-background-timer	否	2.4.1	2.4.1	2.4.1
+react-native-track-player	https://github.com/doublesymmetry/react-native-track-player	否	4.1.1	4.1.2	4.1.2
+react-native-file-viewer	https://github.com/vinzscam/react-native-file-viewer	否	2.1.5	2.1.5	2.1.5
+react-native-system-setting	https://github.com/c19354837/react-native-system-setting	否	3.1.2	1.7.6	1.7.6
+react-native-orientation-locker	https://github.com/wonday/react-native-orientation-locker	否	1.7.0	1.7.0	1.7.0
+react-native-mmkv	https://github.com/mrousavy/react-native-mmkv	是	0	4.3.1	4.3.2
+react-native-image-sequence-2	https://github.com/bwindsor/react-native-image-sequence	否	0.9.1	0.9.1	0.9.1
+react-native-camera	https://github.com/react-native-camera/react-native-camera/tree/v3.40.0	是	3.40.0	3.40.0	4.2.1
+react-native-exit-app	https://github.com/wumke/react-native-exit-app	否	2.0.0	-	2.0.0
+react-native-config	https://github.com/lugg/react-native-config	否	1.5.5	1.6.1	1.6.1
+react-native-nfc-manager	https://github.com/revtel/react-native-nfc-manager	否	3.16.1	3.17.2	3.17.2
+react-native-ssl-pinning	https://github.com/MaxToyberman/react-native-ssl-pinning	否	1.5.9	1.6.0	1.6.0
+react-native-securerandom	https://github.com/rh389/react-native-securerandom	否	1.0.1	1.0.1	1.0.1
+react-native-snackbar	https://github.com/cooperka/react-native-snackbar	是	2.9.0	2.9.0	3.0.1
+react-native-contacts	https://github.com/morenoh149/react-native-contacts	是	8.0.5	8.0.7	8.0.10
+react-native-version-number	https://github.com/APSL/react-native-version-number	否	0.3.6	0.3.6	0.3.6
+react-native-smartassets	https://github.com/smallnew/react-native-smartassets	是	-	1.0.6	1.0.4
+react-native-immersive	https://github.com/mockingbot/react-native-immersive	否	2.0.0	2.0.0	2.0.0
+react-native-vlc-media-player	https://github.com/razorRun/react-native-vlc-media-player	是	 1.0.88	 1.0.88	1.0.98
+react-native-worklets-core	https://github.com/margelo/react-native-worklets-core	是	1.5.0	1.6.2	1.6.3
+react-native-thumbnail	https://github.com/phuochau/react-native-thumbnail	否	1.1.3	1.1.3	1.1.3
+react-native-secure-key-store	https://github.com/pradeep1991singh/react-native-secure-key-store	否		2.0.10	2.0.10
+watermelondb	https://github.com/Nozbe/WatermelonDB	是	0.28.1-0	0.28.1-0	0.28.0
+react-native-cos-sdk	https://github.com/TencentCloud/cos-sdk-react-native-plugin	是	1.2.1	1.2.1	1.2.2
+react-native-sound-player	https://github.com/johnsonsu/react-native-sound-player	否	-	0.14.5	0.14.5
+react-native-qr-decode-image-camera	https://github.com/deepanrajkumar/react-native-qr-decode-image-camera	否	1.1.3	1.1.3	1.1.3
+react-native-splash-screen	https://github.com/crazycodeboy/react-native-splash-screen	否	3.3.0	3.3.0	3.3.0
+@react-native-clipboard/clipboard	https://github.com/react-native-clipboard/clipboard	否	1.16.2	1.16.3	1.16.3
+netinfo	https://github.com/react-native-netinfo/react-native-netinfo	是	11.1.0	11.5.2	12.0.1
+slider	https://github.com/callstack/react-native-slider	是	5.0.0	5.1.1	5.2.0
+react-native-sound	https://github.com/zmxv/react-native-sound	否	0.12.0	0.13.0	0.13.0
+react-native-restart	https://github.com/avishayil/react-native-restart	是	0.0.27	0.0.27	0.0.28
+@react-native-masked-view/masked-view	https://github.com/react-native-masked-view/masked-view	否		0.3.2	0.3.2
+react-native-date-picker	https://github.com/henninghall/react-native-date-picker	否	5.0.13	5.0.13	5.0.13
+react-native-image-resizer	https://github.com/bamlab/react-native-image-resizer	是	3.0.11	3.0.11	1.4.5
+react-native-smartrefreshlayout	https://github.com/react-native-studio/react-native-SmartRefreshLayout	否	0.6.7	0.6.7	0.6.7
+react-native-camera-kit	https://github.com/teslamotors/react-native-camera-kit	是	15.1.0	16.1.3	18.0.0
+react-native-sensors	https://github.com/react-native-sensors/react-native-sensors	是	 7.2.1	7.2.1	7.3.6
+react-native-image-marker	https://github.com/JimmyDaddy/react-native-image-marker	是	1.2.6	1.2.6	1.12.0
+lottie-turbo-react-native	https://github.com/lottie-react-native/lottie-react-native	是	7.2.2	7.3.4	7.3.8
+react-native-ble-plx	https://github.com/dotintent/react-native-ble-plx	是	3.5.0	-	3.5.1
+react-native-tab-view	https://github.com/react-navigation/react-navigation/tree/main/packages/react-native-tab-view	是	4.0.10	4.0.10	4.3.2
+react-native-snap-carousel	https://github.com/meliorence/react-native-snap-carousel	否	3.9.1	3.9.1	3.9.1
+react-native-slider	hhttps://github.com/callstack/react-native-slider	否	0.11.0	0.11.0	0.11.0
+elements	https://github.com/react-navigation/react-navigation/tree/main/packages/elements	是	2.3.8	2.6.0	2.9.33
+native-stack	https://github.com/react-navigation/react-navigation/tree/main/packages/native-stack	是	7.3.10	7.3.22	7.18.3
+react-native-nitro-modules	https://github.com/mrousavy/nitro/tree/main/packages/react-native-nitro-modules	是	0	0.31.9	0.36.1
+react-native-simple-toast	https://github.com/vonovak/react-native-simple-toast	否		3.3.2	3.3.2
+react-native-drop-shadow	https://github.com/hoanglam10499/react-native-drop-shadow	否		1.0.3	1.0.3
