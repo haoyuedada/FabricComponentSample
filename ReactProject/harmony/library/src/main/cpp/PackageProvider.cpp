@@ -22,13 +22,14 @@
 #include "RNCNetInfoPackage.h"
 #include "keyboardControllerPackage.h"
 #include "FlashListPackage.h"
-#include "RnohReactNativeHarmonyScreensPackage.h"
-#include "ScreensPackage.h"
+//#include "RnohReactNativeHarmonyScreensPackage.h"
+//#include "ScreensPackage.h"
 #include "SmartRefreshLayoutPackage.h"
 #include "LottieAnimationViewPackage.h"
 #include "VisionCameraPackage.h"
 #include "OrientationLockerPackage.h"
 #include "SliderPackage.h"
+#include "LinearGradientPackage.h"
 
 using namespace rnoh;
 
@@ -50,12 +51,13 @@ std::vector<std::shared_ptr<Package>> PackageProvider::getPackages(Package::Cont
     std::make_shared<RNCNetInfoPackage>(ctx),
     std::make_shared<KeyboardControllerPackage>(ctx),
     std::make_shared<FlashListPackage>(ctx),
-    std::make_shared<rnoh::RnohReactNativeHarmonyScreensPackage>(ctx),
-    std::make_shared<ScreensPackage>(ctx),
+//    std::make_shared<rnoh::RnohReactNativeHarmonyScreensPackage>(ctx),
+//    std::make_shared<ScreensPackage>(ctx),
     std::make_shared<SmartRefreshLayoutPackage>(ctx),
     std::make_shared<LottieAnimationViewPackage>(ctx),
     std::make_shared<VisionCameraPackage>(ctx),
     std::make_shared<OrientationLockerPackage>(ctx),
-    std::make_shared<SliderPackage>(ctx)
+    std::make_shared<SliderPackage>(ctx),
+    std::make_shared<LinearGradientPackage>(ctx)
   };
 }

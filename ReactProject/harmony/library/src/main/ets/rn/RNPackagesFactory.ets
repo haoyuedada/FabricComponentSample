@@ -20,7 +20,7 @@ import { ReanimatedPackage } from '@react-native-ohos/react-native-reanimated/ts
 import { RNSkiaPackage } from '@react-native-ohos/react-native-skia/ts';
 import { NetInfoPackage } from '@react-native-oh-tpl/netinfo/ts';
 import { RNKeyboardControllerPackage, RNStatusBarManagerCompatPackage } from  "@react-native-ohos/react-native-keyboard-controller/ts";
-import RnohReactNativeHarmonyScreensPackage from '@react-native-ohos/react-native-screens';
+// import RnohReactNativeHarmonyScreensPackage from '@react-native-ohos/react-native-screens';
 import { SmartRefreshPackage } from '@react-native-ohos/react-native-smartrefreshlayout/ts';
 import {LottieAnimationViewPackage} from '@react-native-ohos/lottie-react-native/ts';
 import { VisionCameraModulePackage } from "@react-native-ohos/react-native-vision-camera/ts";
@@ -44,7 +44,7 @@ export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
     new NetInfoPackage(ctx),
     new RNKeyboardControllerPackage(ctx),
     new RNStatusBarManagerCompatPackage(ctx),
-    new RnohReactNativeHarmonyScreensPackage(ctx),
+    // new RnohReactNativeHarmonyScreensPackage(ctx),
     new SmartRefreshPackage(ctx),
     new LottieAnimationViewPackage(ctx),
     new VisionCameraModulePackage(ctx),
