@@ -30,6 +30,7 @@
 #include "OrientationLockerPackage.h"
 #include "SliderPackage.h"
 #include "LinearGradientPackage.h"
+#include "SpringScrollViewPackage.h"
 
 using namespace rnoh;
 
@@ -58,6 +59,7 @@ std::vector<std::shared_ptr<Package>> PackageProvider::getPackages(Package::Cont
     std::make_shared<VisionCameraPackage>(ctx),
     std::make_shared<OrientationLockerPackage>(ctx),
     std::make_shared<SliderPackage>(ctx),
-    std::make_shared<LinearGradientPackage>(ctx)
+    std::make_shared<LinearGradientPackage>(ctx),
+    std::make_shared<SpringScrollViewPackage>(ctx),
   };
 }

@@ -27,6 +27,7 @@
     "@react-native-ohos/react-native-vision-camera": "file:../../node_modules/@react-native-ohos/react-native-vision-camera/harmony/vision_camera.har",
     "@react-native-ohos/react-native-orientation-locker":"file:../../node_modules/@react-native-ohos/react-native-orientation-locker/harmony/orientation_locker.har",
     "@react-native-ohos/slider": "file:../../node_modules/@react-native-ohos/slider/harmony/slider.har",
-    "@react-native-ohos/react-native-linear-gradient": "file:../../node_modules/@react-native-ohos/react-native-linear-gradient/harmony/linear_gradient.har"
+    "@react-native-ohos/react-native-linear-gradient": "file:../../node_modules/@react-native-ohos/react-native-linear-gradient/harmony/linear_gradient.har",
+    "@react-native-ohos/react-native-spring-scrollview": "file:../../node_modules/@react-native-ohos/react-native-spring-scrollview/harmony/spring_scrollview.har"
   }
 }
