@@ -1,0 +1,19 @@
+ReactProject/tests/react-native-animated/SimpleReanimatedDemo2.tsx
+  s_a9a8a7d511ed1f::t_509fc0b106361b 1-229
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.13.139",
+  "base_commit_sha": "a55e8532beb890062030fb613a3c59ee44aeb621",
+  "prompts": {},
+  "sessions": {
+    "s_a9a8a7d511ed1f": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "07db3f54-6b60-4a11-ba7e-4dd2d5ea544e",
+        "model": "gpt-4.1"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  }
+}
