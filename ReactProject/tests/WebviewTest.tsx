@@ -1,5 +1,17 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
+import {
+    ScrollView,
+    View,
+    Text,
+    TextInput,
+    Button,
+    StyleSheet,
+    Dimensions,
+    Alert,
+} from 'react-native';
 import { WebView } from 'react-native-webview';
+
+const { width } = Dimensions.get('window');
 
 // 直接导入 HTML 文件内容（需要额外配置）
 const htmlContent = 
@@ -338,16 +350,160 @@ const htmlContent =
 const htmlContentt = require("./html/faq_99.html");
 const htmlContentwx = require("./html/wordcloud.html");
 
-// https://enetdemo.rj.link/s2b2c/#/pages/instructions/instructions?userFlag=7397c4330cf458df506cffee491835ce_20524&companyCode=&accountId=15080062459&accessKey=mini_profile__native_app_0ae49d9f-cb90-4e50-a5f1-aff257e0fac7&staId=1780379126295-2d081c0f&appVersion=9.7.0&continent=&tz=-480&imControl=true&lang=zh&barHeight=37.84615384615385&platform=harmony
-export default function WebViewScreen() {
+const htmlurl = "https://enetdemo.rj.link/s2b2c/#/pages/instructions/instructions?userFlag=7397c4330cf458df506cffee491835ce_20524&companyCode=&accountId=15080062459&accessKey=mini_profile__native_app_0ae49d9f-cb90-4e50-a5f1-aff257e0fac7&staId=1780379126295-2d081c0f&appVersion=9.7.0&continent=&tz=-480&imControl=true&lang=zh&barHeight=37.84615384615385&platform=harmony";
+const htmlurl1 = "https://www.baidu.com";
+
+// 本地长 HTML：内容较长可滚动 + 多个输入框，用于模拟 H5 表单场景
+const LOCAL_FORM_HTML = `
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, sans-serif; background: #f7f8fa; padding: 16px; }
+        h2 { color: #333; margin: 20px 0 12px; font-size: 17px; }
+        p { color: #666; font-size: 14px; line-height: 1.8; margin-bottom: 10px; }
+        .form-item { background: #fff; border-radius: 8px; padding: 12px 14px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+        .form-item label { display:block; font-size: 13px; color: #999; margin-bottom: 6px; }
+        .form-item input, .form-item textarea {
+            width: 100%; border: 1px solid #eee; border-radius: 6px;
+            padding: 10px 12px; font-size: 15px; outline: none; background: #fafafa;
+        }
+        .form-item input:focus, .form-item textarea:focus { border-color: #32BAC0; background: #fff; }
+        .form-item textarea { min-height: 80px; resize: none; }
+        .btn {
+            display:block; width:100%; height: 44px; line-height: 44px; text-align:center;
+            background: #32BAC0; color:#fff; border:none; border-radius: 22px; font-size: 16px;
+            margin: 10px 0 24px;
+        }
+        .block { margin-bottom: 16px; padding: 14px; background: #e3f2fd; border-radius: 6px; border-left: 4px solid #2196f3; }
+        .block h3 { color:#1976d2; font-size: 15px; margin-bottom: 6px; }
+        .footer { text-align:center; color:#bbb; font-size:12px; padding: 20px 0 40px; }
+    </style>
+</head>
+<body>
+    <h2>H5 表单区域（WebView 内部）</h2>
+    <p>下方是 WebView 渲染的本地 HTML，内容较长且包含多个输入框，可在 WebView 内部滚动并聚焦输入。</p>
+
+    <div class="form-item">
+        <label>姓名</label>
+        <input id="name" type="text" placeholder="请输入姓名" />
+    </div>
+    <div class="form-item">
+        <label>手机号</label>
+        <input id="phone" type="tel" placeholder="请输入手机号" />
+    </div>
+    <div class="form-item">
+        <label>留言</label>
+        <textarea id="msg" placeholder="请输入留言内容"></textarea>
+    </div>
+
+    <button class="btn" onclick="submitForm()">提交表单</button>
+
+    <h2>说明文档</h2>
+    <div class="block"><h3>第 1 段</h3><p>用于撑高页面高度的内容，测试 WebView 内部滚动。</p></div>
+    <div class="block"><h3>第 2 段</h3><p>React Native WebView 嵌套在 ScrollView 中时，可通过固定 WebView 高度让其内部滚动。</p></div>
+    <div class="block"><h3>第 3 段</h3><p>当 WebView 高度固定且内容超出时，触摸 WebView 内部会触发其自身滚动。</p></div>
+    <div class="block"><h3>第 4 段</h3><p>触摸 WebView 外部的原生区域，则由外层 ScrollView 接管滚动。</p></div>
+    <div class="block"><h3>第 5 段</h3><p>输入框聚焦时会唤起软键盘，可测试键盘遮挡与页面调整行为。</p></div>
+    <div class="block"><h3>第 6 段</h3><p>继续填充内容以确保页面整体可滚动到底部。</p></div>
+    <div class="block"><h3>第 7 段</h3><p>这是 WebView 内部的倒数第二段内容。</p></div>
+    <div class="block"><h3>第 8 段</h3><p>WebView 内部内容结束。</p></div>
+
+    <div class="footer">— WebView 内部底部 —</div>
+
+    <script>
+        function submitForm() {
+            var data = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                msg: document.getElementById('msg').value
+            };
+            window.ReactNativeWebView.postMessage(JSON.stringify({ type: 'submit', data: data }));
+        }
+    </script>
+</body>
+</html>
+`;
+
+// 原线上 URL 场景组件（保留为命名导出）
+export function WebViewScreen() {
     return (
         <WebView
-            style={{ width: 300, height: 300, backgroundColor: "#00000000" }}
-            // source={{ html: htmlContentt }}
-			source = { htmlContentt }
-            originWhitelist={['*']}
+            style={{ 
+				width: "100%", 
+				height: "100%", 
+				backgroundColor: "#00000000" 
+			}}
+            source={{ uri: htmlurl }}
+            // source = { htmlContentt }
+            // originWhitelist={['*']}
             // source={{ uri: 'resource://rawfile/faq_99.html' }}
-            usewebkit={true}
+            // usewebkit={true}
         />
     );
 };
+
+// 场景：ScrollView 包裹 WebView，WebView 内部为本地长 HTML（含输入框），可独立滚动
+export default function WebViewScrollScreen() {
+    const [nativeInput, setNativeInput] = useState('');
+
+    return (
+        <ScrollView style={styles.container} keyboardShouldPersistTaps="handled">
+            <View style={styles.section}>
+                <Text style={styles.title}>混合滚动场景演示</Text>
+                <Text style={styles.desc}>
+                    外层 ScrollView + 内嵌 WebView（本地长 HTML，含输入框）。WebView 固定高度，内部可独立滚动。
+                </Text>
+            </View>
+
+            <View style={styles.section}>
+                <Text style={styles.label}>原生输入框（ScrollView 内）</Text>
+                <TextInput
+                    style={styles.nativeInput}
+                    value={nativeInput}
+                    onChangeText={setNativeInput}
+                    placeholder="点击输入，测试键盘与滚动"
+                />
+            </View>
+
+            <View style={styles.webviewWrap}>
+                <WebView
+                    style={styles.webview}
+                    source={{ html: LOCAL_FORM_HTML }}
+                    originWhitelist={['*']}
+                    javaScriptEnabled={true}
+                    onMessage={(e) => {
+                        Alert.alert('收到 H5 消息', e.nativeEvent.data);
+                    }}
+                />
+            </View>
+
+            <View style={styles.section}>
+                <Text style={styles.label}>WebView 下方原生内容</Text>
+                <Text style={styles.desc}>
+                    继续向下滚动可验证外层 ScrollView 在 WebView 之外的滚动行为。
+                </Text>
+                <Button title="重置原生输入框" onPress={() => setNativeInput('')} />
+            </View>
+        </ScrollView>
+    );
+};
+
+const styles = StyleSheet.create({
+    container: { flex: 1, backgroundColor: '#f0f0f0' },
+    section: { padding: 16, backgroundColor: '#fff', marginBottom: 10 },
+    title: { fontSize: 18, fontWeight: 'bold', color: '#333', marginBottom: 8 },
+    desc: { fontSize: 13, color: '#666', lineHeight: 20 },
+    label: { fontSize: 14, color: '#333', marginBottom: 8 },
+    nativeInput: {
+        borderWidth: 1, borderColor: '#ddd', borderRadius: 6,
+        paddingHorizontal: 12, paddingVertical: 10, fontSize: 15, backgroundColor: '#fafafa',
+    },
+    webviewWrap: {
+        marginHorizontal: 16, marginBottom: 10, borderRadius: 8, overflow: 'hidden', backgroundColor: '#fff',
+    },
+    webview: { width: width - 32, height: 500 },
+});

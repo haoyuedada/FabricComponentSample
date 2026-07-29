@@ -15,7 +15,7 @@ import { AppRegistry } from 'react-native';
 // import RCTMessage from './tests/RCTMessage';
 // import FastImage from './tests/FastImage';
 // import App from './App'
-import Modal from './tests/Modal'
+// import Modal from './tests/Modal'
 // import ScrollView from './tests/ScrollView'
 // import QDScrollView from './tests/QDScrollView'
 // import RCT from './tests/RCT'
@@ -178,8 +178,11 @@ import Modal from './tests/Modal'
 // import App from './tests/crash/pingan/ReanimatedCrashRepro5.tsx'
 // import App from './src/GestureWebView/GestureWebViewDemo.tsx'
 // import App from './tests/react-native-gesture-handler/upstreamDemo/App.tsx'
-import App from "./tests/pinganhaochezhu/webview.tsx"
-// import App from "./tests/react-native-webview/darkon.tsx"
+// import App from "./tests/pinganhaochezhu/webview.tsx"
+import App from "./tests/react-native-webview/darkon.tsx"
+// import App from "./tests/react-native-elements/App.tsx"
+// import App from "./tests/Vmall/Tab/activity-default/index_tab.h.tsx"
+// import App from "./tests/react-native-spring-scrollview/App.tsx"
 
 // 在导航或 App 中注册该组件
 AppRegistry.registerComponent("app_name", () => App);

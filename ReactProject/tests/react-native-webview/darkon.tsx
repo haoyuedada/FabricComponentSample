@@ -4,7 +4,7 @@ import { WebView } from "react-native-webview";
 export default function App() {
     return (
         <WebView
-            forceDarkOn={true}
+            forceDarkOn={false}
             source={{ uri: "https://reactnative.dev/" }}
             style={{ flex: 1 }}
         />
