@@ -18,6 +18,6 @@ import { name as appName } from './app.json';
 // import App from './src/react-native-gesture-handler/GestureHandlerDemo.tsx';
 // import App from './src/react-native-gesture-handler/RNGestureHandlerDemo.tsx';
 // import App from './src/react-native-scrollable-tab-view/App.tsx';
-import App from './AnimatedSensorExample.tsx';
+import App from './src/react-native-reanimated/AnimatedSensorExample2.tsx';
 
 AppRegistry.registerComponent(appName, () => App);

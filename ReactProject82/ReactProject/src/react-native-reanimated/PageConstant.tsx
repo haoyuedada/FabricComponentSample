@@ -21,6 +21,7 @@ import ScrollHandlerExp from './example/ScrollHandlerExp'
 import InterpolateExp from './example/InterpolateExp'
 import AnimatedKeyboardExample from './example/AnimatedKeyboardExample'
 import AnimatedSensorGravityExample from './example/AnimatedSensorGravityExample'
+import AnimatedSensorExample from './example/AnimatedSensorExample'
 import CustomLayoutTransitionExample from './example/CustomAnimatedExp'
 import WorkletRuntimeExample from './example/WorkletRuntimeExample'
 import CustomLayoutAnimationScreen from './example/CustomLayoutAnimationScreen'
@@ -165,6 +166,7 @@ export const ALL_PAGE = {
     KeyframeExp,
     AnimatedKeyboardExample,
     AnimatedSensorGravityExample,
+    AnimatedSensorExample,
     CustomLayoutTransitionExample,
     WorkletRuntimeExample,
     CustomLayoutAnimationScreen,
