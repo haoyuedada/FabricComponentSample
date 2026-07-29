@@ -96,7 +96,9 @@ import { AppRegistry } from 'react-native';
 // import App from './tests/toolbar-android/App.tsx'
 // import App from './tests/toolbar-android/Index.tsx'
 // import App from './tests/react-native-gesture-handler/hongquanyun/App.tsx';
-import App from "./crash-test/ToJSValueDemo.tsx"
+// import App from "./crash-test/ToJSValueDemo.tsx"
+// import App from './tests/Scrollview/touchEnableScroll.tsx'
+import App from './tests/react-native-reanimated/AnimatedSensorExample2.tsx'
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"
