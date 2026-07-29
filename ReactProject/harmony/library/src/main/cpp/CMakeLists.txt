@@ -48,6 +48,7 @@ add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-vision-camera/sr
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-orientation-locker/src/main/cpp" ./orientation_locker)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/slider/src/main/cpp" ./slider)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-linear-gradient/src/main/cpp" ./linear-gradient)
+add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-spring-scrollview/src/main/cpp" ./spring_scrollview)
 # RNOH_END: manual_package_linking_1
 
 file(GLOB GENERATED_CPP_FILES "./generated/*.cpp")
@@ -82,4 +83,5 @@ target_link_libraries(rnoh_app PUBLIC rnoh_vision_camera)
 target_link_libraries(rnoh_app PUBLIC rnoh_orientation_locker)
 target_link_libraries(rnoh_app PUBLIC rnoh_slider)
 target_link_libraries(rnoh_app PUBLIC rnoh_linear_gradient)
+target_link_libraries(rnoh_app PUBLIC rnoh_spring_scrollview)
 # RNOH_END: manual_package_linking_2

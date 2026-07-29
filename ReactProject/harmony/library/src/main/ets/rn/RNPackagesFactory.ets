@@ -25,6 +25,7 @@ import { SmartRefreshPackage } from '@react-native-ohos/react-native-smartrefres
 import {LottieAnimationViewPackage} from '@react-native-ohos/lottie-react-native/ts';
 import { VisionCameraModulePackage } from "@react-native-ohos/react-native-vision-camera/ts";
 import { RNOrientationLockerPackage } from '@react-native-ohos/react-native-orientation-locker/ts';
+import SpringScrollViewPackage from '@react-native-ohos/react-native-spring-scrollview/ts';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
@@ -48,6 +49,7 @@ export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
     new SmartRefreshPackage(ctx),
     new LottieAnimationViewPackage(ctx),
     new VisionCameraModulePackage(ctx),
-    new RNOrientationLockerPackage(ctx)
+    new RNOrientationLockerPackage(ctx),
+    new SpringScrollViewPackage(ctx),
   ];
 }
