@@ -1420,7 +1420,7 @@ var __BUNDLE_START_TIME__=this.nativePerformanceNow?nativePerformanceNow():Date.
 })(typeof globalThis !== 'undefined' ? globalThis : typeof global !== 'undefined' ? global : typeof window !== 'undefined' ? window : this);
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-  var _RNGestureHandlerDemo = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./tests/react-native-gesture/meituan/RNGestureHandlerDemo.tsx"));
+  var _FsTest = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./tests/react-native-reanimated/FsTest.tsx"));
   /**
    * Copyright (c) 2024 Huawei Technologies Co., Ltd.
    *
@@ -1507,21 +1507,26 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // import WithSpringClampExample from "./tests/react-native-reanimated/example/WithSpringClampExample"
   // import WorkletRuntimeExample from "./tests/react-native-reanimated/example/WorkletRuntimeExample"
   // reanimated end
+  // import App from "./tests/react-native-reanimated/ReanimateListDemo.tsx"
 
   // import App from "./tests/react-native-reanimated/AI/obtainPropFromShadowNodeCrash.tsx"
   // import App from './tests/react-native-gesture/App.tsx'
   // import App from './tests/react-native-gesture/App1.tsx'
   // import App from './tests/react-native-gesture/meituan/RNPanBasicDemo.tsx'
-
+  // import App from './tests/react-native-gesture/meituan/RNGestureHandlerDemo.tsx'
   // import App from './tests/react-native-gesture/meituan/PanGestureHandlerBasicDemo.tsx'
   // import App from './tests/react-native-gesture-handler/App.tsx'
   // import App from './tests/smartrefersh/App.tsx'
   // import App from './tests/toolbar-android/App.tsx'
   // import App from './tests/toolbar-android/Index.tsx'
   // import App from './tests/react-native-gesture-handler/hongquanyun/App.tsx';
+  // import App from "./crash-test/ToJSValueDemo.tsx"
+  // import App from './tests/Scrollview/touchEnableScroll.tsx'
+  // import App from './tests/react-native-reanimated/AnimatedSensorExample2.tsx'
+  // import App from './tests/react-native-reanimated/ReanimatedCrashRepro2.tsx'
 
   _reactNative.AppRegistry.registerComponent("app_name", function () {
-    return _RNGestureHandlerDemo.default;
+    return _FsTest.default;
   });
   // import { transform } from "./testTurboModule/buautify_executor.js"
 },0,[1,8,630],"index.js");
@@ -120518,6366 +120523,105 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = void 0;
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[8], "react-native");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/react-native-gesture/meituan/RNGestureHandlerDemo.tsx";
-  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); } /**
- * RNGestureHandlerDemo.tsx
- * GestureHandler 组件综合测试页面
- *
- * EC 用例映射关系（31条，caseId 2276467~2276497）：
- * ─────────────────────────────────────────────────────────
- * Case2276467_NoProps              | GestureHandler组件测试 - 无属性
- * Case2276468_InvalidProps         | GestureHandler组件测试 - 无效属性
- * Case2276469_SingleChild          | GestureHandler组件测试 - 单一子组件
- * Case2276470_MultiChild           | GestureHandler组件测试 - 多个子组件
- * Case2276471_NoChild              | GestureHandler组件测试 - 无子组件
- * Case2276472_TapBasic             | TapGestureHandler测试 - 基本点击
- * Case2276473_TapDouble            | TapGestureHandler测试 - 双击
- * Case2276474_TapLongPressDistinguish | TapGestureHandler与LongPressGestureHandler区分测试
- * Case2276475_PanBasic             | PanGestureHandler测试 - 基本拖拽
- * Case2276476_PanDirectionLock     | PanGestureHandler测试 - 方向锁定
- * Case2276477_PanMinDist           | PanGestureHandler测试 - 最小距离
- * Case2276478_PinchBasic           | PinchGestureHandler测试 - 基本捏合
- * Case2276479_PinchWithRotation    | PinchGestureHandler测试 - 带旋转
- * Case2276480_RotationBasic        | RotationGestureHandler测试 - 基本旋转
- * Case2276481_LongPressBasic       | LongPressGestureHandler测试 - 基本长按
- * Case2276482_LongPressCustomDuration | LongPressGestureHandler测试 - 自定义时长
- * Case2276483_FlingBasic           | FlingGestureHandler测试 - 基本快扫
- * Case2276484_FlingDirectional     | FlingGestureHandler测试 - 方向性快扫
- * Case2276485_NativeButton         | NativeButtonGestureHandler测试 - 基本按钮
- * Case2276486_PinchRotationCombo   | 手势组合测试 - 捏合与旋转
- * Case2276487_PanPinchCombo        | 手势组合测试 - 拖拽与捏合
- * Case2276488_TapWaitDoubleTap     | 等待手势测试 - 单击等待双击
- * Case2276489_TapWaitLongPress     | 等待手势测试 - 点击等待长按
- * Case2276490_HorizontalVerticalMutex | 互斥手势测试 - 水平与垂直拖拽
- * Case2276491_PanTapMutex          | 互斥手势测试 - 拖拽与点击
- * Case2276492_NestedTap            | 嵌套手势处理器测试 - 嵌套点击处理器
- * Case2276493_NestedPan            | 嵌套手势处理器测试 - 嵌套拖拽处理器
- * Case2276494_NestedScrollView     | 嵌套可滚动组件测试 - 嵌套ScrollView
- * Case2276495_ScrollViewDrag       | 嵌套可滚动组件测试 - ScrollView中的拖拽元素
- * Case2276496_TouchableCombo       | 与原生组件结合测试 - Touchable组件
- * Case2276497_TextInputCombo       | 与原生组件结合测试 - TextInput组件
- * ─────────────────────────────────────────────────────────
- */ // ── State 常量定义 ──
-  var FallbackState = {
-    UNDETERMINED: 0,
-    FAILED: 1,
-    BEGAN: 2,
-    CANCELLED: 3,
-    ACTIVE: 4,
-    END: 5
-  };
-  var GestureState = _$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").State || FallbackState;
-  var getStateName = function getStateName(state) {
-    switch (state) {
-      case GestureState.UNDETERMINED:
-        return 'UNDETERMINED';
-      case GestureState.FAILED:
-        return 'FAILED';
-      case GestureState.BEGAN:
-        return 'BEGAN';
-      case GestureState.CANCELLED:
-        return 'CANCELLED';
-      case GestureState.ACTIVE:
-        return 'ACTIVE';
-      case GestureState.END:
-        return 'END';
-      default:
-        return 'UNKNOWN';
-    }
-  };
-
-  // ── testCase 列表 ──
-  var TEST_CASES = [{
-    key: 'Case2276467_NoProps',
-    id: '2276467',
-    title: 'GestureHandler组件测试 - 无属性'
-  }, {
-    key: 'Case2276468_InvalidProps',
-    id: '2276468',
-    title: 'GestureHandler组件测试 - 无效属性'
-  }, {
-    key: 'Case2276469_SingleChild',
-    id: '2276469',
-    title: 'GestureHandler组件测试 - 单一子组件'
-  }, {
-    key: 'Case2276470_MultiChild',
-    id: '2276470',
-    title: 'GestureHandler组件测试 - 多个子组件'
-  }, {
-    key: 'Case2276471_NoChild',
-    id: '2276471',
-    title: 'GestureHandler组件测试 - 无子组件'
-  }, {
-    key: 'Case2276472_TapBasic',
-    id: '2276472',
-    title: 'TapGestureHandler测试 - 基本点击'
-  }, {
-    key: 'Case2276473_TapDouble',
-    id: '2276473',
-    title: 'TapGestureHandler测试 - 双击'
-  }, {
-    key: 'Case2276474_TapLongPressDistinguish',
-    id: '2276474',
-    title: 'TapGestureHandler与LongPressGestureHandler区分测试'
-  }, {
-    key: 'Case2276475_PanBasic',
-    id: '2276475',
-    title: 'PanGestureHandler测试 - 基本拖拽'
-  }, {
-    key: 'Case2276476_PanDirectionLock',
-    id: '2276476',
-    title: 'PanGestureHandler测试 - 方向锁定'
-  }, {
-    key: 'Case2276477_PanMinDist',
-    id: '2276477',
-    title: 'PanGestureHandler测试 - 最小距离'
-  }, {
-    key: 'Case2276478_PinchBasic',
-    id: '2276478',
-    title: 'PinchGestureHandler测试 - 基本捏合'
-  }, {
-    key: 'Case2276479_PinchWithRotation',
-    id: '2276479',
-    title: 'PinchGestureHandler测试 - 带旋转'
-  }, {
-    key: 'Case2276480_RotationBasic',
-    id: '2276480',
-    title: 'RotationGestureHandler测试 - 基本旋转'
-  }, {
-    key: 'Case2276481_LongPressBasic',
-    id: '2276481',
-    title: 'LongPressGestureHandler测试 - 基本长按'
-  }, {
-    key: 'Case2276482_LongPressCustomDuration',
-    id: '2276482',
-    title: 'LongPressGestureHandler测试 - 自定义时长'
-  }, {
-    key: 'Case2276483_FlingBasic',
-    id: '2276483',
-    title: 'FlingGestureHandler测试 - 基本快扫'
-  }, {
-    key: 'Case2276484_FlingDirectional',
-    id: '2276484',
-    title: 'FlingGestureHandler测试 - 方向性快扫'
-  }, {
-    key: 'Case2276485_NativeButton',
-    id: '2276485',
-    title: 'NativeButtonGestureHandler测试 - 基本按钮'
-  }, {
-    key: 'Case2276486_PinchRotationCombo',
-    id: '2276486',
-    title: '手势组合测试 - 捏合与旋转'
-  }, {
-    key: 'Case2276487_PanPinchCombo',
-    id: '2276487',
-    title: '手势组合测试 - 拖拽与捏合'
-  }, {
-    key: 'Case2276488_TapWaitDoubleTap',
-    id: '2276488',
-    title: '等待手势测试 - 单击等待双击'
-  }, {
-    key: 'Case2276489_TapWaitLongPress',
-    id: '2276489',
-    title: '等待手势测试 - 点击等待长按'
-  }, {
-    key: 'Case2276490_HorizontalVerticalMutex',
-    id: '2276490',
-    title: '互斥手势测试 - 水平与垂直拖拽'
-  }, {
-    key: 'Case2276491_PanTapMutex',
-    id: '2276491',
-    title: '互斥手势测试 - 拖拽与点击'
-  }, {
-    key: 'Case2276492_NestedTap',
-    id: '2276492',
-    title: '嵌套手势处理器测试 - 嵌套点击处理器'
-  }, {
-    key: 'Case2276493_NestedPan',
-    id: '2276493',
-    title: '嵌套手势处理器测试 - 嵌套拖拽处理器'
-  }, {
-    key: 'Case2276494_NestedScrollView',
-    id: '2276494',
-    title: '嵌套可滚动组件测试 - 嵌套ScrollView'
-  }, {
-    key: 'Case2276495_ScrollViewDrag',
-    id: '2276495',
-    title: '嵌套可滚动组件测试 - ScrollView中的拖拽元素'
-  }, {
-    key: 'Case2276496_TouchableCombo',
-    id: '2276496',
-    title: '与原生组件结合测试 - Touchable组件'
-  }, {
-    key: 'Case2276497_TextInputCombo',
-    id: '2276497',
-    title: '与原生组件结合测试 - TextInput组件'
-  }];
-  var RNGestureHandlerDemo = /*#__PURE__*/function (_Component) {
-    function RNGestureHandlerDemo(props) {
-      var _this;
-      (0, _classCallCheck2.default)(this, RNGestureHandlerDemo);
-      _this = _callSuper(this, RNGestureHandlerDemo, [props]);
-      // ── Animated Values (initialized in constructor) ──
-      // ── Animated Event Handlers ──
-      // ── Refs ──
-      _this.longPressRef474 = _react.default.createRef();
-      _this.tapRef474 = _react.default.createRef();
-      _this.pinchRef479 = _react.default.createRef();
-      _this.rotateRef479 = _react.default.createRef();
-      _this.pinchRef486 = _react.default.createRef();
-      _this.rotateRef486 = _react.default.createRef();
-      _this.panRef487 = _react.default.createRef();
-      _this.pinchRef487 = _react.default.createRef();
-      _this.tapRef488Single = _react.default.createRef();
-      _this.tapRef488Double = _react.default.createRef();
-      _this.tapRef489 = _react.default.createRef();
-      _this.longPressRef489 = _react.default.createRef();
-      // ═══════════════════════════════════════════════════════
-      // UTILITY METHODS
-      // ═══════════════════════════════════════════════════════
-      _this.runTestCase = function (testCase) {
-        // Reset all animated values
-        var animValues = [_this.panBasicX, _this.panBasicY, _this.panHorizontalX, _this.panVerticalY, _this.panMinDistX, _this.mutex490HX, _this.mutex490VY, _this.mutex491PanX, _this.mutex491PanY, _this.combo487PanX, _this.combo487PanY, _this.nestedOuterPanX, _this.nestedOuterPanY, _this.nestedInnerPanX, _this.nestedInnerPanY, _this.scrollDragX, _this.scrollDragY, _this.rotateAngleAnim, _this.combo479RotateAnim, _this.combo486RotateAnim];
-        animValues.forEach(function (v) {
-          return v.setValue(0);
-        });
-        var scaleValues = [_this.pinchScaleAnim, _this.combo479ScaleAnim, _this.combo486ScaleAnim, _this.combo487ScaleAnim];
-        scaleValues.forEach(function (v) {
-          return v.setValue(1);
-        });
-        _this.setState({
-          currentTestCase: testCase,
-          logs: [],
-          tapCount: 0,
-          doubleTapCount: 0,
-          distinguishTapCount: 0,
-          distinguishLongPressCount: 0,
-          minDist: 100,
-          minDistActive: false,
-          pinchScale: 1,
-          comboScale479: 1,
-          comboRotation479: 0,
-          rotationAngle: 0,
-          longPressCount: 0,
-          customLongPressCount: 0,
-          customMinDuration: 1500,
-          flingCount: 0,
-          leftFlingCount: 0,
-          nativeButtonCount: 0,
-          combo486Scale: 1,
-          combo486Rotation: 0,
-          combo487Scale: 1,
-          singleTap488Count: 0,
-          doubleTap488Count: 0,
-          tap489Count: 0,
-          longPress489Count: 0,
-          horizontalInfo: 'idle',
-          verticalInfo: 'idle',
-          pan491Info: 'idle',
-          tap491Count: 0,
-          outerTapCount: 0,
-          innerTapCount: 0,
-          outerPanInfo: 'idle',
-          innerPanInfo: 'idle',
-          touchableCount: 0,
-          textInputValue: '',
-          textInputTapCount: 0
-        });
-      };
-      _this.addLog = function (msg) {
-        console.log(msg);
-        _this.setState(function (prev) {
-          return {
-            logs: [].concat((0, _toConsumableArray2.default)(prev.logs.slice(-19)), [msg])
-          };
-        });
-      };
-      _this.springReset = function (v) {
-        var toValue = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-        _reactNative.Animated.spring(v, {
-          toValue: toValue,
-          useNativeDriver: true
-        }).start();
-      };
-      // ═══════════════════════════════════════════════════════
-      // SHARED UI COMPONENTS
-      // ═══════════════════════════════════════════════════════
-      _this.renderBackButton = function () {
-        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.TouchableOpacity, {
-          style: styles.backBtn,
-          onPress: function onPress() {
-            return _this.runTestCase('');
-          },
-          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.backBtnText,
-            children: "\u2190 \u8FD4\u56DE\u4E3B\u9875"
-          })
-        });
-      };
-      _this.renderLogArea = function () {
-        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
-          style: styles.logArea,
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.logTitle,
-            children: "\u4E8B\u4EF6\u65E5\u5FD7"
-          }), _this.state.logs.length === 0 ? /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.logEmpty,
-            children: "\u6682\u65E0\u65E5\u5FD7"
-          }) : _this.state.logs.map(function (log, i) {
-            return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-              style: styles.logItem,
-              children: log
-            }, i);
-          })]
-        });
-      };
-      _this.renderCaseLayout = function (title, caseId, operationArea, controlPanel) {
-        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
-          style: styles.flex1,
-          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.ScrollView, {
-            style: styles.flex1,
-            contentContainerStyle: styles.caseContainer,
-            children: [_this.renderBackButton(), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-              style: styles.caseTitle,
-              children: title
-            }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-              style: styles.caseId,
-              children: ["EC\u7528\u4F8B: ", caseId]
-            }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
-              style: styles.operationArea,
-              children: operationArea
-            }), controlPanel && /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
-              style: styles.controlPanel,
-              children: controlPanel
-            }), _this.renderLogArea()]
-          })
-        });
-      };
-      // ═══════════════════════════════════════════════════════
-      // HOME PAGE
-      // ═══════════════════════════════════════════════════════
-      _this.renderHomePage = function () {
-        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          style: styles.flex1,
-          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.ScrollView, {
-            style: styles.flex1,
-            contentContainerStyle: styles.homeContainer,
-            children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-              style: styles.homeTitle,
-              children: "GestureHandler \u6D4B\u8BD5\u7528\u4F8B"
-            }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-              style: styles.homeSubtitle,
-              children: ["\u5171 ", TEST_CASES.length, " \u6761 EC \u7528\u4F8B"]
-            }), TEST_CASES.map(function (tc) {
-              return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.TouchableOpacity, {
-                style: styles.homeBtn,
-                onPress: function onPress() {
-                  return _this.runTestCase(tc.key);
-                },
-                children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                  style: styles.homeBtnId,
-                  children: tc.id
-                }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                  style: styles.homeBtnTitle,
-                  children: tc.title
-                })]
-              }, tc.key);
-            }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
-              style: {
-                height: 40
-              }
-            })]
-          })
-        });
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276467 — 无属性
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276467 = function () {
-        // componentDidMount 等效：在渲染时记录日志
-        setTimeout(function () {
-          if (_this.state.logs.length === 0 && _this.state.currentTestCase === 'Case2276467_NoProps') {
-            _this.addLog('[NoProps] 页面正常渲染');
-          }
-        }, 100);
-        return _this.renderCaseLayout('GestureHandler组件测试 - 无属性', '2276467', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
-          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-            children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-              style: styles.guideText,
-              children: "GestureHandlerRootView \u65E0\u4EFB\u4F55\u989D\u5916\u5C5E\u6027"
-            }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-              style: styles.guideText,
-              children: "\u6B63\u5E38\u6E32\u67D3\u4E0D\u5D29\u6E83\u5373\u901A\u8FC7"
-            })]
-          })
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276468 — 无效属性
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276468 = function () {
-        setTimeout(function () {
-          if (_this.state.logs.length === 0 && _this.state.currentTestCase === 'Case2276468_InvalidProps') {
-            _this.addLog('[InvalidProps] 页面正常渲染');
-          }
-        }, 100);
-        return _this.renderCaseLayout('GestureHandler组件测试 - 无效属性', '2276468', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
-          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-            invalidProp: "test",
-            fakeAttr: 123,
-            children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-              style: styles.guideText,
-              children: "\u4F20\u5165\u4E86 invalidProp \u548C fakeAttr"
-            }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-              style: styles.guideText,
-              children: "\u4E0D\u5D29\u6E83\u5373\u901A\u8FC7"
-            })]
-          })
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276469 — 单一子组件
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276469 = function () {
-        return _this.renderCaseLayout('GestureHandler组件测试 - 单一子组件', '2276469', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "\u70B9\u51FB\u4E0B\u65B9\u533A\u57DF\u89E6\u53D1 Tap"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.ACTIVE) {
-                _this.addLog('[SingleChild] Tap triggered');
-              }
-            },
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
-              style: styles.tapBox,
-              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                style: styles.boxText,
-                children: "\u70B9\u51FB\u6B64\u5904"
-              })
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276470 — 多个子组件
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276470 = function () {
-        return _this.renderCaseLayout('GestureHandler组件测试 - 多个子组件', '2276470', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "TapGestureHandler + LongPressGestureHandler \u5404\u81EA\u72EC\u7ACB\u54CD\u5E94"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.ACTIVE) {
-                _this.addLog('[MultiChild] Tap triggered');
-              }
-            },
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
-              style: styles.tapBox,
-              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                style: styles.boxText,
-                children: "\u70B9\u51FB\u6B64\u5904 (Tap)"
-              })
-            })
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").LongPressGestureHandler, {
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.ACTIVE) {
-                _this.addLog('[MultiChild] LongPress triggered');
-              }
-            },
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
-              style: styles.longPressBox,
-              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                style: styles.boxText,
-                children: "\u957F\u6309\u6B64\u5904 (LongPress)"
-              })
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276471 — 无子组件
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276471 = function () {
-        setTimeout(function () {
-          if (_this.state.logs.length === 0 && _this.state.currentTestCase === 'Case2276471_NoChild') {
-            _this.addLog('[NoChild] 页面正常渲染');
-          }
-        }, 100);
-        return _this.renderCaseLayout('GestureHandler组件测试 - 无子组件', '2276471', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-            style: {
-              height: 100,
-              backgroundColor: '#eee',
-              borderRadius: 8
-            }
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "GestureHandlerRootView \u5185\u65E0\u5B50\u7EC4\u4EF6"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "\u4E0D\u5D29\u6E83\u5373\u901A\u8FC7"
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276472 — TapBasic
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276472 = function () {
-        return _this.renderCaseLayout('TapGestureHandler测试 - 基本点击', '2276472', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "\u70B9\u51FB\u4E0B\u65B9\u533A\u57DF"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.ACTIVE) {
-                var count = _this.state.tapCount + 1;
-                _this.setState({
-                  tapCount: count
-                });
-                _this.addLog(`[Tap] Tap triggered count:${count}`);
-              }
-            },
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
-              style: styles.tapBox,
-              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                style: styles.boxText,
-                children: "\u70B9\u51FB\u6B64\u5904"
-              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                style: styles.boxSubText,
-                children: ["\u6B21\u6570: ", _this.state.tapCount]
-              })]
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276473 — TapDouble
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276473 = function () {
-        return _this.renderCaseLayout('TapGestureHandler测试 - 双击', '2276473', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "\u53CC\u51FB\u4E0B\u65B9\u533A\u57DF"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
-            numberOfTaps: 2,
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.ACTIVE) {
-                var count = _this.state.doubleTapCount + 1;
-                _this.setState({
-                  doubleTapCount: count
-                });
-                _this.addLog(`[DoubleTap] DoubleTap triggered count:${count}`);
-              }
-            },
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
-              style: styles.tapBox,
-              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                style: styles.boxText,
-                children: "\u53CC\u51FB\u6B64\u5904"
-              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                style: styles.boxSubText,
-                children: ["\u6B21\u6570: ", _this.state.doubleTapCount]
-              })]
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276474 — TapLongPressDistinguish
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276474 = function () {
-        return _this.renderCaseLayout('TapGestureHandler与LongPressGestureHandler区分测试', '2276474', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "\u77ED\u6309\u89E6\u53D1 Tap\uFF0C\u957F\u6309\u89E6\u53D1 LongPress"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").LongPressGestureHandler, {
-            ref: _this.longPressRef474,
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.ACTIVE) {
-                var count = _this.state.distinguishLongPressCount + 1;
-                _this.setState({
-                  distinguishLongPressCount: count
-                });
-                _this.addLog(`[Distinguish] LongPress triggered count:${count}`);
-              }
-            },
-            minDurationMs: 800,
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
-              ref: _this.tapRef474,
-              onHandlerStateChange: function onHandlerStateChange(e) {
-                if (e.nativeEvent.state === GestureState.ACTIVE) {
-                  var count = _this.state.distinguishTapCount + 1;
-                  _this.setState({
-                    distinguishTapCount: count
-                  });
-                  _this.addLog(`[Distinguish] Tap triggered count:${count}`);
-                }
-              },
-              waitFor: _this.longPressRef474,
-              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
-                style: styles.combinedBox,
-                children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                  style: styles.boxText,
-                  children: "\u70B9\u51FB\u6216\u957F\u6309\u6B64\u5904"
-                }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                  style: styles.boxSubText,
-                  children: ["Tap: ", _this.state.distinguishTapCount, " | LongPress: ", _this.state.distinguishLongPressCount]
-                })]
-              })
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276475 — PanBasic
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276475 = function () {
-        return _this.renderCaseLayout('PanGestureHandler测试 - 基本拖拽', '2276475', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "\u62D6\u62FD\u4E0B\u65B9\u65B9\u5757\uFF0C\u677E\u624B\u540E\u5F39\u56DE"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PanGestureHandler, {
-            onGestureEvent: _this.onPanBasicEvent,
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.END) {
-                _this.addLog('[Pan] gesture ended, springing back');
-                _this.springReset(_this.panBasicX);
-                _this.springReset(_this.panBasicY);
-              }
-            },
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Animated.View, {
-              style: [styles.dragBox, {
-                transform: [{
-                  translateX: _this.panBasicX
-                }, {
-                  translateY: _this.panBasicY
-                }]
-              }],
-              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                style: styles.boxText,
-                children: "\u62D6\u62FD\u6211"
-              })
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276476 — PanDirectionLock
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276476 = function () {
-        return _this.renderCaseLayout('PanGestureHandler测试 - 方向锁定', '2276476', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "\u7EA2\u8272\u5757\u4EC5\u6C34\u5E73\u62D6\u52A8\uFF0C\u7EFF\u8272\u5757\u4EC5\u5782\u76F4\u62D6\u52A8"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
-            style: styles.dirRow,
-            children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PanGestureHandler, {
-              onGestureEvent: _this.onPanHorizontalEvent,
-              onHandlerStateChange: function onHandlerStateChange(e) {
-                if (e.nativeEvent.state === GestureState.END) {
-                  _this.addLog('[HorizontalPan] ended');
-                  _this.springReset(_this.panHorizontalX);
-                }
-              },
-              activeOffsetX: [-10, 10],
-              failOffsetY: [-10, 10],
-              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Animated.View, {
-                style: [styles.dirBox, {
-                  backgroundColor: '#e74c3c',
-                  transform: [{
-                    translateX: _this.panHorizontalX
-                  }]
-                }],
-                children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                  style: styles.boxText,
-                  children: "\u4EC5\u6C34\u5E73"
-                })
-              })
-            }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PanGestureHandler, {
-              onGestureEvent: _this.onPanVerticalEvent,
-              onHandlerStateChange: function onHandlerStateChange(e) {
-                if (e.nativeEvent.state === GestureState.END) {
-                  _this.addLog('[VerticalPan] ended');
-                  _this.springReset(_this.panVerticalY);
-                }
-              },
-              activeOffsetY: [-10, 10],
-              failOffsetX: [-10, 10],
-              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Animated.View, {
-                style: [styles.dirBox, {
-                  backgroundColor: '#27ae60',
-                  transform: [{
-                    translateY: _this.panVerticalY
-                  }]
-                }],
-                children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                  style: styles.boxText,
-                  children: "\u4EC5\u5782\u76F4"
-                })
-              })
-            })]
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276477 — PanMinDist
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276477 = function () {
-        return _this.renderCaseLayout('PanGestureHandler测试 - 最小距离', '2276477', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-            style: styles.guideText,
-            children: ["\u62D6\u52A8\u8D85\u8FC7 ", _this.state.minDist, "px \u624D\u6FC0\u6D3B"]
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PanGestureHandler, {
-            onGestureEvent: _this.onPanMinDistEvent,
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              var state = e.nativeEvent.state;
-              _this.addLog(`[PanMinDist] stateChange: ${getStateName(state)}`);
-              if (state === GestureState.END) {
-                _this.springReset(_this.panMinDistX);
-                _this.setState({
-                  minDistActive: false
-                });
-              }
-            },
-            minDist: _this.state.minDist,
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
-              style: [styles.minDistBox, {
-                backgroundColor: _this.state.minDistActive ? '#ff9500' : '#666',
-                transform: [{
-                  translateX: _this.panMinDistX
-                }]
-              }],
-              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                style: styles.boxText,
-                children: ["\u6700\u5C0F\u8DDD\u79BB: ", _this.state.minDist, "px"]
-              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                style: styles.boxSubText,
-                children: _this.state.minDistActive ? 'ACTIVE' : 'INACTIVE'
-              })]
-            })
-          })]
-        }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
-          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
-            style: styles.controlRow,
-            children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-              style: styles.controlLabel,
-              children: ["minDist: ", _this.state.minDist]
-            }), [0, 50, 100, 200].map(function (v) {
-              return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.TouchableOpacity, {
-                style: styles.controlBtn,
-                onPress: function onPress() {
-                  return _this.setState({
-                    minDist: v
-                  });
-                },
-                children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                  style: styles.controlBtnText,
-                  children: v
-                })
-              }, v);
-            })]
-          })
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276478 — PinchBasic
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276478 = function () {
-        return _this.renderCaseLayout('PinchGestureHandler测试 - 基本捏合', '2276478', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          style: styles.gestureArea,
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "\u53CC\u6307\u7F29\u653E\u4E0B\u65B9\u65B9\u5757"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PinchGestureHandler, {
-            onGestureEvent: _this.onPinchBasicEvent,
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.END) {
-                _this.addLog('[Pinch] ended');
-                _this.springReset(_this.pinchScaleAnim, 1);
-              }
-            },
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
-              style: [styles.pinchBox, {
-                transform: [{
-                  scale: _this.pinchScaleAnim
-                }]
-              }],
-              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                style: styles.boxText,
-                children: "\u634F\u5408\u7F29\u653E"
-              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                style: styles.boxSubText,
-                children: ["scale: ", _this.state.pinchScale.toFixed(2)]
-              })]
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276479 — PinchWithRotation
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276479 = function () {
-        return _this.renderCaseLayout('PinchGestureHandler测试 - 带旋转', '2276479', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          style: styles.gestureArea,
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "\u53CC\u6307\u540C\u65F6\u634F\u5408\u548C\u65CB\u8F6C (simultaneousHandlers)"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PinchGestureHandler, {
-            ref: _this.pinchRef479,
-            simultaneousHandlers: _this.rotateRef479,
-            onGestureEvent: _this.onCombo479PinchEvent,
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.END) {
-                _this.addLog('[Combo479Pinch] ended');
-                _this.springReset(_this.combo479ScaleAnim, 1);
-              }
-            },
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Animated.View, {
-              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").RotationGestureHandler, {
-                ref: _this.rotateRef479,
-                simultaneousHandlers: _this.pinchRef479,
-                onGestureEvent: _this.onCombo479RotateEvent,
-                onHandlerStateChange: function onHandlerStateChange(e) {
-                  if (e.nativeEvent.state === GestureState.END) {
-                    _this.addLog('[Combo479Rotate] ended');
-                    // this.springReset(this.combo479RotateAnim)
-                  }
-                },
-                children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
-                  style: [styles.comboBox, {
-                    transform: [{
-                      scale: _this.combo479ScaleAnim
-                    }, {
-                      rotate: _this.combo479RotateAnim.interpolate({
-                        inputRange: [-Math.PI, Math.PI],
-                        outputRange: ['-180deg', '180deg']
-                      })
-                    }]
-                  }],
-                  children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                    style: styles.boxText,
-                    children: "\u634F\u5408+\u65CB\u8F6C"
-                  }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                    style: styles.boxSubText,
-                    children: ["scale: ", _this.state.comboScale479.toFixed(2)]
-                  }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                    style: styles.boxSubText,
-                    children: ["angle: ", (_this.state.comboRotation479 * 180 / Math.PI).toFixed(1), "\xB0"]
-                  })]
-                })
-              })
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276480 — RotationBasic
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276480 = function () {
-        return _this.renderCaseLayout('RotationGestureHandler测试 - 基本旋转', '2276480', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          style: styles.gestureArea,
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "\u53CC\u6307\u65CB\u8F6C\u4E0B\u65B9\u65B9\u5757"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").RotationGestureHandler, {
-            onGestureEvent: _this.onRotateBasicEvent,
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.END) {
-                _this.addLog('[Rotation] ended');
-                _this.springReset(_this.rotateAngleAnim);
-              }
-            },
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
-              style: [styles.rotateBox, {
-                transform: [{
-                  rotate: _this.rotateAngleAnim.interpolate({
-                    inputRange: [-Math.PI, Math.PI],
-                    outputRange: ['-180deg', '180deg']
-                  })
-                }]
-              }],
-              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                style: styles.boxText,
-                children: "\u65CB\u8F6C\u6211"
-              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                style: styles.boxSubText,
-                children: [(_this.state.rotationAngle * 180 / Math.PI).toFixed(1), "\xB0"]
-              })]
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276481 — LongPressBasic
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276481 = function () {
-        return _this.renderCaseLayout('LongPressGestureHandler测试 - 基本长按', '2276481', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "\u957F\u6309\u4E0B\u65B9\u533A\u57DF\uFF08\u9ED8\u8BA4\u65F6\u957F\u7EA6500ms\uFF09"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").LongPressGestureHandler, {
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.ACTIVE) {
-                var count = _this.state.longPressCount + 1;
-                _this.setState({
-                  longPressCount: count
-                });
-                _this.addLog(`[LongPress] LongPress triggered count:${count}`);
-              }
-            },
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
-              style: styles.longPressBox,
-              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                style: styles.boxText,
-                children: "\u957F\u6309\u6B64\u5904"
-              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                style: styles.boxSubText,
-                children: ["\u6B21\u6570: ", _this.state.longPressCount]
-              })]
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276482 — LongPressCustomDuration
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276482 = function () {
-        return _this.renderCaseLayout('LongPressGestureHandler测试 - 自定义时长', '2276482', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-            style: styles.guideText,
-            children: ["\u957F\u6309 ", _this.state.customMinDuration, "ms \u540E\u89E6\u53D1"]
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").LongPressGestureHandler, {
-            minDurationMs: _this.state.customMinDuration,
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.ACTIVE) {
-                var count = _this.state.customLongPressCount + 1;
-                _this.setState({
-                  customLongPressCount: count
-                });
-                _this.addLog(`[LongPressCustom] triggered after ${_this.state.customMinDuration}ms count:${count}`);
-              }
-            },
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
-              style: styles.longPressBox,
-              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                style: styles.boxText,
-                children: "\u957F\u6309\u6B64\u5904"
-              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                style: styles.boxSubText,
-                children: ["\u6B21\u6570: ", _this.state.customLongPressCount]
-              })]
-            })
-          })]
-        }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
-          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
-            style: styles.controlRow,
-            children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-              style: styles.controlLabel,
-              children: ["minDurationMs: ", _this.state.customMinDuration]
-            }), [500, 1000, 1500, 2000].map(function (v) {
-              return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.TouchableOpacity, {
-                style: styles.controlBtn,
-                onPress: function onPress() {
-                  return _this.setState({
-                    customMinDuration: v
-                  });
-                },
-                children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                  style: styles.controlBtnText,
-                  children: v
-                })
-              }, v);
-            })]
-          })
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276483 — FlingBasic
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276483 = function () {
-        return _this.renderCaseLayout('FlingGestureHandler测试 - 基本快扫', '2276483', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "\u5728\u4E0B\u65B9\u533A\u57DF\u4EFB\u610F\u65B9\u5411\u5FEB\u626B"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").FlingGestureHandler, {
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.ACTIVE) {
-                var count = _this.state.flingCount + 1;
-                _this.setState({
-                  flingCount: count
-                });
-                _this.addLog(`[Fling] Fling triggered count:${count}`);
-              }
-            },
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
-              style: styles.flingBox,
-              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                style: styles.boxText,
-                children: "\u4EFB\u610F\u65B9\u5411\u5FEB\u626B"
-              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                style: styles.boxSubText,
-                children: ["\u6B21\u6570: ", _this.state.flingCount]
-              })]
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276484 — FlingDirectional
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276484 = function () {
-        return _this.renderCaseLayout('FlingGestureHandler测试 - 方向性快扫', '2276484', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "\u4EC5\u54CD\u5E94\u5411\u5DE6\u5FEB\u626B"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").FlingGestureHandler, {
-            direction: _$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").Directions.LEFT,
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.ACTIVE) {
-                var count = _this.state.leftFlingCount + 1;
-                _this.setState({
-                  leftFlingCount: count
-                });
-                _this.addLog(`[FlingLeft] Left fling triggered count:${count}`);
-              }
-            },
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
-              style: styles.flingBox,
-              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                style: styles.boxText,
-                children: "\u2190 \u5411\u5DE6\u5FEB\u626B"
-              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                style: styles.boxSubText,
-                children: ["\u6B21\u6570: ", _this.state.leftFlingCount]
-              })]
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276485 — NativeButton
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276485 = function () {
-        return _this.renderCaseLayout('NativeButtonGestureHandler测试 - 基本按钮', '2276485', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "\u70B9\u51FB\u4E0B\u65B9\u539F\u751F\u6309\u94AE"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").NativeViewGestureHandler, {
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.ACTIVE) {
-                var count = _this.state.nativeButtonCount + 1;
-                _this.setState({
-                  nativeButtonCount: count
-                });
-                _this.addLog(`[NativeButton] pressed count:${count}`);
-              }
-            },
-            shouldActivateOnStart: true,
-            disallowInterruption: true,
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
-              style: styles.nativeBtn,
-              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                style: styles.boxText,
-                children: "\u539F\u751F\u6309\u94AE"
-              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                style: styles.boxSubText,
-                children: ["\u6B21\u6570: ", _this.state.nativeButtonCount]
-              })]
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276486 — PinchRotationCombo
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276486 = function () {
-        return _this.renderCaseLayout('手势组合测试 - 捏合与旋转', '2276486', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          style: styles.gestureArea,
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "\u53CC\u6307\u540C\u65F6\u634F\u5408 + \u65CB\u8F6C (simultaneousHandlers)"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PinchGestureHandler, {
-            ref: _this.pinchRef486,
-            simultaneousHandlers: _this.rotateRef486,
-            onGestureEvent: _this.onCombo486PinchEvent,
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.END) {
-                _this.addLog('[Combo486] pinch ended');
-                _this.springReset(_this.combo486ScaleAnim, 1);
-              }
-            },
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").RotationGestureHandler, {
-              ref: _this.rotateRef486,
-              simultaneousHandlers: _this.pinchRef486,
-              onGestureEvent: _this.onCombo486RotateEvent,
-              onHandlerStateChange: function onHandlerStateChange(e) {
-                if (e.nativeEvent.state === GestureState.END) {
-                  _this.addLog('[Combo486] rotation ended');
-                  _this.springReset(_this.combo486RotateAnim);
-                }
-              },
-              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
-                style: [styles.comboBox, {
-                  transform: [{
-                    scale: _this.combo486ScaleAnim
-                  }, {
-                    rotate: _this.combo486RotateAnim.interpolate({
-                      inputRange: [-Math.PI, Math.PI],
-                      outputRange: ['-180deg', '180deg']
-                    })
-                  }]
-                }],
-                children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                  style: styles.boxText,
-                  children: "\u634F\u5408+\u65CB\u8F6C"
-                }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                  style: styles.boxSubText,
-                  children: ["scale: ", _this.state.combo486Scale.toFixed(2)]
-                }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                  style: styles.boxSubText,
-                  children: ["angle: ", (_this.state.combo486Rotation * 180 / Math.PI).toFixed(1), "\xB0"]
-                })]
-              })
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276487 — PanPinchCombo
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276487 = function () {
-        return _this.renderCaseLayout('手势组合测试 - 拖拽与捏合', '2276487', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          style: styles.gestureArea,
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "\u540C\u65F6\u62D6\u62FD + \u53CC\u6307\u634F\u5408 (simultaneousHandlers)"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PanGestureHandler, {
-            ref: _this.panRef487,
-            simultaneousHandlers: _this.pinchRef487,
-            onGestureEvent: _this.onCombo487PanEvent,
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.END) {
-                _this.addLog('[Combo487] pan ended');
-                _this.springReset(_this.combo487PanX);
-                _this.springReset(_this.combo487PanY);
-              }
-            },
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PinchGestureHandler, {
-              ref: _this.pinchRef487,
-              simultaneousHandlers: _this.panRef487,
-              onGestureEvent: _this.onCombo487PinchEvent,
-              onHandlerStateChange: function onHandlerStateChange(e) {
-                if (e.nativeEvent.state === GestureState.END) {
-                  _this.addLog('[Combo487] pinch ended');
-                  _this.springReset(_this.combo487ScaleAnim, 1);
-                }
-              },
-              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
-                style: [styles.comboBox, {
-                  transform: [{
-                    translateX: _this.combo487PanX
-                  }, {
-                    translateY: _this.combo487PanY
-                  }, {
-                    scale: _this.combo487ScaleAnim
-                  }]
-                }],
-                children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                  style: styles.boxText,
-                  children: "\u62D6\u62FD+\u634F\u5408"
-                }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                  style: styles.boxSubText,
-                  children: ["scale: ", _this.state.combo487Scale.toFixed(2)]
-                })]
-              })
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276488 — TapWaitDoubleTap
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276488 = function () {
-        return _this.renderCaseLayout('等待手势测试 - 单击等待双击', '2276488', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "\u5355\u51FB waitFor \u53CC\u51FB\uFF1A\u53CC\u51FB\u65F6\u53EA\u89E6\u53D1\u53CC\u51FB\uFF0C\u5355\u51FB\u65F6\u5EF6\u8FDF\u89E6\u53D1\u5355\u51FB"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
-            ref: _this.tapRef488Double,
-            numberOfTaps: 2,
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.ACTIVE) {
-                var count = _this.state.doubleTap488Count + 1;
-                _this.setState({
-                  doubleTap488Count: count
-                });
-                _this.addLog(`[WaitDoubleTap] DoubleTap triggered count:${count}`);
-              }
-            },
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
-              ref: _this.tapRef488Single,
-              waitFor: _this.tapRef488Double,
-              onHandlerStateChange: function onHandlerStateChange(e) {
-                if (e.nativeEvent.state === GestureState.ACTIVE) {
-                  var count = _this.state.singleTap488Count + 1;
-                  _this.setState({
-                    singleTap488Count: count
-                  });
-                  _this.addLog(`[WaitDoubleTap] SingleTap triggered count:${count}`);
-                }
-              },
-              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
-                style: styles.combinedBox,
-                children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                  style: styles.boxText,
-                  children: "\u5355\u51FB\u6216\u53CC\u51FB\u6B64\u5904"
-                }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                  style: styles.boxSubText,
-                  children: ["Single: ", _this.state.singleTap488Count, " | Double: ", _this.state.doubleTap488Count]
-                })]
-              })
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276489 — TapWaitLongPress
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276489 = function () {
-        return _this.renderCaseLayout('等待手势测试 - 点击等待长按', '2276489', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "Tap waitFor LongPress\uFF1A\u957F\u6309\u89E6\u53D1 LongPress\uFF0C\u77ED\u6309\u89E6\u53D1 Tap"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").LongPressGestureHandler, {
-            ref: _this.longPressRef489,
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.ACTIVE) {
-                var count = _this.state.longPress489Count + 1;
-                _this.setState({
-                  longPress489Count: count
-                });
-                _this.addLog(`[WaitLongPress] LongPress triggered count:${count}`);
-              }
-            },
-            minDurationMs: 800,
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
-              ref: _this.tapRef489,
-              waitFor: _this.longPressRef489,
-              onHandlerStateChange: function onHandlerStateChange(e) {
-                if (e.nativeEvent.state === GestureState.ACTIVE) {
-                  var count = _this.state.tap489Count + 1;
-                  _this.setState({
-                    tap489Count: count
-                  });
-                  _this.addLog(`[WaitLongPress] Tap triggered count:${count}`);
-                }
-              },
-              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
-                style: styles.combinedBox,
-                children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                  style: styles.boxText,
-                  children: "\u70B9\u51FB\u6216\u957F\u6309\u6B64\u5904"
-                }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                  style: styles.boxSubText,
-                  children: ["Tap: ", _this.state.tap489Count, " | LongPress: ", _this.state.longPress489Count]
-                })]
-              })
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276490 — HorizontalVerticalMutex
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276490 = function () {
-        return _this.renderCaseLayout('互斥手势测试 - 水平与垂直拖拽', '2276490', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "\u540C\u4E00\u533A\u57DF\u5185\u6C34\u5E73Pan\u548C\u5782\u76F4Pan\u4E92\u65A5\uFF1A\u521D\u59CB\u65B9\u5411\u51B3\u5B9A\u54EA\u4E2A\u6FC0\u6D3B"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "\u6C34\u5E73\u6ED1\u52A8 \u2192 \u4EC5\u6C34\u5E73\u79FB\u52A8\uFF1B\u5782\u76F4\u6ED1\u52A8 \u2192 \u4EC5\u5782\u76F4\u79FB\u52A8"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PanGestureHandler, {
-            onGestureEvent: _this.onMutex490HEvent,
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.END) {
-                _this.addLog('[Mutex490H] ended');
-                _this.springReset(_this.mutex490HX);
-              }
-            },
-            activeOffsetX: [-10, 10],
-            failOffsetY: [-10, 10],
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PanGestureHandler, {
-              onGestureEvent: _this.onMutex490VEvent,
-              onHandlerStateChange: function onHandlerStateChange(e) {
-                if (e.nativeEvent.state === GestureState.END) {
-                  _this.addLog('[Mutex490V] ended');
-                  _this.springReset(_this.mutex490VY);
-                }
-              },
-              activeOffsetY: [-10, 10],
-              failOffsetX: [-10, 10],
-              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
-                style: [styles.mutexBox, {
-                  transform: [{
-                    translateX: _this.mutex490HX
-                  }, {
-                    translateY: _this.mutex490VY
-                  }]
-                }],
-                children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                  style: styles.boxText,
-                  children: "\u62D6\u62FD\u6B64\u533A\u57DF"
-                }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                  style: styles.boxSubText,
-                  children: ["\u6C34\u5E73: ", _this.state.horizontalInfo]
-                }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                  style: styles.boxSubText,
-                  children: ["\u5782\u76F4: ", _this.state.verticalInfo]
-                })]
-              })
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276491 — PanTapMutex
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276491 = function () {
-        return _this.renderCaseLayout('互斥手势测试 - 拖拽与点击', '2276491', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "Pan\u548CTap\u4E0D\u52A0simultaneousHandlers\uFF0C\u81EA\u7136\u4E92\u65A5"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PanGestureHandler, {
-            onGestureEvent: _this.onMutex491PanEvent,
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.END) {
-                _this.addLog('[Mutex491Pan] ended');
-                _this.springReset(_this.mutex491PanX);
-                _this.springReset(_this.mutex491PanY);
-              }
-            },
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Animated.View, {
-              style: [styles.dragBox, {
-                transform: [{
-                  translateX: _this.mutex491PanX
-                }, {
-                  translateY: _this.mutex491PanY
-                }]
-              }],
-              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
-                onHandlerStateChange: function onHandlerStateChange(e) {
-                  if (e.nativeEvent.state === GestureState.ACTIVE) {
-                    var count = _this.state.tap491Count + 1;
-                    _this.setState({
-                      tap491Count: count
-                    });
-                    _this.addLog(`[Mutex491Tap] Tap triggered count:${count}`);
-                  }
-                },
-                children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
-                  style: styles.innerTapArea,
-                  children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                    style: styles.boxText,
-                    children: "\u62D6\u62FD\u6216\u70B9\u51FB"
-                  }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                    style: styles.boxSubText,
-                    children: ["Pan: ", _this.state.pan491Info]
-                  }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                    style: styles.boxSubText,
-                    children: ["Tap: ", _this.state.tap491Count]
-                  })]
-                })
-              })
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276492 — NestedTap
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276492 = function () {
-        return _this.renderCaseLayout('嵌套手势处理器测试 - 嵌套点击处理器', '2276492', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "\u5916\u5C42Tap + \u5185\u5C42Tap\uFF0C\u5404\u81EA\u72EC\u7ACB\u54CD\u5E94"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.ACTIVE) {
-                var count = _this.state.outerTapCount + 1;
-                _this.setState({
-                  outerTapCount: count
-                });
-                _this.addLog(`[NestedTap] OuterTap triggered count:${count}`);
-              }
-            },
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
-              style: styles.outerBox,
-              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                style: styles.boxText,
-                children: "\u5916\u5C42 Tap \u533A\u57DF"
-              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                style: styles.boxSubText,
-                children: ["\u5916\u5C42: ", _this.state.outerTapCount]
-              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
-                onHandlerStateChange: function onHandlerStateChange(e) {
-                  if (e.nativeEvent.state === GestureState.ACTIVE) {
-                    var count = _this.state.innerTapCount + 1;
-                    _this.setState({
-                      innerTapCount: count
-                    });
-                    _this.addLog(`[NestedTap] InnerTap triggered count:${count}`);
-                  }
-                },
-                children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
-                  style: styles.innerBox,
-                  children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                    style: styles.boxTextDark,
-                    children: "\u5185\u5C42 Tap \u533A\u57DF"
-                  }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                    style: styles.boxSubTextDark,
-                    children: ["\u5185\u5C42: ", _this.state.innerTapCount]
-                  })]
-                })
-              })]
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276493 — NestedPan
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276493 = function () {
-        return _this.renderCaseLayout('嵌套手势处理器测试 - 嵌套拖拽处理器', '2276493', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "\u5916\u5C42Pan + \u5185\u5C42Pan\uFF0C\u62D6\u62FD\u5185\u5C42\u65F6\u5185\u5C42\u54CD\u5E94"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PanGestureHandler, {
-            onGestureEvent: _this.onNestedOuterPanEvent,
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.END) {
-                _this.addLog('[NestedPan] outer ended');
-                _this.springReset(_this.nestedOuterPanX);
-                _this.springReset(_this.nestedOuterPanY);
-              }
-            },
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
-              style: [styles.outerDragBox, {
-                transform: [{
-                  translateX: _this.nestedOuterPanX
-                }, {
-                  translateY: _this.nestedOuterPanY
-                }]
-              }],
-              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                style: styles.boxText,
-                children: "\u5916\u5C42 Pan"
-              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                style: styles.boxSubText,
-                children: _this.state.outerPanInfo
-              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PanGestureHandler, {
-                onGestureEvent: _this.onNestedInnerPanEvent,
-                onHandlerStateChange: function onHandlerStateChange(e) {
-                  if (e.nativeEvent.state === GestureState.END) {
-                    _this.addLog('[NestedPan] inner ended');
-                    _this.springReset(_this.nestedInnerPanX);
-                    _this.springReset(_this.nestedInnerPanY);
-                  }
-                },
-                children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
-                  style: [styles.innerDragBox, {
-                    transform: [{
-                      translateX: _this.nestedInnerPanX
-                    }, {
-                      translateY: _this.nestedInnerPanY
-                    }]
-                  }],
-                  children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                    style: styles.boxTextDark,
-                    children: "\u5185\u5C42 Pan"
-                  }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                    style: styles.boxSubTextDark,
-                    children: _this.state.innerPanInfo
-                  })]
-                })
-              })]
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276494 — NestedScrollView
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276494 = function () {
-        return _this.renderCaseLayout('嵌套可滚动组件测试 - 嵌套ScrollView', '2276494', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "GestureHandler \u5185\u5D4C\u5957\u591A\u5C42 ScrollView\uFF0C\u9A8C\u8BC1\u5185\u5916\u5C42\u6EDA\u52A8\u4E0D\u51B2\u7A81"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "\u5916\u5C42\u5782\u76F4\u6EDA\u52A8 | \u5185\u5C42\u6C34\u5E73\u6EDA\u52A8 | \u70B9\u51FB\u53EF\u89E6\u53D1 Tap"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.ACTIVE) {
-                _this.addLog('[NestedScrollView] Tap on scrollable area');
-              }
-            },
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
-              style: styles.nestedScrollOuter,
-              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.ScrollView, {
-                style: styles.innerScroll,
-                nestedScrollEnabled: true,
-                children: Array.from({
-                  length: 5
-                }, function (_, i) {
-                  return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
-                    children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                      style: styles.scrollSectionTitle,
-                      children: ["\u533A\u57DF ", i + 1]
-                    }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.ScrollView, {
-                      horizontal: true,
-                      style: styles.horizontalScroll,
-                      nestedScrollEnabled: true,
-                      showsHorizontalScrollIndicator: true,
-                      children: Array.from({
-                        length: 10
-                      }, function (_, j) {
-                        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
-                          style: styles.horizontalScrollItem,
-                          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                            style: styles.horizontalScrollText,
-                            children: ["\u9879 ", j + 1]
-                          })
-                        }, `item-${i}-${j}`);
-                      })
-                    }), Array.from({
-                      length: 3
-                    }, function (_, k) {
-                      return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                        style: styles.scrollItem,
-                        children: ["\u5782\u76F4\u5185\u5BB9 ", i * 3 + k + 1]
-                      }, `text-${i}-${k}`);
-                    })]
-                  }, `section-${i}`);
-                })
-              })
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276495 — ScrollViewDrag
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276495 = function () {
-        return _this.renderCaseLayout('嵌套可滚动组件测试 - ScrollView中的拖拽元素', '2276495', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "ScrollView \u5185\u5305\u542B\u53EF\u62D6\u62FD\u5143\u7D20"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.ScrollView, {
-            style: styles.scrollContainer,
-            nestedScrollEnabled: true,
-            children: [Array.from({
-              length: 5
-            }, function (_, i) {
-              return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                style: styles.scrollItem,
-                children: ["ScrollView \u5185\u5BB9 ", i + 1]
-              }, `pre-${i}`);
-            }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").PanGestureHandler, {
-              onGestureEvent: _this.onScrollDragEvent,
-              onHandlerStateChange: function onHandlerStateChange(e) {
-                if (e.nativeEvent.state === GestureState.END) {
-                  _this.addLog('[ScrollDrag] drag ended');
-                  _this.springReset(_this.scrollDragX);
-                  _this.springReset(_this.scrollDragY);
-                }
-              },
-              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Animated.View, {
-                style: [styles.scrollDragBox, {
-                  transform: [{
-                    translateX: _this.scrollDragX
-                  }, {
-                    translateY: _this.scrollDragY
-                  }]
-                }],
-                children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                  style: styles.boxText,
-                  children: "\u62D6\u62FD\u6211 (\u5728ScrollView\u5185)"
-                })
-              })
-            }), Array.from({
-              length: 10
-            }, function (_, i) {
-              return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                style: styles.scrollItem,
-                children: ["ScrollView \u5185\u5BB9 ", i + 6]
-              }, `post-${i}`);
-            })]
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276496 — TouchableCombo
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276496 = function () {
-        return _this.renderCaseLayout('与原生组件结合测试 - Touchable组件', '2276496', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "GestureHandler \u5185\u5305\u542B TouchableOpacity"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.ACTIVE) {
-                _this.addLog('[TouchableCombo] GestureHandler Tap triggered');
-              }
-            },
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
-              style: styles.touchableContainer,
-              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                style: styles.guideText,
-                children: "GestureHandler \u533A\u57DF"
-              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.TouchableOpacity, {
-                style: styles.touchableBtn,
-                onPress: function onPress() {
-                  var count = _this.state.touchableCount + 1;
-                  _this.setState({
-                    touchableCount: count
-                  });
-                  _this.addLog(`[TouchableCombo] TouchableOpacity pressed count:${count}`);
-                },
-                children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-                  style: styles.boxText,
-                  children: "TouchableOpacity \u6309\u94AE"
-                }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                  style: styles.boxSubText,
-                  children: ["\u6B21\u6570: ", _this.state.touchableCount]
-                })]
-              })]
-            })
-          })]
-        }));
-      };
-      // ═══════════════════════════════════════════════════════
-      // CASE 2276497 — TextInputCombo
-      // ═══════════════════════════════════════════════════════
-      _this.renderCase2276497 = function () {
-        return _this.renderCaseLayout('与原生组件结合测试 - TextInput组件', '2276497', /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").GestureHandlerRootView, {
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Text, {
-            style: styles.guideText,
-            children: "GestureHandler \u5185\u5305\u542B TextInput"
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler").TapGestureHandler, {
-            onHandlerStateChange: function onHandlerStateChange(e) {
-              if (e.nativeEvent.state === GestureState.ACTIVE) {
-                var count = _this.state.textInputTapCount + 1;
-                _this.setState({
-                  textInputTapCount: count
-                });
-                _this.addLog(`[TextInputCombo] GestureHandler Tap count:${count}`);
-              }
-            },
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.View, {
-              style: styles.textInputContainer,
-              children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                style: styles.guideText,
-                children: ["GestureHandler \u533A\u57DF (Tap: ", _this.state.textInputTapCount, ")"]
-              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.TextInput, {
-                style: styles.textInput,
-                placeholder: "\u5728\u6B64\u8F93\u5165\u6587\u5B57...",
-                value: _this.state.textInputValue,
-                onChangeText: function onChangeText(text) {
-                  _this.setState({
-                    textInputValue: text
-                  });
-                  _this.addLog(`[TextInputCombo] text changed: ${text}`);
-                },
-                onFocus: function onFocus() {
-                  return _this.addLog('[TextInputCombo] TextInput focused');
-                },
-                onBlur: function onBlur() {
-                  return _this.addLog('[TextInputCombo] TextInput blurred');
-                }
-              }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Text, {
-                style: styles.textInputDisplay,
-                children: ["\u5F53\u524D\u503C: ", _this.state.textInputValue || '(空)']
-              })]
-            })
-          })]
-        }));
-      };
-      _this.state = {
-        currentTestCase: '',
-        logs: [],
-        tapCount: 0,
-        doubleTapCount: 0,
-        distinguishTapCount: 0,
-        distinguishLongPressCount: 0,
-        minDist: 100,
-        minDistActive: false,
-        pinchScale: 1,
-        comboScale479: 1,
-        comboRotation479: 0,
-        rotationAngle: 0,
-        longPressCount: 0,
-        customLongPressCount: 0,
-        customMinDuration: 1500,
-        flingCount: 0,
-        leftFlingCount: 0,
-        nativeButtonCount: 0,
-        combo486Scale: 1,
-        combo486Rotation: 0,
-        combo487Scale: 1,
-        singleTap488Count: 0,
-        doubleTap488Count: 0,
-        tap489Count: 0,
-        longPress489Count: 0,
-        horizontalInfo: 'idle',
-        verticalInfo: 'idle',
-        pan491Info: 'idle',
-        tap491Count: 0,
-        outerTapCount: 0,
-        innerTapCount: 0,
-        outerPanInfo: 'idle',
-        innerPanInfo: 'idle',
-        touchableCount: 0,
-        textInputValue: '',
-        textInputTapCount: 0
-      };
-
-      // ── Initialize Animated Values ──
-      _this.panBasicX = new _reactNative.Animated.Value(0);
-      _this.panBasicY = new _reactNative.Animated.Value(0);
-      _this.panHorizontalX = new _reactNative.Animated.Value(0);
-      _this.panVerticalY = new _reactNative.Animated.Value(0);
-      _this.panMinDistX = new _reactNative.Animated.Value(0);
-      _this.pinchScaleAnim = new _reactNative.Animated.Value(1);
-      _this.rotateAngleAnim = new _reactNative.Animated.Value(0);
-      _this.combo479ScaleAnim = new _reactNative.Animated.Value(1);
-      _this.combo479RotateAnim = new _reactNative.Animated.Value(0);
-      _this.combo486ScaleAnim = new _reactNative.Animated.Value(1);
-      _this.combo486RotateAnim = new _reactNative.Animated.Value(0);
-      _this.combo487PanX = new _reactNative.Animated.Value(0);
-      _this.combo487PanY = new _reactNative.Animated.Value(0);
-      _this.combo487ScaleAnim = new _reactNative.Animated.Value(1);
-      _this.mutex490HX = new _reactNative.Animated.Value(0);
-      _this.mutex490VY = new _reactNative.Animated.Value(0);
-      _this.mutex491PanX = new _reactNative.Animated.Value(0);
-      _this.mutex491PanY = new _reactNative.Animated.Value(0);
-      _this.nestedOuterPanX = new _reactNative.Animated.Value(0);
-      _this.nestedOuterPanY = new _reactNative.Animated.Value(0);
-      _this.nestedInnerPanX = new _reactNative.Animated.Value(0);
-      _this.nestedInnerPanY = new _reactNative.Animated.Value(0);
-      _this.scrollDragX = new _reactNative.Animated.Value(0);
-      _this.scrollDragY = new _reactNative.Animated.Value(0);
-
-      // ── Animated Event Handlers ──
-
-      _this.onPanBasicEvent = _reactNative.Animated.event([{
-        nativeEvent: {
-          translationX: _this.panBasicX,
-          translationY: _this.panBasicY
-        }
-      }], {
-        useNativeDriver: true,
-        listener: function listener(e) {
-          var _e$nativeEvent = e.nativeEvent,
-            translationX = _e$nativeEvent.translationX,
-            translationY = _e$nativeEvent.translationY,
-            state = _e$nativeEvent.state;
-          if (state === GestureState.ACTIVE) {
-            _this.addLog(`[Pan] active tx:${translationX.toFixed(1)} ty:${translationY.toFixed(1)}`);
-          }
-        }
-      });
-      _this.onPanHorizontalEvent = _reactNative.Animated.event([{
-        nativeEvent: {
-          translationX: _this.panHorizontalX
-        }
-      }], {
-        useNativeDriver: true,
-        listener: function listener(e) {
-          var _e$nativeEvent2 = e.nativeEvent,
-            translationX = _e$nativeEvent2.translationX,
-            state = _e$nativeEvent2.state;
-          if (state === GestureState.ACTIVE) {
-            _this.addLog(`[HorizontalPan] tx:${translationX.toFixed(1)}`);
-          }
-        }
-      });
-      _this.onPanVerticalEvent = _reactNative.Animated.event([{
-        nativeEvent: {
-          translationY: _this.panVerticalY
-        }
-      }], {
-        useNativeDriver: true,
-        listener: function listener(e) {
-          var _e$nativeEvent3 = e.nativeEvent,
-            translationY = _e$nativeEvent3.translationY,
-            state = _e$nativeEvent3.state;
-          if (state === GestureState.ACTIVE) {
-            _this.addLog(`[VerticalPan] ty:${translationY.toFixed(1)}`);
-          }
-        }
-      });
-      _this.onPanMinDistEvent = _reactNative.Animated.event([{
-        nativeEvent: {
-          translationX: _this.panMinDistX
-        }
-      }], {
-        useNativeDriver: true,
-        listener: function listener(e) {
-          var _e$nativeEvent4 = e.nativeEvent,
-            translationX = _e$nativeEvent4.translationX,
-            translationY = _e$nativeEvent4.translationY,
-            state = _e$nativeEvent4.state;
-          var active = state === GestureState.ACTIVE;
-          if (active && !_this.state.minDistActive) {
-            _this.addLog(`[PanMinDist] ACTIVE tx:${translationX.toFixed(1)} ty:${translationY.toFixed(1)}`);
-          }
-          _this.setState({
-            minDistActive: active
-          });
-        }
-      });
-      _this.onPinchBasicEvent = _reactNative.Animated.event([{
-        nativeEvent: {
-          scale: _this.pinchScaleAnim
-        }
-      }], {
-        useNativeDriver: true,
-        listener: function listener(e) {
-          var _e$nativeEvent5 = e.nativeEvent,
-            scale = _e$nativeEvent5.scale,
-            state = _e$nativeEvent5.state;
-          if (state === GestureState.ACTIVE) {
-            _this.addLog(`[Pinch] scale:${scale.toFixed(2)}`);
-            _this.setState({
-              pinchScale: scale
-            });
-          }
-        }
-      });
-      _this.onRotateBasicEvent = _reactNative.Animated.event([{
-        nativeEvent: {
-          rotation: _this.rotateAngleAnim
-        }
-      }], {
-        useNativeDriver: true,
-        listener: function listener(e) {
-          var _e$nativeEvent6 = e.nativeEvent,
-            rotation = _e$nativeEvent6.rotation,
-            state = _e$nativeEvent6.state;
-          if (state === GestureState.ACTIVE) {
-            var deg = (rotation * 180 / Math.PI).toFixed(1);
-            _this.addLog(`[Rotation] angle:${deg}deg`);
-            _this.setState({
-              rotationAngle: rotation
-            });
-          }
-        }
-      });
-      _this.onCombo479PinchEvent = _reactNative.Animated.event([{
-        nativeEvent: {
-          scale: _this.combo479ScaleAnim
-        }
-      }], {
-        useNativeDriver: true,
-        listener: function listener(e) {
-          var _e$nativeEvent7 = e.nativeEvent,
-            scale = _e$nativeEvent7.scale,
-            state = _e$nativeEvent7.state;
-          if (state === GestureState.ACTIVE) {
-            _this.addLog(`[Combo479Pinch] scale:${scale.toFixed(2)}`);
-            _this.setState({
-              comboScale479: scale
-            });
-          }
-        }
-      });
-      _this.onCombo479RotateEvent = _reactNative.Animated.event([{
-        nativeEvent: {
-          rotation: _this.combo479RotateAnim
-        }
-      }], {
-        useNativeDriver: true,
-        listener: function listener(e) {
-          var _e$nativeEvent8 = e.nativeEvent,
-            rotation = _e$nativeEvent8.rotation,
-            state = _e$nativeEvent8.state;
-          if (state === GestureState.ACTIVE) {
-            var deg = (rotation * 180 / Math.PI).toFixed(1);
-            _this.addLog(`[Combo479Rotate] angle:${deg}deg`);
-            _this.setState({
-              comboRotation479: rotation
-            });
-          }
-        }
-      });
-      _this.onCombo486PinchEvent = _reactNative.Animated.event([{
-        nativeEvent: {
-          scale: _this.combo486ScaleAnim
-        }
-      }], {
-        useNativeDriver: true,
-        listener: function listener(e) {
-          var _e$nativeEvent9 = e.nativeEvent,
-            scale = _e$nativeEvent9.scale,
-            state = _e$nativeEvent9.state;
-          if (state === GestureState.ACTIVE) {
-            _this.addLog(`[Combo486Pinch] scale:${scale.toFixed(2)}`);
-            _this.setState({
-              combo486Scale: scale
-            });
-          }
-        }
-      });
-      _this.onCombo486RotateEvent = _reactNative.Animated.event([{
-        nativeEvent: {
-          rotation: _this.combo486RotateAnim
-        }
-      }], {
-        useNativeDriver: true,
-        listener: function listener(e) {
-          var _e$nativeEvent0 = e.nativeEvent,
-            rotation = _e$nativeEvent0.rotation,
-            state = _e$nativeEvent0.state;
-          if (state === GestureState.ACTIVE) {
-            var deg = (rotation * 180 / Math.PI).toFixed(1);
-            _this.addLog(`[Combo486Rotate] angle:${deg}deg`);
-            _this.setState({
-              combo486Rotation: rotation
-            });
-          }
-        }
-      });
-      _this.onCombo487PanEvent = _reactNative.Animated.event([{
-        nativeEvent: {
-          translationX: _this.combo487PanX,
-          translationY: _this.combo487PanY
-        }
-      }], {
-        useNativeDriver: true,
-        listener: function listener(e) {
-          var _e$nativeEvent1 = e.nativeEvent,
-            translationX = _e$nativeEvent1.translationX,
-            translationY = _e$nativeEvent1.translationY,
-            state = _e$nativeEvent1.state;
-          if (state === GestureState.ACTIVE) {
-            _this.addLog(`[Combo487Pan] tx:${translationX.toFixed(1)} ty:${translationY.toFixed(1)}`);
-          }
-        }
-      });
-      _this.onCombo487PinchEvent = _reactNative.Animated.event([{
-        nativeEvent: {
-          scale: _this.combo487ScaleAnim
-        }
-      }], {
-        useNativeDriver: true,
-        listener: function listener(e) {
-          var _e$nativeEvent10 = e.nativeEvent,
-            scale = _e$nativeEvent10.scale,
-            state = _e$nativeEvent10.state;
-          if (state === GestureState.ACTIVE) {
-            _this.addLog(`[Combo487Pinch] scale:${scale.toFixed(2)}`);
-            _this.setState({
-              combo487Scale: scale
-            });
-          }
-        }
-      });
-      _this.onMutex490HEvent = _reactNative.Animated.event([{
-        nativeEvent: {
-          translationX: _this.mutex490HX
-        }
-      }], {
-        useNativeDriver: true,
-        listener: function listener(e) {
-          var _e$nativeEvent11 = e.nativeEvent,
-            translationX = _e$nativeEvent11.translationX,
-            state = _e$nativeEvent11.state;
-          if (state === GestureState.ACTIVE) {
-            _this.addLog(`[Mutex490H] tx:${translationX.toFixed(1)}`);
-            _this.setState({
-              horizontalInfo: `tx:${translationX.toFixed(1)}`
-            });
-          }
-        }
-      });
-      _this.onMutex490VEvent = _reactNative.Animated.event([{
-        nativeEvent: {
-          translationY: _this.mutex490VY
-        }
-      }], {
-        useNativeDriver: true,
-        listener: function listener(e) {
-          var _e$nativeEvent12 = e.nativeEvent,
-            translationY = _e$nativeEvent12.translationY,
-            state = _e$nativeEvent12.state;
-          if (state === GestureState.ACTIVE) {
-            _this.addLog(`[Mutex490V] ty:${translationY.toFixed(1)}`);
-            _this.setState({
-              verticalInfo: `ty:${translationY.toFixed(1)}`
-            });
-          }
-        }
-      });
-      _this.onMutex491PanEvent = _reactNative.Animated.event([{
-        nativeEvent: {
-          translationX: _this.mutex491PanX,
-          translationY: _this.mutex491PanY
-        }
-      }], {
-        useNativeDriver: true,
-        listener: function listener(e) {
-          var _e$nativeEvent13 = e.nativeEvent,
-            translationX = _e$nativeEvent13.translationX,
-            translationY = _e$nativeEvent13.translationY,
-            state = _e$nativeEvent13.state;
-          if (state === GestureState.ACTIVE) {
-            _this.addLog(`[Mutex491Pan] tx:${translationX.toFixed(1)} ty:${translationY.toFixed(1)}`);
-            _this.setState({
-              pan491Info: `tx:${translationX.toFixed(1)} ty:${translationY.toFixed(1)}`
-            });
-          }
-        }
-      });
-      _this.onNestedOuterPanEvent = _reactNative.Animated.event([{
-        nativeEvent: {
-          translationX: _this.nestedOuterPanX,
-          translationY: _this.nestedOuterPanY
-        }
-      }], {
-        useNativeDriver: true,
-        listener: function listener(e) {
-          var _e$nativeEvent14 = e.nativeEvent,
-            translationX = _e$nativeEvent14.translationX,
-            translationY = _e$nativeEvent14.translationY,
-            state = _e$nativeEvent14.state;
-          if (state === GestureState.ACTIVE) {
-            _this.addLog(`[OuterPan] tx:${translationX.toFixed(1)} ty:${translationY.toFixed(1)}`);
-            _this.setState({
-              outerPanInfo: `tx:${translationX.toFixed(1)} ty:${translationY.toFixed(1)}`
-            });
-          }
-        }
-      });
-      _this.onNestedInnerPanEvent = _reactNative.Animated.event([{
-        nativeEvent: {
-          translationX: _this.nestedInnerPanX,
-          translationY: _this.nestedInnerPanY
-        }
-      }], {
-        useNativeDriver: true,
-        listener: function listener(e) {
-          var _e$nativeEvent15 = e.nativeEvent,
-            translationX = _e$nativeEvent15.translationX,
-            translationY = _e$nativeEvent15.translationY,
-            state = _e$nativeEvent15.state;
-          if (state === GestureState.ACTIVE) {
-            _this.addLog(`[InnerPan] tx:${translationX.toFixed(1)} ty:${translationY.toFixed(1)}`);
-            _this.setState({
-              innerPanInfo: `tx:${translationX.toFixed(1)} ty:${translationY.toFixed(1)}`
-            });
-          }
-        }
-      });
-      _this.onScrollDragEvent = _reactNative.Animated.event([{
-        nativeEvent: {
-          translationX: _this.scrollDragX,
-          translationY: _this.scrollDragY
-        }
-      }], {
-        useNativeDriver: true,
-        listener: function listener(e) {
-          var _e$nativeEvent16 = e.nativeEvent,
-            translationX = _e$nativeEvent16.translationX,
-            translationY = _e$nativeEvent16.translationY,
-            state = _e$nativeEvent16.state;
-          if (state === GestureState.ACTIVE) {
-            _this.addLog(`[ScrollDrag] tx:${translationX.toFixed(1)} ty:${translationY.toFixed(1)}`);
-          }
-        }
-      });
-      return _this;
-    }
-    (0, _inherits2.default)(RNGestureHandlerDemo, _Component);
-    return (0, _createClass2.default)(RNGestureHandlerDemo, [{
-      key: "render",
-      value:
-      // ═══════════════════════════════════════════════════════
-      // MAIN RENDER
-      // ═══════════════════════════════════════════════════════
-
-      function render() {
-        var currentTestCase = this.state.currentTestCase;
-        switch (currentTestCase) {
-          case 'Case2276467_NoProps':
-            return this.renderCase2276467();
-          case 'Case2276468_InvalidProps':
-            return this.renderCase2276468();
-          case 'Case2276469_SingleChild':
-            return this.renderCase2276469();
-          case 'Case2276470_MultiChild':
-            return this.renderCase2276470();
-          case 'Case2276471_NoChild':
-            return this.renderCase2276471();
-          case 'Case2276472_TapBasic':
-            return this.renderCase2276472();
-          case 'Case2276473_TapDouble':
-            return this.renderCase2276473();
-          case 'Case2276474_TapLongPressDistinguish':
-            return this.renderCase2276474();
-          case 'Case2276475_PanBasic':
-            return this.renderCase2276475();
-          case 'Case2276476_PanDirectionLock':
-            return this.renderCase2276476();
-          case 'Case2276477_PanMinDist':
-            return this.renderCase2276477();
-          case 'Case2276478_PinchBasic':
-            return this.renderCase2276478();
-          case 'Case2276479_PinchWithRotation':
-            return this.renderCase2276479();
-          case 'Case2276480_RotationBasic':
-            return this.renderCase2276480();
-          case 'Case2276481_LongPressBasic':
-            return this.renderCase2276481();
-          case 'Case2276482_LongPressCustomDuration':
-            return this.renderCase2276482();
-          case 'Case2276483_FlingBasic':
-            return this.renderCase2276483();
-          case 'Case2276484_FlingDirectional':
-            return this.renderCase2276484();
-          case 'Case2276485_NativeButton':
-            return this.renderCase2276485();
-          case 'Case2276486_PinchRotationCombo':
-            return this.renderCase2276486();
-          case 'Case2276487_PanPinchCombo':
-            return this.renderCase2276487();
-          case 'Case2276488_TapWaitDoubleTap':
-            return this.renderCase2276488();
-          case 'Case2276489_TapWaitLongPress':
-            return this.renderCase2276489();
-          case 'Case2276490_HorizontalVerticalMutex':
-            return this.renderCase2276490();
-          case 'Case2276491_PanTapMutex':
-            return this.renderCase2276491();
-          case 'Case2276492_NestedTap':
-            return this.renderCase2276492();
-          case 'Case2276493_NestedPan':
-            return this.renderCase2276493();
-          case 'Case2276494_NestedScrollView':
-            return this.renderCase2276494();
-          case 'Case2276495_ScrollViewDrag':
-            return this.renderCase2276495();
-          case 'Case2276496_TouchableCombo':
-            return this.renderCase2276496();
-          case 'Case2276497_TextInputCombo':
-            return this.renderCase2276497();
-          default:
-            return this.renderHomePage();
-        }
-      }
-    }]);
-  }(_react.Component); // ═══════════════════════════════════════════════════════
-  // STYLES
-  // ═══════════════════════════════════════════════════════
-  var styles = _reactNative.StyleSheet.create({
-    flex1: {
-      flex: 1
-    },
-    // ── Home Page ──
-    homeContainer: {
-      padding: 16,
-      paddingBottom: 40
-    },
-    homeTitle: {
-      fontSize: 22,
-      fontWeight: 'bold',
-      color: '#333',
-      textAlign: 'center',
-      marginBottom: 4
-    },
-    homeSubtitle: {
-      fontSize: 14,
-      color: '#888',
-      textAlign: 'center',
-      marginBottom: 16
-    },
-    homeBtn: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      backgroundColor: '#fff',
-      padding: 12,
-      marginBottom: 8,
-      borderRadius: 8,
-      elevation: 2,
-      shadowColor: '#000',
-      shadowOffset: {
-        width: 0,
-        height: 1
-      },
-      shadowOpacity: 0.1,
-      shadowRadius: 2
-    },
-    homeBtnId: {
-      fontSize: 12,
-      color: '#3498db',
-      fontWeight: 'bold',
-      width: 70
-    },
-    homeBtnTitle: {
-      fontSize: 14,
-      color: '#333',
-      flex: 1
-    },
-    // ── Case Layout ──
-    caseContainer: {
-      padding: 16,
-      paddingBottom: 40
-    },
-    backBtn: {
-      paddingVertical: 8,
-      marginBottom: 8,
-      marginTop: 50
-    },
-    backBtnText: {
-      fontSize: 16,
-      color: '#3498db'
-    },
-    caseTitle: {
-      fontSize: 18,
-      fontWeight: 'bold',
-      color: '#333',
-      marginBottom: 4
-    },
-    caseId: {
-      fontSize: 12,
-      color: '#888',
-      marginBottom: 16
-    },
-    operationArea: {
-      marginBottom: 16
-    },
-    controlPanel: {
-      backgroundColor: '#f0f0f0',
-      borderRadius: 8,
-      padding: 12,
-      marginBottom: 16
-    },
-    controlRow: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      flexWrap: 'wrap',
-      marginBottom: 8
-    },
-    controlLabel: {
-      fontSize: 13,
-      color: '#555',
-      marginRight: 8
-    },
-    controlBtn: {
-      backgroundColor: '#3498db',
-      paddingHorizontal: 12,
-      paddingVertical: 6,
-      borderRadius: 4,
-      marginRight: 6,
-      marginBottom: 4
-    },
-    controlBtnText: {
-      color: '#fff',
-      fontSize: 12,
-      fontWeight: 'bold'
-    },
-    // ── Log Area ──
-    logArea: {
-      backgroundColor: '#1e1e1e',
-      borderRadius: 8,
-      padding: 12,
-      minHeight: 100
-    },
-    logTitle: {
-      fontSize: 14,
-      fontWeight: 'bold',
-      color: '#4ec9b0',
-      marginBottom: 8
-    },
-    logItem: {
-      fontSize: 11,
-      color: '#d4d4d4',
-      fontFamily: 'monospace',
-      lineHeight: 18
-    },
-    logEmpty: {
-      fontSize: 12,
-      color: '#666',
-      fontStyle: 'italic'
-    },
-    // ── Guide Text ──
-    guideText: {
-      fontSize: 14,
-      color: '#555',
-      marginBottom: 8
-    },
-    // ── Boxes ──
-    tapBox: {
-      backgroundColor: '#27ae60',
-      paddingVertical: 20,
-      paddingHorizontal: 16,
-      borderRadius: 8,
-      alignItems: 'center',
-      marginBottom: 8
-    },
-    longPressBox: {
-      backgroundColor: '#8e44ad',
-      paddingVertical: 20,
-      paddingHorizontal: 16,
-      borderRadius: 8,
-      alignItems: 'center',
-      marginBottom: 8
-    },
-    combinedBox: {
-      backgroundColor: '#e67e22',
-      paddingVertical: 24,
-      paddingHorizontal: 16,
-      borderRadius: 8,
-      alignItems: 'center',
-      marginBottom: 8
-    },
-    dragBox: {
-      width: 120,
-      height: 120,
-      backgroundColor: '#3498db',
-      borderRadius: 12,
-      justifyContent: 'center',
-      alignItems: 'center',
-      alignSelf: 'center',
-      elevation: 4,
-      shadowColor: '#000',
-      shadowOffset: {
-        width: 0,
-        height: 2
-      },
-      shadowOpacity: 0.25,
-      shadowRadius: 4
-    },
-    dirRow: {
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-      marginBottom: 8
-    },
-    dirBox: {
-      width: 100,
-      height: 100,
-      borderRadius: 8,
-      justifyContent: 'center',
-      alignItems: 'center',
-      elevation: 3,
-      shadowColor: '#000',
-      shadowOffset: {
-        width: 0,
-        height: 2
-      },
-      shadowOpacity: 0.2,
-      shadowRadius: 2
-    },
-    minDistBox: {
-      width: 160,
-      height: 80,
-      borderRadius: 8,
-      justifyContent: 'center',
-      alignItems: 'center',
-      alignSelf: 'center',
-      elevation: 3,
-      shadowColor: '#000',
-      shadowOffset: {
-        width: 0,
-        height: 2
-      },
-      shadowOpacity: 0.2,
-      shadowRadius: 2
-    },
-    gestureArea: {
-      alignItems: 'center',
-      minHeight: 200
-    },
-    pinchBox: {
-      width: 120,
-      height: 120,
-      backgroundColor: '#2980b9',
-      borderRadius: 12,
-      justifyContent: 'center',
-      alignItems: 'center',
-      elevation: 3,
-      shadowColor: '#000',
-      shadowOffset: {
-        width: 0,
-        height: 2
-      },
-      shadowOpacity: 0.2,
-      shadowRadius: 2
-    },
-    rotateBox: {
-      width: 120,
-      height: 120,
-      backgroundColor: '#16a085',
-      borderRadius: 12,
-      justifyContent: 'center',
-      alignItems: 'center',
-      elevation: 3,
-      shadowColor: '#000',
-      shadowOffset: {
-        width: 0,
-        height: 2
-      },
-      shadowOpacity: 0.2,
-      shadowRadius: 2
-    },
-    comboBox: {
-      width: 140,
-      height: 140,
-      backgroundColor: '#8e44ad',
-      borderRadius: 16,
-      justifyContent: 'center',
-      alignItems: 'center',
-      elevation: 4,
-      shadowColor: '#000',
-      shadowOffset: {
-        width: 0,
-        height: 2
-      },
-      shadowOpacity: 0.3,
-      shadowRadius: 4
-    },
-    flingBox: {
-      backgroundColor: '#9b59b6',
-      paddingVertical: 30,
-      paddingHorizontal: 16,
-      borderRadius: 8,
-      alignItems: 'center',
-      marginBottom: 8
-    },
-    nativeBtn: {
-      backgroundColor: '#2ecc71',
-      paddingVertical: 20,
-      paddingHorizontal: 18,
-      borderRadius: 8,
-      alignItems: 'center',
-      elevation: 3,
-      shadowColor: '#000',
-      shadowOffset: {
-        width: 0,
-        height: 2
-      },
-      shadowOpacity: 0.3,
-      shadowRadius: 2
-    },
-    mutexContainer: {
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-      marginBottom: 8
-    },
-    mutexBox: {
-      width: 200,
-      height: 200,
-      backgroundColor: '#9b59b6',
-      borderRadius: 16,
-      justifyContent: 'center',
-      alignItems: 'center',
-      alignSelf: 'center',
-      elevation: 4,
-      shadowColor: '#000',
-      shadowOffset: {
-        width: 0,
-        height: 2
-      },
-      shadowOpacity: 0.25,
-      shadowRadius: 4
-    },
-    innerTapArea: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center'
-    },
-    outerBox: {
-      backgroundColor: '#2c3e50',
-      padding: 20,
-      borderRadius: 12,
-      alignItems: 'center',
-      marginBottom: 8
-    },
-    innerBox: {
-      backgroundColor: '#ecf0f1',
-      padding: 16,
-      borderRadius: 8,
-      alignItems: 'center',
-      marginTop: 12
-    },
-    outerDragBox: {
-      width: 200,
-      height: 200,
-      backgroundColor: '#2c3e50',
-      borderRadius: 16,
-      justifyContent: 'center',
-      alignItems: 'center',
-      alignSelf: 'center',
-      elevation: 4,
-      shadowColor: '#000',
-      shadowOffset: {
-        width: 0,
-        height: 2
-      },
-      shadowOpacity: 0.3,
-      shadowRadius: 4
-    },
-    innerDragBox: {
-      width: 80,
-      height: 80,
-      backgroundColor: '#ecf0f1',
-      borderRadius: 8,
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginTop: 8
-    },
-    scrollContainer: {
-      height: 200,
-      borderWidth: 1,
-      borderColor: '#ddd',
-      borderRadius: 8,
-      overflow: 'hidden'
-    },
-    nestedScrollOuter: {
-      height: 300,
-      borderWidth: 1,
-      borderColor: '#ddd',
-      borderRadius: 8,
-      overflow: 'hidden'
-    },
-    horizontalScroll: {
-      height: 60,
-      marginVertical: 4
-    },
-    horizontalScrollItem: {
-      width: 80,
-      height: 50,
-      backgroundColor: '#3498db',
-      borderRadius: 8,
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginHorizontal: 4
-    },
-    horizontalScrollText: {
-      color: '#fff',
-      fontSize: 13,
-      fontWeight: 'bold'
-    },
-    scrollSectionTitle: {
-      fontSize: 15,
-      fontWeight: 'bold',
-      color: '#333',
-      paddingHorizontal: 12,
-      paddingTop: 8
-    },
-    innerScroll: {
-      flex: 1
-    },
-    scrollItem: {
-      padding: 12,
-      borderBottomWidth: 1,
-      borderBottomColor: '#eee',
-      fontSize: 14,
-      color: '#333'
-    },
-    scrollDragBox: {
-      width: 160,
-      height: 60,
-      backgroundColor: '#e74c3c',
-      borderRadius: 8,
-      justifyContent: 'center',
-      alignItems: 'center',
-      alignSelf: 'center',
-      marginVertical: 8,
-      elevation: 3,
-      shadowColor: '#000',
-      shadowOffset: {
-        width: 0,
-        height: 2
-      },
-      shadowOpacity: 0.2,
-      shadowRadius: 2
-    },
-    touchableContainer: {
-      backgroundColor: '#f5f5f5',
-      padding: 16,
-      borderRadius: 12,
-      alignItems: 'center',
-      borderWidth: 1,
-      borderColor: '#ddd'
-    },
-    touchableBtn: {
-      backgroundColor: '#e67e22',
-      paddingVertical: 14,
-      paddingHorizontal: 24,
-      borderRadius: 8,
-      alignItems: 'center',
-      marginTop: 8
-    },
-    textInputContainer: {
-      backgroundColor: '#f5f5f5',
-      padding: 16,
-      borderRadius: 12,
-      borderWidth: 1,
-      borderColor: '#ddd'
-    },
-    textInput: {
-      backgroundColor: '#fff',
-      borderWidth: 1,
-      borderColor: '#ccc',
-      borderRadius: 8,
-      padding: 12,
-      fontSize: 16,
-      marginVertical: 8
-    },
-    textInputDisplay: {
-      fontSize: 13,
-      color: '#666',
-      marginTop: 4
-    },
-    // ── Text Colors ──
-    boxText: {
-      color: '#fff',
-      fontWeight: 'bold',
-      fontSize: 14,
-      textAlign: 'center'
-    },
-    boxSubText: {
-      color: 'rgba(255,255,255,0.8)',
-      fontSize: 11,
-      marginTop: 4,
-      textAlign: 'center'
-    },
-    boxTextDark: {
-      color: '#333',
-      fontWeight: 'bold',
-      fontSize: 14,
-      textAlign: 'center'
-    },
-    boxSubTextDark: {
-      color: '#666',
-      fontSize: 11,
-      marginTop: 4,
-      textAlign: 'center'
-    }
-  });
-  var _default = exports.default = RNGestureHandlerDemo;
-},630,[8,46,9,10,14,16,17,86,1,631,92],"tests/react-native-gesture/meituan/RNGestureHandlerDemo.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(exports, "BaseButton", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[0], "react-native-gesture-handler/src/components/GestureButtons").BaseButton;
-    }
-  });
-  Object.defineProperty(exports, "BorderlessButton", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[0], "react-native-gesture-handler/src/components/GestureButtons").BorderlessButton;
-    }
-  });
-  Object.defineProperty(exports, "Directions", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[1], "react-native-gesture-handler/src/Directions").Directions;
-    }
-  });
-  Object.defineProperty(exports, "DrawerLayout", {
-    enumerable: true,
-    get: function get() {
-      return _DrawerLayout.default;
-    }
-  });
-  Object.defineProperty(exports, "DrawerLayoutAndroid", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[2], "react-native-gesture-handler/src/components/GestureComponents").DrawerLayoutAndroid;
-    }
-  });
-  Object.defineProperty(exports, "FlatList", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[2], "react-native-gesture-handler/src/components/GestureComponents").FlatList;
-    }
-  });
-  Object.defineProperty(exports, "FlingGestureHandler", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[3], "react-native-gesture-handler/src/handlers/FlingGestureHandler").FlingGestureHandler;
-    }
-  });
-  Object.defineProperty(exports, "ForceTouchGestureHandler", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[4], "react-native-gesture-handler/src/handlers/ForceTouchGestureHandler").ForceTouchGestureHandler;
-    }
-  });
-  Object.defineProperty(exports, "Gesture", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[5], "react-native-gesture-handler/src/handlers/gestures/gestureObjects").GestureObjects;
-    }
-  });
-  Object.defineProperty(exports, "GestureDetector", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[6], "react-native-gesture-handler/src/handlers/gestures/GestureDetector").GestureDetector;
-    }
-  });
-  Object.defineProperty(exports, "GestureHandlerRootView", {
-    enumerable: true,
-    get: function get() {
-      return _GestureHandlerRootView.default;
-    }
-  });
-  Object.defineProperty(exports, "HoverEffect", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[7], "react-native-gesture-handler/src/handlers/gestures/hoverGesture").HoverEffect;
-    }
-  });
-  Object.defineProperty(exports, "LongPressGestureHandler", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[8], "react-native-gesture-handler/src/handlers/LongPressGestureHandler").LongPressGestureHandler;
-    }
-  });
-  Object.defineProperty(exports, "MouseButton", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[9], "react-native-gesture-handler/src/handlers/gestureHandlerCommon").MouseButton;
-    }
-  });
-  Object.defineProperty(exports, "NativeViewGestureHandler", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[10], "react-native-gesture-handler/src/handlers/NativeViewGestureHandler").NativeViewGestureHandler;
-    }
-  });
-  Object.defineProperty(exports, "PanGestureHandler", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[11], "react-native-gesture-handler/src/handlers/PanGestureHandler").PanGestureHandler;
-    }
-  });
-  Object.defineProperty(exports, "PinchGestureHandler", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[12], "react-native-gesture-handler/src/handlers/PinchGestureHandler").PinchGestureHandler;
-    }
-  });
-  Object.defineProperty(exports, "PointerType", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[13], "react-native-gesture-handler/src/PointerType").PointerType;
-    }
-  });
-  Object.defineProperty(exports, "Pressable", {
-    enumerable: true,
-    get: function get() {
-      return _Pressable.default;
-    }
-  });
-  Object.defineProperty(exports, "PureNativeButton", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[0], "react-native-gesture-handler/src/components/GestureButtons").PureNativeButton;
-    }
-  });
-  Object.defineProperty(exports, "RawButton", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[0], "react-native-gesture-handler/src/components/GestureButtons").RawButton;
-    }
-  });
-  Object.defineProperty(exports, "RectButton", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[0], "react-native-gesture-handler/src/components/GestureButtons").RectButton;
-    }
-  });
-  Object.defineProperty(exports, "RefreshControl", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[2], "react-native-gesture-handler/src/components/GestureComponents").RefreshControl;
-    }
-  });
-  Object.defineProperty(exports, "RotationGestureHandler", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[14], "react-native-gesture-handler/src/handlers/RotationGestureHandler").RotationGestureHandler;
-    }
-  });
-  Object.defineProperty(exports, "ScrollView", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[2], "react-native-gesture-handler/src/components/GestureComponents").ScrollView;
-    }
-  });
-  Object.defineProperty(exports, "State", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[15], "react-native-gesture-handler/src/State").State;
-    }
-  });
-  Object.defineProperty(exports, "Swipeable", {
-    enumerable: true,
-    get: function get() {
-      return _Swipeable.default;
-    }
-  });
-  Object.defineProperty(exports, "Switch", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[2], "react-native-gesture-handler/src/components/GestureComponents").Switch;
-    }
-  });
-  Object.defineProperty(exports, "TapGestureHandler", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[16], "react-native-gesture-handler/src/handlers/TapGestureHandler").TapGestureHandler;
-    }
-  });
-  Object.defineProperty(exports, "Text", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[17], "react-native-gesture-handler/src/components/Text").Text;
-    }
-  });
-  Object.defineProperty(exports, "TextInput", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[2], "react-native-gesture-handler/src/components/GestureComponents").TextInput;
-    }
-  });
-  Object.defineProperty(exports, "TouchableHighlight", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/components/touchables").TouchableHighlight;
-    }
-  });
-  Object.defineProperty(exports, "TouchableNativeFeedback", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/components/touchables").TouchableNativeFeedback;
-    }
-  });
-  Object.defineProperty(exports, "TouchableOpacity", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/components/touchables").TouchableOpacity;
-    }
-  });
-  Object.defineProperty(exports, "TouchableWithoutFeedback", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/components/touchables").TouchableWithoutFeedback;
-    }
-  });
-  Object.defineProperty(exports, "createNativeWrapper", {
-    enumerable: true,
-    get: function get() {
-      return _createNativeWrapper.default;
-    }
-  });
-  Object.defineProperty(exports, "enableExperimentalWebImplementation", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[19], "react-native-gesture-handler/src/EnableNewWebImplementation").enableExperimentalWebImplementation;
-    }
-  });
-  Object.defineProperty(exports, "enableLegacyWebImplementation", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[19], "react-native-gesture-handler/src/EnableNewWebImplementation").enableLegacyWebImplementation;
-    }
-  });
-  Object.defineProperty(exports, "gestureHandlerRootHOC", {
-    enumerable: true,
-    get: function get() {
-      return _gestureHandlerRootHOC.default;
-    }
-  });
-  var _gestureHandlerRootHOC = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[21], "react-native-gesture-handler/src/components/gestureHandlerRootHOC"));
-  var _GestureHandlerRootView = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[22], "./components/GestureHandlerRootView"));
-  var _createNativeWrapper = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[23], "react-native-gesture-handler/src/handlers/createNativeWrapper"));
-  var _Swipeable = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[24], "react-native-gesture-handler/src/components/Swipeable"));
-  var _Pressable = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[25], "react-native-gesture-handler/src/components/Pressable"));
-  var _DrawerLayout = _$$_REQUIRE(_dependencyMap[20], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[26], "react-native-gesture-handler/src/components/DrawerLayout"));
-  /*
-   * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
-   * Use of this source code is governed by a MIT license that can be
-   * found in the LICENSE file.
-   */
-
-  global.isFormsStackingContext = function () {
-    return true;
-  }; // TODO: add using JSI
-
-  // RNGH: patch
-
-  (0, _$$_REQUIRE(_dependencyMap[27], "react-native-gesture-handler/src/init").initialize)();
-},631,[632,653,654,655,656,658,671,669,675,650,634,674,878,879,880,642,673,881,882,867,8,888,893,633,896,897,900,895],"node_modules/@react-native-ohos/react-native-gesture-handler/src/index.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.BorderlessButton = exports.BaseButton = void 0;
-  Object.defineProperty(exports, "PureNativeButton", {
-    enumerable: true,
-    get: function get() {
-      return _GestureHandlerButton.default;
-    }
-  });
-  exports.RectButton = exports.RawButton = void 0;
-  var _objectWithoutProperties2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/objectWithoutProperties"));
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[8], "react-native");
-  var _createNativeWrapper = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[9], "../handlers/createNativeWrapper"));
-  var _GestureHandlerButton = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[10], "./GestureHandlerButton"));
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/GestureButtons.tsx",
-    _this2 = this;
-  var _excluded = ["rippleColor", "style"],
-    _excluded2 = ["children", "style"],
-    _excluded3 = ["children", "style", "innerRef"];
-  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  var RawButton = exports.RawButton = (0, _createNativeWrapper.default)(_GestureHandlerButton.default, {
-    shouldCancelWhenOutside: false,
-    shouldActivateOnStart: false
-  });
-  var IS_FABRIC = null;
-  var InnerBaseButton = /*#__PURE__*/function (_React$Component) {
-    function InnerBaseButton(props) {
-      var _this;
-      (0, _classCallCheck2.default)(this, InnerBaseButton);
-      _this = _callSuper(this, InnerBaseButton, [props]);
-      _this.handleEvent = function (_ref) {
-        var nativeEvent = _ref.nativeEvent;
-        var state = nativeEvent.state,
-          oldState = nativeEvent.oldState,
-          pointerInside = nativeEvent.pointerInside;
-        var active = pointerInside && state === _$$_REQUIRE(_dependencyMap[11], "../State").State.ACTIVE;
-        if (active !== _this.lastActive && _this.props.onActiveStateChange) {
-          _this.props.onActiveStateChange(active);
-        }
-        if (!_this.longPressDetected && oldState === _$$_REQUIRE(_dependencyMap[11], "../State").State.ACTIVE && state !== _$$_REQUIRE(_dependencyMap[11], "../State").State.CANCELLED && _this.lastActive && _this.props.onPress) {
-          _this.props.onPress(pointerInside);
-        }
-        if (!_this.lastActive &&
-        // NativeViewGestureHandler sends different events based on platform
-        state === (_reactNative.Platform.OS !== 'android' ? _$$_REQUIRE(_dependencyMap[11], "../State").State.ACTIVE : _$$_REQUIRE(_dependencyMap[11], "../State").State.BEGAN) && pointerInside) {
-          _this.longPressDetected = false;
-          if (_this.props.onLongPress) {
-            _this.longPressTimeout = setTimeout(_this.onLongPress, _this.props.delayLongPress);
-          }
-        } else if (
-        // Cancel longpress timeout if it's set and the finger moved out of the view
-        state === _$$_REQUIRE(_dependencyMap[11], "../State").State.ACTIVE && !pointerInside && _this.longPressTimeout !== undefined) {
-          clearTimeout(_this.longPressTimeout);
-          _this.longPressTimeout = undefined;
-        } else if (
-        // Cancel longpress timeout if it's set and the gesture has finished
-        _this.longPressTimeout !== undefined && (state === _$$_REQUIRE(_dependencyMap[11], "../State").State.END || state === _$$_REQUIRE(_dependencyMap[11], "../State").State.CANCELLED || state === _$$_REQUIRE(_dependencyMap[11], "../State").State.FAILED)) {
-          clearTimeout(_this.longPressTimeout);
-          _this.longPressTimeout = undefined;
-        }
-        _this.lastActive = active;
-      };
-      _this.onLongPress = function () {
-        _this.longPressDetected = true;
-        _this.props.onLongPress == null || _this.props.onLongPress();
-      };
-      // Normally, the parent would execute it's handler first, then forward the
-      // event to listeners. However, here our handler is virtually only forwarding
-      // events to listeners, so we reverse the order to keep the proper order of
-      // the callbacks (from "raw" ones to "processed").
-      _this.onHandlerStateChange = function (e) {
-        _this.props.onHandlerStateChange == null || _this.props.onHandlerStateChange(e);
-        _this.handleEvent(e);
-      };
-      _this.onGestureEvent = function (e) {
-        _this.props.onGestureEvent == null || _this.props.onGestureEvent(e);
-        _this.handleEvent(e); // TODO: maybe it is not correct
-      };
-      _this.lastActive = false;
-      _this.longPressDetected = false;
-      return _this;
-    }
-    (0, _inherits2.default)(InnerBaseButton, _React$Component);
-    return (0, _createClass2.default)(InnerBaseButton, [{
-      key: "render",
-      value: function render() {
-        var _this$props = this.props,
-          unprocessedRippleColor = _this$props.rippleColor,
-          style = _this$props.style,
-          rest = (0, _objectWithoutProperties2.default)(_this$props, _excluded);
-        if (IS_FABRIC === null) {
-          IS_FABRIC = (0, _$$_REQUIRE(_dependencyMap[12], "../utils").isFabric)();
-        }
-        var rippleColor = IS_FABRIC ? unprocessedRippleColor : (0, _reactNative.processColor)(unprocessedRippleColor != null ? unprocessedRippleColor : undefined);
-        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsx)(RawButton, Object.assign({
-          ref: this.props.innerRef,
-          rippleColor: rippleColor,
-          style: [style, _reactNative.Platform.OS === 'ios' && {
-            cursor: undefined
-          }]
-        }, rest, {
-          onGestureEvent: this.onGestureEvent,
-          onHandlerStateChange: this.onHandlerStateChange
-        }));
-      }
-    }]);
-  }(React.Component);
-  InnerBaseButton.defaultProps = {
-    delayLongPress: 600
-  };
-  var AnimatedInnerBaseButton = _reactNative.Animated.createAnimatedComponent(InnerBaseButton);
-  var BaseButton = exports.BaseButton = React.forwardRef(function (props, ref) {
-    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsx)(InnerBaseButton, Object.assign({
-      innerRef: ref
-    }, props));
-  });
-  var AnimatedBaseButton = React.forwardRef(function (props, ref) {
-    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsx)(AnimatedInnerBaseButton, Object.assign({
-      innerRef: ref
-    }, props));
-  });
-  var btnStyles = _reactNative.StyleSheet.create({
-    underlay: {
-      position: 'absolute',
-      left: 0,
-      right: 0,
-      bottom: 0,
-      top: 0
-    }
-  });
-  var InnerRectButton = /*#__PURE__*/function (_React$Component2) {
-    function InnerRectButton(props) {
-      var _this3;
-      (0, _classCallCheck2.default)(this, InnerRectButton);
-      _this3 = _callSuper(this, InnerRectButton, [props]);
-      _this3.onActiveStateChange = function (active) {
-        if (_reactNative.Platform.OS !== 'android') {
-          _this3.opacity.setValue(active ? _this3.props.activeOpacity : 0);
-        }
-        _this3.props.onActiveStateChange == null || _this3.props.onActiveStateChange(active);
-      };
-      _this3.opacity = new _reactNative.Animated.Value(0);
-      return _this3;
-    }
-    (0, _inherits2.default)(InnerRectButton, _React$Component2);
-    return (0, _createClass2.default)(InnerRectButton, [{
-      key: "render",
-      value: function render() {
-        var _this$props2 = this.props,
-          children = _this$props2.children,
-          style = _this$props2.style,
-          rest = (0, _objectWithoutProperties2.default)(_this$props2, _excluded2);
-        var resolvedStyle = _reactNative.StyleSheet.flatten(style != null ? style : {});
-        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsxs)(BaseButton, Object.assign({}, rest, {
-          ref: this.props.innerRef,
-          style: resolvedStyle,
-          onActiveStateChange: this.onActiveStateChange,
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsx)(_reactNative.Animated.View, {
-            style: [btnStyles.underlay, {
-              opacity: this.opacity,
-              backgroundColor: this.props.underlayColor,
-              borderRadius: resolvedStyle.borderRadius,
-              borderTopLeftRadius: resolvedStyle.borderTopLeftRadius,
-              borderTopRightRadius: resolvedStyle.borderTopRightRadius,
-              borderBottomLeftRadius: resolvedStyle.borderBottomLeftRadius,
-              borderBottomRightRadius: resolvedStyle.borderBottomRightRadius
-            }]
-          }), children]
-        }));
-      }
-    }]);
-  }(React.Component);
-  InnerRectButton.defaultProps = {
-    activeOpacity: 0.105,
-    underlayColor: 'black'
-  };
-  var RectButton = exports.RectButton = React.forwardRef(function (props, ref) {
-    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsx)(InnerRectButton, Object.assign({
-      innerRef: ref
-    }, props));
-  });
-  var InnerBorderlessButton = /*#__PURE__*/function (_React$Component3) {
-    function InnerBorderlessButton(props) {
-      var _this4;
-      (0, _classCallCheck2.default)(this, InnerBorderlessButton);
-      _this4 = _callSuper(this, InnerBorderlessButton, [props]);
-      _this4.onActiveStateChange = function (active) {
-        if (_reactNative.Platform.OS !== 'android') {
-          _this4.opacity.setValue(active ? _this4.props.activeOpacity : 1);
-        }
-        _this4.props.onActiveStateChange == null || _this4.props.onActiveStateChange(active);
-      };
-      _this4.opacity = new _reactNative.Animated.Value(1);
-      return _this4;
-    }
-    (0, _inherits2.default)(InnerBorderlessButton, _React$Component3);
-    return (0, _createClass2.default)(InnerBorderlessButton, [{
-      key: "render",
-      value: function render() {
-        var _this$props3 = this.props,
-          children = _this$props3.children,
-          style = _this$props3.style,
-          innerRef = _this$props3.innerRef,
-          rest = (0, _objectWithoutProperties2.default)(_this$props3, _excluded3);
-        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsx)(AnimatedBaseButton, Object.assign({}, rest, {
-          innerRef: innerRef,
-          onActiveStateChange: this.onActiveStateChange,
-          style: [style, _reactNative.Platform.OS === 'ios' && {
-            opacity: this.opacity
-          }],
-          children: children
-        }));
-      }
-    }]);
-  }(React.Component);
-  InnerBorderlessButton.defaultProps = {
-    activeOpacity: 0.3,
-    borderless: true
-  };
-  var BorderlessButton = exports.BorderlessButton = React.forwardRef(function (props, ref) {
-    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[13], "react/jsx-runtime").jsx)(InnerBorderlessButton, Object.assign({
-      innerRef: ref
-    }, props));
-  });
-},632,[8,153,9,10,14,16,17,86,1,633,651,642,641,92],"node_modules/react-native-gesture-handler/src/components/GestureButtons.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = createNativeWrapper;
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[2], "react"));
-  var React = _react;
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/createNativeWrapper.tsx";
-  /*
-   * This array should consist of:
-   *   - All keys in propTypes from NativeGestureHandler
-   *     (and all keys in GestureHandlerPropTypes)
-   *   - 'onGestureHandlerEvent'
-   *   - 'onGestureHandlerStateChange'
-   */
-  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  var NATIVE_WRAPPER_PROPS_FILTER = [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[3], "./NativeViewGestureHandler").nativeViewProps), ['onGestureHandlerEvent', 'onGestureHandlerStateChange']);
-  function createNativeWrapper(Component) {
-    var _this = this,
-      _Component$render;
-    var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-    var ComponentWrapper = React.forwardRef(function (props, ref) {
-      // Filter out props that should be passed to gesture handler wrapper
-      var _Object$keys$reduce = Object.keys(props).reduce(function (res, key) {
-          // TS being overly protective with it's types, see https://github.com/microsoft/TypeScript/issues/26255#issuecomment-458013731 for more info
-          var allowedKeys = NATIVE_WRAPPER_PROPS_FILTER;
-          if (allowedKeys.includes(key)) {
-            // @ts-ignore FIXME(TS)
-            res.gestureHandlerProps[key] = props[key];
-          } else {
-            // @ts-ignore FIXME(TS)
-            res.childProps[key] = props[key];
-          }
-          return res;
-        }, {
-          gestureHandlerProps: Object.assign({}, config),
-          // Watch out not to modify config
-          childProps: {
-            enabled: props.enabled,
-            hitSlop: props.hitSlop,
-            testID: props.testID
-          }
-        }),
-        gestureHandlerProps = _Object$keys$reduce.gestureHandlerProps,
-        childProps = _Object$keys$reduce.childProps;
-      var _ref = (0, _react.useRef)(null);
-      var _gestureHandlerRef = (0, _react.useRef)(null);
-      (0, _react.useImperativeHandle)(ref,
-      // @ts-ignore TODO(TS) decide how nulls work in this context
-      function () {
-        var node = _gestureHandlerRef.current;
-        // Add handlerTag for relations config
-        if (_ref.current && node) {
-          // @ts-ignore FIXME(TS) think about createHandler return type
-          _ref.current.handlerTag = node.handlerTag;
-          return _ref.current;
-        }
-        return null;
-      }, [_ref, _gestureHandlerRef]);
-      return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[4], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[3], "./NativeViewGestureHandler").NativeViewGestureHandler, Object.assign({}, gestureHandlerProps, {
-        // @ts-ignore TODO(TS)
-        ref: _gestureHandlerRef,
-        children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[4], "react/jsx-runtime").jsx)(Component, Object.assign({}, childProps, {
-          ref: _ref
-        }))
-      }));
-    });
-
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    ComponentWrapper.displayName = (Component == null ? void 0 : Component.displayName) || (// @ts-ignore if render doesn't exist it will return undefined and go further
-    Component == null || (_Component$render = Component.render) == null ? void 0 : _Component$render.name) || typeof Component === 'string' && Component || 'ComponentWrapper';
-    return ComponentWrapper;
-  }
-},633,[8,46,86,634,92],"node_modules/react-native-gesture-handler/src/handlers/createNativeWrapper.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.nativeViewProps = exports.nativeViewHandlerName = exports.nativeViewGestureHandlerProps = exports.NativeViewGestureHandler = void 0;
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
-  var _createHandler = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./createHandler"));
-  var nativeViewGestureHandlerProps = exports.nativeViewGestureHandlerProps = ['shouldActivateOnStart', 'disallowInterruption'];
-
-  /**
-   * @deprecated NativeViewGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Native()` instead.
-   */
-
-  var nativeViewProps = exports.nativeViewProps = [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[3], "./gestureHandlerCommon").baseGestureHandlerProps), nativeViewGestureHandlerProps);
-  var nativeViewHandlerName = exports.nativeViewHandlerName = 'NativeViewGestureHandler';
-
-  /**
-   * @deprecated NativeViewGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Native()` instead.
-   */
-
-  /**
-   * @deprecated NativeViewGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Native()` instead.
-   */
-  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; see description on the top of gestureHandlerCommon.ts file
-  var NativeViewGestureHandler = exports.NativeViewGestureHandler = (0, _createHandler.default)({
-    name: nativeViewHandlerName,
-    allowedProps: nativeViewProps,
-    config: {}
-  });
-},634,[8,46,635,650],"node_modules/react-native-gesture-handler/src/handlers/NativeViewGestureHandler.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = createHandler;
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-  var _defineProperty2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/defineProperty"));
-  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "react"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[9], "react-native");
-  var _RNGestureHandlerModule = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[10], "../RNGestureHandlerModule"));
-  var _findNodeHandle = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[11], "react-native-gesture-handler/src/findNodeHandle"));
-  var _GestureHandlerRootViewContext = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[12], "react-native-gesture-handler/src/GestureHandlerRootViewContext"));
-  var _UIManagerAny$getView,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/@react-native-ohos/react-native-gesture-handler/src/handlers/createHandler.tsx";
-  /*
-   * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
-   * Use of this source code is governed by a MIT license that can be
-   * found in the LICENSE file.
-   */
-  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  var UIManagerAny = _reactNative.UIManager;
-  _$$_REQUIRE(_dependencyMap[13], "react-native-gesture-handler/src/handlers/customDirectEventTypes").customDirectEventTypes.topGestureHandlerEvent = {
-    registrationName: 'onGestureHandlerEvent'
-  };
-  _$$_REQUIRE(_dependencyMap[13], "react-native-gesture-handler/src/handlers/customDirectEventTypes").customDirectEventTypes.topGestureHandlerStateChange = {
-    registrationName: 'onGestureHandlerStateChange'
-  };
-  var customGHEventsConfigFabricAndroid = {
-    topOnGestureHandlerEvent: {
-      registrationName: 'onGestureHandlerEvent'
-    },
-    topOnGestureHandlerStateChange: {
-      registrationName: 'onGestureHandlerStateChange'
-    }
-  };
-  var customGHEventsConfig = Object.assign({
-    onGestureHandlerEvent: {
-      registrationName: 'onGestureHandlerEvent'
-    },
-    onGestureHandlerStateChange: {
-      registrationName: 'onGestureHandlerStateChange'
-    }
-  }, (0, _$$_REQUIRE(_dependencyMap[14], "react-native-gesture-handler/src/utils").isFabric)() && _reactNative.Platform.OS === 'harmony' && customGHEventsConfigFabricAndroid);
-
-  // Add gesture specific events to genericDirectEventTypes object exported from UIManager
-  // native module.
-  // Once new event types are registered with react it is possible to dispatch these
-  // events to all kind of native views.
-  UIManagerAny.genericDirectEventTypes = Object.assign({}, UIManagerAny.genericDirectEventTypes, customGHEventsConfig);
-  // In newer versions of RN the `genericDirectEventTypes` is located in the object
-  // returned by UIManager.getViewManagerConfig('getConstants') or in older RN UIManager.getConstants(), we need to add it there as well to make
-  // it compatible with RN 61+
-  var UIManagerConstants = (_UIManagerAny$getView = UIManagerAny.getViewManagerConfig == null ? void 0 : UIManagerAny.getViewManagerConfig('getConstants')) != null ? _UIManagerAny$getView : UIManagerAny.getConstants == null ? void 0 : UIManagerAny.getConstants();
-  if (UIManagerConstants) {
-    UIManagerConstants.genericDirectEventTypes = Object.assign({}, UIManagerConstants.genericDirectEventTypes, customGHEventsConfig);
-  }
-
-  // Wrap JS responder calls and notify gesture handler manager
-  var _UIManagerAny$setJSRe = UIManagerAny.setJSResponder,
-    oldSetJSResponder = _UIManagerAny$setJSRe === void 0 ? function () {
-      // no-op
-    } : _UIManagerAny$setJSRe,
-    _UIManagerAny$clearJS = UIManagerAny.clearJSResponder,
-    oldClearJSResponder = _UIManagerAny$clearJS === void 0 ? function () {
-      // no-op
-    } : _UIManagerAny$clearJS;
-  UIManagerAny.setJSResponder = function (tag, blockNativeResponder) {
-    _RNGestureHandlerModule.default.handleSetJSResponder(tag, blockNativeResponder);
-    oldSetJSResponder(tag, blockNativeResponder);
-  };
-  UIManagerAny.clearJSResponder = function () {
-    _RNGestureHandlerModule.default.handleClearJSResponder();
-    oldClearJSResponder();
-  };
-  var allowTouches = true;
-  var DEV_ON_ANDROID = __DEV__ && _reactNative.Platform.OS === 'android';
-  // Toggled inspector blocks touch events in order to allow inspecting on Android
-  // This needs to be a global variable in order to set initial state for `allowTouches` property in Handler component
-  if (DEV_ON_ANDROID) {
-    _reactNative.DeviceEventEmitter.addListener('toggleElementInspector', function () {
-      allowTouches = !allowTouches;
-    });
-  }
-  function hasUnresolvedRefs(props) {
-    // TODO(TS) - add type for extract arg
-    var extract = function extract(refs) {
-      if (!Array.isArray(refs)) {
-        return refs && refs.current === null;
-      }
-      return refs.some(function (r) {
-        return r && r.current === null;
-      });
-    };
-    return extract(props['simultaneousHandlers']) || extract(props['waitFor']);
-  }
-  var stateToPropMappings = (0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)((0, _defineProperty2.default)({}, _$$_REQUIRE(_dependencyMap[15], "react-native-gesture-handler/src/State").State.UNDETERMINED, undefined), _$$_REQUIRE(_dependencyMap[15], "react-native-gesture-handler/src/State").State.BEGAN, 'onBegan'), _$$_REQUIRE(_dependencyMap[15], "react-native-gesture-handler/src/State").State.FAILED, 'onFailed'), _$$_REQUIRE(_dependencyMap[15], "react-native-gesture-handler/src/State").State.CANCELLED, 'onCancelled'), _$$_REQUIRE(_dependencyMap[15], "react-native-gesture-handler/src/State").State.ACTIVE, 'onActivated'), _$$_REQUIRE(_dependencyMap[15], "react-native-gesture-handler/src/State").State.END, 'onEnded');
-
-  // TODO(TS) fix event types
-
-  var UNRESOLVED_REFS_RETRY_LIMIT = 1;
-
-  // TODO(TS) - make sure that BaseGestureHandlerProps doesn't need other generic parameter to work with custom properties.
-  function createHandler(_ref) {
-    var name = _ref.name,
-      _ref$allowedProps = _ref.allowedProps,
-      allowedProps = _ref$allowedProps === void 0 ? [] : _ref$allowedProps,
-      _ref$config = _ref.config,
-      config = _ref$config === void 0 ? {} : _ref$config,
-      transformProps = _ref.transformProps,
-      _ref$customNativeProp = _ref.customNativeProps,
-      customNativeProps = _ref$customNativeProp === void 0 ? [] : _ref$customNativeProp;
-    var Handler = /*#__PURE__*/function (_React$Component) {
-      function Handler(props) {
-        var _this;
-        (0, _classCallCheck2.default)(this, Handler);
-        _this = _callSuper(this, Handler, [props]);
-        _this.onGestureHandlerEvent = function (event) {
-          if (event.nativeEvent.handlerTag === _this.handlerTag) {
-            if (typeof _this.props.onGestureEvent === 'function') {
-              _this.props.onGestureEvent == null || _this.props.onGestureEvent(event);
-            }
-          } else {
-            _this.props.onGestureHandlerEvent == null || _this.props.onGestureHandlerEvent(event);
-          }
-        };
-        // TODO(TS) - make sure this is right type for event
-        _this.onGestureHandlerStateChange = function (event) {
-          if (event.nativeEvent.handlerTag === _this.handlerTag) {
-            if (typeof _this.props.onHandlerStateChange === 'function') {
-              _this.props.onHandlerStateChange == null || _this.props.onHandlerStateChange(event);
-            }
-            var state = event.nativeEvent.state;
-            var stateEventName = stateToPropMappings[state];
-            var eventHandler = stateEventName && _this.props[stateEventName];
-            if (eventHandler && typeof eventHandler === 'function') {
-              eventHandler(event);
-            }
-          } else {
-            _this.props.onGestureHandlerStateChange == null || _this.props.onGestureHandlerStateChange(event);
-          }
-        };
-        _this.refHandler = function (node) {
-          _this.viewNode = node;
-          var child = React.Children.only(_this.props.children);
-          // TODO(TS) fix ref type
-          var ref = child.ref;
-          if (ref !== null) {
-            if (typeof ref === 'function') {
-              ref(node);
-            } else {
-              ref.current = node;
-            }
-          }
-        };
-        _this.createGestureHandler = function (newConfig) {
-          _this.config = newConfig;
-          _RNGestureHandlerModule.default.createGestureHandler(name, _this.handlerTag, newConfig);
-        };
-        _this.attachGestureHandler = function (newViewTag) {
-          _this.viewTag = newViewTag;
-          if (_reactNative.Platform.OS === 'web') {
-            // Typecast due to dynamic resolution, attachGestureHandler should have web version signature in this branch
-            _RNGestureHandlerModule.default.attachGestureHandler(_this.handlerTag, newViewTag, _$$_REQUIRE(_dependencyMap[16], "react-native-gesture-handler/src/ActionType").ActionType.JS_FUNCTION_OLD_API,
-            // ignored on web
-            _this.propsRef);
-          } else {
-            (0, _$$_REQUIRE(_dependencyMap[17], "react-native-gesture-handler/src/handlers/handlersRegistry").registerOldGestureHandler)(_this.handlerTag, {
-              onGestureEvent: _this.onGestureHandlerEvent,
-              onGestureStateChange: _this.onGestureHandlerStateChange
-            });
-            var actionType = function (_this$props, _this$props2) {
-              var onGestureEvent = (_this$props = _this.props) == null ? void 0 : _this$props.onGestureEvent;
-              var isGestureHandlerWorklet = onGestureEvent && ('current' in onGestureEvent || 'workletEventHandler' in onGestureEvent);
-              var onHandlerStateChange = (_this$props2 = _this.props) == null ? void 0 : _this$props2.onHandlerStateChange;
-              var isStateChangeHandlerWorklet = onHandlerStateChange && ('current' in onHandlerStateChange || 'workletEventHandler' in onHandlerStateChange);
-              var isReanimatedHandler = isGestureHandlerWorklet || isStateChangeHandlerWorklet;
-              if (isReanimatedHandler) {
-                // Reanimated worklet
-                return _$$_REQUIRE(_dependencyMap[16], "react-native-gesture-handler/src/ActionType").ActionType.REANIMATED_WORKLET;
-              } else if (onGestureEvent && '__isNative' in onGestureEvent) {
-                // Animated.event with useNativeDriver: true
-                return _$$_REQUIRE(_dependencyMap[16], "react-native-gesture-handler/src/ActionType").ActionType.NATIVE_ANIMATED_EVENT;
-              } else {
-                // JS callback or Animated.event with useNativeDriver: false
-                return _$$_REQUIRE(_dependencyMap[16], "react-native-gesture-handler/src/ActionType").ActionType.JS_FUNCTION_OLD_API;
-              }
-            }();
-            _RNGestureHandlerModule.default.attachGestureHandler(_this.handlerTag, newViewTag, actionType);
-          }
-          (0, _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/handlers/utils").scheduleFlushOperations)();
-          (0, _$$_REQUIRE(_dependencyMap[19], "react-native-gesture-handler/src/ghQueueMicrotask").ghQueueMicrotask)(function () {
-            _$$_REQUIRE(_dependencyMap[20], "react-native-gesture-handler/src/mountRegistry").MountRegistry.gestureHandlerWillMount(_this);
-          });
-        };
-        _this.updateGestureHandler = function (newConfig) {
-          _this.config = newConfig;
-          _RNGestureHandlerModule.default.updateGestureHandler(_this.handlerTag, newConfig);
-          (0, _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/handlers/utils").scheduleFlushOperations)();
-        };
-        _this.handlerTag = (0, _$$_REQUIRE(_dependencyMap[21], "react-native-gesture-handler/src/handlers/getNextHandlerTag").getNextHandlerTag)();
-        _this.config = {};
-        _this.propsRef = React.createRef();
-        _this.isMountedRef = React.createRef();
-        _this.state = {
-          allowTouches: allowTouches
-        };
-        if (props.id) {
-          if (_$$_REQUIRE(_dependencyMap[17], "react-native-gesture-handler/src/handlers/handlersRegistry").handlerIDToTag[props.id] !== undefined) {
-            throw new Error(`Handler with ID "${props.id}" already registered`);
-          }
-          _$$_REQUIRE(_dependencyMap[17], "react-native-gesture-handler/src/handlers/handlersRegistry").handlerIDToTag[props.id] = _this.handlerTag;
-        }
-        return _this;
-      }
-      (0, _inherits2.default)(Handler, _React$Component);
-      return (0, _createClass2.default)(Handler, [{
-        key: "componentDidMount",
-        value: function componentDidMount() {
-          var _this2 = this;
-          var props = this.props;
-          this.isMountedRef.current = true;
-          if (DEV_ON_ANDROID) {
-            this.inspectorToggleListener = _reactNative.DeviceEventEmitter.addListener('toggleElementInspector', function () {
-              _this2.setState(function (_) {
-                return {
-                  allowTouches: allowTouches
-                };
-              });
-              _this2.update(UNRESOLVED_REFS_RETRY_LIMIT);
-            });
-          }
-          if (hasUnresolvedRefs(props)) {
-            // If there are unresolved refs (e.g. ".current" has not yet been set)
-            // passed as `simultaneousHandlers` or `waitFor`, we enqueue a call to
-            // _update method that will try to update native handler props using
-            // queueMicrotask. This makes it so update() function gets called after all
-            // react components are mounted and we expect the missing ref object to
-            // be resolved by then.
-            (0, _$$_REQUIRE(_dependencyMap[19], "react-native-gesture-handler/src/ghQueueMicrotask").ghQueueMicrotask)(function () {
-              _this2.update(UNRESOLVED_REFS_RETRY_LIMIT);
-            });
-          }
-          this.createGestureHandler((0, _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/handlers/utils").filterConfig)(transformProps ? transformProps(this.props) : this.props, [].concat((0, _toConsumableArray2.default)(allowedProps), (0, _toConsumableArray2.default)(customNativeProps)), config));
-          if (!this.viewNode) {
-            throw new Error(`[Gesture Handler] Failed to obtain view for ${Handler.displayName}. Note that old API doesn't support functional components.`);
-          }
-          this.attachGestureHandler((0, _findNodeHandle.default)(this.viewNode)); // TODO(TS) - check if this can be null
-        }
-      }, {
-        key: "componentDidUpdate",
-        value: function componentDidUpdate() {
-          var viewTag = (0, _findNodeHandle.default)(this.viewNode);
-          if (this.viewTag !== viewTag) {
-            this.attachGestureHandler(viewTag); // TODO(TS) - check interaction between _viewTag & findNodeHandle
-          }
-          this.update(UNRESOLVED_REFS_RETRY_LIMIT);
-        }
-      }, {
-        key: "componentWillUnmount",
-        value: function componentWillUnmount() {
-          var _this$inspectorToggle;
-          (_this$inspectorToggle = this.inspectorToggleListener) == null || _this$inspectorToggle.remove();
-          this.isMountedRef.current = false;
-          if (_reactNative.Platform.OS !== 'web') {
-            (0, _$$_REQUIRE(_dependencyMap[17], "react-native-gesture-handler/src/handlers/handlersRegistry").unregisterOldGestureHandler)(this.handlerTag);
-          }
-          _RNGestureHandlerModule.default.dropGestureHandler(this.handlerTag);
-          (0, _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/handlers/utils").scheduleFlushOperations)();
-          // We can't use this.props.id directly due to TS generic type narrowing bug, see https://github.com/microsoft/TypeScript/issues/13995 for more context
-          var handlerID = this.props.id;
-          if (handlerID) {
-            // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
-            delete _$$_REQUIRE(_dependencyMap[17], "react-native-gesture-handler/src/handlers/handlersRegistry").handlerIDToTag[handlerID];
-          }
-          _$$_REQUIRE(_dependencyMap[20], "react-native-gesture-handler/src/mountRegistry").MountRegistry.gestureHandlerWillUnmount(this);
-        }
-      }, {
-        key: "update",
-        value: function update(remainingTries) {
-          var _this3 = this;
-          if (!this.isMountedRef.current) {
-            return;
-          }
-          var props = this.props;
-
-          // When ref is set via a function i.e. `ref={(r) => refObject.current = r}` instead of
-          // `ref={refObject}` it's possible that it won't be resolved in time. Seems like trying
-          // again is easy enough fix.
-          if (hasUnresolvedRefs(props) && remainingTries > 0) {
-            (0, _$$_REQUIRE(_dependencyMap[19], "react-native-gesture-handler/src/ghQueueMicrotask").ghQueueMicrotask)(function () {
-              _this3.update(remainingTries - 1);
-            });
-          } else {
-            var newConfig = (0, _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/handlers/utils").filterConfig)(transformProps ? transformProps(this.props) : this.props, [].concat((0, _toConsumableArray2.default)(allowedProps), (0, _toConsumableArray2.default)(customNativeProps)), config);
-            if (!(0, _$$_REQUIRE(_dependencyMap[14], "react-native-gesture-handler/src/utils").deepEqual)(this.config, newConfig)) {
-              this.updateGestureHandler(newConfig);
-            }
-          }
-        }
-      }, {
-        key: "setNativeProps",
-        value: function setNativeProps(updates) {
-          var mergedProps = Object.assign({}, this.props, updates);
-          var newConfig = (0, _$$_REQUIRE(_dependencyMap[18], "react-native-gesture-handler/src/handlers/utils").filterConfig)(transformProps ? transformProps(mergedProps) : mergedProps, [].concat((0, _toConsumableArray2.default)(allowedProps), (0, _toConsumableArray2.default)(customNativeProps)), config);
-          this.updateGestureHandler(newConfig);
-        }
-      }, {
-        key: "render",
-        value: function render() {
-          var _this$props$testID;
-          if (__DEV__ && !this.context && !(0, _$$_REQUIRE(_dependencyMap[14], "react-native-gesture-handler/src/utils").isTestEnv)() && _reactNative.Platform.OS !== 'web' && _reactNative.Platform.OS !== "harmony") {
-            // RNOH: patch
-            throw new Error(name + ' must be used as a descendant of GestureHandlerRootView. Otherwise the gestures will not be recognized. See https://docs.swmansion.com/react-native-gesture-handler/docs/installation for more details.');
-          }
-          var gestureEventHandler = this.onGestureHandlerEvent;
-          // Another instance of https://github.com/microsoft/TypeScript/issues/13995
-
-          var _this$props3 = this.props,
-            onGestureEvent = _this$props3.onGestureEvent,
-            onGestureHandlerEvent = _this$props3.onGestureHandlerEvent;
-          if (onGestureEvent && typeof onGestureEvent !== 'function') {
-            // If it's not a method it should be an native Animated.event
-            // object. We set it directly as the handler for the view
-            // In this case nested handlers are not going to be supported
-            if (onGestureHandlerEvent) {
-              throw new Error('Nesting touch handlers with native animated driver is not supported yet');
-            }
-            gestureEventHandler = onGestureEvent;
-          } else {
-            if (onGestureHandlerEvent && typeof onGestureHandlerEvent !== 'function') {
-              throw new Error('Nesting touch handlers with native animated driver is not supported yet');
-            }
-          }
-          var gestureStateEventHandler = this.onGestureHandlerStateChange;
-          // Another instance of https://github.com/microsoft/TypeScript/issues/13995
-
-          var _this$props4 = this.props,
-            onHandlerStateChange = _this$props4.onHandlerStateChange,
-            onGestureHandlerStateChange = _this$props4.onGestureHandlerStateChange;
-          if (onHandlerStateChange && typeof onHandlerStateChange !== 'function') {
-            // If it's not a method it should be an native Animated.event
-            // object. We set it directly as the handler for the view
-            // In this case nested handlers are not going to be supported
-            if (onGestureHandlerStateChange) {
-              throw new Error('Nesting touch handlers with native animated driver is not supported yet');
-            }
-            gestureStateEventHandler = onHandlerStateChange;
-          } else {
-            if (onGestureHandlerStateChange && typeof onGestureHandlerStateChange !== 'function') {
-              throw new Error('Nesting touch handlers with native animated driver is not supported yet');
-            }
-          }
-          var events = {
-            onGestureHandlerEvent: this.state.allowTouches ? gestureEventHandler : undefined,
-            onGestureHandlerStateChange: this.state.allowTouches ? gestureStateEventHandler : undefined
-          };
-          this.propsRef.current = events;
-          var child = null;
-          try {
-            child = React.Children.only(this.props.children);
-          } catch (e) {
-            throw new Error((0, _$$_REQUIRE(_dependencyMap[14], "react-native-gesture-handler/src/utils").tagMessage)(`${name} got more than one view as a child. If you want the gesture to work on multiple views, wrap them with a common parent and attach the gesture to that view.`));
-          }
-          var grandChildren = child.props.children;
-          if (__DEV__ && child.type && (child.type === 'RNGestureHandlerButton' || child.type.name === 'View' || child.type.displayName === 'View')) {
-            grandChildren = React.Children.toArray(grandChildren);
-            grandChildren.push(/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[22], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[23], "react-native-gesture-handler/src/handlers/PressabilityDebugView").PressabilityDebugView, {
-              color: "mediumspringgreen",
-              hitSlop: child.props.hitSlop
-            }, "pressabilityDebugView"));
-          }
-          return React.cloneElement(child, Object.assign({
-            ref: this.refHandler,
-            collapsable: false
-          }, (0, _$$_REQUIRE(_dependencyMap[14], "react-native-gesture-handler/src/utils").isTestEnv)() ? {
-            handlerType: name,
-            handlerTag: this.handlerTag,
-            enabled: this.props.enabled
-          } : {}, {
-            testID: (_this$props$testID = this.props.testID) != null ? _this$props$testID : child.props.testID
-          }, events), grandChildren);
-        }
-      }]);
-    }(React.Component);
-    Handler.displayName = name;
-    Handler.contextType = _GestureHandlerRootViewContext.default;
-    return Handler;
-  }
-},635,[8,46,9,10,14,16,17,224,86,1,636,638,639,640,641,642,643,644,645,646,647,648,92,649],"node_modules/@react-native-ohos/react-native-gesture-handler/src/handlers/createHandler.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var _NativeRNGestureHandlerModule = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "../src/specs/NativeRNGestureHandlerModule"));
-  /*
-   * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
-   * Use of this source code is governed by a MIT license that can be
-   * found in the LICENSE file.
-   */
-
-  var RNGestureHandlerModule = _NativeRNGestureHandlerModule.default;
-  var _default = exports.default = RNGestureHandlerModule;
-},636,[8,637],"node_modules/@react-native-ohos/react-native-gesture-handler/src/RNGestureHandlerModule.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
+  exports.default = App;
   var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-  /*
-   * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
-   * Use of this source code is governed by a MIT license that can be
-   * found in the LICENSE file.
-   */
-  var _default = exports.default = _reactNative.TurboModuleRegistry.getEnforcing('RNGestureHandlerModule');
-},637,[1],"node_modules/@react-native-ohos/react-native-gesture-handler/src/specs/NativeRNGestureHandlerModule.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-  var _default = exports.default = _reactNative.findNodeHandle;
-},638,[1],"node_modules/react-native-gesture-handler/src/findNodeHandle.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var _react = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "react"));
-  var _default = exports.default = _react.default.createContext(false);
-},639,[8,86],"node_modules/react-native-gesture-handler/src/GestureHandlerRootViewContext.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(exports, "customDirectEventTypes", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Renderer/shims/ReactNativeViewConfigRegistry").customDirectEventTypes;
-    }
-  });
-},640,[240],"node_modules/react-native-gesture-handler/src/handlers/customDirectEventTypes.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.INT32_MAX = void 0;
-  exports.deepEqual = deepEqual;
-  exports.hasProperty = hasProperty;
-  exports.isFabric = isFabric;
-  exports.isReact19 = isReact19;
-  exports.isRemoteDebuggingEnabled = isRemoteDebuggingEnabled;
-  exports.isTestEnv = isTestEnv;
-  exports.tagMessage = tagMessage;
-  exports.toArray = toArray;
-  exports.withPrevAndCurrent = withPrevAndCurrent;
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
-  var _react = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "react"));
-  function toArray(object) {
-    if (!Array.isArray(object)) {
-      return [object];
-    }
-    return object;
-  }
-  function withPrevAndCurrent(array, mapFn) {
-    var previousArr = [null];
-    var currentArr = (0, _toConsumableArray2.default)(array);
-    var transformedArr = [];
-    currentArr.forEach(function (current, i) {
-      // This type cast is fine and solves problem mentioned in https://github.com/software-mansion/react-native-gesture-handler/pull/2867 (namely that `previous` can be undefined).
-      // Unfortunately, linter on our CI does not allow this type of casting as it is unnecessary. To bypass that we use eslint-disable.
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
-      var previous = previousArr[i];
-      var transformed = mapFn(previous, current);
-      previousArr.push(transformed);
-      transformedArr.push(transformed);
-    });
-    return transformedArr;
-  }
-
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  function hasProperty(object, key) {
-    return Object.prototype.hasOwnProperty.call(object, key);
-  }
-  function isTestEnv() {
-    // @ts-ignore Do not use `@types/node` because it will prioritise Node types over RN types which breaks the types (ex. setTimeout) in React Native projects.
-    return hasProperty(global, 'process') && process.env.NODE_ENV === 'test';
-  }
-  function tagMessage(msg) {
-    return `[react-native-gesture-handler] ${msg}`;
-  }
-
-  // Helper method to check whether Fabric is enabled, however global.nativeFabricUIManager
-  // may not be initialized before the first render
-  function isFabric() {
-    var _global;
-    // @ts-expect-error nativeFabricUIManager is not yet included in the RN types
-    return !!((_global = global) != null && _global.nativeFabricUIManager);
-  }
-  function isReact19() {
-    return _react.default.version.startsWith('19.');
-  }
-  function isRemoteDebuggingEnabled() {
-    // react-native-reanimated checks if in remote debugging in the same way
-    // @ts-ignore global is available but node types are not included
-    var localGlobal = global;
-    return (!localGlobal.nativeCallSyncHook || !!localGlobal.__REMOTEDEV__) && !localGlobal.RN$Bridgeless;
-  }
-
-  /**
-   * Recursively compares two objects for deep equality.
-   *
-   * **Note:** This function does not support cyclic references.
-   *
-   * @param obj1 - The first object to compare.
-   * @param obj2 - The second object to compare.
-   * @returns `true` if the objects are deeply equal, `false` otherwise.
-   */
-  function deepEqual(obj1, obj2) {
-    if (obj1 === obj2) {
-      return true;
-    }
-    if (typeof obj1 !== 'object' || typeof obj2 !== 'object' || obj1 === null || obj2 === null) {
-      return false;
-    }
-    var keys1 = Object.keys(obj1);
-    var keys2 = Object.keys(obj2);
-    if (keys1.length !== keys2.length) {
-      return false;
-    }
-    for (var key of keys1) {
-      if (!keys2.includes(key) || !deepEqual(obj1[key], obj2[key])) {
-        return false;
-      }
-    }
-    return true;
-  }
-  var INT32_MAX = exports.INT32_MAX = 2 ** 31 - 1;
-},641,[8,46,86],"node_modules/react-native-gesture-handler/src/utils.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.State = void 0;
-  // TODO use State from RNModule
-
-  var State = exports.State = {
-    UNDETERMINED: 0,
-    FAILED: 1,
-    BEGAN: 2,
-    CANCELLED: 3,
-    ACTIVE: 4,
-    END: 5
-  };
-
-  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; it can be used as a type and as a value
-},642,[],"node_modules/react-native-gesture-handler/src/State.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ActionType = void 0;
-  var ActionType = exports.ActionType = {
-    REANIMATED_WORKLET: 1,
-    NATIVE_ANIMATED_EVENT: 2,
-    JS_FUNCTION_OLD_API: 3,
-    JS_FUNCTION_NEW_API: 4
-  };
-
-  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; it can be used as a type and as a value
-},643,[],"node_modules/react-native-gesture-handler/src/ActionType.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.findHandler = findHandler;
-  exports.findHandlerByTestID = findHandlerByTestID;
-  exports.findOldGestureHandler = findOldGestureHandler;
-  exports.handlerIDToTag = void 0;
-  exports.registerHandler = registerHandler;
-  exports.registerOldGestureHandler = registerOldGestureHandler;
-  exports.unregisterHandler = unregisterHandler;
-  exports.unregisterOldGestureHandler = unregisterOldGestureHandler;
-  var handlerIDToTag = exports.handlerIDToTag = {};
-  var gestures = new Map();
-  var oldHandlers = new Map();
-  var testIDs = new Map();
-  function registerHandler(handlerTag, handler, testID) {
-    gestures.set(handlerTag, handler);
-    if ((0, _$$_REQUIRE(_dependencyMap[0], "../utils").isTestEnv)() && testID) {
-      testIDs.set(testID, handlerTag);
-    }
-  }
-  function registerOldGestureHandler(handlerTag, handler) {
-    oldHandlers.set(handlerTag, handler);
-  }
-  function unregisterOldGestureHandler(handlerTag) {
-    oldHandlers.delete(handlerTag);
-  }
-  function unregisterHandler(handlerTag, testID) {
-    gestures.delete(handlerTag);
-    if ((0, _$$_REQUIRE(_dependencyMap[0], "../utils").isTestEnv)() && testID) {
-      testIDs.delete(testID);
-    }
-  }
-  function findHandler(handlerTag) {
-    return gestures.get(handlerTag);
-  }
-  function findOldGestureHandler(handlerTag) {
-    return oldHandlers.get(handlerTag);
-  }
-  function findHandlerByTestID(testID) {
-    var handlerTag = testIDs.get(testID);
-    if (handlerTag !== undefined) {
-      var _findHandler;
-      return (_findHandler = findHandler(handlerTag)) != null ? _findHandler : null;
-    }
-    return null;
-  }
-},644,[641],"node_modules/react-native-gesture-handler/src/handlers/handlersRegistry.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.filterConfig = filterConfig;
-  exports.findNodeHandle = findNodeHandle;
-  exports.scheduleFlushOperations = scheduleFlushOperations;
-  exports.transformIntoHandlerTags = transformIntoHandlerTags;
-  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-  var _RNGestureHandlerModule = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "../RNGestureHandlerModule"));
-  function isConfigParam(param, name) {
-    // param !== Object(param) returns false if `param` is a function
-    // or an object and returns true if `param` is null
-    return param !== undefined && (param !== Object(param) || !('__isNative' in param)) && name !== 'onHandlerStateChange' && name !== 'onGestureEvent';
-  }
-  function filterConfig(props, validProps) {
-    var defaults = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-    var filteredConfig = Object.assign({}, defaults);
-    for (var key of validProps) {
-      var value = props[key];
-      if (isConfigParam(value, key)) {
-        if (key === 'simultaneousHandlers' || key === 'waitFor') {
-          value = transformIntoHandlerTags(props[key]);
-        } else if (key === 'hitSlop' && typeof value !== 'object') {
-          value = {
-            top: value,
-            left: value,
-            bottom: value,
-            right: value
-          };
-        }
-        filteredConfig[key] = value;
-      }
-    }
-    return filteredConfig;
-  }
-  function transformIntoHandlerTags(handlerIDs) {
-    handlerIDs = (0, _$$_REQUIRE(_dependencyMap[3], "../utils").toArray)(handlerIDs);
-    if (_reactNative.Platform.OS === 'web') {
-      return handlerIDs.map(function (_ref) {
-        var current = _ref.current;
-        return current;
-      }).filter(function (handle) {
-        return handle;
-      });
-    }
-    // converts handler string IDs into their numeric tags
-    return handlerIDs.map(function (handlerID) {
-      var _handlerID$current;
-      return _$$_REQUIRE(_dependencyMap[4], "./handlersRegistry").handlerIDToTag[handlerID] || ((_handlerID$current = handlerID.current) == null ? void 0 : _handlerID$current.handlerTag) || -1;
-    }).filter(function (handlerTag) {
-      return handlerTag > 0;
-    });
-  }
-  function findNodeHandle(node) {
-    if (_reactNative.Platform.OS === 'web') {
-      return node;
-    }
-    return (0, _reactNative.findNodeHandle)(node);
-  }
-  var flushOperationsScheduled = false;
-  function scheduleFlushOperations() {
-    if (!flushOperationsScheduled) {
-      flushOperationsScheduled = true;
-      (0, _$$_REQUIRE(_dependencyMap[5], "../ghQueueMicrotask").ghQueueMicrotask)(function () {
-        _RNGestureHandlerModule.default.flushOperations();
-        flushOperationsScheduled = false;
-      });
-    }
-  }
-},645,[1,8,636,641,644,646],"node_modules/react-native-gesture-handler/src/handlers/utils.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ghQueueMicrotask = void 0;
-  // We check for typeof requestAnimationFrame because of SSR
-  // Functions are bound to null to avoid issues with scope when using Metro inline requires.
-  var ghQueueMicrotask = exports.ghQueueMicrotask = typeof setImmediate === 'function' ? setImmediate.bind(null) : typeof requestAnimationFrame === 'function' ? requestAnimationFrame.bind(null) : queueMicrotask.bind(null);
-},646,[],"node_modules/react-native-gesture-handler/src/ghQueueMicrotask.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.MountRegistry = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  // eslint-disable-next-line @typescript-eslint/no-extraneous-class
-  var MountRegistry = exports.MountRegistry = /*#__PURE__*/function () {
-    function MountRegistry() {
-      (0, _classCallCheck2.default)(this, MountRegistry);
-    }
-    return (0, _createClass2.default)(MountRegistry, null, [{
-      key: "addMountListener",
-      value: function addMountListener(listener) {
-        var _this = this;
-        this.mountListeners.add(listener);
-        return function () {
-          _this.mountListeners.delete(listener);
-        };
-      }
-    }, {
-      key: "addUnmountListener",
-      value: function addUnmountListener(listener) {
-        var _this2 = this;
-        this.unmountListeners.add(listener);
-        return function () {
-          _this2.unmountListeners.delete(listener);
-        };
-      }
-    }, {
-      key: "gestureHandlerWillMount",
-      value: function gestureHandlerWillMount(handler) {
-        this.mountListeners.forEach(function (listener) {
-          return listener(handler);
-        });
-      }
-    }, {
-      key: "gestureHandlerWillUnmount",
-      value: function gestureHandlerWillUnmount(handler) {
-        this.unmountListeners.forEach(function (listener) {
-          return listener(handler);
-        });
-      }
-    }, {
-      key: "gestureWillMount",
-      value: function gestureWillMount(gesture) {
-        this.mountListeners.forEach(function (listener) {
-          return listener(gesture);
-        });
-      }
-    }, {
-      key: "gestureWillUnmount",
-      value: function gestureWillUnmount(gesture) {
-        this.unmountListeners.forEach(function (listener) {
-          return listener(gesture);
-        });
-      }
-    }]);
-  }();
-  MountRegistry.mountListeners = new Set();
-  MountRegistry.unmountListeners = new Set();
-},647,[8,9,10],"node_modules/react-native-gesture-handler/src/mountRegistry.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.getNextHandlerTag = getNextHandlerTag;
-  var handlerTag = 1;
-  function getNextHandlerTag() {
-    return handlerTag++;
-  }
-},648,[],"node_modules/react-native-gesture-handler/src/handlers/getNextHandlerTag.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(exports, "PressabilityDebugView", {
-    enumerable: true,
-    get: function get() {
-      return _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Pressability/PressabilityDebug").PressabilityDebugView;
-    }
-  });
-},649,[369],"node_modules/react-native-gesture-handler/src/handlers/PressabilityDebugView.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.baseGestureHandlerWithDetectorProps = exports.baseGestureHandlerProps = exports.MouseButton = void 0;
-  // Previous types exported gesture handlers as classes which creates an interface and variable, both named the same as class.
-  // Without those types, we'd introduce breaking change, forcing users to prefix every handler type specification with typeof
-  // e.g. React.createRef<TapGestureHandler> -> React.createRef<typeof TapGestureHandler>.
-  // See https://www.typescriptlang.org/docs/handbook/classes.html#constructor-functions for reference.
-
-  var commonProps = ['id', 'enabled', 'shouldCancelWhenOutside', 'hitSlop', 'cancelsTouchesInView', 'userSelect', 'activeCursor', 'mouseButton', 'enableContextMenu', 'touchAction'];
-  var componentInteractionProps = ['waitFor', 'simultaneousHandlers', 'blocksHandlers'];
-  var baseGestureHandlerProps = exports.baseGestureHandlerProps = [].concat(commonProps, componentInteractionProps, ['onBegan', 'onFailed', 'onCancelled', 'onActivated', 'onEnded', 'onGestureEvent', 'onHandlerStateChange']);
-  var baseGestureHandlerWithDetectorProps = exports.baseGestureHandlerWithDetectorProps = [].concat(commonProps, ['needsPointerData', 'manualActivation']);
-  var MouseButton = exports.MouseButton = /*#__PURE__*/function (MouseButton) {
-    MouseButton[MouseButton["LEFT"] = 1] = "LEFT";
-    MouseButton[MouseButton["RIGHT"] = 2] = "RIGHT";
-    MouseButton[MouseButton["MIDDLE"] = 4] = "MIDDLE";
-    MouseButton[MouseButton["BUTTON_4"] = 8] = "BUTTON_4";
-    MouseButton[MouseButton["BUTTON_5"] = 16] = "BUTTON_5";
-    MouseButton[MouseButton["ALL"] = 31] = "ALL";
-    return MouseButton;
-  }({}); // TODO(TS) events in handlers
-  // Events payloads are types instead of interfaces due to TS limitation.
-  // See https://github.com/microsoft/TypeScript/issues/15300 for more info.
-},650,[],"node_modules/react-native-gesture-handler/src/handlers/gestureHandlerCommon.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var _RNGestureHandlerButtonNativeComponent = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "../specs/RNGestureHandlerButtonNativeComponent"));
-  var _default = exports.default = _RNGestureHandlerButtonNativeComponent.default;
-},651,[8,652],"node_modules/react-native-gesture-handler/src/components/GestureHandlerButton.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = exports.__INTERNAL_VIEW_CONFIG = void 0;
-  var _codegenNativeComponent = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "react-native/Libraries/Utilities/codegenNativeComponent")); /*
-                                                                                                                                                                                                            * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
-                                                                                                                                                                                                            * Use of this source code is governed by a MIT license that can be
-                                                                                                                                                                                                            * found in the LICENSE file.
-                                                                                                                                                                                                            */
-
-  var nativeComponentName = 'RNGestureHandlerButton';
-  var __INTERNAL_VIEW_CONFIG = exports.__INTERNAL_VIEW_CONFIG = {
-    uiViewClassName: 'RNGestureHandlerButton',
-    validAttributes: {
-      exclusive: true,
-      foreground: true,
-      borderless: true,
-      enabled: true,
-      rippleColor: {
-        process: _$$_REQUIRE(_dependencyMap[2], "react-native/Libraries/StyleSheet/processColor").default
-      },
-      rippleRadius: true,
-      touchSoundDisabled: true,
-      borderWidth: true,
-      borderColor: {
-        process: _$$_REQUIRE(_dependencyMap[2], "react-native/Libraries/StyleSheet/processColor").default
-      },
-      borderStyle: true
-    }
-  };
-  var _default = exports.default = _$$_REQUIRE(_dependencyMap[3], "react-native/Libraries/NativeComponent/NativeComponentRegistry").get(nativeComponentName, function () {
-    return __INTERNAL_VIEW_CONFIG;
-  });
-},652,[8,347,185,204],"node_modules/@react-native-ohos/react-native-gesture-handler/src/specs/RNGestureHandlerButtonNativeComponent.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.Directions = exports.DiagonalDirections = void 0;
-  var RIGHT = 1;
-  var LEFT = 2;
-  var UP = 4;
-  var DOWN = 8;
-
-  // Public interface
-  var Directions = exports.Directions = {
-    RIGHT: RIGHT,
-    LEFT: LEFT,
-    UP: UP,
-    DOWN: DOWN
-  };
-
-  // Internal interface
-  var DiagonalDirections = exports.DiagonalDirections = {
-    UP_RIGHT: UP | RIGHT,
-    DOWN_RIGHT: DOWN | RIGHT,
-    UP_LEFT: UP | LEFT,
-    DOWN_LEFT: DOWN | LEFT
-  };
-
-  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; it can be used as a type and as a value
-
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
-},653,[],"node_modules/react-native-gesture-handler/src/Directions.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.TextInput = exports.Switch = exports.ScrollView = exports.RefreshControl = exports.FlatList = exports.DrawerLayoutAndroid = void 0;
-  var _slicedToArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/slicedToArray"));
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/toConsumableArray"));
-  var _objectWithoutProperties2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/objectWithoutProperties"));
-  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[4], "react"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[5], "react-native");
-  var _createNativeWrapper = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "../handlers/createNativeWrapper"));
-  var _excluded = ["refreshControl", "waitFor"],
-    _excluded2 = ["waitFor", "refreshControl"];
-  var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/GestureComponents.tsx";
+  var _reactNativeReanimated = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[1], "react-native-reanimated"));
+  var _react = _$$_REQUIRE(_dependencyMap[2], "react");
+  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/react-native-reanimated/FsTest.tsx";
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  var RefreshControl = exports.RefreshControl = (0, _createNativeWrapper.default)(_reactNative.RefreshControl, {
-    disallowInterruption: true,
-    shouldCancelWhenOutside: false
-  });
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
-
-  var GHScrollView = (0, _createNativeWrapper.default)(_reactNative.ScrollView, {
-    disallowInterruption: true,
-    shouldCancelWhenOutside: false
-  });
-  var ScrollView = exports.ScrollView = React.forwardRef(function (props, ref) {
-    var refreshControlGestureRef = React.useRef(null);
-    var refreshControl = props.refreshControl,
-      waitFor = props.waitFor,
-      rest = (0, _objectWithoutProperties2.default)(props, _excluded);
-    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(GHScrollView, Object.assign({}, rest, {
-      // @ts-ignore `ref` exists on `GHScrollView`
-      ref: ref,
-      waitFor: [].concat((0, _toConsumableArray2.default)((0, _$$_REQUIRE(_dependencyMap[8], "../utils").toArray)(waitFor != null ? waitFor : [])), [refreshControlGestureRef])
-      // @ts-ignore we don't pass `refreshing` prop as we only want to override the ref
-      ,
-      refreshControl: refreshControl ? React.cloneElement(refreshControl, {
-        // @ts-ignore for reasons unknown to me, `ref` doesn't exist on the type inferred by TS
-        ref: refreshControlGestureRef
-      }) : undefined
-    }));
-  });
-  // Backward type compatibility with https://github.com/software-mansion/react-native-gesture-handler/blob/db78d3ca7d48e8ba57482d3fe9b0a15aa79d9932/react-native-gesture-handler.d.ts#L440-L457
-  // include methods of wrapped components by creating an intersection type with the RN component instead of duplicating them.
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
-
-  var Switch = exports.Switch = (0, _createNativeWrapper.default)(_reactNative.Switch, {
-    shouldCancelWhenOutside: false,
-    shouldActivateOnStart: true,
-    disallowInterruption: true
-  });
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
-
-  var TextInput = exports.TextInput = (0, _createNativeWrapper.default)(_reactNative.TextInput);
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
-
-  var DrawerLayoutAndroid = exports.DrawerLayoutAndroid = (0, _createNativeWrapper.default)(_reactNative.DrawerLayoutAndroid, {
-    disallowInterruption: true
-  });
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
-
-  var FlatList = exports.FlatList = React.forwardRef(function (props, ref) {
-    var refreshControlGestureRef = React.useRef(null);
-    var waitFor = props.waitFor,
-      refreshControl = props.refreshControl,
-      rest = (0, _objectWithoutProperties2.default)(props, _excluded2);
-    var flatListProps = {};
-    var scrollViewProps = {};
-    for (var _ref of Object.entries(rest)) {
-      var _ref2 = (0, _slicedToArray2.default)(_ref, 2);
-      var propName = _ref2[0];
-      var value = _ref2[1];
-      // https://github.com/microsoft/TypeScript/issues/26255
-      if (_$$_REQUIRE(_dependencyMap[9], "../handlers/NativeViewGestureHandler").nativeViewProps.includes(propName)) {
-        // @ts-ignore - this function cannot have generic type so we have to ignore this error
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        scrollViewProps[propName] = value;
-      } else {
-        // @ts-ignore - this function cannot have generic type so we have to ignore this error
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        flatListProps[propName] = value;
-      }
-    }
-    return (
-      /*#__PURE__*/
-      // @ts-ignore - this function cannot have generic type so we have to ignore this error
-      (0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(_reactNative.FlatList, Object.assign({
-        ref: ref
-      }, flatListProps, {
-        renderScrollComponent: function renderScrollComponent(scrollProps) {
-          return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[7], "react/jsx-runtime").jsx)(ScrollView, Object.assign({}, Object.assign({}, scrollProps, scrollViewProps, {
-            waitFor: [].concat((0, _toConsumableArray2.default)((0, _$$_REQUIRE(_dependencyMap[8], "../utils").toArray)(waitFor != null ? waitFor : [])), [refreshControlGestureRef])
-          })));
-        }
-        // @ts-ignore we don't pass `refreshing` prop as we only want to override the ref
-        ,
-        refreshControl: refreshControl ? React.cloneElement(refreshControl, {
-          // @ts-ignore for reasons unknown to me, `ref` doesn't exist on the type inferred by TS
-          ref: refreshControlGestureRef
-        }) : undefined
-      }))
-    );
-  });
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
-},654,[8,27,46,153,86,1,633,92,641,634],"node_modules/react-native-gesture-handler/src/components/GestureComponents.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.flingHandlerName = exports.flingGestureHandlerProps = exports.FlingGestureHandler = void 0;
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
-  var _createHandler = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./createHandler"));
-  var flingGestureHandlerProps = exports.flingGestureHandlerProps = ['numberOfPointers', 'direction'];
-
-  /**
-   * @deprecated FlingGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Fling()` instead.
-   */
-
-  var flingHandlerName = exports.flingHandlerName = 'FlingGestureHandler';
-
-  /**
-   * @deprecated FlingGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Fling()` instead.
-   */
-
-  /**
-   * @deprecated FlingGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Fling()` instead.
-   */
-  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; see description on the top of gestureHandlerCommon.ts file
-  var FlingGestureHandler = exports.FlingGestureHandler = (0, _createHandler.default)({
-    name: flingHandlerName,
-    allowedProps: [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[3], "./gestureHandlerCommon").baseGestureHandlerProps), flingGestureHandlerProps),
-    config: {}
-  });
-},655,[8,46,635,650],"node_modules/react-native-gesture-handler/src/handlers/FlingGestureHandler.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.forceTouchHandlerName = exports.forceTouchGestureHandlerProps = exports.ForceTouchGestureHandler = void 0;
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-  var _react = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[7], "react"));
-  var _PlatformConstants = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[8], "../PlatformConstants"));
-  var _createHandler = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[9], "./createHandler"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  var forceTouchGestureHandlerProps = exports.forceTouchGestureHandlerProps = ['minForce', 'maxForce', 'feedbackOnActivation'];
-
-  // implicit `children` prop has been removed in @types/react^18.0.0
-  var ForceTouchFallback = /*#__PURE__*/function (_React$Component) {
-    function ForceTouchFallback() {
-      (0, _classCallCheck2.default)(this, ForceTouchFallback);
-      return _callSuper(this, ForceTouchFallback, arguments);
-    }
-    (0, _inherits2.default)(ForceTouchFallback, _React$Component);
-    return (0, _createClass2.default)(ForceTouchFallback, [{
-      key: "componentDidMount",
-      value: function componentDidMount() {
-        console.warn((0, _$$_REQUIRE(_dependencyMap[10], "../utils").tagMessage)('ForceTouchGestureHandler is not available on this platform. Please use ForceTouchGestureHandler.forceTouchAvailable to conditionally render other components that would provide a fallback behavior specific to your usecase'));
-      }
-    }, {
-      key: "render",
-      value: function render() {
-        return this.props.children;
-      }
-    }]);
-  }(_react.default.Component);
-  ForceTouchFallback.forceTouchAvailable = false;
-  /**
-   * @deprecated ForceTouchGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.ForceTouch()` instead.
-   */
-  /**
-   * @deprecated ForceTouchGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.ForceTouch()` instead.
-   */
-  var forceTouchHandlerName = exports.forceTouchHandlerName = 'ForceTouchGestureHandler';
-
-  /**
-   * @deprecated ForceTouchGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.ForceTouch()` instead.
-   */
-  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; see description on the top of gestureHandlerCommon.ts file
-  var ForceTouchGestureHandler = exports.ForceTouchGestureHandler = _PlatformConstants.default != null && _PlatformConstants.default.forceTouchAvailable ? (0, _createHandler.default)({
-    name: forceTouchHandlerName,
-    allowedProps: [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[11], "./gestureHandlerCommon").baseGestureHandlerProps), forceTouchGestureHandlerProps),
-    config: {}
-  }) : ForceTouchFallback;
-  ForceTouchGestureHandler.forceTouchAvailable = (_PlatformConstants.default == null ? void 0 : _PlatformConstants.default.forceTouchAvailable) || false;
-},656,[8,46,9,10,14,16,17,86,657,635,641,650],"node_modules/react-native-gesture-handler/src/handlers/ForceTouchGestureHandler.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-  // Patched this line because original failed in bridgeless
-  var _default = exports.default = _reactNative.Platform.constants;
-},657,[1],"node_modules/@react-native-ohos/react-native-gesture-handler/src/PlatformConstants.harmony.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.GestureObjects = void 0;
-  var _construct2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/construct"));
-  /**
-   * `Gesture` is the object that allows you to create and compose gestures.
-   *
-   * ### Remarks
-   * - Consider wrapping your gesture configurations with `useMemo`, as it will reduce the amount of work Gesture Handler has to do under the hood when updating gestures.
-   *
-   * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/gesture
-   */
-  var GestureObjects = exports.GestureObjects = {
-    /**
-     * A discrete gesture that recognizes one or many taps.
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/tap-gesture
-     */
-    Tap: function Tap() {
-      return new (_$$_REQUIRE(_dependencyMap[2], "./tapGesture").TapGesture)();
-    },
-    /**
-     * A continuous gesture that can recognize a panning (dragging) gesture and track its movement.
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture
-     */
-    Pan: function Pan() {
-      return new (_$$_REQUIRE(_dependencyMap[3], "./panGesture").PanGesture)();
-    },
-    /**
-     * A continuous gesture that recognizes pinch gesture. It allows for tracking the distance between two fingers and use that information to scale or zoom your content.
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pinch-gesture
-     */
-    Pinch: function Pinch() {
-      return new (_$$_REQUIRE(_dependencyMap[4], "./pinchGesture").PinchGesture)();
-    },
-    /**
-     * A continuous gesture that can recognize rotation and track its movement.
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/rotation-gesture
-     */
-    Rotation: function Rotation() {
-      return new (_$$_REQUIRE(_dependencyMap[5], "./rotationGesture").RotationGesture)();
-    },
-    /**
-     * A discrete gesture that activates when the movement is sufficiently fast.
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/fling-gesture
-     */
-    Fling: function Fling() {
-      return new (_$$_REQUIRE(_dependencyMap[6], "./flingGesture").FlingGesture)();
-    },
-    /**
-     * A discrete gesture that activates when the corresponding view is pressed for a sufficiently long time.
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/long-press-gesture
-     */
-    LongPress: function LongPress() {
-      return new (_$$_REQUIRE(_dependencyMap[7], "./longPressGesture").LongPressGesture)();
-    },
-    /**
-     * #### iOS only
-     * A continuous gesture that recognizes force of a touch. It allows for tracking pressure of touch on some iOS devices.
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/force-touch-gesture
-     */
-    ForceTouch: function ForceTouch() {
-      return new (_$$_REQUIRE(_dependencyMap[8], "./forceTouchGesture").ForceTouchGesture)();
-    },
-    /**
-     * A gesture that allows other touch handling components to participate in RNGH's gesture system.
-     * When used, the other component should be the direct child of a `GestureDetector`.
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/native-gesture
-     */
-    Native: function Native() {
-      return new (_$$_REQUIRE(_dependencyMap[9], "./nativeGesture").NativeGesture)();
-    },
-    /**
-     * A plain gesture that has no specific activation criteria nor event data set.
-     * Its state has to be controlled manually using a state manager.
-     * It will not fail when all the pointers are lifted from the screen.
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/manual-gesture
-     */
-    Manual: function Manual() {
-      return new (_$$_REQUIRE(_dependencyMap[10], "./manualGesture").ManualGesture)();
-    },
-    /**
-     * A continuous gesture that can recognize hovering above the view it's attached to.
-     * The hover effect may be activated by moving a mouse or a stylus over the view.
-     *
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/hover-gesture
-     */
-    Hover: function Hover() {
-      return new (_$$_REQUIRE(_dependencyMap[11], "./hoverGesture").HoverGesture)();
-    },
-    /**
-     * Builds a composed gesture consisting of gestures provided as parameters.
-     * The first one that becomes active cancels the rest of gestures.
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/gesture-composition/#race
-     */
-    Race: function Race() {
-      for (var _len = arguments.length, gestures = new Array(_len), _key = 0; _key < _len; _key++) {
-        gestures[_key] = arguments[_key];
-      }
-      return (0, _construct2.default)(_$$_REQUIRE(_dependencyMap[12], "./gestureComposition").ComposedGesture, gestures);
-    },
-    /**
-     * Builds a composed gesture that allows all base gestures to run simultaneously.
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/gesture-composition/#simultaneous
-     */
-    Simultaneous: function Simultaneous() {
-      for (var _len2 = arguments.length, gestures = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-        gestures[_key2] = arguments[_key2];
-      }
-      return (0, _construct2.default)(_$$_REQUIRE(_dependencyMap[12], "./gestureComposition").SimultaneousGesture, gestures);
-    },
-    /**
-     * Builds a composed gesture where only one of the provided gestures can become active.
-     * Priority is decided through the order of gestures: the first one has higher priority
-     * than the second one, second one has higher priority than the third one, and so on.
-     * For example, to make a gesture that recognizes both single and double tap you need
-     * to call Exclusive(doubleTap, singleTap).
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/gesture-composition/#exclusive
-     */
-    Exclusive: function Exclusive() {
-      for (var _len3 = arguments.length, gestures = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-        gestures[_key3] = arguments[_key3];
-      }
-      return (0, _construct2.default)(_$$_REQUIRE(_dependencyMap[12], "./gestureComposition").ExclusiveGesture, gestures);
-    }
-  };
-},658,[8,62,659,661,662,663,664,665,666,667,668,669,670],"node_modules/react-native-gesture-handler/src/handlers/gestures/gestureObjects.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.TapGesture = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  var TapGesture = exports.TapGesture = /*#__PURE__*/function (_BaseGesture) {
-    function TapGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, TapGesture);
-      _this = _callSuper(this, TapGesture);
-      _this.config = {};
-      _this.handlerName = 'TapGestureHandler';
-      _this.shouldCancelWhenOutside(true);
-      return _this;
-    }
-
-    /**
-     * Minimum number of pointers (fingers) required to be placed before the gesture activates.
-     * Should be a positive integer. The default value is 1.
-     * @param minPointers
-     */
-    (0, _inherits2.default)(TapGesture, _BaseGesture);
-    return (0, _createClass2.default)(TapGesture, [{
-      key: "minPointers",
-      value: function minPointers(_minPointers) {
-        this.config.minPointers = _minPointers;
-        return this;
-      }
-
-      /**
-       * Number of tap gestures required to activate the gesture.
-       * The default value is 1.
-       * @param count
-       */
-    }, {
-      key: "numberOfTaps",
-      value: function numberOfTaps(count) {
-        this.config.numberOfTaps = count;
-        return this;
-      }
-
-      /**
-       * Maximum distance, expressed in points, that defines how far the finger is allowed to travel during a tap gesture.
-       * @param maxDist
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/tap-gesture#maxdistancevalue-number
-       */
-    }, {
-      key: "maxDistance",
-      value: function maxDistance(maxDist) {
-        this.config.maxDist = maxDist;
-        return this;
-      }
-
-      /**
-       * Maximum time, expressed in milliseconds, that defines how fast a finger must be released after a touch.
-       * The default value is 500.
-       * @param duration
-       */
-    }, {
-      key: "maxDuration",
-      value: function maxDuration(duration) {
-        this.config.maxDurationMs = duration;
-        return this;
-      }
-
-      /**
-       * Maximum time, expressed in milliseconds, that can pass before the next tap — if many taps are required.
-       * The default value is 500.
-       * @param delay
-       */
-    }, {
-      key: "maxDelay",
-      value: function maxDelay(delay) {
-        this.config.maxDelayMs = delay;
-        return this;
-      }
-
-      /**
-       * Maximum distance, expressed in points, that defines how far the finger is allowed to travel along the X axis during a tap gesture.
-       * @param delta
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/tap-gesture#maxdeltaxvalue-number
-       */
-    }, {
-      key: "maxDeltaX",
-      value: function maxDeltaX(delta) {
-        this.config.maxDeltaX = delta;
-        return this;
-      }
-
-      /**
-       * Maximum distance, expressed in points, that defines how far the finger is allowed to travel along the Y axis during a tap gesture.
-       * @param delta
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/tap-gesture#maxdeltayvalue-number
-       */
-    }, {
-      key: "maxDeltaY",
-      value: function maxDeltaY(delta) {
-        this.config.maxDeltaY = delta;
-        return this;
-      }
-    }]);
-  }(_$$_REQUIRE(_dependencyMap[6], "./gesture").BaseGesture);
-},659,[8,9,10,14,16,17,660],"node_modules/react-native-gesture-handler/src/handlers/gestures/tapGesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.Gesture = exports.ContinousBaseGesture = exports.CALLBACK_TYPE = exports.BaseGesture = void 0;
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/inherits"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/createClass"));
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/classCallCheck"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  // Allow adding a ref to a gesture handler
-
-  var CALLBACK_TYPE = exports.CALLBACK_TYPE = {
-    UNDEFINED: 0,
-    BEGAN: 1,
-    START: 2,
-    UPDATE: 3,
-    CHANGE: 4,
-    END: 5,
-    FINALIZE: 6,
-    TOUCHES_DOWN: 7,
-    TOUCHES_MOVE: 8,
-    TOUCHES_UP: 9,
-    TOUCHES_CANCELLED: 10
-  };
-
-  // Allow using CALLBACK_TYPE as object and type
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
-  var Gesture = exports.Gesture = /*#__PURE__*/(0, _createClass2.default)(function Gesture() {
-    (0, _classCallCheck2.default)(this, Gesture);
-  });
-  var nextGestureId = 0;
-  var BaseGesture = exports.BaseGesture = /*#__PURE__*/function (_Gesture) {
-    function BaseGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, BaseGesture);
-      _this = _callSuper(this, BaseGesture);
-
-      // Used to check whether the gesture config has been updated when wrapping it
-      // with `useMemo`. Since every config will have a unique id, when the dependencies
-      // don't change, the config won't be recreated and the id will stay the same.
-      // If the id is different, it means that the config has changed and the gesture
-      // needs to be updated.
-      _this.gestureId = -1;
-      _this.handlerTag = -1;
-      _this.handlerName = '';
-      _this.config = {};
-      _this.handlers = {
-        gestureId: -1,
-        handlerTag: -1,
-        isWorklet: []
-      };
-      _this.gestureId = nextGestureId++;
-      _this.handlers.gestureId = _this.gestureId;
-      return _this;
-    }
-    (0, _inherits2.default)(BaseGesture, _Gesture);
-    return (0, _createClass2.default)(BaseGesture, [{
-      key: "addDependency",
-      value: function addDependency(key, gesture) {
-        var value = this.config[key];
-        this.config[key] = value ? Array().concat(value, gesture) : [gesture];
-      }
-
-      /**
-       * Sets a `ref` to the gesture object, allowing for interoperability with the old API.
-       * @param ref
-       */
-    }, {
-      key: "withRef",
-      value: function withRef(ref) {
-        this.config.ref = ref;
-        return this;
-      }
-
-      // eslint-disable-next-line @typescript-eslint/ban-types
-    }, {
-      key: "isWorklet",
-      value: function isWorklet(callback) {
-        // @ts-ignore if callback is a worklet, the property will be available, if not then the check will return false
-        return callback.__workletHash !== undefined;
-      }
-
-      /**
-       * Set the callback that is being called when given gesture handler starts receiving touches.
-       * At the moment of this callback the handler is in `BEGAN` state and we don't know yet if it will recognize the gesture at all.
-       * @param callback
-       */
-    }, {
-      key: "onBegin",
-      value: function onBegin(callback) {
-        this.handlers.onBegin = callback;
-        this.handlers.isWorklet[CALLBACK_TYPE.BEGAN] = this.isWorklet(callback);
-        return this;
-      }
-
-      /**
-       * Set the callback that is being called when the gesture is recognized by the handler and it transitions to the `ACTIVE` state.
-       * @param callback
-       */
-    }, {
-      key: "onStart",
-      value: function onStart(callback) {
-        this.handlers.onStart = callback;
-        this.handlers.isWorklet[CALLBACK_TYPE.START] = this.isWorklet(callback);
-        return this;
-      }
-
-      /**
-       * Set the callback that is being called when the gesture that was recognized by the handler finishes and handler reaches `END` state.
-       * It will be called only if the handler was previously in the `ACTIVE` state.
-       * @param callback
-       */
-    }, {
-      key: "onEnd",
-      value: function onEnd(callback) {
-        this.handlers.onEnd = callback;
-        // @ts-ignore if callback is a worklet, the property will be available, if not then the check will return false
-        this.handlers.isWorklet[CALLBACK_TYPE.END] = this.isWorklet(callback);
-        return this;
-      }
-
-      /**
-       * Set the callback that is being called when the handler finalizes handling gesture - the gesture was recognized and has finished or it failed to recognize.
-       * @param callback
-       */
-    }, {
-      key: "onFinalize",
-      value: function onFinalize(callback) {
-        this.handlers.onFinalize = callback;
-        // @ts-ignore if callback is a worklet, the property will be available, if not then the check will return false
-        this.handlers.isWorklet[CALLBACK_TYPE.FINALIZE] = this.isWorklet(callback);
-        return this;
-      }
-
-      /**
-       * Set the `onTouchesDown` callback which is called every time a pointer is placed on the screen.
-       * @param callback
-       */
-    }, {
-      key: "onTouchesDown",
-      value: function onTouchesDown(callback) {
-        this.config.needsPointerData = true;
-        this.handlers.onTouchesDown = callback;
-        this.handlers.isWorklet[CALLBACK_TYPE.TOUCHES_DOWN] = this.isWorklet(callback);
-        return this;
-      }
-
-      /**
-       * Set the `onTouchesMove` callback which is called every time a pointer is moved on the screen.
-       * @param callback
-       */
-    }, {
-      key: "onTouchesMove",
-      value: function onTouchesMove(callback) {
-        this.config.needsPointerData = true;
-        this.handlers.onTouchesMove = callback;
-        this.handlers.isWorklet[CALLBACK_TYPE.TOUCHES_MOVE] = this.isWorklet(callback);
-        return this;
-      }
-
-      /**
-       * Set the `onTouchesUp` callback which is called every time a pointer is lifted from the screen.
-       * @param callback
-       */
-    }, {
-      key: "onTouchesUp",
-      value: function onTouchesUp(callback) {
-        this.config.needsPointerData = true;
-        this.handlers.onTouchesUp = callback;
-        this.handlers.isWorklet[CALLBACK_TYPE.TOUCHES_UP] = this.isWorklet(callback);
-        return this;
-      }
-
-      /**
-       * Set the `onTouchesCancelled` callback which is called every time a pointer stops being tracked, for example when the gesture finishes.
-       * @param callback
-       */
-    }, {
-      key: "onTouchesCancelled",
-      value: function onTouchesCancelled(callback) {
-        this.config.needsPointerData = true;
-        this.handlers.onTouchesCancelled = callback;
-        this.handlers.isWorklet[CALLBACK_TYPE.TOUCHES_CANCELLED] = this.isWorklet(callback);
-        return this;
-      }
-
-      /**
-       * Indicates whether the given handler should be analyzing stream of touch events or not.
-       * @param enabled
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#enabledvalue-boolean
-       */
-    }, {
-      key: "enabled",
-      value: function enabled(_enabled) {
-        this.config.enabled = _enabled;
-        return this;
-      }
-
-      /**
-       * When true the handler will cancel or fail recognition (depending on its current state) whenever the finger leaves the area of the connected view.
-       * @param value
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#shouldcancelwhenoutsidevalue-boolean
-       */
-    }, {
-      key: "shouldCancelWhenOutside",
-      value: function shouldCancelWhenOutside(value) {
-        this.config.shouldCancelWhenOutside = value;
-        return this;
-      }
-
-      /**
-       * This parameter enables control over what part of the connected view area can be used to begin recognizing the gesture.
-       * When a negative number is provided the bounds of the view will reduce the area by the given number of points in each of the sides evenly.
-       * @param hitSlop
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#hitslopsettings
-       */
-    }, {
-      key: "hitSlop",
-      value: function hitSlop(_hitSlop) {
-        this.config.hitSlop = _hitSlop;
-        return this;
-      }
-
-      /**
-       * #### Web only
-       * This parameter allows to specify which `cursor` should be used when gesture activates.
-       * Supports all CSS cursor values (e.g. `"grab"`, `"zoom-in"`). Default value is set to `"auto"`.
-       * @param activeCursor
-       */
-    }, {
-      key: "activeCursor",
-      value: function activeCursor(_activeCursor) {
-        this.config.activeCursor = _activeCursor;
-        return this;
-      }
-
-      /**
-       * #### Web & Android only
-       * Allows users to choose which mouse button should handler respond to.
-       * Arguments can be combined using `|` operator, e.g. `mouseButton(MouseButton.LEFT | MouseButton.RIGHT)`.
-       * Default value is set to `MouseButton.LEFT`.
-       * @param mouseButton
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#mousebuttonvalue-mousebutton-web--android-only
-       */
-    }, {
-      key: "mouseButton",
-      value: function mouseButton(_mouseButton) {
-        this.config.mouseButton = _mouseButton;
-        return this;
-      }
-
-      /**
-       * When `react-native-reanimated` is installed, the callbacks passed to the gestures are automatically workletized and run on the UI thread when called.
-       * This option allows for changing this behavior: when `true`, all the callbacks will be run on the JS thread instead of the UI thread, regardless of whether they are worklets or not.
-       * Defaults to `false`.
-       * @param runOnJS
-       */
-    }, {
-      key: "runOnJS",
-      value: function runOnJS(_runOnJS) {
-        this.config.runOnJS = _runOnJS;
-        return this;
-      }
-
-      /**
-       * Allows gestures across different components to be recognized simultaneously.
-       * @param gestures
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/gesture-composition/#simultaneouswithexternalgesture
-       */
-    }, {
-      key: "simultaneousWithExternalGesture",
-      value: function simultaneousWithExternalGesture() {
-        for (var _len = arguments.length, gestures = new Array(_len), _key = 0; _key < _len; _key++) {
-          gestures[_key] = arguments[_key];
-        }
-        for (var gesture of gestures) {
-          this.addDependency('simultaneousWith', gesture);
-        }
-        return this;
-      }
-
-      /**
-       * Allows to delay activation of the handler until all handlers passed as arguments to this method fail (or don't begin at all).
-       * @param gestures
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/gesture-composition/#requireexternalgesturetofail
-       */
-    }, {
-      key: "requireExternalGestureToFail",
-      value: function requireExternalGestureToFail() {
-        for (var _len2 = arguments.length, gestures = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-          gestures[_key2] = arguments[_key2];
-        }
-        for (var gesture of gestures) {
-          this.addDependency('requireToFail', gesture);
-        }
-        return this;
-      }
-
-      /**
-       * Works similarily to `requireExternalGestureToFail` but the direction of the relation is reversed - instead of being one-to-many relation, it's many-to-one.
-       * @param gestures
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/gesture-composition/#blocksexternalgesture
-       */
-    }, {
-      key: "blocksExternalGesture",
-      value: function blocksExternalGesture() {
-        for (var _len3 = arguments.length, gestures = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-          gestures[_key3] = arguments[_key3];
-        }
-        for (var gesture of gestures) {
-          this.addDependency('blocksHandlers', gesture);
-        }
-        return this;
-      }
-
-      /**
-       * Sets a `testID` property for gesture object, allowing for querying for it in tests.
-       * @param id
-       */
-    }, {
-      key: "withTestId",
-      value: function withTestId(id) {
-        this.config.testId = id;
-        return this;
-      }
-
-      /**
-       * #### iOS only
-       * When `true`, the handler will cancel touches for native UI components (`UIButton`, `UISwitch`, etc) it's attached to when it becomes `ACTIVE`.
-       * Default value is `true`.
-       * @param value
-       */
-    }, {
-      key: "cancelsTouchesInView",
-      value: function cancelsTouchesInView(value) {
-        this.config.cancelsTouchesInView = value;
-        return this;
-      }
-    }, {
-      key: "initialize",
-      value: function initialize() {
-        this.handlerTag = (0, _$$_REQUIRE(_dependencyMap[6], "../getNextHandlerTag").getNextHandlerTag)();
-        this.handlers = Object.assign({}, this.handlers, {
-          handlerTag: this.handlerTag
-        });
-        if (this.config.ref) {
-          this.config.ref.current = this;
-        }
-      }
-    }, {
-      key: "toGestureArray",
-      value: function toGestureArray() {
-        return [this];
-      }
-
-      // eslint-disable-next-line @typescript-eslint/no-empty-function
-    }, {
-      key: "prepare",
-      value: function prepare() {}
-    }, {
-      key: "shouldUseReanimated",
-      get: function get() {
-        // Use Reanimated when runOnJS isn't set explicitly,
-        // all defined callbacks are worklets
-        // and remote debugging is disabled
-        return this.config.runOnJS !== true && !this.handlers.isWorklet.includes(false) && !(0, _$$_REQUIRE(_dependencyMap[7], "../../utils").isRemoteDebuggingEnabled)();
-      }
-    }]);
-  }(Gesture);
-  var ContinousBaseGesture = exports.ContinousBaseGesture = /*#__PURE__*/function (_BaseGesture2) {
-    function ContinousBaseGesture() {
-      (0, _classCallCheck2.default)(this, ContinousBaseGesture);
-      return _callSuper(this, ContinousBaseGesture, arguments);
-    }
-    (0, _inherits2.default)(ContinousBaseGesture, _BaseGesture2);
-    return (0, _createClass2.default)(ContinousBaseGesture, [{
-      key: "onUpdate",
-      value:
-      /**
-       * Set the callback that is being called every time the gesture receives an update while it's active.
-       * @param callback
-       */
-      function onUpdate(callback) {
-        this.handlers.onUpdate = callback;
-        this.handlers.isWorklet[CALLBACK_TYPE.UPDATE] = this.isWorklet(callback);
-        return this;
-      }
-
-      /**
-       * Set the callback that is being called every time the gesture receives an update while it's active.
-       * This callback will receive information about change in value in relation to the last received event.
-       * @param callback
-       */
-    }, {
-      key: "onChange",
-      value: function onChange(callback) {
-        this.handlers.onChange = callback;
-        this.handlers.isWorklet[CALLBACK_TYPE.CHANGE] = this.isWorklet(callback);
-        return this;
-      }
-
-      /**
-       * When `true` the handler will not activate by itself even if its activation criteria are met.
-       * Instead you can manipulate its state using state manager.
-       * @param manualActivation
-       */
-    }, {
-      key: "manualActivation",
-      value: function manualActivation(_manualActivation) {
-        this.config.manualActivation = _manualActivation;
-        return this;
-      }
-    }]);
-  }(BaseGesture);
-},660,[8,14,16,17,10,9,648,641],"node_modules/react-native-gesture-handler/src/handlers/gestures/gesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.PanGesture = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _get2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/get"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  function _superPropGet(t, o, e, r) { var p = (0, _get2.default)((0, _getPrototypeOf2.default)(1 & r ? t.prototype : t), o, e); return 2 & r && "function" == typeof p ? function (t) { return p.apply(e, t); } : p; }
-  var _worklet_3643287777059_init_data = {
-    code: "function changeEventCalculator_reactNativeGestureHandler_panGestureTs1(current,previous){let changePayload;if(previous===undefined){changePayload={changeX:current.translationX,changeY:current.translationY};}else{changePayload={changeX:current.translationX-previous.translationX,changeY:current.translationY-previous.translationY};}return{...current,...changePayload};}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/panGesture.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"changeEventCalculator_reactNativeGestureHandler_panGestureTs1\",\"current\",\"previous\",\"changePayload\",\"undefined\",\"changeX\",\"translationX\",\"changeY\",\"translationY\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/panGesture.ts\"],\"mappings\":\"AAUA,SAAAA,6DAGEA,CAAAC,OAAA,CAAAC,QAAA,EAEA,GAAI,CAAAC,aAA2C,CAC/C,GAAID,QAAQ,GAAKE,SAAS,CAAE,CAC1BD,aAAa,CAAG,CACdE,OAAO,CAAEJ,OAAO,CAACK,YAAY,CAC7BC,OAAO,CAAEN,OAAO,CAACO,YACnB,CAAC,CACH,CAAC,IAAM,CACLL,aAAa,CAAG,CACdE,OAAO,CAAEJ,OAAO,CAACK,YAAY,CAAGJ,QAAQ,CAACI,YAAY,CACrDC,OAAO,CAAEN,OAAO,CAACO,YAAY,CAAGN,QAAQ,CAACM,YAC3C,CAAC,CACH,CAEA,MAAO,CAAE,GAAGP,OAAO,CAAE,GAAGE,aAAc,CAAC,CACzC\",\"ignoreList\":[]}",
+  var ANIMATION_COUNT = 30;
+  var _worklet_11454650843785_init_data = {
+    code: "function FsTestTsx1(){const{v}=this.__closure;return{opacity:v.value,transform:[{scale:0.5+v.value}]};}",
+    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/react-native-reanimated/FsTest.tsx",
+    sourceMap: "{\"version\":3,\"names\":[\"FsTestTsx1\",\"v\",\"__closure\",\"opacity\",\"value\",\"transform\",\"scale\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/tests/react-native-reanimated/FsTest.tsx\"],\"mappings\":\"AA0C6C,SAAAA,WAAA,QAAAC,CAAA,OAAAC,SAAA,OAAO,CACxCC,OAAO,CAAEF,CAAC,CAACG,KAAK,CAChBC,SAAS,CAAE,CAAC,CAAEC,KAAK,CAAE,GAAG,CAAGL,CAAC,CAACG,KAAM,CAAC,CACtC,CAAC\",\"ignoreList\":[]}",
     version: "3.18.0"
   };
-  var changeEventCalculator = function () {
-    var _e = [new global.Error(), 1, -27];
-    var changeEventCalculator = function changeEventCalculator(current, previous) {
-      var changePayload;
-      if (previous === undefined) {
-        changePayload = {
-          changeX: current.translationX,
-          changeY: current.translationY
-        };
-      } else {
-        changePayload = {
-          changeX: current.translationX - previous.translationX,
-          changeY: current.translationY - previous.translationY
-        };
-      }
-      return Object.assign({}, current, changePayload);
-    };
-    changeEventCalculator.__closure = {};
-    changeEventCalculator.__workletHash = 3643287777059;
-    changeEventCalculator.__initData = _worklet_3643287777059_init_data;
-    changeEventCalculator.__stackDetails = _e;
-    return changeEventCalculator;
-  }();
-  var PanGesture = exports.PanGesture = /*#__PURE__*/function (_ContinousBaseGesture) {
-    function PanGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, PanGesture);
-      _this = _callSuper(this, PanGesture);
-      _this.config = {};
-      _this.handlerName = 'PanGestureHandler';
-      return _this;
-    }
-
-    /**
-     * Range along Y axis (in points) where fingers travels without activation of gesture.
-     * @param offset
-     * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#activeoffsetyvalue-number--number
-     */
-    (0, _inherits2.default)(PanGesture, _ContinousBaseGesture);
-    return (0, _createClass2.default)(PanGesture, [{
-      key: "activeOffsetY",
-      value: function activeOffsetY(offset) {
-        if (Array.isArray(offset)) {
-          this.config.activeOffsetYStart = offset[0];
-          this.config.activeOffsetYEnd = offset[1];
-        } else if (offset < 0) {
-          this.config.activeOffsetYStart = offset;
-        } else {
-          this.config.activeOffsetYEnd = offset;
-        }
-        return this;
-      }
-
-      /**
-       * Range along X axis (in points) where fingers travels without activation of gesture.
-       * @param offset
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#activeoffsetxvalue-number--number
-       */
-    }, {
-      key: "activeOffsetX",
-      value: function activeOffsetX(offset) {
-        if (Array.isArray(offset)) {
-          this.config.activeOffsetXStart = offset[0];
-          this.config.activeOffsetXEnd = offset[1];
-        } else if (offset < 0) {
-          this.config.activeOffsetXStart = offset;
-        } else {
-          this.config.activeOffsetXEnd = offset;
-        }
-        return this;
-      }
-
-      /**
-       * When the finger moves outside this range (in points) along Y axis and gesture hasn't yet activated it will fail recognizing the gesture.
-       * @param offset
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#failoffsetyvalue-number--number
-       */
-    }, {
-      key: "failOffsetY",
-      value: function failOffsetY(offset) {
-        if (Array.isArray(offset)) {
-          this.config.failOffsetYStart = offset[0];
-          this.config.failOffsetYEnd = offset[1];
-        } else if (offset < 0) {
-          this.config.failOffsetYStart = offset;
-        } else {
-          this.config.failOffsetYEnd = offset;
-        }
-        return this;
-      }
-
-      /**
-       * When the finger moves outside this range (in points) along X axis and gesture hasn't yet activated it will fail recognizing the gesture.
-       * @param offset
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture#failoffsetxvalue-number--number
-       */
-    }, {
-      key: "failOffsetX",
-      value: function failOffsetX(offset) {
-        if (Array.isArray(offset)) {
-          this.config.failOffsetXStart = offset[0];
-          this.config.failOffsetXEnd = offset[1];
-        } else if (offset < 0) {
-          this.config.failOffsetXStart = offset;
-        } else {
-          this.config.failOffsetXEnd = offset;
-        }
-        return this;
-      }
-
-      /**
-       * A number of fingers that is required to be placed before gesture can activate. Should be a higher or equal to 0 integer.
-       * @param minPointers
-       */
-    }, {
-      key: "minPointers",
-      value: function minPointers(_minPointers) {
-        this.config.minPointers = _minPointers;
-        return this;
-      }
-
-      /**
-       * When the given number of fingers is placed on the screen and gesture hasn't yet activated it will fail recognizing the gesture.
-       * Should be a higher or equal to 0 integer.
-       * @param maxPointers
-       */
-    }, {
-      key: "maxPointers",
-      value: function maxPointers(_maxPointers) {
-        this.config.maxPointers = _maxPointers;
-        return this;
-      }
-
-      /**
-       * Minimum distance the finger (or multiple finger) need to travel before the gesture activates.
-       * Expressed in points.
-       * @param distance
-       */
-    }, {
-      key: "minDistance",
-      value: function minDistance(distance) {
-        this.config.minDist = distance;
-        return this;
-      }
-
-      /**
-       * Minimum velocity the finger has to reach in order to activate handler.
-       * @param velocity
-       */
-    }, {
-      key: "minVelocity",
-      value: function minVelocity(velocity) {
-        this.config.minVelocity = velocity;
-        return this;
-      }
-
-      /**
-       * Minimum velocity along X axis the finger has to reach in order to activate handler.
-       * @param velocity
-       */
-    }, {
-      key: "minVelocityX",
-      value: function minVelocityX(velocity) {
-        this.config.minVelocityX = velocity;
-        return this;
-      }
-
-      /**
-       * Minimum velocity along Y axis the finger has to reach in order to activate handler.
-       * @param velocity
-       */
-    }, {
-      key: "minVelocityY",
-      value: function minVelocityY(velocity) {
-        this.config.minVelocityY = velocity;
-        return this;
-      }
-
-      /**
-       * #### Android only
-       * Android, by default, will calculate translation values based on the position of the leading pointer (the first one that was placed on the screen).
-       * This modifier allows that behavior to be changed to the one that is default on iOS - the averaged position of all active pointers will be used to calculate the translation values.
-       * @param value
-       */
-    }, {
-      key: "averageTouches",
-      value: function averageTouches(value) {
-        this.config.avgTouches = value;
-        return this;
-      }
-
-      /**
-       * #### iOS only
-       * Enables two-finger gestures on supported devices, for example iPads with trackpads.
-       * @param value
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture/#enabletrackpadtwofingergesturevalue-boolean-ios-only
-       */
-    }, {
-      key: "enableTrackpadTwoFingerGesture",
-      value: function enableTrackpadTwoFingerGesture(value) {
-        this.config.enableTrackpadTwoFingerGesture = value;
-        return this;
-      }
-
-      /**
-       * Duration in milliseconds of the LongPress gesture before Pan is allowed to activate.
-       * @param duration
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/pan-gesture/#activateafterlongpressduration-number
-       */
-    }, {
-      key: "activateAfterLongPress",
-      value: function activateAfterLongPress(duration) {
-        this.config.activateAfterLongPress = duration;
-        return this;
-      }
-    }, {
-      key: "onChange",
-      value: function onChange(callback) {
-        // @ts-ignore TS being overprotective, PanGestureHandlerEventPayload is Record
-        this.handlers.changeEventCalculator = changeEventCalculator;
-        return _superPropGet(PanGesture, "onChange", this, 3)([callback]);
-      }
-    }]);
-  }(_$$_REQUIRE(_dependencyMap[7], "./gesture").ContinousBaseGesture);
-},661,[8,9,10,14,16,51,17,660],"node_modules/react-native-gesture-handler/src/handlers/gestures/panGesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.PinchGesture = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _get2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/get"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  function _superPropGet(t, o, e, r) { var p = (0, _get2.default)((0, _getPrototypeOf2.default)(1 & r ? t.prototype : t), o, e); return 2 & r && "function" == typeof p ? function (t) { return p.apply(e, t); } : p; }
-  var _worklet_13149109047081_init_data = {
-    code: "function changeEventCalculator_reactNativeGestureHandler_pinchGestureTs1(current,previous){let changePayload;if(previous===undefined){changePayload={scaleChange:current.scale};}else{changePayload={scaleChange:current.scale/previous.scale};}return{...current,...changePayload};}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/pinchGesture.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"changeEventCalculator_reactNativeGestureHandler_pinchGestureTs1\",\"current\",\"previous\",\"changePayload\",\"undefined\",\"scaleChange\",\"scale\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/pinchGesture.ts\"],\"mappings\":\"AAQA,SAAAA,+DAGEA,CAAAC,OAAA,CAAAC,QAAA,EAEA,GAAI,CAAAC,aAA6C,CACjD,GAAID,QAAQ,GAAKE,SAAS,CAAE,CAC1BD,aAAa,CAAG,CACdE,WAAW,CAAEJ,OAAO,CAACK,KACvB,CAAC,CACH,CAAC,IAAM,CACLH,aAAa,CAAG,CACdE,WAAW,CAAEJ,OAAO,CAACK,KAAK,CAAGJ,QAAQ,CAACI,KACxC,CAAC,CACH,CAEA,MAAO,CAAE,GAAGL,OAAO,CAAE,GAAGE,aAAc,CAAC,CACzC\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var changeEventCalculator = function () {
-    var _e = [new global.Error(), 1, -27];
-    var changeEventCalculator = function changeEventCalculator(current, previous) {
-      var changePayload;
-      if (previous === undefined) {
-        changePayload = {
-          scaleChange: current.scale
-        };
-      } else {
-        changePayload = {
-          scaleChange: current.scale / previous.scale
-        };
-      }
-      return Object.assign({}, current, changePayload);
-    };
-    changeEventCalculator.__closure = {};
-    changeEventCalculator.__workletHash = 13149109047081;
-    changeEventCalculator.__initData = _worklet_13149109047081_init_data;
-    changeEventCalculator.__stackDetails = _e;
-    return changeEventCalculator;
-  }();
-  var PinchGesture = exports.PinchGesture = /*#__PURE__*/function (_ContinousBaseGesture) {
-    function PinchGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, PinchGesture);
-      _this = _callSuper(this, PinchGesture);
-      _this.handlerName = 'PinchGestureHandler';
-      return _this;
-    }
-    (0, _inherits2.default)(PinchGesture, _ContinousBaseGesture);
-    return (0, _createClass2.default)(PinchGesture, [{
-      key: "onChange",
-      value: function onChange(callback) {
-        // @ts-ignore TS being overprotective, PinchGestureHandlerEventPayload is Record
-        this.handlers.changeEventCalculator = changeEventCalculator;
-        return _superPropGet(PinchGesture, "onChange", this, 3)([callback]);
-      }
-    }]);
-  }(_$$_REQUIRE(_dependencyMap[7], "./gesture").ContinousBaseGesture);
-},662,[8,9,10,14,16,51,17,660],"node_modules/react-native-gesture-handler/src/handlers/gestures/pinchGesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.RotationGesture = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _get2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/get"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  function _superPropGet(t, o, e, r) { var p = (0, _get2.default)((0, _getPrototypeOf2.default)(1 & r ? t.prototype : t), o, e); return 2 & r && "function" == typeof p ? function (t) { return p.apply(e, t); } : p; }
-  var _worklet_364113346799_init_data = {
-    code: "function changeEventCalculator_reactNativeGestureHandler_rotationGestureTs1(current,previous){let changePayload;if(previous===undefined){changePayload={rotationChange:current.rotation};}else{changePayload={rotationChange:current.rotation-previous.rotation};}return{...current,...changePayload};}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/rotationGesture.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"changeEventCalculator_reactNativeGestureHandler_rotationGestureTs1\",\"current\",\"previous\",\"changePayload\",\"undefined\",\"rotationChange\",\"rotation\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/rotationGesture.ts\"],\"mappings\":\"AAQA,SAAAA,kEAGEA,CAAAC,OAAA,CAAAC,QAAA,EAEA,GAAI,CAAAC,aAAgD,CACpD,GAAID,QAAQ,GAAKE,SAAS,CAAE,CAC1BD,aAAa,CAAG,CACdE,cAAc,CAAEJ,OAAO,CAACK,QAC1B,CAAC,CACH,CAAC,IAAM,CACLH,aAAa,CAAG,CACdE,cAAc,CAAEJ,OAAO,CAACK,QAAQ,CAAGJ,QAAQ,CAACI,QAC9C,CAAC,CACH,CAEA,MAAO,CAAE,GAAGL,OAAO,CAAE,GAAGE,aAAc,CAAC,CACzC\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var changeEventCalculator = function () {
-    var _e = [new global.Error(), 1, -27];
-    var changeEventCalculator = function changeEventCalculator(current, previous) {
-      var changePayload;
-      if (previous === undefined) {
-        changePayload = {
-          rotationChange: current.rotation
-        };
-      } else {
-        changePayload = {
-          rotationChange: current.rotation - previous.rotation
-        };
-      }
-      return Object.assign({}, current, changePayload);
-    };
-    changeEventCalculator.__closure = {};
-    changeEventCalculator.__workletHash = 364113346799;
-    changeEventCalculator.__initData = _worklet_364113346799_init_data;
-    changeEventCalculator.__stackDetails = _e;
-    return changeEventCalculator;
-  }();
-  var RotationGesture = exports.RotationGesture = /*#__PURE__*/function (_ContinousBaseGesture) {
-    function RotationGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, RotationGesture);
-      _this = _callSuper(this, RotationGesture);
-      _this.handlerName = 'RotationGestureHandler';
-      return _this;
-    }
-    (0, _inherits2.default)(RotationGesture, _ContinousBaseGesture);
-    return (0, _createClass2.default)(RotationGesture, [{
-      key: "onChange",
-      value: function onChange(callback) {
-        // @ts-ignore TS being overprotective, RotationGestureHandlerEventPayload is Record
-        this.handlers.changeEventCalculator = changeEventCalculator;
-        return _superPropGet(RotationGesture, "onChange", this, 3)([callback]);
-      }
-    }]);
-  }(_$$_REQUIRE(_dependencyMap[7], "./gesture").ContinousBaseGesture);
-},663,[8,9,10,14,16,51,17,660],"node_modules/react-native-gesture-handler/src/handlers/gestures/rotationGesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.FlingGesture = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  var FlingGesture = exports.FlingGesture = /*#__PURE__*/function (_BaseGesture) {
-    function FlingGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, FlingGesture);
-      _this = _callSuper(this, FlingGesture);
-      _this.config = {};
-      _this.handlerName = 'FlingGestureHandler';
-      return _this;
-    }
-
-    /**
-     * Determine exact number of points required to handle the fling gesture.
-     * @param pointers
-     */
-    (0, _inherits2.default)(FlingGesture, _BaseGesture);
-    return (0, _createClass2.default)(FlingGesture, [{
-      key: "numberOfPointers",
-      value: function numberOfPointers(pointers) {
-        this.config.numberOfPointers = pointers;
-        return this;
-      }
-
-      /**
-       * Expressed allowed direction of movement.
-       * Expected values are exported as constants in the Directions object.
-       * Arguments can be combined using `|` operator. Default value is set to `MouseButton.LEFT`.
-       * @param direction
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/fling-gesture/#directionvalue-directions
-       */
-    }, {
-      key: "direction",
-      value: function direction(_direction) {
-        this.config.direction = _direction;
-        return this;
-      }
-    }]);
-  }(_$$_REQUIRE(_dependencyMap[6], "./gesture").BaseGesture);
-},664,[8,9,10,14,16,17,660],"node_modules/react-native-gesture-handler/src/handlers/gestures/flingGesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.LongPressGesture = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  var LongPressGesture = exports.LongPressGesture = /*#__PURE__*/function (_BaseGesture) {
-    function LongPressGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, LongPressGesture);
-      _this = _callSuper(this, LongPressGesture);
-      _this.config = {};
-      _this.handlerName = 'LongPressGestureHandler';
-      _this.shouldCancelWhenOutside(true);
-      return _this;
-    }
-
-    /**
-     * Minimum time, expressed in milliseconds, that a finger must remain pressed on the corresponding view.
-     * The default value is 500.
-     * @param duration
-     */
-    (0, _inherits2.default)(LongPressGesture, _BaseGesture);
-    return (0, _createClass2.default)(LongPressGesture, [{
-      key: "minDuration",
-      value: function minDuration(duration) {
-        this.config.minDurationMs = duration;
-        return this;
-      }
-
-      /**
-       * Maximum distance, expressed in points, that defines how far the finger is allowed to travel during a long press gesture.
-       * @param distance
-       * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/long-press-gesture#maxdistancevalue-number
-       */
-    }, {
-      key: "maxDistance",
-      value: function maxDistance(distance) {
-        this.config.maxDist = distance;
-        return this;
-      }
-
-      /**
-       * Determine exact number of points required to handle the long press gesture.
-       * @param pointers
-       */
-    }, {
-      key: "numberOfPointers",
-      value: function numberOfPointers(pointers) {
-        this.config.numberOfPointers = pointers;
-        return this;
-      }
-    }]);
-  }(_$$_REQUIRE(_dependencyMap[6], "./gesture").BaseGesture);
-},665,[8,9,10,14,16,17,660],"node_modules/react-native-gesture-handler/src/handlers/gestures/longPressGesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ForceTouchGesture = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _get2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/get"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  function _superPropGet(t, o, e, r) { var p = (0, _get2.default)((0, _getPrototypeOf2.default)(1 & r ? t.prototype : t), o, e); return 2 & r && "function" == typeof p ? function (t) { return p.apply(e, t); } : p; }
-  var _worklet_15288835999946_init_data = {
-    code: "function changeEventCalculator_reactNativeGestureHandler_forceTouchGestureTs1(current,previous){let changePayload;if(previous===undefined){changePayload={forceChange:current.force};}else{changePayload={forceChange:current.force-previous.force};}return{...current,...changePayload};}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/forceTouchGesture.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"changeEventCalculator_reactNativeGestureHandler_forceTouchGestureTs1\",\"current\",\"previous\",\"changePayload\",\"undefined\",\"forceChange\",\"force\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/forceTouchGesture.ts\"],\"mappings\":\"AASA,SAAAA,oEAGEA,CAAAC,OAAA,CAAAC,QAAA,EAEA,GAAI,CAAAC,aAAkD,CACtD,GAAID,QAAQ,GAAKE,SAAS,CAAE,CAC1BD,aAAa,CAAG,CACdE,WAAW,CAAEJ,OAAO,CAACK,KACvB,CAAC,CACH,CAAC,IAAM,CACLH,aAAa,CAAG,CACdE,WAAW,CAAEJ,OAAO,CAACK,KAAK,CAAGJ,QAAQ,CAACI,KACxC,CAAC,CACH,CAEA,MAAO,CAAE,GAAGL,OAAO,CAAE,GAAGE,aAAc,CAAC,CACzC\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var changeEventCalculator = function () {
-    var _e = [new global.Error(), 1, -27];
-    var changeEventCalculator = function changeEventCalculator(current, previous) {
-      var changePayload;
-      if (previous === undefined) {
-        changePayload = {
-          forceChange: current.force
-        };
-      } else {
-        changePayload = {
-          forceChange: current.force - previous.force
-        };
-      }
-      return Object.assign({}, current, changePayload);
-    };
-    changeEventCalculator.__closure = {};
-    changeEventCalculator.__workletHash = 15288835999946;
-    changeEventCalculator.__initData = _worklet_15288835999946_init_data;
-    changeEventCalculator.__stackDetails = _e;
-    return changeEventCalculator;
-  }();
-  var ForceTouchGesture = exports.ForceTouchGesture = /*#__PURE__*/function (_ContinousBaseGesture) {
-    function ForceTouchGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, ForceTouchGesture);
-      _this = _callSuper(this, ForceTouchGesture);
-      _this.config = {};
-      _this.handlerName = 'ForceTouchGestureHandler';
-      return _this;
-    }
-
-    /**
-     * A minimal pressure that is required before gesture can activate.
-     * Should be a value from range [0.0, 1.0]. Default is 0.2.
-     * @param force
-     */
-    (0, _inherits2.default)(ForceTouchGesture, _ContinousBaseGesture);
-    return (0, _createClass2.default)(ForceTouchGesture, [{
-      key: "minForce",
-      value: function minForce(force) {
-        this.config.minForce = force;
-        return this;
-      }
-
-      /**
-       * A maximal pressure that could be applied for gesture.
-       * If the pressure is greater, gesture fails. Should be a value from range [0.0, 1.0].
-       * @param force
-       */
-    }, {
-      key: "maxForce",
-      value: function maxForce(force) {
-        this.config.maxForce = force;
-        return this;
-      }
-
-      /**
-       * Value defining if haptic feedback has to be performed on activation.
-       * @param value
-       */
-    }, {
-      key: "feedbackOnActivation",
-      value: function feedbackOnActivation(value) {
-        this.config.feedbackOnActivation = value;
-        return this;
-      }
-    }, {
-      key: "onChange",
-      value: function onChange(callback) {
-        // @ts-ignore TS being overprotective, ForceTouchGestureHandlerEventPayload is Record
-        this.handlers.changeEventCalculator = changeEventCalculator;
-        return _superPropGet(ForceTouchGesture, "onChange", this, 3)([callback]);
-      }
-    }]);
-  }(_$$_REQUIRE(_dependencyMap[7], "./gesture").ContinousBaseGesture);
-},666,[8,9,10,14,16,51,17,660],"node_modules/react-native-gesture-handler/src/handlers/gestures/forceTouchGesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.NativeGesture = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  var NativeGesture = exports.NativeGesture = /*#__PURE__*/function (_BaseGesture) {
-    function NativeGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, NativeGesture);
-      _this = _callSuper(this, NativeGesture);
-      _this.config = {};
-      _this.handlerName = 'NativeViewGestureHandler';
-      return _this;
-    }
-
-    /**
-     * When true, underlying handler will activate unconditionally when in `BEGAN` or `UNDETERMINED` state.
-     * @param value
-     */
-    (0, _inherits2.default)(NativeGesture, _BaseGesture);
-    return (0, _createClass2.default)(NativeGesture, [{
-      key: "shouldActivateOnStart",
-      value: function shouldActivateOnStart(value) {
-        this.config.shouldActivateOnStart = value;
-        return this;
-      }
-
-      /**
-       * When true, cancels all other gesture handlers when this `NativeViewGestureHandler` receives an `ACTIVE` state event.
-       * @param value
-       */
-    }, {
-      key: "disallowInterruption",
-      value: function disallowInterruption(value) {
-        this.config.disallowInterruption = value;
-        return this;
-      }
-    }]);
-  }(_$$_REQUIRE(_dependencyMap[6], "./gesture").BaseGesture);
-},667,[8,9,10,14,16,17,660],"node_modules/react-native-gesture-handler/src/handlers/gestures/nativeGesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ManualGesture = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _get2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/get"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  function _superPropGet(t, o, e, r) { var p = (0, _get2.default)((0, _getPrototypeOf2.default)(1 & r ? t.prototype : t), o, e); return 2 & r && "function" == typeof p ? function (t) { return p.apply(e, t); } : p; }
-  var _worklet_10437565787091_init_data = {
-    code: "function changeEventCalculator_reactNativeGestureHandler_manualGestureTs1(current,_previous){return current;}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/manualGesture.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"changeEventCalculator_reactNativeGestureHandler_manualGestureTs1\",\"current\",\"_previous\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/manualGesture.ts\"],\"mappings\":\"AAGA,SAAAA,gEAGEA,CAAAC,OAAA,CAAAC,SAAA,EAEA,MAAO,CAAAD,OAAO,CAChB\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var changeEventCalculator = function () {
-    var _e = [new global.Error(), 1, -27];
-    var changeEventCalculator = function changeEventCalculator(current, _previous) {
-      return current;
-    };
-    changeEventCalculator.__closure = {};
-    changeEventCalculator.__workletHash = 10437565787091;
-    changeEventCalculator.__initData = _worklet_10437565787091_init_data;
-    changeEventCalculator.__stackDetails = _e;
-    return changeEventCalculator;
-  }();
-  var ManualGesture = exports.ManualGesture = /*#__PURE__*/function (_ContinousBaseGesture) {
-    function ManualGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, ManualGesture);
-      _this = _callSuper(this, ManualGesture);
-      _this.handlerName = 'ManualGestureHandler';
-      return _this;
-    }
-    (0, _inherits2.default)(ManualGesture, _ContinousBaseGesture);
-    return (0, _createClass2.default)(ManualGesture, [{
-      key: "onChange",
-      value: function onChange(callback) {
-        // @ts-ignore TS being overprotective, Record<string, never> is Record
-        this.handlers.changeEventCalculator = changeEventCalculator;
-        return _superPropGet(ManualGesture, "onChange", this, 3)([callback]);
-      }
-    }]);
-  }(_$$_REQUIRE(_dependencyMap[7], "./gesture").ContinousBaseGesture);
-},668,[8,9,10,14,16,51,17,660],"node_modules/react-native-gesture-handler/src/handlers/gestures/manualGesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.hoverGestureHandlerProps = exports.HoverGesture = exports.HoverEffect = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _get2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/get"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  function _superPropGet(t, o, e, r) { var p = (0, _get2.default)((0, _getPrototypeOf2.default)(1 & r ? t.prototype : t), o, e); return 2 & r && "function" == typeof p ? function (t) { return p.apply(e, t); } : p; }
-  var HoverEffect = exports.HoverEffect = /*#__PURE__*/function (HoverEffect) {
-    HoverEffect[HoverEffect["NONE"] = 0] = "NONE";
-    HoverEffect[HoverEffect["LIFT"] = 1] = "LIFT";
-    HoverEffect[HoverEffect["HIGHLIGHT"] = 2] = "HIGHLIGHT";
-    return HoverEffect;
-  }({});
-  var hoverGestureHandlerProps = exports.hoverGestureHandlerProps = ['hoverEffect'];
-  var _worklet_512113696378_init_data = {
-    code: "function changeEventCalculator_reactNativeGestureHandler_hoverGestureTs1(current,previous){let changePayload;if(previous===undefined){changePayload={changeX:current.x,changeY:current.y};}else{changePayload={changeX:current.x-previous.x,changeY:current.y-previous.y};}return{...current,...changePayload};}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/hoverGesture.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"changeEventCalculator_reactNativeGestureHandler_hoverGestureTs1\",\"current\",\"previous\",\"changePayload\",\"undefined\",\"changeX\",\"x\",\"changeY\",\"y\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/hoverGesture.ts\"],\"mappings\":\"AAqBA,SAAAA,+DAGEA,CAAAC,OAAA,CAAAC,QAAA,EAEA,GAAI,CAAAC,aAA6C,CACjD,GAAID,QAAQ,GAAKE,SAAS,CAAE,CAC1BD,aAAa,CAAG,CACdE,OAAO,CAAEJ,OAAO,CAACK,CAAC,CAClBC,OAAO,CAAEN,OAAO,CAACO,CACnB,CAAC,CACH,CAAC,IAAM,CACLL,aAAa,CAAG,CACdE,OAAO,CAAEJ,OAAO,CAACK,CAAC,CAAGJ,QAAQ,CAACI,CAAC,CAC/BC,OAAO,CAAEN,OAAO,CAACO,CAAC,CAAGN,QAAQ,CAACM,CAChC,CAAC,CACH,CAEA,MAAO,CAAE,GAAGP,OAAO,CAAE,GAAGE,aAAc,CAAC,CACzC\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var changeEventCalculator = function () {
-    var _e = [new global.Error(), 1, -27];
-    var changeEventCalculator = function changeEventCalculator(current, previous) {
-      var changePayload;
-      if (previous === undefined) {
-        changePayload = {
-          changeX: current.x,
-          changeY: current.y
-        };
-      } else {
-        changePayload = {
-          changeX: current.x - previous.x,
-          changeY: current.y - previous.y
-        };
-      }
-      return Object.assign({}, current, changePayload);
-    };
-    changeEventCalculator.__closure = {};
-    changeEventCalculator.__workletHash = 512113696378;
-    changeEventCalculator.__initData = _worklet_512113696378_init_data;
-    changeEventCalculator.__stackDetails = _e;
-    return changeEventCalculator;
-  }();
-  var HoverGesture = exports.HoverGesture = /*#__PURE__*/function (_ContinousBaseGesture) {
-    function HoverGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, HoverGesture);
-      _this = _callSuper(this, HoverGesture);
-      _this.config = {};
-      _this.handlerName = 'HoverGestureHandler';
-      return _this;
-    }
-
-    /**
-     * #### iOS only
-     * Sets the visual hover effect.
-     */
-    (0, _inherits2.default)(HoverGesture, _ContinousBaseGesture);
-    return (0, _createClass2.default)(HoverGesture, [{
-      key: "effect",
-      value: function effect(_effect) {
-        this.config.hoverEffect = _effect;
-        return this;
-      }
-    }, {
-      key: "onChange",
-      value: function onChange(callback) {
-        // @ts-ignore TS being overprotective, HoverGestureHandlerEventPayload is Record
-        this.handlers.changeEventCalculator = changeEventCalculator;
-        return _superPropGet(HoverGesture, "onChange", this, 3)([callback]);
-      }
-    }]);
-  }(_$$_REQUIRE(_dependencyMap[7], "./gesture").ContinousBaseGesture);
-},669,[8,9,10,14,16,51,17,660],"node_modules/react-native-gesture-handler/src/handlers/gestures/hoverGesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.SimultaneousGesture = exports.ExclusiveGesture = exports.ComposedGesture = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/toConsumableArray"));
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  function extendRelation(currentRelation, extendWith) {
-    if (currentRelation === undefined) {
-      return (0, _toConsumableArray2.default)(extendWith);
-    } else {
-      return [].concat((0, _toConsumableArray2.default)(currentRelation), (0, _toConsumableArray2.default)(extendWith));
-    }
-  }
-  var ComposedGesture = exports.ComposedGesture = /*#__PURE__*/function (_Gesture) {
-    function ComposedGesture() {
-      var _this;
-      (0, _classCallCheck2.default)(this, ComposedGesture);
-      _this = _callSuper(this, ComposedGesture);
-      _this.gestures = [];
-      _this.simultaneousGestures = [];
-      _this.requireGesturesToFail = [];
-      for (var _len = arguments.length, gestures = new Array(_len), _key = 0; _key < _len; _key++) {
-        gestures[_key] = arguments[_key];
-      }
-      _this.gestures = gestures;
-      return _this;
-    }
-    (0, _inherits2.default)(ComposedGesture, _Gesture);
-    return (0, _createClass2.default)(ComposedGesture, [{
-      key: "prepareSingleGesture",
-      value: function prepareSingleGesture(gesture, simultaneousGestures, requireGesturesToFail) {
-        if (gesture instanceof _$$_REQUIRE(_dependencyMap[7], "./gesture").BaseGesture) {
-          var newConfig = Object.assign({}, gesture.config);
-
-          // No need to extend `blocksHandlers` here, because it's not changed in composition.
-          // The same effect is achieved by reversing the order of 2 gestures in `Exclusive`
-          newConfig.simultaneousWith = extendRelation(newConfig.simultaneousWith, simultaneousGestures);
-          newConfig.requireToFail = extendRelation(newConfig.requireToFail, requireGesturesToFail);
-          gesture.config = newConfig;
-        } else if (gesture instanceof ComposedGesture) {
-          gesture.simultaneousGestures = simultaneousGestures;
-          gesture.requireGesturesToFail = requireGesturesToFail;
-          gesture.prepare();
-        }
-      }
-    }, {
-      key: "prepare",
-      value: function prepare() {
-        for (var gesture of this.gestures) {
-          this.prepareSingleGesture(gesture, this.simultaneousGestures, this.requireGesturesToFail);
-        }
-      }
-    }, {
-      key: "initialize",
-      value: function initialize() {
-        for (var gesture of this.gestures) {
-          gesture.initialize();
-        }
-      }
-    }, {
-      key: "toGestureArray",
-      value: function toGestureArray() {
-        return this.gestures.flatMap(function (gesture) {
-          return gesture.toGestureArray();
-        });
-      }
-    }]);
-  }(_$$_REQUIRE(_dependencyMap[7], "./gesture").Gesture);
-  var SimultaneousGesture = exports.SimultaneousGesture = /*#__PURE__*/function (_ComposedGesture2) {
-    function SimultaneousGesture() {
-      (0, _classCallCheck2.default)(this, SimultaneousGesture);
-      return _callSuper(this, SimultaneousGesture, arguments);
-    }
-    (0, _inherits2.default)(SimultaneousGesture, _ComposedGesture2);
-    return (0, _createClass2.default)(SimultaneousGesture, [{
-      key: "prepare",
-      value: function prepare() {
-        var _this2 = this;
-        // This piece of magic works something like this:
-        // for every gesture in the array
-        var simultaneousArrays = this.gestures.map(function (gesture) {
-          return (
-            // we take the array it's in
-            _this2.gestures
-            // and make a copy without it
-            .filter(function (x) {
-              return x !== gesture;
-            })
-            // then we flatmap the result to get list of raw (not composed) gestures
-            // this way we don't make the gestures simultaneous with themselves, which is
-            // important when the gesture is `ExclusiveGesture` - we don't want to make
-            // exclusive gestures simultaneous
-            .flatMap(function (x) {
-              return x.toGestureArray();
-            })
-          );
-        });
-        for (var i = 0; i < this.gestures.length; i++) {
-          this.prepareSingleGesture(this.gestures[i], simultaneousArrays[i], this.requireGesturesToFail);
-        }
-      }
-    }]);
-  }(ComposedGesture);
-  var ExclusiveGesture = exports.ExclusiveGesture = /*#__PURE__*/function (_ComposedGesture3) {
-    function ExclusiveGesture() {
-      (0, _classCallCheck2.default)(this, ExclusiveGesture);
-      return _callSuper(this, ExclusiveGesture, arguments);
-    }
-    (0, _inherits2.default)(ExclusiveGesture, _ComposedGesture3);
-    return (0, _createClass2.default)(ExclusiveGesture, [{
-      key: "prepare",
-      value: function prepare() {
-        // Transforms the array of gestures into array of grouped raw (not composed) gestures
-        // i.e. [gesture1, gesture2, ComposedGesture(gesture3, gesture4)] -> [[gesture1], [gesture2], [gesture3, gesture4]]
-        var gestureArrays = this.gestures.map(function (gesture) {
-          return gesture.toGestureArray();
-        });
-        var requireToFail = [];
-        for (var i = 0; i < this.gestures.length; i++) {
-          this.prepareSingleGesture(this.gestures[i], this.simultaneousGestures, this.requireGesturesToFail.concat(requireToFail));
-
-          // Every group gets to wait for all groups before it
-          requireToFail = requireToFail.concat(gestureArrays[i]);
-        }
-      }
-    }]);
-  }(ComposedGesture);
-},670,[8,9,10,14,16,17,46,660],"node_modules/react-native-gesture-handler/src/handlers/gestures/gestureComposition.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.GestureDetector = void 0;
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[0], "react"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[1], "react-native");
-  var _findNodeHandle = _$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "../../../findNodeHandle"));
-  var _GestureHandlerRootViewContext = _$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "../../../GestureHandlerRootViewContext"));
-  var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/index.tsx";
-  /* eslint-disable react/no-unused-prop-types */
-  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  function propagateDetectorConfig(props, gesture) {
-    var keysToPropagate = ['userSelect', 'enableContextMenu', 'touchAction'];
-    for (var key of keysToPropagate) {
-      var value = props[key];
-      if (value === undefined) {
-        continue;
-      }
-      for (var g of gesture.toGestureArray()) {
-        var config = g.config;
-        config[key] = value;
-      }
-    }
-  }
-  /**
-   * `GestureDetector` is responsible for creating and updating native gesture handlers based on the config of provided gesture.
-   *
-   * ### Props
-   * - `gesture`
-   * - `userSelect` (**Web only**)
-   * - `enableContextMenu` (**Web only**)
-   * - `touchAction` (**Web only**)
-   *
-   * ### Remarks
-   * - Gesture Detector will use first native view in its subtree to recognize gestures, however if this view is used only to group its children it may get automatically collapsed.
-   * - Using the same instance of a gesture across multiple Gesture Detectors is not possible.
-   *
-   * @see https://docs.swmansion.com/react-native-gesture-handler/docs/gestures/gesture-detector
-   */
-  var GestureDetector = exports.GestureDetector = function GestureDetector(props) {
-    var rootViewContext = (0, _react.useContext)(_GestureHandlerRootViewContext.default);
-    if (__DEV__ && !rootViewContext && !(0, _$$_REQUIRE(_dependencyMap[5], "../../../utils").isTestEnv)() && _reactNative.Platform.OS !== 'web') {
-      throw new Error('GestureDetector must be used as a descendant of GestureHandlerRootView. Otherwise the gestures will not be recognized. See https://docs.swmansion.com/react-native-gesture-handler/docs/installation for more details.');
-    }
-
-    // Gesture config should be wrapped with useMemo to prevent unnecessary re-renders
-    var gestureConfig = props.gesture;
-    propagateDetectorConfig(props, gestureConfig);
-    var gesturesToAttach = (0, _react.useMemo)(function () {
-      return gestureConfig.toGestureArray();
-    }, [gestureConfig]);
-    var shouldUseReanimated = gesturesToAttach.some(function (g) {
-      return g.shouldUseReanimated;
+  function App() {
+    var _this = this;
+    var values = Array.from({
+      length: ANIMATION_COUNT
+    }, function () {
+      return (0, _reactNativeReanimated.useSharedValue)(0);
     });
-    var webEventHandlersRef = (0, _$$_REQUIRE(_dependencyMap[6], "./utils").useWebEventHandlers)();
-    // Store state in ref to prevent unnecessary renders
-    var state = (0, _react.useRef)({
-      firstRender: true,
-      viewRef: null,
-      previousViewTag: -1,
-      forceRebuildReanimatedEvent: false
-    }).current;
-    var preparedGesture = _react.default.useRef({
-      attachedGestures: [],
-      animatedEventHandler: null,
-      animatedHandlers: null,
-      shouldUseReanimated: shouldUseReanimated,
-      isMounted: false
-    }).current;
-    var updateAttachedGestures = (0, _$$_REQUIRE(_dependencyMap[7], "./useDetectorUpdater").useDetectorUpdater)(state, preparedGesture, gesturesToAttach, gestureConfig, webEventHandlersRef);
-    var refHandler = (0, _$$_REQUIRE(_dependencyMap[8], "./useViewRefHandler").useViewRefHandler)(state, updateAttachedGestures);
-
-    // Reanimated event should be rebuilt only when gestures are reattached, otherwise
-    // config update will be enough as all necessary items are stored in shared values anyway
-    var needsToRebuildReanimatedEvent = state.firstRender || state.forceRebuildReanimatedEvent || (0, _$$_REQUIRE(_dependencyMap[9], "./needsToReattach").needsToReattach)(preparedGesture, gesturesToAttach);
-    state.forceRebuildReanimatedEvent = false;
-    (0, _$$_REQUIRE(_dependencyMap[10], "./useAnimatedGesture").useAnimatedGesture)(preparedGesture, needsToRebuildReanimatedEvent);
-    (0, _react.useLayoutEffect)(function () {
-      var viewTag = (0, _findNodeHandle.default)(state.viewRef);
-      preparedGesture.isMounted = true;
-      (0, _$$_REQUIRE(_dependencyMap[11], "./attachHandlers").attachHandlers)({
-        preparedGesture: preparedGesture,
-        gestureConfig: gestureConfig,
-        gesturesToAttach: gesturesToAttach,
-        webEventHandlersRef: webEventHandlersRef,
-        viewTag: viewTag
-      });
-      return function () {
-        preparedGesture.isMounted = false;
-        (0, _$$_REQUIRE(_dependencyMap[12], "./dropHandlers").dropHandlers)(preparedGesture);
-      };
-    }, []);
+    var startedRef = (0, _react.useRef)(false);
     (0, _react.useEffect)(function () {
-      if (state.firstRender) {
-        state.firstRender = false;
-      } else {
-        updateAttachedGestures();
-      }
-    }, [props]);
-    (0, _$$_REQUIRE(_dependencyMap[13], "./useMountReactions").useMountReactions)(updateAttachedGestures, preparedGesture);
-    if (shouldUseReanimated) {
-      return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[14], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[15], "./Wrap").AnimatedWrap, {
-        ref: refHandler,
-        onGestureHandlerEvent: preparedGesture.animatedEventHandler,
-        children: props.children
+      if (startedRef.current) return;
+      startedRef.current = true;
+      values.forEach(function (v, i) {
+        v.value = (0, _reactNativeReanimated.withRepeat)((0, _reactNativeReanimated.withTiming)(i % 2 === 0 ? 1 : 0, {
+          duration: 300 + i % 5 * 100,
+          easing: _reactNativeReanimated.Easing.inOut(_reactNativeReanimated.Easing.quad)
+        }), -1, true);
       });
-    } else {
-      return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[14], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[15], "./Wrap").Wrap, {
-        ref: refHandler,
-        children: props.children
-      });
-    }
-  };
-},671,[86,1,8,638,639,641,672,868,873,869,875,871,870,876,92,877],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/index.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ALLOWED_PROPS = void 0;
-  exports.checkGestureCallbacksForWorklets = checkGestureCallbacksForWorklets;
-  exports.extractGestureRelations = extractGestureRelations;
-  exports.useForceRender = useForceRender;
-  exports.useWebEventHandlers = useWebEventHandlers;
-  exports.validateDetectorChildren = validateDetectorChildren;
-  var _slicedToArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/slicedToArray"));
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/toConsumableArray"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[3], "react-native");
-  var _react = _$$_REQUIRE(_dependencyMap[4], "react");
-  var ALLOWED_PROPS = exports.ALLOWED_PROPS = [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[5], "../../gestureHandlerCommon").baseGestureHandlerWithDetectorProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[6], "../../TapGestureHandler").tapGestureHandlerProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[7], "../../PanGestureHandler").panGestureHandlerProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[7], "../../PanGestureHandler").panGestureHandlerCustomNativeProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[8], "../../LongPressGestureHandler").longPressGestureHandlerProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[9], "../../ForceTouchGestureHandler").forceTouchGestureHandlerProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[10], "../../FlingGestureHandler").flingGestureHandlerProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[11], "../hoverGesture").hoverGestureHandlerProps), (0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[12], "../../NativeViewGestureHandler").nativeViewGestureHandlerProps));
-  function convertToHandlerTag(ref) {
-    if (typeof ref === 'number') {
-      return ref;
-    } else if (ref instanceof _$$_REQUIRE(_dependencyMap[13], "../gesture").BaseGesture) {
-      return ref.handlerTag;
-    } else {
-      var _ref$current$handlerT, _ref$current;
-      // @ts-ignore in this case it should be a ref either to gesture object or
-      // a gesture handler component, in both cases handlerTag property exists
-      return (_ref$current$handlerT = (_ref$current = ref.current) == null ? void 0 : _ref$current.handlerTag) != null ? _ref$current$handlerT : -1;
-    }
-  }
-  function extractValidHandlerTags(interactionGroup) {
-    var _interactionGroup$map, _interactionGroup$map2;
-    return (_interactionGroup$map = interactionGroup == null || (_interactionGroup$map2 = interactionGroup.map(convertToHandlerTag)) == null ? void 0 : _interactionGroup$map2.filter(function (tag) {
-      return tag > 0;
-    })) != null ? _interactionGroup$map : [];
-  }
-  function extractGestureRelations(gesture) {
-    var requireToFail = extractValidHandlerTags(gesture.config.requireToFail);
-    var simultaneousWith = extractValidHandlerTags(gesture.config.simultaneousWith);
-    var blocksHandlers = extractValidHandlerTags(gesture.config.blocksHandlers);
-    return {
-      waitFor: requireToFail,
-      simultaneousHandlers: simultaneousWith,
-      blocksHandlers: blocksHandlers
-    };
-  }
-  function checkGestureCallbacksForWorklets(gesture) {
-    if (!__DEV__) {
-      return;
-    }
-    // If a gesture is explicitly marked to run on the JS thread there is no need to check
-    // if callbacks are worklets as the user is aware they will be ran on the JS thread
-    if (gesture.config.runOnJS) {
-      return;
-    }
-    var areSomeNotWorklets = gesture.handlers.isWorklet.includes(false);
-    var areSomeWorklets = gesture.handlers.isWorklet.includes(true);
-
-    // If some of the callbacks are worklets and some are not, and the gesture is not
-    // explicitly marked with `.runOnJS(true)` show an error
-    if (areSomeNotWorklets && areSomeWorklets) {
-      console.error((0, _$$_REQUIRE(_dependencyMap[14], "../../../utils").tagMessage)(`Some of the callbacks in the gesture are worklets and some are not. Either make sure that all calbacks are marked as 'worklet' if you wish to run them on the UI thread or use '.runOnJS(true)' modifier on the gesture explicitly to run all callbacks on the JS thread.`));
-    }
-    if (_$$_REQUIRE(_dependencyMap[15], "../reanimatedWrapper").Reanimated === undefined) {
-      // If Reanimated is not available, we can't run worklets, so we shouldn't show the warning
-      return;
-    }
-    var areAllNotWorklets = !areSomeWorklets && areSomeNotWorklets;
-    // If none of the callbacks are worklets and the gesture is not explicitly marked with
-    // `.runOnJS(true)` show a warning
-    if (areAllNotWorklets && !(0, _$$_REQUIRE(_dependencyMap[14], "../../../utils").isTestEnv)()) {
-      console.warn((0, _$$_REQUIRE(_dependencyMap[14], "../../../utils").tagMessage)(`None of the callbacks in the gesture are worklets. If you wish to run them on the JS thread use '.runOnJS(true)' modifier on the gesture to make this explicit. Otherwise, mark the callbacks as 'worklet' to run them on the UI thread.`));
-    }
-  }
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  function validateDetectorChildren(ref) {
-    // Finds the first native view under the Wrap component and traverses the fiber tree upwards
-    // to check whether there is more than one native view as a pseudo-direct child of GestureDetector
-    // i.e. this is not ok:
-    //            Wrap
-    //             |
-    //            / \
-    //           /   \
-    //          /     \
-    //         /       \
-    //   NativeView  NativeView
-    //
-    // but this is fine:
-    //            Wrap
-    //             |
-    //         NativeView
-    //             |
-    //            / \
-    //           /   \
-    //          /     \
-    //         /       \
-    //   NativeView  NativeView
-    if (__DEV__ && _reactNative.Platform.OS !== 'web') {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      var wrapType =
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      ref._reactInternals.elementType;
-
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      var instance = _$$_REQUIRE(_dependencyMap[16], "../../../RNRenderer").RNRenderer.findHostInstance_DEPRECATED(ref)._internalFiberInstanceHandleDEV;
-
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      while (instance && instance.elementType !== wrapType) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        if (instance.sibling) {
-          throw new Error('GestureDetector has more than one native view as its children. This can happen if you are using a custom component that renders multiple views, like React.Fragment. You should wrap content of GestureDetector with a <View> or <Animated.View>.');
-        }
-
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
-        instance = instance.return;
-      }
-    }
-  }
-  function useForceRender() {
-    var _useState = (0, _react.useState)(false),
-      _useState2 = (0, _slicedToArray2.default)(_useState, 2),
-      renderState = _useState2[0],
-      setRenderState = _useState2[1];
-    var forceRender = (0, _react.useCallback)(function () {
-      setRenderState(!renderState);
-    }, [renderState, setRenderState]);
-    return forceRender;
-  }
-  function useWebEventHandlers() {
-    return (0, _react.useRef)({
-      onGestureHandlerEvent: function onGestureHandlerEvent(e) {
-        (0, _$$_REQUIRE(_dependencyMap[17], "../eventReceiver").onGestureHandlerEvent)(e.nativeEvent);
-      },
-      onGestureHandlerStateChange: (0, _$$_REQUIRE(_dependencyMap[18], "../../../EnableNewWebImplementation").isNewWebImplementationEnabled)() ? function (e) {
-        (0, _$$_REQUIRE(_dependencyMap[17], "../eventReceiver").onGestureHandlerEvent)(e.nativeEvent);
-      } : undefined
+    }, []);
+    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[3], "react/jsx-runtime").jsxs)(_reactNative.View, {
+      style: styles.container,
+      children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[3], "react/jsx-runtime").jsxs)(_reactNative.Text, {
+        style: styles.title,
+        children: [ANIMATION_COUNT, " animations running"]
+      }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[3], "react/jsx-runtime").jsx)(_reactNative.View, {
+        style: styles.animContainer,
+        children: values.map(function (v, i) {
+          var animStyle = (0, _reactNativeReanimated.useAnimatedStyle)(function () {
+            var _e = [new global.Error(), -2, -27];
+            var FsTestTsx1 = function FsTestTsx1() {
+              return {
+                opacity: v.value,
+                transform: [{
+                  scale: 0.5 + v.value
+                }]
+              };
+            };
+            FsTestTsx1.__closure = {
+              v: v
+            };
+            FsTestTsx1.__workletHash = 11454650843785;
+            FsTestTsx1.__initData = _worklet_11454650843785_init_data;
+            FsTestTsx1.__stackDetails = _e;
+            return FsTestTsx1;
+          }());
+          return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[3], "react/jsx-runtime").jsx)(_reactNativeReanimated.default.View, {
+            style: [styles.box, animStyle]
+          }, i);
+        })
+      }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[3], "react/jsx-runtime").jsx)(_reactNative.Text, {
+        style: styles.hint,
+        children: "Animations start automatically. Exit page to trigger crash."
+      })]
     });
   }
-},672,[8,27,46,1,86,650,673,674,675,656,655,669,634,660,641,676,863,864,867],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/utils.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.tapHandlerName = exports.tapGestureHandlerProps = exports.TapGestureHandler = void 0;
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
-  var _createHandler = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./createHandler"));
-  var tapGestureHandlerProps = exports.tapGestureHandlerProps = ['maxDurationMs', 'maxDelayMs', 'numberOfTaps', 'maxDeltaX', 'maxDeltaY', 'maxDist', 'minPointers'];
-
-  /**
-   * @deprecated TapGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Tap()` instead.
-   */
-
-  var tapHandlerName = exports.tapHandlerName = 'TapGestureHandler';
-
-  /**
-   * @deprecated TapGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Tap()` instead.
-   */
-
-  /**
-   * @deprecated TapGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Tap()` instead.
-   */
-  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; see description on the top of gestureHandlerCommon.ts file
-  var TapGestureHandler = exports.TapGestureHandler = (0, _createHandler.default)({
-    name: tapHandlerName,
-    allowedProps: [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[3], "./gestureHandlerCommon").baseGestureHandlerProps), tapGestureHandlerProps),
-    config: {
-      shouldCancelWhenOutside: true
+  var styles = _reactNative.StyleSheet.create({
+    container: {
+      flex: 1,
+      alignItems: "center",
+      justifyContent: "center",
+      padding: 20
+    },
+    title: {
+      fontSize: 16,
+      fontWeight: "bold",
+      marginBottom: 8
+    },
+    animContainer: {
+      flexDirection: "row",
+      flexWrap: "wrap",
+      justifyContent: "center",
+      gap: 6,
+      marginBottom: 16
+    },
+    box: {
+      width: 24,
+      height: 24,
+      backgroundColor: "violet",
+      borderRadius: 4
+    },
+    hint: {
+      fontSize: 12,
+      color: "#666",
+      textAlign: "center"
     }
   });
-},673,[8,46,635,650],"node_modules/react-native-gesture-handler/src/handlers/TapGestureHandler.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.PanGestureHandler = void 0;
-  exports.managePanProps = managePanProps;
-  exports.panHandlerName = exports.panGestureHandlerProps = exports.panGestureHandlerCustomNativeProps = void 0;
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
-  var _createHandler = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./createHandler"));
-  var panGestureHandlerProps = exports.panGestureHandlerProps = ['activeOffsetY', 'activeOffsetX', 'failOffsetY', 'failOffsetX', 'minDist', 'minVelocity', 'minVelocityX', 'minVelocityY', 'minPointers', 'maxPointers', 'avgTouches', 'enableTrackpadTwoFingerGesture', 'activateAfterLongPress'];
-  var panGestureHandlerCustomNativeProps = exports.panGestureHandlerCustomNativeProps = ['activeOffsetYStart', 'activeOffsetYEnd', 'activeOffsetXStart', 'activeOffsetXEnd', 'failOffsetYStart', 'failOffsetYEnd', 'failOffsetXStart', 'failOffsetXEnd'];
-
-  /**
-   * @deprecated PanGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Pan()` instead.
-   */
-
-  var panHandlerName = exports.panHandlerName = 'PanGestureHandler';
-
-  /**
-   * @deprecated PanGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Pan()` instead.
-   */
-
-  /**
-   * @deprecated PanGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Pan()` instead.
-   */
-  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; see description on the top of gestureHandlerCommon.ts file
-  var PanGestureHandler = exports.PanGestureHandler = (0, _createHandler.default)({
-    name: panHandlerName,
-    allowedProps: [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[3], "./gestureHandlerCommon").baseGestureHandlerProps), panGestureHandlerProps),
-    config: {},
-    transformProps: managePanProps,
-    customNativeProps: panGestureHandlerCustomNativeProps
-  });
-  function validatePanGestureHandlerProps(props) {
-    if (Array.isArray(props.activeOffsetX) && (props.activeOffsetX[0] > 0 || props.activeOffsetX[1] < 0)) {
-      throw new Error(`First element of activeOffsetX should be negative, a the second one should be positive`);
-    }
-    if (Array.isArray(props.activeOffsetY) && (props.activeOffsetY[0] > 0 || props.activeOffsetY[1] < 0)) {
-      throw new Error(`First element of activeOffsetY should be negative, a the second one should be positive`);
-    }
-    if (Array.isArray(props.failOffsetX) && (props.failOffsetX[0] > 0 || props.failOffsetX[1] < 0)) {
-      throw new Error(`First element of failOffsetX should be negative, a the second one should be positive`);
-    }
-    if (Array.isArray(props.failOffsetY) && (props.failOffsetY[0] > 0 || props.failOffsetY[1] < 0)) {
-      throw new Error(`First element of failOffsetY should be negative, a the second one should be positive`);
-    }
-    if (props.minDist && (props.failOffsetX || props.failOffsetY)) {
-      throw new Error(`It is not supported to use minDist with failOffsetX or failOffsetY, use activeOffsetX and activeOffsetY instead`);
-    }
-    if (props.minDist && (props.activeOffsetX || props.activeOffsetY)) {
-      throw new Error(`It is not supported to use minDist with activeOffsetX or activeOffsetY`);
-    }
-  }
-  function transformPanGestureHandlerProps(props) {
-    var res = Object.assign({}, props);
-    if (props.activeOffsetX !== undefined) {
-      delete res.activeOffsetX;
-      if (Array.isArray(props.activeOffsetX)) {
-        res.activeOffsetXStart = props.activeOffsetX[0];
-        res.activeOffsetXEnd = props.activeOffsetX[1];
-      } else if (props.activeOffsetX < 0) {
-        res.activeOffsetXStart = props.activeOffsetX;
-      } else {
-        res.activeOffsetXEnd = props.activeOffsetX;
-      }
-    }
-    if (props.activeOffsetY !== undefined) {
-      delete res.activeOffsetY;
-      if (Array.isArray(props.activeOffsetY)) {
-        res.activeOffsetYStart = props.activeOffsetY[0];
-        res.activeOffsetYEnd = props.activeOffsetY[1];
-      } else if (props.activeOffsetY < 0) {
-        res.activeOffsetYStart = props.activeOffsetY;
-      } else {
-        res.activeOffsetYEnd = props.activeOffsetY;
-      }
-    }
-    if (props.failOffsetX !== undefined) {
-      delete res.failOffsetX;
-      if (Array.isArray(props.failOffsetX)) {
-        res.failOffsetXStart = props.failOffsetX[0];
-        res.failOffsetXEnd = props.failOffsetX[1];
-      } else if (props.failOffsetX < 0) {
-        res.failOffsetXStart = props.failOffsetX;
-      } else {
-        res.failOffsetXEnd = props.failOffsetX;
-      }
-    }
-    if (props.failOffsetY !== undefined) {
-      delete res.failOffsetY;
-      if (Array.isArray(props.failOffsetY)) {
-        res.failOffsetYStart = props.failOffsetY[0];
-        res.failOffsetYEnd = props.failOffsetY[1];
-      } else if (props.failOffsetY < 0) {
-        res.failOffsetYStart = props.failOffsetY;
-      } else {
-        res.failOffsetYEnd = props.failOffsetY;
-      }
-    }
-    return res;
-  }
-  function managePanProps(props) {
-    if (__DEV__) {
-      validatePanGestureHandlerProps(props);
-    }
-    return transformPanGestureHandlerProps(props);
-  }
-},674,[8,46,635,650],"node_modules/react-native-gesture-handler/src/handlers/PanGestureHandler.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.longPressHandlerName = exports.longPressGestureHandlerProps = exports.LongPressGestureHandler = void 0;
-  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
-  var _createHandler = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./createHandler"));
-  var longPressGestureHandlerProps = exports.longPressGestureHandlerProps = ['minDurationMs', 'maxDist', 'numberOfPointers'];
-
-  /**
-   * @deprecated LongPressGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.LongPress()` instead.
-   */
-
-  var longPressHandlerName = exports.longPressHandlerName = 'LongPressGestureHandler';
-
-  /**
-   * @deprecated LongPressGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.LongPress()` instead.
-   */
-
-  /**
-   * @deprecated LongPressGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.LongPress()` instead.
-   */
-  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; see description on the top of gestureHandlerCommon.ts file
-  var LongPressGestureHandler = exports.LongPressGestureHandler = (0, _createHandler.default)({
-    name: longPressHandlerName,
-    allowedProps: [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[3], "./gestureHandlerCommon").baseGestureHandlerProps), longPressGestureHandlerProps),
-    config: {
-      shouldCancelWhenOutside: true
-    }
-  });
-},675,[8,46,635,650],"node_modules/react-native-gesture-handler/src/handlers/LongPressGestureHandler.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.Reanimated = void 0;
-  var _Reanimated;
-  var Reanimated;
-  try {
-    exports.Reanimated = Reanimated = _$$_REQUIRE(_dependencyMap[0], "react-native-reanimated");
-  } catch (e) {
-    // When 'react-native-reanimated' is not available we want to quietly continue
-    // @ts-ignore TS demands the variable to be initialized
-    exports.Reanimated = Reanimated = undefined;
-  }
-  if (!((_Reanimated = Reanimated) != null && _Reanimated.useSharedValue)) {
-    // @ts-ignore Make sure the loaded module is actually Reanimated, if it's not
-    // reset the module to undefined so we can fallback to the default implementation
-    exports.Reanimated = Reanimated = undefined;
-  }
-  var _worklet_6487932999118_init_data = {
-    code: "function reactNativeGestureHandler_reanimatedWrapperTs1(){const{tagMessage}=this.__closure;console.warn(tagMessage('Please use newer version of react-native-reanimated in order to control state of the gestures.'));}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/reanimatedWrapper.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"reactNativeGestureHandler_reanimatedWrapperTs1\",\"tagMessage\",\"__closure\",\"console\",\"warn\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/reanimatedWrapper.ts\"],\"mappings\":\"AA+C+B,SAAAA,8CAAMA,CAAA,QAAAC,UAAA,OAAAC,SAAA,CAEjCC,OAAO,CAACC,IAAI,CACVH,UAAU,CACR,gGACF,CACF,CAAC,CACH\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  if (Reanimated !== undefined && !Reanimated.setGestureState) {
-    // The loaded module is Reanimated but it doesn't have the setGestureState defined
-    Reanimated.setGestureState = function () {
-      var _e = [new global.Error(), -2, -27];
-      var reactNativeGestureHandler_reanimatedWrapperTs1 = function reactNativeGestureHandler_reanimatedWrapperTs1() {
-        console.warn((0, _$$_REQUIRE(_dependencyMap[1], "../../utils").tagMessage)('Please use newer version of react-native-reanimated in order to control state of the gestures.'));
-      };
-      reactNativeGestureHandler_reanimatedWrapperTs1.__closure = {
-        tagMessage: _$$_REQUIRE(_dependencyMap[1], "../../utils").tagMessage
-      };
-      reactNativeGestureHandler_reanimatedWrapperTs1.__workletHash = 6487932999118;
-      reactNativeGestureHandler_reanimatedWrapperTs1.__initData = _worklet_6487932999118_init_data;
-      reactNativeGestureHandler_reanimatedWrapperTs1.__stackDetails = _e;
-      return reactNativeGestureHandler_reanimatedWrapperTs1;
-    }();
-  }
-},676,[677,641],"node_modules/react-native-gesture-handler/src/handlers/gestures/reanimatedWrapper.ts");
+},630,[1,631,86,92],"tests/react-native-reanimated/FsTest.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   // Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
   // Use of this source code is governed by a MIT license that can be
@@ -126903,7 +120647,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   var _default = exports.default = _reactNativeReanimated.default;
-},677,[678],"node_modules/@react-native-ohos/react-native-reanimated/lib/index.js");
+},631,[632],"node_modules/@react-native-ohos/react-native-reanimated/lib/index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -127929,7 +121673,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var Animated = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[22], "./Animated"));
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
   var _default = exports.default = Animated;
-},678,[679,768,728,772,681,774,776,685,839,840,846,732,777,718,847,719,848,855,723,722,818,856,857],"node_modules/react-native-reanimated/src/index.ts");
+},632,[633,722,682,726,635,728,730,639,793,794,800,686,731,672,801,673,802,809,677,676,772,810,811],"node_modules/react-native-reanimated/src/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -127977,7 +121721,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     });
   });
-},679,[680,730,746,757,764],"node_modules/react-native-reanimated/src/layoutReanimation/index.ts");
+},633,[634,684,700,711,718],"node_modules/react-native-reanimated/src/layoutReanimation/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128121,7 +121865,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_animationsManagerTs4.__stackDetails = _e;
     return reactNativeReanimated_animationsManagerTs4;
   }())();
-},680,[681,682,714,702],"node_modules/react-native-reanimated/src/layoutReanimation/animationsManager.ts");
+},634,[635,636,668,656],"node_modules/react-native-reanimated/src/layoutReanimation/animationsManager.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128283,7 +122027,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // so many dependencies on it being generic that it's not feasible at the moment.
   /** @deprecated Please use {@link AnimatedStyle} type instead. */
   /** @deprecated This type is no longer relevant. */
-},681,[],"node_modules/react-native-reanimated/src/commonTypes.ts");
+},635,[],"node_modules/react-native-reanimated/src/commonTypes.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128609,7 +122353,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function mutableToJSON(value) {
     return JSON.stringify(value);
   }
-},682,[683,684,685,688,689,702,691,690],"node_modules/react-native-reanimated/src/mutables.ts");
+},636,[637,638,639,642,643,656,645,644],"node_modules/react-native-reanimated/src/mutables.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128662,7 +122406,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     // @ts-ignore Fallback if `window` is undefined.
     return typeof window !== 'undefined';
   }
-},683,[86,1],"node_modules/react-native-reanimated/src/PlatformChecker.ts");
+},637,[86,1],"node_modules/react-native-reanimated/src/PlatformChecker.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128708,7 +122452,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
     return (0, _react.forwardRef)(render);
   }
-},684,[8,153,86,683],"node_modules/react-native-reanimated/src/reactUtils.tsx");
+},638,[8,153,86,637],"node_modules/react-native-reanimated/src/reactUtils.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128735,7 +122479,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     });
   });
-},685,[686,687],"node_modules/react-native-reanimated/src/logger/index.ts");
+},639,[640,641],"node_modules/react-native-reanimated/src/logger/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -128756,7 +122500,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   // Do nothing when addLogBoxLog is called if LogBox is not available
   var addLogBoxLog = exports.addLogBoxLog = (_LogBox$addLog$bind = LogBox == null || (_LogBox$addLog = LogBox.addLog) == null ? void 0 : _LogBox$addLog.bind(LogBox)) != null ? _LogBox$addLog$bind : noop;
-},686,[1],"node_modules/react-native-reanimated/src/logger/LogBox.ts");
+},640,[1],"node_modules/react-native-reanimated/src/logger/LogBox.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -129020,7 +122764,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return error;
     }()
   };
-},687,[686],"node_modules/react-native-reanimated/src/logger/logger.ts");
+},641,[640],"node_modules/react-native-reanimated/src/logger/logger.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -129105,7 +122849,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     valueSetter.__stackDetails = _e;
     return valueSetter;
   }();
-},688,[],"node_modules/react-native-reanimated/src/valueSetter.ts");
+},642,[],"node_modules/react-native-reanimated/src/valueSetter.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -129661,7 +123405,7 @@ for more details.`);
    * value that is read and written only on the UI thread.
    */
   var makeShareable = exports.makeShareable = SHOULD_BE_USE_WEB ? makeShareableJS : makeShareableNative;
-},689,[8,27,683,690,691,681,692,701,685],"node_modules/react-native-reanimated/src/shareables.ts");
+},643,[8,27,637,644,645,635,646,655,639],"node_modules/react-native-reanimated/src/shareables.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -129704,7 +123448,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     },
     get: cache.get.bind(cache)
   };
-},690,[683],"node_modules/react-native-reanimated/src/shareableMappingCache.ts");
+},644,[637],"node_modules/react-native-reanimated/src/shareableMappingCache.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /* eslint-disable reanimated/use-reanimated-error */
   'use strict';
@@ -129823,7 +123567,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     // @ts-ignore the reportFatalError method is an internal method of ErrorUtils not exposed in the type definitions
     global.ErrorUtils.reportFatalError(error);
   }
-},691,[8,27],"node_modules/react-native-reanimated/src/errors.ts");
+},645,[8,27],"node_modules/react-native-reanimated/src/errors.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -129836,7 +123580,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[0], "./WorkletsModule").WorkletsModule;
     }
   });
-},692,[693],"node_modules/react-native-reanimated/src/worklets/index.ts");
+},646,[647],"node_modules/react-native-reanimated/src/worklets/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -129849,7 +123593,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[0], "./workletsModuleInstance").WorkletsModule;
     }
   });
-},693,[694],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/index.ts");
+},647,[648],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -129858,7 +123602,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   exports.WorkletsModule = void 0;
   var WorkletsModule = exports.WorkletsModule = (0, _$$_REQUIRE(_dependencyMap[0], "../../PlatformChecker").shouldBeUseWeb)() ? (0, _$$_REQUIRE(_dependencyMap[1], "./JSWorklets").createJSWorkletsModule)() : (0, _$$_REQUIRE(_dependencyMap[2], "./NativeWorklets").createNativeWorkletsModule)();
-},694,[683,695,696],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/workletsModuleInstance.ts");
+},648,[637,649,650],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/workletsModuleInstance.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -129882,7 +123626,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }();
-},695,[8,9,10,691],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/JSWorklets.ts");
+},649,[8,9,10,645],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/JSWorklets.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -129922,7 +123666,7 @@ See https://docs.swmansion.com/react-native-reanimated/docs/guides/troubleshooti
       }
     }]);
   }();
-},696,[8,9,10,20,21,697,698,691],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/NativeWorklets.ts");
+},650,[8,9,10,20,21,651,652,645],"node_modules/react-native-reanimated/src/worklets/WorkletsModule/NativeWorklets.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /* eslint-disable reanimated/use-reanimated-error */
   'use strict';
@@ -130032,7 +123776,7 @@ See https://docs.swmansion.com/react-native-reanimated/docs/guides/troubleshooti
   function getValueUnpackerCode() {
     return valueUnpacker.__initData.code;
   }
-},697,[683,681],"node_modules/react-native-reanimated/src/worklets/valueUnpacker.ts");
+},651,[637,635],"node_modules/react-native-reanimated/src/worklets/valueUnpacker.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -130053,7 +123797,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   var _NativeReanimatedModule = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "./NativeReanimatedModule"));
   var _NativeWorkletsModule = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./NativeWorkletsModule"));
-},698,[8,699,700],"node_modules/react-native-reanimated/src/specs/index.ts");
+},652,[8,653,654],"node_modules/react-native-reanimated/src/specs/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -130063,7 +123807,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   exports.default = void 0;
   var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
   var _default = exports.default = _reactNative.TurboModuleRegistry.get('ReanimatedModule');
-},699,[1],"node_modules/react-native-reanimated/src/specs/NativeReanimatedModule.ts");
+},653,[1],"node_modules/react-native-reanimated/src/specs/NativeReanimatedModule.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -130075,7 +123819,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // This file would ideally be in `worklets/specs` but
   // codegen is pretty stupid and stops looking after first `spec` directory found.
   var _default = exports.default = _reactNative.TurboModuleRegistry.get('WorkletsModule');
-},700,[1],"node_modules/react-native-reanimated/src/specs/NativeWorkletsModule.ts");
+},654,[1],"node_modules/react-native-reanimated/src/specs/NativeWorkletsModule.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -130089,7 +123833,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   exports.jsVersion = void 0;
   var jsVersion = exports.jsVersion = '3.18.0';
-},701,[],"node_modules/react-native-reanimated/src/platform-specific/jsVersion.ts");
+},655,[],"node_modules/react-native-reanimated/src/platform-specific/jsVersion.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -130461,7 +124205,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     _runOnJS.__stackDetails = _e;
     return _runOnJS;
   }();
-},702,[8,46,27,683,691,681,703,689],"node_modules/react-native-reanimated/src/threads.ts");
+},656,[8,46,27,637,645,635,657,643],"node_modules/react-native-reanimated/src/threads.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -130474,7 +124218,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[0], "./reanimatedModuleInstance").ReanimatedModule;
     }
   });
-},703,[704],"node_modules/react-native-reanimated/src/ReanimatedModule/index.ts");
+},657,[658],"node_modules/react-native-reanimated/src/ReanimatedModule/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -130483,7 +124227,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   exports.ReanimatedModule = void 0;
   var ReanimatedModule = exports.ReanimatedModule = (0, _$$_REQUIRE(_dependencyMap[0], "../PlatformChecker").shouldBeUseWeb)() ? (0, _$$_REQUIRE(_dependencyMap[1], "./js-reanimated").createJSReanimatedModule)() : (0, _$$_REQUIRE(_dependencyMap[2], "./NativeReanimated").createNativeReanimatedModule)();
-},704,[683,705,710],"node_modules/react-native-reanimated/src/ReanimatedModule/reanimatedModuleInstance.ts");
+},658,[637,659,664],"node_modules/react-native-reanimated/src/ReanimatedModule/reanimatedModuleInstance.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -130597,7 +124341,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function isNativeProp(propName) {
     return !!_$$_REQUIRE(_dependencyMap[6], "../../propsAllowlists").PropsAllowlists.NATIVE_THREAD_PROPS_WHITELIST[propName];
   }
-},705,[706,8,27,691,708,685,709],"node_modules/react-native-reanimated/src/ReanimatedModule/js-reanimated/index.ts");
+},659,[660,8,27,645,662,639,663],"node_modules/react-native-reanimated/src/ReanimatedModule/js-reanimated/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -130895,7 +124639,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     Platform["UNKNOWN"] = "unknown";
     return Platform;
   }({});
-},706,[8,27,9,10,21,683,707,692,681,691,685],"node_modules/react-native-reanimated/src/ReanimatedModule/js-reanimated/JSReanimated.ts");
+},660,[8,27,9,10,21,637,661,646,635,645,639],"node_modules/react-native-reanimated/src/ReanimatedModule/js-reanimated/JSReanimated.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -130910,7 +124654,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return callback(performance.now());
     }, 0);
   }
-},707,[],"node_modules/react-native-reanimated/src/mockedRequestAnimationFrame.ts");
+},661,[],"node_modules/react-native-reanimated/src/mockedRequestAnimationFrame.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -130924,7 +124668,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var createTransformValue;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   var createTextShadowValue;
-},708,[],"node_modules/react-native-reanimated/src/ReanimatedModule/js-reanimated/webUtils.ts");
+},662,[],"node_modules/react-native-reanimated/src/ReanimatedModule/js-reanimated/webUtils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -131056,7 +124800,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       placeholderTextColor: true
     }
   };
-},709,[],"node_modules/react-native-reanimated/src/propsAllowlists.ts");
+},663,[],"node_modules/react-native-reanimated/src/propsAllowlists.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -131282,7 +125026,7 @@ See https://docs.swmansion.com/react-native-reanimated/docs/guides/troubleshooti
       }
     }]);
   }();
-},710,[8,9,10,20,21,701,691,692,698,711,683,712],"node_modules/react-native-reanimated/src/ReanimatedModule/NativeReanimated.ts");
+},664,[8,9,10,20,21,655,645,646,652,665,637,666],"node_modules/react-native-reanimated/src/ReanimatedModule/NativeReanimated.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -131325,7 +125069,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return version1 === version2;
     }
   }
-},711,[8,27,685,701,691],"node_modules/react-native-reanimated/src/platform-specific/checkCppVersion.ts");
+},665,[8,27,639,655,645],"node_modules/react-native-reanimated/src/platform-specific/checkCppVersion.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -131371,7 +125115,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
     return resolvedRef;
   }
-},712,[322,713],"node_modules/react-native-reanimated/src/fabricUtils.ts");
+},666,[322,667],"node_modules/react-native-reanimated/src/fabricUtils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /* eslint-disable camelcase */
   'use strict';
@@ -131434,7 +125178,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     */
     return findHostInstance_DEPRECATED(!(0, _$$_REQUIRE(_dependencyMap[0], "../PlatformChecker").isFabric)() || component._hasAnimatedRef ? component._componentRef : component);
   }
-},713,[683,303,691,338],"node_modules/react-native-reanimated/src/platform-specific/findHostInstance.ts");
+},667,[637,303,645,338],"node_modules/react-native-reanimated/src/platform-specific/findHostInstance.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -131679,7 +125423,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     withStyleAnimation.__stackDetails = _e;
     return withStyleAnimation;
   }();
-},714,[715,718,685,727],"node_modules/react-native-reanimated/src/animation/styleAnimation.ts");
+},668,[669,672,639,681],"node_modules/react-native-reanimated/src/animation/styleAnimation.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /* eslint-disable @typescript-eslint/no-shadow */
   'use strict';
@@ -132255,7 +125999,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
    * @see https://docs.swmansion.com/react-native-reanimated/docs/core/cancelAnimation
    */
   var cancelAnimation = exports.cancelAnimation = SHOULD_BE_USE_WEB ? cancelAnimationWeb : cancelAnimationNative;
-},715,[8,46,683,716,685,681,691,717,718,702],"node_modules/react-native-reanimated/src/animation/util.ts");
+},669,[8,46,637,670,639,635,645,671,672,656],"node_modules/react-native-reanimated/src/animation/util.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -132278,7 +126022,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       ReducedMotionManager.uiValue.value = value;
     }
   };
-},716,[683,682],"node_modules/react-native-reanimated/src/ReducedMotion.ts");
+},670,[637,636],"node_modules/react-native-reanimated/src/ReducedMotion.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -132785,7 +126529,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     decomposeMatrixIntoMatricesAndAngles.__stackDetails = _e;
     return decomposeMatrixIntoMatricesAndAngles;
   }();
-},717,[8,27,691],"node_modules/react-native-reanimated/src/animation/transformationMatrix/matrixUtils.tsx");
+},671,[8,27,645],"node_modules/react-native-reanimated/src/animation/transformationMatrix/matrixUtils.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -133785,7 +127529,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     toGammaSpace.__stackDetails = _e;
     return toGammaSpace;
   }();
-},718,[719,683],"node_modules/react-native-reanimated/src/Colors.ts");
+},672,[673,637],"node_modules/react-native-reanimated/src/Colors.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -134020,7 +127764,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function unmarkNodeAsRemovable(viewTag) {
     _$$_REQUIRE(_dependencyMap[8], "./ReanimatedModule").ReanimatedModule.unmarkNodeAsRemovable(viewTag);
   }
-},719,[720,702,682,689,722,724,683,691,703,725,721],"node_modules/react-native-reanimated/src/core.ts");
+},673,[674,656,636,643,676,678,637,645,657,679,675],"node_modules/react-native-reanimated/src/core.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -134158,7 +127902,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     runOnRuntime.__stackDetails = _e;
     return runOnRuntime;
   }();
-},720,[683,703,689,691,685,721,681],"node_modules/react-native-reanimated/src/runtimes.ts");
+},674,[637,657,643,645,639,675,635],"node_modules/react-native-reanimated/src/runtimes.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -134463,7 +128207,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return reactNativeReanimated_initializersTs7;
     }())();
   }
-},721,[8,27,683,685,702,691,707],"node_modules/react-native-reanimated/src/initializers.ts");
+},675,[8,27,637,639,656,645,661],"node_modules/react-native-reanimated/src/initializers.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -134705,7 +128449,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return reactNativeReanimated_mappersTs3;
     }())();
   }
-},722,[683,723,702],"node_modules/react-native-reanimated/src/mappers.ts");
+},676,[637,677,656],"node_modules/react-native-reanimated/src/mappers.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -134731,7 +128475,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     isSharedValue.__stackDetails = _e;
     return isSharedValue;
   }();
-},723,[],"node_modules/react-native-reanimated/src/isSharedValue.ts");
+},677,[],"node_modules/react-native-reanimated/src/isSharedValue.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -134742,7 +128486,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var controlEdgeToEdgeValues = function controlEdgeToEdgeValues(values) {};
   exports.controlEdgeToEdgeValues = controlEdgeToEdgeValues;
   exports.isEdgeToEdge = isEdgeToEdge;
-},724,[],"node_modules/react-native-is-edge-to-edge/dist/index.js");
+},678,[],"node_modules/react-native-is-edge-to-edge/dist/index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -134803,7 +128547,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }();
-},725,[8,9,10,726],"node_modules/react-native-reanimated/src/SensorContainer.ts");
+},679,[8,9,10,680],"node_modules/react-native-reanimated/src/SensorContainer.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -134876,7 +128620,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }();
-},726,[8,9,10,681,682,703],"node_modules/react-native-reanimated/src/Sensor.ts");
+},680,[8,9,10,635,636,657],"node_modules/react-native-reanimated/src/Sensor.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -135014,7 +128758,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_timingTs1.__stackDetails = _e;
     return reactNativeReanimated_timingTs1;
   }();
-},727,[715,728],"node_modules/react-native-reanimated/src/animation/timing.ts");
+},681,[669,682],"node_modules/react-native-reanimated/src/animation/timing.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -135640,7 +129384,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     });
   }
   var Easing = exports.Easing = EasingObject;
-},728,[8,27,729],"node_modules/react-native-reanimated/src/Easing.ts");
+},682,[8,27,683],"node_modules/react-native-reanimated/src/Easing.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -135948,7 +129692,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     Bezier.__stackDetails = _e;
     return Bezier;
   }();
-},729,[691],"node_modules/react-native-reanimated/src/Bezier.ts");
+},683,[645],"node_modules/react-native-reanimated/src/Bezier.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -135973,7 +129717,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[2], "./Keyframe").Keyframe;
     }
   });
-},730,[731,744,745],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/index.ts");
+},684,[685,698,699],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -136168,7 +129912,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }();
-},731,[8,9,10,681,691,732,715],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/BaseAnimationBuilder.ts");
+},685,[8,9,10,635,645,686,669],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/BaseAnimationBuilder.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -136241,7 +129985,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[8], "./timing").withTiming;
     }
   });
-},732,[715,733,734,739,740,741,742,714,727],"node_modules/react-native-reanimated/src/animation/index.ts");
+},686,[669,687,688,693,694,695,696,668,681],"node_modules/react-native-reanimated/src/animation/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -136345,7 +130089,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_clampTs1.__stackDetails = _e;
     return reactNativeReanimated_clampTs1;
   }();
-},733,[715,685],"node_modules/react-native-reanimated/src/animation/clamp.ts");
+},687,[669,639],"node_modules/react-native-reanimated/src/animation/clamp.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -136358,7 +130102,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[0], "./decay").withDecay;
     }
   });
-},734,[735],"node_modules/react-native-reanimated/src/animation/decay/index.ts");
+},688,[689],"node_modules/react-native-reanimated/src/animation/decay/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -136503,7 +130247,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_decayTs2.__stackDetails = _e;
     return reactNativeReanimated_decayTs2;
   }();
-},735,[691,715,736,737,738],"node_modules/react-native-reanimated/src/animation/decay/decay.ts");
+},689,[645,669,690,691,692],"node_modules/react-native-reanimated/src/animation/decay/decay.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -136552,7 +130296,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     isValidRubberBandConfig.__stackDetails = _e;
     return isValidRubberBandConfig;
   }();
-},736,[683],"node_modules/react-native-reanimated/src/animation/decay/utils.ts");
+},690,[637],"node_modules/react-native-reanimated/src/animation/decay/utils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -136604,7 +130348,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     rubberBandDecay.__stackDetails = _e;
     return rubberBandDecay;
   }();
-},737,[736],"node_modules/react-native-reanimated/src/animation/decay/rubberBandDecay.ts");
+},691,[690],"node_modules/react-native-reanimated/src/animation/decay/rubberBandDecay.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -136651,7 +130395,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     rigidDecay.__stackDetails = _e;
     return rigidDecay;
   }();
-},738,[736],"node_modules/react-native-reanimated/src/animation/decay/rigidDecay.ts");
+},692,[690],"node_modules/react-native-reanimated/src/animation/decay/rigidDecay.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -136769,7 +130513,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_delayTs1.__stackDetails = _e;
     return reactNativeReanimated_delayTs1;
   }();
-},739,[715],"node_modules/react-native-reanimated/src/animation/delay.ts");
+},693,[669],"node_modules/react-native-reanimated/src/animation/delay.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -136905,7 +130649,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_repeatTs1.__stackDetails = _e;
     return reactNativeReanimated_repeatTs1;
   }();
-},740,[715],"node_modules/react-native-reanimated/src/animation/repeat.ts");
+},694,[669],"node_modules/react-native-reanimated/src/animation/repeat.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -137082,7 +130826,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     withSequence.__stackDetails = _e;
     return withSequence;
   }();
-},741,[685,715],"node_modules/react-native-reanimated/src/animation/sequence.ts");
+},695,[639,669],"node_modules/react-native-reanimated/src/animation/sequence.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -137296,7 +131040,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_springTs1.__stackDetails = _e;
     return reactNativeReanimated_springTs1;
   }();
-},742,[715,743],"node_modules/react-native-reanimated/src/animation/spring.ts");
+},696,[669,697],"node_modules/react-native-reanimated/src/animation/spring.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -137699,7 +131443,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     isAnimationTerminatingCalculation.__stackDetails = _e;
     return isAnimationTerminatingCalculation;
   }();
-},743,[8,46,27,685],"node_modules/react-native-reanimated/src/animation/springUtils.ts");
+},697,[8,46,27,639],"node_modules/react-native-reanimated/src/animation/springUtils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -138010,7 +131754,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }(_$$_REQUIRE(_dependencyMap[8], "./BaseAnimationBuilder").BaseAnimationBuilder);
-},744,[8,9,10,14,16,17,715,732,731],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/ComplexAnimationBuilder.ts");
+},698,[8,9,10,14,16,17,669,686,685],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/ComplexAnimationBuilder.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -138330,7 +132074,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     return makeKeyframeKey;
   }();
   var Keyframe = exports.Keyframe = InnerKeyframe;
-},745,[8,224,46,9,10,681,732,728,691,715],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/Keyframe.ts");
+},699,[8,224,46,9,10,635,686,682,645,669],"node_modules/react-native-reanimated/src/layoutReanimation/animationBuilder/Keyframe.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -138437,7 +132181,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     });
   });
-},746,[747,748,749,750,751,752,753,754,755,756],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/index.ts");
+},700,[701,702,703,704,705,706,707,708,709,710],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -139362,7 +133106,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   BounceOutRight.presetName = 'BounceOutRight';
-},747,[8,9,10,14,16,17,732,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Bounce.ts");
+},701,[8,9,10,14,16,17,686,684],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Bounce.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -140126,7 +133870,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   FadeOutDown.presetName = 'FadeOutDown';
-},748,[8,27,9,10,14,16,17,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Fade.ts");
+},702,[8,27,9,10,14,16,17,684],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Fade.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -141110,7 +134854,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   FlipOutEasyY.presetName = 'FlipOutEasyY';
-},749,[8,27,9,10,14,16,17,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Flip.ts");
+},703,[8,27,9,10,14,16,17,684],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Flip.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -141474,7 +135218,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[8], "../animationBuilder").ComplexAnimationBuilder);
   LightSpeedOutLeft.presetName = 'LightSpeedOutLeft';
-},750,[8,27,9,10,14,16,17,732,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Lightspeed.ts");
+},704,[8,27,9,10,14,16,17,686,684],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Lightspeed.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -141650,7 +135394,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   PinwheelOut.presetName = 'PinwheelOut';
-},751,[8,27,9,10,14,16,17,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Pinwheel.ts");
+},705,[8,27,9,10,14,16,17,684],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Pinwheel.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -141978,7 +135722,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   RollOutRight.presetName = 'RollOutRight';
-},752,[8,27,9,10,14,16,17,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Roll.ts");
+},706,[8,27,9,10,14,16,17,684],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Roll.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -142666,7 +136410,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   RotateOutUpRight.presetName = 'RotateOutUpRight';
-},753,[8,27,9,10,14,16,17,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Rotate.ts");
+},707,[8,27,9,10,14,16,17,684],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Rotate.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -143242,7 +136986,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   SlideOutDown.presetName = 'SlideOutDown';
-},754,[8,27,9,10,14,16,17,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Slide.ts");
+},708,[8,27,9,10,14,16,17,684],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Slide.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -143554,7 +137298,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   StretchOutY.presetName = 'StretchOutY';
-},755,[8,27,9,10,14,16,17,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Stretch.ts");
+},709,[8,27,9,10,14,16,17,684],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Stretch.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -144814,7 +138558,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").ComplexAnimationBuilder);
   ZoomOutEasyDown.presetName = 'ZoomOutEasyDown';
-},756,[8,27,9,10,14,16,17,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Zoom.ts");
+},710,[8,27,9,10,14,16,17,684],"node_modules/react-native-reanimated/src/layoutReanimation/defaultAnimations/Zoom.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -144881,7 +138625,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     });
   });
-},757,[758,759,760,761,762,763],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/index.ts");
+},711,[712,713,714,715,716,717],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145051,7 +138795,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[9], "../animationBuilder").BaseAnimationBuilder);
   CurvedTransition.presetName = 'CurvedTransition';
-},758,[8,9,10,14,16,17,728,732,715,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/CurvedTransition.ts");
+},712,[8,9,10,14,16,17,682,686,669,684],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/CurvedTransition.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145260,7 +139004,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function combineTransition(exiting, entering) {
     return EntryExitTransition.entering(entering).exiting(exiting);
   }
-},759,[8,224,9,10,14,16,17,748,732,685,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/EntryExitTransition.ts");
+},713,[8,224,9,10,14,16,17,702,686,639,684],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/EntryExitTransition.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145364,7 +139108,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").BaseAnimationBuilder);
   FadingTransition.presetName = 'FadingTransition';
-},760,[8,9,10,14,16,17,732,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/FadingTransition.ts");
+},714,[8,9,10,14,16,17,686,684],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/FadingTransition.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145465,7 +139209,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[8], "../animationBuilder").BaseAnimationBuilder);
   JumpingTransition.presetName = 'JumpingTransition';
-},761,[8,9,10,14,16,17,732,728,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/JumpingTransition.ts");
+},715,[8,9,10,14,16,17,686,682,684],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/JumpingTransition.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145557,7 +139301,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   /** @deprecated Please use {@link LinearTransition} instead. */
   LinearTransition.presetName = 'LinearTransition';
   var Layout = exports.Layout = LinearTransition;
-},762,[8,27,9,10,14,16,17,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/LinearTransition.ts");
+},716,[8,27,9,10,14,16,17,684],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/LinearTransition.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145664,7 +139408,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }(_$$_REQUIRE(_dependencyMap[7], "../animationBuilder").BaseAnimationBuilder);
   SequencedTransition.presetName = 'SequencedTransition';
-},763,[8,9,10,14,16,17,732,730],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/SequencedTransition.ts");
+},717,[8,9,10,14,16,17,686,684],"node_modules/react-native-reanimated/src/layoutReanimation/defaultTransitions/SequencedTransition.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -145691,7 +139435,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     });
   });
-},764,[765,766],"node_modules/react-native-reanimated/src/layoutReanimation/sharedTransitions/index.ts");
+},718,[719,720],"node_modules/react-native-reanimated/src/layoutReanimation/sharedTransitions/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -146040,7 +139784,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return reactNativeReanimated_ProgressTransitionManagerTs9;
     }())();
   }
-},765,[8,9,10,1,702,719,683,691],"node_modules/react-native-reanimated/src/layoutReanimation/sharedTransitions/ProgressTransitionManager.ts");
+},719,[8,9,10,1,656,673,637,645],"node_modules/react-native-reanimated/src/layoutReanimation/sharedTransitions/ProgressTransitionManager.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -146370,7 +140114,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }();
   SharedTransition._progressTransitionManager = new (_$$_REQUIRE(_dependencyMap[8], "./ProgressTransitionManager").ProgressTransitionManager)();
-},766,[8,9,10,681,715,767,691,732,765],"node_modules/react-native-reanimated/src/layoutReanimation/sharedTransitions/SharedTransition.ts");
+},720,[8,9,10,635,669,721,645,686,719],"node_modules/react-native-reanimated/src/layoutReanimation/sharedTransitions/SharedTransition.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -146438,7 +140182,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }, isUnmounting);
     };
   }
-},767,[683,719],"node_modules/react-native-reanimated/src/UpdateLayoutAnimations.ts");
+},721,[637,673],"node_modules/react-native-reanimated/src/UpdateLayoutAnimations.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -146851,7 +140595,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       options: options
     });
   }
-},768,[8,769,772,718,691,773,719],"node_modules/react-native-reanimated/src/interpolateColor.ts");
+},722,[8,723,726,672,645,727,673],"node_modules/react-native-reanimated/src/interpolateColor.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -146867,7 +140611,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _default = exports.default = {
     oklab: _oklab.default
   };
-},769,[8,770],"node_modules/react-native-reanimated/src/culori/index.ts");
+},723,[8,724],"node_modules/react-native-reanimated/src/culori/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147015,7 +140759,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       toRgb: convertOklabToRgb
     }
   };
-},770,[8,771],"node_modules/react-native-reanimated/src/culori/oklab.ts");
+},724,[8,725],"node_modules/react-native-reanimated/src/culori/oklab.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147137,7 +140881,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       toRgb: convertLrgbToRgb
     }
   };
-},771,[],"node_modules/react-native-reanimated/src/culori/lrgb.ts");
+},725,[],"node_modules/react-native-reanimated/src/culori/lrgb.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147386,7 +141130,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     clamp.__stackDetails = _e;
     return clamp;
   }();
-},772,[691],"node_modules/react-native-reanimated/src/interpolation.ts");
+},726,[645],"node_modules/react-native-reanimated/src/interpolation.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147420,7 +141164,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, [mutable]);
     return mutable;
   }
-},773,[8,27,86,719,732],"node_modules/react-native-reanimated/src/hook/useSharedValue.ts");
+},727,[8,27,86,673,686],"node_modules/react-native-reanimated/src/hook/useSharedValue.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147520,7 +141264,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }(_react.Component);
-},774,[8,9,10,14,16,17,86,683,92,775,719],"node_modules/react-native-reanimated/src/component/LayoutAnimationConfig.tsx");
+},728,[8,9,10,14,16,17,86,637,92,729,673],"node_modules/react-native-reanimated/src/component/LayoutAnimationConfig.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147534,7 +141278,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   });
   var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-},775,[1],"node_modules/react-native-reanimated/src/platformFunctions/findNodeHandle.ts");
+},729,[1],"node_modules/react-native-reanimated/src/platformFunctions/findNodeHandle.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147806,7 +141550,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       flexWrap: 'wrap'
     }
   });
-},776,[86,1,777,778,818,92],"node_modules/react-native-reanimated/src/component/PerformanceMonitor.tsx");
+},730,[86,1,731,732,772,92],"node_modules/react-native-reanimated/src/component/PerformanceMonitor.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147887,7 +141631,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
   }
   configureProps();
-},777,[683,709,691,719,685],"node_modules/react-native-reanimated/src/ConfigHelper.ts");
+},731,[637,663,645,673,639],"node_modules/react-native-reanimated/src/ConfigHelper.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -147900,7 +141644,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[0], "./createAnimatedComponent").createAnimatedComponent;
     }
   });
-},778,[779],"node_modules/react-native-reanimated/src/createAnimatedComponent/index.ts");
+},732,[733],"node_modules/react-native-reanimated/src/createAnimatedComponent/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -148431,7 +142175,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return styleElement;
     });
   }
-},779,[8,9,10,14,16,17,680,37,86,1,780,781,683,782,807,813,719,715,767,681,815,816,783,713,691,817,712,808,777,679,92,774,684],"node_modules/react-native-reanimated/src/createAnimatedComponent/createAnimatedComponent.tsx");
+},733,[8,9,10,14,16,17,634,37,86,1,734,735,637,736,761,767,673,669,721,635,769,770,737,667,645,771,666,762,731,633,92,728,638],"node_modules/react-native-reanimated/src/createAnimatedComponent/createAnimatedComponent.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -148556,7 +142300,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     JSPropsUpdater = JSPropsUpdaterPaper;
   }
   var _default = exports.default = JSPropsUpdater;
-},780,[8,9,10,1,699,683,702],"node_modules/react-native-reanimated/src/createAnimatedComponent/JSPropsUpdater.ts");
+},734,[8,9,10,1,653,637,656],"node_modules/react-native-reanimated/src/createAnimatedComponent/JSPropsUpdater.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -148616,7 +142360,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
   }
   var _default = exports.default = setAndForwardRef;
-},781,[],"node_modules/react-native-reanimated/src/createAnimatedComponent/setAndForwardRef.ts");
+},735,[],"node_modules/react-native-reanimated/src/createAnimatedComponent/setAndForwardRef.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -148653,7 +142397,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[2], "./animationsManager").tryActivateLayoutTransition;
     }
   });
-},782,[783,798,806],"node_modules/react-native-reanimated/src/layoutReanimation/web/index.ts");
+},736,[737,752,760],"node_modules/react-native-reanimated/src/layoutReanimation/web/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -148823,7 +142567,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     // There are 4 more fields, but checking these should suffice
     return r1.x === r2.x && r1.y === r2.y && r1.width === r2.width && r1.height === r2.height;
   }
-},783,[683,685,784,691,797],"node_modules/react-native-reanimated/src/layoutReanimation/web/domUtils.ts");
+},737,[637,639,738,645,751],"node_modules/react-native-reanimated/src/layoutReanimation/web/domUtils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -148842,7 +142586,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   }({});
   var AnimationsData = exports.AnimationsData = Object.assign({}, _$$_REQUIRE(_dependencyMap[0], "./animation/Fade.web").FadeInData, _$$_REQUIRE(_dependencyMap[0], "./animation/Fade.web").FadeOutData, _$$_REQUIRE(_dependencyMap[1], "./animation/Bounce.web").BounceInData, _$$_REQUIRE(_dependencyMap[1], "./animation/Bounce.web").BounceOutData, _$$_REQUIRE(_dependencyMap[2], "./animation/Flip.web").FlipInData, _$$_REQUIRE(_dependencyMap[2], "./animation/Flip.web").FlipOutData, _$$_REQUIRE(_dependencyMap[3], "./animation/Stretch.web").StretchInData, _$$_REQUIRE(_dependencyMap[3], "./animation/Stretch.web").StretchOutData, _$$_REQUIRE(_dependencyMap[4], "./animation/Zoom.web").ZoomInData, _$$_REQUIRE(_dependencyMap[4], "./animation/Zoom.web").ZoomOutData, _$$_REQUIRE(_dependencyMap[5], "./animation/Slide.web").SlideInData, _$$_REQUIRE(_dependencyMap[5], "./animation/Slide.web").SlideOutData, _$$_REQUIRE(_dependencyMap[6], "./animation/Lightspeed.web").LightSpeedInData, _$$_REQUIRE(_dependencyMap[6], "./animation/Lightspeed.web").LightSpeedOutData, _$$_REQUIRE(_dependencyMap[7], "./animation/Pinwheel.web").PinwheelData, _$$_REQUIRE(_dependencyMap[8], "./animation/Rotate.web").RotateInData, _$$_REQUIRE(_dependencyMap[8], "./animation/Rotate.web").RotateOutData, _$$_REQUIRE(_dependencyMap[9], "./animation/Roll.web").RollInData, _$$_REQUIRE(_dependencyMap[9], "./animation/Roll.web").RollOutData);
   var Animations = exports.Animations = Object.assign({}, _$$_REQUIRE(_dependencyMap[0], "./animation/Fade.web").FadeIn, _$$_REQUIRE(_dependencyMap[0], "./animation/Fade.web").FadeOut, _$$_REQUIRE(_dependencyMap[1], "./animation/Bounce.web").BounceIn, _$$_REQUIRE(_dependencyMap[1], "./animation/Bounce.web").BounceOut, _$$_REQUIRE(_dependencyMap[2], "./animation/Flip.web").FlipIn, _$$_REQUIRE(_dependencyMap[2], "./animation/Flip.web").FlipOut, _$$_REQUIRE(_dependencyMap[3], "./animation/Stretch.web").StretchIn, _$$_REQUIRE(_dependencyMap[3], "./animation/Stretch.web").StretchOut, _$$_REQUIRE(_dependencyMap[4], "./animation/Zoom.web").ZoomIn, _$$_REQUIRE(_dependencyMap[4], "./animation/Zoom.web").ZoomOut, _$$_REQUIRE(_dependencyMap[5], "./animation/Slide.web").SlideIn, _$$_REQUIRE(_dependencyMap[5], "./animation/Slide.web").SlideOut, _$$_REQUIRE(_dependencyMap[6], "./animation/Lightspeed.web").LightSpeedIn, _$$_REQUIRE(_dependencyMap[6], "./animation/Lightspeed.web").LightSpeedOut, _$$_REQUIRE(_dependencyMap[7], "./animation/Pinwheel.web").Pinwheel, _$$_REQUIRE(_dependencyMap[8], "./animation/Rotate.web").RotateIn, _$$_REQUIRE(_dependencyMap[8], "./animation/Rotate.web").RotateOut, _$$_REQUIRE(_dependencyMap[9], "./animation/Roll.web").RollIn, _$$_REQUIRE(_dependencyMap[9], "./animation/Roll.web").RollOut);
-},784,[785,788,789,790,791,792,793,794,795,796],"node_modules/react-native-reanimated/src/layoutReanimation/web/config.ts");
+},738,[739,742,743,744,745,746,747,748,749,750],"node_modules/react-native-reanimated/src/layoutReanimation/web/config.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149067,7 +142811,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: FadeOutData.FadeOutDown.duration
     }
   };
-},785,[786],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Fade.web.ts");
+},739,[740],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Fade.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149127,7 +142871,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
     return keyframe;
   }
-},786,[8,27,787],"node_modules/react-native-reanimated/src/layoutReanimation/web/animationParser.ts");
+},740,[8,27,741],"node_modules/react-native-reanimated/src/layoutReanimation/web/animationParser.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149150,7 +142894,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function getEasingByName(easingName) {
     return `cubic-bezier(${WebEasings[easingName].toString()})`;
   }
-},787,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/Easing.web.ts");
+},741,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/Easing.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149517,7 +143261,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: BounceOutData.BounceOutDown.duration
     }
   };
-},788,[786],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Bounce.web.ts");
+},742,[740],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Bounce.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149814,7 +143558,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: FlipOutData.FlipOutEasyY.duration
     }
   };
-},789,[786],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Flip.web.ts");
+},743,[740],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Flip.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -149911,7 +143655,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: StretchOutData.StretchOutY.duration
     }
   };
-},790,[786],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Stretch.web.ts");
+},744,[740],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Stretch.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150276,7 +144020,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: ZoomOutData.ZoomOutEasyDown.duration
     }
   };
-},791,[786],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Zoom.web.ts");
+},745,[740],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Zoom.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150453,7 +144197,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: SlideOutData.SlideOutDown.duration
     }
   };
-},792,[786],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Slide.web.ts");
+},746,[740],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Slide.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150582,7 +144326,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: LightSpeedOutData.LightSpeedOutLeft.duration
     }
   };
-},793,[786],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Lightspeed.web.ts");
+},747,[740],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Lightspeed.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150643,7 +144387,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: PinwheelData.PinwheelOut.duration
     }
   };
-},794,[786],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Pinwheel.web.ts");
+},748,[740],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Pinwheel.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150868,7 +144612,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: RotateOutData.RotateOutUpRight.duration
     }
   };
-},795,[786],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Rotate.web.ts");
+},749,[740],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Rotate.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -150973,7 +144717,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       duration: RollOutData.RollOutRight.duration
     }
   };
-},796,[786],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Roll.web.ts");
+},750,[740],"node_modules/react-native-reanimated/src/layoutReanimation/web/animation/Roll.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151025,7 +144769,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       fixElementPosition(element, element.parentElement, snapshot);
     }
   }
-},797,[705],"node_modules/react-native-reanimated/src/layoutReanimation/web/componentStyle.ts");
+},751,[659],"node_modules/react-native-reanimated/src/layoutReanimation/web/componentStyle.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151276,7 +145020,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     (0, _$$_REQUIRE(_dependencyMap[7], "./componentStyle").setElementPosition)(dummy, snapshot);
     setElementAnimation(dummy, animationConfig, false, parent);
   }
-},798,[787,728,685,716,681,784,730,797,705,783,799,804],"node_modules/react-native-reanimated/src/layoutReanimation/web/componentUtils.ts");
+},752,[741,682,639,670,635,738,684,751,659,737,753,758],"node_modules/react-native-reanimated/src/layoutReanimation/web/componentUtils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151446,7 +145190,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       dummyTransitionKeyframeName: dummyTransitionKeyframeName
     };
   }
-},799,[8,224,153,27,786,783,784,800,801,802,803,804,805],"node_modules/react-native-reanimated/src/layoutReanimation/web/createAnimation.ts");
+},753,[8,224,153,27,740,737,738,754,755,756,757,758,759],"node_modules/react-native-reanimated/src/layoutReanimation/web/createAnimation.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151474,7 +145218,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
     return linearTransition;
   }
-},800,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Linear.web.ts");
+},754,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Linear.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151518,7 +145262,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
     return sequencedTransition;
   }
-},801,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Sequenced.web.ts");
+},755,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Sequenced.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151571,7 +145315,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
     return fadingTransition;
   }
-},802,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Fading.web.ts");
+},756,[],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Fading.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151616,7 +145360,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
     return jumpingTransition;
   }
-},803,[728],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Jumping.web.ts");
+},757,[682],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Jumping.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151728,7 +145472,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       secondKeyframeObj: keyframeYObj
     };
   }
-},804,[787,681],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Curved.web.ts");
+},758,[741,635],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/Curved.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151813,7 +145557,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     hideComponentBetweenAnimations(keyframeData.style);
     return keyframeData;
   }
-},805,[8,27,784],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/EntryExit.web.ts");
+},759,[8,27,738],"node_modules/react-native-reanimated/src/layoutReanimation/web/transition/EntryExit.web.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -151934,7 +145678,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
     startWebLayoutAnimation(props, element, _$$_REQUIRE(_dependencyMap[0], "../../commonTypes").LayoutAnimationType.LAYOUT, transitionData);
   }
-},806,[681,784,685,798,730,799,797,783,728],"node_modules/react-native-reanimated/src/layoutReanimation/web/animationsManager.ts");
+},760,[635,738,639,752,684,753,751,737,682],"node_modules/react-native-reanimated/src/layoutReanimation/web/animationsManager.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -152125,7 +145869,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }();
-},807,[8,9,10,27,723,808,809,777,810,722],"node_modules/react-native-reanimated/src/createAnimatedComponent/InlinePropManager.ts");
+},761,[8,9,10,27,677,762,763,731,764,676],"node_modules/react-native-reanimated/src/createAnimatedComponent/InlinePropManager.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -152161,7 +145905,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
     return false;
   };
-},808,[],"node_modules/react-native-reanimated/src/createAnimatedComponent/utils.ts");
+},762,[],"node_modules/react-native-reanimated/src/createAnimatedComponent/utils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -152232,7 +145976,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
     return data;
   }
-},809,[719],"node_modules/react-native-reanimated/src/ViewDescriptorsSet.ts");
+},763,[673],"node_modules/react-native-reanimated/src/ViewDescriptorsSet.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -152253,7 +145997,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   var _updateProps = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[0], "./updateProps"));
   function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-},810,[811],"node_modules/react-native-reanimated/src/updateProps/index.ts");
+},764,[765],"node_modules/react-native-reanimated/src/updateProps/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /* eslint-disable @typescript-eslint/no-redundant-type-constituents, @typescript-eslint/no-explicit-any */
   'use strict';
@@ -152434,7 +146178,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
    * This used to be `SharedValue<Descriptors[]>` but objects holding just a
    * single `value` prop are fine too.
    */
-},811,[683,705,718,812,691,702],"node_modules/react-native-reanimated/src/updateProps/updateProps.ts");
+},765,[637,659,672,766,645,656],"node_modules/react-native-reanimated/src/updateProps/updateProps.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -152587,7 +146331,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     processTransformOrigin.__stackDetails = _e;
     return processTransformOrigin;
   }();
-},812,[8,27,691],"node_modules/react-native-reanimated/src/updateProps/processTransformOrigin.ts");
+},766,[8,27,645],"node_modules/react-native-reanimated/src/updateProps/processTransformOrigin.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -152665,7 +146409,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }();
-},813,[8,9,10,808,732,807,814,723,683],"node_modules/react-native-reanimated/src/createAnimatedComponent/PropsFilter.tsx");
+},767,[8,9,10,762,686,761,768,677,637],"node_modules/react-native-reanimated/src/createAnimatedComponent/PropsFilter.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -152796,7 +146540,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }]);
   }();
   var WorkletEventHandler = exports.WorkletEventHandler = SHOULD_BE_USE_WEB ? WorkletEventHandlerWeb : WorkletEventHandlerNative;
-},814,[8,9,10,20,21,683,719],"node_modules/react-native-reanimated/src/WorkletEventHandler.ts");
+},768,[8,9,10,20,21,637,673],"node_modules/react-native-reanimated/src/WorkletEventHandler.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -152858,7 +146602,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return layoutAnimationOrBuilder;
     }
   }
-},815,[685],"node_modules/react-native-reanimated/src/animationBuilder.tsx");
+},769,[639],"node_modules/react-native-reanimated/src/animationBuilder.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -153003,7 +146747,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }
   }
-},816,[8,9,10,20,21,775,808,814],"node_modules/react-native-reanimated/src/createAnimatedComponent/NativeEventsManager.ts");
+},770,[8,9,10,20,21,729,762,768],"node_modules/react-native-reanimated/src/createAnimatedComponent/NativeEventsManager.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -153048,7 +146792,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       viewConfig: element == null ? void 0 : element._viewConfig
     };
   }
-},817,[],"node_modules/react-native-reanimated/src/createAnimatedComponent/getViewInfo.ts");
+},771,[],"node_modules/react-native-reanimated/src/createAnimatedComponent/getViewInfo.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -153157,7 +146901,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[16], "./useWorkletCallback").useWorkletCallback;
     }
   });
-},818,[819,823,824,827,828,829,830,825,831,832,822,833,820,836,837,773,838],"node_modules/react-native-reanimated/src/hook/index.ts");
+},772,[773,777,778,781,782,783,784,779,785,786,776,787,774,790,791,727,792],"node_modules/react-native-reanimated/src/hook/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -153242,7 +146986,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     // This is not correct but we want to make GH think it receives a function.
     );
   }
-},819,[820,822],"node_modules/react-native-reanimated/src/hook/useAnimatedGestureHandler.ts");
+},773,[774,776],"node_modules/react-native-reanimated/src/hook/useAnimatedGestureHandler.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -153290,7 +147034,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       useWeb: useWeb
     };
   }
-},820,[86,689,821,683],"node_modules/react-native-reanimated/src/hook/useHandler.ts");
+},774,[86,643,775,637],"node_modules/react-native-reanimated/src/hook/useHandler.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -153422,7 +147166,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     validateAnimatedStyles.__stackDetails = _e;
     return validateAnimatedStyles;
   }();
-},821,[691],"node_modules/react-native-reanimated/src/hook/utils.ts");
+},775,[645],"node_modules/react-native-reanimated/src/hook/utils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -153470,7 +147214,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
     return initRef.current;
   }
-},822,[86,814],"node_modules/react-native-reanimated/src/hook/useEvent.ts");
+},776,[86,768],"node_modules/react-native-reanimated/src/hook/useEvent.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -153556,7 +147300,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, []);
     return ref.current;
   }
-},823,[86,719,681],"node_modules/react-native-reanimated/src/hook/useAnimatedKeyboard.ts");
+},777,[86,673,635],"node_modules/react-native-reanimated/src/hook/useAnimatedKeyboard.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -153584,7 +147328,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
    * @see https://docs.swmansion.com/react-native-reanimated/docs/core/useAnimatedProps
    */
   var useAnimatedProps = exports.useAnimatedProps = (0, _$$_REQUIRE(_dependencyMap[1], "../PlatformChecker").shouldBeUseWeb)() ? useAnimatedPropsJS : _$$_REQUIRE(_dependencyMap[0], "./useAnimatedStyle").useAnimatedStyle;
-},824,[825,683],"node_modules/react-native-reanimated/src/hook/useAnimatedProps.ts");
+},778,[779,637],"node_modules/react-native-reanimated/src/hook/useAnimatedProps.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154119,7 +147863,7 @@ For more, see the docs: \`https://docs.swmansion.com/react-native-reanimated/doc
   function animatedStyleHandleToJSON() {
     return '{}';
   }
-},825,[8,46,86,683,826,821,810,691,681,773,732,719,809],"node_modules/react-native-reanimated/src/hook/useAnimatedStyle.ts");
+},779,[8,46,86,637,780,775,764,645,635,727,686,673,763],"node_modules/react-native-reanimated/src/hook/useAnimatedStyle.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /* based on:
    * https://github.com/facebook/react-native/blob/main/packages/react-native/Libraries/StyleSheet/processBoxShadow.js
@@ -154346,7 +148090,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     processBoxShadow.__stackDetails = _e;
     return processBoxShadow;
   }();
-},826,[691],"node_modules/react-native-reanimated/src/processBoxShadow.ts");
+},780,[645],"node_modules/react-native-reanimated/src/processBoxShadow.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154418,7 +148162,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       };
     }, dependencies);
   }
-},827,[8,46,86,773,683,719],"node_modules/react-native-reanimated/src/hook/useAnimatedReaction.ts");
+},781,[8,46,86,727,637,673],"node_modules/react-native-reanimated/src/hook/useAnimatedReaction.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154504,7 +148248,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }
     return ref.current;
   }
-},828,[86,1,683,773,712,775,689,690],"node_modules/react-native-reanimated/src/hook/useAnimatedRef.ts");
+},782,[86,1,637,727,666,729,643,644],"node_modules/react-native-reanimated/src/hook/useAnimatedRef.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154588,7 +148332,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     // for more information about this cast.
     );
   }
-},829,[820,822],"node_modules/react-native-reanimated/src/hook/useAnimatedScrollHandler.ts");
+},783,[774,776],"node_modules/react-native-reanimated/src/hook/useAnimatedScrollHandler.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154792,7 +148536,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, [sensorType, config]);
     return ref.current;
   }
-},830,[86,681,719,702],"node_modules/react-native-reanimated/src/hook/useAnimatedSensor.ts");
+},784,[86,635,673,656],"node_modules/react-native-reanimated/src/hook/useAnimatedSensor.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154866,7 +148610,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return reactNativeReanimated_useComposedEventHandlerTs1;
     }(), Array.from(composedEventNames), doDependenciesDiffer);
   }
-},831,[814,820,822],"node_modules/react-native-reanimated/src/hook/useComposedEventHandler.ts");
+},785,[768,774,776],"node_modules/react-native-reanimated/src/hook/useComposedEventHandler.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154939,7 +148683,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, dependencies);
     return sharedValue;
   }
-},832,[8,46,86,683,719,732],"node_modules/react-native-reanimated/src/hook/useDerivedValue.ts");
+},786,[8,46,86,637,673,686],"node_modules/react-native-reanimated/src/hook/useDerivedValue.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -154990,7 +148734,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, [callback, autostart]);
     return ref.current;
   }
-},833,[86,8,834],"node_modules/react-native-reanimated/src/hook/useFrameCallback.ts");
+},787,[86,8,788],"node_modules/react-native-reanimated/src/hook/useFrameCallback.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -155085,7 +148829,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       }
     }]);
   }();
-},834,[8,9,10,835,719],"node_modules/react-native-reanimated/src/frameCallback/FrameCallbackRegistryJS.ts");
+},788,[8,9,10,789,673],"node_modules/react-native-reanimated/src/frameCallback/FrameCallbackRegistryJS.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -155187,7 +148931,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     reactNativeReanimated_FrameCallbackRegistryUITs1.__stackDetails = _e;
     return reactNativeReanimated_FrameCallbackRegistryUITs1;
   }());
-},835,[702],"node_modules/react-native-reanimated/src/frameCallback/FrameCallbackRegistryUI.ts");
+},789,[656],"node_modules/react-native-reanimated/src/frameCallback/FrameCallbackRegistryUI.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -155210,7 +148954,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function useReducedMotion() {
     return IS_REDUCED_MOTION_ENABLED_IN_SYSTEM;
   }
-},836,[716],"node_modules/react-native-reanimated/src/hook/useReducedMotion.ts");
+},790,[670],"node_modules/react-native-reanimated/src/hook/useReducedMotion.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -155325,7 +149069,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     return (_ref = scrollComponent == null ? void 0 : scrollComponent.getScrollableNode()) != null ? _ref : scrollComponent;
   }
   var scrollNativeEventNames = ['onScroll', 'onScrollBeginDrag', 'onScrollEndDrag', 'onMomentumScrollBegin', 'onMomentumScrollEnd'];
-},837,[86,683,773,822],"node_modules/react-native-reanimated/src/hook/useScrollViewOffset.ts");
+},791,[86,637,727,776],"node_modules/react-native-reanimated/src/hook/useScrollViewOffset.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -155338,7 +149082,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function useWorkletCallback(worklet, deps) {
     return (0, _react.useCallback)(worklet, deps != null ? deps : []);
   }
-},838,[86],"node_modules/react-native-reanimated/src/hook/useWorkletCallback.ts");
+},792,[86],"node_modules/react-native-reanimated/src/hook/useWorkletCallback.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -155382,7 +149126,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     }, [mode]);
     return null;
   }
-},839,[86,685,716,681],"node_modules/react-native-reanimated/src/component/ReducedMotionConfig.tsx");
+},793,[86,639,670,635],"node_modules/react-native-reanimated/src/component/ReducedMotionConfig.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -155407,7 +149151,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[1], "./animationManager").startScreenTransition;
     }
   });
-},840,[841,842],"node_modules/react-native-reanimated/src/screenTransition/index.ts");
+},794,[795,796],"node_modules/react-native-reanimated/src/screenTransition/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -155761,7 +149505,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     TwoDimensional: TwoDimensional,
     SwipeRightFade: SwipeRightFade
   };
-},841,[],"node_modules/react-native-reanimated/src/screenTransition/presets.ts");
+},795,[],"node_modules/react-native-reanimated/src/screenTransition/presets.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -155841,7 +149585,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     finishScreenTransition.__stackDetails = _e;
     return finishScreenTransition;
   }();
-},842,[777,843,844],"node_modules/react-native-reanimated/src/screenTransition/animationManager.ts");
+},796,[731,797,798],"node_modules/react-native-reanimated/src/screenTransition/animationManager.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -155967,7 +149711,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     applyStyle.__stackDetails = _e;
     return applyStyle;
   }();
-},843,[683,810],"node_modules/react-native-reanimated/src/screenTransition/styleUpdater.ts");
+},797,[637,764],"node_modules/react-native-reanimated/src/screenTransition/styleUpdater.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -156230,7 +149974,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     getSwipeSimulator.__stackDetails = _e;
     return getSwipeSimulator;
   }();
-},844,[845,843],"node_modules/react-native-reanimated/src/screenTransition/swipeSimulator.ts");
+},798,[799,797],"node_modules/react-native-reanimated/src/screenTransition/swipeSimulator.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -156270,7 +150014,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     updateTransition: noopFactory(),
     finishTransition: noopFactory()
   };
-},845,[685],"node_modules/react-native-reanimated/src/screenTransition/RNScreensTurboModule.ts");
+},799,[639],"node_modules/react-native-reanimated/src/screenTransition/RNScreensTurboModule.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   /* eslint-disable @typescript-eslint/no-namespace */
   'use strict';
@@ -156500,7 +150244,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     // functions since `ReactTestInstance` has its `props` defined as `any`.
     component);
   };
-},846,[8,27,683,691],"node_modules/react-native-reanimated/src/jestUtils.ts");
+},800,[8,27,637,645],"node_modules/react-native-reanimated/src/jestUtils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -156518,7 +150262,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     (0, _$$_REQUIRE(_dependencyMap[0], "./ConfigHelper").addWhitelistedNativeProps)(nativePropsToAdd);
     return adapter;
   }
-},847,[777],"node_modules/react-native-reanimated/src/PropAdapters.ts");
+},801,[731],"node_modules/react-native-reanimated/src/PropAdapters.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -156561,7 +150305,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[5], "./setNativeProps").setNativeProps;
     }
   });
-},848,[849,850,851,852,853,854],"node_modules/react-native-reanimated/src/platformFunctions/index.ts");
+},802,[803,804,805,806,807,808],"node_modules/react-native-reanimated/src/platformFunctions/index.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -156650,7 +150394,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   } else {
     exports.dispatchCommand = dispatchCommand = dispatchCommandDefault;
   }
-},849,[685,683],"node_modules/react-native-reanimated/src/platformFunctions/dispatchCommand.ts");
+},803,[639,637],"node_modules/react-native-reanimated/src/platformFunctions/dispatchCommand.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -156697,7 +150441,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     getRelativeCoords.__stackDetails = _e;
     return getRelativeCoords;
   }();
-},850,[851],"node_modules/react-native-reanimated/src/platformFunctions/getRelativeCoords.ts");
+},804,[805],"node_modules/react-native-reanimated/src/platformFunctions/getRelativeCoords.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -156823,7 +150567,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   } else {
     exports.measure = measure = measureDefault;
   }
-},851,[685,683],"node_modules/react-native-reanimated/src/platformFunctions/measure.ts");
+},805,[639,637],"node_modules/react-native-reanimated/src/platformFunctions/measure.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -156910,7 +150654,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   } else {
     exports.scrollTo = scrollTo = scrollToDefault;
   }
-},852,[849,685,683],"node_modules/react-native-reanimated/src/platformFunctions/scrollTo.ts");
+},806,[803,639,637],"node_modules/react-native-reanimated/src/platformFunctions/scrollTo.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -156960,7 +150704,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   } else {
     exports.setGestureState = setGestureState = setGestureStateDefault;
   }
-},853,[685,683],"node_modules/react-native-reanimated/src/platformFunctions/setGestureState.ts");
+},807,[639,637],"node_modules/react-native-reanimated/src/platformFunctions/setGestureState.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -157068,7 +150812,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   } else {
     exports.setNativeProps = setNativeProps = setNativePropsDefault;
   }
-},854,[685,718,683],"node_modules/react-native-reanimated/src/platformFunctions/setNativeProps.ts");
+},808,[639,672,637],"node_modules/react-native-reanimated/src/platformFunctions/setNativeProps.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -157079,7 +150823,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   function getUseOfValueInStyleWarning() {
     return "It looks like you might be using shared value's .value inside reanimated inline style. " + 'If you want a component to update when shared value changes you should use the shared value' + ' directly instead of its current state represented by `.value`. See documentation here: ' + 'https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/glossary/#animations-in-inline-styling';
   }
-},855,[],"node_modules/react-native-reanimated/src/pluginUtils.ts");
+},809,[],"node_modules/react-native-reanimated/src/pluginUtils.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -157087,7 +150831,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-},856,[],"node_modules/react-native-reanimated/src/publicGlobals.ts");
+},810,[],"node_modules/react-native-reanimated/src/publicGlobals.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -157142,7 +150886,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       return _$$_REQUIRE(_dependencyMap[6], "./createAnimatedComponent").createAnimatedComponent;
     }
   });
-},857,[858,860,861,862,859,777,778],"node_modules/react-native-reanimated/src/Animated.ts");
+},811,[812,814,815,816,813,731,732],"node_modules/react-native-reanimated/src/Animated.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -157213,7 +150957,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     });
   };
   var ReanimatedFlatList = exports.ReanimatedFlatList = (0, _$$_REQUIRE(_dependencyMap[8], "../reactUtils").componentWithRef)(FlatListForwardRefRender);
-},858,[8,153,86,1,778,92,859,774,684],"node_modules/react-native-reanimated/src/component/FlatList.tsx");
+},812,[8,153,86,1,732,92,813,728,638],"node_modules/react-native-reanimated/src/component/FlatList.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -157226,7 +150970,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // but not things like NativeMethods, etc. we need to add them manually by extending the type.
 
   var AnimatedView = exports.AnimatedView = (0, _$$_REQUIRE(_dependencyMap[1], "../createAnimatedComponent").createAnimatedComponent)(_reactNative.View);
-},859,[1,778],"node_modules/react-native-reanimated/src/component/View.ts");
+},813,[1,732],"node_modules/react-native-reanimated/src/component/View.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -157239,7 +150983,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // but not things like NativeMethods, etc. we need to add them manually by extending the type.
 
   var AnimatedImage = exports.AnimatedImage = (0, _$$_REQUIRE(_dependencyMap[1], "../createAnimatedComponent").createAnimatedComponent)(_reactNative.Image);
-},860,[1,778],"node_modules/react-native-reanimated/src/component/Image.ts");
+},814,[1,732],"node_modules/react-native-reanimated/src/component/Image.ts");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -157277,7 +151021,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       ref: animatedRef
     }, restProps));
   });
-},861,[8,153,86,1,778,684,818,92],"node_modules/react-native-reanimated/src/component/ScrollView.tsx");
+},815,[8,153,86,1,732,638,772,92],"node_modules/react-native-reanimated/src/component/ScrollView.tsx");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -157290,3571 +151034,6 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   // but not things like NativeMethods, etc. we need to add them manually by extending the type.
 
   var AnimatedText = exports.AnimatedText = (0, _$$_REQUIRE(_dependencyMap[1], "../createAnimatedComponent").createAnimatedComponent)(_reactNative.Text);
-},862,[1,778],"node_modules/react-native-reanimated/src/component/Text.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(exports, "RNRenderer", {
-    enumerable: true,
-    get: function get() {
-      return _ReactNative.default;
-    }
-  });
-  var _ReactNative = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "react-native/Libraries/Renderer/shims/ReactNative"));
-},863,[8,338],"node_modules/react-native-gesture-handler/src/RNRenderer.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.onGestureHandlerEvent = onGestureHandlerEvent;
-  exports.startListening = startListening;
-  exports.stopListening = stopListening;
-  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-  var gestureHandlerEventSubscription = null;
-  var gestureHandlerStateChangeEventSubscription = null;
-  var gestureStateManagers = new Map();
-  var lastUpdateEvent = [];
-  function isStateChangeEvent(event) {
-    // @ts-ignore oldState doesn't exist on GestureTouchEvent and that's the point
-    return event.oldState != null;
-  }
-  function isTouchEvent(event) {
-    return event.eventType != null;
-  }
-  function onGestureHandlerEvent(event) {
-    var _handler$handlers, _handler$handlers2, _handler$handlers3, _handler$handlers4;
-    var handler = (0, _$$_REQUIRE(_dependencyMap[1], "../handlersRegistry").findHandler)(event.handlerTag);
-    if (handler) {
-      if (isStateChangeEvent(event)) {
-        if (event.oldState === _$$_REQUIRE(_dependencyMap[2], "../../State").State.UNDETERMINED && event.state === _$$_REQUIRE(_dependencyMap[2], "../../State").State.BEGAN) {
-          handler.handlers.onBegin == null || handler.handlers.onBegin(event);
-        } else if ((event.oldState === _$$_REQUIRE(_dependencyMap[2], "../../State").State.BEGAN || event.oldState === _$$_REQUIRE(_dependencyMap[2], "../../State").State.UNDETERMINED) && event.state === _$$_REQUIRE(_dependencyMap[2], "../../State").State.ACTIVE) {
-          handler.handlers.onStart == null || handler.handlers.onStart(event);
-          lastUpdateEvent[handler.handlers.handlerTag] = event;
-        } else if (event.oldState !== event.state && event.state === _$$_REQUIRE(_dependencyMap[2], "../../State").State.END) {
-          if (event.oldState === _$$_REQUIRE(_dependencyMap[2], "../../State").State.ACTIVE) {
-            handler.handlers.onEnd == null || handler.handlers.onEnd(event, true);
-          }
-          handler.handlers.onFinalize == null || handler.handlers.onFinalize(event, true);
-          lastUpdateEvent[handler.handlers.handlerTag] = undefined;
-        } else if ((event.state === _$$_REQUIRE(_dependencyMap[2], "../../State").State.FAILED || event.state === _$$_REQUIRE(_dependencyMap[2], "../../State").State.CANCELLED) && event.oldState !== event.state) {
-          if (event.oldState === _$$_REQUIRE(_dependencyMap[2], "../../State").State.ACTIVE) {
-            handler.handlers.onEnd == null || handler.handlers.onEnd(event, false);
-          }
-          handler.handlers.onFinalize == null || handler.handlers.onFinalize(event, false);
-          gestureStateManagers.delete(event.handlerTag);
-          lastUpdateEvent[handler.handlers.handlerTag] = undefined;
-        }
-      } else if (isTouchEvent(event)) {
-        if (!gestureStateManagers.has(event.handlerTag)) {
-          gestureStateManagers.set(event.handlerTag, _$$_REQUIRE(_dependencyMap[3], "./gestureStateManager").GestureStateManager.create(event.handlerTag));
-        }
-
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        var manager = gestureStateManagers.get(event.handlerTag);
-        switch (event.eventType) {
-          case _$$_REQUIRE(_dependencyMap[4], "../../TouchEventType").TouchEventType.TOUCHES_DOWN:
-            (_handler$handlers = handler.handlers) == null || _handler$handlers.onTouchesDown == null || _handler$handlers.onTouchesDown(event, manager);
-            break;
-          case _$$_REQUIRE(_dependencyMap[4], "../../TouchEventType").TouchEventType.TOUCHES_MOVE:
-            (_handler$handlers2 = handler.handlers) == null || _handler$handlers2.onTouchesMove == null || _handler$handlers2.onTouchesMove(event, manager);
-            break;
-          case _$$_REQUIRE(_dependencyMap[4], "../../TouchEventType").TouchEventType.TOUCHES_UP:
-            (_handler$handlers3 = handler.handlers) == null || _handler$handlers3.onTouchesUp == null || _handler$handlers3.onTouchesUp(event, manager);
-            break;
-          case _$$_REQUIRE(_dependencyMap[4], "../../TouchEventType").TouchEventType.TOUCHES_CANCELLED:
-            (_handler$handlers4 = handler.handlers) == null || _handler$handlers4.onTouchesCancelled == null || _handler$handlers4.onTouchesCancelled(event, manager);
-            break;
-        }
-      } else {
-        handler.handlers.onUpdate == null || handler.handlers.onUpdate(event);
-        if (handler.handlers.onChange && handler.handlers.changeEventCalculator) {
-          handler.handlers.onChange == null || handler.handlers.onChange(handler.handlers.changeEventCalculator == null ? void 0 : handler.handlers.changeEventCalculator(event, lastUpdateEvent[handler.handlers.handlerTag]));
-          lastUpdateEvent[handler.handlers.handlerTag] = event;
-        }
-      }
-    } else {
-      var oldHandler = (0, _$$_REQUIRE(_dependencyMap[1], "../handlersRegistry").findOldGestureHandler)(event.handlerTag);
-      if (oldHandler) {
-        var nativeEvent = {
-          nativeEvent: event
-        };
-        if (isStateChangeEvent(event)) {
-          oldHandler.onGestureStateChange(nativeEvent);
-        } else {
-          oldHandler.onGestureEvent(nativeEvent);
-        }
-        return;
-      }
-    }
-  }
-  function startListening() {
-    stopListening();
-    gestureHandlerEventSubscription = _reactNative.DeviceEventEmitter.addListener('onGestureHandlerEvent', onGestureHandlerEvent);
-    gestureHandlerStateChangeEventSubscription = _reactNative.DeviceEventEmitter.addListener('onGestureHandlerStateChange', onGestureHandlerEvent);
-  }
-  function stopListening() {
-    if (gestureHandlerEventSubscription) {
-      gestureHandlerEventSubscription.remove();
-      gestureHandlerEventSubscription = null;
-    }
-    if (gestureHandlerStateChangeEventSubscription) {
-      gestureHandlerStateChangeEventSubscription.remove();
-      gestureHandlerStateChangeEventSubscription = null;
-    }
-  }
-},864,[1,644,642,865,866],"node_modules/react-native-gesture-handler/src/handlers/gestures/eventReceiver.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.GestureStateManager = void 0;
-  var warningMessage = (0, _$$_REQUIRE(_dependencyMap[0], "../../utils").tagMessage)('react-native-reanimated is required in order to use synchronous state management');
-
-  // Check if reanimated module is available, but look for useSharedValue as conditional
-  // require of reanimated can sometimes return content of `utils.ts` file (?)
-  var REANIMATED_AVAILABLE = (_$$_REQUIRE(_dependencyMap[1], "./reanimatedWrapper").Reanimated == null ? void 0 : _$$_REQUIRE(_dependencyMap[1], "./reanimatedWrapper").Reanimated.useSharedValue) !== undefined;
-  var setGestureState = _$$_REQUIRE(_dependencyMap[1], "./reanimatedWrapper").Reanimated == null ? void 0 : _$$_REQUIRE(_dependencyMap[1], "./reanimatedWrapper").Reanimated.setGestureState;
-  var _worklet_12165373047387_init_data = {
-    code: "function create_reactNativeGestureHandler_gestureStateManagerTs1(handlerTag){const{REANIMATED_AVAILABLE,setGestureState,State,warningMessage}=this.__closure;return{begin:function(){'worklet';if(REANIMATED_AVAILABLE){setGestureState(handlerTag,State.BEGAN);}else{console.warn(warningMessage);}},activate:function(){'worklet';if(REANIMATED_AVAILABLE){setGestureState(handlerTag,State.ACTIVE);}else{console.warn(warningMessage);}},fail:function(){'worklet';if(REANIMATED_AVAILABLE){setGestureState(handlerTag,State.FAILED);}else{console.warn(warningMessage);}},end:function(){'worklet';if(REANIMATED_AVAILABLE){setGestureState(handlerTag,State.END);}else{console.warn(warningMessage);}}};}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/gestureStateManager.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"create_reactNativeGestureHandler_gestureStateManagerTs1\",\"handlerTag\",\"REANIMATED_AVAILABLE\",\"setGestureState\",\"State\",\"warningMessage\",\"__closure\",\"begin\",\"BEGAN\",\"console\",\"warn\",\"activate\",\"ACTIVE\",\"fail\",\"FAILED\",\"end\",\"END\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/gestureStateManager.ts\"],\"mappings\":\"AAoBA,SAAAA,uDAA6DA,CAAAC,UAAA,QAAAC,oBAAA,CAAAC,eAAA,CAAAC,KAAA,CAAAC,cAAA,OAAAC,SAAA,CAE3D,MAAO,CACLC,KAAK,CAAE,QAAAA,CAAA,CAAM,CACX,SAAS,CACT,GAAIL,oBAAoB,CAAE,CAGxBC,eAAe,CAAEF,UAAU,CAAEG,KAAK,CAACI,KAAK,CAAC,CAC3C,CAAC,IAAM,CACLC,OAAO,CAACC,IAAI,CAACL,cAAc,CAAC,CAC9B,CACF,CAAC,CAEDM,QAAQ,CAAE,QAAAA,CAAA,CAAM,CACd,SAAS,CACT,GAAIT,oBAAoB,CAAE,CAGxBC,eAAe,CAAEF,UAAU,CAAEG,KAAK,CAACQ,MAAM,CAAC,CAC5C,CAAC,IAAM,CACLH,OAAO,CAACC,IAAI,CAACL,cAAc,CAAC,CAC9B,CACF,CAAC,CAEDQ,IAAI,CAAE,QAAAA,CAAA,CAAM,CACV,SAAS,CACT,GAAIX,oBAAoB,CAAE,CAGxBC,eAAe,CAAEF,UAAU,CAAEG,KAAK,CAACU,MAAM,CAAC,CAC5C,CAAC,IAAM,CACLL,OAAO,CAACC,IAAI,CAACL,cAAc,CAAC,CAC9B,CACF,CAAC,CAEDU,GAAG,CAAE,QAAAA,CAAA,CAAM,CACT,SAAS,CACT,GAAIb,oBAAoB,CAAE,CAGxBC,eAAe,CAAEF,UAAU,CAAEG,KAAK,CAACY,GAAG,CAAC,CACzC,CAAC,IAAM,CACLP,OAAO,CAACC,IAAI,CAACL,cAAc,CAAC,CAC9B,CACF,CACF,CAAC,CACH\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var _worklet_10345936439143_init_data = {
-    code: "function reactNativeGestureHandler_gestureStateManagerTs2(){const{REANIMATED_AVAILABLE,setGestureState,handlerTag,State,warningMessage}=this.__closure;if(REANIMATED_AVAILABLE){setGestureState(handlerTag,State.BEGAN);}else{console.warn(warningMessage);}}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/gestureStateManager.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"reactNativeGestureHandler_gestureStateManagerTs2\",\"REANIMATED_AVAILABLE\",\"setGestureState\",\"handlerTag\",\"State\",\"warningMessage\",\"__closure\",\"BEGAN\",\"console\",\"warn\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/gestureStateManager.ts\"],\"mappings\":\"AAuBW,SAAAA,gDAAMA,CAAA,QAAAC,oBAAA,CAAAC,eAAA,CAAAC,UAAA,CAAAC,KAAA,CAAAC,cAAA,OAAAC,SAAA,CAEX,GAAIL,oBAAoB,CAAE,CAGxBC,eAAe,CAAEC,UAAU,CAAEC,KAAK,CAACG,KAAK,CAAC,CAC3C,CAAC,IAAM,CACLC,OAAO,CAACC,IAAI,CAACJ,cAAc,CAAC,CAC9B,CACF\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var _worklet_292529391077_init_data = {
-    code: "function reactNativeGestureHandler_gestureStateManagerTs3(){const{REANIMATED_AVAILABLE,setGestureState,handlerTag,State,warningMessage}=this.__closure;if(REANIMATED_AVAILABLE){setGestureState(handlerTag,State.ACTIVE);}else{console.warn(warningMessage);}}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/gestureStateManager.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"reactNativeGestureHandler_gestureStateManagerTs3\",\"REANIMATED_AVAILABLE\",\"setGestureState\",\"handlerTag\",\"State\",\"warningMessage\",\"__closure\",\"ACTIVE\",\"console\",\"warn\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/gestureStateManager.ts\"],\"mappings\":\"AAkCc,SAAAA,gDAAMA,CAAA,QAAAC,oBAAA,CAAAC,eAAA,CAAAC,UAAA,CAAAC,KAAA,CAAAC,cAAA,OAAAC,SAAA,CAEd,GAAIL,oBAAoB,CAAE,CAGxBC,eAAe,CAAEC,UAAU,CAAEC,KAAK,CAACG,MAAM,CAAC,CAC5C,CAAC,IAAM,CACLC,OAAO,CAACC,IAAI,CAACJ,cAAc,CAAC,CAC9B,CACF\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var _worklet_15581158928013_init_data = {
-    code: "function reactNativeGestureHandler_gestureStateManagerTs4(){const{REANIMATED_AVAILABLE,setGestureState,handlerTag,State,warningMessage}=this.__closure;if(REANIMATED_AVAILABLE){setGestureState(handlerTag,State.FAILED);}else{console.warn(warningMessage);}}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/gestureStateManager.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"reactNativeGestureHandler_gestureStateManagerTs4\",\"REANIMATED_AVAILABLE\",\"setGestureState\",\"handlerTag\",\"State\",\"warningMessage\",\"__closure\",\"FAILED\",\"console\",\"warn\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/gestureStateManager.ts\"],\"mappings\":\"AA6CU,SAAAA,gDAAMA,CAAA,QAAAC,oBAAA,CAAAC,eAAA,CAAAC,UAAA,CAAAC,KAAA,CAAAC,cAAA,OAAAC,SAAA,CAEV,GAAIL,oBAAoB,CAAE,CAGxBC,eAAe,CAAEC,UAAU,CAAEC,KAAK,CAACG,MAAM,CAAC,CAC5C,CAAC,IAAM,CACLC,OAAO,CAACC,IAAI,CAACJ,cAAc,CAAC,CAC9B,CACF\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var _worklet_17260583665824_init_data = {
-    code: "function reactNativeGestureHandler_gestureStateManagerTs5(){const{REANIMATED_AVAILABLE,setGestureState,handlerTag,State,warningMessage}=this.__closure;if(REANIMATED_AVAILABLE){setGestureState(handlerTag,State.END);}else{console.warn(warningMessage);}}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/gestureStateManager.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"reactNativeGestureHandler_gestureStateManagerTs5\",\"REANIMATED_AVAILABLE\",\"setGestureState\",\"handlerTag\",\"State\",\"warningMessage\",\"__closure\",\"END\",\"console\",\"warn\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/gestureStateManager.ts\"],\"mappings\":\"AAwDS,SAAAA,gDAAMA,CAAA,QAAAC,oBAAA,CAAAC,eAAA,CAAAC,UAAA,CAAAC,KAAA,CAAAC,cAAA,OAAAC,SAAA,CAET,GAAIL,oBAAoB,CAAE,CAGxBC,eAAe,CAAEC,UAAU,CAAEC,KAAK,CAACG,GAAG,CAAC,CACzC,CAAC,IAAM,CACLC,OAAO,CAACC,IAAI,CAACJ,cAAc,CAAC,CAC9B,CACF\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var create = function () {
-    var _e = [new global.Error(), -5, -27];
-    var create = function create(handlerTag) {
-      return {
-        begin: function () {
-          var _e = [new global.Error(), -6, -27];
-          var reactNativeGestureHandler_gestureStateManagerTs2 = function reactNativeGestureHandler_gestureStateManagerTs2() {
-            if (REANIMATED_AVAILABLE) {
-              // When Reanimated is available, setGestureState should be defined
-              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              setGestureState(handlerTag, _$$_REQUIRE(_dependencyMap[2], "../../State").State.BEGAN);
-            } else {
-              console.warn(warningMessage);
-            }
-          };
-          reactNativeGestureHandler_gestureStateManagerTs2.__closure = {
-            REANIMATED_AVAILABLE: REANIMATED_AVAILABLE,
-            setGestureState: setGestureState,
-            handlerTag: handlerTag,
-            State: _$$_REQUIRE(_dependencyMap[2], "../../State").State,
-            warningMessage: warningMessage
-          };
-          reactNativeGestureHandler_gestureStateManagerTs2.__workletHash = 10345936439143;
-          reactNativeGestureHandler_gestureStateManagerTs2.__initData = _worklet_10345936439143_init_data;
-          reactNativeGestureHandler_gestureStateManagerTs2.__stackDetails = _e;
-          return reactNativeGestureHandler_gestureStateManagerTs2;
-        }(),
-        activate: function () {
-          var _e = [new global.Error(), -6, -27];
-          var reactNativeGestureHandler_gestureStateManagerTs3 = function reactNativeGestureHandler_gestureStateManagerTs3() {
-            if (REANIMATED_AVAILABLE) {
-              // When Reanimated is available, setGestureState should be defined
-              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              setGestureState(handlerTag, _$$_REQUIRE(_dependencyMap[2], "../../State").State.ACTIVE);
-            } else {
-              console.warn(warningMessage);
-            }
-          };
-          reactNativeGestureHandler_gestureStateManagerTs3.__closure = {
-            REANIMATED_AVAILABLE: REANIMATED_AVAILABLE,
-            setGestureState: setGestureState,
-            handlerTag: handlerTag,
-            State: _$$_REQUIRE(_dependencyMap[2], "../../State").State,
-            warningMessage: warningMessage
-          };
-          reactNativeGestureHandler_gestureStateManagerTs3.__workletHash = 292529391077;
-          reactNativeGestureHandler_gestureStateManagerTs3.__initData = _worklet_292529391077_init_data;
-          reactNativeGestureHandler_gestureStateManagerTs3.__stackDetails = _e;
-          return reactNativeGestureHandler_gestureStateManagerTs3;
-        }(),
-        fail: function () {
-          var _e = [new global.Error(), -6, -27];
-          var reactNativeGestureHandler_gestureStateManagerTs4 = function reactNativeGestureHandler_gestureStateManagerTs4() {
-            if (REANIMATED_AVAILABLE) {
-              // When Reanimated is available, setGestureState should be defined
-              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              setGestureState(handlerTag, _$$_REQUIRE(_dependencyMap[2], "../../State").State.FAILED);
-            } else {
-              console.warn(warningMessage);
-            }
-          };
-          reactNativeGestureHandler_gestureStateManagerTs4.__closure = {
-            REANIMATED_AVAILABLE: REANIMATED_AVAILABLE,
-            setGestureState: setGestureState,
-            handlerTag: handlerTag,
-            State: _$$_REQUIRE(_dependencyMap[2], "../../State").State,
-            warningMessage: warningMessage
-          };
-          reactNativeGestureHandler_gestureStateManagerTs4.__workletHash = 15581158928013;
-          reactNativeGestureHandler_gestureStateManagerTs4.__initData = _worklet_15581158928013_init_data;
-          reactNativeGestureHandler_gestureStateManagerTs4.__stackDetails = _e;
-          return reactNativeGestureHandler_gestureStateManagerTs4;
-        }(),
-        end: function () {
-          var _e = [new global.Error(), -6, -27];
-          var reactNativeGestureHandler_gestureStateManagerTs5 = function reactNativeGestureHandler_gestureStateManagerTs5() {
-            if (REANIMATED_AVAILABLE) {
-              // When Reanimated is available, setGestureState should be defined
-              // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-              setGestureState(handlerTag, _$$_REQUIRE(_dependencyMap[2], "../../State").State.END);
-            } else {
-              console.warn(warningMessage);
-            }
-          };
-          reactNativeGestureHandler_gestureStateManagerTs5.__closure = {
-            REANIMATED_AVAILABLE: REANIMATED_AVAILABLE,
-            setGestureState: setGestureState,
-            handlerTag: handlerTag,
-            State: _$$_REQUIRE(_dependencyMap[2], "../../State").State,
-            warningMessage: warningMessage
-          };
-          reactNativeGestureHandler_gestureStateManagerTs5.__workletHash = 17260583665824;
-          reactNativeGestureHandler_gestureStateManagerTs5.__initData = _worklet_17260583665824_init_data;
-          reactNativeGestureHandler_gestureStateManagerTs5.__stackDetails = _e;
-          return reactNativeGestureHandler_gestureStateManagerTs5;
-        }()
-      };
-    };
-    create.__closure = {
-      REANIMATED_AVAILABLE: REANIMATED_AVAILABLE,
-      setGestureState: setGestureState,
-      State: _$$_REQUIRE(_dependencyMap[2], "../../State").State,
-      warningMessage: warningMessage
-    };
-    create.__workletHash = 12165373047387;
-    create.__initData = _worklet_12165373047387_init_data;
-    create.__stackDetails = _e;
-    return create;
-  }();
-  var GestureStateManager = exports.GestureStateManager = {
-    create: create
-  };
-},865,[641,676,642],"node_modules/react-native-gesture-handler/src/handlers/gestures/gestureStateManager.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.TouchEventType = void 0;
-  var TouchEventType = exports.TouchEventType = {
-    UNDETERMINED: 0,
-    TOUCHES_DOWN: 1,
-    TOUCHES_MOVE: 2,
-    TOUCHES_UP: 3,
-    TOUCHES_CANCELLED: 4
-  };
-
-  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; it can be used as a type and as a value
-},866,[],"node_modules/react-native-gesture-handler/src/TouchEventType.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.enableExperimentalWebImplementation = enableExperimentalWebImplementation;
-  exports.enableLegacyWebImplementation = enableLegacyWebImplementation;
-  exports.isNewWebImplementationEnabled = isNewWebImplementationEnabled;
-  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-  var useNewWebImplementation = true;
-  var getWasCalled = false;
-
-  /**
-   * @deprecated new web implementation is enabled by default. This function will be removed in Gesture Handler 3
-   */
-  function enableExperimentalWebImplementation() {
-    var _shouldEnable = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
-    // NO-OP since the new implementation is now the default
-    console.warn((0, _$$_REQUIRE(_dependencyMap[1], "./utils").tagMessage)('New web implementation is enabled by default. This function will be removed in Gesture Handler 3.'));
-  }
-
-  /**
-   * @deprecated legacy implementation is no longer supported. This function will be removed in Gesture Handler 3
-   */
-  function enableLegacyWebImplementation() {
-    var shouldUseLegacyImplementation = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
-    console.warn((0, _$$_REQUIRE(_dependencyMap[1], "./utils").tagMessage)('Legacy web implementation is deprecated. This function will be removed in Gesture Handler 3.'));
-    if (_reactNative.Platform.OS !== 'web' || useNewWebImplementation === !shouldUseLegacyImplementation) {
-      return;
-    }
-    if (getWasCalled) {
-      console.error('Some parts of this application have already started using the new gesture handler implementation. No changes will be applied. You can try enabling legacy implementation earlier.');
-      return;
-    }
-    useNewWebImplementation = !shouldUseLegacyImplementation;
-  }
-  function isNewWebImplementationEnabled() {
-    getWasCalled = true;
-    return useNewWebImplementation;
-  }
-},867,[1,641],"node_modules/react-native-gesture-handler/src/EnableNewWebImplementation.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.useDetectorUpdater = useDetectorUpdater;
-  var _react = _$$_REQUIRE(_dependencyMap[0], "react");
-  var _findNodeHandle = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "../../../findNodeHandle"));
-  // Returns a function that's responsible for updating the attached gestures
-  // If the view has changed, it will reattach the handlers to the new view
-  // If the view remains the same, it will update the handlers with the new config
-  function useDetectorUpdater(state, preparedGesture, gesturesToAttach, gestureConfig, webEventHandlersRef) {
-    var forceRender = (0, _$$_REQUIRE(_dependencyMap[3], "./utils").useForceRender)();
-    var updateAttachedGestures = (0, _react.useCallback)(
-    // skipConfigUpdate is used to prevent unnecessary updates when only checking if the view has changed
-    function (skipConfigUpdate) {
-      // If the underlying view has changed we need to reattach handlers to the new view
-      var viewTag = (0, _findNodeHandle.default)(state.viewRef);
-      var didUnderlyingViewChange = viewTag !== state.previousViewTag;
-      if (didUnderlyingViewChange || (0, _$$_REQUIRE(_dependencyMap[4], "./needsToReattach").needsToReattach)(preparedGesture, gesturesToAttach)) {
-        (0, _$$_REQUIRE(_dependencyMap[3], "./utils").validateDetectorChildren)(state.viewRef);
-        (0, _$$_REQUIRE(_dependencyMap[5], "./dropHandlers").dropHandlers)(preparedGesture);
-        (0, _$$_REQUIRE(_dependencyMap[6], "./attachHandlers").attachHandlers)({
-          preparedGesture: preparedGesture,
-          gestureConfig: gestureConfig,
-          gesturesToAttach: gesturesToAttach,
-          webEventHandlersRef: webEventHandlersRef,
-          viewTag: viewTag
-        });
-        if (didUnderlyingViewChange) {
-          state.previousViewTag = viewTag;
-          state.forceRebuildReanimatedEvent = true;
-          forceRender();
-        }
-      } else if (!skipConfigUpdate) {
-        (0, _$$_REQUIRE(_dependencyMap[7], "./updateHandlers").updateHandlers)(preparedGesture, gestureConfig, gesturesToAttach);
-      }
-    }, [forceRender, gestureConfig, gesturesToAttach, preparedGesture, state, webEventHandlersRef]);
-    return updateAttachedGestures;
-  }
-},868,[86,8,638,672,869,870,871,872],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useDetectorUpdater.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.needsToReattach = needsToReattach;
-  // Checks whether the gesture should be reattached to the view, this will happen when:
-  // - The number of gestures in the preparedGesture is different than the number of gestures in the gesture
-  // - The handlerName is different in any of the gestures
-  // - At least one of the gestures changed the thread it runs on
-  function needsToReattach(preparedGesture, newGestures) {
-    if (newGestures.length !== preparedGesture.attachedGestures.length) {
-      return true;
-    }
-    for (var i = 0; i < newGestures.length; i++) {
-      if (newGestures[i].handlerName !== preparedGesture.attachedGestures[i].handlerName || newGestures[i].shouldUseReanimated !== preparedGesture.attachedGestures[i].shouldUseReanimated) {
-        return true;
-      }
-    }
-    return false;
-  }
-},869,[],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/needsToReattach.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.dropHandlers = dropHandlers;
-  var _RNGestureHandlerModule = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "../../../RNGestureHandlerModule"));
-  function dropHandlers(preparedGesture) {
-    for (var handler of preparedGesture.attachedGestures) {
-      _RNGestureHandlerModule.default.dropGestureHandler(handler.handlerTag);
-      (0, _$$_REQUIRE(_dependencyMap[2], "../../handlersRegistry").unregisterHandler)(handler.handlerTag, handler.config.testId);
-      _$$_REQUIRE(_dependencyMap[3], "../../../mountRegistry").MountRegistry.gestureWillUnmount(handler);
-    }
-    (0, _$$_REQUIRE(_dependencyMap[4], "../../utils").scheduleFlushOperations)();
-  }
-},870,[8,636,644,647,645],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/dropHandlers.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.attachHandlers = attachHandlers;
-  var _RNGestureHandlerModule = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "../../../RNGestureHandlerModule"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
-  function attachHandlers(_ref) {
-    var preparedGesture = _ref.preparedGesture,
-      gestureConfig = _ref.gestureConfig,
-      gesturesToAttach = _ref.gesturesToAttach,
-      viewTag = _ref.viewTag,
-      webEventHandlersRef = _ref.webEventHandlersRef;
-    gestureConfig.initialize();
-
-    // Use queueMicrotask to extract handlerTags, because all refs should be initialized
-    // when it's ran
-    (0, _$$_REQUIRE(_dependencyMap[3], "../../../ghQueueMicrotask").ghQueueMicrotask)(function () {
-      if (!preparedGesture.isMounted) {
-        return;
-      }
-      gestureConfig.prepare();
-    });
-    for (var handler of gesturesToAttach) {
-      (0, _$$_REQUIRE(_dependencyMap[4], "./utils").checkGestureCallbacksForWorklets)(handler);
-      _RNGestureHandlerModule.default.createGestureHandler(handler.handlerName, handler.handlerTag, (0, _$$_REQUIRE(_dependencyMap[5], "../../utils").filterConfig)(handler.config, _$$_REQUIRE(_dependencyMap[4], "./utils").ALLOWED_PROPS));
-      (0, _$$_REQUIRE(_dependencyMap[6], "../../handlersRegistry").registerHandler)(handler.handlerTag, handler, handler.config.testId);
-    }
-
-    // Use queueMicrotask to extract handlerTags, because all refs should be initialized
-    // when it's ran
-    (0, _$$_REQUIRE(_dependencyMap[3], "../../../ghQueueMicrotask").ghQueueMicrotask)(function () {
-      if (!preparedGesture.isMounted) {
-        return;
-      }
-      for (var _handler of gesturesToAttach) {
-        _RNGestureHandlerModule.default.updateGestureHandler(_handler.handlerTag, (0, _$$_REQUIRE(_dependencyMap[5], "../../utils").filterConfig)(_handler.config, _$$_REQUIRE(_dependencyMap[4], "./utils").ALLOWED_PROPS, (0, _$$_REQUIRE(_dependencyMap[4], "./utils").extractGestureRelations)(_handler)));
-      }
-      (0, _$$_REQUIRE(_dependencyMap[5], "../../utils").scheduleFlushOperations)();
-    });
-    for (var gesture of gesturesToAttach) {
-      var actionType = gesture.shouldUseReanimated ? _$$_REQUIRE(_dependencyMap[7], "../../../ActionType").ActionType.REANIMATED_WORKLET : _$$_REQUIRE(_dependencyMap[7], "../../../ActionType").ActionType.JS_FUNCTION_NEW_API;
-      if (_reactNative.Platform.OS === 'web') {
-        _RNGestureHandlerModule.default.attachGestureHandler(gesture.handlerTag, viewTag, _$$_REQUIRE(_dependencyMap[7], "../../../ActionType").ActionType.JS_FUNCTION_OLD_API,
-        // Ignored on web
-        webEventHandlersRef);
-      } else {
-        _RNGestureHandlerModule.default.attachGestureHandler(gesture.handlerTag, viewTag, actionType);
-      }
-      _$$_REQUIRE(_dependencyMap[8], "../../../mountRegistry").MountRegistry.gestureWillMount(gesture);
-    }
-    preparedGesture.attachedGestures = gesturesToAttach;
-    if (preparedGesture.animatedHandlers) {
-      var isAnimatedGesture = function isAnimatedGesture(g) {
-        return g.shouldUseReanimated;
-      };
-      preparedGesture.animatedHandlers.value = gesturesToAttach.filter(isAnimatedGesture).map(function (g) {
-        return g.handlers;
-      });
-    }
-  }
-},871,[8,636,1,646,672,645,644,643,647],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/attachHandlers.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.updateHandlers = updateHandlers;
-  var _RNGestureHandlerModule = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "../../../RNGestureHandlerModule"));
-  function updateHandlers(preparedGesture, gestureConfig, newGestures) {
-    gestureConfig.prepare();
-    for (var i = 0; i < newGestures.length; i++) {
-      var handler = preparedGesture.attachedGestures[i];
-      (0, _$$_REQUIRE(_dependencyMap[2], "./utils").checkGestureCallbacksForWorklets)(handler);
-
-      // Only update handlerTag when it's actually different, it may be the same
-      // if gesture config object is wrapped with useMemo
-      if (newGestures[i].handlerTag !== handler.handlerTag) {
-        newGestures[i].handlerTag = handler.handlerTag;
-        newGestures[i].handlers.handlerTag = handler.handlerTag;
-      }
-    }
-
-    // Store attached gestures to avoid crash when gestures changed after queueing micro task
-    var attachedGestures = preparedGesture.attachedGestures;
-
-    // Use queueMicrotask to extract handlerTags, because when it's ran, all refs should be updated
-    // and handlerTags in BaseGesture references should be updated in the loop above (we need to wait
-    // in case of external relations)
-    (0, _$$_REQUIRE(_dependencyMap[3], "../../../ghQueueMicrotask").ghQueueMicrotask)(function () {
-      if (!preparedGesture.isMounted) {
-        return;
-      }
-
-      // Stop if attached gestures changed after queueing micro task
-      if (attachedGestures !== preparedGesture.attachedGestures) {
-        return;
-      }
-
-      // If amount of gesture configs changes, we need to update the callbacks in shared value
-      var shouldUpdateSharedValueIfUsed = attachedGestures.length !== newGestures.length;
-      for (var _i = 0; _i < newGestures.length; _i++) {
-        var _handler = attachedGestures[_i];
-
-        // If the gestureId is different (gesture isn't wrapped with useMemo or its dependencies changed),
-        // we need to update the shared value, assuming the gesture runs on UI thread or the thread changed
-        if (_handler.handlers.gestureId !== newGestures[_i].handlers.gestureId && (newGestures[_i].shouldUseReanimated || _handler.shouldUseReanimated)) {
-          shouldUpdateSharedValueIfUsed = true;
-        }
-        _handler.config = newGestures[_i].config;
-        _handler.handlers = newGestures[_i].handlers;
-        _RNGestureHandlerModule.default.updateGestureHandler(_handler.handlerTag, (0, _$$_REQUIRE(_dependencyMap[4], "../../utils").filterConfig)(_handler.config, _$$_REQUIRE(_dependencyMap[2], "./utils").ALLOWED_PROPS, (0, _$$_REQUIRE(_dependencyMap[2], "./utils").extractGestureRelations)(_handler)));
-        (0, _$$_REQUIRE(_dependencyMap[5], "../../handlersRegistry").registerHandler)(_handler.handlerTag, _handler, _handler.config.testId);
-      }
-      if (preparedGesture.animatedHandlers && shouldUpdateSharedValueIfUsed) {
-        var newHandlersValue = attachedGestures.filter(function (g) {
-          return g.shouldUseReanimated;
-        }) // Ignore gestures that shouldn't run on UI
-        .map(function (g) {
-          return g.handlers;
-        });
-        preparedGesture.animatedHandlers.value = newHandlersValue;
-      }
-      (0, _$$_REQUIRE(_dependencyMap[4], "../../utils").scheduleFlushOperations)();
-    });
-  }
-},872,[8,636,672,646,645,644],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/updateHandlers.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.useViewRefHandler = useViewRefHandler;
-  var _react = _$$_REQUIRE(_dependencyMap[0], "react");
-  var _findNodeHandle = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "../../../findNodeHandle"));
-  // Ref handler for the Wrap component attached under the GestureDetector.
-  // It's responsible for setting the viewRef on the state and triggering the reattaching of handlers
-  // if the view has changed.
-  function useViewRefHandler(state, updateAttachedGestures) {
-    var refHandler = (0, _react.useCallback)(function (ref) {
-      if (ref === null) {
-        return;
-      }
-      state.viewRef = ref;
-
-      // if it's the first render, also set the previousViewTag to prevent reattaching gestures when not needed
-      if (state.previousViewTag === -1) {
-        state.previousViewTag = (0, _findNodeHandle.default)(state.viewRef);
-      }
-
-      // Pass true as `skipConfigUpdate`. Here we only want to trigger the eventual reattaching of handlers
-      // in case the view has changed. If the view doesn't change, the update will be handled by detector.
-      if (!state.firstRender) {
-        updateAttachedGestures(true);
-      }
-      if (__DEV__ && (0, _$$_REQUIRE(_dependencyMap[3], "../../../utils").isFabric)() && global.isViewFlatteningDisabled) {
-        var node = (0, _$$_REQUIRE(_dependencyMap[4], "../../../getShadowNodeFromRef").getShadowNodeFromRef)(ref);
-        if (global.isViewFlatteningDisabled(node) === false) {
-          console.error((0, _$$_REQUIRE(_dependencyMap[3], "../../../utils").tagMessage)('GestureDetector has received a child that may get view-flattened. ' + '\nTo prevent it from misbehaving you need to wrap the child with a `<View collapsable={false}>`.'));
-        }
-      }
-    }, [state, updateAttachedGestures]);
-    return refHandler;
-  }
-},873,[86,8,638,641,874],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useViewRefHandler.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.getShadowNodeFromRef = getShadowNodeFromRef;
-  /*
-   * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
-   * Use of this source code is governed by a MIT license that can be
-   * found in the LICENSE file.
-   */
-  // Used by GestureDetector (unsupported on web at the moment) to check whether the
-  // attached view may get flattened on Fabric. This implementation causes errors
-  // on web due to the static resolution of `require` statements by webpack breaking
-  // the conditional importing. Solved by making .web file.
-  var findHostInstance_DEPRECATED;
-  var getInternalInstanceHandleFromPublicInstance;
-  function getShadowNodeFromRef(ref) {
-    // Load findHostInstance_DEPRECATED lazily because it may not be available before render
-    if (findHostInstance_DEPRECATED === undefined) {
-      try {
-        var _ReactFabric$default;
-        // eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-assignment
-        var ReactFabric = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Renderer/shims/ReactFabric");
-        // Since RN 0.77 ReactFabric exports findHostInstance_DEPRECATED in default object so we're trying to
-        // access it first, then fallback on named export
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        findHostInstance_DEPRECATED =
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        (ReactFabric == null || (_ReactFabric$default = ReactFabric.default) == null ? void 0 : _ReactFabric$default.findHostInstance_DEPRECATED) || (// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        ReactFabric == null ? void 0 : ReactFabric.findHostInstance_DEPRECATED);
-      } catch (e) {
-        findHostInstance_DEPRECATED = function findHostInstance_DEPRECATED(_ref) {
-          return null;
-        };
-      }
-    }
-
-    // Load findHostInstance_DEPRECATED lazily because it may not be available before render
-    if (getInternalInstanceHandleFromPublicInstance === undefined) {
-      try {
-        var _require$getInternalI;
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        getInternalInstanceHandleFromPublicInstance = // eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-member-access
-        (_require$getInternalI = _$$_REQUIRE(_dependencyMap[1], "react-native/Libraries/ReactNative/ReactFabricPublicInstance/ReactFabricPublicInstance").getInternalInstanceHandleFromPublicInstance) != null ? _require$getInternalI :
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-return
-        function (ref) {
-          return ref._internalInstanceHandle;
-        };
-      } catch (e) {
-        getInternalInstanceHandleFromPublicInstance = function getInternalInstanceHandleFromPublicInstance(ref) {
-          return (
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-return
-            ref._internalInstanceHandle
-          );
-        };
-      }
-    }
-
-    // @ts-ignore Fabric
-    return getInternalInstanceHandleFromPublicInstance(findHostInstance_DEPRECATED(ref)).stateNode.node;
-  }
-},874,[303,322],"node_modules/@react-native-ohos/react-native-gesture-handler/src/getShadowNodeFromRef.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.useAnimatedGesture = useAnimatedGesture;
-  var _worklet_2054655450554_init_data = {
-    code: "function getHandler_reactNativeGestureHandler_useAnimatedGestureTs1(type,gesture){const{CALLBACK_TYPE}=this.__closure;switch(type){case CALLBACK_TYPE.BEGAN:return gesture.onBegin;case CALLBACK_TYPE.START:return gesture.onStart;case CALLBACK_TYPE.UPDATE:return gesture.onUpdate;case CALLBACK_TYPE.CHANGE:return gesture.onChange;case CALLBACK_TYPE.END:return gesture.onEnd;case CALLBACK_TYPE.FINALIZE:return gesture.onFinalize;case CALLBACK_TYPE.TOUCHES_DOWN:return gesture.onTouchesDown;case CALLBACK_TYPE.TOUCHES_MOVE:return gesture.onTouchesMove;case CALLBACK_TYPE.TOUCHES_UP:return gesture.onTouchesUp;case CALLBACK_TYPE.TOUCHES_CANCELLED:return gesture.onTouchesCancelled;}}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useAnimatedGesture.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"getHandler_reactNativeGestureHandler_useAnimatedGestureTs1\",\"type\",\"gesture\",\"CALLBACK_TYPE\",\"__closure\",\"BEGAN\",\"onBegin\",\"START\",\"onStart\",\"UPDATE\",\"onUpdate\",\"CHANGE\",\"onChange\",\"END\",\"onEnd\",\"FINALIZE\",\"onFinalize\",\"TOUCHES_DOWN\",\"onTouchesDown\",\"TOUCHES_MOVE\",\"onTouchesMove\",\"TOUCHES_UP\",\"onTouchesUp\",\"TOUCHES_CANCELLED\",\"onTouchesCancelled\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useAnimatedGesture.ts\"],\"mappings\":\"AAgBA,SAAAA,0DAGEA,CAAAC,IAAA,CAAAC,OAAA,QAAAC,aAAA,OAAAC,SAAA,CAEA,OAAQH,IAAI,EACV,IAAK,CAAAE,aAAa,CAACE,KAAK,CACtB,MAAO,CAAAH,OAAO,CAACI,OAAO,CACxB,IAAK,CAAAH,aAAa,CAACI,KAAK,CACtB,MAAO,CAAAL,OAAO,CAACM,OAAO,CACxB,IAAK,CAAAL,aAAa,CAACM,MAAM,CACvB,MAAO,CAAAP,OAAO,CAACQ,QAAQ,CACzB,IAAK,CAAAP,aAAa,CAACQ,MAAM,CACvB,MAAO,CAAAT,OAAO,CAACU,QAAQ,CACzB,IAAK,CAAAT,aAAa,CAACU,GAAG,CACpB,MAAO,CAAAX,OAAO,CAACY,KAAK,CACtB,IAAK,CAAAX,aAAa,CAACY,QAAQ,CACzB,MAAO,CAAAb,OAAO,CAACc,UAAU,CAC3B,IAAK,CAAAb,aAAa,CAACc,YAAY,CAC7B,MAAO,CAAAf,OAAO,CAACgB,aAAa,CAC9B,IAAK,CAAAf,aAAa,CAACgB,YAAY,CAC7B,MAAO,CAAAjB,OAAO,CAACkB,aAAa,CAC9B,IAAK,CAAAjB,aAAa,CAACkB,UAAU,CAC3B,MAAO,CAAAnB,OAAO,CAACoB,WAAW,CAC5B,IAAK,CAAAnB,aAAa,CAACoB,iBAAiB,CAClC,MAAO,CAAArB,OAAO,CAACsB,kBAAkB,CACrC,CACF\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var getHandler = function () {
-    var _e = [new global.Error(), -2, -27];
-    var getHandler = function getHandler(type, gesture) {
-      switch (type) {
-        case _$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.BEGAN:
-          return gesture.onBegin;
-        case _$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.START:
-          return gesture.onStart;
-        case _$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.UPDATE:
-          return gesture.onUpdate;
-        case _$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.CHANGE:
-          return gesture.onChange;
-        case _$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.END:
-          return gesture.onEnd;
-        case _$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.FINALIZE:
-          return gesture.onFinalize;
-        case _$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.TOUCHES_DOWN:
-          return gesture.onTouchesDown;
-        case _$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.TOUCHES_MOVE:
-          return gesture.onTouchesMove;
-        case _$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.TOUCHES_UP:
-          return gesture.onTouchesUp;
-        case _$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.TOUCHES_CANCELLED:
-          return gesture.onTouchesCancelled;
-      }
-    };
-    getHandler.__closure = {
-      CALLBACK_TYPE: _$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE
-    };
-    getHandler.__workletHash = 2054655450554;
-    getHandler.__initData = _worklet_2054655450554_init_data;
-    getHandler.__stackDetails = _e;
-    return getHandler;
-  }();
-  var _worklet_14903447069497_init_data = {
-    code: "function touchEventTypeToCallbackType_reactNativeGestureHandler_useAnimatedGestureTs2(eventType){const{TouchEventType,CALLBACK_TYPE}=this.__closure;switch(eventType){case TouchEventType.TOUCHES_DOWN:return CALLBACK_TYPE.TOUCHES_DOWN;case TouchEventType.TOUCHES_MOVE:return CALLBACK_TYPE.TOUCHES_MOVE;case TouchEventType.TOUCHES_UP:return CALLBACK_TYPE.TOUCHES_UP;case TouchEventType.TOUCHES_CANCELLED:return CALLBACK_TYPE.TOUCHES_CANCELLED;}return CALLBACK_TYPE.UNDEFINED;}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useAnimatedGesture.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"touchEventTypeToCallbackType_reactNativeGestureHandler_useAnimatedGestureTs2\",\"eventType\",\"TouchEventType\",\"CALLBACK_TYPE\",\"__closure\",\"TOUCHES_DOWN\",\"TOUCHES_MOVE\",\"TOUCHES_UP\",\"TOUCHES_CANCELLED\",\"UNDEFINED\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useAnimatedGesture.ts\"],\"mappings\":\"AA6CA,SAAAA,4EAEiBA,CAAAC,SAAA,QAAAC,cAAA,CAAAC,aAAA,OAAAC,SAAA,CAEf,OAAQH,SAAS,EACf,IAAK,CAAAC,cAAc,CAACG,YAAY,CAC9B,MAAO,CAAAF,aAAa,CAACE,YAAY,CACnC,IAAK,CAAAH,cAAc,CAACI,YAAY,CAC9B,MAAO,CAAAH,aAAa,CAACG,YAAY,CACnC,IAAK,CAAAJ,cAAc,CAACK,UAAU,CAC5B,MAAO,CAAAJ,aAAa,CAACI,UAAU,CACjC,IAAK,CAAAL,cAAc,CAACM,iBAAiB,CACnC,MAAO,CAAAL,aAAa,CAACK,iBAAiB,CAC1C,CACA,MAAO,CAAAL,aAAa,CAACM,SAAS,CAChC\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var touchEventTypeToCallbackType = function () {
-    var _e = [new global.Error(), -3, -27];
-    var touchEventTypeToCallbackType = function touchEventTypeToCallbackType(eventType) {
-      switch (eventType) {
-        case _$$_REQUIRE(_dependencyMap[1], "../../../TouchEventType").TouchEventType.TOUCHES_DOWN:
-          return _$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.TOUCHES_DOWN;
-        case _$$_REQUIRE(_dependencyMap[1], "../../../TouchEventType").TouchEventType.TOUCHES_MOVE:
-          return _$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.TOUCHES_MOVE;
-        case _$$_REQUIRE(_dependencyMap[1], "../../../TouchEventType").TouchEventType.TOUCHES_UP:
-          return _$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.TOUCHES_UP;
-        case _$$_REQUIRE(_dependencyMap[1], "../../../TouchEventType").TouchEventType.TOUCHES_CANCELLED:
-          return _$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.TOUCHES_CANCELLED;
-      }
-      return _$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.UNDEFINED;
-    };
-    touchEventTypeToCallbackType.__closure = {
-      TouchEventType: _$$_REQUIRE(_dependencyMap[1], "../../../TouchEventType").TouchEventType,
-      CALLBACK_TYPE: _$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE
-    };
-    touchEventTypeToCallbackType.__workletHash = 14903447069497;
-    touchEventTypeToCallbackType.__initData = _worklet_14903447069497_init_data;
-    touchEventTypeToCallbackType.__stackDetails = _e;
-    return touchEventTypeToCallbackType;
-  }();
-  var _worklet_17530658687510_init_data = {
-    code: "function runWorklet_reactNativeGestureHandler_useAnimatedGestureTs3(type,gesture,event,...args){const{getHandler,tagMessage}=this.__closure;const handler=getHandler(type,gesture);if(gesture.isWorklet[type]){handler===null||handler===void 0||handler(event,...args);}else if(handler){console.warn(tagMessage('Animated gesture callback must be a worklet'));}}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useAnimatedGesture.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"runWorklet_reactNativeGestureHandler_useAnimatedGestureTs3\",\"type\",\"gesture\",\"event\",\"args\",\"getHandler\",\"tagMessage\",\"__closure\",\"handler\",\"isWorklet\",\"console\",\"warn\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useAnimatedGesture.ts\"],\"mappings\":\"AA8DA,SAAAA,0DAKEA,CAAAC,IAAA,CAAAC,OAAA,CAAAC,KAAA,IAAAC,IAAA,QAAAC,UAAA,CAAAC,UAAA,OAAAC,SAAA,CAEA,KAAM,CAAAC,OAAO,CAAGH,UAAU,CAACJ,IAAI,CAAEC,OAAO,CAAC,CACzC,GAAIA,OAAO,CAACO,SAAS,CAACR,IAAI,CAAC,CAAE,CAG3BO,OAAO,SAAPA,OAAO,WAAPA,OAAO,CAAGL,KAAK,CAAE,GAAGC,IAAI,CAAC,CAC3B,CAAC,IAAM,IAAII,OAAO,CAAE,CAClBE,OAAO,CAACC,IAAI,CAACL,UAAU,CAAC,6CAA6C,CAAC,CAAC,CACzE,CACF\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var runWorklet = function () {
-    var _e = [new global.Error(), -3, -27];
-    var runWorklet = function runWorklet(type, gesture, event) {
-      var handler = getHandler(type, gesture);
-      if (gesture.isWorklet[type]) {
-        for (var _len = arguments.length, args = new Array(_len > 3 ? _len - 3 : 0), _key = 3; _key < _len; _key++) {
-          args[_key - 3] = arguments[_key];
-        }
-        // @ts-ignore Logic below makes sure the correct event is send to the
-        // correct handler.
-        handler == null || handler.apply(void 0, [event].concat(args));
-      } else if (handler) {
-        console.warn((0, _$$_REQUIRE(_dependencyMap[2], "../../../utils").tagMessage)('Animated gesture callback must be a worklet'));
-      }
-    };
-    runWorklet.__closure = {
-      getHandler: getHandler,
-      tagMessage: _$$_REQUIRE(_dependencyMap[2], "../../../utils").tagMessage
-    };
-    runWorklet.__workletHash = 17530658687510;
-    runWorklet.__initData = _worklet_17530658687510_init_data;
-    runWorklet.__stackDetails = _e;
-    return runWorklet;
-  }();
-  var _worklet_1443917263962_init_data = {
-    code: "function isStateChangeEvent_reactNativeGestureHandler_useAnimatedGestureTs4(event){return event.oldState!=null;}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useAnimatedGesture.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"isStateChangeEvent_reactNativeGestureHandler_useAnimatedGestureTs4\",\"event\",\"oldState\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useAnimatedGesture.ts\"],\"mappings\":\"AA+EA,SAAAA,kEAEoCA,CAAAC,KAAA,EAGlC,MAAO,CAAAA,KAAK,CAACC,QAAQ,EAAI,IAAI,CAC/B\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var isStateChangeEvent = function () {
-    var _e = [new global.Error(), 1, -27];
-    var isStateChangeEvent = function isStateChangeEvent(event) {
-      // @ts-ignore Yes, the oldState prop is missing on GestureTouchEvent, that's the point
-      return event.oldState != null;
-    };
-    isStateChangeEvent.__closure = {};
-    isStateChangeEvent.__workletHash = 1443917263962;
-    isStateChangeEvent.__initData = _worklet_1443917263962_init_data;
-    isStateChangeEvent.__stackDetails = _e;
-    return isStateChangeEvent;
-  }();
-  var _worklet_15574765637067_init_data = {
-    code: "function isTouchEvent_reactNativeGestureHandler_useAnimatedGestureTs5(event){return event.eventType!=null;}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useAnimatedGesture.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"isTouchEvent_reactNativeGestureHandler_useAnimatedGestureTs5\",\"event\",\"eventType\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useAnimatedGesture.ts\"],\"mappings\":\"AAuFA,SAAAA,4DAE8BA,CAAAC,KAAA,EAE5B,MAAO,CAAAA,KAAK,CAACC,SAAS,EAAI,IAAI,CAChC\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var isTouchEvent = function () {
-    var _e = [new global.Error(), 1, -27];
-    var isTouchEvent = function isTouchEvent(event) {
-      return event.eventType != null;
-    };
-    isTouchEvent.__closure = {};
-    isTouchEvent.__workletHash = 15574765637067;
-    isTouchEvent.__initData = _worklet_15574765637067_init_data;
-    isTouchEvent.__stackDetails = _e;
-    return isTouchEvent;
-  }();
-  var _worklet_10458000393606_init_data = {
-    code: "function reactNativeGestureHandler_useAnimatedGestureTs6(event){const{sharedHandlersCallbacks,isStateChangeEvent,State,runWorklet,CALLBACK_TYPE,lastUpdateEvent,isTouchEvent,stateControllers,GestureStateManager,TouchEventType,touchEventTypeToCallbackType}=this.__closure;const currentCallback=sharedHandlersCallbacks.value;if(!currentCallback){return;}for(let i=0;i<currentCallback.length;i++){const gesture=currentCallback[i];if(event.handlerTag!==gesture.handlerTag){continue;}if(isStateChangeEvent(event)){if(event.oldState===State.UNDETERMINED&&event.state===State.BEGAN){runWorklet(CALLBACK_TYPE.BEGAN,gesture,event);}else if((event.oldState===State.BEGAN||event.oldState===State.UNDETERMINED)&&event.state===State.ACTIVE){runWorklet(CALLBACK_TYPE.START,gesture,event);lastUpdateEvent.value[gesture.handlerTag]=undefined;}else if(event.oldState!==event.state&&event.state===State.END){if(event.oldState===State.ACTIVE){runWorklet(CALLBACK_TYPE.END,gesture,event,true);}runWorklet(CALLBACK_TYPE.FINALIZE,gesture,event,true);}else if((event.state===State.FAILED||event.state===State.CANCELLED)&&event.state!==event.oldState){if(event.oldState===State.ACTIVE){runWorklet(CALLBACK_TYPE.END,gesture,event,false);}runWorklet(CALLBACK_TYPE.FINALIZE,gesture,event,false);}}else if(isTouchEvent(event)){if(!stateControllers[i]){stateControllers[i]=GestureStateManager.create(event.handlerTag);}if(event.eventType!==TouchEventType.UNDETERMINED){runWorklet(touchEventTypeToCallbackType(event.eventType),gesture,event,stateControllers[i]);}}else{runWorklet(CALLBACK_TYPE.UPDATE,gesture,event);if(gesture.onChange&&gesture.changeEventCalculator){var _gesture$changeEventC;runWorklet(CALLBACK_TYPE.CHANGE,gesture,(_gesture$changeEventC=gesture.changeEventCalculator)===null||_gesture$changeEventC===void 0?void 0:_gesture$changeEventC.call(gesture,event,lastUpdateEvent.value[gesture.handlerTag]));lastUpdateEvent.value[gesture.handlerTag]=event;}}}}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useAnimatedGesture.ts",
-    sourceMap: "{\"version\":3,\"names\":[\"reactNativeGestureHandler_useAnimatedGestureTs6\",\"event\",\"sharedHandlersCallbacks\",\"isStateChangeEvent\",\"State\",\"runWorklet\",\"CALLBACK_TYPE\",\"lastUpdateEvent\",\"isTouchEvent\",\"stateControllers\",\"GestureStateManager\",\"TouchEventType\",\"touchEventTypeToCallbackType\",\"__closure\",\"currentCallback\",\"value\",\"i\",\"length\",\"gesture\",\"handlerTag\",\"oldState\",\"UNDETERMINED\",\"state\",\"BEGAN\",\"ACTIVE\",\"START\",\"undefined\",\"END\",\"FINALIZE\",\"FAILED\",\"CANCELLED\",\"create\",\"eventType\",\"UPDATE\",\"onChange\",\"changeEventCalculator\",\"_gesture$changeEventC\",\"CHANGE\",\"call\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useAnimatedGesture.ts\"],\"mappings\":\"AAqHmB,QACf,CAAAA,+CACGA,CAAAC,KAAA,QAAAC,uBAAA,CAAAC,kBAAA,CAAAC,KAAA,CAAAC,UAAA,CAAAC,aAAA,CAAAC,eAAA,CAAAC,YAAA,CAAAC,gBAAA,CAAAC,mBAAA,CAAAC,cAAA,CAAAC,4BAAA,OAAAC,SAAA,CAGH,KAAM,CAAAC,eAAe,CAAGZ,uBAAuB,CAACa,KAAK,CACrD,GAAI,CAACD,eAAe,CAAE,CACpB,OACF,CAEA,IAAK,GAAI,CAAAE,CAAC,CAAG,CAAC,CAAEA,CAAC,CAAGF,eAAe,CAACG,MAAM,CAAED,CAAC,EAAE,CAAE,CAC/C,KAAM,CAAAE,OAAO,CAAGJ,eAAe,CAACE,CAAC,CAAC,CAElC,GAAIf,KAAK,CAACkB,UAAU,GAAKD,OAAO,CAACC,UAAU,CAAE,CAC3C,SACF,CAEA,GAAIhB,kBAAkB,CAACF,KAAK,CAAC,CAAE,CAC7B,GACEA,KAAK,CAACmB,QAAQ,GAAKhB,KAAK,CAACiB,YAAY,EACrCpB,KAAK,CAACqB,KAAK,GAAKlB,KAAK,CAACmB,KAAK,CAC3B,CACAlB,UAAU,CAACC,aAAa,CAACiB,KAAK,CAAEL,OAAO,CAAEjB,KAAK,CAAC,CACjD,CAAC,IAAM,IACL,CAACA,KAAK,CAACmB,QAAQ,GAAKhB,KAAK,CAACmB,KAAK,EAC7BtB,KAAK,CAACmB,QAAQ,GAAKhB,KAAK,CAACiB,YAAY,GACvCpB,KAAK,CAACqB,KAAK,GAAKlB,KAAK,CAACoB,MAAM,CAC5B,CACAnB,UAAU,CAACC,aAAa,CAACmB,KAAK,CAAEP,OAAO,CAAEjB,KAAK,CAAC,CAC/CM,eAAe,CAACQ,KAAK,CAACG,OAAO,CAACC,UAAU,CAAC,CAAGO,SAAS,CACvD,CAAC,IAAM,IACLzB,KAAK,CAACmB,QAAQ,GAAKnB,KAAK,CAACqB,KAAK,EAC9BrB,KAAK,CAACqB,KAAK,GAAKlB,KAAK,CAACuB,GAAG,CACzB,CACA,GAAI1B,KAAK,CAACmB,QAAQ,GAAKhB,KAAK,CAACoB,MAAM,CAAE,CACnCnB,UAAU,CAACC,aAAa,CAACqB,GAAG,CAAET,OAAO,CAAEjB,KAAK,CAAE,IAAI,CAAC,CACrD,CACAI,UAAU,CAACC,aAAa,CAACsB,QAAQ,CAAEV,OAAO,CAAEjB,KAAK,CAAE,IAAI,CAAC,CAC1D,CAAC,IAAM,IACL,CAACA,KAAK,CAACqB,KAAK,GAAKlB,KAAK,CAACyB,MAAM,EAAI5B,KAAK,CAACqB,KAAK,GAAKlB,KAAK,CAAC0B,SAAS,GAChE7B,KAAK,CAACqB,KAAK,GAAKrB,KAAK,CAACmB,QAAQ,CAC9B,CACA,GAAInB,KAAK,CAACmB,QAAQ,GAAKhB,KAAK,CAACoB,MAAM,CAAE,CACnCnB,UAAU,CAACC,aAAa,CAACqB,GAAG,CAAET,OAAO,CAAEjB,KAAK,CAAE,KAAK,CAAC,CACtD,CACAI,UAAU,CAACC,aAAa,CAACsB,QAAQ,CAAEV,OAAO,CAAEjB,KAAK,CAAE,KAAK,CAAC,CAC3D,CACF,CAAC,IAAM,IAAIO,YAAY,CAACP,KAAK,CAAC,CAAE,CAC9B,GAAI,CAACQ,gBAAgB,CAACO,CAAC,CAAC,CAAE,CACxBP,gBAAgB,CAACO,CAAC,CAAC,CAAGN,mBAAmB,CAACqB,MAAM,CAAC9B,KAAK,CAACkB,UAAU,CAAC,CACpE,CAEA,GAAIlB,KAAK,CAAC+B,SAAS,GAAKrB,cAAc,CAACU,YAAY,CAAE,CACnDhB,UAAU,CACRO,4BAA4B,CAACX,KAAK,CAAC+B,SAAS,CAAC,CAC7Cd,OAAO,CACPjB,KAAK,CACLQ,gBAAgB,CAACO,CAAC,CACpB,CAAC,CACH,CACF,CAAC,IAAM,CACLX,UAAU,CAACC,aAAa,CAAC2B,MAAM,CAAEf,OAAO,CAAEjB,KAAK,CAAC,CAEhD,GAAIiB,OAAO,CAACgB,QAAQ,EAAIhB,OAAO,CAACiB,qBAAqB,CAAE,KAAAC,qBAAA,CACrD/B,UAAU,CACRC,aAAa,CAAC+B,MAAM,CACpBnB,OAAO,EAAAkB,qBAAA,CACPlB,OAAO,CAACiB,qBAAqB,UAAAC,qBAAA,iBAA7BA,qBAAA,CAAAE,IAAA,CAAApB,OAAO,CACLjB,KAAK,CACLM,eAAe,CAACQ,KAAK,CAACG,OAAO,CAACC,UAAU,CAC1C,CACF,CAAC,CAEDZ,eAAe,CAACQ,KAAK,CAACG,OAAO,CAACC,UAAU,CAAC,CAAGlB,KAAK,CACnD,CACF,CACF,CACF\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  function useAnimatedGesture(preparedGesture, needsRebuild) {
-    if (!_$$_REQUIRE(_dependencyMap[3], "../reanimatedWrapper").Reanimated) {
-      return;
-    }
-
-    // Hooks are called conditionally, but the condition is whether the
-    // react-native-reanimated is installed, which shouldn't change while running
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    var sharedHandlersCallbacks = _$$_REQUIRE(_dependencyMap[3], "../reanimatedWrapper").Reanimated.useSharedValue(null);
-
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    var lastUpdateEvent = _$$_REQUIRE(_dependencyMap[3], "../reanimatedWrapper").Reanimated.useSharedValue([]);
-
-    // not every gesture needs a state controller, init them lazily
-    var stateControllers = [];
-    var callback = function () {
-      var _e = [new global.Error(), -12, -27];
-      var reactNativeGestureHandler_useAnimatedGestureTs6 = function reactNativeGestureHandler_useAnimatedGestureTs6(event) {
-        var currentCallback = sharedHandlersCallbacks.value;
-        if (!currentCallback) {
-          return;
-        }
-        for (var i = 0; i < currentCallback.length; i++) {
-          var gesture = currentCallback[i];
-          if (event.handlerTag !== gesture.handlerTag) {
-            continue;
-          }
-          if (isStateChangeEvent(event)) {
-            if (event.oldState === _$$_REQUIRE(_dependencyMap[4], "../../../State").State.UNDETERMINED && event.state === _$$_REQUIRE(_dependencyMap[4], "../../../State").State.BEGAN) {
-              runWorklet(_$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.BEGAN, gesture, event);
-            } else if ((event.oldState === _$$_REQUIRE(_dependencyMap[4], "../../../State").State.BEGAN || event.oldState === _$$_REQUIRE(_dependencyMap[4], "../../../State").State.UNDETERMINED) && event.state === _$$_REQUIRE(_dependencyMap[4], "../../../State").State.ACTIVE) {
-              runWorklet(_$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.START, gesture, event);
-              lastUpdateEvent.value[gesture.handlerTag] = undefined;
-            } else if (event.oldState !== event.state && event.state === _$$_REQUIRE(_dependencyMap[4], "../../../State").State.END) {
-              if (event.oldState === _$$_REQUIRE(_dependencyMap[4], "../../../State").State.ACTIVE) {
-                runWorklet(_$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.END, gesture, event, true);
-              }
-              runWorklet(_$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.FINALIZE, gesture, event, true);
-            } else if ((event.state === _$$_REQUIRE(_dependencyMap[4], "../../../State").State.FAILED || event.state === _$$_REQUIRE(_dependencyMap[4], "../../../State").State.CANCELLED) && event.state !== event.oldState) {
-              if (event.oldState === _$$_REQUIRE(_dependencyMap[4], "../../../State").State.ACTIVE) {
-                runWorklet(_$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.END, gesture, event, false);
-              }
-              runWorklet(_$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.FINALIZE, gesture, event, false);
-            }
-          } else if (isTouchEvent(event)) {
-            if (!stateControllers[i]) {
-              stateControllers[i] = _$$_REQUIRE(_dependencyMap[5], "../gestureStateManager").GestureStateManager.create(event.handlerTag);
-            }
-            if (event.eventType !== _$$_REQUIRE(_dependencyMap[1], "../../../TouchEventType").TouchEventType.UNDETERMINED) {
-              runWorklet(touchEventTypeToCallbackType(event.eventType), gesture, event, stateControllers[i]);
-            }
-          } else {
-            runWorklet(_$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.UPDATE, gesture, event);
-            if (gesture.onChange && gesture.changeEventCalculator) {
-              runWorklet(_$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE.CHANGE, gesture, gesture.changeEventCalculator == null ? void 0 : gesture.changeEventCalculator(event, lastUpdateEvent.value[gesture.handlerTag]));
-              lastUpdateEvent.value[gesture.handlerTag] = event;
-            }
-          }
-        }
-      };
-      reactNativeGestureHandler_useAnimatedGestureTs6.__closure = {
-        sharedHandlersCallbacks: sharedHandlersCallbacks,
-        isStateChangeEvent: isStateChangeEvent,
-        State: _$$_REQUIRE(_dependencyMap[4], "../../../State").State,
-        runWorklet: runWorklet,
-        CALLBACK_TYPE: _$$_REQUIRE(_dependencyMap[0], "../gesture").CALLBACK_TYPE,
-        lastUpdateEvent: lastUpdateEvent,
-        isTouchEvent: isTouchEvent,
-        stateControllers: stateControllers,
-        GestureStateManager: _$$_REQUIRE(_dependencyMap[5], "../gestureStateManager").GestureStateManager,
-        TouchEventType: _$$_REQUIRE(_dependencyMap[1], "../../../TouchEventType").TouchEventType,
-        touchEventTypeToCallbackType: touchEventTypeToCallbackType
-      };
-      reactNativeGestureHandler_useAnimatedGestureTs6.__workletHash = 10458000393606;
-      reactNativeGestureHandler_useAnimatedGestureTs6.__initData = _worklet_10458000393606_init_data;
-      reactNativeGestureHandler_useAnimatedGestureTs6.__stackDetails = _e;
-      return reactNativeGestureHandler_useAnimatedGestureTs6;
-    }();
-
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    var event = _$$_REQUIRE(_dependencyMap[3], "../reanimatedWrapper").Reanimated.useEvent(callback, ['onGestureHandlerStateChange', 'onGestureHandlerEvent'], needsRebuild);
-    preparedGesture.animatedEventHandler = event;
-    preparedGesture.animatedHandlers = sharedHandlersCallbacks;
-  }
-},875,[660,866,641,676,642,865],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useAnimatedGesture.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.useMountReactions = useMountReactions;
-  var _react = _$$_REQUIRE(_dependencyMap[0], "react");
-  function shouldUpdateDetector(relation, gesture) {
-    if (relation === undefined) {
-      return false;
-    }
-    for (var tag of (0, _$$_REQUIRE(_dependencyMap[1], "../../utils").transformIntoHandlerTags)(relation)) {
-      if (tag === gesture.handlerTag) {
-        return true;
-      }
-    }
-    return false;
-  }
-  function useMountReactions(updateDetector, state) {
-    (0, _react.useEffect)(function () {
-      return _$$_REQUIRE(_dependencyMap[2], "../../../mountRegistry").MountRegistry.addMountListener(function (gesture) {
-        // At this point the ref in the gesture config should be updated, so we can check if one of the gestures
-        // set in a relation with the gesture got mounted. If so, we need to update the detector to propagate
-        // the changes to the native side.
-        for (var attachedGesture of state.attachedGestures) {
-          var blocksHandlers = attachedGesture.config.blocksHandlers;
-          var requireToFail = attachedGesture.config.requireToFail;
-          var simultaneousWith = attachedGesture.config.simultaneousWith;
-          if (shouldUpdateDetector(blocksHandlers, gesture) || shouldUpdateDetector(requireToFail, gesture) || shouldUpdateDetector(simultaneousWith, gesture)) {
-            updateDetector();
-
-            // We can safely return here, if any other gestures should be updated, they will be by the above call
-            return;
-          }
-        }
-      });
-    }, [updateDetector, state]);
-  }
-},876,[86,645,647],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useMountReactions.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.Wrap = exports.AnimatedWrap = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
-  var _react = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "react"));
-  var _Reanimated$default$c, _Reanimated$default;
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  var Wrap = exports.Wrap = /*#__PURE__*/function (_React$Component) {
-    function Wrap() {
-      (0, _classCallCheck2.default)(this, Wrap);
-      return _callSuper(this, Wrap, arguments);
-    }
-    (0, _inherits2.default)(Wrap, _React$Component);
-    return (0, _createClass2.default)(Wrap, [{
-      key: "render",
-      value: function render() {
-        try {
-          // I don't think that fighting with types over such a simple function is worth it
-          // The only thing it does is add 'collapsable: false' to the child component
-          // to make sure it is in the native view hierarchy so the detector can find
-          // correct viewTag to attach to.
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          var child = _react.default.Children.only(this.props.children);
-          return _react.default.cloneElement(child, {
-            collapsable: false
-          },
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-          child.props.children);
-        } catch (e) {
-          throw new Error((0, _$$_REQUIRE(_dependencyMap[7], "../../../utils").tagMessage)(`GestureDetector got more than one view as a child. If you want the gesture to work on multiple views, wrap them with a common parent and attach the gesture to that view.`));
-        }
-      }
-    }]);
-  }(_react.default.Component);
-  var AnimatedWrap = exports.AnimatedWrap = (_Reanimated$default$c = _$$_REQUIRE(_dependencyMap[8], "../reanimatedWrapper").Reanimated == null || (_Reanimated$default = _$$_REQUIRE(_dependencyMap[8], "../reanimatedWrapper").Reanimated.default) == null ? void 0 : _Reanimated$default.createAnimatedComponent(Wrap)) != null ? _Reanimated$default$c : Wrap;
-},877,[8,9,10,14,16,17,86,641,676],"node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/Wrap.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.pinchHandlerName = exports.PinchGestureHandler = void 0;
-  var _createHandler = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "./createHandler"));
-  /**
-   * @deprecated PinchGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Pinch()` instead.
-   */
-
-  var pinchHandlerName = exports.pinchHandlerName = 'PinchGestureHandler';
-
-  /**
-   * @deprecated PinchGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Pinch()` instead.
-   */
-
-  /**
-   * @deprecated PinchGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Pinch()` instead.
-   */
-  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; see description on the top of gestureHandlerCommon.ts file
-  var PinchGestureHandler = exports.PinchGestureHandler = (0, _createHandler.default)({
-    name: pinchHandlerName,
-    allowedProps: _$$_REQUIRE(_dependencyMap[2], "./gestureHandlerCommon").baseGestureHandlerProps,
-    config: {}
-  });
-},878,[8,635,650],"node_modules/react-native-gesture-handler/src/handlers/PinchGestureHandler.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.PointerType = void 0;
-  var PointerType = exports.PointerType = /*#__PURE__*/function (PointerType) {
-    PointerType[PointerType["TOUCH"] = 0] = "TOUCH";
-    PointerType[PointerType["STYLUS"] = 1] = "STYLUS";
-    PointerType[PointerType["MOUSE"] = 2] = "MOUSE";
-    PointerType[PointerType["KEY"] = 3] = "KEY";
-    PointerType[PointerType["OTHER"] = 4] = "OTHER";
-    return PointerType;
-  }({});
-},879,[],"node_modules/react-native-gesture-handler/src/PointerType.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.rotationHandlerName = exports.RotationGestureHandler = void 0;
-  var _createHandler = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "./createHandler"));
-  /**
-   * @deprecated RotationGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Rotation()` instead.
-   */
-
-  var rotationHandlerName = exports.rotationHandlerName = 'RotationGestureHandler';
-
-  /**
-   * @deprecated RotationGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Rotation()` instead.
-   */
-
-  /**
-   * @deprecated RotationGestureHandler will be removed in the future version of Gesture Handler. Use `Gesture.Rotation()` instead.
-   */
-  // eslint-disable-next-line @typescript-eslint/no-redeclare -- backward compatibility; see description on the top of gestureHandlerCommon.ts file
-  var RotationGestureHandler = exports.RotationGestureHandler = (0, _createHandler.default)({
-    name: rotationHandlerName,
-    allowedProps: _$$_REQUIRE(_dependencyMap[2], "./gestureHandlerCommon").baseGestureHandlerProps,
-    config: {}
-  });
-},880,[8,635,650],"node_modules/react-native-gesture-handler/src/handlers/RotationGestureHandler.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.Text = void 0;
-  var _objectWithoutProperties2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/objectWithoutProperties"));
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[2], "react"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[3], "react-native");
-  var _excluded = ["onPress", "onLongPress"];
-  var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/Text.tsx";
-  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  var Text = exports.Text = (0, _react.forwardRef)(function (props, ref) {
-    var onPress = props.onPress,
-      onLongPress = props.onLongPress,
-      rest = (0, _objectWithoutProperties2.default)(props, _excluded);
-    var textRef = (0, _react.useRef)(null);
-    var native = _$$_REQUIRE(_dependencyMap[4], "../handlers/gestures/gestureObjects").GestureObjects.Native().runOnJS(true);
-    var refHandler = function refHandler(node) {
-      textRef.current = node;
-      if (ref === null) {
-        return;
-      }
-      if (typeof ref === 'function') {
-        ref(node);
-      } else {
-        ref.current = node;
-      }
-    };
-
-    // This is a special case for `Text` component. After https://github.com/software-mansion/react-native-gesture-handler/pull/3379 we check for
-    // `displayName` field. However, `Text` from RN has this field set to `Text`, but is also present in `RNSVGElements` set.
-    // We don't want to treat our `Text` as the one from `SVG`, therefore we add special field to ref.
-    refHandler.rngh = true;
-    (0, _react.useEffect)(function () {
-      if (_reactNative.Platform.OS !== 'web') {
-        return;
-      }
-      var textElement = ref ? ref.current : textRef.current;
-
-      // At this point we are sure that textElement is div in HTML tree
-      textElement == null || textElement.setAttribute('rnghtext', 'true');
-    }, []);
-    return onPress || onLongPress ? /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[5], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[6], "../handlers/gestures/GestureDetector").GestureDetector, {
-      gesture: native,
-      children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[5], "react/jsx-runtime").jsx)(_reactNative.Text, Object.assign({
-        onPress: onPress,
-        onLongPress: onLongPress,
-        ref: refHandler
-      }, rest))
-    }) : /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[5], "react/jsx-runtime").jsx)(_reactNative.Text, Object.assign({
-      ref: ref
-    }, rest));
-  });
-  // eslint-disable-next-line @typescript-eslint/no-redeclare
-},881,[8,153,86,1,658,92,671],"node_modules/react-native-gesture-handler/src/components/Text.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(exports, "TouchableHighlight", {
-    enumerable: true,
-    get: function get() {
-      return _TouchableHighlight.default;
-    }
-  });
-  Object.defineProperty(exports, "TouchableNativeFeedback", {
-    enumerable: true,
-    get: function get() {
-      return _TouchableNativeFeedback.default;
-    }
-  });
-  Object.defineProperty(exports, "TouchableOpacity", {
-    enumerable: true,
-    get: function get() {
-      return _TouchableOpacity.default;
-    }
-  });
-  Object.defineProperty(exports, "TouchableWithoutFeedback", {
-    enumerable: true,
-    get: function get() {
-      return _TouchableWithoutFeedback.default;
-    }
-  });
-  var _TouchableNativeFeedback = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "./TouchableNativeFeedback"));
-  var _TouchableWithoutFeedback = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./TouchableWithoutFeedback"));
-  var _TouchableOpacity = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "./TouchableOpacity"));
-  var _TouchableHighlight = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "./TouchableHighlight"));
-},882,[8,883,884,886,887],"node_modules/react-native-gesture-handler/src/components/touchables/index.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-  /**
-   * @deprecated TouchableNativeFeedback will be removed in the future version of Gesture Handler. Use Pressable instead.
-   */
-  var TouchableNativeFeedback = _reactNative.TouchableNativeFeedback;
-  var _default = exports.default = TouchableNativeFeedback;
-},883,[1],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableNativeFeedback.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var _objectWithoutProperties2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/objectWithoutProperties"));
-  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[2], "react"));
-  var _GenericTouchable = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "./GenericTouchable"));
-  var _excluded = ["delayLongPress", "extraButtonProps"];
-  var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/touchables/TouchableWithoutFeedback.tsx";
-  /**
-   * @deprecated TouchableWithoutFeedback will be removed in the future version of Gesture Handler. Use Pressable instead.
-   */
-  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  /**
-   * @deprecated TouchableWithoutFeedback will be removed in the future version of Gesture Handler. Use Pressable instead.
-   */
-  var TouchableWithoutFeedback = React.forwardRef(function (_ref, ref) {
-    var _ref$delayLongPress = _ref.delayLongPress,
-      delayLongPress = _ref$delayLongPress === void 0 ? 600 : _ref$delayLongPress,
-      _ref$extraButtonProps = _ref.extraButtonProps,
-      extraButtonProps = _ref$extraButtonProps === void 0 ? {
-        rippleColor: 'transparent',
-        exclusive: true
-      } : _ref$extraButtonProps,
-      rest = (0, _objectWithoutProperties2.default)(_ref, _excluded);
-    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[4], "react/jsx-runtime").jsx)(_GenericTouchable.default, Object.assign({
-      ref: ref,
-      delayLongPress: delayLongPress,
-      extraButtonProps: extraButtonProps
-    }, rest));
-  });
-  var _default = exports.default = TouchableWithoutFeedback;
-},884,[8,153,86,885,92],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableWithoutFeedback.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = exports.TOUCHABLE_STATE = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[6], "react"));
-  var React = _react;
-  var _reactNative = _$$_REQUIRE(_dependencyMap[7], "react-native");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/touchables/GenericTouchable.tsx";
-  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-  /**
-   * Each touchable is a states' machine which preforms transitions.
-   * On very beginning (and on the very end or recognition) touchable is
-   * UNDETERMINED. Then it moves to BEGAN. If touchable recognizes that finger
-   * travel outside it transits to special MOVED_OUTSIDE state. Gesture recognition
-   * finishes in UNDETERMINED state.
-   */
-  var TOUCHABLE_STATE = exports.TOUCHABLE_STATE = {
-    UNDETERMINED: 0,
-    BEGAN: 1,
-    MOVED_OUTSIDE: 2
-  };
-
-  // TODO: maybe can be better
-  // TODO: all clearTimeout have ! added, maybe they shouldn't ?
-  /**
-   * GenericTouchable is not intented to be used as it is.
-   * Should be treated as a source for the rest of touchables
-   */
-  var GenericTouchable = exports.default = /*#__PURE__*/function (_Component) {
-    function GenericTouchable() {
-      var _this;
-      (0, _classCallCheck2.default)(this, GenericTouchable);
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-      _this = _callSuper(this, GenericTouchable, [].concat(args));
-      // This flag is required since recognition of longPress implies not-invoking onPress
-      _this.longPressDetected = false;
-      _this.pointerInside = true;
-      // State of touchable
-      _this.STATE = TOUCHABLE_STATE.UNDETERMINED;
-      _this.onGestureEvent = function (_ref) {
-        var pointerInside = _ref.nativeEvent.pointerInside;
-        if (_this.pointerInside !== pointerInside) {
-          if (pointerInside) {
-            _this.onMoveIn();
-          } else {
-            _this.onMoveOut();
-          }
-        }
-        _this.pointerInside = pointerInside;
-      };
-      _this.onHandlerStateChange = function (_ref2) {
-        var nativeEvent = _ref2.nativeEvent;
-        var state = nativeEvent.state;
-        if (state === _$$_REQUIRE(_dependencyMap[8], "../../State").State.CANCELLED || state === _$$_REQUIRE(_dependencyMap[8], "../../State").State.FAILED) {
-          // Need to handle case with external cancellation (e.g. by ScrollView)
-          _this.moveToState(TOUCHABLE_STATE.UNDETERMINED);
-        } else if (
-        // This platform check is an implication of slightly different behavior of handlers on different platform.
-        // And Android "Active" state is achieving on first move of a finger, not on press in.
-        // On iOS event on "Began" is not delivered.
-        state === (_reactNative.Platform.OS !== 'android' ? _$$_REQUIRE(_dependencyMap[8], "../../State").State.ACTIVE : _$$_REQUIRE(_dependencyMap[8], "../../State").State.BEGAN) && _this.STATE === TOUCHABLE_STATE.UNDETERMINED) {
-          // Moving inside requires
-          _this.handlePressIn();
-        } else if (state === _$$_REQUIRE(_dependencyMap[8], "../../State").State.END) {
-          var shouldCallOnPress = !_this.longPressDetected && _this.STATE !== TOUCHABLE_STATE.MOVED_OUTSIDE && _this.pressOutTimeout === null;
-          _this.handleGoToUndetermined();
-          if (shouldCallOnPress) {
-            // Calls only inside component whether no long press was called previously
-            _this.props.onPress == null || _this.props.onPress();
-          }
-        }
-      };
-      _this.onLongPressDetected = function () {
-        _this.longPressDetected = true;
-        // Checked for in the caller of `onLongPressDetected`, but better to check twice
-        _this.props.onLongPress == null || _this.props.onLongPress();
-      };
-      return _this;
-    }
-    (0, _inherits2.default)(GenericTouchable, _Component);
-    return (0, _createClass2.default)(GenericTouchable, [{
-      key: "handlePressIn",
-      value:
-      // handlePressIn in called on first touch on traveling inside component.
-      // Handles state transition with delay.
-      function handlePressIn() {
-        var _this2 = this;
-        if (this.props.delayPressIn) {
-          this.pressInTimeout = setTimeout(function () {
-            _this2.moveToState(TOUCHABLE_STATE.BEGAN);
-            _this2.pressInTimeout = null;
-          }, this.props.delayPressIn);
-        } else {
-          this.moveToState(TOUCHABLE_STATE.BEGAN);
-        }
-        if (this.props.onLongPress) {
-          var time = (this.props.delayPressIn || 0) + (this.props.delayLongPress || 0);
-          this.longPressTimeout = setTimeout(this.onLongPressDetected, time);
-        }
-      }
-      // handleMoveOutside in called on traveling outside component.
-      // Handles state transition with delay.
-    }, {
-      key: "handleMoveOutside",
-      value: function handleMoveOutside() {
-        var _this3 = this;
-        if (this.props.delayPressOut) {
-          this.pressOutTimeout = this.pressOutTimeout || setTimeout(function () {
-            _this3.moveToState(TOUCHABLE_STATE.MOVED_OUTSIDE);
-            _this3.pressOutTimeout = null;
-          }, this.props.delayPressOut);
-        } else {
-          this.moveToState(TOUCHABLE_STATE.MOVED_OUTSIDE);
-        }
-      }
-
-      // handleGoToUndetermined transits to UNDETERMINED state with proper delay
-    }, {
-      key: "handleGoToUndetermined",
-      value: function handleGoToUndetermined() {
-        var _this4 = this;
-        clearTimeout(this.pressOutTimeout); // TODO: maybe it can be undefined
-        if (this.props.delayPressOut) {
-          this.pressOutTimeout = setTimeout(function () {
-            if (_this4.STATE === TOUCHABLE_STATE.UNDETERMINED) {
-              _this4.moveToState(TOUCHABLE_STATE.BEGAN);
-            }
-            _this4.moveToState(TOUCHABLE_STATE.UNDETERMINED);
-            _this4.pressOutTimeout = null;
-          }, this.props.delayPressOut);
-        } else {
-          if (this.STATE === TOUCHABLE_STATE.UNDETERMINED) {
-            this.moveToState(TOUCHABLE_STATE.BEGAN);
-          }
-          this.moveToState(TOUCHABLE_STATE.UNDETERMINED);
-        }
-      }
-    }, {
-      key: "componentDidMount",
-      value: function componentDidMount() {
-        this.reset();
-      }
-      // Reset timeout to prevent memory leaks.
-    }, {
-      key: "reset",
-      value: function reset() {
-        this.longPressDetected = false;
-        this.pointerInside = true;
-        clearTimeout(this.pressInTimeout);
-        clearTimeout(this.pressOutTimeout);
-        clearTimeout(this.longPressTimeout);
-        this.pressOutTimeout = null;
-        this.longPressTimeout = null;
-        this.pressInTimeout = null;
-      }
-
-      // All states' transitions are defined here.
-    }, {
-      key: "moveToState",
-      value: function moveToState(newState) {
-        var _this$props$onStateCh, _this$props4;
-        if (newState === this.STATE) {
-          // Ignore dummy transitions
-          return;
-        }
-        if (newState === TOUCHABLE_STATE.BEGAN) {
-          var _this$props$onPressIn, _this$props;
-          // First touch and moving inside
-          (_this$props$onPressIn = (_this$props = this.props).onPressIn) == null || _this$props$onPressIn.call(_this$props);
-        } else if (newState === TOUCHABLE_STATE.MOVED_OUTSIDE) {
-          var _this$props$onPressOu, _this$props2;
-          // Moving outside
-          (_this$props$onPressOu = (_this$props2 = this.props).onPressOut) == null || _this$props$onPressOu.call(_this$props2);
-        } else if (newState === TOUCHABLE_STATE.UNDETERMINED) {
-          // Need to reset each time on transition to UNDETERMINED
-          this.reset();
-          if (this.STATE === TOUCHABLE_STATE.BEGAN) {
-            var _this$props$onPressOu2, _this$props3;
-            // ... and if it happens inside button.
-            (_this$props$onPressOu2 = (_this$props3 = this.props).onPressOut) == null || _this$props$onPressOu2.call(_this$props3);
-          }
-        }
-        // Finally call lister (used by subclasses)
-        (_this$props$onStateCh = (_this$props4 = this.props).onStateChange) == null || _this$props$onStateCh.call(_this$props4, this.STATE, newState);
-        // ... and make transition.
-        this.STATE = newState;
-      }
-    }, {
-      key: "componentWillUnmount",
-      value: function componentWillUnmount() {
-        // To prevent memory leaks
-        this.reset();
-      }
-    }, {
-      key: "onMoveIn",
-      value: function onMoveIn() {
-        if (this.STATE === TOUCHABLE_STATE.MOVED_OUTSIDE) {
-          // This call is not throttled with delays (like in RN's implementation).
-          this.moveToState(TOUCHABLE_STATE.BEGAN);
-        }
-      }
-    }, {
-      key: "onMoveOut",
-      value: function onMoveOut() {
-        // Long press should no longer be detected
-        clearTimeout(this.longPressTimeout);
-        this.longPressTimeout = null;
-        if (this.STATE === TOUCHABLE_STATE.BEGAN) {
-          this.handleMoveOutside();
-        }
-      }
-    }, {
-      key: "render",
-      value: function render() {
-        var _ref3, _this$props$touchSoun;
-        var hitSlop = (_ref3 = typeof this.props.hitSlop === 'number' ? {
-          top: this.props.hitSlop,
-          left: this.props.hitSlop,
-          bottom: this.props.hitSlop,
-          right: this.props.hitSlop
-        } : this.props.hitSlop) != null ? _ref3 : undefined;
-        var coreProps = {
-          accessible: this.props.accessible !== false,
-          accessibilityLabel: this.props.accessibilityLabel,
-          accessibilityHint: this.props.accessibilityHint,
-          accessibilityRole: this.props.accessibilityRole,
-          // TODO: check if changed to no 's' correctly, also removed 2 props that are no longer available: `accessibilityComponentType` and `accessibilityTraits`,
-          // would be good to check if it is ok for sure, see: https://github.com/facebook/react-native/issues/24016
-          accessibilityState: this.props.accessibilityState,
-          accessibilityActions: this.props.accessibilityActions,
-          onAccessibilityAction: this.props.onAccessibilityAction,
-          nativeID: this.props.nativeID,
-          onLayout: this.props.onLayout
-        };
-        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[9], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[10], "../GestureButtons").BaseButton, Object.assign({
-          style: this.props.containerStyle,
-          onHandlerStateChange:
-          // TODO: not sure if it can be undefined instead of null
-          this.props.disabled ? undefined : this.onHandlerStateChange,
-          onGestureEvent: this.onGestureEvent,
-          hitSlop: hitSlop,
-          userSelect: this.props.userSelect,
-          shouldActivateOnStart: this.props.shouldActivateOnStart,
-          disallowInterruption: this.props.disallowInterruption,
-          testID: this.props.testID,
-          touchSoundDisabled: (_this$props$touchSoun = this.props.touchSoundDisabled) != null ? _this$props$touchSoun : false,
-          enabled: !this.props.disabled
-        }, this.props.extraButtonProps, {
-          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[9], "react/jsx-runtime").jsx)(_reactNative.Animated.View, Object.assign({}, coreProps, {
-            style: this.props.style,
-            children: this.props.children
-          }))
-        }));
-      }
-    }]);
-  }(_react.Component);
-  GenericTouchable.defaultProps = {
-    delayLongPress: 600,
-    extraButtonProps: {
-      rippleColor: 'transparent',
-      exclusive: true
-    }
-  };
-},885,[8,9,10,14,16,17,86,1,642,92,632],"node_modules/react-native-gesture-handler/src/components/touchables/GenericTouchable.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var _objectWithoutProperties2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/objectWithoutProperties"));
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[7], "react-native");
-  var _GenericTouchable = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "./GenericTouchable"));
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[9], "react"));
-  var React = _react;
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/touchables/TouchableOpacity.tsx";
-  var _excluded = ["style"];
-  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); } /**
- * @deprecated TouchableOpacity will be removed in the future version of Gesture Handler. Use Pressable instead.
- */
-  /**
-   * @deprecated TouchableOpacity will be removed in the future version of Gesture Handler. Use Pressable instead.
-   *
-   * TouchableOpacity bases on timing animation which has been used in RN's core
-   */
-  var TouchableOpacity = exports.default = /*#__PURE__*/function (_Component) {
-    function TouchableOpacity() {
-      var _this;
-      (0, _classCallCheck2.default)(this, TouchableOpacity);
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-      _this = _callSuper(this, TouchableOpacity, [].concat(args));
-      // Opacity is 1 one by default but could be overwritten
-      _this.getChildStyleOpacityWithDefault = function () {
-        var childStyle = _reactNative.StyleSheet.flatten(_this.props.style) || {};
-        return childStyle.opacity == null ? 1 : childStyle.opacity.valueOf();
-      };
-      _this.opacity = new _reactNative.Animated.Value(_this.getChildStyleOpacityWithDefault());
-      _this.setOpacityTo = function (value, duration) {
-        var _this$props$useNative;
-        _reactNative.Animated.timing(_this.opacity, {
-          toValue: value,
-          duration: duration,
-          easing: _reactNative.Easing.inOut(_reactNative.Easing.quad),
-          useNativeDriver: (_this$props$useNative = _this.props.useNativeAnimations) != null ? _this$props$useNative : true
-        }).start();
-      };
-      _this.onStateChange = function (_from, to) {
-        if (to === _GenericTouchable.TOUCHABLE_STATE.BEGAN) {
-          _this.setOpacityTo(_this.props.activeOpacity, 0);
-        } else if (to === _GenericTouchable.TOUCHABLE_STATE.UNDETERMINED || to === _GenericTouchable.TOUCHABLE_STATE.MOVED_OUTSIDE) {
-          _this.setOpacityTo(_this.getChildStyleOpacityWithDefault(), 150);
-        }
-      };
-      return _this;
-    }
-    (0, _inherits2.default)(TouchableOpacity, _Component);
-    return (0, _createClass2.default)(TouchableOpacity, [{
-      key: "render",
-      value: function render() {
-        var _this$props = this.props,
-          _this$props$style = _this$props.style,
-          style = _this$props$style === void 0 ? {} : _this$props$style,
-          rest = (0, _objectWithoutProperties2.default)(_this$props, _excluded);
-        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_GenericTouchable.default, Object.assign({}, rest, {
-          style: [style, {
-            opacity: this.opacity // TODO: fix this
-          }],
-          onStateChange: this.onStateChange,
-          children: this.props.children ? this.props.children : /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {})
-        }));
-      }
-    }]);
-  }(_react.Component);
-  TouchableOpacity.defaultProps = Object.assign({}, _GenericTouchable.default.defaultProps, {
-    activeOpacity: 0.2
-  });
-},886,[8,153,9,10,14,16,17,1,885,86,92],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableOpacity.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var _objectWithoutProperties2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/objectWithoutProperties"));
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/inherits"));
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
-  var React = _react;
-  var _GenericTouchable = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[8], "./GenericTouchable"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[9], "react-native");
-  var _excluded = ["style"];
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/touchables/TouchableHighlight.tsx";
-  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); } /**
- * @deprecated TouchableHighlight will be removed in the future version of Gesture Handler. Use Pressable instead.
- */
-  /**
-   * @deprecated TouchableHighlight will be removed in the future version of Gesture Handler. Use Pressable instead.
-   *
-   * TouchableHighlight follows RN's implementation
-   */
-  var TouchableHighlight = exports.default = /*#__PURE__*/function (_Component) {
-    function TouchableHighlight(props) {
-      var _this;
-      (0, _classCallCheck2.default)(this, TouchableHighlight);
-      _this = _callSuper(this, TouchableHighlight, [props]);
-      // Copied from RN
-      _this.showUnderlay = function () {
-        if (!_this.hasPressHandler()) {
-          return;
-        }
-        _this.setState({
-          extraChildStyle: {
-            opacity: _this.props.activeOpacity
-          },
-          extraUnderlayStyle: {
-            backgroundColor: _this.props.underlayColor
-          }
-        });
-        _this.props.onShowUnderlay == null || _this.props.onShowUnderlay();
-      };
-      _this.hasPressHandler = function () {
-        return _this.props.onPress || _this.props.onPressIn || _this.props.onPressOut || _this.props.onLongPress;
-      };
-      _this.hideUnderlay = function () {
-        _this.setState({
-          extraChildStyle: null,
-          extraUnderlayStyle: null
-        });
-        _this.props.onHideUnderlay == null || _this.props.onHideUnderlay();
-      };
-      _this.onStateChange = function (_from, to) {
-        if (to === _GenericTouchable.TOUCHABLE_STATE.BEGAN) {
-          _this.showUnderlay();
-        } else if (to === _GenericTouchable.TOUCHABLE_STATE.UNDETERMINED || to === _GenericTouchable.TOUCHABLE_STATE.MOVED_OUTSIDE) {
-          _this.hideUnderlay();
-        }
-      };
-      _this.state = {
-        extraChildStyle: null,
-        extraUnderlayStyle: null
-      };
-      return _this;
-    }
-    (0, _inherits2.default)(TouchableHighlight, _Component);
-    return (0, _createClass2.default)(TouchableHighlight, [{
-      key: "renderChildren",
-      value: function renderChildren() {
-        if (!this.props.children) {
-          return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {});
-        }
-        var child = React.Children.only(this.props.children); // TODO: not sure if OK but fixes error
-        return React.cloneElement(child, {
-          style: _reactNative.StyleSheet.compose(child.props.style, this.state.extraChildStyle)
-        });
-      }
-    }, {
-      key: "render",
-      value: function render() {
-        var _this$props = this.props,
-          _this$props$style = _this$props.style,
-          style = _this$props$style === void 0 ? {} : _this$props$style,
-          rest = (0, _objectWithoutProperties2.default)(_this$props, _excluded);
-        var extraUnderlayStyle = this.state.extraUnderlayStyle;
-        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_GenericTouchable.default, Object.assign({}, rest, {
-          style: [style, extraUnderlayStyle],
-          onStateChange: this.onStateChange,
-          children: this.renderChildren()
-        }));
-      }
-    }]);
-  }(_react.Component);
-  TouchableHighlight.defaultProps = Object.assign({}, _GenericTouchable.default.defaultProps, {
-    activeOpacity: 0.85,
-    delayPressOut: 100,
-    underlayColor: 'black'
-  });
-},887,[8,153,9,10,14,16,17,86,885,1,92],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableHighlight.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = gestureHandlerRootHOC;
-  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[0], "react"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[1], "react-native");
-  var _hoistNonReactStatics = _$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "hoist-non-react-statics"));
-  var _GestureHandlerRootView = _$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "./GestureHandlerRootView"));
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/gestureHandlerRootHOC.tsx";
-  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  function gestureHandlerRootHOC(Component, containerStyles) {
-    function Wrapper(props) {
-      return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[5], "react/jsx-runtime").jsx)(_GestureHandlerRootView.default, {
-        style: [styles.container, containerStyles],
-        children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[5], "react/jsx-runtime").jsx)(Component, Object.assign({}, props))
-      });
-    }
-    Wrapper.displayName = `gestureHandlerRootHOC(${Component.displayName || Component.name})`;
-
-    // @ts-ignore - hoistNonReactStatics uses old version of @types/react
-    (0, _hoistNonReactStatics.default)(Wrapper, Component);
-    return Wrapper;
-  }
-  var styles = _reactNative.StyleSheet.create({
-    container: {
-      flex: 1
-    }
-  });
-},888,[86,1,8,889,893,92],"node_modules/react-native-gesture-handler/src/components/gestureHandlerRootHOC.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  'use strict';
-
-  /**
-   * Copyright 2015, Yahoo! Inc.
-   * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
-   */
-  var REACT_STATICS = {
-    childContextTypes: true,
-    contextType: true,
-    contextTypes: true,
-    defaultProps: true,
-    displayName: true,
-    getDefaultProps: true,
-    getDerivedStateFromError: true,
-    getDerivedStateFromProps: true,
-    mixins: true,
-    propTypes: true,
-    type: true
-  };
-  var KNOWN_STATICS = {
-    name: true,
-    length: true,
-    prototype: true,
-    caller: true,
-    callee: true,
-    arguments: true,
-    arity: true
-  };
-  var FORWARD_REF_STATICS = {
-    '$$typeof': true,
-    render: true,
-    defaultProps: true,
-    displayName: true,
-    propTypes: true
-  };
-  var MEMO_STATICS = {
-    '$$typeof': true,
-    compare: true,
-    defaultProps: true,
-    displayName: true,
-    propTypes: true,
-    type: true
-  };
-  var TYPE_STATICS = {};
-  TYPE_STATICS[_$$_REQUIRE(_dependencyMap[0], "react-is").ForwardRef] = FORWARD_REF_STATICS;
-  TYPE_STATICS[_$$_REQUIRE(_dependencyMap[0], "react-is").Memo] = MEMO_STATICS;
-  function getStatics(component) {
-    // React v16.11 and below
-    if (_$$_REQUIRE(_dependencyMap[0], "react-is").isMemo(component)) {
-      return MEMO_STATICS;
-    } // React v16.12 and above
-
-    return TYPE_STATICS[component['$$typeof']] || REACT_STATICS;
-  }
-  var defineProperty = Object.defineProperty;
-  var getOwnPropertyNames = Object.getOwnPropertyNames;
-  var getOwnPropertySymbols = Object.getOwnPropertySymbols;
-  var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
-  var getPrototypeOf = Object.getPrototypeOf;
-  var objectPrototype = Object.prototype;
-  function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
-    if (typeof sourceComponent !== 'string') {
-      // don't hoist over string (html) components
-      if (objectPrototype) {
-        var inheritedComponent = getPrototypeOf(sourceComponent);
-        if (inheritedComponent && inheritedComponent !== objectPrototype) {
-          hoistNonReactStatics(targetComponent, inheritedComponent, blacklist);
-        }
-      }
-      var keys = getOwnPropertyNames(sourceComponent);
-      if (getOwnPropertySymbols) {
-        keys = keys.concat(getOwnPropertySymbols(sourceComponent));
-      }
-      var targetStatics = getStatics(targetComponent);
-      var sourceStatics = getStatics(sourceComponent);
-      for (var i = 0; i < keys.length; ++i) {
-        var key = keys[i];
-        if (!KNOWN_STATICS[key] && !(blacklist && blacklist[key]) && !(sourceStatics && sourceStatics[key]) && !(targetStatics && targetStatics[key])) {
-          var descriptor = getOwnPropertyDescriptor(sourceComponent, key);
-          try {
-            // Avoid failures from read-only properties
-            defineProperty(targetComponent, key, descriptor);
-          } catch (e) {}
-        }
-      }
-    }
-    return targetComponent;
-  }
-  module.exports = hoistNonReactStatics;
-},889,[890],"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  'use strict';
-
-  if (process.env.NODE_ENV === 'production') {
-    module.exports = _$$_REQUIRE(_dependencyMap[0], "./cjs/react-is.production.min.js");
-  } else {
-    module.exports = _$$_REQUIRE(_dependencyMap[1], "./cjs/react-is.development.js");
-  }
-},890,[891,892],"node_modules/hoist-non-react-statics/node_modules/react-is/index.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  /** @license React v16.13.1
-   * react-is.production.min.js
-   *
-   * Copyright (c) Facebook, Inc. and its affiliates.
-   *
-   * This source code is licensed under the MIT license found in the
-   * LICENSE file in the root directory of this source tree.
-   */
-
-  'use strict';
-
-  var b = "function" === typeof Symbol && Symbol.for,
-    c = b ? Symbol.for("react.element") : 60103,
-    d = b ? Symbol.for("react.portal") : 60106,
-    e = b ? Symbol.for("react.fragment") : 60107,
-    f = b ? Symbol.for("react.strict_mode") : 60108,
-    g = b ? Symbol.for("react.profiler") : 60114,
-    h = b ? Symbol.for("react.provider") : 60109,
-    k = b ? Symbol.for("react.context") : 60110,
-    l = b ? Symbol.for("react.async_mode") : 60111,
-    m = b ? Symbol.for("react.concurrent_mode") : 60111,
-    n = b ? Symbol.for("react.forward_ref") : 60112,
-    p = b ? Symbol.for("react.suspense") : 60113,
-    q = b ? Symbol.for("react.suspense_list") : 60120,
-    r = b ? Symbol.for("react.memo") : 60115,
-    t = b ? Symbol.for("react.lazy") : 60116,
-    v = b ? Symbol.for("react.block") : 60121,
-    w = b ? Symbol.for("react.fundamental") : 60117,
-    x = b ? Symbol.for("react.responder") : 60118,
-    y = b ? Symbol.for("react.scope") : 60119;
-  function z(a) {
-    if ("object" === typeof a && null !== a) {
-      var u = a.$$typeof;
-      switch (u) {
-        case c:
-          switch (a = a.type, a) {
-            case l:
-            case m:
-            case e:
-            case g:
-            case f:
-            case p:
-              return a;
-            default:
-              switch (a = a && a.$$typeof, a) {
-                case k:
-                case n:
-                case t:
-                case r:
-                case h:
-                  return a;
-                default:
-                  return u;
-              }
-          }
-        case d:
-          return u;
-      }
-    }
-  }
-  function A(a) {
-    return z(a) === m;
-  }
-  exports.AsyncMode = l;
-  exports.ConcurrentMode = m;
-  exports.ContextConsumer = k;
-  exports.ContextProvider = h;
-  exports.Element = c;
-  exports.ForwardRef = n;
-  exports.Fragment = e;
-  exports.Lazy = t;
-  exports.Memo = r;
-  exports.Portal = d;
-  exports.Profiler = g;
-  exports.StrictMode = f;
-  exports.Suspense = p;
-  exports.isAsyncMode = function (a) {
-    return A(a) || z(a) === l;
-  };
-  exports.isConcurrentMode = A;
-  exports.isContextConsumer = function (a) {
-    return z(a) === k;
-  };
-  exports.isContextProvider = function (a) {
-    return z(a) === h;
-  };
-  exports.isElement = function (a) {
-    return "object" === typeof a && null !== a && a.$$typeof === c;
-  };
-  exports.isForwardRef = function (a) {
-    return z(a) === n;
-  };
-  exports.isFragment = function (a) {
-    return z(a) === e;
-  };
-  exports.isLazy = function (a) {
-    return z(a) === t;
-  };
-  exports.isMemo = function (a) {
-    return z(a) === r;
-  };
-  exports.isPortal = function (a) {
-    return z(a) === d;
-  };
-  exports.isProfiler = function (a) {
-    return z(a) === g;
-  };
-  exports.isStrictMode = function (a) {
-    return z(a) === f;
-  };
-  exports.isSuspense = function (a) {
-    return z(a) === p;
-  };
-  exports.isValidElementType = function (a) {
-    return "string" === typeof a || "function" === typeof a || a === e || a === m || a === g || a === f || a === p || a === q || "object" === typeof a && null !== a && (a.$$typeof === t || a.$$typeof === r || a.$$typeof === h || a.$$typeof === k || a.$$typeof === n || a.$$typeof === w || a.$$typeof === x || a.$$typeof === y || a.$$typeof === v);
-  };
-  exports.typeOf = z;
-},891,[],"node_modules/hoist-non-react-statics/node_modules/react-is/cjs/react-is.production.min.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  /** @license React v16.13.1
-   * react-is.development.js
-   *
-   * Copyright (c) Facebook, Inc. and its affiliates.
-   *
-   * This source code is licensed under the MIT license found in the
-   * LICENSE file in the root directory of this source tree.
-   */
-
-  'use strict';
-
-  if (process.env.NODE_ENV !== "production") {
-    (function () {
-      'use strict';
-
-      // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
-      // nor polyfill, then a plain number is used for performance.
-      var hasSymbol = typeof Symbol === 'function' && Symbol.for;
-      var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
-      var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
-      var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
-      var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
-      var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
-      var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
-      var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
-      // (unstable) APIs that have been removed. Can we remove the symbols?
-
-      var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
-      var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
-      var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
-      var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
-      var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
-      var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
-      var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
-      var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
-      var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
-      var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
-      var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
-      function isValidElementType(type) {
-        return typeof type === 'string' || typeof type === 'function' ||
-        // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
-        type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
-      }
-      function typeOf(object) {
-        if (typeof object === 'object' && object !== null) {
-          var $$typeof = object.$$typeof;
-          switch ($$typeof) {
-            case REACT_ELEMENT_TYPE:
-              var type = object.type;
-              switch (type) {
-                case REACT_ASYNC_MODE_TYPE:
-                case REACT_CONCURRENT_MODE_TYPE:
-                case REACT_FRAGMENT_TYPE:
-                case REACT_PROFILER_TYPE:
-                case REACT_STRICT_MODE_TYPE:
-                case REACT_SUSPENSE_TYPE:
-                  return type;
-                default:
-                  var $$typeofType = type && type.$$typeof;
-                  switch ($$typeofType) {
-                    case REACT_CONTEXT_TYPE:
-                    case REACT_FORWARD_REF_TYPE:
-                    case REACT_LAZY_TYPE:
-                    case REACT_MEMO_TYPE:
-                    case REACT_PROVIDER_TYPE:
-                      return $$typeofType;
-                    default:
-                      return $$typeof;
-                  }
-              }
-            case REACT_PORTAL_TYPE:
-              return $$typeof;
-          }
-        }
-        return undefined;
-      } // AsyncMode is deprecated along with isAsyncMode
-
-      var AsyncMode = REACT_ASYNC_MODE_TYPE;
-      var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
-      var ContextConsumer = REACT_CONTEXT_TYPE;
-      var ContextProvider = REACT_PROVIDER_TYPE;
-      var Element = REACT_ELEMENT_TYPE;
-      var ForwardRef = REACT_FORWARD_REF_TYPE;
-      var Fragment = REACT_FRAGMENT_TYPE;
-      var Lazy = REACT_LAZY_TYPE;
-      var Memo = REACT_MEMO_TYPE;
-      var Portal = REACT_PORTAL_TYPE;
-      var Profiler = REACT_PROFILER_TYPE;
-      var StrictMode = REACT_STRICT_MODE_TYPE;
-      var Suspense = REACT_SUSPENSE_TYPE;
-      var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
-
-      function isAsyncMode(object) {
-        {
-          if (!hasWarnedAboutDeprecatedIsAsyncMode) {
-            hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
-
-            console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
-          }
-        }
-        return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
-      }
-      function isConcurrentMode(object) {
-        return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
-      }
-      function isContextConsumer(object) {
-        return typeOf(object) === REACT_CONTEXT_TYPE;
-      }
-      function isContextProvider(object) {
-        return typeOf(object) === REACT_PROVIDER_TYPE;
-      }
-      function isElement(object) {
-        return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
-      }
-      function isForwardRef(object) {
-        return typeOf(object) === REACT_FORWARD_REF_TYPE;
-      }
-      function isFragment(object) {
-        return typeOf(object) === REACT_FRAGMENT_TYPE;
-      }
-      function isLazy(object) {
-        return typeOf(object) === REACT_LAZY_TYPE;
-      }
-      function isMemo(object) {
-        return typeOf(object) === REACT_MEMO_TYPE;
-      }
-      function isPortal(object) {
-        return typeOf(object) === REACT_PORTAL_TYPE;
-      }
-      function isProfiler(object) {
-        return typeOf(object) === REACT_PROFILER_TYPE;
-      }
-      function isStrictMode(object) {
-        return typeOf(object) === REACT_STRICT_MODE_TYPE;
-      }
-      function isSuspense(object) {
-        return typeOf(object) === REACT_SUSPENSE_TYPE;
-      }
-      exports.AsyncMode = AsyncMode;
-      exports.ConcurrentMode = ConcurrentMode;
-      exports.ContextConsumer = ContextConsumer;
-      exports.ContextProvider = ContextProvider;
-      exports.Element = Element;
-      exports.ForwardRef = ForwardRef;
-      exports.Fragment = Fragment;
-      exports.Lazy = Lazy;
-      exports.Memo = Memo;
-      exports.Portal = Portal;
-      exports.Profiler = Profiler;
-      exports.StrictMode = StrictMode;
-      exports.Suspense = Suspense;
-      exports.isAsyncMode = isAsyncMode;
-      exports.isConcurrentMode = isConcurrentMode;
-      exports.isContextConsumer = isContextConsumer;
-      exports.isContextProvider = isContextProvider;
-      exports.isElement = isElement;
-      exports.isForwardRef = isForwardRef;
-      exports.isFragment = isFragment;
-      exports.isLazy = isLazy;
-      exports.isMemo = isMemo;
-      exports.isPortal = isPortal;
-      exports.isProfiler = isProfiler;
-      exports.isStrictMode = isStrictMode;
-      exports.isSuspense = isSuspense;
-      exports.isValidElementType = isValidElementType;
-      exports.typeOf = typeOf;
-    })();
-  }
-},892,[],"node_modules/hoist-non-react-statics/node_modules/react-is/cjs/react-is.development.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = GestureHandlerRootView;
-  var React = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[0], "react"));
-  var _GestureHandlerRootViewContext = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "react-native-gesture-handler/src/GestureHandlerRootViewContext"));
-  var _RNGestureHandlerRootViewNativeComponent = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "../specs/RNGestureHandlerRootViewNativeComponent"));
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/@react-native-ohos/react-native-gesture-handler/src/components/GestureHandlerRootView.tsx";
-  /*
-   * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
-   * Use of this source code is governed by a MIT license that can be
-   * found in the LICENSE file.
-   */
-  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  function GestureHandlerRootView(props) {
-    // try initialize fabric on the first render, at this point we can
-    // reliably check if fabric is enabled (the function contains a flag
-    // to make sure it's called only once)
-    (0, _$$_REQUIRE(_dependencyMap[4], "react-native-gesture-handler/src/init").maybeInitializeFabric)();
-    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[5], "react/jsx-runtime").jsx)(_GestureHandlerRootViewContext.default.Provider, {
-      value: true,
-      children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[5], "react/jsx-runtime").jsx)(_RNGestureHandlerRootViewNativeComponent.default, Object.assign({}, props))
-    });
-  }
-},893,[86,8,639,894,895,92],"node_modules/@react-native-ohos/react-native-gesture-handler/src/components/GestureHandlerRootView.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = exports.__INTERNAL_VIEW_CONFIG = void 0;
-  var _codegenNativeComponent = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "react-native/Libraries/Utilities/codegenNativeComponent")); /*
-                                                                                                                                                                                                            * Copyright (c) 2025 Huawei Device Co., Ltd. All rights reserved
-                                                                                                                                                                                                            * Use of this source code is governed by a MIT license that can be
-                                                                                                                                                                                                            * found in the LICENSE file.
-                                                                                                                                                                                                            */
-
-  var nativeComponentName = 'RNGestureHandlerRootView';
-  var __INTERNAL_VIEW_CONFIG = exports.__INTERNAL_VIEW_CONFIG = {
-    uiViewClassName: 'RNGestureHandlerRootView',
-    validAttributes: {}
-  };
-  var _default = exports.default = _$$_REQUIRE(_dependencyMap[2], "react-native/Libraries/NativeComponent/NativeComponentRegistry").get(nativeComponentName, function () {
-    return __INTERNAL_VIEW_CONFIG;
-  });
-},894,[8,347,204],"node_modules/@react-native-ohos/react-native-gesture-handler/src/specs/RNGestureHandlerRootViewNativeComponent.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.initialize = initialize;
-  exports.maybeInitializeFabric = maybeInitializeFabric;
-  var _RNGestureHandlerModule = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "./RNGestureHandlerModule"));
-  var fabricInitialized = false;
-  function initialize() {
-    (0, _$$_REQUIRE(_dependencyMap[2], "./handlers/gestures/eventReceiver").startListening)();
-  }
-
-  // Since isFabric() may give wrong results before the first render, we call this
-  // method during render of GestureHandlerRootView
-  function maybeInitializeFabric() {
-    if ((0, _$$_REQUIRE(_dependencyMap[3], "./utils").isFabric)() && !fabricInitialized) {
-      _RNGestureHandlerModule.default.install();
-      fabricInitialized = true;
-    }
-  }
-},895,[8,636,864,641],"node_modules/react-native-gesture-handler/src/init.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[6], "react"));
-  var React = _react;
-  var _reactNative = _$$_REQUIRE(_dependencyMap[7], "react-native");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/Swipeable.tsx";
-  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); } // Similarily to the DrawerLayout component this deserves to be put in a
-  // separate repo. Although, keeping it here for the time being will allow us to
-  // move faster and fix possible issues quicker
-  var DRAG_TOSS = 0.05;
-
-  // Animated.AnimatedInterpolation has been converted to a generic type
-  // in @types/react-native 0.70. This way we can maintain compatibility
-  // with all versions of @types/react-native
-  /**
-   * @deprecated use Reanimated version of Swipeable instead
-   *
-   * This component allows for implementing swipeable rows or similar interaction.
-   */
-  var Swipeable = exports.default = /*#__PURE__*/function (_Component) {
-    function Swipeable(_props) {
-      var _this;
-      (0, _classCallCheck2.default)(this, Swipeable);
-      _this = _callSuper(this, Swipeable, [_props]);
-      _this.updateAnimatedEvent = function (props, state) {
-        var friction = props.friction,
-          overshootFriction = props.overshootFriction;
-        var dragX = state.dragX,
-          rowTranslation = state.rowTranslation,
-          _state$leftWidth = state.leftWidth,
-          leftWidth = _state$leftWidth === void 0 ? 0 : _state$leftWidth,
-          _state$rowWidth = state.rowWidth,
-          rowWidth = _state$rowWidth === void 0 ? 0 : _state$rowWidth;
-        var _state$rightOffset = state.rightOffset,
-          rightOffset = _state$rightOffset === void 0 ? rowWidth : _state$rightOffset;
-        var rightWidth = Math.max(0, rowWidth - rightOffset);
-        var _props$overshootLeft = props.overshootLeft,
-          overshootLeft = _props$overshootLeft === void 0 ? leftWidth > 0 : _props$overshootLeft,
-          _props$overshootRight = props.overshootRight,
-          overshootRight = _props$overshootRight === void 0 ? rightWidth > 0 : _props$overshootRight;
-        var transX = _reactNative.Animated.add(rowTranslation, dragX.interpolate({
-          inputRange: [0, friction],
-          outputRange: [0, 1]
-        })).interpolate({
-          inputRange: [-rightWidth - 1, -rightWidth, leftWidth, leftWidth + 1],
-          outputRange: [-rightWidth - (overshootRight ? 1 / overshootFriction : 0), -rightWidth, leftWidth, leftWidth + (overshootLeft ? 1 / overshootFriction : 0)]
-        });
-        _this.transX = transX;
-        _this.showLeftAction = leftWidth > 0 ? transX.interpolate({
-          inputRange: [-1, 0, leftWidth],
-          outputRange: [0, 0, 1]
-        }) : new _reactNative.Animated.Value(0);
-        _this.leftActionTranslate = _this.showLeftAction.interpolate({
-          inputRange: [0, Number.MIN_VALUE],
-          outputRange: [-10000, 0],
-          extrapolate: 'clamp'
-        });
-        _this.showRightAction = rightWidth > 0 ? transX.interpolate({
-          inputRange: [-rightWidth, 0, 1],
-          outputRange: [1, 0, 0]
-        }) : new _reactNative.Animated.Value(0);
-        _this.rightActionTranslate = _this.showRightAction.interpolate({
-          inputRange: [0, Number.MIN_VALUE],
-          outputRange: [-10000, 0],
-          extrapolate: 'clamp'
-        });
-      };
-      _this.onTapHandlerStateChange = function (_ref) {
-        var nativeEvent = _ref.nativeEvent;
-        if (nativeEvent.oldState === _$$_REQUIRE(_dependencyMap[8], "../State").State.ACTIVE) {
-          _this.close();
-        }
-      };
-      _this.onHandlerStateChange = function (ev) {
-        if (ev.nativeEvent.oldState === _$$_REQUIRE(_dependencyMap[8], "../State").State.ACTIVE) {
-          _this.handleRelease(ev);
-        }
-        if (ev.nativeEvent.state === _$$_REQUIRE(_dependencyMap[8], "../State").State.ACTIVE) {
-          var _ev$nativeEvent = ev.nativeEvent,
-            velocityX = _ev$nativeEvent.velocityX,
-            dragX = _ev$nativeEvent.translationX;
-          var rowState = _this.state.rowState;
-          var friction = _this.props.friction;
-          var translationX = (dragX + DRAG_TOSS * velocityX) / friction;
-          var direction = rowState === -1 ? 'right' : rowState === 1 ? 'left' : translationX > 0 ? 'left' : 'right';
-          if (rowState === 0) {
-            _this.props.onSwipeableOpenStartDrag == null || _this.props.onSwipeableOpenStartDrag(direction);
-          } else {
-            _this.props.onSwipeableCloseStartDrag == null || _this.props.onSwipeableCloseStartDrag(direction);
-          }
-        }
-      };
-      _this.handleRelease = function (ev) {
-        var _ev$nativeEvent2 = ev.nativeEvent,
-          velocityX = _ev$nativeEvent2.velocityX,
-          dragX = _ev$nativeEvent2.translationX;
-        var _this$state = _this.state,
-          _this$state$leftWidth = _this$state.leftWidth,
-          leftWidth = _this$state$leftWidth === void 0 ? 0 : _this$state$leftWidth,
-          _this$state$rowWidth = _this$state.rowWidth,
-          rowWidth = _this$state$rowWidth === void 0 ? 0 : _this$state$rowWidth,
-          rowState = _this$state.rowState;
-        var _this$state$rightOffs = _this.state.rightOffset,
-          rightOffset = _this$state$rightOffs === void 0 ? rowWidth : _this$state$rightOffs;
-        var rightWidth = rowWidth - rightOffset;
-        var _this$props = _this.props,
-          friction = _this$props.friction,
-          _this$props$leftThres = _this$props.leftThreshold,
-          leftThreshold = _this$props$leftThres === void 0 ? leftWidth / 2 : _this$props$leftThres,
-          _this$props$rightThre = _this$props.rightThreshold,
-          rightThreshold = _this$props$rightThre === void 0 ? rightWidth / 2 : _this$props$rightThre;
-        var startOffsetX = _this.currentOffset() + dragX / friction;
-        var translationX = (dragX + DRAG_TOSS * velocityX) / friction;
-        var toValue = 0;
-        if (rowState === 0) {
-          if (translationX > leftThreshold) {
-            toValue = leftWidth;
-          } else if (translationX < -rightThreshold) {
-            toValue = -rightWidth;
-          }
-        } else if (rowState === 1) {
-          // Swiped to left
-          if (translationX > -leftThreshold) {
-            toValue = leftWidth;
-          }
-        } else {
-          // Swiped to right
-          if (translationX < rightThreshold) {
-            toValue = -rightWidth;
-          }
-        }
-        _this.animateRow(startOffsetX, toValue, velocityX / friction);
-      };
-      _this.animateRow = function (fromValue, toValue, velocityX) {
-        var _this$state2 = _this.state,
-          dragX = _this$state2.dragX,
-          rowTranslation = _this$state2.rowTranslation;
-        dragX.setValue(0);
-        rowTranslation.setValue(fromValue);
-        _this.setState({
-          rowState: Math.sign(toValue)
-        });
-        _reactNative.Animated.spring(rowTranslation, Object.assign({
-          restSpeedThreshold: 1.7,
-          restDisplacementThreshold: 0.4,
-          velocity: velocityX,
-          bounciness: 0,
-          toValue: toValue,
-          useNativeDriver: _this.props.useNativeAnimations
-        }, _this.props.animationOptions)).start(function (_ref2) {
-          var finished = _ref2.finished;
-          if (finished) {
-            if (toValue > 0) {
-              _this.props.onSwipeableLeftOpen == null || _this.props.onSwipeableLeftOpen();
-              _this.props.onSwipeableOpen == null || _this.props.onSwipeableOpen('left', _this);
-            } else if (toValue < 0) {
-              _this.props.onSwipeableRightOpen == null || _this.props.onSwipeableRightOpen();
-              _this.props.onSwipeableOpen == null || _this.props.onSwipeableOpen('right', _this);
-            } else {
-              var closingDirection = fromValue > 0 ? 'left' : 'right';
-              _this.props.onSwipeableClose == null || _this.props.onSwipeableClose(closingDirection, _this);
-            }
-          }
-        });
-        if (toValue > 0) {
-          _this.props.onSwipeableLeftWillOpen == null || _this.props.onSwipeableLeftWillOpen();
-          _this.props.onSwipeableWillOpen == null || _this.props.onSwipeableWillOpen('left');
-        } else if (toValue < 0) {
-          _this.props.onSwipeableRightWillOpen == null || _this.props.onSwipeableRightWillOpen();
-          _this.props.onSwipeableWillOpen == null || _this.props.onSwipeableWillOpen('right');
-        } else {
-          var closingDirection = fromValue > 0 ? 'left' : 'right';
-          _this.props.onSwipeableWillClose == null || _this.props.onSwipeableWillClose(closingDirection);
-        }
-      };
-      _this.onRowLayout = function (_ref3) {
-        var nativeEvent = _ref3.nativeEvent;
-        _this.setState({
-          rowWidth: nativeEvent.layout.width
-        });
-      };
-      _this.currentOffset = function () {
-        var _this$state3 = _this.state,
-          _this$state3$leftWidt = _this$state3.leftWidth,
-          leftWidth = _this$state3$leftWidt === void 0 ? 0 : _this$state3$leftWidt,
-          _this$state3$rowWidth = _this$state3.rowWidth,
-          rowWidth = _this$state3$rowWidth === void 0 ? 0 : _this$state3$rowWidth,
-          rowState = _this$state3.rowState;
-        var _this$state$rightOffs2 = _this.state.rightOffset,
-          rightOffset = _this$state$rightOffs2 === void 0 ? rowWidth : _this$state$rightOffs2;
-        var rightWidth = rowWidth - rightOffset;
-        if (rowState === 1) {
-          return leftWidth;
-        } else if (rowState === -1) {
-          return -rightWidth;
-        }
-        return 0;
-      };
-      _this.close = function () {
-        _this.animateRow(_this.currentOffset(), 0);
-      };
-      _this.openLeft = function () {
-        var _this$state$leftWidth2 = _this.state.leftWidth,
-          leftWidth = _this$state$leftWidth2 === void 0 ? 0 : _this$state$leftWidth2;
-        _this.animateRow(_this.currentOffset(), leftWidth);
-      };
-      _this.openRight = function () {
-        var _this$state$rowWidth2 = _this.state.rowWidth,
-          rowWidth = _this$state$rowWidth2 === void 0 ? 0 : _this$state$rowWidth2;
-        var _this$state$rightOffs3 = _this.state.rightOffset,
-          rightOffset = _this$state$rightOffs3 === void 0 ? rowWidth : _this$state$rightOffs3;
-        var rightWidth = rowWidth - rightOffset;
-        _this.animateRow(_this.currentOffset(), -rightWidth);
-      };
-      _this.reset = function () {
-        var _this$state4 = _this.state,
-          dragX = _this$state4.dragX,
-          rowTranslation = _this$state4.rowTranslation;
-        dragX.setValue(0);
-        rowTranslation.setValue(0);
-        _this.setState({
-          rowState: 0
-        });
-      };
-      var _dragX = new _reactNative.Animated.Value(0);
-      _this.state = {
-        dragX: _dragX,
-        rowTranslation: new _reactNative.Animated.Value(0),
-        rowState: 0,
-        leftWidth: undefined,
-        rightOffset: undefined,
-        rowWidth: undefined
-      };
-      _this.updateAnimatedEvent(_props, _this.state);
-      _this.onGestureEvent = _reactNative.Animated.event([{
-        nativeEvent: {
-          translationX: _dragX
-        }
-      }], {
-        useNativeDriver: _props.useNativeAnimations
-      });
-      return _this;
-    }
-    (0, _inherits2.default)(Swipeable, _Component);
-    return (0, _createClass2.default)(Swipeable, [{
-      key: "shouldComponentUpdate",
-      value: function shouldComponentUpdate(props, state) {
-        if (this.props.friction !== props.friction || this.props.overshootLeft !== props.overshootLeft || this.props.overshootRight !== props.overshootRight || this.props.overshootFriction !== props.overshootFriction || this.state.leftWidth !== state.leftWidth || this.state.rightOffset !== state.rightOffset || this.state.rowWidth !== state.rowWidth) {
-          this.updateAnimatedEvent(props, state);
-        }
-        return true;
-      }
-    }, {
-      key: "render",
-      value: function render() {
-        var _this2 = this;
-        var rowState = this.state.rowState;
-        var _this$props2 = this.props,
-          children = _this$props2.children,
-          renderLeftActions = _this$props2.renderLeftActions,
-          renderRightActions = _this$props2.renderRightActions,
-          _this$props2$dragOffs = _this$props2.dragOffsetFromLeftEdge,
-          dragOffsetFromLeftEdge = _this$props2$dragOffs === void 0 ? 10 : _this$props2$dragOffs,
-          _this$props2$dragOffs2 = _this$props2.dragOffsetFromRightEdge,
-          dragOffsetFromRightEdge = _this$props2$dragOffs2 === void 0 ? 10 : _this$props2$dragOffs2;
-        var left = renderLeftActions && /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[9], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
-          style: [styles.leftActions,
-          // All those and below parameters can have ! since they are all
-          // asigned in constructor in `updateAnimatedEvent` but TS cannot spot
-          // it for some reason
-          {
-            transform: [{
-              translateX: this.leftActionTranslate
-            }]
-          }],
-          children: [renderLeftActions(this.showLeftAction, this.transX, this), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[9], "react/jsx-runtime").jsx)(_reactNative.View, {
-            onLayout: function onLayout(_ref4) {
-              var nativeEvent = _ref4.nativeEvent;
-              return _this2.setState({
-                leftWidth: nativeEvent.layout.x
-              });
-            }
-          })]
-        });
-        var right = renderRightActions && /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[9], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
-          style: [styles.rightActions, {
-            transform: [{
-              translateX: this.rightActionTranslate
-            }]
-          }],
-          children: [renderRightActions(this.showRightAction, this.transX, this), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[9], "react/jsx-runtime").jsx)(_reactNative.View, {
-            onLayout: function onLayout(_ref5) {
-              var nativeEvent = _ref5.nativeEvent;
-              return _this2.setState({
-                rightOffset: nativeEvent.layout.x
-              });
-            }
-          })]
-        });
-        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[9], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[10], "../handlers/PanGestureHandler").PanGestureHandler, Object.assign({
-          activeOffsetX: [-dragOffsetFromRightEdge, dragOffsetFromLeftEdge],
-          touchAction: "pan-y"
-        }, this.props, {
-          onGestureEvent: this.onGestureEvent,
-          onHandlerStateChange: this.onHandlerStateChange,
-          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[9], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
-            onLayout: this.onRowLayout,
-            style: [styles.container, this.props.containerStyle],
-            children: [left, right, /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[9], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[11], "../handlers/TapGestureHandler").TapGestureHandler, {
-              enabled: rowState !== 0,
-              touchAction: "pan-y",
-              onHandlerStateChange: this.onTapHandlerStateChange,
-              children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[9], "react/jsx-runtime").jsx)(_reactNative.Animated.View, {
-                pointerEvents: rowState === 0 ? 'auto' : 'box-only',
-                style: [{
-                  transform: [{
-                    translateX: this.transX
-                  }]
-                }, this.props.childrenContainerStyle],
-                children: children
-              })
-            })]
-          })
-        }));
-      }
-    }]);
-  }(_react.Component);
-  Swipeable.defaultProps = {
-    friction: 1,
-    overshootFriction: 1,
-    useNativeAnimations: true
-  };
-  var styles = _reactNative.StyleSheet.create({
-    container: {
-      overflow: 'hidden'
-    },
-    leftActions: Object.assign({}, _reactNative.StyleSheet.absoluteFillObject, {
-      flexDirection: _reactNative.I18nManager.isRTL ? 'row-reverse' : 'row'
-    }),
-    rightActions: Object.assign({}, _reactNative.StyleSheet.absoluteFillObject, {
-      flexDirection: _reactNative.I18nManager.isRTL ? 'row' : 'row-reverse'
-    })
-  });
-},896,[8,9,10,14,16,17,86,1,642,92,674,673],"node_modules/react-native-gesture-handler/src/components/Swipeable.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  Object.defineProperty(exports, "default", {
-    enumerable: true,
-    get: function get() {
-      return _Pressable.default;
-    }
-  });
-  var _Pressable = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "./Pressable"));
-},897,[8,898],"node_modules/react-native-gesture-handler/src/components/Pressable/index.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var _slicedToArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/slicedToArray"));
-  var _objectWithoutProperties2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/objectWithoutProperties"));
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[3], "react"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[4], "react-native");
-  var _GestureHandlerButton = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "../GestureHandlerButton"));
-  var _excluded = ["testOnly_pressed", "hitSlop", "pressRetentionOffset", "delayHoverIn", "onHoverIn", "delayHoverOut", "onHoverOut", "delayLongPress", "unstable_pressDelay", "onPress", "onPressIn", "onPressOut", "onLongPress", "style", "children", "android_disableSound", "android_ripple", "disabled", "accessible"];
-  var _this = this,
-    _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/Pressable/Pressable.tsx";
-  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  var DEFAULT_LONG_PRESS_DURATION = 500;
-  var IS_TEST_ENV = (0, _$$_REQUIRE(_dependencyMap[6], "../../utils").isTestEnv)();
-  var IS_FABRIC = null;
-  var _worklet_4292053914731_init_data = {
-    code: "function reactNativeGestureHandler_PressableTsx1(event){const{hoverInTimeout,clearTimeout,delayHoverOut,hoverOutTimeout,setTimeout,onHoverOut,gestureToPressableEvent}=this.__closure;var _onHoverOut2;if(hoverInTimeout.current){clearTimeout(hoverInTimeout.current);}if(delayHoverOut){hoverOutTimeout.current=setTimeout(function(){var _onHoverOut;return(_onHoverOut=onHoverOut)===null||_onHoverOut===void 0?void 0:_onHoverOut(gestureToPressableEvent(event));},delayHoverOut);return;}(_onHoverOut2=onHoverOut)===null||_onHoverOut2===void 0||_onHoverOut2(gestureToPressableEvent(event));}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/Pressable/Pressable.tsx",
-    sourceMap: "{\"version\":3,\"names\":[\"reactNativeGestureHandler_PressableTsx1\",\"event\",\"hoverInTimeout\",\"clearTimeout\",\"delayHoverOut\",\"hoverOutTimeout\",\"setTimeout\",\"onHoverOut\",\"gestureToPressableEvent\",\"__closure\",\"_onHoverOut2\",\"current\",\"_onHoverOut\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/Pressable/Pressable.tsx\"],\"mappings\":\"AAwGuB,SAAAA,uCAAUA,CAAAC,KAAA,QAAAC,cAAA,CAAAC,YAAA,CAAAC,aAAA,CAAAC,eAAA,CAAAC,UAAA,CAAAC,UAAA,CAAAC,uBAAA,OAAAC,SAAA,KAAAC,YAAA,CACrB,GAAIR,cAAc,CAACS,OAAO,CAAE,CAC1BR,YAAY,CAACD,cAAc,CAACS,OAAO,CAAC,CACtC,CACA,GAAIP,aAAa,CAAE,CACjBC,eAAe,CAACM,OAAO,CAAGL,UAAU,CAClC,eAAAM,WAAA,QAAAA,WAAA,CAAML,UAAU,UAAAK,WAAA,iBAAVA,WAAA,CAAaJ,uBAAuB,CAACP,KAAK,CAAC,CAAC,GAClDG,aACF,CAAC,CACD,OACF,CACA,CAAAM,YAAA,CAAAH,UAAU,UAAAG,YAAA,WAAVA,YAAA,CAAaF,uBAAuB,CAACP,KAAK,CAAC,CAAC,CAC9C\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var _worklet_11606659186113_init_data = {
-    code: "function reactNativeGestureHandler_PressableTsx2(event){const{hoverOutTimeout,clearTimeout,delayHoverIn,hoverInTimeout,setTimeout,onHoverIn,gestureToPressableEvent}=this.__closure;var _onHoverIn2;if(hoverOutTimeout.current){clearTimeout(hoverOutTimeout.current);}if(delayHoverIn){hoverInTimeout.current=setTimeout(function(){var _onHoverIn;return(_onHoverIn=onHoverIn)===null||_onHoverIn===void 0?void 0:_onHoverIn(gestureToPressableEvent(event));},delayHoverIn);return;}(_onHoverIn2=onHoverIn)===null||_onHoverIn2===void 0||_onHoverIn2(gestureToPressableEvent(event));}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/Pressable/Pressable.tsx",
-    sourceMap: "{\"version\":3,\"names\":[\"reactNativeGestureHandler_PressableTsx2\",\"event\",\"hoverOutTimeout\",\"clearTimeout\",\"delayHoverIn\",\"hoverInTimeout\",\"setTimeout\",\"onHoverIn\",\"gestureToPressableEvent\",\"__closure\",\"_onHoverIn2\",\"current\",\"_onHoverIn\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/Pressable/Pressable.tsx\"],\"mappings\":\"AA2FoB,SAAAA,uCAAUA,CAAAC,KAAA,QAAAC,eAAA,CAAAC,YAAA,CAAAC,YAAA,CAAAC,cAAA,CAAAC,UAAA,CAAAC,SAAA,CAAAC,uBAAA,OAAAC,SAAA,KAAAC,WAAA,CAClB,GAAIR,eAAe,CAACS,OAAO,CAAE,CAC3BR,YAAY,CAACD,eAAe,CAACS,OAAO,CAAC,CACvC,CACA,GAAIP,YAAY,CAAE,CAChBC,cAAc,CAACM,OAAO,CAAGL,UAAU,CACjC,eAAAM,UAAA,QAAAA,UAAA,CAAML,SAAS,UAAAK,UAAA,iBAATA,UAAA,CAAYJ,uBAAuB,CAACP,KAAK,CAAC,CAAC,GACjDG,YACF,CAAC,CACD,OACF,CACA,CAAAM,WAAA,CAAAH,SAAS,UAAAG,WAAA,WAATA,WAAA,CAAYF,uBAAuB,CAACP,KAAK,CAAC,CAAC,CAC7C\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var _worklet_13470448772419_init_data = {
-    code: "function reactNativeGestureHandler_PressableTsx3(event){const{isPressCallbackEnabled,handlingOnTouchesDown,cancelledMidPress,onEndHandlingTouchesDown,pressOutHandler,gestureTouchToPressableEvent,hasPassedBoundsChecks}=this.__closure;isPressCallbackEnabled.current=false;if(handlingOnTouchesDown.current){cancelledMidPress.current=true;onEndHandlingTouchesDown.current=function(){return pressOutHandler(gestureTouchToPressableEvent(event));};return;}if(!hasPassedBoundsChecks.current||event.allTouches.length>event.changedTouches.length){return;}pressOutHandler(gestureTouchToPressableEvent(event));}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/Pressable/Pressable.tsx",
-    sourceMap: "{\"version\":3,\"names\":[\"reactNativeGestureHandler_PressableTsx3\",\"event\",\"isPressCallbackEnabled\",\"handlingOnTouchesDown\",\"cancelledMidPress\",\"onEndHandlingTouchesDown\",\"pressOutHandler\",\"gestureTouchToPressableEvent\",\"hasPassedBoundsChecks\",\"__closure\",\"current\",\"allTouches\",\"length\",\"changedTouches\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/Pressable/Pressable.tsx\"],\"mappings\":\"AAiU+B,SAAAA,uCAAUA,CAAAC,KAAA,QAAAC,sBAAA,CAAAC,qBAAA,CAAAC,iBAAA,CAAAC,wBAAA,CAAAC,eAAA,CAAAC,4BAAA,CAAAC,qBAAA,OAAAC,SAAA,CAC7BP,sBAAsB,CAACQ,OAAO,CAAG,KAAK,CAEtC,GAAIP,qBAAqB,CAACO,OAAO,CAAE,CACjCN,iBAAiB,CAACM,OAAO,CAAG,IAAI,CAChCL,wBAAwB,CAACK,OAAO,CAAG,iBACjC,CAAAJ,eAAe,CAACC,4BAA4B,CAACN,KAAK,CAAC,CAAC,GACtD,OACF,CAEA,GACE,CAACO,qBAAqB,CAACE,OAAO,EAC9BT,KAAK,CAACU,UAAU,CAACC,MAAM,CAAGX,KAAK,CAACY,cAAc,CAACD,MAAM,CACrD,CACA,OACF,CAEAN,eAAe,CAACC,4BAA4B,CAACN,KAAK,CAAC,CAAC,CACtD\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var _worklet_10644258899203_init_data = {
-    code: "function reactNativeGestureHandler_PressableTsx4(event){const{handlingOnTouchesDown,onEndHandlingTouchesDown,pressOutHandler,gestureTouchToPressableEvent,deferredEventPayload,shouldPreventNativeEffects}=this.__closure;if(handlingOnTouchesDown.current){onEndHandlingTouchesDown.current=function(){return pressOutHandler(gestureTouchToPressableEvent(event));};return;}if(deferredEventPayload.current!==null){shouldPreventNativeEffects.current=true;}pressOutHandler(gestureTouchToPressableEvent(event));}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/Pressable/Pressable.tsx",
-    sourceMap: "{\"version\":3,\"names\":[\"reactNativeGestureHandler_PressableTsx4\",\"event\",\"handlingOnTouchesDown\",\"onEndHandlingTouchesDown\",\"pressOutHandler\",\"gestureTouchToPressableEvent\",\"deferredEventPayload\",\"shouldPreventNativeEffects\",\"__closure\",\"current\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/Pressable/Pressable.tsx\"],\"mappings\":\"AAoTwB,SAAAA,uCAAUA,CAAAC,KAAA,QAAAC,qBAAA,CAAAC,wBAAA,CAAAC,eAAA,CAAAC,4BAAA,CAAAC,oBAAA,CAAAC,0BAAA,OAAAC,SAAA,CACtB,GAAIN,qBAAqB,CAACO,OAAO,CAAE,CACjCN,wBAAwB,CAACM,OAAO,CAAG,iBACjC,CAAAL,eAAe,CAACC,4BAA4B,CAACJ,KAAK,CAAC,CAAC,GACtD,OACF,CAGA,GAAIK,oBAAoB,CAACG,OAAO,GAAK,IAAI,CAAE,CACzCF,0BAA0B,CAACE,OAAO,CAAG,IAAI,CAC3C,CACAL,eAAe,CAACC,4BAA4B,CAACJ,KAAK,CAAC,CAAC,CACtD\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var _worklet_16714609347218_init_data = {
-    code: "function reactNativeGestureHandler_PressableTsx5(event){const{handlingOnTouchesDown,pressableRef,measureCallback,innerPressableRef}=this.__closure;handlingOnTouchesDown.current=true;if(pressableRef){var _current;(_current=pressableRef.current)===null||_current===void 0||_current.measure(function(_x,_y,width,height){measureCallback(width,height,event);});}else{var _innerPressableRef$cu;(_innerPressableRef$cu=innerPressableRef.current)===null||_innerPressableRef$cu===void 0||_innerPressableRef$cu.measure(function(_x,_y,width,height){measureCallback(width,height,event);});}}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/Pressable/Pressable.tsx",
-    sourceMap: "{\"version\":3,\"names\":[\"reactNativeGestureHandler_PressableTsx5\",\"event\",\"handlingOnTouchesDown\",\"pressableRef\",\"measureCallback\",\"innerPressableRef\",\"__closure\",\"current\",\"_current\",\"measure\",\"_x\",\"_y\",\"width\",\"height\",\"_innerPressableRef$cu\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/Pressable/Pressable.tsx\"],\"mappings\":\"AAsS0B,SAAAA,uCAAUA,CAAAC,KAAA,QAAAC,qBAAA,CAAAC,YAAA,CAAAC,eAAA,CAAAC,iBAAA,OAAAC,SAAA,CACxBJ,qBAAqB,CAACK,OAAO,CAAG,IAAI,CACpC,GAAIJ,YAAY,CAAE,KAAAK,QAAA,CAChB,CAAAA,QAAA,CAACL,YAAY,CAAqBI,OAAO,UAAAC,QAAA,WAAzCA,QAAA,CAA2CC,OAAO,CAChD,SAACC,EAAE,CAAEC,EAAE,CAAEC,KAAK,CAAEC,MAAM,CAAK,CACzBT,eAAe,CAACQ,KAAK,CAAEC,MAAM,CAAEZ,KAAK,CAAC,CACvC,CACF,CAAC,CACH,CAAC,IAAM,KAAAa,qBAAA,CACL,CAAAA,qBAAA,CAAAT,iBAAiB,CAACE,OAAO,UAAAO,qBAAA,WAAzBA,qBAAA,CAA2BL,OAAO,CAAC,SAACC,EAAE,CAAEC,EAAE,CAAEC,KAAK,CAAEC,MAAM,CAAK,CAC5DT,eAAe,CAACQ,KAAK,CAAEC,MAAM,CAAEZ,KAAK,CAAC,CACvC,CAAC,CAAC,CACJ,CACF\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var _worklet_1735733851648_init_data = {
-    code: "function reactNativeGestureHandler_PressableTsx6(){const{Platform,isTouchPropagationAllowed,deferredEventPayload,hasPassedBoundsChecks,pressInHandler,pressOutHandler,shouldPreventNativeEffects,handlingOnTouchesDown}=this.__closure;if(Platform.OS==='web'){isTouchPropagationAllowed.current=true;}if(Platform.OS!=='ios'){return;}if(deferredEventPayload.current){isTouchPropagationAllowed.current=true;if(hasPassedBoundsChecks.current){pressInHandler(deferredEventPayload.current);deferredEventPayload.current=null;}else{pressOutHandler(deferredEventPayload.current);isTouchPropagationAllowed.current=false;}return;}if(hasPassedBoundsChecks.current){isTouchPropagationAllowed.current=true;return;}if(shouldPreventNativeEffects.current){shouldPreventNativeEffects.current=false;if(!handlingOnTouchesDown.current){return;}}isTouchPropagationAllowed.current=true;}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/Pressable/Pressable.tsx",
-    sourceMap: "{\"version\":3,\"names\":[\"reactNativeGestureHandler_PressableTsx6\",\"Platform\",\"isTouchPropagationAllowed\",\"deferredEventPayload\",\"hasPassedBoundsChecks\",\"pressInHandler\",\"pressOutHandler\",\"shouldPreventNativeEffects\",\"handlingOnTouchesDown\",\"__closure\",\"OS\",\"current\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/Pressable/Pressable.tsx\"],\"mappings\":\"AAiWmB,SAAAA,uCAAMA,CAAA,QAAAC,QAAA,CAAAC,yBAAA,CAAAC,oBAAA,CAAAC,qBAAA,CAAAC,cAAA,CAAAC,eAAA,CAAAC,0BAAA,CAAAC,qBAAA,OAAAC,SAAA,CACb,GAAIR,QAAQ,CAACS,EAAE,GAAK,KAAK,CAAE,CACzBR,yBAAyB,CAACS,OAAO,CAAG,IAAI,CAC1C,CAGA,GAAIV,QAAQ,CAACS,EAAE,GAAK,KAAK,CAAE,CACzB,OACF,CAEA,GAAIP,oBAAoB,CAACQ,OAAO,CAAE,CAChCT,yBAAyB,CAACS,OAAO,CAAG,IAAI,CAExC,GAAIP,qBAAqB,CAACO,OAAO,CAAE,CACjCN,cAAc,CAACF,oBAAoB,CAACQ,OAAO,CAAC,CAC5CR,oBAAoB,CAACQ,OAAO,CAAG,IAAI,CACrC,CAAC,IAAM,CACLL,eAAe,CAACH,oBAAoB,CAACQ,OAAO,CAAC,CAC7CT,yBAAyB,CAACS,OAAO,CAAG,KAAK,CAC3C,CAEA,OACF,CAEA,GAAIP,qBAAqB,CAACO,OAAO,CAAE,CACjCT,yBAAyB,CAACS,OAAO,CAAG,IAAI,CACxC,OACF,CAEA,GAAIJ,0BAA0B,CAACI,OAAO,CAAE,CACtCJ,0BAA0B,CAACI,OAAO,CAAG,KAAK,CAC1C,GAAI,CAACH,qBAAqB,CAACG,OAAO,CAAE,CAClC,OACF,CACF,CAEAT,yBAAyB,CAACS,OAAO,CAAG,IAAI,CAC1C\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var _worklet_13524148894367_init_data = {
-    code: "function reactNativeGestureHandler_PressableTsx7(){const{Platform,isTouchPropagationAllowed}=this.__closure;if(Platform.OS==='android'||Platform.OS==='macos'){isTouchPropagationAllowed.current=true;}}",
-    location: "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/Pressable/Pressable.tsx",
-    sourceMap: "{\"version\":3,\"names\":[\"reactNativeGestureHandler_PressableTsx7\",\"Platform\",\"isTouchPropagationAllowed\",\"__closure\",\"OS\",\"current\"],\"sources\":[\"/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/Pressable/Pressable.tsx\"],\"mappings\":\"AA2VmB,SAAAA,uCAAMA,CAAA,QAAAC,QAAA,CAAAC,yBAAA,OAAAC,SAAA,CAEb,GAAIF,QAAQ,CAACG,EAAE,GAAK,SAAS,EAAIH,QAAQ,CAACG,EAAE,GAAK,OAAO,CAAE,CACxDF,yBAAyB,CAACG,OAAO,CAAG,IAAI,CAC1C,CACF\",\"ignoreList\":[]}",
-    version: "3.18.0"
-  };
-  var Pressable = (0, _react.forwardRef)(function (props, pressableRef) {
-    var _android_ripple$radiu;
-    var testOnly_pressed = props.testOnly_pressed,
-      hitSlop = props.hitSlop,
-      pressRetentionOffset = props.pressRetentionOffset,
-      delayHoverIn = props.delayHoverIn,
-      onHoverIn = props.onHoverIn,
-      delayHoverOut = props.delayHoverOut,
-      onHoverOut = props.onHoverOut,
-      delayLongPress = props.delayLongPress,
-      unstable_pressDelay = props.unstable_pressDelay,
-      onPress = props.onPress,
-      onPressIn = props.onPressIn,
-      onPressOut = props.onPressOut,
-      onLongPress = props.onLongPress,
-      style = props.style,
-      children = props.children,
-      android_disableSound = props.android_disableSound,
-      android_ripple = props.android_ripple,
-      disabled = props.disabled,
-      accessible = props.accessible,
-      remainingProps = (0, _objectWithoutProperties2.default)(props, _excluded);
-    var _useState = (0, _react.useState)(testOnly_pressed != null ? testOnly_pressed : false),
-      _useState2 = (0, _slicedToArray2.default)(_useState, 2),
-      pressedState = _useState2[0],
-      setPressedState = _useState2[1];
-
-    // Disabled when onLongPress has been called
-    var isPressCallbackEnabled = (0, _react.useRef)(true);
-    var hasPassedBoundsChecks = (0, _react.useRef)(false);
-    var shouldPreventNativeEffects = (0, _react.useRef)(false);
-    var normalizedHitSlop = (0, _react.useMemo)(function () {
-      return typeof hitSlop === 'number' ? (0, _$$_REQUIRE(_dependencyMap[7], "./utils").numberAsInset)(hitSlop) : hitSlop != null ? hitSlop : {};
-    }, [hitSlop]);
-    var normalizedPressRetentionOffset = (0, _react.useMemo)(function () {
-      return typeof pressRetentionOffset === 'number' ? (0, _$$_REQUIRE(_dependencyMap[7], "./utils").numberAsInset)(pressRetentionOffset) : pressRetentionOffset != null ? pressRetentionOffset : {};
-    }, [pressRetentionOffset]);
-    var hoverInTimeout = (0, _react.useRef)(null);
-    var hoverOutTimeout = (0, _react.useRef)(null);
-    var hoverGesture = (0, _react.useMemo)(function () {
-      return _$$_REQUIRE(_dependencyMap[8], "../../handlers/gestures/gestureObjects").GestureObjects.Hover().manualActivation(true) // Stops Hover from blocking Native gesture activation on web
-      .cancelsTouchesInView(false).onBegin(function () {
-        var _e = [new global.Error(), -8, -27];
-        var reactNativeGestureHandler_PressableTsx2 = function reactNativeGestureHandler_PressableTsx2(event) {
-          if (hoverOutTimeout.current) {
-            clearTimeout(hoverOutTimeout.current);
-          }
-          if (delayHoverIn) {
-            hoverInTimeout.current = setTimeout(function () {
-              return onHoverIn == null ? void 0 : onHoverIn((0, _$$_REQUIRE(_dependencyMap[7], "./utils").gestureToPressableEvent)(event));
-            }, delayHoverIn);
-            return;
-          }
-          onHoverIn == null || onHoverIn((0, _$$_REQUIRE(_dependencyMap[7], "./utils").gestureToPressableEvent)(event));
-        };
-        reactNativeGestureHandler_PressableTsx2.__closure = {
-          hoverOutTimeout: hoverOutTimeout,
-          clearTimeout: clearTimeout,
-          delayHoverIn: delayHoverIn,
-          hoverInTimeout: hoverInTimeout,
-          setTimeout: setTimeout,
-          onHoverIn: onHoverIn,
-          gestureToPressableEvent: _$$_REQUIRE(_dependencyMap[7], "./utils").gestureToPressableEvent
-        };
-        reactNativeGestureHandler_PressableTsx2.__workletHash = 11606659186113;
-        reactNativeGestureHandler_PressableTsx2.__initData = _worklet_11606659186113_init_data;
-        reactNativeGestureHandler_PressableTsx2.__stackDetails = _e;
-        return reactNativeGestureHandler_PressableTsx2;
-      }()).onFinalize(function () {
-        var _e = [new global.Error(), -8, -27];
-        var reactNativeGestureHandler_PressableTsx1 = function reactNativeGestureHandler_PressableTsx1(event) {
-          if (hoverInTimeout.current) {
-            clearTimeout(hoverInTimeout.current);
-          }
-          if (delayHoverOut) {
-            hoverOutTimeout.current = setTimeout(function () {
-              return onHoverOut == null ? void 0 : onHoverOut((0, _$$_REQUIRE(_dependencyMap[7], "./utils").gestureToPressableEvent)(event));
-            }, delayHoverOut);
-            return;
-          }
-          onHoverOut == null || onHoverOut((0, _$$_REQUIRE(_dependencyMap[7], "./utils").gestureToPressableEvent)(event));
-        };
-        reactNativeGestureHandler_PressableTsx1.__closure = {
-          hoverInTimeout: hoverInTimeout,
-          clearTimeout: clearTimeout,
-          delayHoverOut: delayHoverOut,
-          hoverOutTimeout: hoverOutTimeout,
-          setTimeout: setTimeout,
-          onHoverOut: onHoverOut,
-          gestureToPressableEvent: _$$_REQUIRE(_dependencyMap[7], "./utils").gestureToPressableEvent
-        };
-        reactNativeGestureHandler_PressableTsx1.__workletHash = 4292053914731;
-        reactNativeGestureHandler_PressableTsx1.__initData = _worklet_4292053914731_init_data;
-        reactNativeGestureHandler_PressableTsx1.__stackDetails = _e;
-        return reactNativeGestureHandler_PressableTsx1;
-      }());
-    }, [delayHoverIn, delayHoverOut, onHoverIn, onHoverOut]);
-    var pressDelayTimeoutRef = (0, _react.useRef)(null);
-    var isTouchPropagationAllowed = (0, _react.useRef)(false);
-
-    // iOS only: due to varying flow of gestures, events sometimes have to be saved for later use
-    var deferredEventPayload = (0, _react.useRef)(null);
-    var pressInHandler = (0, _react.useCallback)(function (event) {
-      if (handlingOnTouchesDown.current) {
-        deferredEventPayload.current = event;
-      }
-      if (!isTouchPropagationAllowed.current) {
-        return;
-      }
-      deferredEventPayload.current = null;
-      onPressIn == null || onPressIn(event);
-      isPressCallbackEnabled.current = true;
-      pressDelayTimeoutRef.current = null;
-      setPressedState(true);
-    }, [onPressIn]);
-    var pressOutHandler = (0, _react.useCallback)(function (event) {
-      if (!isTouchPropagationAllowed.current) {
-        hasPassedBoundsChecks.current = false;
-        isPressCallbackEnabled.current = true;
-        deferredEventPayload.current = null;
-        if (longPressTimeoutRef.current) {
-          clearTimeout(longPressTimeoutRef.current);
-          longPressTimeoutRef.current = null;
-        }
-        if (pressDelayTimeoutRef.current) {
-          clearTimeout(pressDelayTimeoutRef.current);
-          pressDelayTimeoutRef.current = null;
-        }
-        return;
-      }
-      if (!hasPassedBoundsChecks.current || event.nativeEvent.touches.length > event.nativeEvent.changedTouches.length) {
-        return;
-      }
-      if (unstable_pressDelay && pressDelayTimeoutRef.current !== null) {
-        // When delay is preemptively finished by lifting touches,
-        // we want to immediately activate it's effects - pressInHandler,
-        // even though we are located at the pressOutHandler
-        clearTimeout(pressDelayTimeoutRef.current);
-        pressInHandler(event);
-      }
-      if (deferredEventPayload.current) {
-        onPressIn == null || onPressIn(deferredEventPayload.current);
-        deferredEventPayload.current = null;
-      }
-      onPressOut == null || onPressOut(event);
-      if (isPressCallbackEnabled.current) {
-        onPress == null || onPress(event);
-      }
-      if (longPressTimeoutRef.current) {
-        clearTimeout(longPressTimeoutRef.current);
-        longPressTimeoutRef.current = null;
-      }
-      isTouchPropagationAllowed.current = false;
-      hasPassedBoundsChecks.current = false;
-      isPressCallbackEnabled.current = true;
-      setPressedState(false);
-    }, [onPress, onPressIn, onPressOut, pressInHandler, unstable_pressDelay]);
-    var handlingOnTouchesDown = (0, _react.useRef)(false);
-    var onEndHandlingTouchesDown = (0, _react.useRef)(null);
-    var cancelledMidPress = (0, _react.useRef)(false);
-    var activateLongPress = (0, _react.useCallback)(function (event) {
-      if (!isTouchPropagationAllowed.current) {
-        return;
-      }
-      if (hasPassedBoundsChecks.current) {
-        onLongPress == null || onLongPress((0, _$$_REQUIRE(_dependencyMap[7], "./utils").gestureTouchToPressableEvent)(event));
-        isPressCallbackEnabled.current = false;
-      }
-      if (longPressTimeoutRef.current) {
-        clearTimeout(longPressTimeoutRef.current);
-        longPressTimeoutRef.current = null;
-      }
-    }, [onLongPress]);
-    var longPressTimeoutRef = (0, _react.useRef)(null);
-    var longPressMinDuration = (delayLongPress != null ? delayLongPress : DEFAULT_LONG_PRESS_DURATION) + (unstable_pressDelay != null ? unstable_pressDelay : 0);
-    var innerPressableRef = (0, _react.useRef)(null);
-    var measureCallback = (0, _react.useCallback)(function (width, height, event) {
-      if (!(0, _$$_REQUIRE(_dependencyMap[7], "./utils").isTouchWithinInset)({
-        width: width,
-        height: height
-      }, normalizedHitSlop, event.changedTouches.at(-1)) || hasPassedBoundsChecks.current || cancelledMidPress.current) {
-        cancelledMidPress.current = false;
-        onEndHandlingTouchesDown.current = null;
-        handlingOnTouchesDown.current = false;
-        return;
-      }
-      hasPassedBoundsChecks.current = true;
-
-      // In case of multiple touches, the first one starts long press gesture
-      if (longPressTimeoutRef.current === null) {
-        // Start long press gesture timer
-        longPressTimeoutRef.current = setTimeout(function () {
-          return activateLongPress(event);
-        }, longPressMinDuration);
-      }
-      if (unstable_pressDelay) {
-        pressDelayTimeoutRef.current = setTimeout(function () {
-          pressInHandler((0, _$$_REQUIRE(_dependencyMap[7], "./utils").gestureTouchToPressableEvent)(event));
-        }, unstable_pressDelay);
-      } else {
-        pressInHandler((0, _$$_REQUIRE(_dependencyMap[7], "./utils").gestureTouchToPressableEvent)(event));
-      }
-      onEndHandlingTouchesDown.current == null || onEndHandlingTouchesDown.current();
-      onEndHandlingTouchesDown.current = null;
-      handlingOnTouchesDown.current = false;
-    }, [activateLongPress, longPressMinDuration, normalizedHitSlop, pressInHandler, unstable_pressDelay]);
-    var pressAndTouchGesture = (0, _react.useMemo)(function () {
-      return _$$_REQUIRE(_dependencyMap[8], "../../handlers/gestures/gestureObjects").GestureObjects.LongPress().minDuration(_$$_REQUIRE(_dependencyMap[6], "../../utils").INT32_MAX) // Stops long press from blocking native gesture
-      .maxDistance(_$$_REQUIRE(_dependencyMap[6], "../../utils").INT32_MAX) // Stops long press from cancelling after set distance
-      .cancelsTouchesInView(false).onTouchesDown(function () {
-        var _e = [new global.Error(), -5, -27];
-        var reactNativeGestureHandler_PressableTsx5 = function reactNativeGestureHandler_PressableTsx5(event) {
-          handlingOnTouchesDown.current = true;
-          if (pressableRef) {
-            var _current;
-            (_current = pressableRef.current) == null || _current.measure(function (_x, _y, width, height) {
-              measureCallback(width, height, event);
-            });
-          } else {
-            var _innerPressableRef$cu;
-            (_innerPressableRef$cu = innerPressableRef.current) == null || _innerPressableRef$cu.measure(function (_x, _y, width, height) {
-              measureCallback(width, height, event);
-            });
-          }
-        };
-        reactNativeGestureHandler_PressableTsx5.__closure = {
-          handlingOnTouchesDown: handlingOnTouchesDown,
-          pressableRef: pressableRef,
-          measureCallback: measureCallback,
-          innerPressableRef: innerPressableRef
-        };
-        reactNativeGestureHandler_PressableTsx5.__workletHash = 16714609347218;
-        reactNativeGestureHandler_PressableTsx5.__initData = _worklet_16714609347218_init_data;
-        reactNativeGestureHandler_PressableTsx5.__stackDetails = _e;
-        return reactNativeGestureHandler_PressableTsx5;
-      }()).onTouchesUp(function () {
-        var _e = [new global.Error(), -7, -27];
-        var reactNativeGestureHandler_PressableTsx4 = function reactNativeGestureHandler_PressableTsx4(event) {
-          if (handlingOnTouchesDown.current) {
-            onEndHandlingTouchesDown.current = function () {
-              return pressOutHandler((0, _$$_REQUIRE(_dependencyMap[7], "./utils").gestureTouchToPressableEvent)(event));
-            };
-            return;
-          }
-          // On iOS, short taps will make LongPress gesture call onTouchesUp before Native gesture calls onStart
-          // This variable ensures that onStart isn't detected as the first gesture since Pressable is pressed.
-          if (deferredEventPayload.current !== null) {
-            shouldPreventNativeEffects.current = true;
-          }
-          pressOutHandler((0, _$$_REQUIRE(_dependencyMap[7], "./utils").gestureTouchToPressableEvent)(event));
-        };
-        reactNativeGestureHandler_PressableTsx4.__closure = {
-          handlingOnTouchesDown: handlingOnTouchesDown,
-          onEndHandlingTouchesDown: onEndHandlingTouchesDown,
-          pressOutHandler: pressOutHandler,
-          gestureTouchToPressableEvent: _$$_REQUIRE(_dependencyMap[7], "./utils").gestureTouchToPressableEvent,
-          deferredEventPayload: deferredEventPayload,
-          shouldPreventNativeEffects: shouldPreventNativeEffects
-        };
-        reactNativeGestureHandler_PressableTsx4.__workletHash = 10644258899203;
-        reactNativeGestureHandler_PressableTsx4.__initData = _worklet_10644258899203_init_data;
-        reactNativeGestureHandler_PressableTsx4.__stackDetails = _e;
-        return reactNativeGestureHandler_PressableTsx4;
-      }()).onTouchesCancelled(function () {
-        var _e = [new global.Error(), -8, -27];
-        var reactNativeGestureHandler_PressableTsx3 = function reactNativeGestureHandler_PressableTsx3(event) {
-          isPressCallbackEnabled.current = false;
-          if (handlingOnTouchesDown.current) {
-            cancelledMidPress.current = true;
-            onEndHandlingTouchesDown.current = function () {
-              return pressOutHandler((0, _$$_REQUIRE(_dependencyMap[7], "./utils").gestureTouchToPressableEvent)(event));
-            };
-            return;
-          }
-          if (!hasPassedBoundsChecks.current || event.allTouches.length > event.changedTouches.length) {
-            return;
-          }
-          pressOutHandler((0, _$$_REQUIRE(_dependencyMap[7], "./utils").gestureTouchToPressableEvent)(event));
-        };
-        reactNativeGestureHandler_PressableTsx3.__closure = {
-          isPressCallbackEnabled: isPressCallbackEnabled,
-          handlingOnTouchesDown: handlingOnTouchesDown,
-          cancelledMidPress: cancelledMidPress,
-          onEndHandlingTouchesDown: onEndHandlingTouchesDown,
-          pressOutHandler: pressOutHandler,
-          gestureTouchToPressableEvent: _$$_REQUIRE(_dependencyMap[7], "./utils").gestureTouchToPressableEvent,
-          hasPassedBoundsChecks: hasPassedBoundsChecks
-        };
-        reactNativeGestureHandler_PressableTsx3.__workletHash = 13470448772419;
-        reactNativeGestureHandler_PressableTsx3.__initData = _worklet_13470448772419_init_data;
-        reactNativeGestureHandler_PressableTsx3.__stackDetails = _e;
-        return reactNativeGestureHandler_PressableTsx3;
-      }());
-    }, [pressableRef, measureCallback, pressOutHandler]);
-
-    // RNButton is placed inside ButtonGesture to enable Android's ripple and to capture non-propagating events
-    var buttonGesture = (0, _react.useMemo)(function () {
-      return _$$_REQUIRE(_dependencyMap[8], "../../handlers/gestures/gestureObjects").GestureObjects.Native().onBegin(function () {
-        var _e = [new global.Error(), -3, -27];
-        var reactNativeGestureHandler_PressableTsx7 = function reactNativeGestureHandler_PressableTsx7() {
-          // Android sets BEGAN state on press down
-          if (_reactNative.Platform.OS === 'android' || _reactNative.Platform.OS === 'macos') {
-            isTouchPropagationAllowed.current = true;
-          }
-        };
-        reactNativeGestureHandler_PressableTsx7.__closure = {
-          Platform: _reactNative.Platform,
-          isTouchPropagationAllowed: isTouchPropagationAllowed
-        };
-        reactNativeGestureHandler_PressableTsx7.__workletHash = 13524148894367;
-        reactNativeGestureHandler_PressableTsx7.__initData = _worklet_13524148894367_init_data;
-        reactNativeGestureHandler_PressableTsx7.__stackDetails = _e;
-        return reactNativeGestureHandler_PressableTsx7;
-      }()).onStart(function () {
-        var _e = [new global.Error(), -9, -27];
-        var reactNativeGestureHandler_PressableTsx6 = function reactNativeGestureHandler_PressableTsx6() {
-          if (_reactNative.Platform.OS === 'web') {
-            isTouchPropagationAllowed.current = true;
-          }
-
-          // iOS sets ACTIVE state on press down
-          if (_reactNative.Platform.OS !== 'ios') {
-            return;
-          }
-          if (deferredEventPayload.current) {
-            isTouchPropagationAllowed.current = true;
-            if (hasPassedBoundsChecks.current) {
-              pressInHandler(deferredEventPayload.current);
-              deferredEventPayload.current = null;
-            } else {
-              pressOutHandler(deferredEventPayload.current);
-              isTouchPropagationAllowed.current = false;
-            }
-            return;
-          }
-          if (hasPassedBoundsChecks.current) {
-            isTouchPropagationAllowed.current = true;
-            return;
-          }
-          if (shouldPreventNativeEffects.current) {
-            shouldPreventNativeEffects.current = false;
-            if (!handlingOnTouchesDown.current) {
-              return;
-            }
-          }
-          isTouchPropagationAllowed.current = true;
-        };
-        reactNativeGestureHandler_PressableTsx6.__closure = {
-          Platform: _reactNative.Platform,
-          isTouchPropagationAllowed: isTouchPropagationAllowed,
-          deferredEventPayload: deferredEventPayload,
-          hasPassedBoundsChecks: hasPassedBoundsChecks,
-          pressInHandler: pressInHandler,
-          pressOutHandler: pressOutHandler,
-          shouldPreventNativeEffects: shouldPreventNativeEffects,
-          handlingOnTouchesDown: handlingOnTouchesDown
-        };
-        reactNativeGestureHandler_PressableTsx6.__workletHash = 1735733851648;
-        reactNativeGestureHandler_PressableTsx6.__initData = _worklet_1735733851648_init_data;
-        reactNativeGestureHandler_PressableTsx6.__stackDetails = _e;
-        return reactNativeGestureHandler_PressableTsx6;
-      }());
-    }, [pressInHandler, pressOutHandler]);
-    var appliedHitSlop = (0, _$$_REQUIRE(_dependencyMap[7], "./utils").addInsets)(normalizedHitSlop, normalizedPressRetentionOffset);
-    var isPressableEnabled = disabled !== true;
-    var gestures = [buttonGesture, pressAndTouchGesture, hoverGesture];
-    for (var _gesture of gestures) {
-      _gesture.enabled(isPressableEnabled);
-      _gesture.runOnJS(true);
-      _gesture.hitSlop(appliedHitSlop);
-      _gesture.shouldCancelWhenOutside(_reactNative.Platform.OS === 'web' ? false : true);
-    }
-
-    // Uses different hitSlop, to activate on hitSlop area instead of pressRetentionOffset area
-    buttonGesture.hitSlop(normalizedHitSlop);
-    var gesture = _$$_REQUIRE(_dependencyMap[8], "../../handlers/gestures/gestureObjects").GestureObjects.Simultaneous.apply(_$$_REQUIRE(_dependencyMap[8], "../../handlers/gestures/gestureObjects").GestureObjects, gestures);
-
-    // `cursor: 'pointer'` on `RNButton` crashes iOS
-    var pointerStyle = _reactNative.Platform.OS === 'web' ? {
-      cursor: 'pointer'
-    } : {};
-    var styleProp = typeof style === 'function' ? style({
-      pressed: pressedState
-    }) : style;
-    var childrenProp = typeof children === 'function' ? children({
-      pressed: pressedState
-    }) : children;
-    var rippleColor = (0, _react.useMemo)(function () {
-      var _android_ripple$color;
-      if (IS_FABRIC === null) {
-        IS_FABRIC = (0, _$$_REQUIRE(_dependencyMap[6], "../../utils").isFabric)();
-      }
-      var defaultRippleColor = android_ripple ? undefined : 'transparent';
-      var unprocessedRippleColor = (_android_ripple$color = android_ripple == null ? void 0 : android_ripple.color) != null ? _android_ripple$color : defaultRippleColor;
-      return IS_FABRIC ? unprocessedRippleColor : (0, _reactNative.processColor)(unprocessedRippleColor);
-    }, [android_ripple]);
-    return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[9], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[10], "../../handlers/gestures/GestureDetector").GestureDetector, {
-      gesture: gesture,
-      children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[9], "react/jsx-runtime").jsxs)(_GestureHandlerButton.default, Object.assign({}, remainingProps, {
-        ref: pressableRef != null ? pressableRef : innerPressableRef,
-        accessible: accessible !== false,
-        hitSlop: appliedHitSlop,
-        enabled: isPressableEnabled,
-        touchSoundDisabled: android_disableSound != null ? android_disableSound : undefined,
-        rippleColor: rippleColor,
-        rippleRadius: (_android_ripple$radiu = android_ripple == null ? void 0 : android_ripple.radius) != null ? _android_ripple$radiu : undefined,
-        style: [pointerStyle, styleProp],
-        testOnly_onPress: IS_TEST_ENV ? onPress : undefined,
-        testOnly_onPressIn: IS_TEST_ENV ? onPressIn : undefined,
-        testOnly_onPressOut: IS_TEST_ENV ? onPressOut : undefined,
-        testOnly_onLongPress: IS_TEST_ENV ? onLongPress : undefined,
-        children: [childrenProp, __DEV__ ? /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[9], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[11], "../../handlers/PressabilityDebugView").PressabilityDebugView, {
-          color: "red",
-          hitSlop: normalizedHitSlop
-        }) : null]
-      }))
-    });
-  });
-  var _default = exports.default = Pressable;
-},898,[8,27,153,86,1,651,641,899,658,92,671,649],"node_modules/react-native-gesture-handler/src/components/Pressable/Pressable.tsx");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.numberAsInset = exports.isTouchWithinInset = exports.gestureTouchToPressableEvent = exports.gestureToPressableEvent = exports.addInsets = void 0;
-  var numberAsInset = exports.numberAsInset = function numberAsInset(value) {
-    return {
-      left: value,
-      right: value,
-      top: value,
-      bottom: value
-    };
-  };
-  var addInsets = exports.addInsets = function addInsets(a, b) {
-    var _a$left, _b$left, _a$right, _b$right, _a$top, _b$top, _a$bottom, _b$bottom;
-    return {
-      left: ((_a$left = a.left) != null ? _a$left : 0) + ((_b$left = b.left) != null ? _b$left : 0),
-      right: ((_a$right = a.right) != null ? _a$right : 0) + ((_b$right = b.right) != null ? _b$right : 0),
-      top: ((_a$top = a.top) != null ? _a$top : 0) + ((_b$top = b.top) != null ? _b$top : 0),
-      bottom: ((_a$bottom = a.bottom) != null ? _a$bottom : 0) + ((_b$bottom = b.bottom) != null ? _b$bottom : 0)
-    };
-  };
-  var touchDataToPressEvent = function touchDataToPressEvent(data, timestamp, targetId) {
-    return {
-      identifier: data.id,
-      locationX: data.x,
-      locationY: data.y,
-      pageX: data.absoluteX,
-      pageY: data.absoluteY,
-      target: targetId,
-      timestamp: timestamp,
-      touches: [],
-      // Always empty - legacy compatibility
-      changedTouches: [] // Always empty - legacy compatibility
-    };
-  };
-  var gestureToPressEvent = function gestureToPressEvent(event, timestamp, targetId) {
-    return {
-      identifier: event.handlerTag,
-      locationX: event.x,
-      locationY: event.y,
-      pageX: event.absoluteX,
-      pageY: event.absoluteY,
-      target: targetId,
-      timestamp: timestamp,
-      touches: [],
-      // Always empty - legacy compatibility
-      changedTouches: [] // Always empty - legacy compatibility
-    };
-  };
-  var isTouchWithinInset = exports.isTouchWithinInset = function isTouchWithinInset(dimensions, inset, touch) {
-    var _touch$x, _inset$right, _touch$y, _inset$bottom, _touch$x2, _inset$left, _touch$y2, _inset$top;
-    return ((_touch$x = touch == null ? void 0 : touch.x) != null ? _touch$x : 0) < ((_inset$right = inset.right) != null ? _inset$right : 0) + dimensions.width && ((_touch$y = touch == null ? void 0 : touch.y) != null ? _touch$y : 0) < ((_inset$bottom = inset.bottom) != null ? _inset$bottom : 0) + dimensions.height && ((_touch$x2 = touch == null ? void 0 : touch.x) != null ? _touch$x2 : 0) > -((_inset$left = inset.left) != null ? _inset$left : 0) && ((_touch$y2 = touch == null ? void 0 : touch.y) != null ? _touch$y2 : 0) > -((_inset$top = inset.top) != null ? _inset$top : 0);
-  };
-  var gestureToPressableEvent = exports.gestureToPressableEvent = function gestureToPressableEvent(event) {
-    var timestamp = Date.now();
-
-    // As far as I can see, there isn't a conventional way of getting targetId with the data we get
-    var targetId = 0;
-    var pressEvent = gestureToPressEvent(event, timestamp, targetId);
-    return {
-      nativeEvent: {
-        touches: [pressEvent],
-        changedTouches: [pressEvent],
-        identifier: pressEvent.identifier,
-        locationX: event.x,
-        locationY: event.y,
-        pageX: event.absoluteX,
-        pageY: event.absoluteY,
-        target: targetId,
-        timestamp: timestamp,
-        force: undefined
-      }
-    };
-  };
-  var gestureTouchToPressableEvent = exports.gestureTouchToPressableEvent = function gestureTouchToPressableEvent(event) {
-    var _event$allTouches$at$, _event$allTouches$at, _event$allTouches$at$2, _event$allTouches$at2, _event$allTouches$at$3, _event$allTouches$at3, _event$allTouches$at$4, _event$allTouches$at4;
-    var timestamp = Date.now();
-
-    // As far as I can see, there isn't a conventional way of getting targetId with the data we get
-    var targetId = 0;
-    var touchesList = event.allTouches.map(function (touch) {
-      return touchDataToPressEvent(touch, timestamp, targetId);
-    });
-    var changedTouchesList = event.changedTouches.map(function (touch) {
-      return touchDataToPressEvent(touch, timestamp, targetId);
-    });
-    return {
-      nativeEvent: {
-        touches: touchesList,
-        changedTouches: changedTouchesList,
-        identifier: event.handlerTag,
-        locationX: (_event$allTouches$at$ = (_event$allTouches$at = event.allTouches.at(0)) == null ? void 0 : _event$allTouches$at.x) != null ? _event$allTouches$at$ : -1,
-        locationY: (_event$allTouches$at$2 = (_event$allTouches$at2 = event.allTouches.at(0)) == null ? void 0 : _event$allTouches$at2.y) != null ? _event$allTouches$at$2 : -1,
-        pageX: (_event$allTouches$at$3 = (_event$allTouches$at3 = event.allTouches.at(0)) == null ? void 0 : _event$allTouches$at3.absoluteX) != null ? _event$allTouches$at$3 : -1,
-        pageY: (_event$allTouches$at$4 = (_event$allTouches$at4 = event.allTouches.at(0)) == null ? void 0 : _event$allTouches$at4.absoluteY) != null ? _event$allTouches$at$4 : -1,
-        target: targetId,
-        timestamp: timestamp,
-        force: undefined
-      }
-    };
-  };
-},899,[],"node_modules/react-native-gesture-handler/src/components/Pressable/utils.ts");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
-  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
-  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/possibleConstructorReturn"));
-  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/getPrototypeOf"));
-  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[6], "react"));
-  var React = _react;
-  var _invariant = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[7], "invariant"));
-  var _reactNative = _$$_REQUIRE(_dependencyMap[8], "react-native");
-  var _jsxFileName = "/Users/chenhaoyue/Documents/code/RNThridParty/FabricComponentSample/ReactProject77/node_modules/react-native-gesture-handler/src/components/DrawerLayout.tsx";
-  function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-  function _callSuper(t, o, e) { return o = (0, _getPrototypeOf2.default)(o), (0, _possibleConstructorReturn2.default)(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], (0, _getPrototypeOf2.default)(t).constructor) : o.apply(t, e)); }
-  function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); } // This component is based on RN's DrawerLayoutAndroid API
-  //
-  // It perhaps deserves to be put in a separate repo, but since it relies on
-  // react-native-gesture-handler library which isn't very popular at the moment I
-  // decided to keep it here for the time being. It will allow us to move faster
-  // and fix issues that may arise in gesture handler library that could be found
-  // when using the drawer component
-  var DRAG_TOSS = 0.05;
-  var IDLE = 'Idle';
-  var DRAGGING = 'Dragging';
-  var SETTLING = 'Settling';
-
-  /**
-   * @deprecated DrawerLayout is deprecated. Use Reanimated version of DrawerLayout instead.
-   */
-
-  /**
-   * @deprecated DrawerLayout is deprecated. Use Reanimated version of DrawerLayout instead.
-   */
-
-  /**
-   * @deprecated DrawerLayout is deprecated. Use Reanimated version of DrawerLayout instead.
-   */
-
-  /**
-   * @deprecated DrawerLayout is deprecated. Use Reanimated version of DrawerLayout instead.
-   */
-
-  /**
-   * @deprecated DrawerLayout is deprecated. Use Reanimated version of DrawerLayout instead.
-   */
-
-  // Animated.AnimatedInterpolation has been converted to a generic type
-  // in @types/react-native 0.70. This way we can maintain compatibility
-  // with all versions of @types/react-native`
-
-  /**
-   * @deprecated DrawerLayout is deprecated. Use Reanimated version of DrawerLayout instead.
-   */
-
-  /**
-   * @deprecated DrawerLayout is deprecated. Use Reanimated version of DrawerLayout instead.
-   */
-
-  /**
-   * @deprecated DrawerLayout is deprecated. Use Reanimated version of DrawerLayout instead.
-   */
-  /**
-   * @deprecated use Reanimated version of DrawerLayout instead
-   */
-  var DrawerLayout = exports.default = /*#__PURE__*/function (_Component) {
-    function DrawerLayout(_props) {
-      var _this;
-      (0, _classCallCheck2.default)(this, DrawerLayout);
-      _this = _callSuper(this, DrawerLayout, [_props]);
-      _this.accessibilityIsModalView = React.createRef();
-      _this.pointerEventsView = React.createRef();
-      _this.panGestureHandler = React.createRef();
-      _this.drawerShown = false;
-      _this.updateAnimatedEvent = function (props, state) {
-        // Event definition is based on
-        var drawerPosition = props.drawerPosition,
-          drawerWidth = props.drawerWidth,
-          drawerType = props.drawerType;
-        var dragXValue = state.dragX,
-          touchXValue = state.touchX,
-          drawerTranslation = state.drawerTranslation,
-          containerWidth = state.containerWidth;
-        var dragX = dragXValue;
-        var touchX = touchXValue;
-        if (drawerPosition !== 'left') {
-          // Most of the code is written in a way to handle left-side drawer. In
-          // order to handle right-side drawer the only thing we need to do is to
-          // reverse events coming from gesture handler in a way they emulate
-          // left-side drawer gestures. E.g. dragX is simply -dragX, and touchX is
-          // calulcated by subtracing real touchX from the width of the container
-          // (such that when touch happens at the right edge the value is simply 0)
-          dragX = _reactNative.Animated.multiply(new _reactNative.Animated.Value(-1), dragXValue); // TODO(TS): (for all "as" in this file) make sure we can map this
-          touchX = _reactNative.Animated.add(new _reactNative.Animated.Value(containerWidth), _reactNative.Animated.multiply(new _reactNative.Animated.Value(-1), touchXValue)); // TODO(TS): make sure we can map this;
-          touchXValue.setValue(containerWidth);
-        } else {
-          touchXValue.setValue(0);
-        }
-
-        // While closing the drawer when user starts gesture outside of its area (in greyed
-        // out part of the window), we want the drawer to follow only once finger reaches the
-        // edge of the drawer.
-        // E.g. on the diagram below drawer is illustrate by X signs and the greyed out area by
-        // dots. The touch gesture starts at '*' and moves left, touch path is indicated by
-        // an arrow pointing left
-        // 1) +---------------+ 2) +---------------+ 3) +---------------+ 4) +---------------+
-        //    |XXXXXXXX|......|    |XXXXXXXX|......|    |XXXXXXXX|......|    |XXXXX|.........|
-        //    |XXXXXXXX|......|    |XXXXXXXX|......|    |XXXXXXXX|......|    |XXXXX|.........|
-        //    |XXXXXXXX|......|    |XXXXXXXX|......|    |XXXXXXXX|......|    |XXXXX|.........|
-        //    |XXXXXXXX|......|    |XXXXXXXX|.<-*..|    |XXXXXXXX|<--*..|    |XXXXX|<-----*..|
-        //    |XXXXXXXX|......|    |XXXXXXXX|......|    |XXXXXXXX|......|    |XXXXX|.........|
-        //    |XXXXXXXX|......|    |XXXXXXXX|......|    |XXXXXXXX|......|    |XXXXX|.........|
-        //    |XXXXXXXX|......|    |XXXXXXXX|......|    |XXXXXXXX|......|    |XXXXX|.........|
-        //    +---------------+    +---------------+    +---------------+    +---------------+
-        //
-        // For the above to work properly we define animated value that will keep
-        // start position of the gesture. Then we use that value to calculate how
-        // much we need to subtract from the dragX. If the gesture started on the
-        // greyed out area we take the distance from the edge of the drawer to the
-        // start position. Otherwise we don't subtract at all and the drawer be
-        // pulled back as soon as you start the pan.
-        //
-        // This is used only when drawerType is "front"
-        //
-        var translationX = dragX;
-        if (drawerType === 'front') {
-          var startPositionX = _reactNative.Animated.add(touchX, _reactNative.Animated.multiply(new _reactNative.Animated.Value(-1), dragX));
-          var dragOffsetFromOnStartPosition = startPositionX.interpolate({
-            inputRange: [drawerWidth - 1, drawerWidth, drawerWidth + 1],
-            outputRange: [0, 0, 1]
-          });
-          translationX = _reactNative.Animated.add(dragX, dragOffsetFromOnStartPosition); // TODO: as above
-        }
-        _this.openValue = _reactNative.Animated.add(translationX, drawerTranslation).interpolate({
-          inputRange: [0, drawerWidth],
-          outputRange: [0, 1],
-          extrapolate: 'clamp'
-        });
-        var gestureOptions = {
-          useNativeDriver: props.useNativeAnimations
-        };
-        if (_this.props.onDrawerSlide) {
-          gestureOptions.listener = function (ev) {
-            var translationX = Math.floor(Math.abs(ev.nativeEvent.translationX));
-            var position = translationX / _this.state.containerWidth;
-            _this.props.onDrawerSlide == null || _this.props.onDrawerSlide(position);
-          };
-        }
-        _this.onGestureEvent = _reactNative.Animated.event([{
-          nativeEvent: {
-            translationX: dragXValue,
-            x: touchXValue
-          }
-        }], gestureOptions);
-      };
-      _this.handleContainerLayout = function (_ref) {
-        var nativeEvent = _ref.nativeEvent;
-        _this.setState({
-          containerWidth: nativeEvent.layout.width
-        });
-      };
-      _this.emitStateChanged = function (newState, drawerWillShow) {
-        _this.props.onDrawerStateChanged == null || _this.props.onDrawerStateChanged(newState, drawerWillShow);
-      };
-      _this.openingHandlerStateChange = function (_ref2) {
-        var nativeEvent = _ref2.nativeEvent;
-        if (nativeEvent.oldState === _$$_REQUIRE(_dependencyMap[9], "../State").State.ACTIVE) {
-          _this.handleRelease({
-            nativeEvent: nativeEvent
-          });
-        } else if (nativeEvent.state === _$$_REQUIRE(_dependencyMap[9], "../State").State.ACTIVE) {
-          _this.emitStateChanged(DRAGGING, false);
-          _this.setState({
-            drawerState: DRAGGING
-          });
-          if (_this.props.keyboardDismissMode === 'on-drag') {
-            _reactNative.Keyboard.dismiss();
-          }
-          if (_this.props.hideStatusBar) {
-            _reactNative.StatusBar.setHidden(true, _this.props.statusBarAnimation || 'slide');
-          }
-        }
-      };
-      _this.onTapHandlerStateChange = function (_ref3) {
-        var nativeEvent = _ref3.nativeEvent;
-        if (_this.drawerShown && nativeEvent.oldState === _$$_REQUIRE(_dependencyMap[9], "../State").State.ACTIVE && _this.props.drawerLockMode !== 'locked-open') {
-          _this.closeDrawer();
-        }
-      };
-      _this.handleRelease = function (_ref4) {
-        var nativeEvent = _ref4.nativeEvent;
-        var _this$props = _this.props,
-          drawerWidth = _this$props.drawerWidth,
-          drawerPosition = _this$props.drawerPosition,
-          drawerType = _this$props.drawerType;
-        var containerWidth = _this.state.containerWidth;
-        var dragX = nativeEvent.translationX,
-          velocityX = nativeEvent.velocityX,
-          touchX = nativeEvent.x;
-        if (drawerPosition !== 'left') {
-          // See description in _updateAnimatedEvent about why events are flipped
-          // for right-side drawer
-          dragX = -dragX;
-          touchX = containerWidth - touchX;
-          velocityX = -velocityX;
-        }
-        var gestureStartX = touchX - dragX;
-        var dragOffsetBasedOnStart = 0;
-        if (drawerType === 'front') {
-          dragOffsetBasedOnStart = gestureStartX > drawerWidth ? gestureStartX - drawerWidth : 0;
-        }
-        var startOffsetX = dragX + dragOffsetBasedOnStart + (_this.drawerShown ? drawerWidth : 0);
-        var projOffsetX = startOffsetX + DRAG_TOSS * velocityX;
-        var shouldOpen = projOffsetX > drawerWidth / 2;
-        if (shouldOpen) {
-          _this.animateDrawer(startOffsetX, drawerWidth, velocityX);
-        } else {
-          _this.animateDrawer(startOffsetX, 0, velocityX);
-        }
-      };
-      _this.updateShowing = function (showing) {
-        var _this$accessibilityIs, _this$pointerEventsVi, _this$panGestureHandl;
-        _this.drawerShown = showing;
-        (_this$accessibilityIs = _this.accessibilityIsModalView.current) == null || _this$accessibilityIs.setNativeProps({
-          accessibilityViewIsModal: showing
-        });
-        (_this$pointerEventsVi = _this.pointerEventsView.current) == null || _this$pointerEventsVi.setNativeProps({
-          pointerEvents: showing ? 'auto' : 'none'
-        });
-        var _this$props2 = _this.props,
-          drawerPosition = _this$props2.drawerPosition,
-          minSwipeDistance = _this$props2.minSwipeDistance,
-          edgeWidth = _this$props2.edgeWidth;
-        var fromLeft = drawerPosition === 'left';
-        // gestureOrientation is 1 if the expected gesture is from left to right and
-        // -1 otherwise e.g. when drawer is on the left and is closed we expect left
-        // to right gesture, thus orientation will be 1.
-        var gestureOrientation = (fromLeft ? 1 : -1) * (_this.drawerShown ? -1 : 1);
-        // When drawer is closed we want the hitSlop to be horizontally shorter than
-        // the container size by the value of SLOP. This will make it only activate
-        // when gesture happens not further than SLOP away from the edge
-        var hitSlop = fromLeft ? {
-          left: 0,
-          width: showing ? undefined : edgeWidth
-        } : {
-          right: 0,
-          width: showing ? undefined : edgeWidth
-        };
-        // @ts-ignore internal API, maybe could be fixed in handler types
-        (_this$panGestureHandl = _this.panGestureHandler.current) == null || _this$panGestureHandl.setNativeProps({
-          hitSlop: hitSlop,
-          activeOffsetX: gestureOrientation * minSwipeDistance
-        });
-      };
-      _this.animateDrawer = function (fromValue, toValue, velocity, speed) {
-        _this.state.dragX.setValue(0);
-        _this.state.touchX.setValue(_this.props.drawerPosition === 'left' ? 0 : _this.state.containerWidth);
-        if (fromValue != null) {
-          var nextFramePosition = fromValue;
-          if (_this.props.useNativeAnimations) {
-            // When using native driver, we predict the next position of the
-            // animation because it takes one frame of a roundtrip to pass RELEASE
-            // event from native driver to JS before we can start animating. Without
-            // it, it is more noticable that the frame is dropped.
-            if (fromValue < toValue && velocity > 0) {
-              nextFramePosition = Math.min(fromValue + velocity / 60.0, toValue);
-            } else if (fromValue > toValue && velocity < 0) {
-              nextFramePosition = Math.max(fromValue + velocity / 60.0, toValue);
-            }
-          }
-          _this.state.drawerTranslation.setValue(nextFramePosition);
-        }
-        var willShow = toValue !== 0;
-        _this.updateShowing(willShow);
-        _this.emitStateChanged(SETTLING, willShow);
-        _this.setState({
-          drawerState: SETTLING
-        });
-        if (_this.props.hideStatusBar) {
-          _reactNative.StatusBar.setHidden(willShow, _this.props.statusBarAnimation || 'slide');
-        }
-        _reactNative.Animated.spring(_this.state.drawerTranslation, {
-          velocity: velocity,
-          bounciness: 0,
-          toValue: toValue,
-          useNativeDriver: _this.props.useNativeAnimations,
-          speed: speed != null ? speed : undefined
-        }).start(function (_ref5) {
-          var finished = _ref5.finished;
-          if (finished) {
-            _this.emitStateChanged(IDLE, willShow);
-            _this.setState({
-              drawerOpened: willShow
-            });
-            if (_this.state.drawerState !== DRAGGING) {
-              // It's possilbe that user started drag while the drawer
-              // was settling, don't override state in this case
-              _this.setState({
-                drawerState: IDLE
-              });
-            }
-            if (willShow) {
-              _this.props.onDrawerOpen == null || _this.props.onDrawerOpen();
-            } else {
-              _this.props.onDrawerClose == null || _this.props.onDrawerClose();
-            }
-          }
-        });
-      };
-      _this.openDrawer = function () {
-        var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-        _this.animateDrawer(
-        // TODO: decide if it should be null or undefined is the proper value
-        undefined, _this.props.drawerWidth, options.velocity ? options.velocity : 0, options.speed);
-
-        // We need to force the update, otherwise the overlay is not rerendered and
-        // it would not be clickable
-        _this.forceUpdate();
-      };
-      _this.closeDrawer = function () {
-        var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-        // TODO: decide if it should be null or undefined is the proper value
-        _this.animateDrawer(undefined, 0, options.velocity ? options.velocity : 0, options.speed);
-
-        // We need to force the update, otherwise the overlay is not rerendered and
-        // it would be still clickable
-        _this.forceUpdate();
-      };
-      _this.renderOverlay = function () {
-        /* Overlay styles */
-        (0, _invariant.default)(_this.openValue, 'should be set');
-        var overlayOpacity;
-        if (_this.state.drawerState !== IDLE) {
-          overlayOpacity = _this.openValue;
-        } else {
-          overlayOpacity = _this.state.drawerOpened ? 1 : 0;
-        }
-        var dynamicOverlayStyles = {
-          opacity: overlayOpacity,
-          backgroundColor: _this.props.overlayColor
-        };
-        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[11], "../handlers/TapGestureHandler").TapGestureHandler, {
-          onHandlerStateChange: _this.onTapHandlerStateChange,
-          children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Animated.View, {
-            pointerEvents: _this.drawerShown ? 'auto' : 'none',
-            ref: _this.pointerEventsView,
-            style: [styles.overlay, dynamicOverlayStyles]
-          })
-        });
-      };
-      _this.renderDrawer = function () {
-        var _this$props3 = _this.props,
-          drawerBackgroundColor = _this$props3.drawerBackgroundColor,
-          drawerWidth = _this$props3.drawerWidth,
-          drawerPosition = _this$props3.drawerPosition,
-          drawerType = _this$props3.drawerType,
-          drawerContainerStyle = _this$props3.drawerContainerStyle,
-          contentContainerStyle = _this$props3.contentContainerStyle;
-        var fromLeft = drawerPosition === 'left';
-        var drawerSlide = drawerType !== 'back';
-        var containerSlide = drawerType !== 'front';
-
-        // We rely on row and row-reverse flex directions to position the drawer
-        // properly. Apparently for RTL these are flipped which requires us to use
-        // the opposite setting for the drawer to appear from left or right
-        // according to the drawerPosition prop
-        var reverseContentDirection = _reactNative.I18nManager.isRTL ? fromLeft : !fromLeft;
-        var dynamicDrawerStyles = {
-          backgroundColor: drawerBackgroundColor,
-          width: drawerWidth
-        };
-        var openValue = _this.openValue;
-        (0, _invariant.default)(openValue, 'should be set');
-        var containerStyles;
-        if (containerSlide) {
-          var containerTranslateX = openValue.interpolate({
-            inputRange: [0, 1],
-            outputRange: fromLeft ? [0, drawerWidth] : [0, -drawerWidth],
-            extrapolate: 'clamp'
-          });
-          containerStyles = {
-            transform: [{
-              translateX: containerTranslateX
-            }]
-          };
-        }
-        var drawerTranslateX = 0;
-        if (drawerSlide) {
-          var closedDrawerOffset = fromLeft ? -drawerWidth : drawerWidth;
-          if (_this.state.drawerState !== IDLE) {
-            drawerTranslateX = openValue.interpolate({
-              inputRange: [0, 1],
-              outputRange: [closedDrawerOffset, 0],
-              extrapolate: 'clamp'
-            });
-          } else {
-            drawerTranslateX = _this.state.drawerOpened ? 0 : closedDrawerOffset;
-          }
-        }
-        var drawerStyles = {
-          transform: [{
-            translateX: drawerTranslateX
-          }],
-          flexDirection: reverseContentDirection ? 'row-reverse' : 'row'
-        };
-        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
-          style: styles.main,
-          onLayout: _this.handleContainerLayout,
-          children: [/*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsxs)(_reactNative.Animated.View, {
-            style: [drawerType === 'front' ? styles.containerOnBack : styles.containerInFront, containerStyles, contentContainerStyle],
-            importantForAccessibility: _this.drawerShown ? 'no-hide-descendants' : 'yes',
-            children: [typeof _this.props.children === 'function' ? _this.props.children(_this.openValue) : _this.props.children, _this.renderOverlay()]
-          }), /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.Animated.View, {
-            pointerEvents: "box-none",
-            ref: _this.accessibilityIsModalView,
-            accessibilityViewIsModal: _this.drawerShown,
-            style: [styles.drawerContainer, drawerStyles, drawerContainerStyle],
-            children: /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_reactNative.View, {
-              style: dynamicDrawerStyles,
-              children: _this.props.renderNavigationView(_this.openValue)
-            })
-          })]
-        });
-      };
-      _this.setPanGestureRef = function (ref) {
-        // TODO(TS): make sure it is OK taken from
-        // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/31065#issuecomment-596081842
-        _this.panGestureHandler.current = ref;
-        _this.props.onGestureRef == null || _this.props.onGestureRef(ref);
-      };
-      var _dragX = new _reactNative.Animated.Value(0);
-      var _touchX = new _reactNative.Animated.Value(0);
-      var _drawerTranslation = new _reactNative.Animated.Value(0);
-      _this.state = {
-        dragX: _dragX,
-        touchX: _touchX,
-        drawerTranslation: _drawerTranslation,
-        containerWidth: 0,
-        drawerState: IDLE,
-        drawerOpened: false
-      };
-      _this.updateAnimatedEvent(_props, _this.state);
-      return _this;
-    }
-    (0, _inherits2.default)(DrawerLayout, _Component);
-    return (0, _createClass2.default)(DrawerLayout, [{
-      key: "shouldComponentUpdate",
-      value: function shouldComponentUpdate(props, state) {
-        if (this.props.drawerPosition !== props.drawerPosition || this.props.drawerWidth !== props.drawerWidth || this.props.drawerType !== props.drawerType || this.state.containerWidth !== state.containerWidth) {
-          this.updateAnimatedEvent(props, state);
-        }
-        return true;
-      }
-    }, {
-      key: "render",
-      value: function render() {
-        var _this$props4 = this.props,
-          drawerPosition = _this$props4.drawerPosition,
-          drawerLockMode = _this$props4.drawerLockMode,
-          edgeWidth = _this$props4.edgeWidth,
-          minSwipeDistance = _this$props4.minSwipeDistance;
-        var fromLeft = drawerPosition === 'left';
-
-        // gestureOrientation is 1 if the expected gesture is from left to right and
-        // -1 otherwise e.g. when drawer is on the left and is closed we expect left
-        // to right gesture, thus orientation will be 1.
-        var gestureOrientation = (fromLeft ? 1 : -1) * (this.drawerShown ? -1 : 1);
-
-        // When drawer is closed we want the hitSlop to be horizontally shorter than
-        // the container size by the value of SLOP. This will make it only activate
-        // when gesture happens not further than SLOP away from the edge
-        var hitSlop = fromLeft ? {
-          left: 0,
-          width: this.drawerShown ? undefined : edgeWidth
-        } : {
-          right: 0,
-          width: this.drawerShown ? undefined : edgeWidth
-        };
-        return /*#__PURE__*/(0, _$$_REQUIRE(_dependencyMap[10], "react/jsx-runtime").jsx)(_$$_REQUIRE(_dependencyMap[12], "../handlers/PanGestureHandler").PanGestureHandler
-        // @ts-ignore could be fixed in handler types
-        , {
-          userSelect: this.props.userSelect,
-          activeCursor: this.props.activeCursor,
-          mouseButton: this.props.mouseButton,
-          enableContextMenu: this.props.enableContextMenu,
-          ref: this.setPanGestureRef,
-          hitSlop: hitSlop,
-          activeOffsetX: gestureOrientation * minSwipeDistance,
-          failOffsetY: [-15, 15],
-          onGestureEvent: this.onGestureEvent,
-          onHandlerStateChange: this.openingHandlerStateChange,
-          enableTrackpadTwoFingerGesture: this.props.enableTrackpadTwoFingerGesture,
-          enabled: drawerLockMode !== 'locked-closed' && drawerLockMode !== 'locked-open',
-          children: this.renderDrawer()
-        });
-      }
-    }]);
-  }(_react.Component);
-  DrawerLayout.defaultProps = {
-    drawerWidth: 200,
-    drawerPosition: 'left',
-    useNativeAnimations: true,
-    drawerType: 'front',
-    edgeWidth: 20,
-    minSwipeDistance: 3,
-    overlayColor: 'rgba(0, 0, 0, 0.7)',
-    drawerLockMode: 'unlocked',
-    enableTrackpadTwoFingerGesture: false
-  };
-  DrawerLayout.positions = {
-    Left: 'left',
-    Right: 'right'
-  };
-  var styles = _reactNative.StyleSheet.create({
-    drawerContainer: Object.assign({}, _reactNative.StyleSheet.absoluteFillObject, {
-      zIndex: 1001,
-      flexDirection: 'row'
-    }),
-    containerInFront: Object.assign({}, _reactNative.StyleSheet.absoluteFillObject, {
-      zIndex: 1002
-    }),
-    containerOnBack: Object.assign({}, _reactNative.StyleSheet.absoluteFillObject),
-    main: {
-      flex: 1,
-      zIndex: 0,
-      overflow: 'hidden'
-    },
-    overlay: Object.assign({}, _reactNative.StyleSheet.absoluteFillObject, {
-      zIndex: 1000
-    })
-  });
-},900,[8,9,10,14,16,17,86,37,1,642,92,673,674],"node_modules/react-native-gesture-handler/src/components/DrawerLayout.tsx");
+},816,[1,732],"node_modules/react-native-reanimated/src/component/Text.ts");
 __r(2);
 __r(0);

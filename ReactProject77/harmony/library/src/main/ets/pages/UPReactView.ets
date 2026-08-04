@@ -181,7 +181,7 @@ export struct UPReactView {
 
   private async cleanUp() {
     this.isBundleReady = false
-    await this.rnohCoreContext!.destroyAndUnregisterRNInstance(this.rnInstance)
+    await this.rnohCoreContext!.destroyAndUnregisterRNInstance(this.RNInstanceManage.metroInstance)
     this.cleanUpCallbacks.forEach(cleanUp => cleanUp())
   }
 

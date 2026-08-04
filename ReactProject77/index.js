@@ -84,6 +84,8 @@ import { AppRegistry } from 'react-native';
 // import WithSpringClampExample from "./tests/react-native-reanimated/example/WithSpringClampExample"
 // import WorkletRuntimeExample from "./tests/react-native-reanimated/example/WorkletRuntimeExample"
 // reanimated end
+// import App from "./tests/react-native-reanimated/ReanimateListDemo.tsx"
+import App from "./tests/react-native-reanimated/FsTest.tsx"
 
 // import App from "./tests/react-native-reanimated/AI/obtainPropFromShadowNodeCrash.tsx"
 // import App from './tests/react-native-gesture/App.tsx'
@@ -98,7 +100,8 @@ import { AppRegistry } from 'react-native';
 // import App from './tests/react-native-gesture-handler/hongquanyun/App.tsx';
 // import App from "./crash-test/ToJSValueDemo.tsx"
 // import App from './tests/Scrollview/touchEnableScroll.tsx'
-import App from './tests/react-native-reanimated/AnimatedSensorExample2.tsx'
+// import App from './tests/react-native-reanimated/AnimatedSensorExample2.tsx'
+// import App from './tests/react-native-reanimated/ReanimatedCrashRepro2.tsx'
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"

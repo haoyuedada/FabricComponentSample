@@ -1,82 +1,37 @@
-import React from 'react';
-import {View, StyleSheet, findNodeHandle} from 'react-native';
+// CrashReproApp.tsx
+import { useEffect } from "react";
+import { View } from "react-native";
 import Animated, {
-  useAnimatedStyle,
   useSharedValue,
+  useAnimatedStyle,
+  withRepeat,
   withTiming,
-  getViewProp,
-} from 'react-native-reanimated';
+  Easing,
+} from "react-native-reanimated";
 
-export default function App() {
-  const offset = useSharedValue(0);
-  const viewRef = React.useRef(null);
+export default function CrashReproApp() {
+  const sv = useSharedValue(0);
 
-  React.useEffect(() => {
-    offset.value = withTiming(100, {duration: 1000});
+  useEffect(() => {
+    // 无限动画：持续 scheduleOnUI，确保队列中有 pending jobs
+    sv.value = withRepeat(
+      withTiming(1, { duration: 1000, easing: Easing.linear }),
+      -1,  // 无限重复
+      true
+    );
   }, []);
 
-  const animatedStyle = useAnimatedStyle(() => {
-    'worklet';
+  const style = useAnimatedStyle(() => {
     return {
-      transform: [{translateX: offset.value}],
+      transform: [{ translateX: sv.value * 300 }],
     };
   });
 
-  React.useEffect(() => {
-    if (viewRef.current) {
-      const viewTag = findNodeHandle(viewRef.current);
-      if (viewTag) {
-        getViewProp(viewTag, 'width', viewRef.current)
-          .then(width => {
-            console.log('width:', width);
-          })
-          .catch(err => {
-            console.error('getViewProp error:', err);
-          });
-        getViewProp(viewTag, 'height', viewRef.current)
-          .then(height => {
-            console.log('height:', height);
-          })
-          .catch(err => {
-            console.error('getViewProp error:', err);
-          });
-        getViewProp(viewTag, 'opacity', viewRef.current)
-          .then(opacity => {
-            console.log('opacity:', opacity);
-          })
-          .catch(err => {
-            console.error('getViewProp error:', err);
-          });
-        getViewProp(viewTag, 'backgroundColor', viewRef.current)
-          .then(bgColor => {
-            console.log('backgroundColor:', bgColor);
-          })
-          .catch(err => {
-            console.error('getViewProp error:', err);
-          });
-      }
-    }
-  }, []);
-
   return (
-    <View style={styles.container}>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <Animated.View
-        ref={viewRef}
-        style={[styles.box, animatedStyle]}
+        style={[{ width: 100, height: 100, backgroundColor: "red" }, style]}
       />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  box: {
-    width: 100,
-    height: 100,
-    backgroundColor: 'blue',
-  },
-});
