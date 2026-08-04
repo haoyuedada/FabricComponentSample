@@ -26,6 +26,8 @@ const wrappedCustomRNComponentBuilder = wrapBuilder(buildCustomComponent)
 
 @Component
 export struct UPReactViewRNAppTwo {
+  // 返回前回调，由父页面实现：卸载当前 RN 组件触发 RNApp.aboutToDisappear -> cleanUp 销毁 RN 实例
+  onUnMountBeforeNavigate?: () => void
   @StorageLink('RNOHCoreContext') private rnohCoreContext: RNOHCoreContext | undefined = undefined
   @State shouldShow: boolean = false
   private logger!: RNOHLogger
@@ -99,6 +101,11 @@ export struct UPReactViewRNAppTwo {
           .height("95%")
       }
       Button("返回上一个页面").onClick((event: ClickEvent) => {
+        // 先卸载 RN 组件，触发 RNApp.aboutToDisappear -> cleanUp 销毁 RN 实例
+        if (this.onUnMountBeforeNavigate) {
+          this.onUnMountBeforeNavigate()
+        }
+        // 延迟返回，等待 cleanUp 完成后再 router.back
         router.back()
       })
     }
