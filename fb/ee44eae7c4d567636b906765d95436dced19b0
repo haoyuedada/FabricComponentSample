@@ -1,0 +1,32 @@
+ReactProject/harmony/build-profile.json5
+  h_fed3d0bf8fff42 56-59
+ReactProject/index.js
+  h_fed3d0bf8fff42 186
+ReactProject/harmony/entry/src/main/ets/pages/Index.ets
+  h_fed3d0bf8fff42 255
+ReactProject/tests/react-native-webview/darkon.tsx
+  h_fed3d0bf8fff42 7
+ReactProject/harmony/library/oh-package.json5
+  s_7dcbd856afa993::t_5d9783d441a059 19-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.13.139",
+  "base_commit_sha": "fbee44eae7c4d567636b906765d95436dced19b0",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  },
+  "sessions": {
+    "s_7dcbd856afa993": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "aa67df48-3395-4e67-971d-19048dae416a",
+        "model": "gpt-4.1"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  }
+}
