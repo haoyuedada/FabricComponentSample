@@ -27,6 +27,8 @@ const wrappedCustomRNComponentBuilder = wrapBuilder(buildCustomComponent)
 @Entry
 @Component
 export struct UPReactViewRNApp {
+  // 跳转前回调，由父页面实现：卸载当前 RN 组件触发 RNApp.aboutToDisappear -> cleanUp 销毁 RN 实例
+  onUnMountBeforeNavigate?: () => void
   @StorageLink('RNOHCoreContext') private rnohCoreContext: RNOHCoreContext | undefined = undefined
   @State shouldShow: boolean = false
   private logger!: RNOHLogger
@@ -100,13 +102,18 @@ export struct UPReactViewRNApp {
           .height("95%")
       }
       Button("跳转到另一个 RN 页面").onClick((event: ClickEvent) => {
-        router.pushUrl({ url: 'pages/RNPageRNAppTwo' }, router.RouterMode.Standard, (err) => {
-          if (err) {
-            console.error(`Invoke pushUrl failed, code is ${err.code}, message is ${err.message}`);
-            return;
-          }
-          console.info('Invoke pushUrl succeeded.');
-        })
+        // 先卸载 RN 组件，触发 RNApp.aboutToDisappear -> cleanUp 销毁 RN 实例
+        if (this.onUnMountBeforeNavigate) {
+          this.onUnMountBeforeNavigate()
+        }
+        // 延迟跳转，等待 cleanUp 完成后再 pushUrl
+          router.pushUrl({ url: 'pages/RNPageRNAppTwo' }, router.RouterMode.Standard, (err) => {
+            if (err) {
+              console.error(`Invoke pushUrl failed, code is ${err.code}, message is ${err.message}`);
+              return;
+            }
+            console.info('Invoke pushUrl succeeded.');
+          })
       })
     }
     .height('100%')
