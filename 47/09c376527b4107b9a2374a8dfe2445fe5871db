@@ -1,0 +1,28 @@
+ReactProject77/harmony/entry/src/main/ets/pages/RNPageRNAppTwo.ets
+  s_0caf93dbb35509::t_0a9c40defbdc4f 16-17,28,35-39,42-48
+ReactProject77/harmony/library/src/main/ets/pages/UPReactViewRNAppTwo.ets
+  h_fed3d0bf8fff42 29-30,104-108
+ReactProject77/package.json
+  h_fed3d0bf8fff42 10-11,14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.13.139",
+  "base_commit_sha": "4709c376527b4107b9a2374a8dfe2445fe5871db",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  },
+  "sessions": {
+    "s_0caf93dbb35509": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "238e0645-76bf-40b4-88fb-5d0a6e641a0d",
+        "model": "gpt-4.1"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  }
+}
