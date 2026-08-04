@@ -1,0 +1,20 @@
+ReactProject77/harmony/library/src/main/ets/pages/UPReactViewRNApp.ets
+  h_fed3d0bf8fff42 35,105-121,123
+ReactProject77/harmony/library/src/main/ets/pages/UPReactViewRNAppTwo.ets
+  h_fed3d0bf8fff42 34,112-113
+ReactProject77/harmony/entry/src/main/ets/pages/RNPageRNAppTwo.ets
+  h_fed3d0bf8fff42 9,19-23,39,43,46-89
+ReactProject77/harmony/entry/src/main/ets/pages/RNPageRNApp.ets
+  h_fed3d0bf8fff42 9,19-23,39,43,46-93
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.13.139",
+  "base_commit_sha": "675143622cd1ee4ff3c1e8e1827da83aa64b2bfc",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  }
+}
