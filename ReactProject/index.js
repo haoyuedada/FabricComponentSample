@@ -183,6 +183,7 @@ import App from "./tests/react-native-webview/darkon.tsx"
 // import App from "./tests/react-native-elements/App.tsx"
 // import App from "./tests/Vmall/Tab/activity-default/index_tab.h.tsx"
 // import App from "./tests/react-native-spring-scrollview/App.tsx"
+// import App from "./tests/react-native-animated/AnimatedSensorExample2.tsx"
 
 // 在导航或 App 中注册该组件
 AppRegistry.registerComponent("app_name", () => App);

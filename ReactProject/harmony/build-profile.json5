@@ -53,6 +53,10 @@
     {
       "name": "library",
       "srcPath": "./library",
+    },
+    {
+      "name": "spring_scrollview",
+      "srcPath": "./spring_scrollview",
     }
   ]
 }
