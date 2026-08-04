@@ -16,4 +16,6 @@ export * from "./src/main/ets/pages/UPReactView";
 
 export * from "./src/main/ets/pages/UPReactViewRNApp";
 
+export * from "./src/main/ets/pages/UPReactViewRNAppTwo";
+
 export * from "@rnoh/react-native-openharmony";

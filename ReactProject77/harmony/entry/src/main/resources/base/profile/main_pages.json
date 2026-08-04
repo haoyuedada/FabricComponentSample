@@ -2,6 +2,7 @@
   "src": [
     "pages/Index",
     "pages/RNPage",
-    "pages/RNPageRNApp"
+    "pages/RNPageRNApp",
+    "pages/RNPageRNAppTwo"
   ]
 }
