@@ -31,6 +31,7 @@ export struct UPReactViewRNAppTwo {
   @StorageLink('RNOHCoreContext') private rnohCoreContext: RNOHCoreContext | undefined = undefined
   @State shouldShow: boolean = false
   private logger!: RNOHLogger
+  @StorageLink('autoLoopRunning') autoLoopRunning: boolean = false
 
 
   aboutToAppear() {
@@ -107,6 +108,9 @@ export struct UPReactViewRNAppTwo {
         }
         // 延迟返回，等待 cleanUp 完成后再 router.back
         router.back()
+      })
+      Button(this.autoLoopRunning ? "停止循环跳转" : "开始循环跳转").onClick((event: ClickEvent) => {
+        this.autoLoopRunning = !this.autoLoopRunning
       })
     }
     .height('100%')

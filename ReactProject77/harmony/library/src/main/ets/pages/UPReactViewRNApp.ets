@@ -32,6 +32,7 @@ export struct UPReactViewRNApp {
   @StorageLink('RNOHCoreContext') private rnohCoreContext: RNOHCoreContext | undefined = undefined
   @State shouldShow: boolean = false
   private logger!: RNOHLogger
+  @StorageLink('autoLoopRunning') autoLoopRunning: boolean = false
 
 
   aboutToAppear() {
@@ -101,20 +102,25 @@ export struct UPReactViewRNApp {
         })
           .height("95%")
       }
-      Button("跳转到另一个 RN 页面").onClick((event: ClickEvent) => {
-        // 先卸载 RN 组件，触发 RNApp.aboutToDisappear -> cleanUp 销毁 RN 实例
-        if (this.onUnMountBeforeNavigate) {
-          this.onUnMountBeforeNavigate()
-        }
-        // 延迟跳转，等待 cleanUp 完成后再 pushUrl
-          router.pushUrl({ url: 'pages/RNPageRNAppTwo' }, router.RouterMode.Standard, (err) => {
-            if (err) {
-              console.error(`Invoke pushUrl failed, code is ${err.code}, message is ${err.message}`);
-              return;
-            }
-            console.info('Invoke pushUrl succeeded.');
-          })
-      })
+      Row(){
+        Button("跳转到另一个 RN 页面").onClick((event: ClickEvent) => {
+          // 先卸载 RN 组件，触发 RNApp.aboutToDisappear -> cleanUp 销毁 RN 实例
+          if (this.onUnMountBeforeNavigate) {
+            this.onUnMountBeforeNavigate()
+          }
+          // 延迟跳转，等待 cleanUp 完成后再 pushUrl
+            router.pushUrl({ url: 'pages/RNPageRNAppTwo' }, router.RouterMode.Standard, (err) => {
+              if (err) {
+                console.error(`Invoke pushUrl failed, code is ${err.code}, message is ${err.message}`);
+                return;
+              }
+              console.info('Invoke pushUrl succeeded.');
+            })
+        })
+        Button(this.autoLoopRunning ? "停止循环跳转" : "开始循环跳转").onClick((event: ClickEvent) => {
+          this.autoLoopRunning = !this.autoLoopRunning
+        })
+      }
     }
     .height('100%')
     .width('100%')
