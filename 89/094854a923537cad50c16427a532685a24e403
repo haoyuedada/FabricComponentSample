@@ -1,0 +1,34 @@
+ReactProject77/harmony/entry/src/main/ets/pages/RNPageRNAppTwo.ets
+  s_0caf93dbb35509::t_5b85d676393157 1-37
+ReactProject77/harmony/library/src/main/ets/pages/UPReactViewRNAppTwo.ets
+  h_fed3d0bf8fff42 23,28,101-102
+ReactProject77/harmony/library/Index.ets
+  s_0caf93dbb35509::t_434527a932675d 19-20
+ReactProject77/harmony/library/src/main/ets/pages/UPReactViewRNApp.ets
+  s_0caf93dbb35509::t_ea2c3307e9f740 103-109
+  s_0caf93dbb35509::t_234f4b87971d18 23
+  h_fed3d0bf8fff42 100,102,110
+ReactProject77/harmony/entry/src/main/resources/base/profile/main_pages.json
+  s_0caf93dbb35509::t_90456d982a5bc5 5-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.13.139",
+  "base_commit_sha": "89094854a923537cad50c16427a532685a24e403",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  },
+  "sessions": {
+    "s_0caf93dbb35509": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "238e0645-76bf-40b4-88fb-5d0a6e641a0d",
+        "model": "gpt-4.1"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  }
+}
