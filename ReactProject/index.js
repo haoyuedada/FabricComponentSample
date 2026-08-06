@@ -179,9 +179,9 @@ import { AppRegistry } from 'react-native';
 // import App from './src/GestureWebView/GestureWebViewDemo.tsx'
 // import App from './tests/react-native-gesture-handler/upstreamDemo/App.tsx'
 // import App from "./tests/pinganhaochezhu/webview.tsx"
-import App from "./tests/react-native-webview/darkon.tsx"
+// import App from "./tests/react-native-webview/darkon.tsx"
 // import App from "./tests/react-native-elements/App.tsx"
-// import App from "./tests/Vmall/Tab/activity-default/index_tab.h.tsx"
+import App from "./tests/Vmall/Tab/activity-default/index_tab.h.tsx"
 // import App from "./tests/react-native-spring-scrollview/App.tsx"
 // import App from "./tests/react-native-animated/AnimatedSensorExample2.tsx"
 

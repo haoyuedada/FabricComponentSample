@@ -20,7 +20,8 @@ export struct RNPageRNApp {
   @StorageLink('autoLoopRunning') @Watch('onAutoLoopChange') autoLoopRunning: boolean = false
   @State isPageActive: boolean = false
   private autoLoopTimer: number = -1
-  private readonly LOOP_INTERVAL: number = 1000
+  // 循环跳转定时器间隔
+  private readonly LOOP_INTERVAL: number = 300
 
   onBackPress(): boolean | void {
     if ( this.storageProp >= 2 ) {
