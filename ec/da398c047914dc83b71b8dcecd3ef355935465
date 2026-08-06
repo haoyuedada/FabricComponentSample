@@ -1,0 +1,14 @@
+ReactProject77/harmony/library/src/main/module.json5
+  h_fed3d0bf8fff42 13-16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.13.139",
+  "base_commit_sha": "ecda398c047914dc83b71b8dcecd3ef355935465",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  }
+}
