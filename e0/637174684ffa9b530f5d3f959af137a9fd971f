@@ -1,0 +1,30 @@
+ReactProject77/harmony/library/oh-package.json5
+  h_fed3d0bf8fff42 13
+ReactProject77/harmony/entry/src/main/ets/pages/RNPageRNApp.ets
+  h_fed3d0bf8fff42 23-24
+ReactProject77/tests/crash/didi/cppcrash-com.example.fabric77-20260804150236.365.txt
+  h_fed3d0bf8fff42 1-14118
+ReactProject/index.js
+  h_fed3d0bf8fff42 182
+ReactProject77/index.js
+  h_fed3d0bf8fff42 88
+ReactProject77/tests/react-native-reanimated/FsTest.tsx
+  h_fed3d0bf8fff42 1-27,30-35,38-44,46-49,51-55,58-66,68,70-81,83-84,86-186,189,191-226,228-280,283-307,309-438,440-464,466-498,500-525,527-529,531-633,635-702,704,706-710,714-717,719-790,795-862,866-876
+ReactProject77/harmony/library/build-profile.json5
+  h_fed3d0bf8fff42 9-10
+ReactProject77/harmony/entry/src/main/ets/pages/RNPageRNAppTwo.ets
+  h_fed3d0bf8fff42 23
+ReactProject77/crashLog/LOG2.txt
+  h_fed3d0bf8fff42 1-654
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.13.139",
+  "base_commit_sha": "e0637174684ffa9b530f5d3f959af137a9fd971f",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  }
+}
