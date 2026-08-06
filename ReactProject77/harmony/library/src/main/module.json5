@@ -10,7 +10,10 @@
     ],
     "requestPermissions": [
       {
-        "name": "ohos.permission.GYROSCOPE"
+        "name" : "ohos.permission.ACCELEROMETER" // 加速度权限
+      },
+      {
+        "name": "ohos.permission.GYROSCOPE" // 陀螺仪权限
       }
     ]
 
