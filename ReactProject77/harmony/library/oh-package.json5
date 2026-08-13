@@ -17,6 +17,8 @@
     "@react-native-ohos/react-native-pager-view": "file: ../../node_modules/@react-native-ohos/react-native-pager-view/harmony/pager_view.har",
     "@react-native-ohos/react-native-smartrefreshlayout": "file:../../node_modules/@react-native-ohos/react-native-smartrefreshlayout/harmony/smart_refresh_layout.har",
     "@react-native-ohos/react-native-smart-refresh": "file:../libs/smart_refresh.har",
-    "@react-native-ohos/toolbar-android": "file:../../node_modules/@react-native-ohos/toolbar-android/harmony/toolbar_android.har"
+    "@react-native-ohos/toolbar-android": "file:../../node_modules/@react-native-ohos/toolbar-android/harmony/toolbar_android.har",
+    "@react-native-ohos/async-storage": "file:../../node_modules/@react-native-ohos/async-storage/harmony/async_storage.har",
+    "@react-native-ohos/react-native-svg": "file:../../node_modules/@react-native-ohos/react-native-svg/harmony/svg.har"
   }
 }
