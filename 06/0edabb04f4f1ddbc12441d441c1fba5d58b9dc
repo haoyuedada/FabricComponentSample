@@ -1,0 +1,22 @@
+ReactProject77/harmony/library/src/main/ets/rn/RNPackagesFactory.ets
+  h_fed3d0bf8fff42 17-18,29-31
+ReactProject77/package.json
+  h_fed3d0bf8fff42 6,32
+ReactProject77/harmony/library/src/main/cpp/PackageProvider.cpp
+  h_fed3d0bf8fff42 18-19,32-34
+ReactProject77/harmony/library/oh-package.json5
+  h_fed3d0bf8fff42 20-22
+ReactProject77/harmony/library/src/main/cpp/CMakeLists.txt
+  h_fed3d0bf8fff42 35-36,59-60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.13.139",
+  "base_commit_sha": "060edabb04f4f1ddbc12441d441c1fba5d58b9dc",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  }
+}
