@@ -8,8 +8,8 @@
   "version": "1.0.0",
   "dependencies": {
     "@rnoh/react-native-openharmony": "file:../../node_modules/@react-native-oh/react-native-harmony/react_native_openharmony.har",
-//    "@react-native-ohos/react-native-gesture-handler": "file:../../node_modules/@react-native-ohos/react-native-gesture-handler/harmony/gesture_handler.har",
-    "@react-native-ohos/react-native-gesture-handler": "file:../libs/gesture_handler0617.har",
+    "@react-native-ohos/react-native-gesture-handler": "file:../../node_modules/@react-native-ohos/react-native-gesture-handler/harmony/gesture_handler.har",
+//    "@react-native-ohos/react-native-gesture-handler": "file:../libs/gesture_handler0617.har",
     "@react-native-ohos/react-native-worklets": "file:../../node_modules/@react-native-ohos/react-native-worklets/harmony/worklets.har",
     "@react-native-ohos/react-native-reanimated": "file:../../node_modules/@react-native-ohos/react-native-reanimated/harmony/reanimated.har",
     "@react-native-ohos/react-native-spring-scrollview": "file:../../node_modules/@react-native-ohos/react-native-spring-scrollview/harmony/spring_scrollview.har",

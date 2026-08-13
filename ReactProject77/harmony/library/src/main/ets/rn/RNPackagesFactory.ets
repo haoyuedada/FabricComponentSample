@@ -14,6 +14,8 @@ import RNOHScreensPackage from "@react-native-ohos/react-native-screens"
 import { ViewPagerPackage } from '@react-native-ohos/react-native-pager-view/ts';
 import { SmartRefreshPackage } from '@react-native-ohos/react-native-smartrefreshlayout/ts';
 import {ToolbarAndroidPackage} from '@react-native-ohos/toolbar-android/src/main/ets/ToolbarAndroidPackage';
+import {AsyncStoragePackage} from '@react-native-ohos/async-storage/ts';
+import { SvgPackage } from '@react-native-ohos/react-native-svg/ts';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
@@ -24,6 +26,8 @@ export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
     new RNOHScreensPackage(ctx),
     new ViewPagerPackage(ctx),
     new SmartRefreshPackage(ctx),
-    new ToolbarAndroidPackage(ctx)
+    new ToolbarAndroidPackage(ctx),
+    new AsyncStoragePackage(ctx),
+    new SvgPackage(ctx),
   ];
 }
