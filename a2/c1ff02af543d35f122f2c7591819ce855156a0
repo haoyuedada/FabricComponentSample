@@ -1,0 +1,28 @@
+ReactProject77/index.js
+  h_fed3d0bf8fff42 89,104,107-108
+ReactProject/index.js
+  h_fed3d0bf8fff42 184,188
+ReactProject82/ReactProject/package.json
+  s_4c51b91d5b1e0f::t_e8e383a900b347 17,19-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.13.139",
+  "base_commit_sha": "a2c1ff02af543d35f122f2c7591819ce855156a0",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  },
+  "sessions": {
+    "s_4c51b91d5b1e0f": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "27355f78-12b6-4ebd-bc3d-b1712e9b5a32",
+        "model": "unknown"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  }
+}
