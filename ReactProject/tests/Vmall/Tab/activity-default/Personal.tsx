@@ -26,51 +26,51 @@ class Personal extends React.PureComponent<any, any> {
       profileData: this.generateProfileData(),
     };
   }
-    // 生成我的页面复杂数据
-    generateProfileData = () => {
-      return {
-        userInfo: {
-          name: '张三',
-          level: 'VIP会员',
-          avatar: 'https://via.placeholder.com/80x80/007AFF/FFFFFF?text=头像',
-          points: 1250,
-          balance: 2500.50,
-        },
-        quickActions: [
-          { id: 1, title: '我的订单', icon: '📦', count: 12 },
-          { id: 2, title: '我的收藏', icon: '❤️', count: 24 },
-          { id: 3, title: '收货地址', icon: '📍', count: 3 },
-          { id: 4, title: '优惠券', icon: '💰', count: 5 },
-          { id: 5, title: '积分商城', icon: '🏆', count: 0 },
-          { id: 6, title: '设置', icon: '⚙️', count: 0 },
-        ],
-        services: [
-          { id: 1, title: '客户服务', icon: '💬' },
-          { id: 2, title: '意见反馈', icon: '📝' },
-          { id: 3, title: '帮助中心', icon: '❓' },
-          { id: 4, title: '关于我们', icon: 'ℹ️' },
-        ],
-        recentActivity: [
-          { id: 1, action: '购买商品', time: '5分钟前', detail: 'iPhone 15 Pro' },
-          { id: 2, action: '收藏商品', time: '1小时前', detail: 'MacBook Air' },
-          { id: 3, action: '浏览页面', time: '2小时前', detail: '优惠活动' },
-          { id: 4, action: '查看订单', time: '1天前', detail: '订单号#123456' },
-          { id: 5, action: '购买商品', time: '5分钟前', detail: 'iPhone 15 Pro' },
-          { id: 6, action: '收藏商品', time: '1小时前', detail: 'MacBook Air' },
-          { id: 7, action: '浏览页面', time: '2小时前', detail: '优惠活动' },
-          { id: 8, action: '查看订单', time: '1天前', detail: '订单号#123456' },
-          { id: 9, action: '购买商品', time: '5分钟前', detail: 'iPhone 15 Pro' },
-          { id: 10, action: '收藏商品', time: '1小时前', detail: 'MacBook Air' },
-          { id: 11, action: '浏览页面', time: '2小时前', detail: '优惠活动' },
-          { id: 12, action: '查看订单', time: '1天前', detail: '订单号#123456' },
-        ],
-      };
+  // 生成我的页面复杂数据
+  generateProfileData = () => {
+    return {
+      userInfo: {
+        name: '张三',
+        level: 'VIP会员',
+        avatar: 'https://via.placeholder.com/80x80/007AFF/FFFFFF?text=头像',
+        points: 1250,
+        balance: 2500.50,
+      },
+      quickActions: [
+        { id: 1, title: '我的订单', icon: '📦', count: 12 },
+        { id: 2, title: '我的收藏', icon: '❤️', count: 24 },
+        { id: 3, title: '收货地址', icon: '📍', count: 3 },
+        { id: 4, title: '优惠券', icon: '💰', count: 5 },
+        { id: 5, title: '积分商城', icon: '🏆', count: 0 },
+        { id: 6, title: '设置', icon: '⚙️', count: 0 },
+      ],
+      services: [
+        { id: 1, title: '客户服务', icon: '💬' },
+        { id: 2, title: '意见反馈', icon: '📝' },
+        { id: 3, title: '帮助中心', icon: '❓' },
+        { id: 4, title: '关于我们', icon: 'ℹ️' },
+      ],
+      recentActivity: [
+        { id: 1, action: '购买商品', time: '5分钟前', detail: 'iPhone 15 Pro' },
+        { id: 2, action: '收藏商品', time: '1小时前', detail: 'MacBook Air' },
+        { id: 3, action: '浏览页面', time: '2小时前', detail: '优惠活动' },
+        { id: 4, action: '查看订单', time: '1天前', detail: '订单号#123456' },
+        { id: 5, action: '购买商品', time: '5分钟前', detail: 'iPhone 15 Pro' },
+        { id: 6, action: '收藏商品', time: '1小时前', detail: 'MacBook Air' },
+        { id: 7, action: '浏览页面', time: '2小时前', detail: '优惠活动' },
+        { id: 8, action: '查看订单', time: '1天前', detail: '订单号#123456' },
+        { id: 9, action: '购买商品', time: '5分钟前', detail: 'iPhone 15 Pro' },
+        { id: 10, action: '收藏商品', time: '1小时前', detail: 'MacBook Air' },
+        { id: 11, action: '浏览页面', time: '2小时前', detail: '优惠活动' },
+        { id: 12, action: '查看订单', time: '1天前', detail: '订单号#123456' },
+      ],
     };
-  
+  };
+
   // 渲染首页内容
   render() {
     const { userInfo, quickActions, services, recentActivity } = this.state.profileData;
-    
+
     return (
       <View style={{ flex: 1 }}>
         {Array.from({ length: 2000 }).map((_, index) => (

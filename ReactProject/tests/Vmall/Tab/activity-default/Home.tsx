@@ -21,109 +21,115 @@ class Home extends React.PureComponent<any, any> {
       console.log('xchhh renderHomeContent focus', new Date().getTime());
     });
     this.state = {
-        activeTab: 0,
-        // 模拟复杂的数据结构
-        homeData: this.generateHomeData(),
-      };
+      activeTab: 0,
+      // 模拟复杂的数据结构
+      homeData: this.generateHomeData(),
+    };
   }
-    // 生成首页复杂数据
-    generateHomeData = () => {
-        return {
-          banner: [
-            { id: 1, title: '新品上市', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 2, title: '限时优惠', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 3, title: '品牌特卖', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 4, title: '新品上市', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 5, title: '限时优惠', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 6, title: '品牌特卖', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 7, title: '新品上市', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 8, title: '限时优惠', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 9, title: '品牌特卖', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 10, title: '新品上市', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 11, title: '限时优惠', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 12, title: '品牌特卖', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-          ],
-          recommendations: [
-            { id: 1, name: 'iPhone 15 Pro', price: '¥9999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 2, name: 'MacBook Air', price: '¥12999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 3, name: 'iPad Pro', price: '¥7999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 4, name: 'AirPods Pro', price: '¥1899', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 5, name: 'iPhone 15 Pro', price: '¥9999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 6, name: 'MacBook Air', price: '¥12999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 7, name: 'iPad Pro', price: '¥7999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 8, name: 'AirPods Pro', price: '¥1899', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 9, name: 'iPhone 15 Pro', price: '¥9999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 10, name: 'MacBook Air', price: '¥12999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 11, name: 'iPad Pro', price: '¥7999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 12, name: 'AirPods Pro', price: '¥1899', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 13, name: 'iPhone 15 Pro', price: '¥9999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 14, name: 'MacBook Air', price: '¥12999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 15, name: 'iPad Pro', price: '¥7999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-            { id: 16, name: 'AirPods Pro', price: '¥1899', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
-          ],
-          categories: [
-            { id: 1, name: '手机数码', icon: '📱' },
-            { id: 2, name: '家用电器', icon: '📺' },
-            { id: 3, name: '服饰鞋包', icon: '👕' },
-            { id: 4, name: '美妆个护', icon: '💄' },
-            { id: 5, name: '家居生活', icon: '🏠' },
-            { id: 6, name: '运动户外', icon: '⚽' },
-            { id: 7, name: '手机数码', icon: '📱' },
-            { id: 8, name: '家用电器', icon: '📺' },
-            { id: 9, name: '服饰鞋包', icon: '👕' },
-            { id: 10, name: '美妆个护', icon: '💄' },
-            { id: 11, name: '家居生活', icon: '🏠' },
-            { id: 12, name: '运动户外', icon: '⚽' },
-            { id: 13, name: '手机数码', icon: '📱' },
-            { id: 14, name: '家用电器', icon: '📺' },
-            { id: 15, name: '服饰鞋包', icon: '👕' },
-            { id: 16, name: '美妆个护', icon: '💄' },
-            { id: 17, name: '家居生活', icon: '🏠' },
-            { id: 18, name: '运动户外', icon: '⚽' },
-          ],
-          news: [
-            { id: 1, title: '新品发布', content: '最新产品现已上线，欢迎体验', time: '2小时前' },
-            { id: 2, title: '限时优惠', content: '全场满减活动进行中', time: '5小时前' },
-            { id: 3, title: '会员专享', content: 'VIP会员享受更多优惠', time: '1天前' },
-            { id: 4, title: '新品发布', content: '最新产品现已上线，欢迎体验', time: '2小时前' },
-            { id: 5, title: '限时优惠', content: '全场满减活动进行中', time: '5小时前' },
-            { id: 6, title: '会员专享', content: 'VIP会员享受更多优惠', time: '1天前' },
-            { id: 7, title: '新品发布', content: '最新产品现已上线，欢迎体验', time: '2小时前' },
-            { id: 8, title: '限时优惠', content: '全场满减活动进行中', time: '5小时前' },
-            { id: 9, title: '会员专享', content: 'VIP会员享受更多优惠', time: '1天前' },
-            { id: 10, title: '新品发布', content: '最新产品现已上线，欢迎体验', time: '2小时前' },
-            { id: 11, title: '限时优惠', content: '全场满减活动进行中', time: '5小时前' },
-            { id: 12, title: '会员专享', content: 'VIP会员享受更多优惠', time: '1天前' },
-            { id: 13, title: '新品发布', content: '最新产品现已上线，欢迎体验', time: '2小时前' },
-            { id: 14, title: '限时优惠', content: '全场满减活动进行中', time: '5小时前' },
-            { id: 15, title: '会员专享', content: 'VIP会员享受更多优惠', time: '1天前' },
-            { id: 16, title: '新品发布', content: '最新产品现已上线，欢迎体验', time: '2小时前' },
-            { id: 17, title: '限时优惠', content: '全场满减活动进行中', time: '5小时前' },
-            { id: 18, title: '会员专享', content: 'VIP会员享受更多优惠', time: '1天前' },
-            { id: 19, title: '新品发布', content: '最新产品现已上线，欢迎体验', time: '2小时前' },
-            { id: 20, title: '限时优惠', content: '全场满减活动进行中', time: '5小时前' },
-            { id: 21, title: '会员专享', content: 'VIP会员享受更多优惠', time: '1天前' },
-          ],
-          promotions: [
-            { id: 1, title: '满减活动', description: '满500减50', discount: '50' },
-            { id: 2, title: '买一送一', description: '精选商品买一送一', discount: '100%' },
-            { id: 3, title: '积分兑换', description: '积分兑换好礼', discount: '1000积分' },
-            { id: 4, title: '满减活动', description: '满500减50', discount: '50' },
-            { id: 5, title: '买一送一', description: '精选商品买一送一', discount: '100%' },
-            { id: 6, title: '积分兑换', description: '积分兑换好礼', discount: '1000积分' },
-            { id: 7, title: '满减活动', description: '满500减50', discount: '50' },
-            { id: 8, title: '买一送一', description: '精选商品买一送一', discount: '100%' },
-            { id: 9, title: '积分兑换', description: '积分兑换好礼', discount: '1000积分' },
-            { id: 10, title: '满减活动', description: '满500减50', discount: '50' },
-            { id: 11, title: '买一送一', description: '精选商品买一送一', discount: '100%' },
-            { id: 12, title: '积分兑换', description: '积分兑换好礼', discount: '1000积分' },
-          ],
-        };
-      };
+  // 生成首页复杂数据
+  generateHomeData = () => {
+    return {
+      banner: [
+        { id: 1, title: '新品上市', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 2, title: '限时优惠', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 3, title: '品牌特卖', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 4, title: '新品上市', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 5, title: '限时优惠', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 6, title: '品牌特卖', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 7, title: '新品上市', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 8, title: '限时优惠', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 9, title: '品牌特卖', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 10, title: '新品上市', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 11, title: '限时优惠', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 12, title: '品牌特卖', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+      ],
+      recommendations: [
+        { id: 1, name: 'iPhone 15 Pro', price: '¥9999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 2, name: 'MacBook Air', price: '¥12999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 3, name: 'iPad Pro', price: '¥7999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 4, name: 'AirPods Pro', price: '¥1899', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 5, name: 'iPhone 15 Pro', price: '¥9999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 6, name: 'MacBook Air', price: '¥12999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 7, name: 'iPad Pro', price: '¥7999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 8, name: 'AirPods Pro', price: '¥1899', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 9, name: 'iPhone 15 Pro', price: '¥9999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 10, name: 'MacBook Air', price: '¥12999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 11, name: 'iPad Pro', price: '¥7999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 12, name: 'AirPods Pro', price: '¥1899', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 13, name: 'iPhone 15 Pro', price: '¥9999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 14, name: 'MacBook Air', price: '¥12999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 15, name: 'iPad Pro', price: '¥7999', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+        { id: 16, name: 'AirPods Pro', price: '¥1899', image: 'https://rescdn-sit.vmall.hwcloudtest.cn/uomcdn/CN/cms/202412/315038f1303845b9aa0eb6df3c98cb0e.jpg' },
+      ],
+      categories: [
+        { id: 1, name: '手机数码', icon: '📱' },
+        { id: 2, name: '家用电器', icon: '📺' },
+        { id: 3, name: '服饰鞋包', icon: '👕' },
+        { id: 4, name: '美妆个护', icon: '💄' },
+        { id: 5, name: '家居生活', icon: '🏠' },
+        { id: 6, name: '运动户外', icon: '⚽' },
+        { id: 7, name: '手机数码', icon: '📱' },
+        { id: 8, name: '家用电器', icon: '📺' },
+        { id: 9, name: '服饰鞋包', icon: '👕' },
+        { id: 10, name: '美妆个护', icon: '💄' },
+        { id: 11, name: '家居生活', icon: '🏠' },
+        { id: 12, name: '运动户外', icon: '⚽' },
+        { id: 13, name: '手机数码', icon: '📱' },
+        { id: 14, name: '家用电器', icon: '📺' },
+        { id: 15, name: '服饰鞋包', icon: '👕' },
+        { id: 16, name: '美妆个护', icon: '💄' },
+        { id: 17, name: '家居生活', icon: '🏠' },
+        { id: 18, name: '运动户外', icon: '⚽' },
+      ],
+      news: [
+        { id: 1, title: '新品发布', content: '最新产品现已上线，欢迎体验', time: '2小时前' },
+        { id: 2, title: '限时优惠', content: '全场满减活动进行中', time: '5小时前' },
+        { id: 3, title: '会员专享', content: 'VIP会员享受更多优惠', time: '1天前' },
+        { id: 4, title: '新品发布', content: '最新产品现已上线，欢迎体验', time: '2小时前' },
+        { id: 5, title: '限时优惠', content: '全场满减活动进行中', time: '5小时前' },
+        { id: 6, title: '会员专享', content: 'VIP会员享受更多优惠', time: '1天前' },
+        { id: 7, title: '新品发布', content: '最新产品现已上线，欢迎体验', time: '2小时前' },
+        { id: 8, title: '限时优惠', content: '全场满减活动进行中', time: '5小时前' },
+        { id: 9, title: '会员专享', content: 'VIP会员享受更多优惠', time: '1天前' },
+        { id: 10, title: '新品发布', content: '最新产品现已上线，欢迎体验', time: '2小时前' },
+        { id: 11, title: '限时优惠', content: '全场满减活动进行中', time: '5小时前' },
+        { id: 12, title: '会员专享', content: 'VIP会员享受更多优惠', time: '1天前' },
+        { id: 13, title: '新品发布', content: '最新产品现已上线，欢迎体验', time: '2小时前' },
+        { id: 14, title: '限时优惠', content: '全场满减活动进行中', time: '5小时前' },
+        { id: 15, title: '会员专享', content: 'VIP会员享受更多优惠', time: '1天前' },
+        { id: 16, title: '新品发布', content: '最新产品现已上线，欢迎体验', time: '2小时前' },
+        { id: 17, title: '限时优惠', content: '全场满减活动进行中', time: '5小时前' },
+        { id: 18, title: '会员专享', content: 'VIP会员享受更多优惠', time: '1天前' },
+        { id: 19, title: '新品发布', content: '最新产品现已上线，欢迎体验', time: '2小时前' },
+        { id: 20, title: '限时优惠', content: '全场满减活动进行中', time: '5小时前' },
+        { id: 21, title: '会员专享', content: 'VIP会员享受更多优惠', time: '1天前' },
+      ],
+      promotions: [
+        { id: 1, title: '满减活动', description: '满500减50', discount: '50' },
+        { id: 2, title: '买一送一', description: '精选商品买一送一', discount: '100%' },
+        { id: 3, title: '积分兑换', description: '积分兑换好礼', discount: '1000积分' },
+        { id: 4, title: '满减活动', description: '满500减50', discount: '50' },
+        { id: 5, title: '买一送一', description: '精选商品买一送一', discount: '100%' },
+        { id: 6, title: '积分兑换', description: '积分兑换好礼', discount: '1000积分' },
+        { id: 7, title: '满减活动', description: '满500减50', discount: '50' },
+        { id: 8, title: '买一送一', description: '精选商品买一送一', discount: '100%' },
+        { id: 9, title: '积分兑换', description: '积分兑换好礼', discount: '1000积分' },
+        { id: 10, title: '满减活动', description: '满500减50', discount: '50' },
+        { id: 11, title: '买一送一', description: '精选商品买一送一', discount: '100%' },
+        { id: 12, title: '积分兑换', description: '积分兑换好礼', discount: '1000积分' },
+      ],
+    };
+  };
   // 渲染首页内容
   render() {
     const { banner, recommendations, categories, news, promotions } = this.state.homeData;
-
+    // return (
+    //   <View style={{ flex: 1 }}>
+    //     {Array.from({ length: 9000 }).map((_, index) => (
+    //       <View key={index} style={{ height: 30, backgroundColor: 'blue', marginBottom: 3 }}></View>
+    //     ))}
+    //   </View>
+    // )
     return (
       <ScrollView style={styles.contentContainer}>
         {/* 轮播图 */}

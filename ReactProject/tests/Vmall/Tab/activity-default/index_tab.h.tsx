@@ -51,7 +51,7 @@ class BottomTabNavigatorWithComplexContent extends PureComponent {
               navigation.navigate({ name: route.name, merge: true });
             }
           };
-          console.log('xchhh isFocused', state.index , index, new Date().getTime());
+          console.log('xchhh isFocused', state.index, index, new Date().getTime());
           return (
             <TouchableOpacity key={index} onPress={onPress} style={[styles.tabItem, isFocused && styles.activeTabItem]}>
               <Text style={[styles.tabIcon, isFocused && styles.activeTabIcon]}>
