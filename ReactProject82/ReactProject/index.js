@@ -20,6 +20,9 @@ import { name as appName } from './app.json';
 // import App from './src/react-native-scrollable-tab-view/App.tsx';
 // import App from './src/react-native-reanimated/AnimatedSensorExample2.tsx';
 // import App from './src/react-native-gesture-handler/App2.tsx';
-import App from './src/flash-list/App.tsx';
+// import App from './src/flash-list/App.tsx';
+// import App from './App.tsx';
+// import App from './src/flash-list/FlashListPropsDemo.tsx';
+import App from './src/flash-list/MusicListDemo.tsx';
 
 AppRegistry.registerComponent(appName, () => App);
