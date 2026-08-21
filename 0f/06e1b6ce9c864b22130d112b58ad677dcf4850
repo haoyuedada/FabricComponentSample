@@ -1,0 +1,56 @@
+ReactProject82/ReactProject/index.js
+  h_fed3d0bf8fff42 23-26
+ReactProject82/ReactProject/src/ScrollViewStatusBarTest.tsx
+  h_fed3d0bf8fff42 11
+  s_8d2eb465b7378a::t_7ece880d61b396 1-10,12-40
+ReactProject82/ReactProject/src/flash-list/MusicListDemo.tsx
+  s_0faa7860c70cdc::t_6b6ec624ce38fd 1-11,13-322
+  s_0faa7860c70cdc::t_b8effe406d834d 12
+ReactProject82/ReactProject/App.tsx
+  s_8d2eb465b7378a::t_d168deb28088aa 11,16
+  s_0b7505ea192306::t_848a7920965fef 9-10
+ReactProject82/ReactProject/src/PanGestureDemo.tsx
+  s_0b7505ea192306::t_40944f6daefff9 1-17,19-101
+  h_fed3d0bf8fff42 18
+ReactProject82/ReactProject/src/flash-list/FlashListPropsDemo.tsx
+  s_8d2eb465b7378a::t_200289ce23a9e3 1-1566
+ReactProject82/ReactProject/package.json
+  h_fed3d0bf8fff42 20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.13.139",
+  "base_commit_sha": "0f06e1b6ce9c864b22130d112b58ad677dcf4850",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  },
+  "sessions": {
+    "s_0b7505ea192306": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "f4d37c5d-fae4-42dd-b590-fbbbcf5a0540",
+        "model": "gpt-4.1"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    },
+    "s_0faa7860c70cdc": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "eb5ec088-9bc4-4956-be7e-d789d3e3b584",
+        "model": "gpt-4.1"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    },
+    "s_8d2eb465b7378a": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "09a379f6-a296-4129-a8f0-6a9547331d37",
+        "model": "gpt-4.1"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  }
+}
