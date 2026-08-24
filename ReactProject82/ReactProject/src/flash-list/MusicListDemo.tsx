@@ -194,11 +194,10 @@ const MusicListDemo = () => {
   return (
     <SafeAreaView style={styles.container}>
       <FlashList
-        enableSkeleton
         data={songs}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
-        drawDistance={50}
+        estimatedItemSize={68}
         contentContainerStyle={styles.listContent}
         ListHeaderComponent={<ListHeader count={songs.length} />}
         ListEmptyComponent={ListEmpty}
