@@ -18,7 +18,7 @@ import {
   Alert,
   SafeAreaView,
 } from 'react-native';
-import { FlashList } from '@shopify/flash-list';
+import { FlashList } from '@react-native-ohos/flash-list';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faTrashCan, faGripVertical } from '@fortawesome/free-solid-svg-icons';
 
@@ -194,10 +194,11 @@ const MusicListDemo = () => {
   return (
     <SafeAreaView style={styles.container}>
       <FlashList
+        enableSkeleton
         data={songs}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
-        estimatedItemSize={68}
+        drawDistance={50}
         contentContainerStyle={styles.listContent}
         ListHeaderComponent={<ListHeader count={songs.length} />}
         ListEmptyComponent={ListEmpty}
