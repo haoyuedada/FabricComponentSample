@@ -40,6 +40,8 @@ import { AppRegistry } from 'react-native';
 // import App from "./crash-test/AnimatedComponent1"
 // import App from "./crash-test/PropsRegistryCrashDemo"
 // import App from "./crash-test/MinimalCrashDemo"
+// 滴滴手势库 demo
+import App from './tests/didi/demo'
 
 // reanimated start
 // import { AnimatedText } from "./tests/react-native-reanimated/example/AnimatedText"
@@ -105,7 +107,7 @@ import { AppRegistry } from 'react-native';
 // import App from './tests/react-native-reanimated/ReanimatedCrashRepro2.tsx'
 
 // 手势库上有社区的 demo
-import App from "./AppUpstream.tsx"
+// import App from "./AppUpstream.tsx"
 
 AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"
