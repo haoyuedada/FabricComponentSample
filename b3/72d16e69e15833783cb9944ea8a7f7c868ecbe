@@ -1,0 +1,18 @@
+ReactProject77/package.json
+  h_fed3d0bf8fff42 22
+ReactProject/index.js
+  h_fed3d0bf8fff42 136,156
+ReactProject77/index.js
+  h_fed3d0bf8fff42 43-44,110
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.13.139",
+  "base_commit_sha": "b372d16e69e15833783cb9944ea8a7f7c868ecbe",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  }
+}
