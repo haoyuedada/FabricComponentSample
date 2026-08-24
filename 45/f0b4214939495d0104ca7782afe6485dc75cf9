@@ -1,0 +1,40 @@
+ReactProject82/ReactProject/src/flash-list/CommentListDemo.tsx
+  s_4cd83520ec9df5::t_e065d3130f1ca8 1-710
+ReactProject82/ReactProject/src/flash-list/SongFlashListDemo.tsx
+  s_3c1ca4700b2399::t_ed0cb6f486825f 1-175
+ReactProject82/ReactProject/index.js
+  h_fed3d0bf8fff42 26-29
+ReactProject82/ReactProject/src/flash-list/Component-huan.tsx
+  h_fed3d0bf8fff42 1-240
+ReactProject82/ReactProject/src/flash-list/MusicListDemo.tsx
+  h_fed3d0bf8fff42 21,197,201
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.13.139",
+  "base_commit_sha": "45f0b4214939495d0104ca7782afe6485dc75cf9",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  },
+  "sessions": {
+    "s_3c1ca4700b2399": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "0a8fd3c0-2d2f-4ce0-986a-bff3a34f216a",
+        "model": "gpt-4.1"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    },
+    "s_4cd83520ec9df5": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "082dcecd-2a05-48f9-bda2-58efee2ac1bd",
+        "model": "gpt-4.1"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  }
+}
