@@ -30,6 +30,7 @@ add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-spring-scrollvie
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-svg/src/main/cpp" ./svg)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-safe-area-context/src/main/cpp" ./safe-area)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-pager-view/src/main/cpp" ./pager_view)
+add_subdirectory("${OH_MODULES}/@react-native-ohos/flash-list/src/main/cpp" ./flash-list)
 # RNOH_END: manual_package_linking_1
 
 file(GLOB GENERATED_CPP_FILES "./generated/*.cpp")
@@ -50,5 +51,6 @@ target_link_libraries(rnoh_app PUBLIC rnoh_reanimated)
 target_link_libraries(rnoh_app PUBLIC rnoh_spring_scrollview)
 target_link_libraries(rnoh_app PUBLIC rnoh_svg)
 target_link_libraries(rnoh_app PUBLIC rnoh_safe_area)
-target_link_libraries(rnoh_app PUBLIC rnoh_pager_view )
+target_link_libraries(rnoh_app PUBLIC rnoh_pager_view)
+target_link_libraries(rnoh_app PUBLIC rnoh_flash_list)
 # RNOH_END: manual_package_linking_2

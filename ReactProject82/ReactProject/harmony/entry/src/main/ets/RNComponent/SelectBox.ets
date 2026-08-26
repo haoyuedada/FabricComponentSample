@@ -27,7 +27,7 @@ class SelectItems {
 
 @Component
 export struct SelectBox {
-  public static readonly NAME = RNC.SelectBox.NAME;
+  public static readonly NAME:string = RNC.SelectBox.NAME;
   public ctx!: RNOHContext;
   public tag: number = 0;
   @State descriptorWrapper: RNC.SelectBox.DescriptorWrapper = {} as RNC.SelectBox.DescriptorWrapper;
