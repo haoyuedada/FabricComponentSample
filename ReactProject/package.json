@@ -17,6 +17,8 @@
     "codegenRelease": "react-native codegen-harmony --cpp-output-path ./harmonyRelease/entry/src/main/cpp/generated --rnoh-module-path ./harmonyRelease/entry/oh_modules/@rnoh/react-native-openharmony --no-safety-check"
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-native-fontawesome": "^0.3.2",
     "@nozbe/watermelondb": "^0.28.0",
     "@ohmi/react-native-safe-area-view": "0.11.0-0.7",
     "@ohmi/react-navigation": "2.16.0-rc.1.0.4",

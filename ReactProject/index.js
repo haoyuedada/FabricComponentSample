@@ -134,7 +134,7 @@ import { AppRegistry } from 'react-native';
 // import App from './watermelondb/App'
 // import App from './animated/ScaleAnimationDemo.tsx'
 // 京东手势库 demo
-import App from './src/IR/251208195649046/GestureHandlerDemo.tsx'
+// import App from './src/IR/251208195649046/GestureHandlerDemo.tsx'
 // import App from './src/IR/251208195649046/RequireExternalGestureToFailDemo.tsx'
 // import App from './thridPartyDemo/skia.tsx'
 // import App from './src/DTS/DTS2026011907680/GestureHandlerDemo'
@@ -146,6 +146,8 @@ import App from './src/IR/251208195649046/GestureHandlerDemo.tsx'
 // import App from './tests/netInfo.tsx'
 // import App from './src/keyboardController.tsx'
 // import App from './src/shopify-flash-list/demo.tsx'
+import App from './src/shopify-flash-list/MusicListDemo.tsx'
+
 // import App from './src/bottomSheet/App.tsx'
 // import App from './src/react-native-keyboard-controller/KeyboardController.tsx'
 // import App from './src/react-native-keyboard-controller/index.tsx'
@@ -184,7 +186,7 @@ import App from './src/IR/251208195649046/GestureHandlerDemo.tsx'
 // import App from "./tests/react-native-webview/darkon.tsx"
 // import App from "./tests/react-native-elements/App.tsx"
 // vmall Tab切换慢的问题
-import App from "./tests/Vmall/Tab/activity-default/index_tab.h.tsx"
+// import App from "./tests/Vmall/Tab/activity-default/index_tab.h.tsx"
 // import App from "./tests/react-native-spring-scrollview/App.tsx"
 // import App from "./tests/react-native-animated/AnimatedSensorExample2.tsx"
 // import App from "./tests/react-native-gesture-handler/App2.tsx"
