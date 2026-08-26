@@ -1,0 +1,22 @@
+ReactProject82/ReactProject/harmony/entry/src/main/cpp/CMakeLists.txt
+  h_fed3d0bf8fff42 33,55
+ReactProject82/ReactProject/harmony/entry/src/main/ets/RNComponent/SelectBox.ets
+  h_fed3d0bf8fff42 30
+ReactProject82/ReactProject/harmony/entry/src/main/cpp/PackageProvider.cpp
+  h_fed3d0bf8fff42 18,32-33
+ReactProject82/ReactProject/package.json
+  h_fed3d0bf8fff42 19
+ReactProject82/ReactProject/harmony/entry/oh-package.json5
+  h_fed3d0bf8fff42 18-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "3.13.139",
+  "base_commit_sha": "490c1520c8c1c141da588eb04b5222e6cc1ff843",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  }
+}
