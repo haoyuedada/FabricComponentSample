@@ -41,7 +41,7 @@ import { AppRegistry } from 'react-native';
 // import App from "./crash-test/PropsRegistryCrashDemo"
 // import App from "./crash-test/MinimalCrashDemo"
 // 滴滴手势库 demo
-import App from './tests/didi/demo'
+// import App from './tests/didi/demo'
 
 // reanimated start
 // import { AnimatedText } from "./tests/react-native-reanimated/example/AnimatedText"
@@ -102,7 +102,7 @@ import App from './tests/didi/demo'
 // import App from './tests/toolbar-android/Index.tsx'
 // import App from './tests/react-native-gesture-handler/hongquanyun/App.tsx';
 // import App from "./crash-test/ToJSValueDemo.tsx"
-// import App from './tests/Scrollview/touchEnableScroll.tsx'
+import App from './tests/Scrollview/touchEnableScroll.tsx'
 // import App from './tests/react-native-reanimated/AnimatedSensorExample2.tsx'
 // import App from './tests/react-native-reanimated/ReanimatedCrashRepro2.tsx'
 

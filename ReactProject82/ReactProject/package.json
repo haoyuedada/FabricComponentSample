@@ -7,7 +7,7 @@
     "listen": "hdc rport tcp:8081 tcp:8081",
     "lint": "eslint .",
     "start": "npm run codegen && react-native start --reset-cache",
-    "dev": "npm run codegen && react-native bundle-harmony --dev false --bundle-output ./harmony/entry/src/main/resources/rawfile/bundle.harmony.js",
+    "dev": "react-native bundle-harmony --dev false --bundle-output ./harmony/entry/src/main/resources/rawfile/bundle.harmony.js",
     "codegen": "react-native codegen-harmony --cpp-output-path ./harmony/entry/src/main/cpp/generated --rnoh-module-path ./harmony/entry/oh_modules/@rnoh/react-native-openharmony --no-safety-check"
   },
   "dependencies": {

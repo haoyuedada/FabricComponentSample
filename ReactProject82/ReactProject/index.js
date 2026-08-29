@@ -27,6 +27,7 @@ import { name as appName } from './app.json';
 // import App from './src/flash-list/CommentListDemo.tsx';
 // import App from './src/flash-list/demo-huan.tsx';
 // import App from './src/flash-list/SongFlashListDemo.tsx';
-import App from './src/flash-list/MusicListDemo.tsx';
+// import App from './src/flash-list/MusicListDemo.tsx';
+import App from './src/flash-list/CrashReproDemo.tsx';
 
 AppRegistry.registerComponent(appName, () => App);

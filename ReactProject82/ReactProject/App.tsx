@@ -8,12 +8,12 @@
 
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import ScrollViewStatusBarTest from './src/ScrollViewStatusBarTest'
+import FlashListCrashRepro from './src/flash-list/CrashReproDemo'
 
 // 测试用例
 const App = () => {
   return (
-    <ScrollViewStatusBarTest />
+    <FlashListCrashRepro />
   )
 }
 
