@@ -28,6 +28,11 @@ import { name as appName } from './app.json';
 // import App from './src/flash-list/demo-huan.tsx';
 // import App from './src/flash-list/SongFlashListDemo.tsx';
 // import App from './src/flash-list/MusicListDemo.tsx';
-import App from './src/flash-list/CrashReproDemo.tsx';
+// import App from './src/flash-list/CrashReproDemo.tsx';
+// runonjs
+// import App from './src/react-native-reanimated/runOnJS/RunOnJSError1Example';
+// import App from './src/react-native-reanimated/runOnJS/RunOnJSError2Example';
+// import App from './src/react-native-reanimated/runOnJS/RunOnJSError3Example';
+import App from './src/react-native-svg/SvgDemo.tsx';
 
 AppRegistry.registerComponent(appName, () => App);
