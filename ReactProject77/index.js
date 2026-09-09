@@ -88,6 +88,7 @@ import { AppRegistry } from 'react-native';
 // reanimated end
 // import App from "./tests/react-native-reanimated/ReanimateListDemo.tsx"
 // import App from "./tests/react-native-reanimated/FsTest.tsx"
+import App from './crash-test/Didi0909GcTeardownRepro.tsx'
 // import App from "./tests/react-native-reanimated/ReanimatedDemoPage.tsx"
 
 // import App from "./tests/react-native-reanimated/AI/obtainPropFromShadowNodeCrash.tsx"
@@ -102,7 +103,7 @@ import { AppRegistry } from 'react-native';
 // import App from './tests/toolbar-android/Index.tsx'
 // import App from './tests/react-native-gesture-handler/hongquanyun/App.tsx';
 // import App from "./crash-test/ToJSValueDemo.tsx"
-import App from './tests/Scrollview/touchEnableScroll.tsx'
+// import App from './tests/Scrollview/touchEnableScroll.tsx'
 // import App from './tests/react-native-reanimated/AnimatedSensorExample2.tsx'
 // import App from './tests/react-native-reanimated/ReanimatedCrashRepro2.tsx'
 
