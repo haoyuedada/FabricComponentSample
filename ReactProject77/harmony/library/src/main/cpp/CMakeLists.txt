@@ -26,6 +26,12 @@ add_subdirectory("${RNOH_CPP_DIR}" ./rn)
 #add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/rnc" ./fabric_component)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-gesture-handler/src/main/cpp" ./gesture-handler)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-reanimated/src/main/cpp" ./reanimated)
+# 仅为 librnoh_reanimated.so 保留 DWARF 文件/行号映射。
+if (TARGET rnoh_reanimated)
+  target_compile_options(rnoh_reanimated PRIVATE
+    -gline-tables-only
+  )
+endif()
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-safe-area-context/src/main/cpp" ./safe-area)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-mjrefresh/src/main/cpp" ./mjrefresh)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-screens/src/main/cpp" ./screens)
