@@ -81,7 +81,7 @@ import { AppRegistry } from 'react-native';
 // import App from './tests/Hierarchy1/Hierarchy2/index.js';
 // import FetchTest from './tests/FetchTest.tsx';
 // import VideoTest2 from './tests/imageMP4'
-// import WebviewTest from './tests/WebviewTest'
+import WebviewTest from './tests/WebviewTest'
 // import App from './src/thridPartyDemo/webView.tsx';
 // import App from './thridPartyDemo/AdaptiveWebView.tsx';
 // import App from './thridPartyDemo/vmall/DTS2025111903544/webviewDemo/webviewDemo/index.tsx'
@@ -192,5 +192,5 @@ import App from './src/shopify-flash-list/MusicListDemo.tsx'
 // import App from "./tests/react-native-gesture-handler/App2.tsx"
 
 // 在导航或 App 中注册该组件
-AppRegistry.registerComponent("app_name", () => App);
+AppRegistry.registerComponent("app_name", () => WebviewTest);
 // import { transform } from "./testTurboModule/buautify_executor.js"
