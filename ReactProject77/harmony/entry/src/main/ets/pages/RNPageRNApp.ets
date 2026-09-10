@@ -21,7 +21,7 @@ export struct RNPageRNApp {
   @State isPageActive: boolean = false
   private autoLoopTimer: number = -1
   // 循环跳转定时器间隔
-  private readonly LOOP_INTERVAL: number = 300
+  private readonly LOOP_INTERVAL: number = 100
 
   onBackPress(): boolean | void {
     if ( this.storageProp >= 2 ) {
@@ -99,7 +99,9 @@ export struct RNPageRNApp {
       if (this.shouldShowRNApp) {
         UPReactViewRNApp({
           onUnMountBeforeNavigate: () => {
+            console.info('[RNLifecycle][RNPageRNApp] request RNApp unmount before navigation')
             this.shouldShowRNApp = false
+            console.info('[RNLifecycle][RNPageRNApp] shouldShowRNApp = false')
           }
         })
       }

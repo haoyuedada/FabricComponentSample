@@ -35,10 +35,15 @@ export struct UPReactViewRNAppTwo {
 
 
   aboutToAppear() {
+    console.info('[RNLifecycle][UPReactViewRNAppTwo] aboutToAppear: RNApp container mounted')
     this.logger = this.rnohCoreContext!.logger.clone("Index")
     const stopTracing = this.logger.clone("aboutToAppear").startTracing()
     this.shouldShow = true
     stopTracing()
+  }
+
+  aboutToDisappear() {
+    console.info('[RNLifecycle][UPReactViewRNAppTwo] aboutToDisappear: RNApp container removed; cleanup should start')
   }
 
   onBackPress(): boolean | undefined {
@@ -72,6 +77,7 @@ export struct UPReactViewRNAppTwo {
           appKey: "app_name",
           wrappedCustomRNComponentBuilder: wrappedCustomRNComponentBuilder,
           onSetUp: (rnInstance) => {
+            console.info('[RNLifecycle][UPReactViewRNAppTwo] RNInstance onSetUp: instance created')
             rnInstance.enableFeatureFlag("ENABLE_RN_INSTANCE_CLEAN_UP")
             // NOTE: you can provide fonts dynamically at runtime by calling `RNInstance.registerFont`
             // rnInstance.registerFont('Pacifico-Regular', $rawfile("fonts/Pacifico-Regular.ttf"))

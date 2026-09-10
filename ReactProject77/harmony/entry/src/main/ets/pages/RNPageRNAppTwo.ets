@@ -94,7 +94,9 @@ export struct RNPageRNAppTwo {
       if (this.shouldShowRNApp) {
         UPReactViewRNAppTwo({
           onUnMountBeforeNavigate: () => {
+            console.info('[RNLifecycle][RNPageRNAppTwo] request RNApp unmount before navigation')
             this.shouldShowRNApp = false
+            console.info('[RNLifecycle][RNPageRNAppTwo] shouldShowRNApp = false')
           }
         })
       }
