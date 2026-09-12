@@ -1,0 +1,14 @@
+ReactProject77/App.tsx
+  h_fed3d0bf8fff42 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "cd2c5b9ad4279b371c5049df4faf90b108f602e9",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  }
+}
