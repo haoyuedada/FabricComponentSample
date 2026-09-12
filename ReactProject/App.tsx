@@ -8,6 +8,7 @@ import ModalTestClass from './tests/ModalTestClass'
 import ScaleableTimelineView from './tests/ScaleableTimelineView-2'
 
 
+// Stack navigator shared by the sample screens.
 const HomeStack = createStackNavigator();
 
 function HomeScreen({ navigation }) {
