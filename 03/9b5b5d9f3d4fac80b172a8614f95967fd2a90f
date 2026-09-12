@@ -1,0 +1,28 @@
+ReactProject77/crash-test/ShadowNodeWrapperTeardownRepro.tsx
+  h_fed3d0bf8fff42 1-24,29-74,77-136
+  s_3d0f0e7954a883::t_324b7d9918a4c0 25-28,75-76
+ReactProject77/package-lock.json
+  s_3d0f0e7954a883::t_80f0bfc7ee2cf5 3433-3435,4324-4326,6275-6277,6715-6717,7044-7046,7077-7079,7106-7108,7173-7175,7192-7196,8437-8439,9424-9426,9681-9683,9690-9692,9695,12039-12041,13940-13942,14035-14037,15139-15141,16185-16187,16511-16513,16517-16518,16520,16522-16523,16527,16529,16793-16795,17399-17401
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "039b5b5d9f3d4fac80b172a8614f95967fd2a90f",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  },
+  "sessions": {
+    "s_3d0f0e7954a883": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0814c-fd32-7202-96e2-9aa42e12d72c",
+        "model": "unknown"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "total_deletions": 0
+    }
+  }
+}
