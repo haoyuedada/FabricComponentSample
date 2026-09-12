@@ -1,0 +1,25 @@
+ReactProject/App.tsx
+  s_347dd60e2f280f::t_71da5a564aef57 11,104
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "e24786502dfb2eb061f8644b8f473dd85baea5c2",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  },
+  "sessions": {
+    "s_347dd60e2f280f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a09391-8aa0-7240-8b7f-1e4358247c62",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "total_deletions": 1
+    }
+  }
+}
