@@ -8,12 +8,14 @@
 
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import FlashListCrashRepro from './src/flash-list/CrashReproDemo'
+// import FlashListCrashRepro from './src/flash-list/CrashReproDemo'
+import ViewportOffsetDemo from './src/ViewportOffsetDemo'
 
 // 测试用例
 const App = () => {
   return (
-    <FlashListCrashRepro />
+    // <FlashListCrashRepro />
+    <ViewportOffsetDemo />
   )
 }
 

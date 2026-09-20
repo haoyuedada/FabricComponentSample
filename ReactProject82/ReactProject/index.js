@@ -33,6 +33,11 @@ import { name as appName } from './app.json';
 // import App from './src/react-native-reanimated/runOnJS/RunOnJSError1Example';
 // import App from './src/react-native-reanimated/runOnJS/RunOnJSError2Example';
 // import App from './src/react-native-reanimated/runOnJS/RunOnJSError3Example';
-import App from './src/react-native-svg/SvgDemo.tsx';
+// import App from './src/react-native-svg/SvgDemo.tsx';
+// 滴滴&京东手势库 demo
+// import App from './Gesture/demo.tsx';
+// import App from './Gesture/GestureHandlerDemo.tsx';
+import App from './src/ViewportOffsetDemo';
+
 
 AppRegistry.registerComponent(appName, () => App);
