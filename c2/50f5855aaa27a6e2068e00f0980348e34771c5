@@ -1,0 +1,43 @@
+ReactProject82/ReactProject/App.tsx
+  h_fed3d0bf8fff42 12
+  s_d47a0f9a9663c8::t_6c1b16f08b1cd3 11,17-18
+ReactProject82/ReactProject/Gesture/demo.tsx
+  h_fed3d0bf8fff42 1-297
+ReactProject82/ReactProject/index.js
+  h_fed3d0bf8fff42 37-38,40-41
+  h_fed3d0bf8fff42 36,39
+ReactProject82/ReactProject/harmony/build-profile.json5
+  h_fed3d0bf8fff42 8,10-11,13-14
+ReactProject82/ReactProject/package.json
+  h_fed3d0bf8fff42 20
+ReactProject82/ReactProject/harmony/entry/oh-package.json5
+  h_fed3d0bf8fff42 12
+ReactProject82/ReactProject/Gesture/GestureHandlerDemo.tsx
+  h_fed3d0bf8fff42 1-453
+ReactProject82/ReactProject/package-lock.json
+  h_fed3d0bf8fff42 17,119-121,460-462,1895-1897,2326-2328,2495-2497,3973-3975,4661-4663,4670-4672,4680-4682,4711-4713,4718-4721,4734,4740-4742,4746-4749,4765-4767,4771-4772,4787-4789,4793-4794,4805-4807,4822-4824,4828-4830,4847-4849,4861-4863,4867-4870,4902-4904,4909-4911,4926-4928,4932,5231-5233,5237,5240-5242,5678-5680,5701-5703,5715,5750-5752,5775-5777,5794-5798,6377-6379,6386,6394-6397,7007-7009,7467-7469,7570-7572,7689-7691,8161-8163,8432-8434,8441-8443,8446,8801-8803,9181-9183,9423-9425,9428,10596-10598,11969-11971,12060-12062,12137-12139,12932-12934,13606-13608,13768-13770,15063-15065,15368-15370,15375-15376,15379,15413,15586-15588,15824-15826,15932-15934
+ReactProject82/ReactProject/src/ViewportOffsetDemo.tsx
+  h_fed3d0bf8fff42 1-163
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.29.1408",
+  "base_commit_sha": "c250f5855aaa27a6e2068e00f0980348e34771c5",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  },
+  "sessions": {
+    "s_d47a0f9a9663c8": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_f420911dfffeiL7zZvya4JGH33",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "total_deletions": 25
+    }
+  }
+}
