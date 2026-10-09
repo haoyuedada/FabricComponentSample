@@ -1,0 +1,75 @@
+ReactProject/package.json
+  h_fed3d0bf8fff42 25,27-35,40-41,47-48,51-56
+  h_fed3d0bf8fff42 36
+ReactProject/src/vmall/webviewDemo/webviewDemo/index.tsx
+  h_fed3d0bf8fff42 1-196
+ReactProject/index.js
+  h_fed3d0bf8fff42 84,149,193-194,197
+  h_fed3d0bf8fff42 159
+ReactProject/harmony/entry/src/main/resources/rawfile/all/bundle.harmonyall.js
+  h_fed3d0bf8fff42 1-451
+ReactProject/src/vmall/webviewDemo/webviewDemo/AdaptiveWebView.tsx
+  h_fed3d0bf8fff42 1-98
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.2",
+  "base_commit_sha": "590da601f8f3d8498f1521a58df70a56b14fb976",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  },
+  "sessions": {
+    "s_bb509954596b35": {
+      "agent_id": {
+        "tool": "codegenie-deveco",
+        "id": "1789891329012",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "total_additions": 12,
+      "total_deletions": 2,
+      "overridden_lines": 0,
+      "turn_models": {
+        "t_0cb4a5cf35cbe9": "glm-5.3",
+        "t_2c852c3dc3bd99": "glm-5.3",
+        "t_bc8c6facbe7266": "glm-5.3",
+        "t_bd1f3818cf07a7": "glm-5.3",
+        "t_e76f645e542d81": "glm-5.3"
+      },
+      "model_totals": {
+        "glm-5.3": {
+          "additions": 12,
+          "deletions": 2
+        }
+      }
+    },
+    "s_d47a0f9a9663c8": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_f420911dfffeiL7zZvya4JGH33",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "total_additions": 39,
+      "total_deletions": 44,
+      "overridden_lines": 0,
+      "turn_models": {
+        "t_151862cc9c56b4": "glm-5.3",
+        "t_447d1dc8c51d6c": "glm-5.3",
+        "t_5fca56442c3125": "glm-5.3",
+        "t_cc05816f87f526": "glm-5.3",
+        "t_d6c2d34a663077": "glm-5.3",
+        "t_ffddb3468d1d1a": "glm-5.3"
+      },
+      "model_totals": {
+        "glm-5.3": {
+          "additions": 39,
+          "deletions": 44
+        }
+      }
+    }
+  }
+}
