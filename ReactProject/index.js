@@ -81,7 +81,7 @@ import { AppRegistry } from 'react-native';
 // import App from './tests/Hierarchy1/Hierarchy2/index.js';
 // import FetchTest from './tests/FetchTest.tsx';
 // import VideoTest2 from './tests/imageMP4'
-import WebviewTest from './tests/WebviewTest'
+// import WebviewTest from './tests/WebviewTest'
 // import App from './src/thridPartyDemo/webView.tsx';
 // import App from './thridPartyDemo/AdaptiveWebView.tsx';
 // import App from './thridPartyDemo/vmall/DTS2025111903544/webviewDemo/webviewDemo/index.tsx'
@@ -146,7 +146,7 @@ import WebviewTest from './tests/WebviewTest'
 // import App from './tests/netInfo.tsx'
 // import App from './src/keyboardController.tsx'
 // import App from './src/shopify-flash-list/demo.tsx'
-import App from './src/shopify-flash-list/MusicListDemo.tsx'
+// import App from './src/shopify-flash-list/MusicListDemo.tsx'
 
 // import App from './src/bottomSheet/App.tsx'
 // import App from './src/react-native-keyboard-controller/KeyboardController.tsx'
@@ -156,7 +156,7 @@ import App from './src/shopify-flash-list/MusicListDemo.tsx'
 // import App from "./tests/smartRefresh/demo.tsx"
 // import App from './tests/ToptabDemo/TopTabDemo/NavigationMaterialTopTabs.tsx'
 // 滴滴手势库 demo
-// import App from './tests/didi/demo'
+import App from './tests/didi/demo'
 // import App from './tests/didi/demohjy'
 // import App from './tests/refresh.tsx'
 // import App from './tests/lottie/crash_demo_direct.tsx'
@@ -190,7 +190,9 @@ import App from './src/shopify-flash-list/MusicListDemo.tsx'
 // import App from "./tests/react-native-spring-scrollview/App.tsx"
 // import App from "./tests/react-native-animated/AnimatedSensorExample2.tsx"
 // import App from "./tests/react-native-gesture-handler/App2.tsx"
+// vmall webview 内存大的问题
+// import App from "./src/vmall/webviewDemo/webviewDemo/index.tsx"
 
 // 在导航或 App 中注册该组件
-AppRegistry.registerComponent("app_name", () => WebviewTest);
+AppRegistry.registerComponent("app_name", () => App);
 // import { transform } from "./testTurboModule/buautify_executor.js"
