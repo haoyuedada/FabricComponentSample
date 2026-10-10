@@ -1,0 +1,132 @@
+--- a/src/main/ets/components/RNSScreen.ets
++++ b/src/main/ets/components/RNSScreen.ets
+@@ -33,7 +33,8 @@
+ import { RNC } from '../generated/ts';
+ import { CustomTransitionCoordinator } from '../animations/CustomTransition';
+ import { RNSScreenStackHeaderConfigDescriptor } from './RNSScreenStackHeaderConfig';
+-import { window } from '@kit.ArkUI';
++import { window, componentSnapshot } from '@kit.ArkUI';
++import { image } from '@kit.ImageKit';
+ import { AnimationHandlerEvent, getNewAnimationState } from '../animations/AnimationHandler';
+ import { RNSScreenTitleHeader, hasTransparency } from "./RNSScreenTitleHeader"
+ import { TITLEBAR_HEIGHT } from '../Constants';
+@@ -101,6 +102,9 @@
+   private distance: number = 0;
+   private static TOP_PAGEID: string = 'default'
+   private static RECORD_TOP_PAGEID: string = 'default'
++  // POC(方案C): 缓存每个页面"成为栈顶时"的截图, pop 转场时用快照顶替已被同一次 commit 销毁的页面内容
++  private static snapshotCache: Map<string, image.PixelMap> = new Map()
++  private static nextSnapshotId: number = 0
+   @State isStatusBarShow: boolean = false;
+   private statusBarHeight: number = 0;
+   private preventNativeDismiss: boolean = false;
+@@ -120,6 +124,9 @@
+   @State translateXValue: string = '0';
+   @State translateYValue: string = '0';
+   @State opacityValue: number = 1;
++  // POC(方案C): 实例级快照节点 id(避免与隐藏实例/其他 RNViewBase 的 tag id 冲突) + 垫底快照图
++  private snapshotNodeId: string = `rnss-snap-${RNSScreen.nextSnapshotId++}`
++  @State snapshotPixelMap: image.PixelMap | undefined = undefined
+   @State screenOrientation: string = 'default';
+   @State sheetAllowedDetents: number[] = [];
+   @State sheetLargestUndimmedDetent: number = 0;
+@@ -166,6 +173,47 @@
+ 
+   getCurrentOffset(): Position {
+     return this.currentOffset
++  }
++
++  private snapshotCacheKey(): string {
++    return `${this.ctx.rnInstance.getId()}-${this.tag}`
++  }
++
++  private captureSnapshot(): void {
++    // 仅由 Navigation 创建的真实页面实例(pageId 在 onReady 后非 default)持有快照;
++    // modal(DIALOG) 模式不走 slide 转场, 也不需要
++    if (this.pageId === 'default' || this.presentationMode === NavDestinationMode.DIALOG) {
++      return
++    }
++    try {
++      const pm = componentSnapshot.getSync(this.snapshotNodeId)
++      const key = this.snapshotCacheKey()
++      const old = RNSScreen.snapshotCache.get(key)
++      RNSScreen.snapshotCache.set(key, pm)
++      if (old !== undefined) {
++        old.release()
++      }
++      // 同步到垫底图(页面存活时被内容盖住, 更新不可见)
++      this.snapshotPixelMap = pm
++      this.logger.debug(`RNSScreen snapshot captured, tag: ${this.tag}`)
++    } catch (err) {
++      this.logger.warn(`RNSScreen snapshot capture failed, tag: ${this.tag}, err: ${JSON.stringify(err)}`)
++    }
++  }
++
++  private releaseSnapshot(): void {
++    // CAPI 架构下每个 RNSScreen tag 还有一个由 React mutation 创建的隐藏实例,
++    // 它在 pop commit 时被 dispose, aboutToDisappear 先于转场回调执行,
++    // 若不跳过会误删并 release 掉真实实例即将使用的快照
++    if (this.pageId === 'default') {
++      return
++    }
++    const key = this.snapshotCacheKey()
++    const pm = RNSScreen.snapshotCache.get(key)
++    if (pm !== undefined) {
++      RNSScreen.snapshotCache.delete(key)
++      pm.release()
++    }
+   }
+   async aboutToAppear() {
+     this.logger = this.ctx!.logger.clone("RNSScreen")
+@@ -206,6 +254,7 @@
+ 
+   aboutToDisappear() {
+     this.cleanUpCallbacks.forEach(cb => cb())
++    this.releaseSnapshot()
+   }
+ 
+   onScreenPropsChange(presentation: string) {
+@@ -659,8 +708,21 @@
+           }
+ 
+           Stack() {
++            // POC(方案C): 快照垫底而非覆盖 —— 页面存活时被不透明 RN 内容盖住(不可见);
++            // pop commit 销毁内容的同一帧, 垫底图自然露出, 无需任何状态切换,
++            // 从机制上消除"内容销毁→覆盖层上屏"之间的时序窗口(漏帧/闪变)
++            if (this.snapshotPixelMap !== undefined) {
++              Image(this.snapshotPixelMap)
++                .width('100%')
++                .height('100%')
++                .objectFit(ImageFit.Fill)
++                .position({ x: 0, y: 0 })
++                .hitTestBehavior(HitTestMode.None)
++            }
++
+             ContentSlot(this.ctx.getContentForTag(this.tag))
+           }
++          .id(this.snapshotNodeId)
+ 
+           if (this.stackPresentationMode !== '' && !this.shouldHideTitleBar) {
+             this.screenTitleBuilder()
+@@ -700,6 +762,12 @@
+       await this.updateState(true);
+       await this.updateHeaderConfigState();
+       this.setScreenOrientation()
++      // 立即拍一张兜底; onShown 时原生 header 高度尚未经 headerHeightChange 回流 JS 完成重排,
++      // 此刻内容比最终布局整体偏高约一个 header 高度, 延迟重拍修正
++      this.captureSnapshot()
++      setTimeout(() => {
++        this.captureSnapshot()
++      }, 400)
+     })
+     .onWillDisappear(() => {
+       this.eventEmitter!.emit("willDisappear", {})
+@@ -708,6 +776,8 @@
+       this.logger.debug('onDisAppear ' + this.pageId + ' , screenId: ' + this.descriptor.rawProps["screenId"])
+       this.customTransitionCoordinator?.unregisterNavParam(this.pageId);
+       this.eventEmitter!.emit("disappear", {})
++      this.snapshotPixelMap = undefined
++      this.releaseSnapshot()
+     })
+     .onBackPressed(() => {
+       this.backPressed();
