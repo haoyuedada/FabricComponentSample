@@ -87,7 +87,9 @@ import { AppRegistry } from 'react-native';
 // reanimated end
 // import App from "./tests/react-native-reanimated/ReanimateListDemo.tsx"
 // import App from "./tests/react-native-reanimated/FsTest.tsx"
-import App from './crash-test/Didi0909GcTeardownRepro.tsx'
+// import App from './crash-test/Didi0909GcTeardownRepro.tsx'
+// 路由 push/pop 页面堆栈 demo
+import App from './tests/NavigationPushPopDemo/App'
 // import App from "./tests/react-native-reanimated/ReanimatedDemoPage.tsx"
 
 // import App from "./tests/react-native-reanimated/AI/obtainPropFromShadowNodeCrash.tsx"
