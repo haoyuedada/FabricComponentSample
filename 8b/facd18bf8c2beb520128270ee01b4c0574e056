@@ -1,0 +1,151 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.2",
+  "base_commit_sha": "8bfacd18bf8c2beb520128270ee01b4c0574e056",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  },
+  "sessions": {
+    "s_7100c26b8d4712": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_ed0a1f142ffeXP10lfXKtY3kku",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "total_additions": 112,
+      "total_deletions": 1,
+      "overridden_lines": 0,
+      "turn_models": {
+        "t_6990ee772dd3b5": "glm-5.3",
+        "t_ba9dc6d0ab61b6": "glm-5.3"
+      },
+      "model_totals": {
+        "glm-5.3": {
+          "additions": 112,
+          "deletions": 1
+        }
+      }
+    },
+    "s_a512ee24f25a06": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_ed0880fabffe40TX145KVixigG",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "total_additions": 86,
+      "total_deletions": 85,
+      "overridden_lines": 0,
+      "turn_models": {
+        "t_1dc59acdcfa040": "glm-5.3",
+        "t_7087d4123ff1b0": "glm-5.3",
+        "t_a0ef47627fca54": "glm-5.3"
+      },
+      "model_totals": {
+        "glm-5.3": {
+          "additions": 86,
+          "deletions": 85
+        }
+      }
+    },
+    "s_bb509954596b35": {
+      "agent_id": {
+        "tool": "codegenie-deveco",
+        "id": "1789891329012",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "total_additions": 12,
+      "total_deletions": 2,
+      "overridden_lines": 0,
+      "turn_models": {
+        "t_0cb4a5cf35cbe9": "glm-5.3",
+        "t_2c852c3dc3bd99": "glm-5.3",
+        "t_bc8c6facbe7266": "glm-5.3",
+        "t_bd1f3818cf07a7": "glm-5.3",
+        "t_e76f645e542d81": "glm-5.3"
+      },
+      "model_totals": {
+        "glm-5.3": {
+          "additions": 12,
+          "deletions": 2
+        }
+      }
+    },
+    "s_d47a0f9a9663c8": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_f420911dfffeiL7zZvya4JGH33",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "total_additions": 39,
+      "total_deletions": 44,
+      "overridden_lines": 0,
+      "turn_models": {
+        "t_151862cc9c56b4": "glm-5.3",
+        "t_447d1dc8c51d6c": "glm-5.3",
+        "t_5fca56442c3125": "glm-5.3",
+        "t_cc05816f87f526": "glm-5.3",
+        "t_d6c2d34a663077": "glm-5.3",
+        "t_ffddb3468d1d1a": "glm-5.3"
+      },
+      "model_totals": {
+        "glm-5.3": {
+          "additions": 39,
+          "deletions": 44
+        }
+      }
+    },
+    "s_e4e2247f4713bd": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_ee06991fcffepp5N7kifwk50mS",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "total_additions": 135,
+      "total_deletions": 64,
+      "overridden_lines": 0,
+      "turn_models": {
+        "t_06b9af72929f4d": "glm-5.3",
+        "t_1a574cfbd90d98": "glm-5.3",
+        "t_336397d2844e01": "glm-5.3",
+        "t_3fa2bee50b541f": "glm-5.3",
+        "t_426f2e9e6ebab5": "glm-5.3",
+        "t_4d48966701d0f5": "glm-5.3",
+        "t_4fbd9df2cd20d1": "glm-5.3",
+        "t_67dd219bd7a326": "glm-5.3",
+        "t_68828a2a8ef10d": "glm-5.3",
+        "t_78098639960251": "glm-5.3",
+        "t_7cea5d52142275": "glm-5.3",
+        "t_7f9d6168a85bee": "glm-5.3",
+        "t_83e76c544fa7ff": "glm-5.3",
+        "t_8d765976ed7b3e": "glm-5.3",
+        "t_9d9341055810e2": "glm-5.3",
+        "t_a02778ded3805e": "glm-5.3",
+        "t_b52d3f408381d3": "glm-5.3",
+        "t_bc6b1a6eddf04f": "glm-5.3",
+        "t_bdcd71f057b68d": "glm-5.3",
+        "t_c8752674984692": "glm-5.3",
+        "t_d15d8e29da49a6": "glm-5.3",
+        "t_d2c8836c600b2c": "glm-5.3",
+        "t_f13d93e87f1d75": "glm-5.3",
+        "t_f2d2ce86512d28": "glm-5.3",
+        "t_f7cd45870d3bb5": "glm-5.3",
+        "t_f9f819699ff457": "glm-5.3"
+      },
+      "model_totals": {
+        "glm-5.3": {
+          "additions": 135,
+          "deletions": 64
+        }
+      }
+    }
+  }
+}
