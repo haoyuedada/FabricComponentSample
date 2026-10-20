@@ -1,0 +1,615 @@
+diff --git a/node_modules/@react-native-ohos/bottom-sheet/src/components/bottomSheet/BottomSheet.tsx b/node_modules/@react-native-ohos/bottom-sheet/src/components/bottomSheet/BottomSheet.tsx
+index b347ad4..95482ec 100644
+--- a/node_modules/@react-native-ohos/bottom-sheet/src/components/bottomSheet/BottomSheet.tsx
++++ b/node_modules/@react-native-ohos/bottom-sheet/src/components/bottomSheet/BottomSheet.tsx
+@@ -6,6 +6,7 @@ import React, {
+   useEffect,
+   useImperativeHandle,
+   useMemo,
++  useRef,
+ } from 'react';
+ import { Dimensions, Platform, StyleSheet } from 'react-native';
+ import { State } from 'react-native-gesture-handler';
+@@ -1444,9 +1445,17 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
+     //#endregion
+ 
+     //#region contexts variables
++    const harmonyTouchStateRef = useRef<{
++      source: 'undetermined' | 'scrollable';
++      identifier: number | null;
++    }>({
++      source: 'undetermined',
++      identifier: null,
++    });
+     const internalContextVariables = useMemo(
+       () => ({
+         textInputNodesRef,
++        harmonyTouchStateRef,
+         enableContentPanningGesture,
+         enableDynamicSizing,
+         overDragResistanceFactor,
+@@ -1479,6 +1488,7 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
+       }),
+       [
+         textInputNodesRef,
++        harmonyTouchStateRef,
+         animatedIndex,
+         animatedPosition,
+         animatedSheetHeight,
+diff --git a/node_modules/@react-native-ohos/bottom-sheet/src/components/bottomSheetDraggableView/BottomSheetDraggableView.tsx b/node_modules/@react-native-ohos/bottom-sheet/src/components/bottomSheetDraggableView/BottomSheetDraggableView.tsx
+index c7ff5f7..52c92e0 100644
+--- a/node_modules/@react-native-ohos/bottom-sheet/src/components/bottomSheetDraggableView/BottomSheetDraggableView.tsx
++++ b/node_modules/@react-native-ohos/bottom-sheet/src/components/bottomSheetDraggableView/BottomSheetDraggableView.tsx
+@@ -1,9 +1,7 @@
+-import React, { useCallback, useMemo, useRef, useState, memo } from 'react';
++import React, { useEffect, useMemo, useRef, memo } from 'react';
+ import { PanResponder, Platform } from 'react-native';
+ import Animated, {
+-  runOnJS,
+   runOnUI,
+-  useAnimatedReaction,
+ } from 'react-native-reanimated';
+ import {
+   Gesture,
+@@ -16,7 +14,7 @@ import {
+   useBottomSheetGestureHandlers,
+   useBottomSheetInternal,
+ } from '../../hooks';
+-import { GESTURE_SOURCE, SCROLLABLE_TYPE } from '../../constants';
++import { GESTURE_SOURCE } from '../../constants';
+ import type { BottomSheetDraggableViewProps } from './types';
+ 
+ const BottomSheetDraggableViewComponent = ({
+@@ -39,6 +37,7 @@ const BottomSheetDraggableViewComponent = ({
+     animatedDetentsState,
+     animatedPosition,
+     animatedScrollableState,
++    harmonyTouchStateRef,
+   } = useBottomSheetInternal();
+   const { contentPanGestureHandler, scrollablePanGestureHandler } =
+     useBottomSheetGestureHandlers();
+@@ -47,42 +46,28 @@ const BottomSheetDraggableViewComponent = ({
+   const activePanHandlers = isContentPan
+     ? contentPanGestureHandler
+     : scrollablePanGestureHandler;
+-  const [isHarmonyContentPanDetached, setIsHarmonyContentPanDetached] =
+-    useState(false);
+-  const updateHarmonyContentPanDetached = useCallback((detached: boolean) => {
+-    setIsHarmonyContentPanDetached(detached);
+-  }, []);
+-
+-  useAnimatedReaction(
+-    () => {
+-      if (!isHarmony || !isContentPan) {
+-        return false;
+-      }
+-
+-      const scrollableType = animatedScrollableState.value.type;
+-      const isNativeScrollable =
+-        scrollableType !== SCROLLABLE_TYPE.UNDETERMINED &&
+-        scrollableType !== SCROLLABLE_TYPE.VIEW;
+-      return isNativeScrollable;
+-    },
+-    (shouldDetach, previousShouldDetach) => {
+-      if (shouldDetach !== previousShouldDetach) {
+-        runOnJS(updateHarmonyContentPanDetached)(shouldDetach);
+-      }
+-    },
+-    [
+-      isHarmony,
+-      isContentPan,
+-      animatedScrollableState,
+-      updateHarmonyContentPanDetached,
+-    ]
+-  );
++  // Observe the Harmony content responder mode without changing gesture state.
++  useEffect(() => {
++    if (isHarmony) {
++      console.info(`[Diag][RouteGesture][RN] draggable.mode ${JSON.stringify({
++        time: Date.now(), gestureType, isContentPan, enableContentPanningGesture,
++        detached: false,
++        scrollableType: animatedScrollableState.value.type,
++        offsetY: animatedScrollableState.value.contentOffsetY,
++        position: animatedPosition.value,
++        highest: animatedDetentsState.get().highestDetentPosition,
++      })}`);
++    }
++  }, [isHarmony, gestureType, isContentPan, enableContentPanningGesture,
++    animatedScrollableState, animatedPosition, animatedDetentsState]);
+   //#endregion
+ 
+   //#region variables
+   const panGestureRef = useRef<PanGestureHandler>(null);
+   const harmonyPanDirectionRef = useRef(0);
+   const harmonyGestureStartedAtHighestSnapRef = useRef(false);
++  const harmonyScrollableHandoffDyRef = useRef(0);
++  const harmonyPanStartedFromScrollableRef = useRef(false);
+   // Harmony: legacy PanGestureHandler fallback branch consumes onGestureEvent
+   // (a Harmony-only compat field on useGestureHandler's return, not in the
+   // upstream GestureHandlersHookType type). Cast to satisfy tsc.
+@@ -182,20 +167,26 @@ const BottomSheetDraggableViewComponent = ({
+       animatedPosition.value <=
+       (animatedDetentsState.get().highestDetentPosition ?? Infinity) + 1;
+ 
+-    const shouldPanSheet = (gestureState?: { dy: number }) => {
+-      if (!isAtHighestSnap()) {
+-        return true;
++    const shouldPanSheet = (gestureState: { dx: number; dy: number }) => {
++      const horizontalDistance = Math.abs(gestureState.dx);
++      const verticalDistance = Math.abs(gestureState.dy);
++      if (verticalDistance < 5 || verticalDistance <= horizontalDistance) {
++        return false;
+       }
+ 
+-      if (!gestureState) {
+-        const scrollableType = animatedScrollableState.value.type;
+-        const isNativeScrollable =
+-          scrollableType !== SCROLLABLE_TYPE.UNDETERMINED &&
+-          scrollableType !== SCROLLABLE_TYPE.VIEW;
+-        if (isNativeScrollable) {
+-          return false;
+-        }
+-        return (animatedScrollableState.value.contentOffsetY ?? 0) <= 0;
++      if (harmonyTouchStateRef.current.source === 'scrollable') {
++        // While the sheet is fully expanded, let the inner ScrollView consume
++        // movement until it reaches its top edge. A continued downward drag is
++        // then captured by this parent responder and handed to the sheet.
++        return (
++          isAtHighestSnap() &&
++          gestureState.dy > 0 &&
++          animatedScrollableState.get().contentOffsetY <= 1
++        );
++      }
++
++      if (!isAtHighestSnap()) {
++        return true;
+       }
+ 
+       if (gestureState.dy < 0) {
+@@ -228,13 +219,23 @@ const BottomSheetDraggableViewComponent = ({
+       gestureState: { dy: number; vy: number; moveY: number },
+       state: State
+     ) => {
+-      runOnUI(handler as never)(toGestureEvent(gestureState, state) as never);
++      const normalizedGestureState = {
++        ...gestureState,
++        dy:
++          gestureState.dy -
++          (harmonyPanStartedFromScrollableRef.current
++            ? harmonyScrollableHandoffDyRef.current
++            : 0),
++      };
++      runOnUI(handler as never)(
++        toGestureEvent(normalizedGestureState, state) as never
++      );
+     };
+ 
+     return PanResponder.create({
+       onStartShouldSetPanResponder: () => {
+-        const accepted = shouldPanSheet();
+-        return accepted;
++        console.info('[Diag][RouteGesture][RN] contentPan.startDecision accepted=false mode=defer');
++        return false;
+       },
+       onMoveShouldSetPanResponderCapture: (_, gestureState) =>
+         shouldPanSheet(gestureState),
+@@ -243,14 +244,25 @@ const BottomSheetDraggableViewComponent = ({
+       onPanResponderTerminationRequest: () =>
+         harmonyGestureStartedAtHighestSnapRef.current &&
+         harmonyPanDirectionRef.current < 0,
+-      onPanResponderGrant: (_, { y0 }) => {
++      onPanResponderGrant: (_, gestureState) => {
++        const startedFromScrollable =
++          harmonyTouchStateRef.current.source === 'scrollable';
++        harmonyPanStartedFromScrollableRef.current = startedFromScrollable;
++        harmonyScrollableHandoffDyRef.current = startedFromScrollable
++          ? gestureState.dy
++          : 0;
++        console.info(`[Diag][RouteGesture][RN] contentPan.grant ${JSON.stringify({
++          y0: gestureState.y0,
++          touchSource: harmonyTouchStateRef.current.source,
++          handoffDy: harmonyScrollableHandoffDyRef.current,
++        })}`);
+         harmonyPanDirectionRef.current = 0;
+         harmonyGestureStartedAtHighestSnapRef.current = isAtHighestSnap();
+         runOnUI(contentPanGestureHandler.handleOnStart as never)(
+           {
+             translationY: 0,
+             velocityY: 0,
+-            absoluteY: y0,
++            absoluteY: gestureState.y0,
+             state: State.BEGAN,
+           } as never
+         );
+@@ -272,6 +284,8 @@ const BottomSheetDraggableViewComponent = ({
+         runOnUI(contentPanGestureHandler.handleOnFinalize as never)(
+           toGestureEvent(gestureState, State.END) as never
+         );
++        harmonyScrollableHandoffDyRef.current = 0;
++        harmonyPanStartedFromScrollableRef.current = false;
+       },
+       onPanResponderTerminate: (_, gestureState) => {
+         emitGestureEvent(
+@@ -282,6 +296,8 @@ const BottomSheetDraggableViewComponent = ({
+         runOnUI(contentPanGestureHandler.handleOnFinalize as never)(
+           toGestureEvent(gestureState, State.CANCELLED) as never
+         );
++        harmonyScrollableHandoffDyRef.current = 0;
++        harmonyPanStartedFromScrollableRef.current = false;
+       },
+     });
+   }, [
+@@ -291,6 +307,7 @@ const BottomSheetDraggableViewComponent = ({
+     animatedDetentsState,
+     animatedPosition,
+     animatedScrollableState,
++    harmonyTouchStateRef,
+     contentPanGestureHandler,
+   ]);
+   //#endregion
+@@ -306,24 +323,14 @@ const BottomSheetDraggableViewComponent = ({
+   if (isHarmony && isContentPan) {
+     return (
+       <BottomSheetDraggableContext.Provider value={draggableGesture}>
+-        {isHarmonyContentPanDetached ? (
+-          <Animated.View
+-            key="harmony-scrollable-content"
+-            style={style}
+-            collapsable={false}
+-            {...rest}>
+-            {children}
+-          </Animated.View>
+-        ) : (
+-          <Animated.View
+-            key="harmony-draggable-content"
+-            style={style}
+-            collapsable={false}
+-            {...rest}
+-            {...(harmonyContentPanResponder?.panHandlers ?? {})}>
+-            {children}
+-          </Animated.View>
+-        )}
++        <Animated.View
++          key="harmony-draggable-content"
++          style={style}
++          collapsable={false}
++          {...rest}
++          {...(harmonyContentPanResponder?.panHandlers ?? {})}>
++          {children}
++        </Animated.View>
+       </BottomSheetDraggableContext.Provider>
+     );
+   }
+diff --git a/node_modules/@react-native-ohos/bottom-sheet/src/components/bottomSheetHandle/BottomSheetHandleContainer.tsx b/node_modules/@react-native-ohos/bottom-sheet/src/components/bottomSheetHandle/BottomSheetHandleContainer.tsx
+index 32d8706..d1a26d2 100644
+--- a/node_modules/@react-native-ohos/bottom-sheet/src/components/bottomSheetHandle/BottomSheetHandleContainer.tsx
++++ b/node_modules/@react-native-ohos/bottom-sheet/src/components/bottomSheetHandle/BottomSheetHandleContainer.tsx
+@@ -229,6 +229,7 @@ function BottomSheetHandleContainerComponent({
+       onStartShouldSetPanResponder: () => enableHandlePanningGesture,
+       onMoveShouldSetPanResponder: () => enableHandlePanningGesture,
+       onPanResponderGrant: () => {
++        console.info(`[Diag][RouteGesture][RN] handlePan.grant position=${animatedPosition.value}`);
+         dragStartPosition.current = animatedPosition.value;
+         // Harmony: blur the keyboard when user starts dragging the handle,
+         // mirroring useGestureEventsHandlersDefault.handleOnStart logic.
+@@ -287,6 +288,7 @@ function BottomSheetHandleContainerComponent({
+         animatedPosition.value = nextPosition;
+       },
+       onPanResponderRelease: (_, { dy, vy }) => {
++        console.info(`[Diag][RouteGesture][RN] handlePan.release ${JSON.stringify({time: Date.now(), dy, vy, position: animatedPosition.value})}`);
+         const { detents, closedDetentPosition } = animatedDetentsState.get();
+ 
+         if (detents === undefined || detents.length === 0) {
+diff --git a/node_modules/@react-native-ohos/bottom-sheet/src/components/bottomSheetScrollable/ScrollableContainer.harmony.tsx b/node_modules/@react-native-ohos/bottom-sheet/src/components/bottomSheetScrollable/ScrollableContainer.harmony.tsx
+index 1488094..3d8d837 100644
+--- a/node_modules/@react-native-ohos/bottom-sheet/src/components/bottomSheetScrollable/ScrollableContainer.harmony.tsx
++++ b/node_modules/@react-native-ohos/bottom-sheet/src/components/bottomSheetScrollable/ScrollableContainer.harmony.tsx
+@@ -1,4 +1,10 @@
+-import React, { forwardRef, useRef, type RefObject } from 'react';
++import React, {
++  forwardRef,
++  useCallback,
++  useEffect,
++  useRef,
++  type RefObject,
++} from 'react';
+ import {
+   GestureDetector,
+   NativeViewGestureHandler,
+@@ -25,18 +31,83 @@ export const ScrollableContainer = forwardRef<any, any>(
+       ScrollableComponent,
+       style,
+       animatedProps,
++      onTouchStart,
++      onTouchEnd,
++      onTouchCancel,
+       ...rest
+     },
+     ref
+   ) {
+     const nativeGestureRef = useRef<NativeViewGestureHandler>(null);
+     const panGestureRef = useRef<GestureType | undefined>(undefined);
+-    const { enableContentPanningGesture } = useBottomSheetInternal();
++    const { enableContentPanningGesture, harmonyTouchStateRef } =
++      useBottomSheetInternal();
+     const scrollablePanGesture = useHarmonyScrollablePanGesture(
+       panGestureRef,
+       nativeGesture
+     );
+ 
++    const getTouchIdentifier = useCallback((event: any) => {
++      return (
++        event?.nativeEvent?.identifier ??
++        event?.nativeEvent?.changedTouches?.[0]?.identifier ??
++        null
++      );
++    }, []);
++
++    const handleTouchStart = useCallback(
++      (event: any) => {
++        harmonyTouchStateRef.current = {
++          source: 'scrollable',
++          identifier: getTouchIdentifier(event),
++        };
++        onTouchStart?.(event);
++      },
++      [getTouchIdentifier, harmonyTouchStateRef, onTouchStart]
++    );
++
++    const clearScrollableTouch = useCallback(
++      (event?: any) => {
++        const identifier = getTouchIdentifier(event);
++        const current = harmonyTouchStateRef.current;
++        if (
++          current.source === 'scrollable' &&
++          (identifier === null ||
++            current.identifier === null ||
++            current.identifier === identifier)
++        ) {
++          harmonyTouchStateRef.current = {
++            source: 'undetermined',
++            identifier: null,
++          };
++        }
++      },
++      [getTouchIdentifier, harmonyTouchStateRef]
++    );
++
++    const handleTouchEnd = useCallback(
++      (event: any) => {
++        onTouchEnd?.(event);
++        clearScrollableTouch(event);
++      },
++      [clearScrollableTouch, onTouchEnd]
++    );
++
++    const handleTouchCancel = useCallback(
++      (event: any) => {
++        onTouchCancel?.(event);
++        clearScrollableTouch(event);
++      },
++      [clearScrollableTouch, onTouchCancel]
++    );
++
++    useEffect(
++      () => () => {
++        clearScrollableTouch();
++      },
++      [clearScrollableTouch]
++    );
++
+     return (
+       <BottomSheetDraggableView
+         nativeGestureRef={nativeGestureRef}
+@@ -56,6 +127,9 @@ export const ScrollableContainer = forwardRef<any, any>(
+               ref={ref}
+               animatedProps={animatedProps}
+               {...rest}
++              onTouchStart={handleTouchStart}
++              onTouchEnd={handleTouchEnd}
++              onTouchCancel={handleTouchCancel}
+               bounces={false}
+               alwaysBounceVertical={false}
+               style={[styles.container, style]}
+diff --git a/node_modules/@react-native-ohos/bottom-sheet/src/constants.ts b/node_modules/@react-native-ohos/bottom-sheet/src/constants.ts
+index 7f0a484..1d994ef 100644
+--- a/node_modules/@react-native-ohos/bottom-sheet/src/constants.ts
++++ b/node_modules/@react-native-ohos/bottom-sheet/src/constants.ts
+@@ -1,7 +1,10 @@
+-import { Platform } from 'react-native';
++import { Dimensions, Platform } from 'react-native';
+ import { Easing } from 'react-native-reanimated';
+ import type { SpringConfig, TimingConfig } from './types';
+ 
++const { height: WINDOW_HEIGHT, width: WINDOW_WIDTH } = Dimensions.get('window');
++const { height: SCREEN_HEIGHT, width: SCREEN_WIDTH } = Dimensions.get('screen');
++
+ enum GESTURE_SOURCE {
+   UNDETERMINED = 0,
+   SCROLLABLE = 1,
+@@ -149,4 +152,8 @@ export {
+   SCROLLABLE_TYPE,
+   SHEET_STATE,
+   SNAP_POINT_TYPE,
++  WINDOW_HEIGHT,
++  WINDOW_WIDTH,
++  SCREEN_HEIGHT,
++  SCREEN_WIDTH,
+ };
+diff --git a/node_modules/@react-native-ohos/bottom-sheet/src/contexts/internal.ts b/node_modules/@react-native-ohos/bottom-sheet/src/contexts/internal.ts
+index 2621d3a..ea86417 100644
+--- a/node_modules/@react-native-ohos/bottom-sheet/src/contexts/internal.ts
++++ b/node_modules/@react-native-ohos/bottom-sheet/src/contexts/internal.ts
+@@ -1,4 +1,8 @@
+-import { createContext, type RefObject } from 'react';
++import {
++  createContext,
++  type MutableRefObject,
++  type RefObject,
++} from 'react';
+ import type { State } from 'react-native-gesture-handler';
+ import type { SharedValue } from 'react-native-reanimated';
+ import type {
+@@ -57,6 +61,10 @@ export interface BottomSheetInternalContextType
+ 
+   // refs
+   textInputNodesRef: React.MutableRefObject<Set<number>>;
++  harmonyTouchStateRef: MutableRefObject<{
++    source: 'undetermined' | 'scrollable';
++    identifier: number | null;
++  }>;
+ }
+ 
+ export const BottomSheetInternalContext =
+diff --git a/node_modules/@react-native-ohos/bottom-sheet/src/hooks/useGestureEventsHandlersDefault.tsx b/node_modules/@react-native-ohos/bottom-sheet/src/hooks/useGestureEventsHandlersDefault.tsx
+index b1a4b4f..cb203f5 100644
+--- a/node_modules/@react-native-ohos/bottom-sheet/src/hooks/useGestureEventsHandlersDefault.tsx
++++ b/node_modules/@react-native-ohos/bottom-sheet/src/hooks/useGestureEventsHandlersDefault.tsx
+@@ -58,11 +58,12 @@ export const useGestureEventsHandlersDefault: GestureEventsHandlersHookType =
+     const context = useSharedValue<GestureEventContextType>({
+       ...INITIAL_CONTEXT,
+     });
++    const isHarmony = (Platform.OS as string) === 'harmony';
+     //#endregion
+ 
+     //#region gesture methods
+     const handleOnStart: GestureEventHandlerCallbackType = useCallback(
+-      function handleOnStart(__, _) {
++      function handleOnStart(source, _) {
+         'worklet';
+         // cancel current animation
+         stopAnimation();
+@@ -88,7 +89,12 @@ export const useGestureEventsHandlersDefault: GestureEventsHandlersHookType =
+          * if the scrollable content is scrolled, then
+          * we lock the position.
+          */
+-        if (animatedScrollableState.get().contentOffsetY > 0) {
++        const shouldUseScrollableState =
++          !isHarmony || source === GESTURE_SOURCE.SCROLLABLE;
++        if (
++          shouldUseScrollableState &&
++          animatedScrollableState.get().contentOffsetY > 0
++        ) {
+           context.value = {
+             ...context.value,
+             isScrollablePositionLocked: true,
+@@ -102,6 +108,7 @@ export const useGestureEventsHandlersDefault: GestureEventsHandlersHookType =
+         animatedPosition,
+         animatedKeyboardState,
+         animatedScrollableState,
++        isHarmony,
+       ]
+     );
+     const handleOnChange: GestureEventHandlerCallbackType = useCallback(
+@@ -149,13 +156,15 @@ export const useGestureEventsHandlersDefault: GestureEventsHandlersHookType =
+         const isContentOrScrollablePan =
+           source === GESTURE_SOURCE.CONTENT ||
+           source === GESTURE_SOURCE.SCROLLABLE;
++        const shouldUseScrollableState =
++          !isHarmony || source === GESTURE_SOURCE.SCROLLABLE;
+ 
+         /**
+          * if scrollable is refreshable and sheet position at the highest
+          * point, then do not interact with current gesture.
+          */
+         if (
+-          isContentOrScrollablePan &&
++          shouldUseScrollableState &&
+           animatedScrollableState.get().refreshable &&
+           animatedPosition.value === highestSnapPoint
+         ) {
+@@ -169,9 +178,10 @@ export const useGestureEventsHandlersDefault: GestureEventsHandlersHookType =
+          * a negative scrollable content offset when the scrollable is not locked.
+          */
+         const negativeScrollableContentOffset =
+-          (context.value.initialPosition === highestSnapPoint &&
++          shouldUseScrollableState &&
++          ((context.value.initialPosition === highestSnapPoint &&
+             isContentOrScrollablePan) ||
+-          !context.value.isScrollablePositionLocked
++            !context.value.isScrollablePositionLocked)
+             ? animatedScrollableState.get().contentOffsetY * -1
+             : 0;
+ 
+@@ -204,7 +214,7 @@ export const useGestureEventsHandlersDefault: GestureEventsHandlersHookType =
+          */
+         if (
+           context.value.isScrollablePositionLocked &&
+-          isContentOrScrollablePan &&
++          shouldUseScrollableState &&
+           animatedPosition.value === highestSnapPoint
+         ) {
+           context.value = {
+@@ -219,6 +229,7 @@ export const useGestureEventsHandlersDefault: GestureEventsHandlersHookType =
+         if (enableOverDrag) {
+           if (
+             (source === GESTURE_SOURCE.HANDLE ||
++              (isHarmony && source === GESTURE_SOURCE.CONTENT) ||
+               animatedScrollableState.get().type === SCROLLABLE_TYPE.VIEW) &&
+             draggedPosition < highestSnapPoint
+           ) {
+@@ -272,6 +283,7 @@ export const useGestureEventsHandlersDefault: GestureEventsHandlersHookType =
+         animatedLayoutState,
+         animatedPosition,
+         context,
++        isHarmony,
+       ]
+     );
+     const handleOnEnd: GestureEventHandlerCallbackType = useCallback(
+@@ -301,13 +313,15 @@ export const useGestureEventsHandlersDefault: GestureEventsHandlersHookType =
+         const isContentOrScrollablePan =
+           source === GESTURE_SOURCE.CONTENT ||
+           source === GESTURE_SOURCE.SCROLLABLE;
++        const shouldUseScrollableState =
++          !isHarmony || source === GESTURE_SOURCE.SCROLLABLE;
+ 
+         /**
+          * if scrollable is refreshable and sheet position at the highest
+          * point, then do not interact with current gesture.
+          */
+         if (
+-          isContentOrScrollablePan &&
++          shouldUseScrollableState &&
+           scrollableIsRefreshable &&
+           isSheetAtHighestSnapPoint
+         ) {
+@@ -386,7 +400,9 @@ export const useGestureEventsHandlersDefault: GestureEventsHandlersHookType =
+         }
+ 
+         const wasGestureHandledByScrollView =
+-          isContentOrScrollablePan && scrollableContentOffsetY > 0;
++          shouldUseScrollableState &&
++          isContentOrScrollablePan &&
++          scrollableContentOffsetY > 0;
+ 
+         let rawDestinationPosition =
+           translationY + context.value.initialPosition;
+@@ -435,6 +451,7 @@ export const useGestureEventsHandlersDefault: GestureEventsHandlersHookType =
+         animatedPosition,
+         animateToPosition,
+         context,
++        isHarmony,
+       ]
+     );
+     const handleOnFinalize: GestureEventHandlerCallbackType = useCallback(
+diff --git a/node_modules/@react-native-ohos/bottom-sheet/src/hooks/useHarmonyScrollablePanGesture.ts b/node_modules/@react-native-ohos/bottom-sheet/src/hooks/useHarmonyScrollablePanGesture.ts
+index 0526488..4a4782e 100644
+--- a/node_modules/@react-native-ohos/bottom-sheet/src/hooks/useHarmonyScrollablePanGesture.ts
++++ b/node_modules/@react-native-ohos/bottom-sheet/src/hooks/useHarmonyScrollablePanGesture.ts
+@@ -190,11 +190,15 @@ const createHarmonyScrollablePan = ({
+         animatedPosition.value <=
+         (animatedDetentsState.get().highestDetentPosition ?? Infinity) + 1;
+ 
+-      if (!isAtHighestSnap || translationY > 0) {
++      if (!isAtHighestSnap) {
+         activationResolved.value = true;
+         didActivate.value = true;
+         stateManager.activate();
+       } else {
++        // At the highest snap point the native ScrollView owns the gesture.
++        // Upward movement scrolls its content. Downward movement also starts
++        // there so content can first return to offset 0; the parent Harmony
++        // PanResponder takes over only after that edge is reached.
+         activationResolved.value = true;
+         stateManager.fail();
+       }
