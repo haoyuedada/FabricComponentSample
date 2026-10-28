@@ -1,0 +1,24 @@
+ReactProject82/ReactProject/docs/masked-view/masked-view-blank-fix.patch
+  s_0ea93a3ba39f52::t_1de7ac38d2f5ad 1-92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.7",
+  "base_commit_sha": "dabe7c027c3c790e6408085d24916b5ec9302da8",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  },
+  "sessions": {
+    "s_0ea93a3ba39f52": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e89ce40f3ffenZRBsmV8EjxwsY",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  }
+}
