@@ -1,0 +1,92 @@
+diff --git a/ReactProject82/ReactProject/node_modules/@react-native-ohos/masked-view/harmony/masked_view/src/main/cpp/MaskedViewStackNode.h b/ReactProject82/ReactProject/node_modules/@react-native-ohos/masked-view/harmony/masked_view/src/main/cpp/MaskedViewStackNode.h
+index 01cf4cd..157c285 100644
+--- a/ReactProject82/ReactProject/node_modules/@react-native-ohos/masked-view/harmony/masked_view/src/main/cpp/MaskedViewStackNode.h
++++ b/ReactProject82/ReactProject/node_modules/@react-native-ohos/masked-view/harmony/masked_view/src/main/cpp/MaskedViewStackNode.h
+@@ -1,7 +1,7 @@
+ // Copyright (c) 2024 Huawei Device Co., Ltd. All rights reserved
+ // Use of this source code is governed by a MIT license that can be
+ // found in the LICENSE file.
+- 
++
+ 
+ #pragma once
+ 
+@@ -16,6 +16,9 @@ namespace rnoh {
+ 
+         void insertChild(ArkUINode &child, std::size_t index);
+         void removeChild(ArkUINode &child);
+-        void setBlendMode(int32_t blendMode, ArkUI_NodeHandle node);
++        void setBlendMode(int32_t blendMode, ArkUI_NodeHandle node, int32_t applyType);
++
++    private:
++        std::size_t m_childCount = 0;
+     };
+-} // namespace rnoh
+\ No newline at end of file
++} // namespace rnoh
+diff --git a/ReactProject82/ReactProject/node_modules/@react-native-ohos/masked-view/harmony/masked_view/src/main/cpp/MaskedViewStackNode.cpp b/ReactProject82/ReactProject/node_modules/@react-native-ohos/masked-view/harmony/masked_view/src/main/cpp/MaskedViewStackNode.cpp
+index be7738f..9f7aae1 100644
+--- a/ReactProject82/ReactProject/node_modules/@react-native-ohos/masked-view/harmony/masked_view/src/main/cpp/MaskedViewStackNode.cpp
++++ b/ReactProject82/ReactProject/node_modules/@react-native-ohos/masked-view/harmony/masked_view/src/main/cpp/MaskedViewStackNode.cpp
+@@ -1,7 +1,8 @@
+ // Copyright (c) 2024 Huawei Device Co., Ltd. All rights reserved
+ // Use of this source code is governed by a MIT license that can be
+ // found in the LICENSE file.
+- 
++
++
+ #include "MaskedViewStackNode.h"
+ #include "RNOH/arkui/NativeNodeApi.h"
+ #include <memory>
+@@ -12,23 +13,42 @@ namespace rnoh {
+         : ArkUINode(NativeNodeApi::getInstance()->createNode(ArkUI_NodeType::ARKUI_NODE_STACK)) {}
+ 
+     void MaskedViewStackNode::insertChild(ArkUINode &child, std::size_t index) {
+-        maybeThrow(NativeNodeApi::getInstance()->insertChildAt(m_nodeHandle, child.getArkUINodeHandle(), index));
++        std::size_t insertIndex;
+         if (index == 0) {
+-            setBlendMode(ARKUI_BLEND_MODE_SRC_OVER, getArkUINodeHandle());
++            // The mask element (JS renders it as the first child). Draw it last
++            // and blend DST_IN over the content below — the same post-process
++            // semantics as the Android implementation. Unlike the previous
++            // implementation (SRC_IN on the content children), the content
++            // subtree carries no blend attribute, so effects inside it (e.g.
++            // NODE_BLUR from blurRadius) are not captured into an offscreen
++            // blend layer.
++            // shortcut: masks with transparent regions erase the page
++            // background behind this view — a stack-level OFFSCREEN boundary
++            // would fix that, but it blanks subtrees containing NODE_BLUR
++            // (ArkUI known issue); revisit when the engine fixes that.
++            insertIndex = m_childCount;
++            setBlendMode(ARKUI_BLEND_MODE_DST_IN, child.getArkUINodeHandle(), 1);
+         } else {
+-            setBlendMode(ARKUI_BLEND_MODE_SRC_IN, child.getArkUINodeHandle());
++            insertIndex = index - 1;
+         }
++        if (insertIndex > m_childCount) {
++            insertIndex = m_childCount;
++        }
++        maybeThrow(NativeNodeApi::getInstance()->insertChildAt(m_nodeHandle, child.getArkUINodeHandle(), insertIndex));
++        m_childCount++;
+     }
+ 
+     void MaskedViewStackNode::removeChild(ArkUINode &child) {
+         maybeThrow(NativeNodeApi::getInstance()->removeChild(m_nodeHandle, child.getArkUINodeHandle()));
+-        setBlendMode(ARKUI_BLEND_MODE_NONE, getArkUINodeHandle());
+-        setBlendMode(ARKUI_BLEND_MODE_NONE, child.getArkUINodeHandle());
++        if (m_childCount > 0) {
++            m_childCount--;
++        }
++        setBlendMode(ARKUI_BLEND_MODE_NONE, child.getArkUINodeHandle(), 0);
+     }
+ 
+-    void MaskedViewStackNode::setBlendMode(int32_t blendMode, ArkUI_NodeHandle node) {
+-        ArkUI_NumberValue value[] = {{.i32 = blendMode}, {.i32 = 1}};
++    void MaskedViewStackNode::setBlendMode(int32_t blendMode, ArkUI_NodeHandle node, int32_t applyType) {
++        ArkUI_NumberValue value[] = {{.i32 = blendMode}, {.i32 = applyType}};
+         ArkUI_AttributeItem item = {.value = value, .size = sizeof(value) / sizeof(ArkUI_NumberValue)};
+         maybeThrow(NativeNodeApi::getInstance()->setAttribute(node, NODE_BLEND_MODE, &item));
+     }
+-} // namespace rnoh
+\ No newline at end of file
++} // namespace rnoh
