@@ -1,0 +1,69 @@
+ReactProject82/ReactProject/index.js
+  s_58487fde1ee45a::t_c1642fb24c6841 47
+  h_fed3d0bf8fff42 40-46,50-51
+ReactProject82/ReactProject/harmony/entry/src/main/resources/rawfile/bundle.harmony.js
+  s_0ea93a3ba39f52::t_3313dbf6380ef1 18,40,55,80-81,83,89-90,97,106-107,109,112,126-127,135-136,140,144,148,155,157-158,164,166,168,171,190,198,214,216,218-219,231-232,243-244,253-254,257-258,272,275-276,278-279,286-287,289,293-297,299-300,317,319,322-325,329,331-332,334-336,338-339,348-351,353-354,359,367,369,372-373,377,387-388,390-391,397,399-401,403,405,407-411,414-425,427,429-430,434-436,438-439,442,444-446,452-456,458,460-461,466,469,472-475,478,482-483,485-490,492,494-495,498-500,502,507-508,510-518,520,523-524,529-530,532-537,539,541,543-545,549,552,561-562,567-569
+  s_58487fde1ee45a::t_c896333e469707 5,566,570-572
+ReactProject82/ReactProject/App.tsx
+  s_58487fde1ee45a::t_354671d63f2ddd 12-14,21-22
+  s_7100c26b8d4712::t_ba9dc6d0ab61b6 20
+ReactProject82/ReactProject/package.json
+  h_fed3d0bf8fff42 17,20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.7",
+  "base_commit_sha": "69a5d284514ae8061277e7912460791d30f84384",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  },
+  "sessions": {
+    "s_0ea93a3ba39f52": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e89ce40f3ffenZRBsmV8EjxwsY",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "custom_attributes": {
+        "stats_model_totals": "{\"glm-5.3\":{\"additions\":698,\"deletions\":682}}",
+        "stats_total_additions": "698",
+        "stats_total_deletions": "682",
+        "stats_turn_models": "{\"t_07fc4661bffbbc\":\"glm-5.3\",\"t_0b8adea4f52958\":\"glm-5.3\",\"t_0c5621cf9352e6\":\"glm-5.3\",\"t_0ca6e712ec323e\":\"glm-5.3\",\"t_14bcdd5c99179b\":\"glm-5.3\",\"t_191be6c00c5287\":\"glm-5.3\",\"t_1ecf93d400aef5\":\"glm-5.3\",\"t_23e5b014c719d9\":\"glm-5.3\",\"t_275b0479f2cf20\":\"glm-5.3\",\"t_2f1356219cbb0c\":\"glm-5.3\",\"t_3313dbf6380ef1\":\"glm-5.3\",\"t_34d1ea3f426450\":\"glm-5.3\",\"t_5436efceb3b01e\":\"glm-5.3\",\"t_58dcd6d81d3a9b\":\"glm-5.3\",\"t_599729a7eb57bd\":\"glm-5.3\",\"t_5c95846d6c0d85\":\"glm-5.3\",\"t_6aabce3391a739\":\"glm-5.3\",\"t_6c454ebd8751b1\":\"glm-5.3\",\"t_735e59dfee2c68\":\"glm-5.3\",\"t_7a7135a4c0b1e8\":\"glm-5.3\",\"t_81aa562ca75657\":\"glm-5.3\",\"t_870d7ce291df1c\":\"glm-5.3\",\"t_8cafad751e0cb0\":\"glm-5.3\",\"t_929452d07fb697\":\"glm-5.3\",\"t_93ae91eee0ae72\":\"glm-5.3\",\"t_a39dcf73eebefa\":\"glm-5.3\",\"t_b3127603cc8b1d\":\"glm-5.3\",\"t_dbb9ee60026d4c\":\"glm-5.3\",\"t_e0651238b14c6f\":\"glm-5.3\",\"t_e452f90fcf3666\":\"glm-5.3\",\"t_e5bb97bb330778\":\"glm-5.3\",\"t_eabd992cd46995\":\"glm-5.3\"}"
+      }
+    },
+    "s_58487fde1ee45a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e848a862fffemlSUIlaayvEI3m",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "custom_attributes": {
+        "stats_model_overridden": "{\"glm-5.3\":9}",
+        "stats_model_totals": "{\"glm-5.3\":{\"additions\":549,\"deletions\":64}}",
+        "stats_overridden_lines": "9",
+        "stats_total_additions": "549",
+        "stats_total_deletions": "64",
+        "stats_turn_models": "{\"t_0e936361a33741\":\"glm-5.3\",\"t_1810f98b2d034e\":\"glm-5.3\",\"t_19e088cc993653\":\"glm-5.3\",\"t_2ae6d87eaf5c5f\":\"glm-5.3\",\"t_2b9a705e08c67d\":\"glm-5.3\",\"t_354671d63f2ddd\":\"glm-5.3\",\"t_5ceee85f7245bc\":\"glm-5.3\",\"t_654af400603fd3\":\"glm-5.3\",\"t_6935e453a68baa\":\"glm-5.3\",\"t_c07bf79ef89aa1\":\"glm-5.3\",\"t_c1642fb24c6841\":\"glm-5.3\",\"t_c896333e469707\":\"glm-5.3\",\"t_cf67be0a5261bb\":\"glm-5.3\",\"t_e14db85d058581\":\"glm-5.3\"}"
+      }
+    },
+    "s_7100c26b8d4712": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_ed0a1f142ffeXP10lfXKtY3kku",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "custom_attributes": {
+        "stats_model_totals": "{\"glm-5.3\":{\"additions\":112,\"deletions\":1}}",
+        "stats_total_additions": "112",
+        "stats_total_deletions": "1",
+        "stats_turn_models": "{\"t_6990ee772dd3b5\":\"glm-5.3\",\"t_ba9dc6d0ab61b6\":\"glm-5.3\"}"
+      }
+    }
+  }
+}
