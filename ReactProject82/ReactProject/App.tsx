@@ -9,13 +9,17 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 // import FlashListCrashRepro from './src/flash-list/CrashReproDemo'
-import ViewportOffsetDemo from './src/ViewportOffsetDemo'
+// import ViewportOffsetDemo from './src/ViewportOffsetDemo'
+// import PanGestureCallbacksDemo from './src/vmall/PanGestureCallbacksDemo'
+import MaskedViewDemo from './src/react-native-masked-view/Demo'
 
 // 测试用例
 const App = () => {
   return (
     // <FlashListCrashRepro />
-    <ViewportOffsetDemo />
+    // <ViewportOffsetDemo />
+    // <PanGestureCallbacksDemo />
+    <MaskedViewDemo />
   )
 }
 

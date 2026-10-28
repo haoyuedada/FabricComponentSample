@@ -37,7 +37,15 @@ import { name as appName } from './app.json';
 // 滴滴&京东手势库 demo
 // import App from './Gesture/demo.tsx';
 // import App from './Gesture/GestureHandlerDemo.tsx';
-import App from './src/ViewportOffsetDemo';
-
+// import App from './src/ViewportOffsetDemo';
+// vmall手势问题-嵌套两层 PanGestureHandler，响应区域有问题
+// import App from './src/vmall/test.tsx';
+// import App from './src/vmall/test.tsx';
+// import App from './src/vmall/PanGestureCallbacksDemo.tsx';
+// import App from './src/react-native-gesture-handler/blocksExternalGestureDemo.tsx';
+// import App from './src/react-native-masked-view/App.tsx';
+import App from './src/react-native-masked-view/Demo';
 
 AppRegistry.registerComponent(appName, () => App);
+// AppRegistry.registerComponent("CarDetail", () => App);
+
