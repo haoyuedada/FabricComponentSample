@@ -13,7 +13,7 @@ const VPanGestureHandler = ({ children, style, ...restProps }) => {
 
 const screenWidth = Dimensions.get('screen').width;
 
-export const TestApp = () => {
+export default () => {
   const [index, setIndex] = useState(0);
   console.log('🚀 ~ AppCarDetail ~ index10:', index, screenWidth);
   const images = [

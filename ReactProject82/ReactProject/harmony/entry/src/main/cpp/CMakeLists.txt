@@ -36,6 +36,7 @@ target_link_options(rnoh_svg PRIVATE -g) # LTO 场景下确保链接输出保留
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-safe-area-context/src/main/cpp" ./safe-area)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-pager-view/src/main/cpp" ./pager_view)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/flash-list/src/main/cpp" ./flash-list)
+add_subdirectory("${OH_MODULES}/@react-native-ohos/masked-view/src/main/cpp" ./masked-view)
 # RNOH_END: manual_package_linking_1
 
 file(GLOB GENERATED_CPP_FILES "./generated/*.cpp")
@@ -58,4 +59,5 @@ target_link_libraries(rnoh_app PUBLIC rnoh_svg)
 target_link_libraries(rnoh_app PUBLIC rnoh_safe_area)
 target_link_libraries(rnoh_app PUBLIC rnoh_pager_view)
 target_link_libraries(rnoh_app PUBLIC rnoh_flash_list)
+target_link_libraries(rnoh_app PUBLIC rnoh_masked_view)
 # RNOH_END: manual_package_linking_2

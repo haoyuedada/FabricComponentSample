@@ -14,6 +14,7 @@ import {SpringScrollViewPackage} from '@react-native-ohos/react-native-spring-sc
 import { SvgPackage } from '@react-native-ohos/react-native-svg/ts';
 import {SafeAreaViewPackage} from '@react-native-ohos/react-native-safe-area-context/ts';
 import { ViewPagerPackage } from '@react-native-ohos/react-native-pager-view/ts';
+import MaskedPackage from '@react-native-ohos/masked-view';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
@@ -24,6 +25,7 @@ export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
     new SpringScrollViewPackage(ctx),
     new SvgPackage(ctx),
     new SafeAreaViewPackage(ctx),
-    new ViewPagerPackage(ctx)
+    new ViewPagerPackage(ctx),
+    new MaskedPackage(ctx)
   ];
 }
