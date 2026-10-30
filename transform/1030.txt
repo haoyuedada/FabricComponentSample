@@ -1,0 +1,7 @@
+HarmonyOS RNOH 0.82 长图文页返回后出现上下间隙的根因定位
+
+问题：@react-native-ohos/react-native-webview@13.16.4 的 RNCWebView.ets 中，aboutToDisappear() 在组件卸载时调用了 this.cachedWindow.setPreferredOrientation(this.initialOrientation) 恢复屏幕方向。但 ArkUI 的 setPreferredOrientation 接口除设置方向外，还会隐式重置窗口的全屏布局状态，具体表现为：
+OnSetPreferredOrientation → SetLayoutFullScreenByApiVersion: status 0
+                           → SetIgnoreViewSafeArea:0 → SetIgnoreSafeArea 0
+                           → OnLayoutFullScreenChange isLayoutFullScreen: false
+页面从 SetIsFullScreen 1（全屏忽略 safeArea）被切换为 fullScreen: false（应用 safeArea），导致系统状态栏和底部导航栏 重新变为避让区域，页面顶部/底部出现多余间隙，且卸载后无法恢复。
