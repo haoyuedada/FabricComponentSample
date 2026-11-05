@@ -25,6 +25,7 @@
     "@react-native-ohos/react-native-scrollable-tab-view": "^1.1.0",
     "@react-native-ohos/react-native-spring-scrollview": "3.1.0",
     "@react-native-ohos/react-native-svg": "15.13.0",
+    "@react-native-ohos/react-native-webview": "^13.16.4",
     "@react-native-ohos/react-native-worklets": "1.0.1",
     "@rnoh/testerino": "file:./rnoh_package/testerino/rnoh-testerino-0.0.12.tgz",
     "fabric-component-sample-package": "file:../fabric-component-sample-package/fabric-component-sample-package-1.0.0.tgz",
@@ -32,6 +33,7 @@
     "react-native": "0.82.1",
     "react-native-worklets": "0.7.1",
     "react-strict-dom": "0.0.27",
+    "recyclerlistview": "4.2.0",
     "semver": "7.7.1"
   },
   "devDependencies": {
