@@ -1,0 +1,20 @@
+diff --git a/node_modules/@react-native-ohos/flash-list/dist/recyclerview/helpers/EngagedIndicesTracker.js b/node_modules/@react-native-ohos/flash-list/dist/recyclerview/helpers/EngagedIndicesTracker.js
+index eec5128..574a20d 100644
+--- a/node_modules/@react-native-ohos/flash-list/dist/recyclerview/helpers/EngagedIndicesTracker.js
++++ b/node_modules/@react-native-ohos/flash-list/dist/recyclerview/helpers/EngagedIndicesTracker.js
+@@ -102,6 +102,15 @@ export class RVEngagedIndicesTrackerImpl {
+     updateVelocityHistory(velocity) {
+         this.velocityHistory[this.velocityIndex] = velocity;
+         this.velocityIndex = (this.velocityIndex + 1) % this.velocityHistory.length;
++        // [P-DIR-FLIP] 方向即时翻转：新样本与当前多数判定相反时立即重置速度史。
++        // 原 5 样本多数投票在方向反转后需 ~3 个样本（实测 ~2s）才翻转缓冲方向，
++        // 期间后向缓冲仅 30% —— 快速回滑头 2 秒零装配 = 白屏（真机实测 09:00:33 轮）。
++        if (velocity !== 0) {
++            var backwardNow = velocity < 0;
++            if (backwardNow !== this.isScrollingBackward()) {
++                this.setScrollDirection(backwardNow ? "backward" : "forward");
++            }
++        }
+     }
+     /**
+      * Determines scroll direction by analyzing recent velocity history.

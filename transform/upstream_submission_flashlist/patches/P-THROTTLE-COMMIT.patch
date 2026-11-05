@@ -1,0 +1,50 @@
+diff --git a/node_modules/@react-native-ohos/flash-list/dist/recyclerview/RecyclerView.js b/node_modules/@react-native-ohos/flash-list/dist/recyclerview/RecyclerView.js
+index 5132d2c..ff739a7 100644
+--- a/node_modules/@react-native-ohos/flash-list/dist/recyclerview/RecyclerView.js
++++ b/node_modules/@react-native-ohos/flash-list/dist/recyclerview/RecyclerView.js
+@@ -41,6 +41,10 @@ const RecyclerViewComponent = (props, ref) => {
+     // Refs for sticky headers and scroll anchoring
+     const stickyHeaderRef = useRef(null);
+     const scrollAnchorRef = useRef(null);
++    // [P-THROTTLE-COMMIT] 上次提交 React 的墙钟时间（高速滚动时限流提交用）
++    const lastCommitTsRef = useRef(0);
++    // [P-THROTTLE-COMMIT] 滚动结束（动量结束）强制提交一次的标记
++    const forceCommitRef = useRef(false);
+     // State for managing layout and render updates
+     const [_, setLayoutTreeId] = useLayoutState(0);
+     const [__, setRenderId] = useState(0);
+@@ -153,6 +157,10 @@ const RecyclerViewComponent = (props, ref) => {
+                 return;
+             }
+             if (isMomentumEnd) {
++                // [P-THROTTLE-COMMIT] 动量结束 → 强制提交一次，补齐节流期间跳过的变更
++                forceCommitRef.current = false;
++                lastCommitTsRef.current = Date.now();
++                setRenderId((prev) => prev + 1);
+                 computeFirstVisibleIndexForOffsetCorrection();
+                 if (!recyclerViewManager.isOffsetProjectionEnabled) {
+                     return;
+@@ -161,7 +169,22 @@ const RecyclerViewComponent = (props, ref) => {
+             }
+             // Update scroll position and trigger re-render if needed
+             if (recyclerViewManager.updateScrollOffset(scrollOffset, velocity)) {
+-                setRenderId((prev) => prev + 1);
++                // [P-THROTTLE-COMMIT] 滚动中把「推给 React 的提交」节流到 ≤10Hz。
++                // 原实现每个 scroll 事件都 setRenderId → 整个列表重渲（~17 行 × 30~40 事件/s
++                // ≈ 500 次/s）→ React 渲染队列无界增长 → 单任务涨到 5.2s → commit 被压到任务末尾
++                // → 视口内的行迟迟不挂载 = 白屏（真机实测，生产候选态连续下滑必现）。
++                // 这里只节流「提交」，模型（窗口/渲染栈）仍按事件率更新：
++                //   滚动中每 200ms 提交一次（5Hz；每次补上这几帧新增的行）；
++                //   动量结束时强制提交补齐（见上）。
++                // ⚠️ 判据用「时间」而非「速度」：VelocityTracker 的速度 = Δoffset/Δt(ms)，
++                // 而 RN 会合并 scroll 事件 → Δt 被放大 → 速度被严重低估（社区 #2517 同源缺陷），
++                // 用速度当节流判据会永不触发（实测阈值 1.5px/ms 从未命中）。
++                const nowTs = Date.now();
++                if (forceCommitRef.current || nowTs - lastCommitTsRef.current >= 200) {
++                    forceCommitRef.current = false;
++                    lastCommitTsRef.current = nowTs;
++                    setRenderId((prev) => prev + 1);
++                }
+             }
+         });
+         // Update sticky headers and check bounds

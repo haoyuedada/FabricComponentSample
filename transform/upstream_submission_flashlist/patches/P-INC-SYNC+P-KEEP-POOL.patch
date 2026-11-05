@@ -1,0 +1,40 @@
+diff --git a/node_modules/@react-native-ohos/flash-list/dist/recyclerview/RenderStackManager.js b/node_modules/@react-native-ohos/flash-list/dist/recyclerview/RenderStackManager.js
+index 9cd6cd7..b79eb26 100644
+--- a/node_modules/@react-native-ohos/flash-list/dist/recyclerview/RenderStackManager.js
++++ b/node_modules/@react-native-ohos/flash-list/dist/recyclerview/RenderStackManager.js
+@@ -30,7 +30,10 @@ export class RenderStackManager {
+      * @param dataLength - Total length of the data set
+      */
+     sync(getStableId, getItemType, engagedIndices, dataLength) {
+-        this.clearRecyclePool();
++        // [P-KEEP-POOL] 不再每次清空回收池：下方逐 key 校验已经处理失效项，
++        // 提前清空会让「刚滚出、仍可复用」的 cell 被丢弃 → 新行只能重新挂载
++        // （实测 create 588 次里 263 次属这种浪费）。清空只保留给真正的整体失效场景。
++        // this.clearRecyclePool();
+         this.unProcessedIndices.clear();
+         // Recycle keys for items that are no longer valid or visible
+         this.keyMap.forEach((keyInfo, key) => {
+@@ -54,9 +57,21 @@ export class RenderStackManager {
+         });
+         // First pass: process items that already have optimized keys
+         for (const index of engagedIndices) {
+-            if (this.hasOptimizedKey(getStableId(index))) {
+-                this.syncItem(index, getItemType(index), getStableId(index));
++            // [P-INC-SYNC] 已正确绑定的 index 直接跳过。
++            // 原实现每次滚动事件都把整窗（~17 行）的 key 映射 delete+set 一遍，
++            // 语义不变但每次都改 state → 触发整窗 React 重渲；事件率越高渲染队列越无界
++            // （真机实测：17 行 × ~10ms × 30 事件/s ≈ 5.1s/s → JS 100% 饱和 →
++            //   5.2s 巨任务把提交压到末尾 → 视口未挂载 → 白屏）。
++            const stableId = getStableId(index);
++            if (!this.hasOptimizedKey(stableId)) {
++                continue;
++            }
++            const existingKey = this.stableIdMap.get(stableId);
++            const existingInfo = existingKey != null ? this.keyMap.get(existingKey) : undefined;
++            if (existingInfo && existingInfo.index === index) {
++                continue; // 绑定已正确，无需重渲
+             }
++            this.syncItem(index, getItemType(index), stableId);
+         }
+         // Second pass: process remaining items that need new keys
+         for (const index of engagedIndices) {
