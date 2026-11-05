@@ -37,6 +37,7 @@ add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-safe-area-contex
 add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-pager-view/src/main/cpp" ./pager_view)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/flash-list/src/main/cpp" ./flash-list)
 add_subdirectory("${OH_MODULES}/@react-native-ohos/masked-view/src/main/cpp" ./masked-view)
+add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-webview/src/main/cpp" ./webview)
 # RNOH_END: manual_package_linking_1
 
 file(GLOB GENERATED_CPP_FILES "./generated/*.cpp")
@@ -60,4 +61,5 @@ target_link_libraries(rnoh_app PUBLIC rnoh_safe_area)
 target_link_libraries(rnoh_app PUBLIC rnoh_pager_view)
 target_link_libraries(rnoh_app PUBLIC rnoh_flash_list)
 target_link_libraries(rnoh_app PUBLIC rnoh_masked_view)
+target_link_libraries(rnoh_app PUBLIC rnoh_webview)
 # RNOH_END: manual_package_linking_2

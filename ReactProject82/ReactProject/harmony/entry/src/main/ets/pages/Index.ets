@@ -19,14 +19,20 @@ import {
 } from '@rnoh/react-native-openharmony';
 import { createRNPackages } from '../RNPackagesFactory';
 import { SelectBox } from "../RNComponent/SelectBox";
+import { WebView, WEB_VIEW } from "@react-native-ohos/react-native-webview"
 
-const arkTsComponentNames: Array<string> = [SelectBox.NAME];
+const arkTsComponentNames: Array<string> = [SelectBox.NAME, WEB_VIEW];
 
 @Builder
 export function buildCustomRNComponent(ctx: ComponentBuilderContext) {
   Stack() {
     if (ctx.componentName === SelectBox.NAME) {
       SelectBox({
+        ctx: ctx.rnComponentContext,
+        tag: ctx.tag
+      })
+    } else if (ctx.componentName === WEB_VIEW) {
+      WebView({
         ctx: ctx.rnComponentContext,
         tag: ctx.tag
       })
