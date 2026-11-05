@@ -1,0 +1,35 @@
+ReactProject77/tests/vmall/PanGestureCallbacksDemo.tsx
+  h_fed3d0bf8fff42 1-109
+ReactProject77/harmony/entry/src/main/ets/pages/RNPageRNApp.ets
+  s_daea5ae7cc5d72::t_2eece808a7637e 23
+  s_daea5ae7cc5d72::t_4e2134d73a1116 24
+ReactProject77/harmony/entry/src/main/ets/pages/RNPageRNAppTwo.ets
+  s_daea5ae7cc5d72::t_4e2134d73a1116 23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.8",
+  "base_commit_sha": "8904816f6eb17f5d72aed82c8a7b0436216cfb33",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  },
+  "sessions": {
+    "s_daea5ae7cc5d72": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e73ee61dbfferWdW2ATmU8Yh5o",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "custom_attributes": {
+        "stats_model_totals": "{\"glm-5.3\":{\"additions\":317,\"deletions\":124}}",
+        "stats_total_additions": "317",
+        "stats_total_deletions": "124",
+        "stats_turn_models": "{\"t_0a98875f17f7ac\":\"glm-5.3\",\"t_0dadfb72e82e6b\":\"glm-5.3\",\"t_28554bfcbf7f5d\":\"glm-5.3\",\"t_2eece808a7637e\":\"glm-5.3\",\"t_30664951aa06b2\":\"glm-5.3\",\"t_34cf875b16a029\":\"glm-5.3\",\"t_3777f128883135\":\"glm-5.3\",\"t_44b03bfecc3fe2\":\"glm-5.3\",\"t_4e2134d73a1116\":\"glm-5.3\",\"t_563dae370ab691\":\"glm-5.3\",\"t_5ff0106e5168af\":\"glm-5.3\",\"t_72cd2631953abb\":\"glm-5.3\",\"t_73bac44705ccb0\":\"glm-5.3\",\"t_74d5305689c82b\":\"glm-5.3\",\"t_8fed1aa5571cf6\":\"glm-5.3\",\"t_9148bb6f9ae639\":\"glm-5.3\",\"t_9c2329f6b13615\":\"glm-5.3\",\"t_9d982ae3efb088\":\"glm-5.3\",\"t_bb4ed5e1edee4a\":\"glm-5.3\",\"t_d1b2b07b949bfe\":\"glm-5.3\",\"t_d9bb003bedf030\":\"glm-5.3\",\"t_e3d9f2e1d71055\":\"glm-5.3\",\"t_e6e4657145c33a\":\"glm-5.3\",\"t_e87510aeb7b4dc\":\"glm-5.3\",\"t_f103322d0f1a6b\":\"glm-5.3\",\"t_f16dc0aa279328\":\"glm-5.3\",\"t_f562c98cb7d5c9\":\"glm-5.3\",\"t_f85c8ae8b71bd1\":\"glm-5.3\",\"t_fc64aab2257a16\":\"glm-5.3\",\"t_ff3a44e5e27a73\":\"glm-5.3\"}"
+      }
+    }
+  }
+}
