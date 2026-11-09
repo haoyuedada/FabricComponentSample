@@ -1,0 +1,36 @@
+ReactProject82/ReactProject/src/react-native-reanimated/wangyiyun1106/CppCrash分析报告-网易云-collectProps-UAF.md
+  s_d6c5a3ed7acb2d::t_5c1742b2c796b4 1-145
+ReactProject82/ReactProject/src/react-native-reanimated/wangyiyun1106/react-native-reanimated-PRde1e694-20261106.md
+  s_d6c5a3ed7acb2d::t_ca994c1a051458 1-146
+ReactProject82/ReactProject/src/react-native-reanimated/wangyiyun1106/fix-updates-registry-lock.patch
+  h_fed3d0bf8fff42 1-54
+ReactProject82/ReactProject/src/react-native-reanimated/wangyiyun1106/cppcrash.log
+  h_fed3d0bf8fff42 1-9404
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.8",
+  "base_commit_sha": "7767a6e35dbdc6dccec81462666e4ce45377927d",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  },
+  "sessions": {
+    "s_d6c5a3ed7acb2d": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e5027895effeDYVPXkbAsO0euW",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "custom_attributes": {
+        "stats_model_totals": "{\"glm-5.3\":{\"additions\":276,\"deletions\":90}}",
+        "stats_total_additions": "276",
+        "stats_total_deletions": "90",
+        "stats_turn_models": "{\"t_5c1742b2c796b4\":\"glm-5.3\",\"t_ca994c1a051458\":\"glm-5.3\"}"
+      }
+    }
+  }
+}
