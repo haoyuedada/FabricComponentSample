@@ -1,0 +1,60 @@
+ReactProject86/ReactProject/harmony/entry/src/main/cpp/PackageProvider.cpp
+  s_7b3a8c009a84ea::t_bb4f225810cb71 17
+  s_7b3a8c009a84ea::t_25ce16e4b7b90d 16
+  h_fed3d0bf8fff42 10
+ReactProject86/ReactProject/harmony/entry/oh-package.json5
+  s_7b3a8c009a84ea::t_bb0a187a85d3ab 10-11
+ReactProject86/ReactProject/package.json
+  h_fed3d0bf8fff42 6,17
+  h_fed3d0bf8fff42 19-20
+ReactProject86/ReactProject/harmony/entry/src/main/cpp/CMakeLists.txt
+  s_7b3a8c009a84ea::t_538b866d918621 25
+  h_fed3d0bf8fff42 37
+ReactProject86/ReactProject/harmony/entry/src/main/ets/RNPackagesFactory.ets
+  s_7b3a8c009a84ea::t_5ec238ef8197e6 15
+  s_7b3a8c009a84ea::t_b9ae483b31c7f9 14
+  h_fed3d0bf8fff42 10
+ReactProject86/ReactProject/package-lock.json
+  h_fed3d0bf8fff42 14,16-17,2099-2110,3545-3555,3996-4001,8051-8065,11437-11452
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.8",
+  "base_commit_sha": "578734e3cc905b0dc0ff666b159459c9762db30f",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  },
+  "sessions": {
+    "s_7b3a8c009a84ea": {
+      "agent_id": {
+        "tool": "codegenie-deveco",
+        "id": "1794206392410",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "custom_attributes": {
+        "stats_model_totals": "{\"glm-5.3\":{\"additions\":11,\"deletions\":2}}",
+        "stats_total_additions": "11",
+        "stats_total_deletions": "2",
+        "stats_turn_models": "{\"t_538b866d918621\":\"glm-5.3\",\"t_5ec238ef8197e6\":\"glm-5.3\",\"t_bb0a187a85d3ab\":\"glm-5.3\",\"t_bb4f225810cb71\":\"glm-5.3\"}"
+      }
+    },
+    "s_eb89b9c0b182fd": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e40e711e6ffeq656qAQoVmVI3I",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "custom_attributes": {
+        "stats_model_totals": "{\"glm-5.3\":{\"additions\":286,\"deletions\":17}}",
+        "stats_total_additions": "286",
+        "stats_total_deletions": "17",
+        "stats_turn_models": "{\"t_001ce1bdab4a33\":\"glm-5.3\",\"t_1717734c1cfae5\":\"glm-5.3\",\"t_2dc68631b3d266\":\"glm-5.3\",\"t_b702cecb844c08\":\"glm-5.3\",\"t_bba8db216aeef6\":\"glm-5.3\",\"t_d357aedca9c4a0\":\"glm-5.3\",\"t_dcb3b4aba46675\":\"glm-5.3\",\"t_f3b6d516e629fe\":\"glm-5.3\",\"t_fd8d85ed6cd42f\":\"glm-5.3\"}"
+      }
+    }
+  }
+}
