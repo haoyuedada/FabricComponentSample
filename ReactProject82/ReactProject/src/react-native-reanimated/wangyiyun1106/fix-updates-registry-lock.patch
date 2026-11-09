@@ -1,0 +1,54 @@
+diff --git a/package/src/main/cpp/Common/cpp/reanimated/Fabric/updates/UpdatesRegistryManager.cpp b/package/src/main/cpp/Common/cpp/reanimated/Fabric/updates/UpdatesRegistryManager.cpp
+index b98bdc5..9ec4a34 100644
+--- a/package/src/main/cpp/Common/cpp/reanimated/Fabric/updates/UpdatesRegistryManager.cpp
++++ b/package/src/main/cpp/Common/cpp/reanimated/Fabric/updates/UpdatesRegistryManager.cpp
+@@ -65,6 +65,11 @@ void UpdatesRegistryManager::handleNodeRemovals(const RootShadowNode &rootShadow
+ 
+     if (shadowNode->getFamily().getAncestors(rootShadowNode).empty()) {
+       for (auto &registry : registries_) {
++        // Must hold the registry mutex while removing: the JS thread mutates
++        // updatesRegistry_ (and CSS registry members) under registry->lock()
++        // only (e.g. updateCSSTransition), so the manager mutex alone does
++        // not exclude concurrent unordered_map writes from the JS thread.
++        auto lock = registry->lock();
+         registry->remove(tag);
+       }
+       staticPropsRegistry_->remove(tag);
+diff --git a/package/src/main/cpp/Common/cpp/reanimated/NativeModules/ReanimatedModuleProxy.cpp b/package/src/main/cpp/Common/cpp/reanimated/NativeModules/ReanimatedModuleProxy.cpp
+index 96f887c..85b7d8b 100644
+--- a/package/src/main/cpp/Common/cpp/reanimated/NativeModules/ReanimatedModuleProxy.cpp
++++ b/package/src/main/cpp/Common/cpp/reanimated/NativeModules/ReanimatedModuleProxy.cpp
+@@ -102,6 +102,11 @@ void ReanimatedModuleProxy::init(const PlatformDepMethodsHolder &platformDepMeth
+     }
+ 
+     const auto timestamp = strongThis->getAnimationTimestamp_();
++    // addUpdatesToBatch (inside update) mutates updatesBatch_, which is also
++    // moved/cleared by flushUpdates on the MAIN thread under the registry
++    // mutex; this callback runs on the UI worklet runtime thread, so the
++    // registry mutex must be held here as well.
++    auto lock = strongThis->animatedPropsRegistry_->lock();
+     strongThis->animatedPropsRegistry_->update(rt, operations, timestamp);
+   };
+ 
+@@ -601,7 +606,20 @@ bool ReanimatedModuleProxy::handleRawEvent(const RawEvent &rawEvent, double curr
+ 
+ void ReanimatedModuleProxy::cssLoopCallback(const double /*timestampMs*/) {
+   shouldUpdateCssAnimations_ = true;
+-  if (cssAnimationsRegistry_->hasUpdates() || cssTransitionsRegistry_->hasUpdates()
++  // hasUpdates() reads registry members that the JS thread mutates under the
++  // registry mutex (applyCSSAnimations/updateCSSTransition/...), and this
++  // callback runs on the UI scheduler thread, so the reads must hold the
++  // same mutex; short critical sections keep the loop tick cheap.
++  bool hasUpdates;
++  {
++    auto lock = cssAnimationsRegistry_->lock();
++    hasUpdates = cssAnimationsRegistry_->hasUpdates();
++  }
++  {
++    auto lock = cssTransitionsRegistry_->lock();
++    hasUpdates = hasUpdates || cssTransitionsRegistry_->hasUpdates();
++  }
++  if (hasUpdates
+ #ifdef ANDROID
+       || updatesRegistryManager_->hasPropsToRevert()
+ #endif // ANDROID
