@@ -22,7 +22,7 @@ add_compile_definitions(WITH_HITRACE_SYSTRACE)
 add_subdirectory("${RNOH_CPP_DIR}" ./rn)
 
 # RNOH_BEGIN: manual_package_linking_1
-# add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/rnc" ./fabric_component)
+add_subdirectory("${OH_MODULES}/@react-native-ohos/react-native-gesture-handler/src/main/cpp" ./gesture-handler)
 file(GLOB GENERATED_CPP_FILES "./generated/*.cpp")
 
 add_library(rnoh_app SHARED
@@ -34,5 +34,5 @@ add_library(rnoh_app SHARED
 target_link_libraries(rnoh_app PUBLIC rnoh)
 
 # RNOH_BEGIN: manual_package_linking_2
-# target_link_libraries(rnoh_app PUBLIC fabric_component)
+target_link_libraries(rnoh_app PUBLIC rnoh_gesture_handler)
 # RNOH_END: manual_package_linking_2
