@@ -1,0 +1,29 @@
+.gitignore
+  s_eb89b9c0b182fd::t_5ccde8f7faf94c 3-9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.8",
+  "base_commit_sha": "19e53fe8efcffe0a13c3a7a62372a379e1b7d8f5",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  },
+  "sessions": {
+    "s_eb89b9c0b182fd": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e40e711e6ffeq656qAQoVmVI3I",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "custom_attributes": {
+        "stats_model_totals": "{\"glm-5.3\":{\"additions\":7,\"deletions\":0}}",
+        "stats_total_additions": "7",
+        "stats_turn_models": "{\"t_5ccde8f7faf94c\":\"glm-5.3\"}"
+      }
+    }
+  }
+}
