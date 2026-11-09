@@ -1,0 +1,14 @@
+ReactProject/package.json
+  h_fed3d0bf8fff42 43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.8",
+  "base_commit_sha": "e3f2f94f70afe29c70feed917d426a641448810b",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  }
+}
