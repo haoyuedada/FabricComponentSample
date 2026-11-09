@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freeze B</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, "PingFang SC", sans-serif;
+      background: #1565c0; color: #fff; height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+    }
+    h1 { font-size: 24px; }
+    p { font-size: 12px; opacity: .85; }
+    .n { font-size: 34px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>页面 B</h1>
+  <div class="n" id="n">-</div>
+  <p>每 800ms 经 setTimeout 跳回 A（循环链）</p>
+  <script>
+    var JUMP_DELAY_MS = 800;
+    function post(m) { try { ReactNativeWebView.postMessage(JSON.stringify(m)); } catch (e) { } }
+    function param(name) {
+      try { return new URLSearchParams(location.search).get(name); } catch (e) { return null; }
+    }
+    window.addEventListener('load', function () {
+      var n = Number(param('n') || '0');
+      var t0 = Number(param('t'));
+      document.getElementById('n').textContent = '第 ' + n + ' 跳';
+      post({ event: 'painted', ws: t0 ? (Date.now() - t0) : null, n: n, ts: Date.now() });
+      setTimeout(function () {
+        var target = location.href.replace(/[?#].*$/, '').replace('page_b', 'page_a');
+        target += '?t=' + Date.now() + '&n=' + n;
+        post({ event: 'navigate', from: 'b', ts: Date.now() });
+        location.href = target; // ★ setTimeout 触发的页面跳转
+      }, JUMP_DELAY_MS);
+    });
+  </script>
+</body>
+</html>
