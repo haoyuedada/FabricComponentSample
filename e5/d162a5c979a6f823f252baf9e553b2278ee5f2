@@ -1,0 +1,38 @@
+ReactProject86/ReactProject/App.tsx
+  h_fed3d0bf8fff42 1-6,8-9,11-12,14-16,18-51,53,55-57
+ReactProject86/ReactProject/tsconfig.json
+  s_eb89b9c0b182fd::t_58e66611063668 7
+  s_eb89b9c0b182fd::t_af1f7e6b427a16 3-5
+  s_eb89b9c0b182fd::t_b1671bf55cae1f 2,6
+ReactProject86/ReactProject/package.json
+  s_eb89b9c0b182fd::t_62f2d0f60e791b 29
+ReactProject86/ReactProject/package-lock.json
+  s_eb89b9c0b182fd::t_c6a29e3c1a873c 26,3883-3889
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.8",
+  "base_commit_sha": "e5d162a5c979a6f823f252baf9e553b2278ee5f2",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  },
+  "sessions": {
+    "s_eb89b9c0b182fd": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e40e711e6ffeq656qAQoVmVI3I",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "custom_attributes": {
+        "stats_model_totals": "{\"glm-5.3\":{\"additions\":12,\"deletions\":6}}",
+        "stats_total_additions": "12",
+        "stats_total_deletions": "6",
+        "stats_turn_models": "{\"t_1385397aa0e12b\":\"glm-5.3\",\"t_58e66611063668\":\"glm-5.3\",\"t_62f2d0f60e791b\":\"glm-5.3\",\"t_854b5ed2ec8f70\":\"glm-5.3\",\"t_af1f7e6b427a16\":\"glm-5.3\",\"t_b1671bf55cae1f\":\"glm-5.3\"}"
+      }
+    }
+  }
+}
