@@ -1,0 +1,49 @@
+ReactProject77/crash-test/Didi0909GcTeardownRepro.tsx
+  s_ee38e62e76e75d::t_5a66426e370590 186-187
+  s_ee38e62e76e75d::t_15f69d5e0b6cec 207
+  s_ee38e62e76e75d::t_8fa96f055963e4 40
+  s_ee38e62e76e75d::t_db2bf42014e401 2,14,152,165,173,197,225
+  s_ee38e62e76e75d::t_cc87d782329e81 42,206,209,217,219
+  s_ee38e62e76e75d::t_eb8ae7d226d743 178-181,201
+  s_ee38e62e76e75d::t_32013bd456707e 56,59-60,168
+  s_ee38e62e76e75d::t_cc696c43f4452c 58,185,188
+  s_ee38e62e76e75d::t_5cf28baf0930df 158
+  s_ee38e62e76e75d::t_4d450876c45167 154,156
+  s_ee38e62e76e75d::t_7e9e337dfcd89d 65
+  s_ee38e62e76e75d::t_755dd2388fe2ba 205,208,210-216,218,220-221,234-235
+  s_ee38e62e76e75d::t_6a7a4af438c9af 15,18-37,55,57,111,117,121-130,132-134,137-138,142-143,149,160-161,164,171,174-177,198-200,227-233,237-239,246-249,251-252,255,257,259,261
+  s_ee38e62e76e75d::t_2e1093f6443e31 4-13,17,39,53,68-70,88,153,155,157,162-163,166-167,169-170,202,226
+  s_ee38e62e76e75d::t_988ec48cd3f80e 95-99
+  s_ee38e62e76e75d::t_37e54c670ed7c0 195-196
+  s_ee38e62e76e75d::t_7be7812460e275 79-84,100-105
+  s_ee38e62e76e75d::t_70c57cd918075a 71-78,85-87
+  s_ee38e62e76e75d::t_660eb883c2ab50 61-64,66,90-94,106-109,182-184,189,191-194
+  s_ee38e62e76e75d::t_d2a49445088b62 89,110,222
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.8",
+  "base_commit_sha": "e1818c77d61900b72609bb7dc3d731499073225a",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  },
+  "sessions": {
+    "s_ee38e62e76e75d": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e55a7b1c2ffe7Du0O3tiGRoTLM",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "custom_attributes": {
+        "stats_model_totals": "{\"glm-5.3\":{\"additions\":8352,\"deletions\":795}}",
+        "stats_total_additions": "8352",
+        "stats_total_deletions": "795",
+        "stats_turn_models": "{\"t_0342f6f2ac90b7\":\"glm-5.3\",\"t_05103729c80fe1\":\"glm-5.3\",\"t_060886ba21f539\":\"glm-5.3\",\"t_0cd22e023382aa\":\"glm-5.3\",\"t_0d7e8d805b180c\":\"glm-5.3\",\"t_142b7194f0c6cb\":\"glm-5.3\",\"t_15f69d5e0b6cec\":\"glm-5.3\",\"t_196e98cf8861da\":\"glm-5.3\",\"t_1bccace2c2654f\":\"glm-5.3\",\"t_1db9023a96ae4b\":\"glm-5.3\",\"t_20df416e925b84\":\"glm-5.3\",\"t_21591a47ad8c97\":\"glm-5.3\",\"t_245682b5ddde18\":\"glm-5.3\",\"t_2b3ac7f6e0216a\":\"glm-5.3\",\"t_2e1093f6443e31\":\"glm-5.3\",\"t_32013bd456707e\":\"glm-5.3\",\"t_37e54c670ed7c0\":\"glm-5.3\",\"t_3a44079efce7d2\":\"glm-5.3\",\"t_3a9866746c4236\":\"glm-5.3\",\"t_3b74b2e0675efd\":\"glm-5.3\",\"t_3e199a666f1b77\":\"glm-5.3\",\"t_428eada2495ed1\":\"glm-5.3\",\"t_493f5d3d1245bd\":\"glm-5.3\",\"t_4d450876c45167\":\"glm-5.3\",\"t_527c9bf8805518\":\"glm-5.3\",\"t_53cfb8a847576d\":\"glm-5.3\",\"t_5a66426e370590\":\"glm-5.3\",\"t_5cf28baf0930df\":\"glm-5.3\",\"t_603cba0f48ad8b\":\"glm-5.3\",\"t_616b80f7519f6b\":\"glm-5.3\",\"t_660eb883c2ab50\":\"glm-5.3\",\"t_6a7a4af438c9af\":\"glm-5.3\",\"t_6ef1a2ddf67a61\":\"glm-5.3\",\"t_70c57cd918075a\":\"glm-5.3\",\"t_755dd2388fe2ba\":\"glm-5.3\",\"t_78c5a17baec012\":\"glm-5.3\",\"t_7be7812460e275\":\"glm-5.3\",\"t_7d1727c7f49be2\":\"glm-5.3\",\"t_7e9e337dfcd89d\":\"glm-5.3\",\"t_804df06dae5254\":\"glm-5.3\",\"t_87ba2e723b0dae\":\"glm-5.3\",\"t_8bd9a15b7ca261\":\"glm-5.3\",\"t_8d1766a9930d9b\":\"glm-5.3\",\"t_8f2bb1d1f7c911\":\"glm-5.3\",\"t_8f7ef8129adf15\":\"glm-5.3\",\"t_8fa96f055963e4\":\"glm-5.3\",\"t_9105f3a877f431\":\"glm-5.3\",\"t_938dc7baf7cd95\":\"glm-5.3\",\"t_959d653358a654\":\"glm-5.3\",\"t_973c50cd11a1e4\":\"glm-5.3\",\"t_988ec48cd3f80e\":\"glm-5.3\",\"t_ac79655c3d9aad\":\"glm-5.3\",\"t_ad6589b6533fd4\":\"glm-5.3\",\"t_b330869b3174ea\":\"glm-5.3\",\"t_b3e9d7f0f0d09d\":\"glm-5.3\",\"t_b54eab47536d11\":\"glm-5.3\",\"t_bda2d6bcd3dcdb\":\"glm-5.3\",\"t_beb7d4b74f9a39\":\"glm-5.3\",\"t_cc696c43f4452c\":\"glm-5.3\",\"t_cc87d782329e81\":\"glm-5.3\",\"t_cca40b178d5e57\":\"glm-5.3\",\"t_ce2fc366fa5b14\":\"glm-5.3\",\"t_d46537c06c6338\":\"glm-5.3\",\"t_db2bf42014e401\":\"glm-5.3\",\"t_dccc0299746a4b\":\"glm-5.3\",\"t_dda9f358d4ddea\":\"glm-5.3\",\"t_e6367fdfb1262c\":\"glm-5.3\",\"t_e6b990035a7d90\":\"glm-5.3\",\"t_e74513c4ca168d\":\"glm-5.3\",\"t_e9e9258611c596\":\"glm-5.3\",\"t_e9fbd25b80e172\":\"glm-5.3\",\"t_eb8ae7d226d743\":\"glm-5.3\",\"t_f2805fee8de93c\":\"glm-5.3\",\"t_f4d171f93756ba\":\"glm-5.3\",\"t_f73247ad739a60\":\"glm-5.3\",\"t_f7edcc599bcdb1\":\"glm-5.3\",\"t_fda0f83415086b\":\"glm-5.3\"}"
+      }
+    }
+  }
+}
