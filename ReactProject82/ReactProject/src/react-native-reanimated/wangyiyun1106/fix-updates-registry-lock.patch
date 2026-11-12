@@ -14,23 +14,57 @@ index b98bdc5..9ec4a34 100644
          registry->remove(tag);
        }
        staticPropsRegistry_->remove(tag);
+diff --git a/package/src/main/cpp/Common/cpp/reanimated/Fabric/updates/AnimatedPropsRegistry.cpp b/package/src/main/cpp/Common/cpp/reanimated/Fabric/updates/AnimatedPropsRegistry.cpp
+index ce47b06..4f02e4e 100644
+--- a/package/src/main/cpp/Common/cpp/reanimated/Fabric/updates/AnimatedPropsRegistry.cpp
++++ b/package/src/main/cpp/Common/cpp/reanimated/Fabric/updates/AnimatedPropsRegistry.cpp
+@@ -15,6 +15,12 @@ static inline std::shared_ptr<const ShadowNode> shadowNodeFromValue(
+ #endif
+ 
+ void AnimatedPropsRegistry::update(jsi::Runtime &rt, const jsi::Value &operations, const double timestamp) {
++  // Phase 1: JSI reads without the registry mutex. Property access and
++  // dynamicFromValue can execute JS (getters/Proxy traps in the payload),
++  // and a getter that synchronously re-enters _updateProps must not re-lock
++  // this thread's non-recursive mutex (UB / self-deadlock).
++  std::vector<std::pair<std::shared_ptr<const ShadowNode>, folly::dynamic>> parsed;
++
+   auto operationsArray = operations.asObject(rt).asArray(rt);
+ 
+   for (size_t i = 0, length = operationsArray.size(rt); i < length; ++i) {
+@@ -23,10 +29,16 @@ void AnimatedPropsRegistry::update(jsi::Runtime &rt, const jsi::Value &operation
+     auto shadowNode = shadowNodeFromValue(rt, shadowNodeWrapper);
+ 
+     const jsi::Value &updates = item.getProperty(rt, "updates");
+-    addUpdatesToBatch(shadowNode, jsi::dynamicFromValue(rt, updates));
++    parsed.emplace_back(std::move(shadowNode), jsi::dynamicFromValue(rt, updates));
++  }
+ 
++  // Phase 2: pure native writes under the registry mutex; updatesBatch_ and
++  // timestampMap_ are also moved/cleared by flushUpdates on the MAIN thread.
++  auto lock = this->lock();
++  for (auto &parsedItem : parsed) {
++    addUpdatesToBatch(parsedItem.first, parsedItem.second);
+     if constexpr (StaticFeatureFlags::getFlag("FORCE_REACT_RENDER_FOR_SETTLED_ANIMATIONS")) {
+-      timestampMap_[shadowNode->getTag()] = timestamp;
++      timestampMap_[parsedItem.first->getTag()] = timestamp;
+     }
+   }
+ }
 diff --git a/package/src/main/cpp/Common/cpp/reanimated/NativeModules/ReanimatedModuleProxy.cpp b/package/src/main/cpp/Common/cpp/reanimated/NativeModules/ReanimatedModuleProxy.cpp
-index 96f887c..85b7d8b 100644
+index 96f887c..6bf3386 100644
 --- a/package/src/main/cpp/Common/cpp/reanimated/NativeModules/ReanimatedModuleProxy.cpp
 +++ b/package/src/main/cpp/Common/cpp/reanimated/NativeModules/ReanimatedModuleProxy.cpp
-@@ -102,6 +102,11 @@ void ReanimatedModuleProxy::init(const PlatformDepMethodsHolder &platformDepMeth
+@@ -102,6 +102,9 @@ void ReanimatedModuleProxy::init(const PlatformDepMethodsHolder &platformDepMeth
      }
  
      const auto timestamp = strongThis->getAnimationTimestamp_();
-+    // addUpdatesToBatch (inside update) mutates updatesBatch_, which is also
-+    // moved/cleared by flushUpdates on the MAIN thread under the registry
-+    // mutex; this callback runs on the UI worklet runtime thread, so the
-+    // registry mutex must be held here as well.
-+    auto lock = strongThis->animatedPropsRegistry_->lock();
++    // update() takes the registry mutex itself, but only for the native batch
++    // writes: its JSI parsing phase must stay lock-free because payload
++    // getters/Proxy traps may run JS on this worklet thread.
      strongThis->animatedPropsRegistry_->update(rt, operations, timestamp);
    };
  
-@@ -601,7 +606,20 @@ bool ReanimatedModuleProxy::handleRawEvent(const RawEvent &rawEvent, double curr
+@@ -601,7 +604,20 @@ bool ReanimatedModuleProxy::handleRawEvent(const RawEvent &rawEvent, double curr
  
  void ReanimatedModuleProxy::cssLoopCallback(const double /*timestampMs*/) {
    shouldUpdateCssAnimations_ = true;

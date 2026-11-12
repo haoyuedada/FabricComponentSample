@@ -32,18 +32,32 @@ RNOH_JS 线程在 React commit 的 `ReanimatedCommitHook::shadowTreeWillCommit �
        }
 ```
 
-**修改 2** — `package/src/main/cpp/Common/cpp/reanimated/NativeModules/ReanimatedModuleProxy.cpp:105`（同族窗口加固）
+**修改 2** — `package/src/main/cpp/Common/cpp/reanimated/Fabric/updates/AnimatedPropsRegistry.cpp:17`（同族窗口加固，按 review 意见重构为两阶段）
 
-`updateProps` 回调运行在 UI worklet runtime 线程，写 `updatesBatch_` 前持 `animatedPropsRegistry_` 锁，消除与 MAIN 线程 `flushUpdates` 的 vector 数据竞争。`update()` 内部无嵌套加锁，无死锁风险。
+`updateProps` 回调运行在 UI worklet runtime 线程，`update()` 写 `updatesBatch_`/`timestampMap_` 需与 MAIN 线程 `flushUpdates` 互斥。首版实现在回调处整函数持锁，review 指出锁内 JSI 调用（`getProperty`/`dynamicFromValue` 等）可能经 getter/Proxy trap 同步执行 JS 并重入 `_updateProps`，导致同线程二次锁非递归 mutex（UB/自死锁）。现重构为两阶段：**Phase 1 锁外完成全部 JSI 读取与转换**（解析进局部 vector），**Phase 2 持锁做纯原生写入**。语义差异：解析中途抛 JS 异常时不写入任何条目（原实现保留已写入条目），批次为尽力而为的动画更新，可接受。
 
 ```diff
-     const auto timestamp = strongThis->getAnimationTimestamp_();
-+    // addUpdatesToBatch (inside update) mutates updatesBatch_, which is also
-+    // moved/cleared by flushUpdates on the MAIN thread under the registry
-+    // mutex; this callback runs on the UI worklet runtime thread, so the
-+    // registry mutex must be held here as well.
-+    auto lock = strongThis->animatedPropsRegistry_->lock();
-     strongThis->animatedPropsRegistry_->update(rt, operations, timestamp);
+   auto operationsArray = operations.asObject(rt).asArray(rt);
+ 
+   for (size_t i = 0, length = operationsArray.size(rt); i < length; ++i) {
+     auto item = operationsArray.getValueAtIndex(rt, i).asObject(rt);
+     auto shadowNodeWrapper = item.getProperty(rt, "shadowNodeWrapper");
+     auto shadowNode = shadowNodeFromValue(rt, shadowNodeWrapper);
+ 
+     const jsi::Value &updates = item.getProperty(rt, "updates");
+-    addUpdatesToBatch(shadowNode, jsi::dynamicFromValue(rt, updates));
++    parsed.emplace_back(std::move(shadowNode), jsi::dynamicFromValue(rt, updates));
++  }
+ 
++  // Phase 2: pure native writes under the registry mutex
++  auto lock = this->lock();
++  for (auto &parsedItem : parsed) {
++    addUpdatesToBatch(parsedItem.first, parsedItem.second);
+     if constexpr (StaticFeatureFlags::getFlag("FORCE_REACT_RENDER_FOR_SETTLED_ANIMATIONS")) {
+-      timestampMap_[shadowNode->getTag()] = timestamp;
++      timestampMap_[parsedItem.first->getTag()] = timestamp;
+     }
+   }
 ```
 
 **修改 3** — `package/src/main/cpp/Common/cpp/reanimated/NativeModules/ReanimatedModuleProxy.cpp:607`（P2 读路径补齐）
@@ -92,23 +106,57 @@ index b98bdc5..9ec4a34 100644
          registry->remove(tag);
        }
        staticPropsRegistry_->remove(tag);
+diff --git a/package/src/main/cpp/Common/cpp/reanimated/Fabric/updates/AnimatedPropsRegistry.cpp b/package/src/main/cpp/Common/cpp/reanimated/Fabric/updates/AnimatedPropsRegistry.cpp
+index ce47b06..4f02e4e 100644
+--- a/package/src/main/cpp/Common/cpp/reanimated/Fabric/updates/AnimatedPropsRegistry.cpp
++++ b/package/src/main/cpp/Common/cpp/reanimated/Fabric/updates/AnimatedPropsRegistry.cpp
+@@ -15,6 +15,12 @@ static inline std::shared_ptr<const ShadowNode> shadowNodeFromValue(
+ #endif
+ 
+ void AnimatedPropsRegistry::update(jsi::Runtime &rt, const jsi::Value &operations, const double timestamp) {
++  // Phase 1: JSI reads without the registry mutex. Property access and
++  // dynamicFromValue can execute JS (getters/Proxy traps in the payload),
++  // and a getter that synchronously re-enters _updateProps must not re-lock
++  // this thread's non-recursive mutex (UB / self-deadlock).
++  std::vector<std::pair<std::shared_ptr<const ShadowNode>, folly::dynamic>> parsed;
++
+   auto operationsArray = operations.asObject(rt).asArray(rt);
+ 
+   for (size_t i = 0, length = operationsArray.size(rt); i < length; ++i) {
+@@ -23,10 +29,16 @@ void AnimatedPropsRegistry::update(jsi::Runtime &rt, const jsi::Value &operation
+     auto shadowNode = shadowNodeFromValue(rt, shadowNodeWrapper);
+ 
+     const jsi::Value &updates = item.getProperty(rt, "updates");
+-    addUpdatesToBatch(shadowNode, jsi::dynamicFromValue(rt, updates));
++    parsed.emplace_back(std::move(shadowNode), jsi::dynamicFromValue(rt, updates));
++  }
+ 
++  // Phase 2: pure native writes under the registry mutex; updatesBatch_ and
++  // timestampMap_ are also moved/cleared by flushUpdates on the MAIN thread.
++  auto lock = this->lock();
++  for (auto &parsedItem : parsed) {
++    addUpdatesToBatch(parsedItem.first, parsedItem.second);
+     if constexpr (StaticFeatureFlags::getFlag("FORCE_REACT_RENDER_FOR_SETTLED_ANIMATIONS")) {
+-      timestampMap_[shadowNode->getTag()] = timestamp;
++      timestampMap_[parsedItem.first->getTag()] = timestamp;
+     }
+   }
+ }
 diff --git a/package/src/main/cpp/Common/cpp/reanimated/NativeModules/ReanimatedModuleProxy.cpp b/package/src/main/cpp/Common/cpp/reanimated/NativeModules/ReanimatedModuleProxy.cpp
-index 96f887c..85b7d8b 100644
+index 96f887c..6bf3386 100644
 --- a/package/src/main/cpp/Common/cpp/reanimated/NativeModules/ReanimatedModuleProxy.cpp
 +++ b/package/src/main/cpp/Common/cpp/reanimated/NativeModules/ReanimatedModuleProxy.cpp
-@@ -102,6 +102,11 @@ void ReanimatedModuleProxy::init(const PlatformDepMethodsHolder &platformDepMeth
+@@ -102,6 +102,9 @@ void ReanimatedModuleProxy::init(const PlatformDepMethodsHolder &platformDepMeth
      }
  
      const auto timestamp = strongThis->getAnimationTimestamp_();
-+    // addUpdatesToBatch (inside update) mutates updatesBatch_, which is also
-+    // moved/cleared by flushUpdates on the MAIN thread under the registry
-+    // mutex; this callback runs on the UI worklet runtime thread, so the
-+    // registry mutex must be held here as well.
-+    auto lock = strongThis->animatedPropsRegistry_->lock();
++    // update() takes the registry mutex itself, but only for the native batch
++    // writes: its JSI parsing phase must stay lock-free because payload
++    // getters/Proxy traps may run JS on this worklet thread.
      strongThis->animatedPropsRegistry_->update(rt, operations, timestamp);
    };
  
-@@ -601,7 +606,20 @@ bool ReanimatedModuleProxy::handleRawEvent(const RawEvent &rawEvent, double curr
+@@ -601,7 +604,20 @@ bool ReanimatedModuleProxy::handleRawEvent(const RawEvent &rawEvent, double curr
  
  void ReanimatedModuleProxy::cssLoopCallback(const double /*timestampMs*/) {
    shouldUpdateCssAnimations_ = true;
@@ -135,7 +183,7 @@ index 96f887c..85b7d8b 100644
 ## 验证
 
 - Patch 基于原始发布包 `oh-reanimated-release-20261102.tar.gz` 的 pristine 源码生成，对纯净源码 `git apply --check` 通过，实际应用后与修复工作树逐字节一致（CRLF 行尾保持）。
-- 锁序核验：全库所有双锁路径均为 manager → registry（commit hook、performOperations、setViewStyle→observer），本次新增持锁不引入反向顺序；`update()`、`hasUpdates()` 内部无嵌套加锁，均无死锁风险。
+- 锁序核验：全库所有双锁路径均为 manager → registry（commit hook、performOperations、setViewStyle→observer），本次新增持锁不引入反向顺序；`update()` Phase 2 在函数内持锁一次，锁内仅纯原生写入（无 JSI、无嵌套锁）；`cssLoopCallback` 两段临界区互不嵌套。同线程重入路径（getter/Proxy → `_updateProps`）已随 Phase 1 锁外解析消除，均无死锁风险。
 - 建议回归：可控构建开 TSAN/ASan，压测"节点卸载（列表滚动、页面销毁）与 CSS Transition/Animation 注册/更新/注销高频并发"场景；合入后观察现网 `UpdatesRegistry::collectProps` 栈崩溃归零。
 
 ## 未覆盖 / 风险
