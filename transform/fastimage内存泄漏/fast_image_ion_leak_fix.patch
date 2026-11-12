@@ -1,0 +1,161 @@
+diff --git a/fast_image/src/main/cpp/FastImagePackage.h b/fast_image/src/main/cpp/FastImagePackage.h
+--- a/fast_image/src/main/cpp/FastImagePackage.h	2026-11-12 13:41:14.166391600 +0800
++++ b/fast_image/src/main/cpp/FastImagePackage.h	2026-11-12 13:43:43.615736900 +0800
+@@ -36,7 +36,12 @@
+ public:
+     FastImagePackage(Package::Context ctx) : Package(ctx) {
+         // 初始化
+-        ImageKnifePro::ImageKnife::GetInstance().Init();
++        auto &imageKnife = ImageKnifePro::ImageKnife::GetInstance();
++        imageKnife.Init();
++        // 限制内存缓存上限，避免解码后的 PixelMap（DMA-BUF/ION）无界堆积。
++        // 默认上限较大，且缓存持有的是解码结果而非原始数据，必须显式收敛。
++        // 参数：最大图片张数、最大字节数（库上限 1024MB / 4096 张）。
++        imageKnife.SetCacheLimit(ImageKnifePro::CacheStrategy::MEMORY, 256, 256 * 1024 * 1024);
+     }
+ 
+     std::unique_ptr<TurboModuleFactoryDelegate> createTurboModuleFactoryDelegate() override {
+diff --git a/fast_image/src/main/cpp/FastImageViewComponentInstance.cpp b/fast_image/src/main/cpp/FastImageViewComponentInstance.cpp
+--- a/fast_image/src/main/cpp/FastImageViewComponentInstance.cpp	2026-11-12 13:41:14.171055200 +0800
++++ b/fast_image/src/main/cpp/FastImageViewComponentInstance.cpp	2026-11-12 13:43:43.616742500 +0800
+@@ -1,6 +1,7 @@
+ #include "FastImageViewComponentInstance.h"
+ #include "RNCFastImageViewTurboModule.h"
+ #include "Props.h"
++#include <cmath>
+ #include <iomanip>
+ #include <react/renderer/core/ConcreteState.h>
+ #include <sstream>
+@@ -65,10 +66,91 @@
+ 
+ FastImageViewComponentInstance::~FastImageViewComponentInstance()
+ {
++    // 先取消在途请求：否则组件销毁后解码仍会完成并写入缓存，
++    // 解码出的 PixelMap（DMA-BUF/ION）在请求对象释放前一直由 fd 持有。
++    releaseImageKnifeRequest();
+     // The original handle is released by the ARKUI node. It is not released again here
+     m_imageKnifeNode->DisposeNode(false);
+ }
+ 
++void FastImageViewComponentInstance::releaseImageKnifeRequest()
++{
++    if (!m_imageKnifeNode) {
++        return;
++    }
++    auto request = m_imageKnifeNode->GetImageKnifeRequest();
++    if (request && request->GetStatus() == ImageKnifePro::ImageKnifeRequest::Status::PROGRESS) {
++        ImageKnifePro::ImageKnife::GetInstance().CancelRequest(request);
++    }
++    // 解除监听，避免组件析构后仍收到回调
++    if (m_imageKnifeOption) {
++        m_imageKnifeOption->onLoadListener = nullptr;
++        m_imageKnifeOption->progressListener = nullptr;
++    }
++}
++
++bool FastImageViewComponentInstance::applyUpdate()
++{
++    // 组件尺寸未知时不发起加载：ImageKnife 的降采样依赖组件测算尺寸，
++    // 尺寸为 0 时无法降采样，会按原图分辨率解码（本次 ION 泄漏主因）。
++    if (m_targetWidth == 0 || m_targetHeight == 0) {
++        m_pendingUpdate = true;
++        return false;
++    }
++
++    std::string currentSrc;
++    if (!m_imageKnifeOption->loadSrc.GetString(currentSrc)) {
++        // Resource / PixelMap 类型：用 ToString() 作为变更标识
++        currentSrc = m_imageKnifeOption->loadSrc.ToString();
++    }
++    if (currentSrc.empty()) {
++        // 还没有有效图片源（布局先于 props 到达），等 props 到位后再发起加载
++        m_pendingUpdate = true;
++        return false;
++    }
++
++    const int32_t objectFit = static_cast<int32_t>(m_imageKnifeOption->objectFit);
++
++    // 仅在真正影响加载结果的属性变化时才发起新请求。
++    // 原实现每次 props 变化（如 tintColor、边框等）都会调用 Update()，
++    // 导致同一组件反复解码，旧 PixelMap 滞留（实测同一节点 23 份）。
++    if (!m_pendingUpdate && currentSrc == m_lastLoadSrc &&
++        m_targetWidth == m_appliedWidth && m_targetHeight == m_appliedHeight &&
++        objectFit == m_appliedObjectFit) {
++        return false;
++    }
++
++    // 按组件实际尺寸降采样。DEFAULT 仅在超过 7680x4320 时才缩放，
++    // 无法覆盖 6480x6480 这类大图，必须显式指定策略。
++    m_imageKnifeOption->downSampling = ImageKnifePro::DownSamplingStrategy::FIT_CENTER_MEMORY;
++
++    m_imageKnifeNode->SetWidth(static_cast<float>(m_targetWidth));
++    m_imageKnifeNode->SetHeight(static_cast<float>(m_targetHeight));
++    m_imageKnifeNode->Update(m_imageKnifeOption);
++
++    m_lastLoadSrc = currentSrc;
++    m_appliedWidth = m_targetWidth;
++    m_appliedHeight = m_targetHeight;
++    m_appliedObjectFit = objectFit;
++    m_pendingUpdate = false;
++    return true;
++}
++
++void FastImageViewComponentInstance::onLayoutChanged(
++    facebook::react::LayoutMetrics const &layoutMetrics)
++{
++    CppComponentInstance::onLayoutChanged(layoutMetrics);
++
++    const auto width = static_cast<uint32_t>(std::lround(layoutMetrics.frame.size.width));
++    const auto height = static_cast<uint32_t>(std::lround(layoutMetrics.frame.size.height));
++    if (width == m_targetWidth && height == m_targetHeight) {
++        return;
++    }
++    m_targetWidth = width;
++    m_targetHeight = height;
++    applyUpdate();
++}
++
+ void FastImageViewComponentInstance::attachImageKnifeLoadListener() {
+     auto weakThis = weak_from_this();
+     auto taskExecutor = m_deps->taskExecutor; // shared_ptr 拷贝保活调度器
+@@ -281,7 +363,7 @@
+     // blurRadius — use NODE_BLUR for node-level blur (consistent with fallback mode's RN Image blur)
+     // making the visual result consistent between fallback and non-fallback modes.
+     // Must be set AFTER Update() to take effect on the rendered node.
+-    m_imageKnifeNode->Update(m_imageKnifeOption);
++    applyUpdate();
+ 
+     if (blurRadius > 0) {
+         ArkUI_NumberValue blurValue[] = {{.f32 = static_cast<float>(blurRadius)}};
+diff --git a/fast_image/src/main/cpp/FastImageViewComponentInstance.h b/fast_image/src/main/cpp/FastImageViewComponentInstance.h
+--- a/fast_image/src/main/cpp/FastImageViewComponentInstance.h	2026-11-12 13:41:14.171055200 +0800
++++ b/fast_image/src/main/cpp/FastImageViewComponentInstance.h	2026-11-12 13:43:43.614362100 +0800
+@@ -16,15 +16,28 @@
+     std::shared_ptr<ImageKnifePro::ImageKnifeNode> m_imageKnifeNode;
+     std::shared_ptr<ImageKnifePro::ImageKnifeOption> m_imageKnifeOption;
+     std::shared_ptr<ImageKnifePro::OnLoadCallBack> m_loadListener;
++    // 组件目标尺寸（vp）以及上一次真正发起加载时使用的尺寸。
++    // ImageKnife 的降采样依赖组件测算尺寸，尺寸未知时不应发起加载，
++    // 否则会按原图分辨率解码（本次 ION 泄漏的主因之一）。
++    uint32_t m_targetWidth = 0;
++    uint32_t m_targetHeight = 0;
++    uint32_t m_appliedWidth = 0;
++    uint32_t m_appliedHeight = 0;
++    int32_t m_appliedObjectFit = -1;
++    bool m_pendingUpdate = false;
++    std::string m_lastLoadSrc;
+     std::string getBundlePath();
+     std::string getAbsolutePathPrefix(std::string const &bundlePath);
+     void SetHeaders(std::vector<facebook::react::FastImageViewSourceHeadersStruct> const &header);
+     std::optional<std::string> getTintColorFromDynamic(folly::dynamic value);
+     void setTintColor(facebook::react::SharedColor const& sharedColor);
++    bool applyUpdate();
++    void releaseImageKnifeRequest();
+ public:
+     explicit FastImageViewComponentInstance(Context context);
+     virtual ~FastImageViewComponentInstance();
+     void onPropsChanged(SharedConcreteProps const &props) override;
++    void onLayoutChanged(facebook::react::LayoutMetrics const &layoutMetrics) override;
+     void onCreate() override;
+     ArkUINode &getLocalRootArkUINode() override;
+     void attachImageKnifeLoadListener();
