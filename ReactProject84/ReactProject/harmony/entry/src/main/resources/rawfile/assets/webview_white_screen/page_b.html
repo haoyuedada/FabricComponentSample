@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page B</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, "PingFang SC", sans-serif;
+      background: #1565c0; /* 深蓝：页面可见即非白屏 */
+      color: #fff;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      height: 100vh; gap: 14px; text-align: center;
+    }
+    h1 { font-size: 28px; }
+    p { font-size: 13px; opacity: .85; line-height: 1.6; }
+    button {
+      font-size: 16px; padding: 12px 28px; border-radius: 10px;
+      border: 2px solid #fff; background: rgba(255,255,255,.15); color: #fff;
+    }
+    .big { font-size: 22px; font-weight: bold; color: #ffd54f; }
+  </style>
+</head>
+<body>
+  <h1>页面 B</h1>
+  <p id="stat">统计中…</p>
+  <button onclick="back()">setTimeout 返回页面 A（循环测试）</button>
+  <script>
+    function post(msg) {
+      try { ReactNativeWebView.postMessage(JSON.stringify(msg)); } catch (e) { }
+    }
+
+    function param(name) {
+      try { return new URLSearchParams(location.search).get(name); } catch (e) { return null; }
+    }
+
+    // 本页首帧可见即刻上报：白屏时长 = 本页可见时刻 - 页面 A 发起跳转时刻
+    var t0 = Number(param('t'));
+    var now = Date.now();
+    var whiteScreenMs = t0 ? (now - t0) : null;
+    document.getElementById('stat').textContent =
+      whiteScreenMs != null ? ('跳转→本页可见：' + whiteScreenMs + ' ms') : '（未携带跳转时刻）';
+
+    post({
+      event: 'b_painted',
+      whiteScreenMs: whiteScreenMs,
+      viaSetTimeout: param('st') === '1',
+      ts: now
+    });
+
+    function back() {
+      // 以自身 URL 为基准把 page_b 替换回 page_a（与 page_a 的跳转逻辑对应）：
+      // 兼容 metro 资源 URL（dev）与 Android release 的扁平资源名
+      var target = location.href.replace(/[?#].*$/, '').replace('page_b', 'page_a');
+      setTimeout(function () {
+        post({ event: 'b_navigate', ts: Date.now() }); // 真正发起跳转时打点
+        location.href = target;
+      }, 1500); // ★ setTimeout 跳转
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page A</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, "PingFang SC", sans-serif;
+      background: #2e7d32; /* 深绿：页面可见即非白屏 */
+      color: #fff;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      height: 100vh; gap: 16px; text-align: center;
+    }
+    h1 { font-size: 28px; }
+    p { font-size: 13px; opacity: .85; line-height: 1.6; }
+    button {
+      font-size: 16px; padding: 12px 28px; border-radius: 10px;
+      border: 2px solid #fff; background: rgba(255,255,255,.15); color: #fff;
+    }
+    #countdown { font-size: 40px; font-weight: bold; }
+    .url { font-size: 11px; opacity: .6; word-break: break-all; padding: 0 20px; }
+  </style>
+</head>
+<body>
+  <h1>页面 A</h1>
+  <p>复现场景：本页通过 <b>setTimeout</b> 延时跳转到页面 B<br>（外部问题：页面跳转长时间白屏）</p>
+  <div id="countdown">--</div>
+  <button onclick="jump(false)">立即跳转（不经 setTimeout）</button>
+  <div class="url" id="url"></div>
+  <script>
+    var JUMP_DELAY_MS = 2000;
+    var timer = null;
+
+    function post(msg) {
+      try { ReactNativeWebView.postMessage(JSON.stringify(msg)); } catch (e) { }
+    }
+
+    function jump(viaSetTimeout) {
+      if (timer) { clearInterval(timer); timer = null; }
+      // 以自身 URL 为基准把 page_a 替换为 page_b：兼容 metro 资源 URL（dev，保留目录）
+      // 与 Android release 的扁平资源名（raw/src_..._page_a.html）
+      var target = location.href.replace(/[?#].*$/, '').replace('page_a', 'page_b');
+      // 跳转时刻打点，通过 query 传给页面 B，用于计算白屏时长
+      target += '?t=' + Date.now() + (viaSetTimeout ? '&st=1' : '');
+      post({ event: 'a_navigate', viaSetTimeout: viaSetTimeout, ts: Date.now() });
+      location.href = target;
+    }
+
+    window.addEventListener('load', function () {
+      document.getElementById('url').textContent = location.href;
+      post({ event: 'a_loaded', ts: Date.now() });
+      var left = JUMP_DELAY_MS / 1000;
+      var el = document.getElementById('countdown');
+      el.textContent = left;
+      timer = setInterval(function () {
+        left--;
+        if (left <= 0) {
+          clearInterval(timer);
+          el.textContent = '跳转中…';
+          jump(true); // ★ 上报场景：setTimeout 触发的页面跳转
+        } else {
+          el.textContent = left;
+        }
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
