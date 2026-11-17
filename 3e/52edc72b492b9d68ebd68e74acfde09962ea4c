@@ -1,0 +1,14 @@
+transform/screens-1117.txt
+  h_ac9751a7b931d1 1-26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.9",
+  "base_commit_sha": "3e52edc72b492b9d68ebd68e74acfde09962ea4c",
+  "prompts": {},
+  "humans": {
+    "h_ac9751a7b931d1": {
+      "author": "c30053109 <chenhaoyue1@huawei.com>"
+    }
+  }
+}
