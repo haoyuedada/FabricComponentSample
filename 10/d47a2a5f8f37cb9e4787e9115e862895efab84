@@ -1,0 +1,294 @@
+ReactProject84/ReactProject/.gitignore
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-66
+ReactProject84/ReactProject/harmony/entry/src/main/cpp/generated/fabric_component_sample_package/react/renderer/components/fabric_component_sample_package/States.h
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-20
+ReactProject84/ReactProject/harmony/entry/src/ohosTest/resources/base/element/string.json
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-16
+ReactProject84/ReactProject/harmony/entry/src/ohosTest/module.json5
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-38
+ReactProject84/ReactProject/harmony/entry/src/test/LocalUnit.test.ets
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-40
+ReactProject84/ReactProject/harmony/entry/src/main/resources/rawfile/assets/webview_white_screen/freeze_page_b.html
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-43
+ReactProject84/ReactProject/harmony/entry/src/main/resources/base/element/color.json
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-8
+ReactProject84/ReactProject/.prettierrc.js
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-14
+ReactProject84/ReactProject/package.json
+  h_fed3d0bf8fff42 1-16,25,31-52
+  h_fed3d0bf8fff42 17-24,26-30
+ReactProject84/ReactProject/harmony/entry/oh-package.json5
+  s_65b4d3569190ab::t_61f4b5abe31c66 12
+  s_65b4d3569190ab::t_98fcffb8bf24ef 14,16-17
+  h_fed3d0bf8fff42 11,13
+  s_5f9158f1e88ec7::t_8f47781e019a74 15
+  h_fed3d0bf8fff42 1-10
+ReactProject84/ReactProject/harmony/entry/src/main/cpp/generated/fabric_component_sample_package/react/renderer/components/fabric_component_sample_package/States.cpp
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-16
+ReactProject84/ReactProject/harmony/entry/src/ohosTest/ets/testrunner/OpenHarmonyTestRunner.ets
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-97
+ReactProject84/ReactProject/harmony/entry/src/main/module.json5
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-55
+ReactProject84/ReactProject/harmony/entry/src/ohosTest/resources/base/element/color.json
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-8
+ReactProject84/ReactProject/harmony/entry/.gitignore
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-6
+ReactProject84/ReactProject/harmony/entry/src/main/cpp/rnc/FabricComponentSamplePackagePackage.h
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-22
+ReactProject84/ReactProject/harmony/.gitignore
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-13
+ReactProject84/ReactProject/metro.config.js
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-34
+ReactProject84/ReactProject/.eslintrc.js
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-11
+ReactProject84/ReactProject/harmony/entry/src/main/cpp/rnc/FabricComponentSamplePackagePackage.cpp
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-25
+ReactProject84/ReactProject/harmony/entry/src/main/cpp/generated/fabric_component_sample_package/RNOH/generated/components/BaseQDGestureFloatComponentInstance.h
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-30
+ReactProject84/ReactProject/harmony/entry/src/test/List.test.ets
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-12
+ReactProject84/ReactProject/index.js
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-11,13-15
+  h_fed3d0bf8fff42 12
+ReactProject84/ReactProject/harmony/entry/src/main/ets/GeneratedPackage.ts
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-19
+ReactProject84/ReactProject/harmony/hvigorfile.ts
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-13
+ReactProject84/ReactProject/harmony/entry/src/ohosTest/ets/testability/pages/Index.ets
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-24
+ReactProject84/ReactProject/harmony/entry/src/ohosTest/resources/base/profile/test_pages.json
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-5
+ReactProject84/ReactProject/harmony/entry/src/main/ets/pages/Index.ets
+  s_5f9158f1e88ec7::t_8f47781e019a74 24-32
+  s_65b4d3569190ab::t_4ac2981ee5de24 23,33
+  s_65b4d3569190ab::t_36dd2c3e4d6ba2 37,39-40,57,65,103
+  h_fed3d0bf8fff42 38
+  s_65b4d3569190ab::t_9e519956c5df1d 20-22
+  s_65b4d3569190ab::t_e0f31fd4011d32 34-36
+  s_65b4d3569190ab::t_791d824709f865 41-43,54-56
+  s_65b4d3569190ab::t_3fbb35ef2bcc19 58-60,62-64
+  s_65b4d3569190ab::t_c8d58899522ea8 66-68,100-102
+  s_65b4d3569190ab::t_a7a44cbfeddd6e 104
+  h_fed3d0bf8fff42 1-19,44-53,61,69-99
+ReactProject84/ReactProject/harmony/entry/src/main/cpp/generated/RNOHGeneratedPackage.h
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-72
+ReactProject84/ReactProject/harmony/AppScope/app.json5
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-10
+ReactProject84/ReactProject/harmony/entry/src/main/resources/base/profile/main_pages.json
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-5
+ReactProject84/ReactProject/harmony/entry/src/main/cpp/rnc/QDGestureFloatComponentInstance.cpp
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-77
+ReactProject84/ReactProject/src/react-native-screens/App.tsx
+  h_fed3d0bf8fff42 1-77
+ReactProject84/ReactProject/harmony/entry/obfuscation-rules.txt
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-22
+ReactProject84/ReactProject/harmony/entry/src/main/cpp/generated/fabric_component_sample_package/react/renderer/components/fabric_component_sample_package/ShadowNodes.h
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-32
+ReactProject84/ReactProject/harmony/entry/src/ohosTest/ets/test/Ability.test.ets
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-42
+ReactProject84/ReactProject/app.json
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-4
+ReactProject84/ReactProject/harmony/entry/src/main/resources/rawfile/assets/webview_white_screen/page_a.html
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-71
+ReactProject84/ReactProject/harmony/entry/src/mock/mock-config.json5
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-2
+ReactProject84/ReactProject/harmony/entry/src/main/resources/rawfile/assets/webview_white_screen/page_b.html
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-64
+ReactProject84/ReactProject/harmony/entry/src/main/resources/base/media/layered_image.json
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-7
+ReactProject84/ReactProject/harmony/entry/src/main/cpp/generated/fabric_component_sample_package/react/renderer/components/fabric_component_sample_package/ComponentDescriptors.h
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-24
+ReactProject84/ReactProject/harmony/AppScope/resources/base/element/string.json
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-8
+ReactProject84/ReactProject/harmony/entry/src/main/cpp/generated/fabric_component_sample_package/react/renderer/components/fabric_component_sample_package/Props.h
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-37
+ReactProject84/ReactProject/harmony/entry/src/main/cpp/generated/fabric_component_sample_package/react/renderer/components/fabric_component_sample_package/ShadowNodes.cpp
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-17
+ReactProject84/ReactProject/harmony/oh-package.json5
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-15,18-19
+  s_5f9158f1e88ec7::t_e82ae6a5695a1e 16-17
+ReactProject84/ReactProject/harmony/entry/src/main/cpp/generated/fabric_component_sample_package/react/renderer/components/fabric_component_sample_package/Props.cpp
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-52
+ReactProject84/ReactProject/harmony/entry/src/ohosTest/ets/test/List.test.ets
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-12
+ReactProject84/ReactProject/harmony/entry/src/main/cpp/CMakeLists.txt
+  s_5f9158f1e88ec7::t_8f47781e019a74 46
+  s_65b4d3569190ab::t_e8f8545fb42702 26
+  s_65b4d3569190ab::t_7c6f84a16cb5e2 42
+  s_65b4d3569190ab::t_29f6c600dae5c8 45,47
+  s_65b4d3569190ab::t_fd43775490f1fe 25
+  s_65b4d3569190ab::t_74ac679a2c8b26 43
+  s_65b4d3569190ab::t_37a674ca605141 44
+  h_fed3d0bf8fff42 28-29
+  s_65b4d3569190ab::t_621703aca166f5 27,30-31
+  s_65b4d3569190ab::t_1c42cecfdac13b 22-24
+  s_65b4d3569190ab::t_129a85a4eb707e 32-34,39-41
+  h_fed3d0bf8fff42 1-21,35-38
+ReactProject84/ReactProject/harmony/hvigor/hvigor-config.json5
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-21
+ReactProject84/ReactProject/harmony/entry/build-profile.json5
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-45
+ReactProject84/ReactProject/harmony/entry/src/main/cpp/rnc/CMakeLists.txt
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-16
+ReactProject84/ReactProject/harmony/entry/src/main/resources/base/element/string.json
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-16
+ReactProject84/ReactProject/harmony/entry/src/main/resources/en_US/element/string.json
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-16
+ReactProject84/ReactProject/harmony/entry/src/main/resources/zh_CN/element/string.json
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-16
+ReactProject84/ReactProject/.watchmanconfig
+  s_5f9158f1e88ec7::t_8f47781e019a74 1
+ReactProject84/ReactProject/tsconfig.json
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-8
+ReactProject84/ReactProject/harmony/entry/src/main/resources/rawfile/bundle.harmony.js
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-576
+ReactProject84/ReactProject/babel.config.js
+  h_fed3d0bf8fff42 1-4
+ReactProject84/ReactProject/harmony/entry/src/main/cpp/generated/fabric_component_sample_package/RNOH/generated/components/QDGestureFloatJSIBinder.h
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-40
+ReactProject84/ReactProject/harmony/entry/src/main/cpp/PackageProvider.cpp
+  s_65b4d3569190ab::t_22bcd67db18f65 11,15-16
+  s_5f9158f1e88ec7::t_8f47781e019a74 25
+  h_fed3d0bf8fff42 12-14,21-24
+  s_65b4d3569190ab::t_d4fb34b86f2e5b 26
+  s_65b4d3569190ab::t_322e7758a0735f 8-10
+  s_65b4d3569190ab::t_1bda6f809a8c62 27
+  h_fed3d0bf8fff42 1-7,17-20
+ReactProject84/ReactProject/harmony/entry/src/main/cpp/generated/fabric_component_sample_package/react/renderer/components/fabric_component_sample_package/EventEmitters.cpp
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-24
+ReactProject84/ReactProject/harmony/entry/src/main/cpp/rnc/QDGestureFloatComponentInstance.h
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-54
+ReactProject84/ReactProject/harmony/entry/hvigorfile.ts
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-13
+ReactProject84/ReactProject/harmony/entry/src/main/ets/entryability/EntryAbility.ets
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-14
+ReactProject84/ReactProject/harmony/build-profile.json5
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-49
+ReactProject84/ReactProject/harmony/entry/src/main/cpp/generated/fabric_component_sample_package/react/renderer/components/fabric_component_sample_package/EventEmitters.h
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-25
+ReactProject84/ReactProject/harmony/entry/src/main/cpp/generated/fabric_component_sample_package/RNOH/generated/BaseFabricComponentSamplePackagePackage.h
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-75
+ReactProject84/ReactProject/harmony/entry/src/main/resources/rawfile/assets/webview_white_screen/freeze_page_a.html
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-44
+ReactProject84/ReactProject/harmony/entry/src/main/ets/RNPackagesFactory.ets
+  s_65b4d3569190ab::t_65fcff9448175c 24
+  h_fed3d0bf8fff42 12-14,20-23
+  s_65b4d3569190ab::t_54147c6b3b501c 25
+  h_fed3d0bf8fff42 1-11,15-19
+ReactProject84/ReactProject/harmony/entry/src/ohosTest/ets/testability/TestAbility.ets
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-54
+ReactProject84/ReactProject/harmony/entry/src/main/ets/RNComponent/SelectBox.ets
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-132
+ReactProject84/ReactProject/App.tsx
+  s_5f9158f1e88ec7::t_8f47781e019a74 1-57
+ReactProject84/ReactProject/package-lock.json
+  h_fed3d0bf8fff42 1-15296
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.9",
+  "base_commit_sha": "10d47a2a5f8f37cb9e4787e9115e862895efab84",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "overridden": {
+        "s_5f9158f1e88ec7": 1,
+        "s_65b4d3569190ab": 6
+      }
+    }
+  },
+  "sessions": {
+    "s_17f85d6affe9f5": {
+      "agent_id": {
+        "tool": "codegenie-deveco",
+        "id": "1794538451669",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "custom_attributes": {
+        "stats_models": {"glm-5.3":{"additions":8,"deletions":2}},
+        "stats_total_additions": 8,
+        "stats_total_deletions": 2
+      }
+    },
+    "s_5f9158f1e88ec7": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e174e8389ffex7O1p5rrMlJjCI",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "custom_attributes": {
+        "stats_models": {"glm-5.3":{"additions":2536,"deletions":5}},
+        "stats_total_additions": 2536,
+        "stats_total_deletions": 5
+      }
+    },
+    "s_65b4d3569190ab": {
+      "agent_id": {
+        "tool": "codegenie-deveco",
+        "id": "1794877728278",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "custom_attributes": {
+        "stats_models": {"glm-5.3":{"additions":68,"deletions":15}},
+        "stats_total_additions": 68,
+        "stats_total_deletions": 15
+      }
+    },
+    "s_8efd11f9bd8a1d": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e187dc823ffet3jVTRsMEB3CfD",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "custom_attributes": {
+        "stats_models": {"glm-5.3":{"additions":215,"deletions":215}},
+        "stats_total_additions": 215,
+        "stats_total_deletions": 215
+      }
+    },
+    "s_9814de45238fec": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e1be4fb97ffejtTPX6l7IOBnwm",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "custom_attributes": {
+        "stats_models": {"glm-5.3":{"additions":49,"deletions":1}},
+        "stats_total_additions": 49,
+        "stats_total_deletions": 1
+      }
+    },
+    "s_f4f561eec34853": {
+      "agent_id": {
+        "tool": "codegenie-deveco",
+        "id": "1794819581009",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "custom_attributes": {
+        "stats_models": {"glm-5.3":{"additions":17,"deletions":4}},
+        "stats_total_additions": 17,
+        "stats_total_deletions": 4
+      }
+    },
+    "s_f90604bc2ba4b5": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e1c4140b6ffeWjkvN7yHJWj3g3",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "custom_attributes": {
+        "stats_models": {"glm-5.3":{"additions":16,"deletions":9}},
+        "stats_total_additions": 16,
+        "stats_total_deletions": 9
+      }
+    }
+  }
+}
