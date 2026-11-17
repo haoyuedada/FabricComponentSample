@@ -1,0 +1,26 @@
+SCR-01：返回事件没有目标隔离，多个 Screen 同时执行返回
+包： @react-native-ohos/react-native-screens 4.10.0-beta.4。
+定位： JS lib/module/components/Screen.js:58–66 / src/components/Screen.tsx:135–155；HAR ets/components/RNSScreen.ets:328 navigationBackPressed、:1063 backBtnPressed、:1087 附近的 parent.pop()。
+复现： 挂载 MainTabs、Home、Working 的真实 JS 监听器，发送一次 target=Working 的事件，三个 Screen 均收到原生返回命令；传输层为模拟对象。
+原因与建议： JS 未比较 target 与 screenId，原生命令入口也未校验。两侧均应校验目标，effect 依赖包含 screenId；补丁后仅 Working 收到命令。
+
+
+SCR-02：转场参数缺失时直接返回，没有结束转场
+包： @react-native-ohos/react-native-screens 4.10.0-beta.4。
+定位： HAR ets/components/RNSScreenStack.ets:1071、:1079 的非交互转场分支。
+复现： 向官方原方法提供“缺 navDestinationId”或“缺动画回调”输入，均未调用 finishTransition()，也未发送完成事件；转场 timeout=120000ms。
+修复建议： 缺参数时执行无动画收尾，完成 proxy、回执和状态清理，保留 REPLACE 的 operationId。该分支缺陷已复现，尚未确认现场白屏命中此分支。
+
+
+SCR-03：旧的延迟清理删除新注册的动画回调
+包： @react-native-ohos/react-native-screens 4.10.0-beta.4。
+定位： HAR ets/animations/CustomTransition.ets 的 registerNavParam、:122 scheduleDeferredUnregister、:138–149 flushDeferredUnregisters。
+复现： 注册 A → 延迟注销 A → 同 ID 注册新回调 → 执行旧注销，新回调被删除。已对官方原方法复现。
+修复建议： 清理时校验注册代次，或重新注册时取消旧的待清理项。缓存页重显时恢复动画注册，相关入口为 ets/components/RNSScreen.ets:1267 onShown / :1301 onDisAppear。
+
+
+SCR-04：JS 返回误用逻辑栈长度，导致父导航栈被弹出
+包： @react-native-ohos/react-native-screens 4.10.0-beta.4。
+定位： HAR ets/components/RNSScreen.ets:1063 backBtnPressed、:1085–1090；ets/components/RNSScreenStack.ets:193–205 updateScreenStack。
+复现： 原生栈仍为 Home、Working，但 screenIndex 已将逻辑 screenStackPath 缩短为 Home。此时执行 Working 的 JS 返回命令，原方法根据逻辑栈长度调用 getParent().pop()，误退父栈。已提取原方法独立复现；重复返回也可能再次操作父栈。
+修复建议： 使用当前 NavPathStack 核对目标是否仍在本栈顶；仅在本栈可返回时 pop，重复或迟到命令忽略，不从原生向父栈传播 JS 返回。修复后上述用例通过，系统返回和阻止返回用例保持通过；新包已完成一次真实任务结束返回首页，未再误退父栈，约21分钟后台后解锁及页签往返恢复正常。
