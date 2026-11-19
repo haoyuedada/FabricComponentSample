@@ -1,0 +1,18 @@
+transform/fastimage内存泄漏/1119/hisysevent.json
+  h_ac9751a7b931d1 1-27
+transform/fastimage内存泄漏/1119/memleak-kernel-com.huawei.hmos.vmall-0-20261113203514.txt
+  h_ac9751a7b931d1 1-364
+transform/fastimage内存泄漏/1119/memleak-kernel-hiapp-com.huawei.hmos.vmall-0-20261113203514.txt
+  h_ac9751a7b931d1 1-364
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.9",
+  "base_commit_sha": "fd3d8a1d76b8cdacb75d36cf60aec692d1a2f8bb",
+  "prompts": {},
+  "humans": {
+    "h_ac9751a7b931d1": {
+      "author": "c30053109 <chenhaoyue1@huawei.com>"
+    }
+  }
+}
