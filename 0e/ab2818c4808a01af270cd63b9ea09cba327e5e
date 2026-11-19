@@ -1,0 +1,14 @@
+transform/fastimage内存泄漏/1119/problem_1_liucuili_1116.md
+  h_ac9751a7b931d1 1-262
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.9",
+  "base_commit_sha": "0eab2818c4808a01af270cd63b9ea09cba327e5e",
+  "prompts": {},
+  "humans": {
+    "h_ac9751a7b931d1": {
+      "author": "c30053109 <chenhaoyue1@huawei.com>"
+    }
+  }
+}
