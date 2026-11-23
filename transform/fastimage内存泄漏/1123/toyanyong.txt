@@ -1,0 +1,77 @@
+结论
+PR 155（commit 7586e16）方向上能显著缓解这次 OOM，大概率能把 PSS 压回 1.5GB 软阈值以下；但它修的是“内存缓存上限过高 + 按原图全尺寸解码”这个主因，不能据此认定所有泄漏路径都已修复。
+更关键的是：当前这份日志不能证明“beta.2/1.0.19 仍然泄漏”。日志里缓存相关条目数是 236，而 PR 最终把上限收紧到了 64；如果运行的是最终 PR 的构建，这个数不可能到 236。因此这份日志更像是修复前的基线数据，不是修复后的验证数据。
+一、PR 155 实际改了什么
+我拉取了 refs/merge-requests/155/head，对应提交 7586e16，核心改动：
+改动	位置
+imageknifepro 1.0.14 → 1.0.19	oh-package.json5
+按组件像素尺寸解码	FastImageViewComponentInstance.cpp:238-285
+尺寸变化重新解码	FastImageViewComponentInstance.cpp:364-405
+每次 props 新建 option	FastImageViewComponentInstance.cpp:200-206
+defaultSource 落到 placeholderSrc	FastImageViewComponentInstance.cpp:288-293
+preload 只写文件缓存	RNCFastImageViewTurboModule.cpp:97
+内存缓存条目 256 → 64	FastImagePackage.h:47-48
+析构逻辑	FastImageViewComponentInstance.cpp:67-73
+二、用日志数据核对
+2.1 两次 smaps 快照的增长
+指标
+PSS
+[anon:native_heap:jemalloc]
+[anon]
+EXTRawData
+dma-buf FastImageView
+2.2 最重要的判断：236 ≈ 256，而不是 64
+- 1.0.14/1.0.19 的默认内存缓存上限是 256 条；
+- 日志中 EXTRawData 映射数 236，非常接近 256，说明缓存正在被填满，但还没到 256 的驱逐点；
+- 如果 PR 的 SetCacheLimit(MEMORY, 64, ...) 已生效，这个数应该在 64 附近，不可能到 236。
+因此，这份日志对应的构建没有包含最终 PR 的 64 条上限。 报告里“升级到 1.0.19 后泄漏仍然存在，说明 1.0.19 未修复”这个结论不成立——日志证明的是“256 条上限太大”，而不是“1.0.19 无效”。
+2.3 增长性质：更像是“缓存填满”，不是无界泄漏
+- 18:47 → 20:35 的 108 分钟内，EXTRawData 条目从 184 → 236，约 +52 条，线性增长；
+- 同期 jemalloc +596MB、anon +466MB，折合每个新增缓存条目约 10~20MB 的 native 占用；
+- 进程在达到 256 条上限之前就被 kill 了（236 < 256），所以还没看到“缓存满后平台期”。
+如果 256 条上限生效后内存能 plateau，那么本次 OOM 的本质是上限设得过高，而不是真正的无界泄漏。PR 把上限降到 64，并叠加按视图尺寸解码，正好针对这一点。
+2.4 粗算修复效果
+按 236 条缓存条目对应约 2.2GB（jemalloc 1.29GB + anon 0.95GB）计算，单条约 9MB；再加 dma-buf 682MB/342 条约 2MB：
+- 64 条上限：缓存相关 native 内存约从 2.2GB 降到 0.6GB 左右；
+- 按视图尺寸解码后，单条还会进一步下降（日志里 12MB×10、31MB×3 的大图受益最大）；
+- 加上 ArkTS/JIT/so 等其他约 0.5GB，PSS 预计落在 0.8~1.2GB，低于 1.5GB 软阈值。
+所以大概率能避免这次 OOM。
+三、不能保证的部分（PR 没覆盖的路径）
+1. jemalloc/anon 不是被 SetCacheLimit 直接释放的
+- 只有这些 buffer 确实挂在被驱逐的缓存条目上，才会随条目释放；
+- 如果 ImageKnife 的解码流水线/请求对象独立持有这些 buffer，64 条上限也拦不住，PSS 仍会线性上涨。
+- 需要用修复后的 smaps/htrace 验证 jemalloc 是否真的 plateau。
+2. 析构路径没改
+- ~FastImageViewComponentInstance() 仍然只调 DisposeNode(false)，没有显式释放 PixelMap；
+- 如果 DisposeNode(false) 只取消请求、不释放 PixelMap，组件销毁泄漏依旧存在。报告里的建议 #3/#4 没有被 PR 覆盖。
+3. onLoadFailed 的 Reload 路径没改
+- FastImageViewComponentInstance.cpp:108 仍会 Reload(info.requestId)，最多 2 次；
+- 旧 PixelMap 是否在 Reload 前释放，PR 没有处理。如果失败重试频繁，这仍是一条泄漏路径。
+4. Center 模式仍按原图解码，且有一个明确的逻辑问题
+- Center 分支使用 DownSamplingStrategy::DEFAULT，不缩小；
+- 同时 m_desiredWidth/m_desiredHeight 在 useDesiredSize == false 时被置 0（:284-285）；
+- onLayoutChanged 的守卫是 width == m_desiredWidth && height == m_desiredHeight（:379），对 Center 模式永远不成立，注释写的“Center mode always lands here”是错的；
+- 结果是 Center 模式每次布局变化都会触发一次 onPropsChanged → Update() → 重新解码，可能造成额外的全尺寸解码和内存抖动。
+- 另外 64 条是“条目数”上限，不是字节上限；64 × 31MB 最坏仍有约 2GB。
+5. 每次 props 都新建 option
+- 如果 ImageKnifeNode::Update() 没有释放旧 option/PixelMap，这会变成新的泄漏点；
+- 需要做“频繁改 tintColor/blurRadius/尺寸”的回归测试。
+6. 64 条上限是全局的
+- 会影响 App 内其他使用 ImageKnife 的组件；
+- 对长列表/预加载场景可能造成缓存抖动（频繁重解码），虽然不是泄漏，但会抬高 CPU 和瞬时内存。
+四、建议的验证方式
+1. 长稳复测 24~72 小时，复现同样的浏览路径，采集 sample + smaps + kernel dma-buf；
+2. 重点看四个指标是否 plateau：
+- PSS 斜率（应从 ~10MB/min 降到接近 0）；
+- [anon:native_heap:jemalloc]；
+- [anon]；
+- EXTRawData 映射数（修复后应在 64 附近，而不是 236）。
+3. 单独测 Center 模式 + 大图，确认 64 条上限不会被 31MB 级图片突破；
+4. 单独测 快速 props/布局变化，确认新 option 不会泄漏旧 PixelMap；
+5. 如果修复后 jemalloc 仍线性上涨，而 EXTRawData 已稳定在 64，说明存在独立于缓存的真实泄漏，需要继续查 DisposeNode / Reload / 解码流水线。
+五、对现有分析报告的修正
+报告中的结论
+“本次泄漏对应 beta.2 + imageknifepro 1.0.19”
+“342 个 FastImageView 实例 ID 各不相同，证明组件实例未被复用”
+“升级到 1.0.19 后泄漏仍然存在，说明 1.0.19 未修复”
+一句话总结：PR 155 是对这次 OOM 主因（缓存上限过高 + 全尺寸解码）的合理且大概率有效的修复，但现有日志是修复前基线，不能作为“已解决”的证据；要确认彻底解决，必须做修复后的长稳复测，并重点观察 jemalloc/anon 是否随 64 条上限真正 plateau。
