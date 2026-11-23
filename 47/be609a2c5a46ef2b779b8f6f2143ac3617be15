@@ -1,0 +1,16 @@
+transform/gesture-handler/vmall/VPanGestureHandler.tsx
+  h_ac9751a7b931d1 1-18
+transform/gesture-handler/vmall/index.tsx
+  h_ac9751a7b931d1 1-1245
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.9",
+  "base_commit_sha": "47be609a2c5a46ef2b779b8f6f2143ac3617be15",
+  "prompts": {},
+  "humans": {
+    "h_ac9751a7b931d1": {
+      "author": "c30053109 <chenhaoyue1@huawei.com>"
+    }
+  }
+}
