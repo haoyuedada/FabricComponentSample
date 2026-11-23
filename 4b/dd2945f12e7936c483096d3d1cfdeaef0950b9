@@ -1,0 +1,19 @@
+transform/gesture-handler/output.txt
+  s_a36ba4e366666a::t_c3094d9e4235fa 1-285
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.9",
+  "base_commit_sha": "4bdd2945f12e7936c483096d3d1cfdeaef0950b9",
+  "prompts": {},
+  "sessions": {
+    "s_a36ba4e366666a": {
+      "agent_id": {
+        "tool": "codeagentcli",
+        "id": "60748b05-e7d1-437f-9a18-d524025e16ba",
+        "model": "deepseek-v4.1-flash-1017"
+      },
+      "human_author": "c30053109 <chenhaoyue1@huawei.com>"
+    }
+  }
+}
