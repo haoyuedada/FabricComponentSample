@@ -1,0 +1,285 @@
+11-20 17:57:25.137 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=1 nodeViewTag=11828 x=226 y=210.08 fingers=0 touchActive=0
+11-20 17:57:25.145 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:47> RNGH_DBG press sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:25.145 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:137> RNGH_DBG session DOWN (sentinel) nodeViewTag=11828 node=0x5b740ee500 handlers=1 x=706.25 y=656.5
+11-20 17:57:25.145 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:783> RNGH_DBG handler DOWN handlerTag=50 viewTag=11828 x=226 y=210.08 adopted=0 state=UNDETERMINED
+11-20 17:57:25.145 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:33> RNGH_DBG state handlerTag=50 viewTag=11828 UNDETERMINED -> BEGAN
+11-20 17:57:25.146 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=2 nodeViewTag=11828 x=224.88 y=219.8 fingers=1 touchActive=1
+11-20 17:57:25.146 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:299> RNGH_DBG state handlerTag=50 viewTag=11828 BEGAN -> CANCELLED (cancelled=1)
+11-20 17:57:25.147 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:69> RNGH_DBG pan sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:25.147 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:536> RNGH_DBG recognizer ACCEPT handlerTag=50 type=2 viewTag=11828
+11-20 17:57:25.151 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":0,"state":2,"translationY":0,"velocityX":0,"pointerInside":true,"x":226,"target":11828,"pointerType":0,"y":210.08,"handlerTag":50,"absoluteX":226,"absoluteY":357,"tran'
+11-20 17:57:25.151 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 0, '->', 2
+11-20 17:57:25.153 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":2,"state":3,"translationY":0,"velocityX":0,"pointerInside":true,"x":226,"target":11828,"pointerType":0,"y":210.08,"handlerTag":50,"absoluteX":226,"absoluteY":357,"tran'
+11-20 17:57:25.153 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 2, '->', 3
+11-20 17:57:25.335 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=2 nodeViewTag=11828 x=218.914 y=491.732 fingers=1 touchActive=1
+11-20 17:57:25.374 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=3 nodeViewTag=11828 x=234.92 y=572.84 fingers=1 touchActive=1
+11-20 17:57:25.377 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:396> RNGH_DBG session UP nodeViewTag=11828 cancelled=0
+11-20 17:57:25.378 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:544> RNGH_DBG recognizer END handlerTag=50
+11-20 17:57:25.727 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=1 nodeViewTag=11828 x=184.24 y=495.76 fingers=0 touchActive=0
+11-20 17:57:25.734 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:47> RNGH_DBG press sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:25.735 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:137> RNGH_DBG session DOWN (sentinel) nodeViewTag=11828 node=0x5b740ee500 handlers=1 x=575.75 y=1549.25
+11-20 17:57:25.735 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:783> RNGH_DBG handler DOWN handlerTag=50 viewTag=11828 x=184.24 y=495.76 adopted=0 state=UNDETERMINED
+11-20 17:57:25.735 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:33> RNGH_DBG state handlerTag=50 viewTag=11828 UNDETERMINED -> BEGAN
+11-20 17:57:25.736 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:299> RNGH_DBG state handlerTag=50 viewTag=11828 BEGAN -> CANCELLED (cancelled=1)
+11-20 17:57:25.737 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:69> RNGH_DBG pan sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:25.737 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:536> RNGH_DBG recognizer ACCEPT handlerTag=50 type=2 viewTag=11828
+11-20 17:57:25.740 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":0,"state":2,"translationY":0,"velocityX":0,"pointerInside":true,"x":184.24,"target":11828,"pointerType":0,"y":495.76,"handlerTag":50,"absoluteX":184.24,"absoluteY":642'
+11-20 17:57:25.742 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 0, '->', 2
+11-20 17:57:25.744 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":2,"state":3,"translationY":0,"velocityX":0,"pointerInside":true,"x":184.24,"target":11828,"pointerType":0,"y":495.76,"handlerTag":50,"absoluteX":184.24,"absoluteY":642'
+11-20 17:57:25.744 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 2, '->', 3
+11-20 17:57:25.836 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=3 nodeViewTag=11828 x=224.64 y=181.24 fingers=1 touchActive=1
+11-20 17:57:25.836 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:396> RNGH_DBG session UP nodeViewTag=11828 cancelled=0
+11-20 17:57:25.837 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:544> RNGH_DBG recognizer END handlerTag=50
+11-20 17:57:26.263 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=1 nodeViewTag=11828 x=238.28 y=95.2 fingers=0 touchActive=0
+11-20 17:57:26.268 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:47> RNGH_DBG press sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:26.268 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:137> RNGH_DBG session DOWN (sentinel) nodeViewTag=11828 node=0x5b740ee500 handlers=1 x=744.625 y=297.5
+11-20 17:57:26.268 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:783> RNGH_DBG handler DOWN handlerTag=50 viewTag=11828 x=238.28 y=95.2 adopted=0 state=UNDETERMINED
+11-20 17:57:26.268 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:33> RNGH_DBG state handlerTag=50 viewTag=11828 UNDETERMINED -> BEGAN
+11-20 17:57:26.278 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":0,"state":2,"translationY":0,"velocityX":0,"pointerInside":true,"x":238.28,"target":11828,"pointerType":0,"y":95.2,"handlerTag":50,"absoluteX":238.28,"absoluteY":242.1'
+11-20 17:57:26.279 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 0, '->', 2
+11-20 17:57:26.284 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=2 nodeViewTag=11828 x=237.546 y=97.6154 fingers=1 touchActive=1
+11-20 17:57:26.285 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:69> RNGH_DBG pan sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:26.295 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:299> RNGH_DBG state handlerTag=50 viewTag=11828 BEGAN -> CANCELLED (cancelled=1)
+11-20 17:57:26.297 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:536> RNGH_DBG recognizer ACCEPT handlerTag=50 type=2 viewTag=11828
+11-20 17:57:26.299 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":2,"state":3,"translationY":2.4153710937499966,"velocityX":-31.308498752025475,"pointerInside":true,"x":237.54619140625,"target":11828,"pointerType":0,"y":97.6153710937'
+11-20 17:57:26.301 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 2, '->', 3
+11-20 17:57:26.451 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=2 nodeViewTag=11828 x=221.625 y=495.865 fingers=1 touchActive=1
+11-20 17:57:26.465 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=3 nodeViewTag=11828 x=233.2 y=524.08 fingers=1 touchActive=1
+11-20 17:57:26.467 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:396> RNGH_DBG session UP nodeViewTag=11828 cancelled=0
+11-20 17:57:26.468 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:544> RNGH_DBG recognizer END handlerTag=50
+11-20 17:57:26.870 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=1 nodeViewTag=11828 x=237.6 y=120.48 fingers=0 touchActive=0
+11-20 17:57:26.876 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:47> RNGH_DBG press sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:26.876 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:137> RNGH_DBG session DOWN (sentinel) nodeViewTag=11828 node=0x5b740ee500 handlers=1 x=742.5 y=376.5
+11-20 17:57:26.876 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:783> RNGH_DBG handler DOWN handlerTag=50 viewTag=11828 x=237.6 y=120.48 adopted=0 state=UNDETERMINED
+11-20 17:57:26.876 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:33> RNGH_DBG state handlerTag=50 viewTag=11828 UNDETERMINED -> BEGAN
+11-20 17:57:26.888 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":0,"state":2,"translationY":0,"velocityX":0,"pointerInside":true,"x":237.6,"target":11828,"pointerType":0,"y":120.48,"handlerTag":50,"absoluteX":237.6,"absoluteY":267.4'
+11-20 17:57:26.889 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 0, '->', 2
+11-20 17:57:26.893 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:69> RNGH_DBG pan sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:26.910 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:299> RNGH_DBG state handlerTag=50 viewTag=11828 BEGAN -> CANCELLED (cancelled=1)
+11-20 17:57:26.911 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:536> RNGH_DBG recognizer ACCEPT handlerTag=50 type=2 viewTag=11828
+11-20 17:57:26.915 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":2,"state":3,"translationY":3.1609179687500273,"velocityX":-168.58083967097085,"pointerInside":true,"x":236.10373046875,"target":11828,"pointerType":0,"y":123.640917968'
+11-20 17:57:26.916 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 2, '->', 3
+11-20 17:57:27.026 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=2 nodeViewTag=11828 x=207.472 y=355.438 fingers=1 touchActive=1
+11-20 17:57:27.077 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=3 nodeViewTag=11828 x=230.2 y=506.8 fingers=1 touchActive=1
+11-20 17:57:27.079 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:396> RNGH_DBG session UP nodeViewTag=11828 cancelled=0
+11-20 17:57:27.080 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:544> RNGH_DBG recognizer END handlerTag=50
+11-20 17:57:27.379 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=1 nodeViewTag=11828 x=190.56 y=506.64 fingers=0 touchActive=0
+11-20 17:57:27.384 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:47> RNGH_DBG press sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:27.384 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:137> RNGH_DBG session DOWN (sentinel) nodeViewTag=11828 node=0x5b740ee500 handlers=1 x=595.5 y=1583.25
+11-20 17:57:27.384 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:783> RNGH_DBG handler DOWN handlerTag=50 viewTag=11828 x=190.56 y=506.64 adopted=0 state=UNDETERMINED
+11-20 17:57:27.385 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:33> RNGH_DBG state handlerTag=50 viewTag=11828 UNDETERMINED -> BEGAN
+11-20 17:57:27.385 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:299> RNGH_DBG state handlerTag=50 viewTag=11828 BEGAN -> CANCELLED (cancelled=1)
+11-20 17:57:27.386 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:69> RNGH_DBG pan sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:27.386 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:536> RNGH_DBG recognizer ACCEPT handlerTag=50 type=2 viewTag=11828
+11-20 17:57:27.390 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":0,"state":2,"translationY":0,"velocityX":0,"pointerInside":true,"x":190.56,"target":11828,"pointerType":0,"y":506.64,"handlerTag":50,"absoluteX":190.56,"absoluteY":653'
+11-20 17:57:27.390 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 0, '->', 2
+11-20 17:57:27.391 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":2,"state":3,"translationY":0,"velocityX":0,"pointerInside":true,"x":190.56,"target":11828,"pointerType":0,"y":506.64,"handlerTag":50,"absoluteX":190.56,"absoluteY":653'
+11-20 17:57:27.392 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 2, '->', 3
+11-20 17:57:27.490 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=3 nodeViewTag=11828 x=225.92 y=161.48 fingers=1 touchActive=1
+11-20 17:57:27.491 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:396> RNGH_DBG session UP nodeViewTag=11828 cancelled=0
+11-20 17:57:27.491 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:544> RNGH_DBG recognizer END handlerTag=50
+11-20 17:57:27.834 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=1 nodeViewTag=11828 x=254.56 y=54.6 fingers=0 touchActive=0
+11-20 17:57:27.843 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:47> RNGH_DBG press sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:27.843 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:137> RNGH_DBG session DOWN (sentinel) nodeViewTag=11828 node=0x5b740ee500 handlers=1 x=795.5 y=170.625
+11-20 17:57:27.843 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:783> RNGH_DBG handler DOWN handlerTag=50 viewTag=11828 x=254.56 y=54.6 adopted=0 state=UNDETERMINED
+11-20 17:57:27.843 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:33> RNGH_DBG state handlerTag=50 viewTag=11828 UNDETERMINED -> BEGAN
+11-20 17:57:27.843 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=2 nodeViewTag=11828 x=253.52 y=56.84 fingers=1 touchActive=1
+11-20 17:57:27.844 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:69> RNGH_DBG pan sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:27.844 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:855> RNGH_DBG handler move handlerTag=50 viewTag=11828 state=BEGAN recognizerAccepted=0
+11-20 17:57:27.852 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:299> RNGH_DBG state handlerTag=50 viewTag=11828 BEGAN -> CANCELLED (cancelled=1)
+11-20 17:57:27.853 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":0,"state":2,"translationY":0,"velocityX":0,"pointerInside":true,"x":254.56,"target":11828,"pointerType":0,"y":54.6,"handlerTag":50,"absoluteX":254.56,"absoluteY":201.5'
+11-20 17:57:27.854 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:536> RNGH_DBG recognizer ACCEPT handlerTag=50 type=2 viewTag=11828
+11-20 17:57:27.855 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 0, '->', 2
+11-20 17:57:27.880 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":2,"state":3,"translationY":2.2399999999999807,"velocityX":-93.42436219906187,"pointerInside":true,"x":253.52,"target":11828,"pointerType":0,"y":56.84,"handlerTag":50,"'
+11-20 17:57:27.881 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 2, '->', 3
+11-20 17:57:27.978 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=3 nodeViewTag=11828 x=234.32 y=435.24 fingers=1 touchActive=1
+11-20 17:57:27.980 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:396> RNGH_DBG session UP nodeViewTag=11828 cancelled=0
+11-20 17:57:27.980 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:544> RNGH_DBG recognizer END handlerTag=50
+11-20 17:57:28.273 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=1 nodeViewTag=11828 x=240 y=98.68 fingers=0 touchActive=0
+11-20 17:57:28.276 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:47> RNGH_DBG press sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:28.276 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:137> RNGH_DBG session DOWN (sentinel) nodeViewTag=11828 node=0x5b740ee500 handlers=1 x=750 y=308.375
+11-20 17:57:28.276 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:783> RNGH_DBG handler DOWN handlerTag=50 viewTag=11828 x=240 y=98.68 adopted=0 state=UNDETERMINED
+11-20 17:57:28.276 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:33> RNGH_DBG state handlerTag=50 viewTag=11828 UNDETERMINED -> BEGAN
+11-20 17:57:28.283 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":0,"state":2,"translationY":0,"velocityX":0,"pointerInside":true,"x":240,"target":11828,"pointerType":0,"y":98.68,"handlerTag":50,"absoluteX":240,"absoluteY":245.6,"tra'
+11-20 17:57:28.284 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 0, '->', 2
+11-20 17:57:28.301 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=2 nodeViewTag=11828 x=240 y=98.68 fingers=1 touchActive=1
+11-20 17:57:28.336 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:69> RNGH_DBG pan sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:28.354 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:536> RNGH_DBG recognizer ACCEPT handlerTag=50 type=2 viewTag=11828
+11-20 17:57:28.354 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:896> RNGH_DBG pan gates handlerTag=50 dx=-4.20801 dy=4.63059 recognizerAccepted=1 adopted=0 pointers=1 velocityX=-232.465 velocityY=392.764 minDist=5 state=BEGAN
+11-20 17:57:28.361 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:299> RNGH_DBG state handlerTag=50 viewTag=11828 BEGAN -> CANCELLED (cancelled=1)
+11-20 17:57:28.375 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":2,"state":3,"translationY":4.630585937500001,"velocityX":-232.46489205672262,"pointerInside":true,"x":235.7919921875,"target":11828,"pointerType":0,"y":103.3105859375,'
+11-20 17:57:28.377 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 2, '->', 3
+11-20 17:57:28.468 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=2 nodeViewTag=11828 x=208.153 y=274.441 fingers=1 touchActive=1
+11-20 17:57:28.554 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=3 nodeViewTag=11828 x=236.12 y=487.32 fingers=1 touchActive=1
+11-20 17:57:28.557 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:396> RNGH_DBG session UP nodeViewTag=11828 cancelled=0
+11-20 17:57:28.557 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:544> RNGH_DBG recognizer END handlerTag=50
+11-20 17:57:28.979 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=1 nodeViewTag=11828 x=247.12 y=43.8 fingers=0 touchActive=0
+11-20 17:57:28.984 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:47> RNGH_DBG press sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:28.984 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:137> RNGH_DBG session DOWN (sentinel) nodeViewTag=11828 node=0x5b740ee500 handlers=1 x=772.25 y=136.875
+11-20 17:57:28.984 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:783> RNGH_DBG handler DOWN handlerTag=50 viewTag=11828 x=247.12 y=43.8 adopted=0 state=UNDETERMINED
+11-20 17:57:28.984 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:33> RNGH_DBG state handlerTag=50 viewTag=11828 UNDETERMINED -> BEGAN
+11-20 17:57:28.993 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":0,"state":2,"translationY":0,"velocityX":0,"pointerInside":true,"x":247.12,"target":11828,"pointerType":0,"y":43.8,"handlerTag":50,"absoluteX":247.12,"absoluteY":190.7'
+11-20 17:57:28.995 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 0, '->', 2
+11-20 17:57:29.037 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:69> RNGH_DBG pan sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:29.044 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:299> RNGH_DBG state handlerTag=50 viewTag=11828 BEGAN -> CANCELLED (cancelled=1)
+11-20 17:57:29.045 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:536> RNGH_DBG recognizer ACCEPT handlerTag=50 type=2 viewTag=11828
+11-20 17:57:29.049 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":2,"state":3,"translationY":2.5897460937499943,"velocityX":0,"pointerInside":true,"x":246.15955078125,"target":11828,"pointerType":0,"y":46.38974609375,"handlerTag":50,'
+11-20 17:57:29.050 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 2, '->', 3
+11-20 17:57:29.060 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=2 nodeViewTag=11828 x=243.751 y=58.4604 fingers=1 touchActive=1
+11-20 17:57:29.226 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=2 nodeViewTag=11828 x=219.499 y=340.116 fingers=1 touchActive=1
+11-20 17:57:29.271 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=3 nodeViewTag=11828 x=243.08 y=427 fingers=1 touchActive=1
+11-20 17:57:29.273 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:396> RNGH_DBG session UP nodeViewTag=11828 cancelled=0
+11-20 17:57:29.273 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:544> RNGH_DBG recognizer END handlerTag=50
+11-20 17:57:29.633 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=1 nodeViewTag=11828 x=239.2 y=63.36 fingers=0 touchActive=0
+11-20 17:57:29.643 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:47> RNGH_DBG press sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:29.643 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:137> RNGH_DBG session DOWN (sentinel) nodeViewTag=11828 node=0x5b740ee500 handlers=1 x=747.5 y=198
+11-20 17:57:29.643 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:783> RNGH_DBG handler DOWN handlerTag=50 viewTag=11828 x=239.2 y=63.36 adopted=0 state=UNDETERMINED
+11-20 17:57:29.643 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:33> RNGH_DBG state handlerTag=50 viewTag=11828 UNDETERMINED -> BEGAN
+11-20 17:57:29.653 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":0,"state":2,"translationY":0,"velocityX":0,"pointerInside":true,"x":239.2,"target":11828,"pointerType":0,"y":63.36,"handlerTag":50,"absoluteX":239.2,"absoluteY":210.28'
+11-20 17:57:29.654 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 0, '->', 2
+11-20 17:57:29.678 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:69> RNGH_DBG pan sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:29.686 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:299> RNGH_DBG state handlerTag=50 viewTag=11828 BEGAN -> CANCELLED (cancelled=1)
+11-20 17:57:29.689 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:536> RNGH_DBG recognizer ACCEPT handlerTag=50 type=2 viewTag=11828
+11-20 17:57:29.696 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":2,"state":3,"translationY":2.8407421875000125,"velocityX":0,"pointerInside":true,"x":237.82875,"target":11828,"pointerType":0,"y":66.2007421875,"handlerTag":50,"absolu'
+11-20 17:57:29.697 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 2, '->', 3
+11-20 17:57:29.760 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=2 nodeViewTag=11828 x=206.689 y=191.862 fingers=1 touchActive=1
+11-20 17:57:29.882 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=3 nodeViewTag=11828 x=213.8 y=462.48 fingers=1 touchActive=1
+11-20 17:57:29.885 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:396> RNGH_DBG session UP nodeViewTag=11828 cancelled=0
+11-20 17:57:29.885 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:544> RNGH_DBG recognizer END handlerTag=50
+11-20 17:57:30.179 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=1 nodeViewTag=11828 x=205.68 y=464.6 fingers=0 touchActive=0
+11-20 17:57:30.184 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:47> RNGH_DBG press sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:30.184 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:137> RNGH_DBG session DOWN (sentinel) nodeViewTag=11828 node=0x5b740ee500 handlers=1 x=642.75 y=1451.88
+11-20 17:57:30.184 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:783> RNGH_DBG handler DOWN handlerTag=50 viewTag=11828 x=205.68 y=464.6 adopted=0 state=UNDETERMINED
+11-20 17:57:30.184 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:33> RNGH_DBG state handlerTag=50 viewTag=11828 UNDETERMINED -> BEGAN
+11-20 17:57:30.185 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:299> RNGH_DBG state handlerTag=50 viewTag=11828 BEGAN -> CANCELLED (cancelled=1)
+11-20 17:57:30.186 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:69> RNGH_DBG pan sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:30.186 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:536> RNGH_DBG recognizer ACCEPT handlerTag=50 type=2 viewTag=11828
+11-20 17:57:30.189 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":0,"state":2,"translationY":0,"velocityX":0,"pointerInside":true,"x":205.68,"target":11828,"pointerType":0,"y":464.6,"handlerTag":50,"absoluteX":205.68,"absoluteY":611.'
+11-20 17:57:30.190 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 0, '->', 2
+11-20 17:57:30.191 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":2,"state":3,"translationY":0,"velocityX":0,"pointerInside":true,"x":205.68,"target":11828,"pointerType":0,"y":464.6,"handlerTag":50,"absoluteX":205.68,"absoluteY":611.'
+11-20 17:57:30.191 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 2, '->', 3
+11-20 17:57:30.226 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=2 nodeViewTag=11828 x=192.344 y=363.188 fingers=1 touchActive=1
+11-20 17:57:30.303 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=3 nodeViewTag=11828 x=240.84 y=105.4 fingers=1 touchActive=1
+11-20 17:57:30.304 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:396> RNGH_DBG session UP nodeViewTag=11828 cancelled=0
+11-20 17:57:30.304 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:544> RNGH_DBG recognizer END handlerTag=50
+11-20 17:57:30.652 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=1 nodeViewTag=11828 x=234.24 y=93 fingers=0 touchActive=0
+11-20 17:57:30.657 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:47> RNGH_DBG press sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:30.657 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:137> RNGH_DBG session DOWN (sentinel) nodeViewTag=11828 node=0x5b740ee500 handlers=1 x=732 y=290.625
+11-20 17:57:30.657 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:783> RNGH_DBG handler DOWN handlerTag=50 viewTag=11828 x=234.24 y=93 adopted=0 state=UNDETERMINED
+11-20 17:57:30.657 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:33> RNGH_DBG state handlerTag=50 viewTag=11828 UNDETERMINED -> BEGAN
+11-20 17:57:30.658 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:299> RNGH_DBG state handlerTag=50 viewTag=11828 BEGAN -> CANCELLED (cancelled=1)
+11-20 17:57:30.659 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:69> RNGH_DBG pan sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:30.659 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:536> RNGH_DBG recognizer ACCEPT handlerTag=50 type=2 viewTag=11828
+11-20 17:57:30.666 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":0,"state":2,"translationY":0,"velocityX":0,"pointerInside":true,"x":234.24,"target":11828,"pointerType":0,"y":93,"handlerTag":50,"absoluteX":234.24,"absoluteY":239.92,'
+11-20 17:57:30.667 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 0, '->', 2
+11-20 17:57:30.670 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":2,"state":3,"translationY":0,"velocityX":0,"pointerInside":true,"x":234.24,"target":11828,"pointerType":0,"y":93,"handlerTag":50,"absoluteX":234.24,"absoluteY":239.92,'
+11-20 17:57:30.671 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 2, '->', 3
+11-20 17:57:30.741 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=2 nodeViewTag=11828 x=199.27 y=286.64 fingers=1 touchActive=1
+11-20 17:57:30.784 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=3 nodeViewTag=11828 x=230.2 y=441.96 fingers=1 touchActive=1
+11-20 17:57:30.785 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:396> RNGH_DBG session UP nodeViewTag=11828 cancelled=0
+11-20 17:57:30.785 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:544> RNGH_DBG recognizer END handlerTag=50
+11-20 17:57:31.115 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=1 nodeViewTag=11828 x=229.6 y=112.04 fingers=0 touchActive=0
+11-20 17:57:31.125 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:47> RNGH_DBG press sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:31.125 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:137> RNGH_DBG session DOWN (sentinel) nodeViewTag=11828 node=0x5b740ee500 handlers=1 x=717.5 y=350.125
+11-20 17:57:31.125 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:783> RNGH_DBG handler DOWN handlerTag=50 viewTag=11828 x=229.6 y=112.04 adopted=0 state=UNDETERMINED
+11-20 17:57:31.125 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:33> RNGH_DBG state handlerTag=50 viewTag=11828 UNDETERMINED -> BEGAN
+11-20 17:57:31.126 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:299> RNGH_DBG state handlerTag=50 viewTag=11828 BEGAN -> CANCELLED (cancelled=1)
+11-20 17:57:31.127 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:69> RNGH_DBG pan sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:31.127 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:536> RNGH_DBG recognizer ACCEPT handlerTag=50 type=2 viewTag=11828
+11-20 17:57:31.132 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":0,"state":2,"translationY":0,"velocityX":0,"pointerInside":true,"x":229.6,"target":11828,"pointerType":0,"y":112.04,"handlerTag":50,"absoluteX":229.6,"absoluteY":258.9'
+11-20 17:57:31.133 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 0, '->', 2
+11-20 17:57:31.135 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":2,"state":3,"translationY":0,"velocityX":0,"pointerInside":true,"x":229.6,"target":11828,"pointerType":0,"y":112.04,"handlerTag":50,"absoluteX":229.6,"absoluteY":258.9'
+11-20 17:57:31.136 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 2, '->', 3
+11-20 17:57:31.241 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=2 nodeViewTag=11828 x=234.519 y=446.668 fingers=1 touchActive=1
+11-20 17:57:31.249 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=3 nodeViewTag=11828 x=239.48 y=458.32 fingers=1 touchActive=1
+11-20 17:57:31.253 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:396> RNGH_DBG session UP nodeViewTag=11828 cancelled=0
+11-20 17:57:31.253 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:544> RNGH_DBG recognizer END handlerTag=50
+11-20 17:57:31.594 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=1 nodeViewTag=11828 x=239.12 y=94.68 fingers=0 touchActive=0
+11-20 17:57:31.600 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:47> RNGH_DBG press sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:31.600 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:137> RNGH_DBG session DOWN (sentinel) nodeViewTag=11828 node=0x5b740ee500 handlers=1 x=747.25 y=295.875
+11-20 17:57:31.600 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:783> RNGH_DBG handler DOWN handlerTag=50 viewTag=11828 x=239.12 y=94.68 adopted=0 state=UNDETERMINED
+11-20 17:57:31.600 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:33> RNGH_DBG state handlerTag=50 viewTag=11828 UNDETERMINED -> BEGAN
+11-20 17:57:31.601 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:69> RNGH_DBG pan sentinel ACCEPT nodeViewTag=11828
+11-20 17:57:31.608 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:299> RNGH_DBG state handlerTag=50 viewTag=11828 BEGAN -> CANCELLED (cancelled=1)
+11-20 17:57:31.609 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:536> RNGH_DBG recognizer ACCEPT handlerTag=50 type=2 viewTag=11828
+11-20 17:57:31.609 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":0,"state":2,"translationY":0,"velocityX":0,"pointerInside":true,"x":239.12,"target":11828,"pointerType":0,"y":94.68,"handlerTag":50,"absoluteX":239.12,"absoluteY":241.'
+11-20 17:57:31.610 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 0, '->', 2
+11-20 17:57:31.615 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":2,"state":3,"translationY":1.200000000000017,"velocityX":-62.45981445760866,"pointerInside":true,"x":238.44,"target":11828,"pointerType":0,"y":95.88,"handlerTag":50,"a'
+11-20 17:57:31.615 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 50, 2, '->', 3
+11-20 17:57:31.752 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=3 nodeViewTag=11828 x=240.08 y=424.8 fingers=1 touchActive=1
+11-20 17:57:31.755 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:396> RNGH_DBG session UP nodeViewTag=11828 cancelled=0
+11-20 17:57:31.755 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:544> RNGH_DBG recognizer END handlerTag=50
+11-20 17:57:32.779 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG mount', 'PanGestureHandler', 51
+11-20 17:57:32.780 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG', 'create', 'PanGestureHandler', 51, '{"activeOffsetYStart":-20,"activeOffsetYEnd":20}'
+11-20 17:57:32.781 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_ARK: █____  RNGH::RNGestureHandlerModule::createGestureHandler: RNGH_DBG create PanGestureHandler handlerTag=51 config={"activeOffsetYEnd":20,"activeOffsetYStart":-20}
+11-20 17:57:32.781 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG attach', 'PanGestureHandler', 51, 'viewTag=', 11922, 'actionType=', 3
+11-20 17:57:32.782 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG', 'attach', 51, 'viewTag=', 11922, 'actionType=', 3
+11-20 17:57:32.783 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_ARK: █____  RNGH::RNGestureHandlerModule::attachGestureHandler: RNGH_DBG attach PanGestureHandler handlerTag=51 viewTag=11922 actionType=3
+11-20 17:57:32.783 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManager.cpp:108> RNGH_DBG attach PanGestureHandler handlerTag=51 viewTag=11922 actionType=3 config={"activeOffsetYEnd":20,"activeOffsetYStart":-20}
+11-20 17:57:32.783 41882 41882 W A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManager.cpp:155> RNGH_DBG attach pending: no component instance yet for handlerTag=51 viewTag=11922 (attempt 1)
+11-20 17:57:32.801 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManager.cpp:189> RNGH_DBG attached handlerTag=51 viewTag=11922 component=View hostTag=11922 node=0x5b73cb9f00 frame=345.92x564.16 scale=3.125 afterRetries=1
+11-20 17:57:32.801 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManager.cpp:281> RNGH_DBG recognizer created handlerTag=51 recognizer=0x5b77082440 params=[1,5]
+11-20 17:57:33.204 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=1 nodeViewTag=11922 x=236.28 y=67.8 fingers=0 touchActive=0
+11-20 17:57:33.207 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:47> RNGH_DBG press sentinel ACCEPT nodeViewTag=11922
+11-20 17:57:33.207 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:137> RNGH_DBG session DOWN (sentinel) nodeViewTag=11922 node=0x5b73cb9f00 handlers=1 x=738.375 y=211.875
+11-20 17:57:33.207 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:783> RNGH_DBG handler DOWN handlerTag=51 viewTag=11922 x=236.28 y=67.8 adopted=0 state=UNDETERMINED
+11-20 17:57:33.207 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:33> RNGH_DBG state handlerTag=51 viewTag=11922 UNDETERMINED -> BEGAN
+11-20 17:57:33.208 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:299> RNGH_DBG state handlerTag=51 viewTag=11922 BEGAN -> CANCELLED (cancelled=1)
+11-20 17:57:33.209 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:69> RNGH_DBG pan sentinel ACCEPT nodeViewTag=11922
+11-20 17:57:33.209 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:536> RNGH_DBG recognizer ACCEPT handlerTag=51 type=2 viewTag=11922
+11-20 17:57:33.215 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=2 nodeViewTag=11922 x=233.381 y=75.0382 fingers=1 touchActive=1
+11-20 17:57:33.216 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":0,"state":2,"translationY":0,"velocityX":0,"pointerInside":true,"x":236.28,"target":11922,"pointerType":0,"y":67.8,"handlerTag":51,"absoluteX":236.28,"absoluteY":214.7'
+11-20 17:57:33.217 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 51, 0, '->', 2
+11-20 17:57:33.218 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":2,"state":3,"translationY":0,"velocityX":0,"pointerInside":true,"x":236.28,"target":11922,"pointerType":0,"y":67.8,"handlerTag":51,"absoluteX":236.28,"absoluteY":214.7'
+11-20 17:57:33.219 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 51, 2, '->', 3
+11-20 17:57:33.383 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=2 nodeViewTag=11922 x=216.14 y=409.788 fingers=1 touchActive=1
+11-20 17:57:33.397 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=3 nodeViewTag=11922 x=222.32 y=435.16 fingers=1 touchActive=1
+11-20 17:57:33.400 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:396> RNGH_DBG session UP nodeViewTag=11922 cancelled=0
+11-20 17:57:33.400 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:544> RNGH_DBG recognizer END handlerTag=51
+11-20 17:57:33.640 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=1 nodeViewTag=11922 x=187.84 y=443.6 fingers=0 touchActive=0
+11-20 17:57:33.649 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:47> RNGH_DBG press sentinel ACCEPT nodeViewTag=11922
+11-20 17:57:33.649 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:137> RNGH_DBG session DOWN (sentinel) nodeViewTag=11922 node=0x5b73cb9f00 handlers=1 x=587 y=1386.25
+11-20 17:57:33.649 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:783> RNGH_DBG handler DOWN handlerTag=51 viewTag=11922 x=187.84 y=443.6 adopted=0 state=UNDETERMINED
+11-20 17:57:33.649 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:33> RNGH_DBG state handlerTag=51 viewTag=11922 UNDETERMINED -> BEGAN
+11-20 17:57:33.650 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:299> RNGH_DBG state handlerTag=51 viewTag=11922 BEGAN -> CANCELLED (cancelled=1)
+11-20 17:57:33.651 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:69> RNGH_DBG pan sentinel ACCEPT nodeViewTag=11922
+11-20 17:57:33.652 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:536> RNGH_DBG recognizer ACCEPT handlerTag=51 type=2 viewTag=11922
+11-20 17:57:33.659 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":0,"state":2,"translationY":0,"velocityX":0,"pointerInside":true,"x":187.84,"target":11922,"pointerType":0,"y":443.6,"handlerTag":51,"absoluteX":187.84,"absoluteY":590.'
+11-20 17:57:33.660 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 51, 0, '->', 2
+11-20 17:57:33.663 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":2,"state":3,"translationY":0,"velocityX":0,"pointerInside":true,"x":187.84,"target":11922,"pointerType":0,"y":443.6,"handlerTag":51,"absoluteX":187.84,"absoluteY":590.'
+11-20 17:57:33.664 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 51, 2, '->', 3
+11-20 17:57:33.741 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=3 nodeViewTag=11922 x=221.8 y=127.64 fingers=1 touchActive=1
+11-20 17:57:33.743 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:396> RNGH_DBG session UP nodeViewTag=11922 cancelled=0
+11-20 17:57:33.744 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:544> RNGH_DBG recognizer END handlerTag=51
+11-20 17:57:33.993 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=1 nodeViewTag=11922 x=244.8 y=56.48 fingers=0 touchActive=0
+11-20 17:57:33.999 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:47> RNGH_DBG press sentinel ACCEPT nodeViewTag=11922
+11-20 17:57:33.999 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:137> RNGH_DBG session DOWN (sentinel) nodeViewTag=11922 node=0x5b73cb9f00 handlers=1 x=765 y=176.5
+11-20 17:57:33.999 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:783> RNGH_DBG handler DOWN handlerTag=51 viewTag=11922 x=244.8 y=56.48 adopted=0 state=UNDETERMINED
+11-20 17:57:33.999 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:33> RNGH_DBG state handlerTag=51 viewTag=11922 UNDETERMINED -> BEGAN
+11-20 17:57:34.000 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:69> RNGH_DBG pan sentinel ACCEPT nodeViewTag=11922
+11-20 17:57:34.008 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:299> RNGH_DBG state handlerTag=51 viewTag=11922 BEGAN -> CANCELLED (cancelled=1)
+11-20 17:57:34.009 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:536> RNGH_DBG recognizer ACCEPT handlerTag=51 type=2 viewTag=11922
+11-20 17:57:34.010 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":0,"state":2,"translationY":0,"velocityX":0,"pointerInside":true,"x":244.8,"target":11922,"pointerType":0,"y":56.48,"handlerTag":51,"absoluteX":244.8,"absoluteY":203.4,'
+11-20 17:57:34.011 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 51, 0, '->', 2
+11-20 17:57:34.019 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":2,"state":3,"translationY":2.960000000000008,"velocityX":-87.22741433021751,"pointerInside":true,"x":243.68,"target":11922,"pointerType":0,"y":59.44,"handlerTag":51,"a'
+11-20 17:57:34.020 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 51, 2, '->', 3
+11-20 17:57:34.057 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=2 nodeViewTag=11922 x=215.48 y=153.013 fingers=1 touchActive=1
+11-20 17:57:34.154 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=3 nodeViewTag=11922 x=240.16 y=476.6 fingers=1 touchActive=1
+11-20 17:57:34.157 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:396> RNGH_DBG session UP nodeViewTag=11922 cancelled=0
+11-20 17:57:34.157 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:544> RNGH_DBG recognizer END handlerTag=51
+11-20 17:57:34.387 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=1 nodeViewTag=11922 x=189.28 y=424.12 fingers=0 touchActive=0
+11-20 17:57:34.398 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:47> RNGH_DBG press sentinel ACCEPT nodeViewTag=11922
+11-20 17:57:34.398 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:137> RNGH_DBG session DOWN (sentinel) nodeViewTag=11922 node=0x5b73cb9f00 handlers=1 x=591.5 y=1325.38
+11-20 17:57:34.398 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:783> RNGH_DBG handler DOWN handlerTag=51 viewTag=11922 x=189.28 y=424.12 adopted=0 state=UNDETERMINED
+11-20 17:57:34.398 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:33> RNGH_DBG state handlerTag=51 viewTag=11922 UNDETERMINED -> BEGAN
+11-20 17:57:34.399 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:299> RNGH_DBG state handlerTag=51 viewTag=11922 BEGAN -> CANCELLED (cancelled=1)
+11-20 17:57:34.399 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:69> RNGH_DBG pan sentinel ACCEPT nodeViewTag=11922
+11-20 17:57:34.399 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:536> RNGH_DBG recognizer ACCEPT handlerTag=51 type=2 viewTag=11922
+11-20 17:57:34.401 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":0,"state":2,"translationY":0,"velocityX":0,"pointerInside":true,"x":189.28,"target":11922,"pointerType":0,"y":424.12,"handlerTag":51,"absoluteX":189.28,"absoluteY":571'
+11-20 17:57:34.402 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 51, 0, '->', 2
+11-20 17:57:34.404 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js raw state', '{"numberOfPointers":1,"oldState":2,"state":3,"translationY":0,"velocityX":0,"pointerInside":true,"x":189.28,"target":11922,"pointerType":0,"y":424.12,"handlerTag":51,"absoluteX":189.28,"absoluteY":571'
+11-20 17:57:34.405 41882 42219 I A0BEEF/com.huawei.hmos.vmall/#RNOH_JS: __█__ 'RNGH_DBG js state', 51, 2, '->', 3
+11-20 17:57:34.465 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=2 nodeViewTag=11922 x=212.477 y=150.191 fingers=1 touchActive=1
+11-20 17:57:34.481 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:204> RNGH_DBG node touch action=3 nodeViewTag=11922 x=239.2 y=85.16 fingers=1 touchActive=1
+11-20 17:57:34.482 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerTouch.cpp:396> RNGH_DBG session UP nodeViewTag=11922 cancelled=0
+11-20 17:57:34.483 41882 41882 I A0BEEF/com.huawei.hmos.vmall/#RNOH_CPP: █____ NativeGestureManagerOrchestration.cpp:544> RNGH_DBG recognizer END handlerTag=51
