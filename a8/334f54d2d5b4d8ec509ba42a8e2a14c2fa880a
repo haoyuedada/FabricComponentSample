@@ -1,0 +1,16 @@
+ReactProject/src/zhihu/1126crash-handleRawEvent/0001-enable-reentrancy-check-in-release.patch
+  h_fed3d0bf8fff42 1-25
+ReactProject/src/zhihu/1126crash-handleRawEvent/react-native-harmony-reanimated-3.6.3-patch/react-native-harmony-reanimated/harmony/reanimated/src/main/cpp/vendor/react-native-reanimated/Common/cpp/ReanimatedRuntime/ReanimatedHermesRuntime.h
+  h_fed3d0bf8fff42 53-55
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.10",
+  "base_commit_sha": "a8334f54d2d5b4d8ec509ba42a8e2a14c2fa880a",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  }
+}
