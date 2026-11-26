@@ -1,0 +1,14 @@
+ReactProject/src/zhihu/1126crash-handleRawEvent/cppcrash-root-cause-report.md
+  h_fed3d0bf8fff42 1-132
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.10",
+  "base_commit_sha": "9ffd967ddfc17b25d13674d8c19d10ac162979ae",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  }
+}
