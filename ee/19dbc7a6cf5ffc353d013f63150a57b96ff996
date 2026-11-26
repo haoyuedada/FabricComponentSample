@@ -1,0 +1,46 @@
+ReactProject/index.js
+  h_fed3d0bf8fff42 103,159,172
+ReactProject/harmony/library/src/main/ets/FabricComponent/RCTSelectBox.ets
+  h_fed3d0bf8fff42 79-122
+ReactProject/harmony/library/src/main/ets/FabricComponent/SelectBox.ets
+  s_17f85d6affe9f5::t_db8f3aa08af4f9 132
+ReactProject/package.json
+  h_fed3d0bf8fff42 44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.10",
+  "base_commit_sha": "ee19dbc7a6cf5ffc353d013f63150a57b96ff996",
+  "prompts": {},
+  "humans": {
+    "h_fed3d0bf8fff42": {
+      "author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "overridden": {
+        "s_17f85d6affe9f5": 44
+      }
+    }
+  },
+  "sessions": {
+    "s_05a9d5c6e05808": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_e1732bb26ffeX9mS45qoAxw72q",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>",
+      "custom_attributes": {
+        "stats_models": {"glm-5.3":{"additions":422,"deletions":40}},
+        "stats_total_additions": 422,
+        "stats_total_deletions": 40
+      }
+    },
+    "s_17f85d6affe9f5": {
+      "agent_id": {
+        "tool": "codegenie-deveco",
+        "id": "1794538451669",
+        "model": "glm-5.3"
+      },
+      "human_author": "chenhaoyue <chenhaoyue1@h-partners.com>"
+    }
+  }
+}
