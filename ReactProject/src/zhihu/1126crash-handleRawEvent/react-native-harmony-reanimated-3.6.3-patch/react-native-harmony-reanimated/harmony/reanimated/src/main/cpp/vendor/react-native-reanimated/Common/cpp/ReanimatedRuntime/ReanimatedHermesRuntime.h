@@ -50,9 +50,9 @@ using namespace facebook::hermes::inspector;
 // from ReactCommon/hermes/executor/HermesExecutorFactory.cpp
 // https://github.com/facebook/react-native/blob/main/packages/react-native/ReactCommon/hermes/executor/HermesExecutorFactory.cpp
 struct ReanimatedReentrancyCheck {
-  // This is effectively a very subtle and complex assert, so only
-  // include it in builds which would include asserts.
-#ifndef NDEBUG
+  // shortcut: enabled in release to trap unsynchronized two-thread entry into this
+  // single-threaded HermesRuntime (GCScope race, zhihu crash 2026-11-21); re-guard
+  // with NDEBUG once the offending entry point is fixed.
   ReanimatedReentrancyCheck() : tid(std::thread::id()), depth(0) {}
 
   void before() {
@@ -113,7 +113,6 @@ struct ReanimatedReentrancyCheck {
   // This is not atomic, as it is only written or read from the owning
   // thread.
   unsigned int depth;
-#endif // NDEBUG
 };
 
 // This is in fact a subclass of jsi::Runtime! WithRuntimeDecorator is a
