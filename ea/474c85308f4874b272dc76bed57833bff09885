@@ -1,0 +1,14 @@
+ReactProject/src/zhihu/cppcrash-com.zhihu.hmos-20020226-20261121112552970.log
+  h_ac9751a7b931d1 1-7371
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "5.30.10",
+  "base_commit_sha": "ea474c85308f4874b272dc76bed57833bff09885",
+  "prompts": {},
+  "humans": {
+    "h_ac9751a7b931d1": {
+      "author": "c30053109 <chenhaoyue1@huawei.com>"
+    }
+  }
+}
