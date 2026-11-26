@@ -1,0 +1,8 @@
+registry=https://ohpm.openharmony.cn/ohpm/,https://ohpm.dev.zhihu.com/repos/ohpm
+@zhihu:registry=https://ohpm.dev.zhihu.com/repos/ohpm
+resolve_conflict=true
+enforce_dependency_key=true
+lockfile_stable_order=true
+fetch_timeout=360000
+publish_registry=https://ohpm.dev.zhihu.com/repos/ohpm
+//ohpm.dev.zhihu.com/repos/ohpm/:_auth=ZGI5MjEwYzE4ZTg2NDQ3NmE3NjI3MzBmNGYyMDFlZTI=

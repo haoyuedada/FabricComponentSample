@@ -1,0 +1,10 @@
+{
+  "modelVersion": "5.0.0",
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "overrides": {
+    "@rnoh/react-native-openharmony" : "0.72.53"
+  }
+}

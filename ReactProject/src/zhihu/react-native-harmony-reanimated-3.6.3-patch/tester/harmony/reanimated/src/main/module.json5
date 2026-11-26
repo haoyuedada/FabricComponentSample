@@ -1,0 +1,13 @@
+{
+  "module": {
+    "name": "reanimated",
+    "type": "har",
+    "description": "$string:module_desc",
+    "mainElement": "ReanimatedAbility",
+    "deviceTypes": [
+      "phone",
+      "tablet",
+      "2in1"
+    ],
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@react-native-oh-tpl/react-native-reanimated",
+  "version": "3.6.3-0.0.4",
+  "description": "Keep the screen from going to sleep. iOS , Android and Harmony",
+  "main": "Index.ets",
+  "author": "",
+  "license": "Apache-2.0",
+  "hooks": {
+    "preInstall":"npm install && mkdir -p src/main/cpp/vendor && cp -r node_modules/react-native-reanimated src/main/cpp/vendor",
+  },
+  "dependencies": {
+    "@rnoh/react-native-openharmony": "0.72.53"
+  }
+}
+
