@@ -129,6 +129,7 @@ export struct SelectBox {
           })
       }
       .height("100%")
+      .id("selectboxColumn")
     }
   }
 }

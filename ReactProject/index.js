@@ -100,7 +100,7 @@ import { AppRegistry } from 'react-native';
 // import App from './tests/orientation.tsx';
 // import App from './tests/mijia/oriatation/App.tsx';
 // import App from './tests/UIManager/UIManager1.tsx';
-// import App from './FabricComponent/SelectBox.tsx';
+import App from './src/FabricComponent/SelectBox.tsx';
 // import App from './src/ImageBackground.tsx';
 // import App from "./src/CMChartWave.js";
 // import App from "./tests/Image2mp4";
@@ -156,7 +156,7 @@ import { AppRegistry } from 'react-native';
 // import App from "./tests/smartRefresh/demo.tsx"
 // import App from './tests/ToptabDemo/TopTabDemo/NavigationMaterialTopTabs.tsx'
 // 滴滴手势库 demo
-import App from './tests/didi/demo'
+// import App from './tests/didi/demo'
 // import App from './tests/didi/demohjy'
 // import App from './tests/refresh.tsx'
 // import App from './tests/lottie/crash_demo_direct.tsx'
@@ -169,6 +169,7 @@ import App from './tests/didi/demo'
 // import App from './tests/react-native-animated/App.tsx'
 // import App from './tests/react-native-gesture-handler/App.tsx'
 // import App from './tests/react-native-gesture-handler/RNPanBasicDemo.tsx'
+// 美团手势库demo
 // import App from './tests/react-native-gesture-handler/RNGestureHandlerDemo.tsx'
 // import App from './tests/react-native-gesture-handler/PinchWithRotationDemo.tsx'
 // import App from './tests/judgeFabric.tsx'
